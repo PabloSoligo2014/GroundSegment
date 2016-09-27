@@ -1,0 +1,62 @@
+Comandos utiles:
+
+-------------------------
+Creacion de superusuario
+-------------------------
+
+Solo se hace para crear el usuario raiz.
+
+python manage.py createsuperuser
+
+Para proyecto ground segment entrar con el siguiente usuario
+
+-------------------------------
+Como correr test desde eclipse
+-------------------------------
+
+Setup a new debug configuration.
+
+
+Run -> Debug Configurations...
+Select 'PyDev Django'
+Click 'New Launch Configuration (top left corner)
+Name your new configuration
+Set the project to your project
+Set the module to your manage.py (browser to your manage.py)
+Go to the 'Arguments' tab and enter 'test' under 'Program arguments'
+Click 'Apply'
+
+-------------------------------
+Como instalar coverage
+-------------------------------
+sudo pip install django-coverage
+sudo python3.4 -m pip install django-coverage
+coverage run --source='.' manage.py test GroundSegment
+
+
+----------------------------------
+ftp maquina de Elbio
+----------------------------------
+ftp://10.77.171.128
+usuario: pablito
+password: violento
+
+
+-----------------------------------
+Documentacion automatica
+-----------------------------------
+
+Para generar los modelos
+------------------------
+epydoc --pdf --graph all --output "/home/ubuntumate/git/GroundSegment/GroundSegment/documentacion/AutoDocs/Design/" /home/ubuntumate/git/GroundSegment/GroundSegment/GroundSegment/models --name "GroundSegment Technical DataSheet" --inheritance grouped -v
+epydoc --pdf --graph all --output "/home/ubuntumate/git/GroundSegment/GroundSegment/documentacion/AutoDocs/Design/" /home/ubuntumate/git/GroundSegment/GroundSegment/GroundSegment/models --name "GroundSegment Technical DataSheet" --inheritance grouped -v --dotpath /usr/include/graphviz 
+
+
+Para generar los test
+---------------------
+epydoc --pdf --graph all --output "/home/ubuntumate/git/GroundSegment/GroundSegment/documentacion/AutoDocs/V_And_V" /home/ubuntumate/git/GroundSegment/GroundSegment/GroundSegment/tests.py --name "GroundSegment Test Verificacion" --inheritance grouped -v
+
+
+
+
+

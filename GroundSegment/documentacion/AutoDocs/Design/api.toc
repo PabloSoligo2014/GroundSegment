@@ -1,0 +1,87 @@
+\contentsline {section}{Contents}{1}{section*.1}
+\contentsline {section}{\numberline {1}Package GroundSegment.models}{4}{section.1}
+\contentsline {subsection}{\numberline {1.1}Modules}{4}{subsection.1.1}
+\contentsline {section}{\numberline {2}Package GroundSegment.models.Alarm}{5}{section.2}
+\contentsline {subsection}{\numberline {2.1}Modules}{5}{subsection.2.1}
+\contentsline {section}{\numberline {3}Module GroundSegment.models.Alarm.Action}{6}{section.3}
+\contentsline {subsection}{\numberline {3.1}Class Action}{6}{subsection.3.1}
+\contentsline {section}{\numberline {4}Module GroundSegment.models.Alarm.Alarm}{7}{section.4}
+\contentsline {subsection}{\numberline {4.1}Variables}{7}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Class Alarm}{7}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Methods}{7}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}Class Variables}{8}{subsubsection.4.2.2}
+\contentsline {section}{\numberline {5}Module GroundSegment.models.Alarm.AlarmState}{9}{section.5}
+\contentsline {subsection}{\numberline {5.1}Class AlarmState}{9}{subsection.5.1}
+\contentsline {subsubsection}{\numberline {5.1.1}Methods}{9}{subsubsection.5.1.1}
+\contentsline {subsubsection}{\numberline {5.1.2}Class Variables}{9}{subsubsection.5.1.2}
+\contentsline {section}{\numberline {6}Module GroundSegment.models.Alarm.AlarmType}{10}{section.6}
+\contentsline {subsection}{\numberline {6.1}Class AlarmType}{10}{subsection.6.1}
+\contentsline {subsubsection}{\numberline {6.1.1}Methods}{10}{subsubsection.6.1.1}
+\contentsline {subsubsection}{\numberline {6.1.2}Class Variables}{10}{subsubsection.6.1.2}
+\contentsline {section}{\numberline {7}Module GroundSegment.models.Alarm.Criticity}{11}{section.7}
+\contentsline {subsection}{\numberline {7.1}Class Criticity}{11}{subsection.7.1}
+\contentsline {subsubsection}{\numberline {7.1.1}Methods}{11}{subsubsection.7.1.1}
+\contentsline {subsubsection}{\numberline {7.1.2}Class Variables}{11}{subsubsection.7.1.2}
+\contentsline {section}{\numberline {8}Module GroundSegment.models.CommandType}{12}{section.8}
+\contentsline {subsection}{\numberline {8.1}Class CommandType}{12}{subsection.8.1}
+\contentsline {subsubsection}{\numberline {8.1.1}Methods}{12}{subsubsection.8.1.1}
+\contentsline {subsubsection}{\numberline {8.1.2}Class Variables}{12}{subsubsection.8.1.2}
+\contentsline {section}{\numberline {9}Module GroundSegment.models.CommandTypeParameter}{13}{section.9}
+\contentsline {subsection}{\numberline {9.1}Class CommandTypeParameter}{13}{subsection.9.1}
+\contentsline {section}{\numberline {10}Module GroundSegment.models.Consts}{14}{section.10}
+\contentsline {subsection}{\numberline {10.1}Class Consts}{14}{subsection.10.1}
+\contentsline {subsubsection}{\numberline {10.1.1}Methods}{14}{subsubsection.10.1.1}
+\contentsline {subsubsection}{\numberline {10.1.2}Properties}{14}{subsubsection.10.1.2}
+\contentsline {subsubsection}{\numberline {10.1.3}Class Variables}{14}{subsubsection.10.1.3}
+\contentsline {section}{\numberline {11}Package GroundSegment.models.Notification}{15}{section.11}
+\contentsline {subsection}{\numberline {11.1}Modules}{15}{subsection.11.1}
+\contentsline {section}{\numberline {12}Module GroundSegment.models.Notification.AlarmTypeNotificationType}{16}{section.12}
+\contentsline {subsection}{\numberline {12.1}Class AlarmTypeNotificationType}{16}{subsection.12.1}
+\contentsline {section}{\numberline {13}Module GroundSegment.models.Notification.Contact}{17}{section.13}
+\contentsline {subsection}{\numberline {13.1}Class Contact}{17}{subsection.13.1}
+\contentsline {subsubsection}{\numberline {13.1.1}Class Variables}{17}{subsubsection.13.1.1}
+\contentsline {section}{\numberline {14}Module GroundSegment.models.Notification.Notification}{18}{section.14}
+\contentsline {subsection}{\numberline {14.1}Class Notification}{18}{subsection.14.1}
+\contentsline {subsubsection}{\numberline {14.1.1}Class Variables}{18}{subsubsection.14.1.1}
+\contentsline {section}{\numberline {15}Module GroundSegment.models.Notification.NotificationType}{19}{section.15}
+\contentsline {subsection}{\numberline {15.1}Class NotificationType}{19}{subsection.15.1}
+\contentsline {subsubsection}{\numberline {15.1.1}Class Variables}{19}{subsubsection.15.1.1}
+\contentsline {section}{\numberline {16}Module GroundSegment.models.Parameter}{20}{section.16}
+\contentsline {subsection}{\numberline {16.1}Class Parameter}{20}{subsection.16.1}
+\contentsline {subsubsection}{\numberline {16.1.1}Methods}{20}{subsubsection.16.1.1}
+\contentsline {subsubsection}{\numberline {16.1.2}Class Variables}{20}{subsubsection.16.1.2}
+\contentsline {section}{\numberline {17}Module GroundSegment.models.Pasada}{21}{section.17}
+\contentsline {subsection}{\numberline {17.1}Class Pasada}{21}{subsection.17.1}
+\contentsline {subsubsection}{\numberline {17.1.1}Methods}{21}{subsubsection.17.1.1}
+\contentsline {subsubsection}{\numberline {17.1.2}Class Variables}{21}{subsubsection.17.1.2}
+\contentsline {section}{\numberline {18}Module GroundSegment.models.Propagation}{22}{section.18}
+\contentsline {subsection}{\numberline {18.1}Class Propagation}{22}{subsection.18.1}
+\contentsline {subsubsection}{\numberline {18.1.1}Class Variables}{22}{subsubsection.18.1.1}
+\contentsline {section}{\numberline {19}Module GroundSegment.models.PropagationDetail}{23}{section.19}
+\contentsline {subsection}{\numberline {19.1}Class PropagationDetail}{23}{subsection.19.1}
+\contentsline {subsubsection}{\numberline {19.1.1}Methods}{23}{subsubsection.19.1.1}
+\contentsline {subsubsection}{\numberline {19.1.2}Class Variables}{23}{subsubsection.19.1.2}
+\contentsline {section}{\numberline {20}Module GroundSegment.models.SatelliteState}{24}{section.20}
+\contentsline {subsection}{\numberline {20.1}Class SatelliteState}{24}{subsection.20.1}
+\contentsline {subsubsection}{\numberline {20.1.1}Methods}{24}{subsubsection.20.1.1}
+\contentsline {subsubsection}{\numberline {20.1.2}Class Variables}{24}{subsubsection.20.1.2}
+\contentsline {section}{\numberline {21}Module GroundSegment.models.Site}{25}{section.21}
+\contentsline {subsection}{\numberline {21.1}Class Site}{25}{subsection.21.1}
+\contentsline {subsubsection}{\numberline {21.1.1}Methods}{25}{subsubsection.21.1.1}
+\contentsline {subsubsection}{\numberline {21.1.2}Class Variables}{25}{subsubsection.21.1.2}
+\contentsline {section}{\numberline {22}Module GroundSegment.models.Sitio}{26}{section.22}
+\contentsline {subsection}{\numberline {22.1}Class Sitio}{26}{subsection.22.1}
+\contentsline {subsubsection}{\numberline {22.1.1}Methods}{26}{subsubsection.22.1.1}
+\contentsline {subsubsection}{\numberline {22.1.2}Class Variables}{26}{subsubsection.22.1.2}
+\contentsline {section}{\numberline {23}Module GroundSegment.models.Tle}{27}{section.23}
+\contentsline {subsection}{\numberline {23.1}Class Tle}{27}{subsection.23.1}
+\contentsline {subsubsection}{\numberline {23.1.1}Methods}{27}{subsubsection.23.1.1}
+\contentsline {subsubsection}{\numberline {23.1.2}Class Variables}{27}{subsubsection.23.1.2}
+\contentsline {section}{\numberline {24}Module GroundSegment.models.TlmyVarType}{29}{section.24}
+\contentsline {subsection}{\numberline {24.1}Class TmlyVarType}{29}{subsection.24.1}
+\contentsline {subsubsection}{\numberline {24.1.1}Class Variables}{29}{subsubsection.24.1.1}
+\contentsline {section}{\numberline {25}Module GroundSegment.models.Transforms}{30}{section.25}
+\contentsline {subsection}{\numberline {25.1}Class SqlLiteDatetimeDate}{30}{subsection.25.1}
+\contentsline {subsubsection}{\numberline {25.1.1}Methods}{30}{subsubsection.25.1.1}
+\contentsline {subsubsection}{\numberline {25.1.2}Class Variables}{30}{subsubsection.25.1.2}
+\contentsline {section}{Index}{31}{section*.2}
