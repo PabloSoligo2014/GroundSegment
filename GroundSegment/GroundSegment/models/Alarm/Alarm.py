@@ -11,6 +11,7 @@ from GroundSegment.models.Alarm.AlarmState import AlarmState
 from GroundSegment.models.Satellite import Satellite
 
 
+
 #al = Alarm.new(Satellite.objects.all()[0], AlarmType.objects.all()[0], django.utils.timezone.datetime.now(utc))
 
 PENDING     = 0
@@ -67,15 +68,21 @@ class Alarm(models.Model):
         
         #Verifico si la alarma es notificable, en caso de serlo 
         #Creo la notificacion correspondiente
+        from GroundSegment.models.Notification.Notification import Notification
         
         notifications = result.alarmType.AlarmTypeNotificationTypes.all()
         for atnt in notifications:
             if atnt.notificationType.code.upper() == "EMAIL":
-                #Tengo que mandar email, esta claro
-                dest = atnt.contact.email
+                #Tengo que crear una notificacion
                 body = atnt.messageTemplate.text
-                from GroundSegment.Utils.EMailThread import EmailThread
-                EmailThread("Ground segment auto msg", body, dest).start()
+                dest = atnt.contact.email
+                
+                noti = Notification.new(self, alarm=self, text=body, )
+                noti.save()
+                
+                #Tengo que mandar email, esta claro
+                
+                
                 
                 
                 

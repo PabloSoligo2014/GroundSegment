@@ -10,9 +10,9 @@ from django.conf import settings
 from django.core.mail import send_mail
 
 class EmailThread(threading.Thread):
-    def __init__(self, subject, body, recipient):
+    def __init__(self, subject, body, recipients):
         self.subject = subject
-        self.recipient = recipient
+        self.recipients = recipients
         self.body = body
         threading.Thread.__init__(self)
 
@@ -22,7 +22,9 @@ class EmailThread(threading.Thread):
         msg.content_subtype = "html"
         msg.send()
         """
-        send_mail(self.subject, self.body, settings.EMAIL_HOST_USER, [self.recipient], fail_silently=False)
-
+        try:
+            send_mail(self.subject, self.body, settings.EMAIL_HOST_USER, self.recipients, fail_silently=False)
+        except:
+            pass
 
     
