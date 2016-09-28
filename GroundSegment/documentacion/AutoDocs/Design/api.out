@@ -37,51 +37,61 @@
 \BOOKMARK [2][-]{subsection.11.1}{Modules}{section.11}% 37
 \BOOKMARK [1][-]{section.12}{Module GroundSegment.models.Notification.AlarmTypeNotificationType}{}% 38
 \BOOKMARK [2][-]{subsection.12.1}{Class AlarmTypeNotificationType}{section.12}% 39
-\BOOKMARK [1][-]{section.13}{Module GroundSegment.models.Notification.Contact}{}% 40
-\BOOKMARK [2][-]{subsection.13.1}{Class Contact}{section.13}% 41
-\BOOKMARK [3][-]{subsubsection.13.1.1}{Class Variables}{subsection.13.1}% 42
-\BOOKMARK [1][-]{section.14}{Module GroundSegment.models.Notification.Notification}{}% 43
-\BOOKMARK [2][-]{subsection.14.1}{Class Notification}{section.14}% 44
-\BOOKMARK [3][-]{subsubsection.14.1.1}{Class Variables}{subsection.14.1}% 45
-\BOOKMARK [1][-]{section.15}{Module GroundSegment.models.Notification.NotificationType}{}% 46
-\BOOKMARK [2][-]{subsection.15.1}{Class NotificationType}{section.15}% 47
-\BOOKMARK [3][-]{subsubsection.15.1.1}{Class Variables}{subsection.15.1}% 48
-\BOOKMARK [1][-]{section.16}{Module GroundSegment.models.Parameter}{}% 49
-\BOOKMARK [2][-]{subsection.16.1}{Class Parameter}{section.16}% 50
-\BOOKMARK [3][-]{subsubsection.16.1.1}{Methods}{subsection.16.1}% 51
-\BOOKMARK [3][-]{subsubsection.16.1.2}{Class Variables}{subsection.16.1}% 52
-\BOOKMARK [1][-]{section.17}{Module GroundSegment.models.Pasada}{}% 53
-\BOOKMARK [2][-]{subsection.17.1}{Class Pasada}{section.17}% 54
-\BOOKMARK [3][-]{subsubsection.17.1.1}{Methods}{subsection.17.1}% 55
-\BOOKMARK [3][-]{subsubsection.17.1.2}{Class Variables}{subsection.17.1}% 56
-\BOOKMARK [1][-]{section.18}{Module GroundSegment.models.Propagation}{}% 57
-\BOOKMARK [2][-]{subsection.18.1}{Class Propagation}{section.18}% 58
-\BOOKMARK [3][-]{subsubsection.18.1.1}{Class Variables}{subsection.18.1}% 59
-\BOOKMARK [1][-]{section.19}{Module GroundSegment.models.PropagationDetail}{}% 60
-\BOOKMARK [2][-]{subsection.19.1}{Class PropagationDetail}{section.19}% 61
-\BOOKMARK [3][-]{subsubsection.19.1.1}{Methods}{subsection.19.1}% 62
-\BOOKMARK [3][-]{subsubsection.19.1.2}{Class Variables}{subsection.19.1}% 63
-\BOOKMARK [1][-]{section.20}{Module GroundSegment.models.SatelliteState}{}% 64
-\BOOKMARK [2][-]{subsection.20.1}{Class SatelliteState}{section.20}% 65
-\BOOKMARK [3][-]{subsubsection.20.1.1}{Methods}{subsection.20.1}% 66
-\BOOKMARK [3][-]{subsubsection.20.1.2}{Class Variables}{subsection.20.1}% 67
-\BOOKMARK [1][-]{section.21}{Module GroundSegment.models.Site}{}% 68
-\BOOKMARK [2][-]{subsection.21.1}{Class Site}{section.21}% 69
-\BOOKMARK [3][-]{subsubsection.21.1.1}{Methods}{subsection.21.1}% 70
-\BOOKMARK [3][-]{subsubsection.21.1.2}{Class Variables}{subsection.21.1}% 71
-\BOOKMARK [1][-]{section.22}{Module GroundSegment.models.Sitio}{}% 72
-\BOOKMARK [2][-]{subsection.22.1}{Class Sitio}{section.22}% 73
-\BOOKMARK [3][-]{subsubsection.22.1.1}{Methods}{subsection.22.1}% 74
-\BOOKMARK [3][-]{subsubsection.22.1.2}{Class Variables}{subsection.22.1}% 75
-\BOOKMARK [1][-]{section.23}{Module GroundSegment.models.Tle}{}% 76
-\BOOKMARK [2][-]{subsection.23.1}{Class Tle}{section.23}% 77
-\BOOKMARK [3][-]{subsubsection.23.1.1}{Methods}{subsection.23.1}% 78
-\BOOKMARK [3][-]{subsubsection.23.1.2}{Class Variables}{subsection.23.1}% 79
-\BOOKMARK [1][-]{section.24}{Module GroundSegment.models.TlmyVarType}{}% 80
-\BOOKMARK [2][-]{subsection.24.1}{Class TmlyVarType}{section.24}% 81
-\BOOKMARK [3][-]{subsubsection.24.1.1}{Class Variables}{subsection.24.1}% 82
-\BOOKMARK [1][-]{section.25}{Module GroundSegment.models.Transforms}{}% 83
-\BOOKMARK [2][-]{subsection.25.1}{Class SqlLiteDatetimeDate}{section.25}% 84
-\BOOKMARK [3][-]{subsubsection.25.1.1}{Methods}{subsection.25.1}% 85
-\BOOKMARK [3][-]{subsubsection.25.1.2}{Class Variables}{subsection.25.1}% 86
-\BOOKMARK [1][-]{section*.2}{Index}{}% 87
+\BOOKMARK [3][-]{subsubsection.12.1.1}{Methods}{subsection.12.1}% 40
+\BOOKMARK [3][-]{subsubsection.12.1.2}{Class Variables}{subsection.12.1}% 41
+\BOOKMARK [1][-]{section.13}{Module GroundSegment.models.Notification.Contact}{}% 42
+\BOOKMARK [2][-]{subsection.13.1}{Class Contact}{section.13}% 43
+\BOOKMARK [3][-]{subsubsection.13.1.1}{Methods}{subsection.13.1}% 44
+\BOOKMARK [3][-]{subsubsection.13.1.2}{Class Variables}{subsection.13.1}% 45
+\BOOKMARK [1][-]{section.14}{Module GroundSegment.models.Notification.MessageTemplate}{}% 46
+\BOOKMARK [2][-]{subsection.14.1}{Class MessageTemplate}{section.14}% 47
+\BOOKMARK [3][-]{subsubsection.14.1.1}{Methods}{subsection.14.1}% 48
+\BOOKMARK [3][-]{subsubsection.14.1.2}{Class Variables}{subsection.14.1}% 49
+\BOOKMARK [1][-]{section.15}{Module GroundSegment.models.Notification.Notification}{}% 50
+\BOOKMARK [2][-]{subsection.15.1}{Class Notification}{section.15}% 51
+\BOOKMARK [3][-]{subsubsection.15.1.1}{Methods}{subsection.15.1}% 52
+\BOOKMARK [3][-]{subsubsection.15.1.2}{Class Variables}{subsection.15.1}% 53
+\BOOKMARK [1][-]{section.16}{Module GroundSegment.models.Notification.NotificationType}{}% 54
+\BOOKMARK [2][-]{subsection.16.1}{Class NotificationType}{section.16}% 55
+\BOOKMARK [3][-]{subsubsection.16.1.1}{Methods}{subsection.16.1}% 56
+\BOOKMARK [3][-]{subsubsection.16.1.2}{Class Variables}{subsection.16.1}% 57
+\BOOKMARK [3][-]{subsubsection.16.1.3}{Instance Variables}{subsection.16.1}% 58
+\BOOKMARK [1][-]{section.17}{Module GroundSegment.models.Parameter}{}% 59
+\BOOKMARK [2][-]{subsection.17.1}{Class Parameter}{section.17}% 60
+\BOOKMARK [3][-]{subsubsection.17.1.1}{Methods}{subsection.17.1}% 61
+\BOOKMARK [3][-]{subsubsection.17.1.2}{Class Variables}{subsection.17.1}% 62
+\BOOKMARK [1][-]{section.18}{Module GroundSegment.models.Pasada}{}% 63
+\BOOKMARK [2][-]{subsection.18.1}{Class Pasada}{section.18}% 64
+\BOOKMARK [3][-]{subsubsection.18.1.1}{Methods}{subsection.18.1}% 65
+\BOOKMARK [3][-]{subsubsection.18.1.2}{Class Variables}{subsection.18.1}% 66
+\BOOKMARK [1][-]{section.19}{Module GroundSegment.models.Propagation}{}% 67
+\BOOKMARK [2][-]{subsection.19.1}{Class Propagation}{section.19}% 68
+\BOOKMARK [3][-]{subsubsection.19.1.1}{Class Variables}{subsection.19.1}% 69
+\BOOKMARK [1][-]{section.20}{Module GroundSegment.models.PropagationDetail}{}% 70
+\BOOKMARK [2][-]{subsection.20.1}{Class PropagationDetail}{section.20}% 71
+\BOOKMARK [3][-]{subsubsection.20.1.1}{Methods}{subsection.20.1}% 72
+\BOOKMARK [3][-]{subsubsection.20.1.2}{Class Variables}{subsection.20.1}% 73
+\BOOKMARK [1][-]{section.21}{Module GroundSegment.models.SatelliteState}{}% 74
+\BOOKMARK [2][-]{subsection.21.1}{Class SatelliteState}{section.21}% 75
+\BOOKMARK [3][-]{subsubsection.21.1.1}{Methods}{subsection.21.1}% 76
+\BOOKMARK [3][-]{subsubsection.21.1.2}{Class Variables}{subsection.21.1}% 77
+\BOOKMARK [1][-]{section.22}{Module GroundSegment.models.Site}{}% 78
+\BOOKMARK [2][-]{subsection.22.1}{Class Site}{section.22}% 79
+\BOOKMARK [3][-]{subsubsection.22.1.1}{Methods}{subsection.22.1}% 80
+\BOOKMARK [3][-]{subsubsection.22.1.2}{Class Variables}{subsection.22.1}% 81
+\BOOKMARK [1][-]{section.23}{Module GroundSegment.models.Sitio}{}% 82
+\BOOKMARK [2][-]{subsection.23.1}{Class Sitio}{section.23}% 83
+\BOOKMARK [3][-]{subsubsection.23.1.1}{Methods}{subsection.23.1}% 84
+\BOOKMARK [3][-]{subsubsection.23.1.2}{Class Variables}{subsection.23.1}% 85
+\BOOKMARK [1][-]{section.24}{Module GroundSegment.models.Tle}{}% 86
+\BOOKMARK [2][-]{subsection.24.1}{Class Tle}{section.24}% 87
+\BOOKMARK [3][-]{subsubsection.24.1.1}{Methods}{subsection.24.1}% 88
+\BOOKMARK [3][-]{subsubsection.24.1.2}{Class Variables}{subsection.24.1}% 89
+\BOOKMARK [1][-]{section.25}{Module GroundSegment.models.TlmyVarType}{}% 90
+\BOOKMARK [2][-]{subsection.25.1}{Class TmlyVarType}{section.25}% 91
+\BOOKMARK [3][-]{subsubsection.25.1.1}{Class Variables}{subsection.25.1}% 92
+\BOOKMARK [1][-]{section.26}{Module GroundSegment.models.Transforms}{}% 93
+\BOOKMARK [2][-]{subsection.26.1}{Class SqlLiteDatetimeDate}{section.26}% 94
+\BOOKMARK [3][-]{subsubsection.26.1.1}{Methods}{subsection.26.1}% 95
+\BOOKMARK [3][-]{subsubsection.26.1.2}{Class Variables}{subsection.26.1}% 96
+\BOOKMARK [1][-]{section*.2}{Index}{}% 97

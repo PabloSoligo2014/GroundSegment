@@ -1,0 +1,4 @@
+var namespace_ground_segment_1_1models_1_1_notification_1_1_message_template =
+[
+    [ "MessageTemplate", "class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template.html", "class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template" ]
+];

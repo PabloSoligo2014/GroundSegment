@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>&quot;GroundSegment Documentation&quot;: Fichero Fuente models/Notification/Notification.py</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">&quot;GroundSegment Documentation&quot;
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Paquetes</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_notification_8py_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Notification.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_notification_8py.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespace_ground_segment_1_1models_1_1_notification_1_1_notification.html">    1</a></span>&#160;<span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="stringliteral">Created on Sep 27, 2016</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral">@author: ubuntumate</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">from</span> django.db <span class="keyword">import</span> models</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">from</span> <a class="code" href="class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm.html">GroundSegment.models.Alarm.Alarm</a> <span class="keyword">import</span> Alarm</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">from</span> <a class="code" href="namespace_ground_segment_1_1models.html">GroundSegment.models</a> <span class="keyword">import</span> Consts</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">from</span> <a class="code" href="class_ground_segment_1_1models_1_1_notification_1_1_contact_1_1_contact.html">GroundSegment.models.Notification.Contact</a> <span class="keyword">import</span> Contact</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">from</span> <a class="code" href="class_ground_segment_1_1models_1_1_notification_1_1_notification_type_1_1_notification_type.html">GroundSegment.models.Notification.NotificationType</a> <span class="keyword">import</span> NotificationType</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">from</span> django.template.defaultfilters <span class="keyword">import</span> default</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">from</span> <a class="code" href="class_ground_segment_1_1models_1_1_notification_1_1_alarm_type_notification_type_1_1_alarm_type_notification_type.html">GroundSegment.models.Notification.AlarmTypeNotificationType</a> <span class="keyword">import</span> AlarmTypeNotificationType</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification.html">Notification</a>(models.Model):</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="stringliteral">    Notifacion efectiva enviada o por enviar. Generada a partir de la configuracion del sistema</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="stringliteral">    </span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="stringliteral">    Objetivo</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="stringliteral">    =========</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="stringliteral">        Repositorio para las notificaciones generadas y enviadas.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="stringliteral">    </span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="stringliteral">     </span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="stringliteral">    Implementacion</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="stringliteral">    =========</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="stringliteral">        Se utiliza una unica entidad, las notificaciones se marcan como envidas cuando pueden ser despachadas o se</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="stringliteral">        indican la cantidad de intentos y se marcan como fallidas</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span>  </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="stringliteral">    Alarma asociada a la notificacion, puede no existir si la notificacion fuera generada por otro evento\n</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="stringliteral">    distinto a la generacion de la alarma</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification.html#a5d4145d0ba4943ac10e0a269ea3ae54e">   35</a></span>&#160;    subject = models.CharField(<span class="stringliteral">&#39;Asunto de la notificacion&#39;</span>, max_length=Consts.Consts.mediumString , help_text=<span class="stringliteral">&#39;Asunto de la notificacion&#39;</span>, default=<span class="stringliteral">&quot;subject default&quot;</span>)</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification.html#aab87e972d1da9172d2e7cce622b8fce3">   36</a></span>&#160;    text = models.TextField(null=<span class="keyword">False</span>, default=<span class="stringliteral">&quot;Sin mensaje&quot;</span>)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="stringliteral">    Texto de la notificacion</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification.html#a1c85d3bd1dfb69b866c0b0023dd8bc6f">   40</a></span>&#160;    contacts = models.ManyToManyField(Contact, related_name=<span class="stringliteral">&quot;notifications&quot;</span>, limit_choices_to=100)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification.html#ad668e7d1e333d3c3d4114276108046d7">   42</a></span>&#160;    alarmTypeNotificationType = models.ForeignKey(AlarmTypeNotificationType, related_name=<span class="stringliteral">&quot;notifications&quot;</span>, on_delete=models.PROTECT, null=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification.html#aec220ade3819946a0fb450d03e5ef97c">   44</a></span>&#160;    sended  = models.BooleanField(default=<span class="keyword">False</span>)</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification.html#a12664635efcb42cc8aef3d64c43b24d9">   45</a></span>&#160;    ntry    = models.IntegerField(default=0)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    @classmethod</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification.html#ad9be3de0a1aef79bd4828cf5f3db8973">   48</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification.html#ad9be3de0a1aef79bd4828cf5f3db8973">new</a>(cls, **kwargs):</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        result = cls()</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="stringliteral">        text = kwargs[&#39;text&#39;]</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="stringliteral">        subject = kwargs[&#39;subject&#39;]</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="comment">#Por ahora solo acepto notificaciones con alarmas</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        alarmTypeNotificationType = kwargs[<span class="stringliteral">&#39;alarmTypeNotificationType&#39;</span>]</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        result.alarmTypeNotificationType = alarmTypeNotificationType</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        result.text = alarmTypeNotificationType.messageTemplate.text</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        result.subject = alarmTypeNotificationType.messageTemplate.subject</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        result.ntry = 0</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        result.sended = <span class="keyword">False</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        result.save()</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        cnts = result.alarmTypeNotificationType.contacts.all()</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        recipients = list( cnts.values_list(<span class="stringliteral">&#39;email&#39;</span>, flat=<span class="keyword">True</span>) )</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keyword">from</span> GroundSegment.Utils.EMailThread <span class="keyword">import</span> EmailThread</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        EmailThread(result.subject, result.text, recipients).start()</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span> result</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification.html#aa9325e10b792980bc5670b3c250c0234">   77</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification.html#aa9325e10b792980bc5670b3c250c0234">__str__</a>(self):</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Notificacion: &quot;</span> + str(self.pk)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">#CASCADE[source]</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">#PROTECT[source]</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">#SET_NULL[source]</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">#SET_DEFAULT[source]</span></div>
+<div class="ttc" id="namespace_ground_segment_1_1models_html"><div class="ttname"><a href="namespace_ground_segment_1_1models.html">GroundSegment.models</a></div><div class="ttdef"><b>Definition:</b> <a href="____init_____8py_source.html#l00001">__init__.py:1</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_notification_1_1_contact_1_1_contact_html"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_notification_1_1_contact_1_1_contact.html">GroundSegment.models.Notification.Contact.Contact</a></div><div class="ttdef"><b>Definition:</b> <a href="_contact_8py_source.html#l00010">Contact.py:10</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_notification_1_1_notification_type_1_1_notification_type_html"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_notification_1_1_notification_type_1_1_notification_type.html">GroundSegment.models.Notification.NotificationType.NotificationType</a></div><div class="ttdef"><b>Definition:</b> <a href="_notification_type_8py_source.html#l00010">NotificationType.py:10</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification_html_ad9be3de0a1aef79bd4828cf5f3db8973"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification.html#ad9be3de0a1aef79bd4828cf5f3db8973">GroundSegment.models.Notification.Notification.Notification.new</a></div><div class="ttdeci">def new(cls, kwargs)</div><div class="ttdef"><b>Definition:</b> <a href="_notification_8py_source.html#l00048">Notification.py:48</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_notification_1_1_alarm_type_notification_type_1_1_alarm_type_notification_type_html"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_notification_1_1_alarm_type_notification_type_1_1_alarm_type_notification_type.html">GroundSegment.models.Notification.AlarmTypeNotificationType.AlarmTypeNotificationType</a></div><div class="ttdef"><b>Definition:</b> <a href="_alarm_type_notification_type_8py_source.html#l00013">AlarmTypeNotificationType.py:13</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_html"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm.html">GroundSegment.models.Alarm.Alarm.Alarm</a></div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8py_source.html#l00033">Alarm.py:33</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification_html"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification.html">GroundSegment.models.Notification.Notification.Notification</a></div><div class="ttdef"><b>Definition:</b> <a href="_notification_8py_source.html#l00015">Notification.py:15</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification_html_aa9325e10b792980bc5670b3c250c0234"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification.html#aa9325e10b792980bc5670b3c250c0234">GroundSegment.models.Notification.Notification.Notification.__str__</a></div><div class="ttdeci">def __str__(self)</div><div class="ttdef"><b>Definition:</b> <a href="_notification_8py_source.html#l00077">Notification.py:77</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_1ae4179d5e953611aae20c997279e02c.html">models</a></li><li class="navelem"><a class="el" href="dir_945e6dcb452f50a8d16413fea989ef0c.html">Notification</a></li><li class="navelem"><a class="el" href="_notification_8py.html">Notification.py</a></li>
+    <li class="footer">Generado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

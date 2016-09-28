@@ -1,0 +1,4 @@
+<map id="GroundSegment.models.Satellite.Satellite.getCelestialPosition" name="GroundSegment.models.Satellite.Satellite.getCelestialPosition">
+<area shape="rect" id="node2" href="$class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ae2cd61983a5d3797c175b719ced66dd5" title="GroundSegment.models.Satellite.\lSatellite.getLastTLE" alt="" coords="271,5,488,47"/>
+<area shape="rect" id="node3" href="$class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a791db38b46b47572cb648b30c74828d4" title="GroundSegment.models.Satellite.\lSatellite.__downloadLastTle" alt="" coords="536,5,753,47"/>
+</map>
