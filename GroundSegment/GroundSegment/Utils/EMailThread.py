@@ -24,7 +24,7 @@ class EmailThread(threading.Thread):
         """
         try:
             send_mail(self.subject, self.body, settings.EMAIL_HOST_USER, self.recipients, fail_silently=False)
-        except:
-            pass
+        except Exception as ex:
+            raise ex
 
     

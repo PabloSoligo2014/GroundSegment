@@ -89,9 +89,12 @@ class ContactAdmin(admin.ModelAdmin):
 admin.site.register(Contact ,ContactAdmin)
 
 class AlarmTypeNotificationTypeAdmin(admin.ModelAdmin):
-    fields = ('contact', 'notificationType', 'alarmType', 'messageTemplate')
-    list_display = ('contact', 'notificationType', 'alarmType', 'messageTemplate')
+    
+    fields = ('notificationType', 'alarmType', 'messageTemplate', 'contacts',)
+    list_display = ('notificationType', 'alarmType', 'messageTemplate',)
 admin.site.register(AlarmTypeNotificationType ,AlarmTypeNotificationTypeAdmin)
+
+
 
 class MessageTemplateAdmin(admin.ModelAdmin):
     pass

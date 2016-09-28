@@ -70,14 +70,12 @@ class Alarm(models.Model):
         #Creo la notificacion correspondiente
         from GroundSegment.models.Notification.Notification import Notification
         
-        notifications = result.alarmType.AlarmTypeNotificationTypes.all()
-        for atnt in notifications:
+        atnts = result.alarmType.AlarmTypeNotificationTypes.all()
+        for atnt in atnts:
             if atnt.notificationType.code.upper() == "EMAIL":
                 #Tengo que crear una notificacion
-                body = atnt.messageTemplate.text
-                dest = atnt.contact.email
                 
-                noti = Notification.new(self, alarm=self, text=body, )
+                noti = Notification.new(alarmTypeNotificationType=atnt)
                 noti.save()
                 
                 #Tengo que mandar email, esta claro

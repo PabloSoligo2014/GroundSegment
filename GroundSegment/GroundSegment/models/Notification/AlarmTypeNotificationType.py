@@ -11,10 +11,12 @@ from GroundSegment.models.Notification.MessageTemplate import MessageTemplate
 from GroundSegment.models.Notification.Contact import Contact
 
 class AlarmTypeNotificationType(models.Model):
+    
     notificationType = models.ForeignKey(NotificationType, on_delete=models.PROTECT, related_name="AlarmTypeNotificationTypes")
     alarmType = models.ForeignKey(AlarmType, on_delete=models.PROTECT, related_name="AlarmTypeNotificationTypes")
     messageTemplate = models.ForeignKey(MessageTemplate,on_delete=models.PROTECT, related_name="AlarmTypeNotificationTypes")
-    contact = models.ForeignKey(Contact, on_delete=models.PROTECT, related_name="AlarmTypeNotificationTypes", default=1)
+    
+    contacts = models.ManyToManyField(Contact, related_name="alarmTypeNotificationType")
     
     def __str__(self):
-        return self.notificationType.code + "---"+self.alarmType.code + "---" + self.messageTemplate.text[0:10] + "..."
+        return self.notificationType.code + "---"+self.alarmType.code + "---" + self.messageTemplate.name

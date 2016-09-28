@@ -10,6 +10,7 @@ from GroundSegment.models import Consts
 from GroundSegment.models.Notification.Contact import Contact
 from GroundSegment.models.Notification.NotificationType import NotificationType
 from django.template.defaultfilters import default
+from GroundSegment.models.Notification.AlarmTypeNotificationType import AlarmTypeNotificationType
 
 class Notification(models.Model):
     """
@@ -26,7 +27,7 @@ class Notification(models.Model):
         indican la cantidad de intentos y se marcan como fallidas
     """  
     
-    alarm   = models.ForeignKey(Alarm, related_name="notifications", on_delete=models.PROTECT, null=True)
+    
     """
     Alarma asociada a la notificacion, puede no existir si la notificacion fuera generada por otro evento\n
     distinto a la generacion de la alarma
@@ -38,30 +39,41 @@ class Notification(models.Model):
     """
     contacts = models.ManyToManyField(Contact, related_name="notifications", limit_choices_to=100)
     
-    notificationType = models.ForeignKey(NotificationType, related_name="notifications", on_delete=models.PROTECT)
+    alarmTypeNotificationType = models.ForeignKey(AlarmTypeNotificationType, related_name="notifications", on_delete=models.PROTECT, null=True)
+    
     sended  = models.BooleanField(default=False)
     ntry    = models.IntegerField(default=0)
     
     @classmethod
     def new(cls, **kwargs):
         result = cls()
-        alarm = kwargs['alarm']
+        """
         text = kwargs['text']
         subject = kwargs['subject']
-        contacts = kwargs['contacts']
+        """
         
-        result.alarm = alarm
-        result.text = text
-        result.subject = subject
+        #Por ahora solo acepto notificaciones con alarmas
+        alarmTypeNotificationType = kwargs['alarmTypeNotificationType']
+        
+        
+        result.alarmTypeNotificationType = alarmTypeNotificationType
+        result.text = alarmTypeNotificationType.messageTemplate.text
+        result.subject = alarmTypeNotificationType.messageTemplate.subject
         result.ntry = 0
         result.sended = False
         result.save()
+        
+        cnts = result.alarmTypeNotificationType.contacts.all()
+        
+        
+        recipients = list( cnts.values_list('email', flat=True) )
             
         
         from GroundSegment.Utils.EMailThread import EmailThread
-        EmailThread(subject, text, recipients).start()
+        EmailThread(result.subject, result.text, recipients).start()
                 
         return result
+    
     def __str__(self):
         return "Notificacion: " + str(self.pk)
     

@@ -50,3 +50,20 @@ from GroundSegment.models.Alarm.Alarm import Alarm
 al = Alarm.new(sat, al, datetime.now(utc))
 
 
+from GroundSegment.models.Notification.AlarmTypeNotificationType import AlarmTypeNotificationType
+atnt = AlarmTypeNotificationType.objects.all()[0]
+from GroundSegment.models.Notification.Notification import Notification
+Notification.new(alarmTypeNotificationType=atnt)
+
+from GroundSegment.models.Alarm.AlarmType import AlarmType
+st01 = AlarmType.objects.get(code="ST01")
+from GroundSegment.models.Alarm.Alarm import Alarm
+from GroundSegment.models.Satellite import Satellite
+sat = Satellite.objects.get(code="FS2017")
+from django.utils.timezone import datetime, now, timedelta, utc
+
+al = Alarm.new(sat, st01, datetime.now(utc))
+
+
+
+
