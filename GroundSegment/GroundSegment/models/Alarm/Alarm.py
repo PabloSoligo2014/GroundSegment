@@ -45,7 +45,7 @@ class Alarm(models.Model):
     
     #state     = models.ForeignKey(AlarmState, related_name='alarms')
     state     = models.IntegerField() 
-    dtArrival = models.DateTimeField(default=0)#(auto_now_add=True)
+    dtArrival = models.DateTimeField(auto_now_add=True)#(auto_now_add=True)
     satellite = models.ForeignKey(Satellite, related_name='alarms')
     
     

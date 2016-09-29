@@ -11,6 +11,11 @@ from GroundSegment.models.Notification.MessageTemplate import MessageTemplate
 from GroundSegment.models.Notification.Contact import Contact
 
 class AlarmTypeNotificationType(models.Model):
+    """
+    Clase/Entidad de configuracion donde se determina si una alarma de determinado tipo es candidata a la 
+    notificacion, que tipo de notificacion de usarse, con que plantilla y cuales son los destinatarios de
+    esa notificacion.
+    """
     
     notificationType = models.ForeignKey(NotificationType, on_delete=models.PROTECT, related_name="AlarmTypeNotificationTypes")
     alarmType = models.ForeignKey(AlarmType, on_delete=models.PROTECT, related_name="AlarmTypeNotificationTypes")

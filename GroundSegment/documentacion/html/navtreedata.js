@@ -1,10 +1,11 @@
 var NAVTREE =
 [
-  [ "\"GroundSegment Documentation\"", "index.html", [
+  [ "Ground Segment", "index.html", [
     [ "Paquetes", null, [
       [ "Paquetes", "namespaces.html", "namespaces" ],
       [ "Funciones del 'package'", "namespacemembers.html", [
         [ "Todo", "namespacemembers.html", null ],
+        [ "Funciones", "namespacemembers_func.html", null ],
         [ "Variables", "namespacemembers_vars.html", null ]
       ] ]
     ] ],
@@ -19,14 +20,20 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Archivos", null, [
-      [ "Lista de archivos", "files.html", "files" ]
+      [ "Lista de archivos", "files.html", "files" ],
+      [ "Miembros de los ficheros", "globals.html", [
+        [ "Todo", "globals.html", null ],
+        [ "Funciones", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ]
+      ] ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"____init_____8py.html"
+"0001__initial_8py.html",
+"class_ground_segment_1_1models_1_1_tle_1_1_tle.html"
 ];
 
 var SYNCONMSG = 'click en deshabilitar sincronización';

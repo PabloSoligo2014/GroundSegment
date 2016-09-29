@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['h',['h',['../class_ground_segment_1_1models_1_1_sitio_1_1_sitio.html#a0345de18d6f8cc930f291c639a915366',1,'GroundSegment::models::Sitio::Sitio']]]
+  ['get_5flatest_5fby',['get_latest_by',['../class_ground_segment_1_1models_1_1_tle_1_1_tle_1_1_meta.html#a4b90de3b4688d9ff38172b5318c4be66',1,'GroundSegment::models::Tle::Tle::Meta']]]
 ];

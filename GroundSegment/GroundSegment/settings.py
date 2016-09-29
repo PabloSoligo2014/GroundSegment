@@ -130,14 +130,14 @@ USE_TZ = True
 
 
 
-STATICFILES_DIRS = (
-    "/GroundSegment/GroundSegment/static",
+#STATICFILES_DIRS = (
+#    "/GroundSegment/GroundSegment/static",
     
-)
+#)
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
+STATIC_ROOT = os.path.join(BASE_DIR,'/static')
 
 
 STATICFILES_FINDERS = (

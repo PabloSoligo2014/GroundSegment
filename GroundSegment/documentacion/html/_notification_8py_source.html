@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>&quot;GroundSegment Documentation&quot;: Fichero Fuente models/Notification/Notification.py</title>
+<title>Ground Segment: Fichero Fuente git/GroundSegment/GroundSegment/GroundSegment/models/Notification/Notification.py</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -31,8 +31,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">&quot;GroundSegment Documentation&quot;
+   <div id="projectname">Ground Segment
+   &#160;<span id="projectnumber">1</span>
    </div>
+   <div id="projectbrief">Proyecto de segmento terreno de MDIAE 2016-2018</div>
   </td>
  </tr>
  </tbody>
@@ -70,6 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -177,7 +180,7 @@ $(document).ready(function(){initNavTree('_notification_8py_source.html','');});
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        recipients = list( cnts.values_list(<span class="stringliteral">&#39;email&#39;</span>, flat=<span class="keyword">True</span>) )</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            </div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keyword">from</span> GroundSegment.Utils.EMailThread <span class="keyword">import</span> EmailThread</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keyword">from</span> <a class="code" href="namespace_ground_segment_1_1_utils_1_1_e_mail_thread.html">GroundSegment.Utils.EMailThread</a> <span class="keyword">import</span> EmailThread</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        EmailThread(result.subject, result.text, recipients).start()</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span> result</div>
@@ -191,8 +194,9 @@ $(document).ready(function(){initNavTree('_notification_8py_source.html','');});
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">#PROTECT[source]</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">#SET_NULL[source]</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">#SET_DEFAULT[source]</span></div>
-<div class="ttc" id="namespace_ground_segment_1_1models_html"><div class="ttname"><a href="namespace_ground_segment_1_1models.html">GroundSegment.models</a></div><div class="ttdef"><b>Definition:</b> <a href="____init_____8py_source.html#l00001">__init__.py:1</a></div></div>
+<div class="ttc" id="namespace_ground_segment_1_1models_html"><div class="ttname"><a href="namespace_ground_segment_1_1models.html">GroundSegment.models</a></div><div class="ttdef"><b>Definition:</b> <a href="models_2____init_____8py_source.html#l00001">__init__.py:1</a></div></div>
 <div class="ttc" id="class_ground_segment_1_1models_1_1_notification_1_1_contact_1_1_contact_html"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_notification_1_1_contact_1_1_contact.html">GroundSegment.models.Notification.Contact.Contact</a></div><div class="ttdef"><b>Definition:</b> <a href="_contact_8py_source.html#l00010">Contact.py:10</a></div></div>
+<div class="ttc" id="namespace_ground_segment_1_1_utils_1_1_e_mail_thread_html"><div class="ttname"><a href="namespace_ground_segment_1_1_utils_1_1_e_mail_thread.html">GroundSegment.Utils.EMailThread</a></div><div class="ttdef"><b>Definition:</b> <a href="_e_mail_thread_8py_source.html#l00001">EMailThread.py:1</a></div></div>
 <div class="ttc" id="class_ground_segment_1_1models_1_1_notification_1_1_notification_type_1_1_notification_type_html"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_notification_1_1_notification_type_1_1_notification_type.html">GroundSegment.models.Notification.NotificationType.NotificationType</a></div><div class="ttdef"><b>Definition:</b> <a href="_notification_type_8py_source.html#l00010">NotificationType.py:10</a></div></div>
 <div class="ttc" id="class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification_html_ad9be3de0a1aef79bd4828cf5f3db8973"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification.html#ad9be3de0a1aef79bd4828cf5f3db8973">GroundSegment.models.Notification.Notification.Notification.new</a></div><div class="ttdeci">def new(cls, kwargs)</div><div class="ttdef"><b>Definition:</b> <a href="_notification_8py_source.html#l00048">Notification.py:48</a></div></div>
 <div class="ttc" id="class_ground_segment_1_1models_1_1_notification_1_1_alarm_type_notification_type_1_1_alarm_type_notification_type_html"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_notification_1_1_alarm_type_notification_type_1_1_alarm_type_notification_type.html">GroundSegment.models.Notification.AlarmTypeNotificationType.AlarmTypeNotificationType</a></div><div class="ttdef"><b>Definition:</b> <a href="_alarm_type_notification_type_8py_source.html#l00013">AlarmTypeNotificationType.py:13</a></div></div>
@@ -204,7 +208,7 @@ $(document).ready(function(){initNavTree('_notification_8py_source.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_1ae4179d5e953611aae20c997279e02c.html">models</a></li><li class="navelem"><a class="el" href="dir_945e6dcb452f50a8d16413fea989ef0c.html">Notification</a></li><li class="navelem"><a class="el" href="_notification_8py.html">Notification.py</a></li>
+    <li class="navelem"><a class="el" href="dir_56f8478fd48bf6cc413c8a3d6b56c719.html">git</a></li><li class="navelem"><a class="el" href="dir_1f1f7fb243a977d966fd0dedfab46155.html">GroundSegment</a></li><li class="navelem"><a class="el" href="dir_61bc776f2a7c3a16811295a049eefa08.html">GroundSegment</a></li><li class="navelem"><a class="el" href="dir_7e9391acb600446e33fad7deb42f84d6.html">GroundSegment</a></li><li class="navelem"><a class="el" href="dir_5768cf6fa9f4edd553a01af4e2fb297c.html">models</a></li><li class="navelem"><a class="el" href="dir_9c379b7f9ed41fe8833ca04de05fdeb1.html">Notification</a></li><li class="navelem"><a class="el" href="_notification_8py.html">Notification.py</a></li>
     <li class="footer">Generado por
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>

@@ -1,17 +1,18 @@
 var searchData=
 [
-  ['parameter',['Parameter',['../class_ground_segment_1_1models_1_1_parameter_1_1_parameter.html',1,'GroundSegment::models::Parameter']]],
-  ['parameter_2epy',['Parameter.py',['../_parameter_8py.html',1,'']]],
-  ['pasada',['Pasada',['../class_ground_segment_1_1models_1_1_pasada_1_1_pasada.html',1,'GroundSegment::models::Pasada']]],
-  ['pasada_2epy',['Pasada.py',['../_pasada_8py.html',1,'']]],
-  ['pending',['PENDING',['../namespace_ground_segment_1_1models_1_1_alarm_1_1_alarm.html#a7da10688411c57e77ab61a75be47fa1d',1,'GroundSegment::models::Alarm::Alarm']]],
-  ['positionx',['positionX',['../class_ground_segment_1_1models_1_1_propagation_detail_1_1_propagation_detail.html#afab79af8d95f0067880b215b7857e000',1,'GroundSegment::models::PropagationDetail::PropagationDetail']]],
-  ['positiony',['positionY',['../class_ground_segment_1_1models_1_1_propagation_detail_1_1_propagation_detail.html#a9950144bf129bba080e6a6e3380a0a9f',1,'GroundSegment::models::PropagationDetail::PropagationDetail']]],
-  ['positionz',['positionZ',['../class_ground_segment_1_1models_1_1_propagation_detail_1_1_propagation_detail.html#a92f9fb549c5a8a95cac5e80ec8968ae6',1,'GroundSegment::models::PropagationDetail::PropagationDetail']]],
-  ['procedure',['procedure',['../class_ground_segment_1_1models_1_1_alarm_1_1_alarm_type_1_1_alarm_type.html#a2ee12462c076bf934143f025e89694b0',1,'GroundSegment::models::Alarm::AlarmType::AlarmType']]],
-  ['propagation',['propagation',['../class_ground_segment_1_1models_1_1_propagation_detail_1_1_propagation_detail.html#a4c6022e53fef3a255ae7d9453e615b52',1,'GroundSegment::models::PropagationDetail::PropagationDetail']]],
-  ['propagation',['Propagation',['../class_ground_segment_1_1models_1_1_propagation_1_1_propagation.html',1,'GroundSegment::models::Propagation']]],
-  ['propagation_2epy',['Propagation.py',['../_propagation_8py.html',1,'']]],
-  ['propagationdetail',['PropagationDetail',['../class_ground_segment_1_1models_1_1_propagation_detail_1_1_propagation_detail.html',1,'GroundSegment::models::PropagationDetail']]],
-  ['propagationdetail_2epy',['PropagationDetail.py',['../_propagation_detail_8py.html',1,'']]]
+  ['name',['name',['../class_ground_segment_1_1models_1_1_notification_1_1_contact_1_1_contact.html#a3400aa7d4127f75c2035ab4ae66831fa',1,'GroundSegment.models.Notification.Contact.Contact.name()'],['../class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template.html#a6c324264a61bc988b25b3b25a8196dcd',1,'GroundSegment.models.Notification.MessageTemplate.MessageTemplate.name()'],['../class_ground_segment_1_1models_1_1_pasada_1_1_pasada.html#a1784ce0d3443756f0a2d846e82f5c79b',1,'GroundSegment.models.Pasada.Pasada.name()'],['../class_ground_segment_1_1models_1_1_site_1_1_site.html#abeb61592ac7e77f994fc0199295aafe2',1,'GroundSegment.models.Site.Site.name()'],['../class_ground_segment_1_1models_1_1_sitio_1_1_sitio.html#ad9bfe4bfea9a9a600a9cf0a17dfe2abf',1,'GroundSegment.models.Sitio.Sitio.name()']]],
+  ['new',['new',['../class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm.html#a93e8b0cb1730a3afe7349d6b4c7a9153',1,'GroundSegment.models.Alarm.Alarm.Alarm.new()'],['../class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification.html#ad9be3de0a1aef79bd4828cf5f3db8973',1,'GroundSegment.models.Notification.Notification.Notification.new()'],['../class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a31da88247812f3de8ee84b91b50f27b7',1,'GroundSegment.models.Satellite.Satellite.new()']]],
+  ['newalarm',['newAlarm',['../class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#aeaa5108842200cd7d39e9fc0546d09a5',1,'GroundSegment::models::Satellite::Satellite']]],
+  ['noconflict',['noConflict',['../bootstrap_8min_8js.html#ac26971afe341e4079ee34fceab395fc2',1,'bootstrap.min.js']]],
+  ['noradid',['noradId',['../class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a7962e5b81ff68f4fdedb33ce54bd4368',1,'GroundSegment::models::Satellite::Satellite']]],
+  ['notes',['notes',['../class_ground_segment_1_1models_1_1_command_type_1_1_command_type.html#a069e16acae24ff0ca455f5ea0d5e62da',1,'GroundSegment.models.CommandType.CommandType.notes()'],['../class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a6ae6b5fad6dd1a31200d8dd8e0ba07a0',1,'GroundSegment.models.Satellite.Satellite.notes()']]],
+  ['notification',['Notification',['../class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification.html',1,'GroundSegment::models::Notification::Notification']]],
+  ['notification_2epy',['Notification.py',['../_notification_8py.html',1,'']]],
+  ['notificationadmin',['NotificationAdmin',['../class_ground_segment_1_1admin_1_1_notification_admin.html',1,'GroundSegment::admin']]],
+  ['notificationtype',['notificationType',['../class_ground_segment_1_1models_1_1_notification_1_1_alarm_type_notification_type_1_1_alarm_type_notification_type.html#adcaf2d8b90b3972c1288fd6e05affe82',1,'GroundSegment::models::Notification::AlarmTypeNotificationType::AlarmTypeNotificationType']]],
+  ['notificationtype',['NotificationType',['../class_ground_segment_1_1models_1_1_notification_1_1_notification_type_1_1_notification_type.html',1,'GroundSegment::models::Notification::NotificationType']]],
+  ['notificationtype_2epy',['NotificationType.py',['../_notification_type_8py.html',1,'']]],
+  ['notificationtypeadmin',['NotificationTypeAdmin',['../class_ground_segment_1_1admin_1_1_notification_type_admin.html',1,'GroundSegment::admin']]],
+  ['npm_2ejs',['npm.js',['../npm_8js.html',1,'']]],
+  ['ntry',['ntry',['../class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification.html#a12664635efcb42cc8aef3d64c43b24d9',1,'GroundSegment::models::Notification::Notification::Notification']]]
 ];

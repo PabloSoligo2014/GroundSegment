@@ -1,0 +1,635 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Coverage report</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.debounce.min.js"></script>
+    <script type="text/javascript" src="jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="jquery.hotkeys.js"></script>
+    <script type="text/javascript" src="coverage_html.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(coverage.index_ready);
+    </script>
+</head>
+<body class="indexfile">
+
+<div id="header">
+    <div class="content">
+        <h1>Coverage report:
+            <span class="pc_cov">66%</span>
+        </h1>
+
+        <img id="keyboard_icon" src="keybd_closed.png" alt="Show keyboard shortcuts" />
+
+        <form id="filter_container">
+            <input id="filter" type="text" value="" placeholder="filter..." />
+        </form>
+    </div>
+</div>
+
+<div class="help_panel">
+    <img id="panel_icon" src="keybd_open.png" alt="Hide keyboard shortcuts" />
+    <p class="legend">Hot-keys on this page</p>
+    <div>
+    <p class="keyhelp">
+        <span class="key">n</span>
+        <span class="key">s</span>
+        <span class="key">m</span>
+        <span class="key">x</span>
+        
+        <span class="key">c</span> &nbsp; change column sorting
+    </p>
+    </div>
+</div>
+
+<div id="index">
+    <table class="index">
+        <thead>
+            
+            <tr class="tablehead" title="Click to sort">
+                <th class="name left headerSortDown shortkey_n">Module</th>
+                <th class="shortkey_s">statements</th>
+                <th class="shortkey_m">missing</th>
+                <th class="shortkey_x">excluded</th>
+                
+                <th class="right shortkey_c">coverage</th>
+            </tr>
+        </thead>
+        
+        <tfoot>
+            <tr class="total">
+                <td class="name left">Total</td>
+                <td>860</td>
+                <td>293</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="567 860">66%</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_Utils_EMailThread_py.html">GroundSegment/Utils/EMailThread.py</a></td>
+                <td>14</td>
+                <td>2</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="12 14">86%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_Utils_UtilsFunctions_py.html">GroundSegment/Utils/UtilsFunctions.py</a></td>
+                <td>32</td>
+                <td>28</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="4 32">12%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_Utils___init___py.html">GroundSegment/Utils/__init__.py</a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_Verification_Alarms___init___py.html">GroundSegment/Verification/Alarms/__init__.py</a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_Verification_Alarms_tests_py.html">GroundSegment/Verification/Alarms/tests.py</a></td>
+                <td>41</td>
+                <td>3</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="38 41">93%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_Verification_Notification___init___py.html">GroundSegment/Verification/Notification/__init__.py</a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_Verification_Notification_tests_py.html">GroundSegment/Verification/Notification/tests.py</a></td>
+                <td>64</td>
+                <td>10</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="54 64">84%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_Verification___init___py.html">GroundSegment/Verification/__init__.py</a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment___init___py.html">GroundSegment/__init__.py</a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_admin_py.html">GroundSegment/admin.py</a></td>
+                <td>67</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="67 67">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_forms_py.html">GroundSegment/forms.py</a></td>
+                <td>18</td>
+                <td>18</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="0 18">0%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_migrations_0001_initial_py.html">GroundSegment/migrations/0001_initial.py</a></td>
+                <td>7</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="7 7">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_migrations_0002_auto_20160904_2011_py.html">GroundSegment/migrations/0002_auto_20160904_2011.py</a></td>
+                <td>6</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="6 6">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_migrations_0002_site_py.html">GroundSegment/migrations/0002_site.py</a></td>
+                <td>5</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="5 5">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_migrations_0003_auto_20160904_2020_py.html">GroundSegment/migrations/0003_auto_20160904_2020.py</a></td>
+                <td>5</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="5 5">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_migrations_0003_auto_20160905_2313_py.html">GroundSegment/migrations/0003_auto_20160905_2313.py</a></td>
+                <td>6</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="6 6">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_migrations_0004_site_py.html">GroundSegment/migrations/0004_site.py</a></td>
+                <td>5</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="5 5">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_migrations_0005_merge_py.html">GroundSegment/migrations/0005_merge.py</a></td>
+                <td>5</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="5 5">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_migrations_0006_action_py.html">GroundSegment/migrations/0006_action.py</a></td>
+                <td>5</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="5 5">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_migrations_0007_alarmtypenotificationtype_contact_notification_notificationtype_py.html">GroundSegment/migrations/0007_alarmtypenotificationtype_contact_notification_notificationtype.py</a></td>
+                <td>5</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="5 5">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_migrations_0008_auto_20160927_1824_py.html">GroundSegment/migrations/0008_auto_20160927_1824.py</a></td>
+                <td>6</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="6 6">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_migrations_0009_auto_20160927_1827_py.html">GroundSegment/migrations/0009_auto_20160927_1827.py</a></td>
+                <td>5</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="5 5">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_migrations_0010_alarmtypenotificationtype_contact_py.html">GroundSegment/migrations/0010_alarmtypenotificationtype_contact.py</a></td>
+                <td>6</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="6 6">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_migrations_0011_auto_20160927_2329_py.html">GroundSegment/migrations/0011_auto_20160927_2329.py</a></td>
+                <td>6</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="6 6">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_migrations_0012_auto_20160928_1316_py.html">GroundSegment/migrations/0012_auto_20160928_1316.py</a></td>
+                <td>6</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="6 6">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_migrations___init___py.html">GroundSegment/migrations/__init__.py</a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_models_py.html">GroundSegment/models.py</a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_models_Alarm_Action_py.html">GroundSegment/models/Alarm/Action.py</a></td>
+                <td>3</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="3 3">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_models_Alarm_Alarm_py.html">GroundSegment/models/Alarm/Alarm.py</a></td>
+                <td>43</td>
+                <td>4</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="39 43">91%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_models_Alarm_AlarmState_py.html">GroundSegment/models/Alarm/AlarmState.py</a></td>
+                <td>6</td>
+                <td>1</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="5 6">83%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_models_Alarm_AlarmType_py.html">GroundSegment/models/Alarm/AlarmType.py</a></td>
+                <td>12</td>
+                <td>2</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="10 12">83%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_models_Alarm_Criticity_py.html">GroundSegment/models/Alarm/Criticity.py</a></td>
+                <td>11</td>
+                <td>1</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="10 11">91%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_models_Alarm___init___py.html">GroundSegment/models/Alarm/__init__.py</a></td>
+                <td>5</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="5 5">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_models_CommandType_py.html">GroundSegment/models/CommandType.py</a></td>
+                <td>14</td>
+                <td>1</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="13 14">93%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_models_CommandTypeParameter_py.html">GroundSegment/models/CommandTypeParameter.py</a></td>
+                <td>3</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="3 3">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_models_Consts_py.html">GroundSegment/models/Consts.py</a></td>
+                <td>5</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="5 5">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_models_Notification_AlarmTypeNotificationType_py.html">GroundSegment/models/Notification/AlarmTypeNotificationType.py</a></td>
+                <td>12</td>
+                <td>1</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="11 12">92%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_models_Notification_Contact_py.html">GroundSegment/models/Notification/Contact.py</a></td>
+                <td>7</td>
+                <td>1</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="6 7">86%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_models_Notification_MessageTemplate_py.html">GroundSegment/models/Notification/MessageTemplate.py</a></td>
+                <td>8</td>
+                <td>1</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="7 8">88%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_models_Notification_Notification_py.html">GroundSegment/models/Notification/Notification.py</a></td>
+                <td>30</td>
+                <td>1</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="29 30">97%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_models_Notification_NotificationType_py.html">GroundSegment/models/Notification/NotificationType.py</a></td>
+                <td>7</td>
+                <td>1</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="6 7">86%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_models_Notification___init___py.html">GroundSegment/models/Notification/__init__.py</a></td>
+                <td>4</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="4 4">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_models_Parameter_py.html">GroundSegment/models/Parameter.py</a></td>
+                <td>19</td>
+                <td>9</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="10 19">53%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_models_Pasada_py.html">GroundSegment/models/Pasada.py</a></td>
+                <td>11</td>
+                <td>1</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="10 11">91%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_models_Propagation_py.html">GroundSegment/models/Propagation.py</a></td>
+                <td>8</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="8 8">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_models_PropagationDetail_py.html">GroundSegment/models/PropagationDetail.py</a></td>
+                <td>17</td>
+                <td>2</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="15 17">88%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_models_Satellite_py.html">GroundSegment/models/Satellite.py</a></td>
+                <td>116</td>
+                <td>88</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="28 116">24%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_models_SatelliteState_py.html">GroundSegment/models/SatelliteState.py</a></td>
+                <td>6</td>
+                <td>1</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="5 6">83%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_models_Site_py.html">GroundSegment/models/Site.py</a></td>
+                <td>39</td>
+                <td>25</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="14 39">36%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_models_Sitio_py.html">GroundSegment/models/Sitio.py</a></td>
+                <td>8</td>
+                <td>1</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="7 8">88%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_models_Tle_py.html">GroundSegment/models/Tle.py</a></td>
+                <td>13</td>
+                <td>2</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="11 13">85%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_models_TlmyVarType_py.html">GroundSegment/models/TlmyVarType.py</a></td>
+                <td>5</td>
+                <td>5</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="0 5">0%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_models_Transforms_py.html">GroundSegment/models/Transforms.py</a></td>
+                <td>9</td>
+                <td>9</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="0 9">0%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_models___init___py.html">GroundSegment/models/__init__.py</a></td>
+                <td>16</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="16 16">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_settings_py.html">GroundSegment/settings.py</a></td>
+                <td>28</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="28 28">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_tests_py.html">GroundSegment/tests.py</a></td>
+                <td>33</td>
+                <td>33</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="0 33">0%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_urls_py.html">GroundSegment/urls.py</a></td>
+                <td>9</td>
+                <td>9</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="0 9">0%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_views_py.html">GroundSegment/views.py</a></td>
+                <td>29</td>
+                <td>29</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="0 29">0%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="GroundSegment_wsgi_py.html">GroundSegment/wsgi.py</a></td>
+                <td>4</td>
+                <td>4</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="0 4">0%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="manage_py.html">manage.py</a></td>
+                <td>6</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="6 6">100%</td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+    <p id="no_rows">
+        No items found using the specified filter.
+    </p>
+</div>
+
+<div id="footer">
+    <div class="content">
+        <p>
+            <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.2</a>,
+            created at 2016-09-29 16:23
+        </p>
+    </div>
+</div>
+
+</body>
+</html>

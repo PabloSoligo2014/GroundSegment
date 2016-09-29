@@ -1,3 +1,4 @@
-<map id="Representación gráfica de la clase" name="Representación gráfica de la clase">
-<area shape="rect" id="node1" href="$class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_1_1_meta.html" title="GroundSegment.models.Alarm.\lCriticity.Criticity.Meta" alt="" coords="5,5,209,47"/>
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$class_ground_segment_1_1forms_1_1_propagate_test_form.html" title="GroundSegment.forms.Propagate\lTestForm" alt="" coords="119,5,335,47"/>
+<area shape="rect" id="node3" href="$class_ground_segment_1_1forms_1_1_simulator_form.html" title="GroundSegment.forms.SimulatorForm" alt="" coords="105,71,348,98"/>
 </map>

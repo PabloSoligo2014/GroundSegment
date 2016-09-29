@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Ground Segment: Fichero Fuente git/GroundSegment/GroundSegment/GroundSegment/views.py</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Ground Segment
+   &#160;<span id="projectnumber">1</span>
+   </div>
+   <div id="projectbrief">Proyecto de segmento terreno de MDIAE 2016-2018</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Paquetes</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('views_8py_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">views.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="views_8py.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespace_ground_segment_1_1views.html">    1</a></span>&#160;<span class="keyword">from</span> django.views.generic <span class="keyword">import</span> TemplateView</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">from</span> django.views.generic <span class="keyword">import</span> ListView, FormView</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">from</span> <a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html">GroundSegment.models.Satellite</a> <span class="keyword">import</span> Satellite</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">from</span> <a class="code" href="namespace_ground_segment_1_1forms.html">GroundSegment.forms</a> <span class="keyword">import</span> PropagateTestForm</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">from</span> <a class="code" href="namespace_ground_segment_1_1forms.html">GroundSegment.forms</a> <span class="keyword">import</span> SimulatorForm</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1views_1_1_about_view.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_ground_segment_1_1views_1_1_about_view.html">AboutView</a>(TemplateView):</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1views_1_1_about_view.html#afcb2c31fc5a893eaaae12cbf7620b96d">    9</a></span>&#160;    template_name = <span class="stringliteral">&quot;about.html&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1views_1_1_simulator_view.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_ground_segment_1_1views_1_1_simulator_view.html">SimulatorView</a>(FormView):</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1views_1_1_simulator_view.html#af4d15c5a289475ea6f9058a7b8d1901a">   13</a></span>&#160;    template_name = <span class="stringliteral">&#39;simulators.html&#39;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1views_1_1_simulator_view.html#a8f44f7f860699fe592423c71a80bc758">   14</a></span>&#160;    form_class = SimulatorForm</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1views_1_1_simulator_view.html#abf5328a763ea2e2b13735c23bd690d46">   15</a></span>&#160;    success_url = <span class="stringliteral">&#39;/thanks/&#39;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1views_1_1_simulator_view.html#a436910471c434793534ba9e693b04058">   17</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_ground_segment_1_1views_1_1_simulator_view.html#a436910471c434793534ba9e693b04058">form_valid</a>(self, form):</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="comment"># This method is called when valid form data has been POSTed.</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="comment"># It should return an HttpResponse.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        form.alarmSimulator()</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">return</span> super(PropagationTestView, self).<a class="code" href="class_ground_segment_1_1views_1_1_simulator_view.html#a436910471c434793534ba9e693b04058">form_valid</a>(form)</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1views_1_1_satellite_list_view.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_ground_segment_1_1views_1_1_satellite_list_view.html">SatelliteListView</a>(ListView):</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1views_1_1_satellite_list_view.html#aca49b82a0728d4d774225851f66e6a70">   26</a></span>&#160;    model = Satellite</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1views_1_1_satellite_list_view.html#a35e83703976f9b723aebb9b899924d9a">   27</a></span>&#160;    template_name = <span class="stringliteral">&quot;satelliteListView.html&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1views_1_1_satellite_list_view.html#a611ab80fb5c5c2e75a819efcb5f6c0f8">   28</a></span>&#160;    paginate_by = <span class="stringliteral">&#39;5&#39;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1views_1_1_satellite_list_view.html#ae1fb474282cc7cf2bb1497743fcb7b76">   29</a></span>&#160;    queryset = Satellite.objects.all()</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1views_1_1_satellite_list_view.html#a3dc973a475df29d17ea35ff9acec536f">   30</a></span>&#160;    context_object_name = <span class="stringliteral">&quot;satellites&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1views_1_1_propagation_test_view.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_ground_segment_1_1views_1_1_propagation_test_view.html">PropagationTestView</a>(FormView):</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1views_1_1_propagation_test_view.html#acb9e74e46b3111efb6fe00c209e981fd">   35</a></span>&#160;    template_name = <span class="stringliteral">&#39;propagationTest.html&#39;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1views_1_1_propagation_test_view.html#a7a43f14e2436d991d81d970bb6330efd">   36</a></span>&#160;    form_class = PropagateTestForm</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1views_1_1_propagation_test_view.html#ab3b80cfd9058f6c069f39c7f4205177a">   37</a></span>&#160;    success_url = <span class="stringliteral">&#39;/thanks/&#39;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1views_1_1_propagation_test_view.html#a3664210be89ca335d45398f3c0b962e7">   39</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_ground_segment_1_1views_1_1_propagation_test_view.html#a3664210be89ca335d45398f3c0b962e7">form_valid</a>(self, form):</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="comment"># This method is called when valid form data has been POSTed.</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="comment"># It should return an HttpResponse.</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        form.propagate()</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span> super(PropagationTestView, self).<a class="code" href="class_ground_segment_1_1views_1_1_propagation_test_view.html#a3664210be89ca335d45398f3c0b962e7">form_valid</a>(form)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="stringliteral">    def head(self, *args, **kwargs):</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="stringliteral">        </span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="stringliteral">        last_sat = self.get_queryset().latest(&#39;publication_date&#39;)</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="stringliteral">        </span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="stringliteral">        response = HttpResponse(&#39;&#39;)</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="stringliteral">        # RFC 1123 date format</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="stringliteral">        response[&#39;Last-sat&#39;] = last_book.publication_date.strftime(&#39;%a, %d %b %Y %H:%M:%S GMT&#39;)</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="stringliteral">        return response</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="ttc" id="class_ground_segment_1_1views_1_1_about_view_html"><div class="ttname"><a href="class_ground_segment_1_1views_1_1_about_view.html">GroundSegment.views.AboutView</a></div><div class="ttdef"><b>Definition:</b> <a href="views_8py_source.html#l00008">views.py:8</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1views_1_1_simulator_view_html_a436910471c434793534ba9e693b04058"><div class="ttname"><a href="class_ground_segment_1_1views_1_1_simulator_view.html#a436910471c434793534ba9e693b04058">GroundSegment.views.SimulatorView.form_valid</a></div><div class="ttdeci">def form_valid(self, form)</div><div class="ttdef"><b>Definition:</b> <a href="views_8py_source.html#l00017">views.py:17</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1views_1_1_propagation_test_view_html"><div class="ttname"><a href="class_ground_segment_1_1views_1_1_propagation_test_view.html">GroundSegment.views.PropagationTestView</a></div><div class="ttdef"><b>Definition:</b> <a href="views_8py_source.html#l00033">views.py:33</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html">GroundSegment.models.Satellite.Satellite</a></div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00023">Satellite.py:23</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1views_1_1_satellite_list_view_html"><div class="ttname"><a href="class_ground_segment_1_1views_1_1_satellite_list_view.html">GroundSegment.views.SatelliteListView</a></div><div class="ttdef"><b>Definition:</b> <a href="views_8py_source.html#l00024">views.py:24</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1views_1_1_simulator_view_html"><div class="ttname"><a href="class_ground_segment_1_1views_1_1_simulator_view.html">GroundSegment.views.SimulatorView</a></div><div class="ttdef"><b>Definition:</b> <a href="views_8py_source.html#l00012">views.py:12</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1views_1_1_propagation_test_view_html_a3664210be89ca335d45398f3c0b962e7"><div class="ttname"><a href="class_ground_segment_1_1views_1_1_propagation_test_view.html#a3664210be89ca335d45398f3c0b962e7">GroundSegment.views.PropagationTestView.form_valid</a></div><div class="ttdeci">def form_valid(self, form)</div><div class="ttdef"><b>Definition:</b> <a href="views_8py_source.html#l00039">views.py:39</a></div></div>
+<div class="ttc" id="namespace_ground_segment_1_1forms_html"><div class="ttname"><a href="namespace_ground_segment_1_1forms.html">GroundSegment.forms</a></div><div class="ttdef"><b>Definition:</b> <a href="forms_8py_source.html#l00001">forms.py:1</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_56f8478fd48bf6cc413c8a3d6b56c719.html">git</a></li><li class="navelem"><a class="el" href="dir_1f1f7fb243a977d966fd0dedfab46155.html">GroundSegment</a></li><li class="navelem"><a class="el" href="dir_61bc776f2a7c3a16811295a049eefa08.html">GroundSegment</a></li><li class="navelem"><a class="el" href="dir_7e9391acb600446e33fad7deb42f84d6.html">GroundSegment</a></li><li class="navelem"><a class="el" href="views_8py.html">views.py</a></li>
+    <li class="footer">Generado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

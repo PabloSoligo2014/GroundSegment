@@ -14,11 +14,14 @@ class Contact(models.Model):
     
     
     @see: Los atributos de esta entidad estan relacionados con los tipos de notificaciones disponibles
+    
     @change: Los atributos de esta entidad estan relacionados con los tipos de notificaciones disponibles, al agregar mas tipos 
     de notificaciones puede ser necesario enriquecer esta entidad
     """  
     name = models.CharField('Nombre del contacto', max_length=Consts.smallString, help_text='Nombre del contacto', unique=True)
     email = models.EmailField('EMail del contacto', max_length=Consts.bigString) 
+    
+    
     
     def __str__(self):
         return self.name

@@ -34,3 +34,4 @@ urlpatterns = [
     url(r'^satellites/$', SatelliteListView.as_view(template_name="satelliteListView.html")),
     url(r'^propagationTest/$', PropagationTestView.as_view(template_name="propagationTest.html")),
 ]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+

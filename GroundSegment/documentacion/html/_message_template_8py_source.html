@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>&quot;GroundSegment Documentation&quot;: Fichero Fuente models/Notification/MessageTemplate.py</title>
+<title>Ground Segment: Fichero Fuente git/GroundSegment/GroundSegment/GroundSegment/models/Notification/MessageTemplate.py</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -31,8 +31,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">&quot;GroundSegment Documentation&quot;
+   <div id="projectname">Ground Segment
+   &#160;<span id="projectnumber">1</span>
    </div>
+   <div id="projectbrief">Proyecto de segmento terreno de MDIAE 2016-2018</div>
   </td>
  </tr>
  </tbody>
@@ -70,6 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -116,24 +119,33 @@ $(document).ready(function(){initNavTree('_message_template_8py_source.html','')
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template.html">MessageTemplate</a>(models.Model):</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template.html#a6c324264a61bc988b25b3b25a8196dcd">   11</a></span>&#160;    name = models.CharField(<span class="stringliteral">&#39;Nombre de la plantilla&#39;</span>, max_length=Consts.smallString, help_text=<span class="stringliteral">&#39;Nombre de la plantilla&#39;</span>, unique=<span class="keyword">True</span>, default=<span class="stringliteral">&quot;sin nombre&quot;</span>)</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template.html#a4a30265144c01c3f2f44e6fd7d27c663">   12</a></span>&#160;    subject = models.CharField(<span class="stringliteral">&#39;Asunto del mensaje&#39;</span>, max_length=Consts.smallString, help_text=<span class="stringliteral">&#39;Asunto del mensaje&#39;</span>, unique=<span class="keyword">True</span>, default=<span class="stringliteral">&quot;sin nombre&quot;</span>)</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template.html#a376fac3f79b54f6690e09fae5e2ea2d5">   13</a></span>&#160;    text = models.TextField(null=<span class="keyword">False</span>, default=<span class="stringliteral">&quot;Sin mensaje&quot;</span>)</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template.html#a2778ecc4f32ea50d6199ea3411ffcfec">   17</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template.html#a2778ecc4f32ea50d6199ea3411ffcfec">__str__</a>(self):</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template.html#a6c324264a61bc988b25b3b25a8196dcd">name</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="stringliteral">    Plantilla para la notificacion, al momento de enviar una el mensaje se toma el texto de la plantilla</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="stringliteral">    se realizan los remplazos por la information asociada (delimitada entre [])  y se genera el texto final.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="stringliteral">    </span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="stringliteral">    Ej:</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="stringliteral">    </span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="stringliteral">        Se ha generado la alarma numero [pk] a hora abordo [dtOnBoard] y es del tipo [alarmaType.code]...etc</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template.html#a6c324264a61bc988b25b3b25a8196dcd">   20</a></span>&#160;    name = models.CharField(<span class="stringliteral">&#39;Nombre de la plantilla&#39;</span>, max_length=Consts.smallString, help_text=<span class="stringliteral">&#39;Nombre de la plantilla&#39;</span>, unique=<span class="keyword">True</span>, default=<span class="stringliteral">&quot;sin nombre&quot;</span>)</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template.html#a4a30265144c01c3f2f44e6fd7d27c663">   21</a></span>&#160;    subject = models.CharField(<span class="stringliteral">&#39;Asunto del mensaje&#39;</span>, max_length=Consts.smallString, help_text=<span class="stringliteral">&#39;Asunto del mensaje&#39;</span>, unique=<span class="keyword">True</span>, default=<span class="stringliteral">&quot;sin nombre&quot;</span>)</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template.html#a376fac3f79b54f6690e09fae5e2ea2d5">   22</a></span>&#160;    text = models.TextField(null=<span class="keyword">False</span>, default=<span class="stringliteral">&quot;Sin mensaje&quot;</span>)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template.html#a2778ecc4f32ea50d6199ea3411ffcfec">   26</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template.html#a2778ecc4f32ea50d6199ea3411ffcfec">__str__</a>(self):</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template.html#a6c324264a61bc988b25b3b25a8196dcd">name</a></div>
 <div class="ttc" id="namespace_ground_segment_1_1models_1_1_consts_html"><div class="ttname"><a href="namespace_ground_segment_1_1models_1_1_consts.html">GroundSegment.models.Consts</a></div><div class="ttdef"><b>Definition:</b> <a href="_consts_8py_source.html#l00001">Consts.py:1</a></div></div>
-<div class="ttc" id="class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template_html_a2778ecc4f32ea50d6199ea3411ffcfec"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template.html#a2778ecc4f32ea50d6199ea3411ffcfec">GroundSegment.models.Notification.MessageTemplate.MessageTemplate.__str__</a></div><div class="ttdeci">def __str__(self)</div><div class="ttdef"><b>Definition:</b> <a href="_message_template_8py_source.html#l00017">MessageTemplate.py:17</a></div></div>
-<div class="ttc" id="class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template_html_a6c324264a61bc988b25b3b25a8196dcd"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template.html#a6c324264a61bc988b25b3b25a8196dcd">GroundSegment.models.Notification.MessageTemplate.MessageTemplate.name</a></div><div class="ttdeci">tuple name</div><div class="ttdef"><b>Definition:</b> <a href="_message_template_8py_source.html#l00011">MessageTemplate.py:11</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template_html_a2778ecc4f32ea50d6199ea3411ffcfec"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template.html#a2778ecc4f32ea50d6199ea3411ffcfec">GroundSegment.models.Notification.MessageTemplate.MessageTemplate.__str__</a></div><div class="ttdeci">def __str__(self)</div><div class="ttdef"><b>Definition:</b> <a href="_message_template_8py_source.html#l00026">MessageTemplate.py:26</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template_html_a6c324264a61bc988b25b3b25a8196dcd"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template.html#a6c324264a61bc988b25b3b25a8196dcd">GroundSegment.models.Notification.MessageTemplate.MessageTemplate.name</a></div><div class="ttdeci">tuple name</div><div class="ttdef"><b>Definition:</b> <a href="_message_template_8py_source.html#l00020">MessageTemplate.py:20</a></div></div>
 <div class="ttc" id="class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template_html"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template.html">GroundSegment.models.Notification.MessageTemplate.MessageTemplate</a></div><div class="ttdef"><b>Definition:</b> <a href="_message_template_8py_source.html#l00010">MessageTemplate.py:10</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_1ae4179d5e953611aae20c997279e02c.html">models</a></li><li class="navelem"><a class="el" href="dir_945e6dcb452f50a8d16413fea989ef0c.html">Notification</a></li><li class="navelem"><a class="el" href="_message_template_8py.html">MessageTemplate.py</a></li>
+    <li class="navelem"><a class="el" href="dir_56f8478fd48bf6cc413c8a3d6b56c719.html">git</a></li><li class="navelem"><a class="el" href="dir_1f1f7fb243a977d966fd0dedfab46155.html">GroundSegment</a></li><li class="navelem"><a class="el" href="dir_61bc776f2a7c3a16811295a049eefa08.html">GroundSegment</a></li><li class="navelem"><a class="el" href="dir_7e9391acb600446e33fad7deb42f84d6.html">GroundSegment</a></li><li class="navelem"><a class="el" href="dir_5768cf6fa9f4edd553a01af4e2fb297c.html">models</a></li><li class="navelem"><a class="el" href="dir_9c379b7f9ed41fe8833ca04de05fdeb1.html">Notification</a></li><li class="navelem"><a class="el" href="_message_template_8py.html">MessageTemplate.py</a></li>
     <li class="footer">Generado por
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>

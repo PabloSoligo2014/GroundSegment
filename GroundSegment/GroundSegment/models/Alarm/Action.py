@@ -7,4 +7,8 @@ Created on Sep 27, 2016
 from django.db import models
 
 class Action(models.Model):
-        pass
+    """
+    Accion realizada sobre una alarma ya sea por que fue especificado por un procedimiento
+    o por indicacion del experto del area
+    """
+    pass

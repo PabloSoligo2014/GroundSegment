@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>&quot;GroundSegment Documentation&quot;: Fichero Fuente models/Alarm/Criticity.py</title>
+<title>Ground Segment: Fichero Fuente git/GroundSegment/GroundSegment/GroundSegment/models/Alarm/Criticity.py</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -31,8 +31,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">&quot;GroundSegment Documentation&quot;
+   <div id="projectname">Ground Segment
+   &#160;<span id="projectnumber">1</span>
    </div>
+   <div id="projectbrief">Proyecto de segmento terreno de MDIAE 2016-2018</div>
   </td>
  </tr>
  </tbody>
@@ -70,6 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -117,34 +120,44 @@ $(document).ready(function(){initNavTree('_criticity_8py_source.html','');});
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity.html">Criticity</a>(models.Model):</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity.html#a40e1efee5388c763ea32538c5fbc2077">   12</a></span>&#160;    code           = models.CharField(<span class="stringliteral">&#39;Codigo de criticidad&#39;</span>, max_length=24, help_text=<span class="stringliteral">&#39;Codigo del satelite, ejemplo FS2017&#39;</span>, unique=<span class="keyword">True</span>)</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity.html#ae4c538dfc524b4715722c42d6bf23f06">   13</a></span>&#160;    description    = models.CharField(<span class="stringliteral">&#39;Decripcion de la criticidad&#39;</span>, max_length=100, help_text=<span class="stringliteral">&#39;Decripcion del satelite&#39;</span>, unique=<span class="keyword">True</span>)</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity.html#a6421ed3051ec960dd0ed52e4dd9cd88e">   14</a></span>&#160;    color          = models.CharField(max_length=7, default=<span class="stringliteral">&quot;#FF0000&quot;</span>)</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity.html#a1cd251b97d58bdfcb133ba4cf85675f7">   15</a></span>&#160;    sound          = models.FileField(<span class="stringliteral">&quot;/media&quot;</span>)</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="comment"># docfile = models.FileField(upload_to=&#39;documents/%Y/%m/%d&#39;)</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity.html#a5d57294aac104240387d30b90f52e373">   19</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity.html#a5d57294aac104240387d30b90f52e373">__str__</a>(self):</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity.html#a40e1efee5388c763ea32538c5fbc2077">code</a>+<span class="stringliteral">&quot;, &quot;</span>+self.<a class="code" href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity.html#ae4c538dfc524b4715722c42d6bf23f06">description</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="stringliteral">    Criticidad del evento o la alarma. Define el nivel de gravedad y atributos asociados, tipicamente</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="stringliteral">        -Gravedad</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="stringliteral">        -Color</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="stringliteral">        -Sonido</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="stringliteral">        -etc</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="stringliteral">    </span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_1_1_meta.html">   23</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_1_1_meta.html">Meta</a>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_1_1_meta.html#a77545e85b931b43e2c2c1075e2dc7b89">   24</a></span>&#160;        verbose_name        = <span class="stringliteral">&quot;Criticidad&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_1_1_meta.html#a27f1d87c0d59a1686bcb0026bd3bb25c">   25</a></span>&#160;        verbose_name_plural = <span class="stringliteral">&quot;Criticidades&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity.html#a40e1efee5388c763ea32538c5fbc2077">   22</a></span>&#160;    code           = models.CharField(<span class="stringliteral">&#39;Codigo de criticidad&#39;</span>, max_length=24, help_text=<span class="stringliteral">&#39;Codigo del satelite, ejemplo FS2017&#39;</span>, unique=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity.html#ae4c538dfc524b4715722c42d6bf23f06">   23</a></span>&#160;    description    = models.CharField(<span class="stringliteral">&#39;Decripcion de la criticidad&#39;</span>, max_length=100, help_text=<span class="stringliteral">&#39;Decripcion del satelite&#39;</span>, unique=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity.html#a6421ed3051ec960dd0ed52e4dd9cd88e">   24</a></span>&#160;    color          = models.CharField(max_length=7, default=<span class="stringliteral">&quot;#FF0000&quot;</span>)</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity.html#a1cd251b97d58bdfcb133ba4cf85675f7">   25</a></span>&#160;    sound          = models.FileField(<span class="stringliteral">&quot;/media&quot;</span>)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment"># docfile = models.FileField(upload_to=&#39;documents/%Y/%m/%d&#39;)</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    </div>
-<div class="ttc" id="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_html_ae4c538dfc524b4715722c42d6bf23f06"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity.html#ae4c538dfc524b4715722c42d6bf23f06">GroundSegment.models.Alarm.Criticity.Criticity.description</a></div><div class="ttdeci">tuple description</div><div class="ttdef"><b>Definition:</b> <a href="_criticity_8py_source.html#l00013">Criticity.py:13</a></div></div>
-<div class="ttc" id="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_html_a40e1efee5388c763ea32538c5fbc2077"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity.html#a40e1efee5388c763ea32538c5fbc2077">GroundSegment.models.Alarm.Criticity.Criticity.code</a></div><div class="ttdeci">tuple code</div><div class="ttdef"><b>Definition:</b> <a href="_criticity_8py_source.html#l00012">Criticity.py:12</a></div></div>
-<div class="ttc" id="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_html_a5d57294aac104240387d30b90f52e373"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity.html#a5d57294aac104240387d30b90f52e373">GroundSegment.models.Alarm.Criticity.Criticity.__str__</a></div><div class="ttdeci">def __str__(self)</div><div class="ttdef"><b>Definition:</b> <a href="_criticity_8py_source.html#l00019">Criticity.py:19</a></div></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity.html#a5d57294aac104240387d30b90f52e373">   29</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity.html#a5d57294aac104240387d30b90f52e373">__str__</a>(self):</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity.html#a40e1efee5388c763ea32538c5fbc2077">code</a>+<span class="stringliteral">&quot;, &quot;</span>+self.<a class="code" href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity.html#ae4c538dfc524b4715722c42d6bf23f06">description</a></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_1_1_meta.html">   33</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_1_1_meta.html">Meta</a>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_1_1_meta.html#a77545e85b931b43e2c2c1075e2dc7b89">   34</a></span>&#160;        verbose_name        = <span class="stringliteral">&quot;Criticidad&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_1_1_meta.html#a27f1d87c0d59a1686bcb0026bd3bb25c">   35</a></span>&#160;        verbose_name_plural = <span class="stringliteral">&quot;Criticidades&quot;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    </div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_html_ae4c538dfc524b4715722c42d6bf23f06"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity.html#ae4c538dfc524b4715722c42d6bf23f06">GroundSegment.models.Alarm.Criticity.Criticity.description</a></div><div class="ttdeci">tuple description</div><div class="ttdef"><b>Definition:</b> <a href="_criticity_8py_source.html#l00023">Criticity.py:23</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_html_a40e1efee5388c763ea32538c5fbc2077"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity.html#a40e1efee5388c763ea32538c5fbc2077">GroundSegment.models.Alarm.Criticity.Criticity.code</a></div><div class="ttdeci">tuple code</div><div class="ttdef"><b>Definition:</b> <a href="_criticity_8py_source.html#l00022">Criticity.py:22</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_html_a5d57294aac104240387d30b90f52e373"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity.html#a5d57294aac104240387d30b90f52e373">GroundSegment.models.Alarm.Criticity.Criticity.__str__</a></div><div class="ttdeci">def __str__(self)</div><div class="ttdef"><b>Definition:</b> <a href="_criticity_8py_source.html#l00029">Criticity.py:29</a></div></div>
 <div class="ttc" id="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_html"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity.html">GroundSegment.models.Alarm.Criticity.Criticity</a></div><div class="ttdef"><b>Definition:</b> <a href="_criticity_8py_source.html#l00011">Criticity.py:11</a></div></div>
-<div class="ttc" id="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_1_1_meta_html"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_1_1_meta.html">GroundSegment.models.Alarm.Criticity.Criticity.Meta</a></div><div class="ttdef"><b>Definition:</b> <a href="_criticity_8py_source.html#l00023">Criticity.py:23</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_1_1_meta_html"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_1_1_meta.html">GroundSegment.models.Alarm.Criticity.Criticity.Meta</a></div><div class="ttdef"><b>Definition:</b> <a href="_criticity_8py_source.html#l00033">Criticity.py:33</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_1ae4179d5e953611aae20c997279e02c.html">models</a></li><li class="navelem"><a class="el" href="dir_358091bb1dc8ff7f634256fe1398a851.html">Alarm</a></li><li class="navelem"><a class="el" href="_criticity_8py.html">Criticity.py</a></li>
+    <li class="navelem"><a class="el" href="dir_56f8478fd48bf6cc413c8a3d6b56c719.html">git</a></li><li class="navelem"><a class="el" href="dir_1f1f7fb243a977d966fd0dedfab46155.html">GroundSegment</a></li><li class="navelem"><a class="el" href="dir_61bc776f2a7c3a16811295a049eefa08.html">GroundSegment</a></li><li class="navelem"><a class="el" href="dir_7e9391acb600446e33fad7deb42f84d6.html">GroundSegment</a></li><li class="navelem"><a class="el" href="dir_5768cf6fa9f4edd553a01af4e2fb297c.html">models</a></li><li class="navelem"><a class="el" href="dir_5da356d9911d4f7a34403120864245df.html">Alarm</a></li><li class="navelem"><a class="el" href="_criticity_8py.html">Criticity.py</a></li>
     <li class="footer">Generado por
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
