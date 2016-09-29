@@ -1,22 +1,47 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8" />
-	<title>Insert title here</title>
-</head>
-<body>
+{% extends "base.html" %} 
+{% block content %}
+{% load static %}
 <h1><strong>MEDIAE-Segmento Terreno</strong></h1>
 
-<ul>
-	<li><strong>Barbieri</strong></li>
-	<li><b>Robin</b></li>
-	<li><b>Soligo</b></li>
-	<li><b>Valenti</b></li>
-	<li><b>Zapata</b></li>
-</ul>
+<div>
+<table>
+	<tbody>
+		<tr>
+		
+			<!--  <th><img src="{% static "/GroundSegment/Soligo.jpg" %}" alt="Soligo" height="64" width="64"/></th> -->
+			<th><img src={% static "Soligo.jpg" %}" alt="Soligo"/></th>
+			
+			<th>Pablo Soligo</th>
+			<th>Ingeniero de sistema</th>
+		</tr>
+		<tr>
+			<th><img src={% static "Zapata.jpg" %}" alt="Zapata"/></th>
+			<th>Elbio Zapata</th>
+			<th>Control Unit</th>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<th>Maria Cecilia Valenti</th>
+			<th>Orbits Dynamics</th>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<th>Ricardo Barbieri</th>
+			<th>Mission Unit</th>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<th>Jose Robin</th>
+			<th>Ground Segment</th>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<th>Alfonso Montilla</th>
+			<th>Colaboración especial y revisión</th>
+		</tr>
+		
+	</tbody>
+</table>
+</div>
 
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>
-</body>
-</html>
+{% endblock %}

@@ -16,6 +16,8 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from GroundSegment.views import AboutView, SatelliteListView, PropagationTestView
+from django.conf.urls.static import static
+from django.conf import settings
 
 # Text to put at the end of each page's <title>.
 admin.site.site_title = 'MDIAE Ground Segment'
@@ -31,4 +33,4 @@ urlpatterns = [
     url(r'^about/$', AboutView.as_view(template_name="about.html")),
     url(r'^satellites/$', SatelliteListView.as_view(template_name="satelliteListView.html")),
     url(r'^propagationTest/$', PropagationTestView.as_view(template_name="propagationTest.html")),
-]
+]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

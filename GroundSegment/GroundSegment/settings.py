@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    #python3.4 manage.py graph_models -a -o myapp_models.png
     'GroundSegment',
     
 ]
@@ -129,12 +130,20 @@ USE_TZ = True
 
 
 
-
-
+STATICFILES_DIRS = (
+    "/GroundSegment/GroundSegment/static",
+    
+)
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
 #Agregado por Pablo Soligo, verificar posibilidad de guardar
 #en la misma base de datos para mejorar la capacidad de depuracion y control
 
