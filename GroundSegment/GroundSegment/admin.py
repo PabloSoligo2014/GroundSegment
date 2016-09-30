@@ -85,7 +85,8 @@ class SitioAdmin(admin.ModelAdmin):
 admin.site.register(Sitio,SitioAdmin)
 
 class ContactAdmin(admin.ModelAdmin):
-    pass
+    fields = ('name', 'email',)
+    list_display = ('name', 'email',)
 admin.site.register(Contact ,ContactAdmin)
 
 class AlarmTypeNotificationTypeAdmin(admin.ModelAdmin):
