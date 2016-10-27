@@ -13,6 +13,8 @@ from GroundSegment.models.Notification.Contact  import Contact
 from GroundSegment.models.Notification.MessageTemplate import MessageTemplate
 from GroundSegment.models.Notification.NotificationType import NotificationType
 from GroundSegment.models.Notification.AlarmTypeNotificationType import AlarmTypeNotificationType
+from GroundSegment.models.TlmyVarType import TmlyVarType
+from GroundSegment.models.TmlyVar import TmlyVar
 
 from GroundSegment.models.Alarm import * 
 

@@ -25,6 +25,10 @@ class Test(unittest.TestCase):
                         print(obj)
                 except obj.DoesNotExist:
                     pass
+    
+    def testSetTlmyVar(self):
+        pass
+        #tvt = TmlyVarType.objects.
                 
             
         

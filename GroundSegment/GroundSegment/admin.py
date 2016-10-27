@@ -24,6 +24,9 @@ from GroundSegment.models.Notification.Contact import Contact
 from GroundSegment.models.Notification.MessageTemplate import MessageTemplate
 from GroundSegment.models.Notification.Notification import Notification
 from GroundSegment.models.Notification.NotificationType import NotificationType
+from GroundSegment.models.TlmyVarType import TmlyVarType
+from GroundSegment.models.TmlyVar import TmlyVar
+
 
 class SatelliteAdmin(admin.ModelAdmin):
     pass
@@ -108,3 +111,12 @@ admin.site.register(NotificationType ,NotificationTypeAdmin)
 class NotificationAdmin(admin.ModelAdmin):
     pass
 admin.site.register(Notification ,NotificationAdmin)
+
+
+class TmlyVarTypeAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(TmlyVarType ,TmlyVarTypeAdmin)
+
+class TmlyVarAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(TmlyVar ,TmlyVarAdmin)
