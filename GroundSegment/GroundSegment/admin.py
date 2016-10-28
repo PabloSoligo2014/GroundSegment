@@ -24,7 +24,7 @@ from GroundSegment.models.Notification.Contact import Contact
 from GroundSegment.models.Notification.MessageTemplate import MessageTemplate
 from GroundSegment.models.Notification.Notification import Notification
 from GroundSegment.models.Notification.NotificationType import NotificationType
-from GroundSegment.models.TlmyVarType import TmlyVarType
+from GroundSegment.models.TlmyVarType import TlmyVarType
 from GroundSegment.models.TmlyVar import TmlyVar
 
 
@@ -115,7 +115,7 @@ admin.site.register(Notification ,NotificationAdmin)
 
 class TmlyVarTypeAdmin(admin.ModelAdmin):
     pass
-admin.site.register(TmlyVarType ,TmlyVarTypeAdmin)
+admin.site.register(TlmyVarType ,TmlyVarTypeAdmin)
 
 class TmlyVarAdmin(admin.ModelAdmin):
     pass

@@ -5,14 +5,14 @@ Created on Oct 27, 2016
 '''
 
 from django.db import models
-from GroundSegment.models.TlmyVarType import TmlyVarType
+from GroundSegment.models.TlmyVarType import TlmyVarType
 
 from GroundSegment.models.Alarm.Alarm import Alarm
 from django.utils.timezone import datetime, now, timedelta, utc
 
 class TmlyVar(models.Model):
     value = models.FloatField()
-    tmlyVarType = models.ForeignKey(TmlyVarType, related_name="tmlyVars")
+    tmlyVarType = models.ForeignKey(TlmyVarType, related_name="tmlyVars")
     
     def setValue(self, value):
         if (value>self.tmlyVarType.limitMaxValue or value<self.tmlyVarType.limitMinValue):
