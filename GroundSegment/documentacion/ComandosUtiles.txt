@@ -1,5 +1,13 @@
 Comandos utiles:
 
+
+----------------------------------
+instalacion para uso de postgres sql
+----------------------------------
+sudo apt-get update
+sudo apt-get install python-pip python-dev libpq-dev postgresql postgresql-contrib
+pip3 install psycopg2
+
 ----------------------------------
 instalacion de componentes
 ----------------------------------
