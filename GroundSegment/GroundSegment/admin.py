@@ -27,6 +27,9 @@ from GroundSegment.models.Notification.NotificationType import NotificationType
 from GroundSegment.models.TlmyVarType import TlmyVarType
 from GroundSegment.models.TmlyVar import TmlyVar
 
+from GroundSegment.models.Calibration import Calibration
+from GroundSegment.models.SubSystem import SubSystem
+
 
 class SatelliteAdmin(admin.ModelAdmin):
     pass
@@ -120,3 +123,17 @@ admin.site.register(TlmyVarType ,TmlyVarTypeAdmin)
 class TmlyVarAdmin(admin.ModelAdmin):
     pass
 admin.site.register(TmlyVar ,TmlyVarAdmin)
+
+
+class CalibrationAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(Calibration ,CalibrationAdmin)
+
+
+
+class SubSystemAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(SubSystem ,SubSystemAdmin)
+
+
+

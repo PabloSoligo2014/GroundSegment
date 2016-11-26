@@ -11,14 +11,39 @@ from GroundSegment.models.Alarm.Alarm import Alarm
 from django.utils.timezone import datetime, now, timedelta, utc
 
 class TmlyVar(models.Model):
-    value = models.FloatField()
+    
+    rawValue    = models.IntegerField(default=0)
+    
+    calIValue   = models.IntegerField(default=0)
+    calFValue   = models.FloatField(default=0.0)
+    calSValue   = models.CharField('Valor como string de la variable de telemetria', default=None, max_length=24, help_text='Valor como string de la variable de telemetria')
+    
     tmlyVarType = models.ForeignKey(TlmyVarType, related_name="tmlyVars")
     
-    def setValue(self, value):
-        if (value>self.tmlyVarType.limitMaxValue or value<self.tmlyVarType.limitMinValue):
-            raise Exception("Invalid value in var "+self.tmlyVarType.code)  
+    
+    def getValue(self):
+        #Retorna el valor en funcion del tipo
         
-        self.value = value
+        if self.tmlyVarType.varType==self.tmlyVarType.INTEGER:
+            return self.calIValue
+        elif self.tmlyVarType.varType==self.tmlyVarType.FLOAT:
+            return self.calFValue
+        else:
+            return self.calSValue
+            
+        
+    def setValue(self, raw):
+        
+        #Primero transformo en un valor calibrado para su posterior analisis de limites
+        self.calIValue = raw
+        self.calFValue = raw
+        self.calSValue = str(raw)
+        
+        value = self.getValue()
+        
+        if (raw>self.tmlyVarType.limitMaxValue or value<self.tmlyVarType.limitMinValue):
+            raise Exception("Invalid value in var "+self.tmlyVarType.code)  
+                
         if (value>self.tmlyVarType.maxValue or value<self.tmlyVarType.minValue):
             #Verificar si requiere alarma y crearla
             if self.tmlyVarType.alarmType != None:

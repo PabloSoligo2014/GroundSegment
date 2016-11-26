@@ -8,10 +8,23 @@ from django.db import models
 import sys
 from GroundSegment.models.Satellite import Satellite
 from GroundSegment.models.Alarm.Alarm import Alarm
+from GroundSegment.models.Calibration import Calibration
+from django.utils.timezone import datetime, now, timedelta, utc
 
 
 
 class TlmyVarType(models.Model):
+    
+    INTEGER = 0
+    FLOAT   = 1
+    STRING  = 2
+    
+    VARTYPE = (
+        (INTEGER, 'Integer'),
+        (FLOAT, 'Float'),
+        (STRING, 'String'),
+    )
+
     code           = models.CharField('Codigo del tipo de variable', max_length=24, help_text='Codigo del satelite, ejemplo FS2017', unique=True)
     description    = models.CharField('Decripcion del tipo de variable', max_length=100, help_text='Decripcion del satelite', unique=True)
     
@@ -23,7 +36,53 @@ class TlmyVarType(models.Model):
     maxValue       = models.FloatField(default=0)
     minValue       = models.FloatField(default=0)
     
-    alarmType = models.ForeignKey(Alarm, related_name="tmlyVarType", null=True) 
+    lastRawValue   =  models.IntegerField(default=0)
+    lastCalIValue  =  models.IntegerField(default=0)
+    lastCalFValue  =  models.FloatField(default=0.0)
+    lastCalSValue  =  models.CharField('Valor como string de la variable de telemetria', default=None, max_length=24, help_text='Valor como string de la variable de telemetria', blank=True, null=True)
+         
     
+    varType        = models.IntegerField("Tipo de dato, 0=Integer, 1=Float, 2=String", default=0, choices=VARTYPE)    
+    alarmType      = models.ForeignKey(Alarm, related_name="tmlyVarType", blank=True, null=True) 
+    calibrationMethod = models.ForeignKey(Calibration, related_name="tlmyVarTypes", blank=True, null=True)
     
+    def getValue(self):
+        #Retorna el valor en funcion del tipo
+        
+        if self.varType==self.INTEGER:
+            return self.lastCalIValue
+        elif self.varType==self.FLOAT:
+            return self.lastCalFValue
+        else:
+            return self.lastCalSValue
+    
+    def setValue(self, raw):
+        from GroundSegment.models.TmlyVar import TmlyVar
+        #Primero transformo en un valor calibrado para su posterior analisis de limites
+        self.lastCalIValue = raw
+        self.lastCalFValue = raw
+        self.lastCalSValue = str(raw)
+        
+        #Cuando seteo una variable automaticamente creo el historico
+        
+               
+        value = self.getValue()
+        
+        tvar = TmlyVar()
+        tvar.tmlyVarType = self
+        tvar.setValue(raw)
+        
+        #tvar.save()
+        
+        if (raw>self.limitMaxValue or value<self.limitMinValue):
+            raise Exception("Invalid value in var "+self.tmlyVarType.code)  
+                
+        if (value>self.maxValue or value<self.minValue):
+            #Verificar si requiere alarma y crearla
+            if self.alarmType != None:
+                sat = self.tmlyVarType.satellite
+                alarm = Alarm.new(sat, self, datetime.utcnow() + timedelta(seconds=-1))
+                alarm.save()
+            
+        
     
