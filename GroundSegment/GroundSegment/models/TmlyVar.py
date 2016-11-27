@@ -38,18 +38,16 @@ class TmlyVar(models.Model):
         self.calIValue = raw
         self.calFValue = raw
         self.calSValue = str(raw)
-        
+        """        
         value = self.getValue()
         
-        if (raw>self.tmlyVarType.limitMaxValue or value<self.tmlyVarType.limitMinValue):
-            raise Exception("Invalid value in var "+self.tmlyVarType.code)  
-                
+        
         if (value>self.tmlyVarType.maxValue or value<self.tmlyVarType.minValue):
             #Verificar si requiere alarma y crearla
             if self.tmlyVarType.alarmType != None:
                 sat = self.tmlyVarType.satellite
                 alarm = Alarm.new(sat, self.tmlyVarType, datetime.utcnow() + timedelta(seconds=-1))
                 alarm.save()
-            
+        """ 
             
         

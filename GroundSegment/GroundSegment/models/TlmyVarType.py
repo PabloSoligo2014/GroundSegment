@@ -10,6 +10,8 @@ from GroundSegment.models.Satellite import Satellite
 from GroundSegment.models.Alarm.Alarm import Alarm
 from GroundSegment.models.Calibration import Calibration
 from django.utils.timezone import datetime, now, timedelta, utc
+from test.test_logging import DerivedLogRecord
+from pip._vendor.distlib.util import DIRECT_REF
 
 
 
@@ -19,12 +21,21 @@ class TlmyVarType(models.Model):
     FLOAT   = 1
     STRING  = 2
     
+    DIRECT  = 0
+    DERIVED = 1
+    
     VARTYPE = (
         (INTEGER, 'Integer'),
         (FLOAT, 'Float'),
         (STRING, 'String'),
     )
-
+    
+    VARSUBTYPE= (
+        (DIRECT, 'Direct'),
+        (DERIVED, 'Derived'),
+        
+    )
+    #, db_index=True
     code           = models.CharField('Codigo del tipo de variable', max_length=24, help_text='Codigo del satelite, ejemplo FS2017', unique=True)
     description    = models.CharField('Decripcion del tipo de variable', max_length=100, help_text='Decripcion del satelite', unique=True)
     
@@ -43,6 +54,7 @@ class TlmyVarType(models.Model):
          
     
     varType        = models.IntegerField("Tipo de dato, 0=Integer, 1=Float, 2=String", default=0, choices=VARTYPE)    
+    varSubType     = models.IntegerField("Indica si es directa o derivada 0=Directa, 1=Derivada", default=0, choices=VARSUBTYPE)
     alarmType      = models.ForeignKey(Alarm, related_name="tmlyVarType", blank=True, null=True) 
     calibrationMethod = models.ForeignKey(Calibration, related_name="tlmyVarTypes", blank=True, null=True)
     
@@ -70,19 +82,19 @@ class TlmyVarType(models.Model):
         
         tvar = TmlyVar()
         tvar.tmlyVarType = self
-        tvar.setValue(raw)
+        tvar.setValue(value)
         
         #tvar.save()
         
-        if (raw>self.limitMaxValue or value<self.limitMinValue):
-            raise Exception("Invalid value in var "+self.tmlyVarType.code)  
-                
+        if (value>=self.limitMaxValue and value<=self.limitMinValue):
+            raise Exception("Invalid value in var "+self.code)  
+        """    
         if (value>self.maxValue or value<self.minValue):
             #Verificar si requiere alarma y crearla
             if self.alarmType != None:
                 sat = self.tmlyVarType.satellite
                 alarm = Alarm.new(sat, self, datetime.utcnow() + timedelta(seconds=-1))
                 alarm.save()
-            
+        """    
         
     
