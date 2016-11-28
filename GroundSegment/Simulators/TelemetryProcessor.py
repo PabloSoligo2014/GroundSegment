@@ -6,11 +6,48 @@ Created on 25 de nov. de 2016
 
 import os, sys
 
+sys.path.append('C:\\Users\\pabli\\git\\GroundSegment\\GroundSegment')
+
 from GroundSegment.settings import BASE_DIR
 
 import random as rn
 from django.db.models.query import QuerySet
+from django.db import transaction
+import threading
+import time
+from django.db import connection
+import psycopg2
 
+
+def SaveTlmyUpdates(dirtyObject, n):
+    print("Salvando actualizaciones de telemetria, esto es thread safe?")
+    t0 = time.time()
+    for o in dirtyObject.values():
+        o.save()
+    t1 = time.time()    
+        
+    print("Se finaliza la actualizacion de telemetria n: ", n, " en ", t1-t0, " segundos.")
+
+def RawSaveTlmyUpdates(dirtyObject, n):
+    print("Salvando actualizaciones de telemetria, esto es thread safe?")
+    t0 = time.time()
+    
+
+    try:
+        conn = psycopg2.connect("dbname='DBGroundSegment' user='gs' host='127.0.0.1' password='gs'")
+    except:
+        print ("I am unable to connect to the database")
+    #'UPDATE "GroundSegment_tlmyvartype" SET "lastCalFValue" = %s WHERE id = %s', [o.getValue(), o.pk]
+    cur = conn.cursor()
+    
+    fs = ""
+    for o in dirtyObject.values():
+        fs = fs + 'UPDATE "GroundSegment_tlmyvartype" SET "lastCalFValue" = '+str(o.getValue()) + ' WHERE id = ' +str(o.pk) +";"
+        
+    cur.execute(fs)
+    t1 = time.time()    
+        
+    print("Se finaliza la actualizacion de telemetria n: ", n, " en ", t1-t0, " segundos.")
 
 
 if __name__ == '__main__':
@@ -18,7 +55,7 @@ if __name__ == '__main__':
   
     #ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
     #proj_path = "/home/ubuntumate/git/GroundSegment/GroundSegment"
-    
+    n = 0
     ROOT_DIR = BASE_DIR
     #proj_path = "C:\\Users\\pabli\\git\\GroundSegment\\GroundSegment"
     proj_path = ROOT_DIR
@@ -40,9 +77,10 @@ if __name__ == '__main__':
     Primero que nada creamos 100.000 variables de telemetria si aun no existen
     
     """
+    from GroundSegment.models.Calibration import Calibration
     from GroundSegment.models.Satellite import Satellite
     from GroundSegment.models.TlmyVarType import TlmyVarType
-    
+    from GroundSegment.models.TmlyVar import TmlyVar
     cant = TlmyVarType.objects.all().count()
     createcount = 100000-cant
     sat = Satellite.objects.get(code="FS2017")
@@ -53,9 +91,10 @@ if __name__ == '__main__':
     tlmVarTypeList = []
     ra = rn.Random()
     
-    
+    print("Generando variables de telemetria..")
     for i in range(afrom, createcount):
-        
+        print("Generando..", i)
+    
         tm = TlmyVarType()
         tm.satellite = sat
         tm.code = "VS"+str(i)
@@ -66,17 +105,25 @@ if __name__ == '__main__':
         tm.maxValue = tm.limitMaxValue
         tm.minValue = tm.limitMinValue
         
-        tm.setValue(ra.randrange(tm.minValue, tm.maxValue))
+        
         
         tm.varType = tm.FLOAT
         tm.varSubType = tm.DERIVED
         if i<10000:
             tm.varSubType = tm.DIRECT
         
+        #A una de cuatro le asigno una funcion de calibracion
+        if rn.randrange(1, 4)==2:
+            tm.calibrationMethod = Calibration.objects.all().order_by('?').first()
+        
+        tm.setValue(ra.randrange(tm.minValue, tm.maxValue))
+        
         tlmVarTypeList.append(tm)
+        
+            
         #tm.save()
     
-    import time  
+      
     
     if len(tlmVarTypeList)>0:
         
@@ -95,47 +142,45 @@ if __name__ == '__main__':
     tlmySimulator = {}
     for x in range(500):
         tm = allTlmyVar.order_by('?').first()
-        tlmySimulator[tm.pk] = tm.getValue()
-        
-    print("Elementos de simulacion generados, se simula..")
+        tlmySimulator[tm.pk] = tm.getValue()+rn.randrange(0,1)
+        if tlmySimulator[tm.pk]>tm.limitMaxValue:
+            tlmySimulator[tm.pk]=tm.limitMaxValue
     
-    tstart = time.time()
-    #dirtyObj = []
-    for k, v in tlmySimulator.items():
-        tel = allTlmyVar.get(pk=k)        
-        tel.setValue(v)
-        
-    allTlmyVar.update()
-    tend = time.time()
     
-    print("Simulacion para ",len(tlmySimulator), " telemetrias se realizo en ", tend-tstart)
-        
-        
-    tstart = time.time()
     dAllTlmyVar = {}
     for t in allTlmyVar:
         dAllTlmyVar[t.pk] = t
-    
-    for k, v in tlmySimulator.items():
-        tel = dAllTlmyVar[k]       
-        tel.setValue(v)
         
-    allTlmyVar.update()
-    tend = time.time()
+    print("Elementos de simulacion generados")
     
-    print("Igual simulacion con diccionario demora ", tend-tstart)
+    threads = list()
+    simCant = int( input("Indique cantidad de simulaciones...") )
+    
+    
+    for sc in range(simCant):
+        dirtyObjects = []  
+        tstart = time.time()
+        
+        for k, v in tlmySimulator.items():
+            tel = dAllTlmyVar[k]       
+            dirtyObjects.append( tel.setValue(v) )
+        
+          
+        tend = time.time()
+        TmlyVar.objects.bulk_create(dirtyObjects)
+        tendwsave = time.time()
+        print("Simulacion actualizacion de variables demora ", (tend-tstart)*1000, " millisegundos")
+        print("Simulacion actualizacion de variables con persistancia demora ", (tendwsave-tstart)*1000, " millisegundos")
+        """
+        n = n + 1
+        #t = threading.Thread(target=SaveTlmyUpdates(dAllTlmyVar, n))
+        t = threading.Thread(target=RawSaveTlmyUpdates(dAllTlmyVar, n))
+        threads.append(t)
+        t.start()
+        """
+    
+    
+    
+    
   
-    """
-    
-    from Calibration.GenericCalibration import *
-
-    raw = 2
-    
-    obj = getattr(sys.modules[__name__], "GenericCalibration")
-    
-    cal = getattr(obj, "duplicateAndSum")(obj, raw)
-    
-    print("Valor calibrado: ", cal)
-    """
-    
     

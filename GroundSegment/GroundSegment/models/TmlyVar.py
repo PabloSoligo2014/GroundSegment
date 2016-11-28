@@ -11,14 +11,16 @@ from GroundSegment.models.Alarm.Alarm import Alarm
 from django.utils.timezone import datetime, now, timedelta, utc
 
 class TmlyVar(models.Model):
-    
+    code        = models.CharField('Codigo del tipo de variable', max_length=24, help_text='Codigo de la variable, se quita relacion con maestro', default="NoDef")
     rawValue    = models.IntegerField(default=0)
     
     calIValue   = models.IntegerField(default=0)
     calFValue   = models.FloatField(default=0.0)
     calSValue   = models.CharField('Valor como string de la variable de telemetria', default=None, max_length=24, help_text='Valor como string de la variable de telemetria')
     
-    tmlyVarType = models.ForeignKey(TlmyVarType, related_name="tmlyVars")
+    #Quito la relacion para que no me obligue a guardar el padre
+    #para despues guardar al hijo
+    #tmlyVarType = models.ForeignKey(TlmyVarType, related_name="tmlyVars")
     
     
     def getValue(self):
