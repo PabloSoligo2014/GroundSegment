@@ -41,11 +41,11 @@ class TlmyVarType(models.Model):
     
     satellite      = models.ForeignKey(Satellite, related_name="tmlyVarType", db_index=False)
     
-    limitMaxValue  = models.FloatField(default=sys.float_info.max)
-    limitMinValue  = models.FloatField(default=sys.float_info.min)
+    limitMaxValue  = models.FloatField("Maximo",  default=sys.float_info.max)
+    limitMinValue  = models.FloatField("Minimo",  default=sys.float_info.min)
     
-    maxValue       = models.FloatField(default=0)
-    minValue       = models.FloatField(default=0)
+    maxValue       = models.FloatField("Maximo valor tolerable",default=0)
+    minValue       = models.FloatField("Minimo valor tolerable",default=0)
     
     lastRawValue   =  models.IntegerField(default=0)
     lastCalIValue  =  models.IntegerField(default=0)
