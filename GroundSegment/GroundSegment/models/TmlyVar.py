@@ -18,6 +18,8 @@ class TmlyVar(models.Model):
     calFValue   = models.FloatField(default=0.0)
     calSValue   = models.CharField('Valor como string de la variable de telemetria', default=None, max_length=24, help_text='Valor como string de la variable de telemetria')
     
+    created     = models.DateTimeField(auto_now_add=True)
+    #created     = models.DateTimeField()
     #Quito la relacion para que no me obligue a guardar el padre
     #para despues guardar al hijo
     #tmlyVarType = models.ForeignKey(TlmyVarType, related_name="tmlyVars")

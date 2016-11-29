@@ -49,38 +49,47 @@ def RawSaveTlmyUpdates(dirtyObject, n):
         
     print("Se finaliza la actualizacion de telemetria n: ", n, " en ", t1-t0, " segundos.")
 
+n = 0
+ROOT_DIR = BASE_DIR
+#proj_path = "C:\\Users\\pabli\\git\\GroundSegment\\GroundSegment"
+proj_path = ROOT_DIR
+ #https://www.stavros.io/posts/standalone-django-scripts-definitive-guide/
+
+# This is so Django knows where to find stuff.
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "GroundSegment.settings")
+sys.path.append(proj_path)
+
+
+# This is so my local_settings.py gets loaded.
+os.chdir(proj_path)
+
+from django.core.wsgi import get_wsgi_application
+application = get_wsgi_application()
+
+from GroundSegment.models.Calibration import Calibration
+from GroundSegment.models.Satellite import Satellite
+from GroundSegment.models.TlmyVarType import TlmyVarType
+from GroundSegment.models.TmlyVar import TmlyVar
+
+
+def SaveTlmy(dirtyObjects, n):
+    t0 = time.time()
+    TmlyVar.objects.bulk_create(dirtyObjects)
+    t1 = time.time()
+    print("Salvado, objectos: ", len(dirtyObjects), " tiempo: ",(t1-t0)*1000, " ms")        
+
 
 if __name__ == '__main__':
     
   
     #ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
     #proj_path = "/home/ubuntumate/git/GroundSegment/GroundSegment"
-    n = 0
-    ROOT_DIR = BASE_DIR
-    #proj_path = "C:\\Users\\pabli\\git\\GroundSegment\\GroundSegment"
-    proj_path = ROOT_DIR
-     #https://www.stavros.io/posts/standalone-django-scripts-definitive-guide/
-    
-    # This is so Django knows where to find stuff.
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "GroundSegment.settings")
-    sys.path.append(proj_path)
-    
-    
-    # This is so my local_settings.py gets loaded.
-    os.chdir(proj_path)
-    
-    from django.core.wsgi import get_wsgi_application
-    application = get_wsgi_application()
             
     
     """
     Primero que nada creamos 100.000 variables de telemetria si aun no existen
     
     """
-    from GroundSegment.models.Calibration import Calibration
-    from GroundSegment.models.Satellite import Satellite
-    from GroundSegment.models.TlmyVarType import TlmyVarType
-    from GroundSegment.models.TmlyVar import TmlyVar
     cant = TlmyVarType.objects.all().count()
     createcount = 100000-cant
     sat = Satellite.objects.get(code="FS2017")
@@ -142,9 +151,11 @@ if __name__ == '__main__':
     tlmySimulator = {}
     for x in range(500):
         tm = allTlmyVar.order_by('?').first()
-        tlmySimulator[tm.pk] = tm.getValue()+rn.randrange(0,1)
-        if tlmySimulator[tm.pk]>tm.limitMaxValue:
-            tlmySimulator[tm.pk]=tm.limitMaxValue
+        #La mayoria de las veces la telemetria no cambia
+        if rn.randrange(0,5)==3:
+            tlmySimulator[tm.pk] = tm.getValue()+rn.randrange(0,1)
+            if tlmySimulator[tm.pk]>tm.limitMaxValue:
+                tlmySimulator[tm.pk]=tm.limitMaxValue
     
     
     dAllTlmyVar = {}
@@ -156,31 +167,30 @@ if __name__ == '__main__':
     threads = list()
     simCant = int( input("Indique cantidad de simulaciones...") )
     
-    
+    n = 0
     for sc in range(simCant):
         dirtyObjects = []  
         tstart = time.time()
         
         for k, v in tlmySimulator.items():
             tel = dAllTlmyVar[k]       
-            dirtyObjects.append( tel.setValue(v) )
+            dirtyObjects.append( tel.setValue(v, True) )
         
           
         tend = time.time()
-        TmlyVar.objects.bulk_create(dirtyObjects)
-        tendwsave = time.time()
-        print("Simulacion actualizacion de variables demora ", (tend-tstart)*1000, " millisegundos")
-        print("Simulacion actualizacion de variables con persistancia demora ", (tendwsave-tstart)*1000, " millisegundos")
-        """
-        n = n + 1
-        #t = threading.Thread(target=SaveTlmyUpdates(dAllTlmyVar, n))
-        t = threading.Thread(target=RawSaveTlmyUpdates(dAllTlmyVar, n))
+        #TmlyVar.objects.bulk_create(dirtyObjects)
+        #tendwsave = time.time()
+        print("Actualizacion de variables, tiempo ", (tend-tstart)*1000, " ms")
+        #print("Simulacion actualizacion de variables con persistancia demora ", (tendwsave-tstart)*1000, " millisegundos")
+        
+        
+        n=n+1
+        t = threading.Thread(target=SaveTlmy(dirtyObjects, n))
         threads.append(t)
         t.start()
-        """
+        
     
-    
-    
+
     
   
     

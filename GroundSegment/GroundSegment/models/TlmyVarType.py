@@ -51,6 +51,7 @@ class TlmyVarType(models.Model):
     lastCalIValue  =  models.IntegerField(default=0)
     lastCalFValue  =  models.FloatField(default=0.0)
     lastCalSValue  =  models.CharField('Valor como string de la variable de telemetria', default=None, max_length=24, help_text='Valor como string de la variable de telemetria', blank=True, null=True)
+    lastUpdate     =  models.DateTimeField(auto_now_add=True) #
          
     
     varType             = models.IntegerField("Tipo de dato, 0=Integer, 1=Float, 2=String", default=0, choices=VARTYPE)    
@@ -73,38 +74,57 @@ class TlmyVarType(models.Model):
         else:
             return self.lastCalSValue
     
-    def setValue(self, raw):
+    def setValue(self, raw, saveifchange=False):
         from GroundSegment.models.TmlyVar import TmlyVar
 
-        
-        if self.calibrationMethod: 
-            if not self.calibrationLogic:
-                klass = globals()[self.calibrationMethod.aClass]
-                instance = klass()
-                methodToCall = getattr(instance, self.calibrationMethod.aMethod)
-                self.calibrationLogic = methodToCall   
-       
-            if self.varType==self.INTEGER:
-                self.lastCalIValue = self.calibrationLogic( raw )
-            elif self.varType==self.FLOAT:
-                self.lastCalFValue = self.calibrationLogic( raw )
+        #Optimizacion importante, solo salvo si el valor cambio con el anterior
+        #cosa que normalmente no pasa!!
+        #Si el raw anterior es igual al actual me libero de todo.
+        if raw!=self.lastRawValue:
+            self.lastRawValue = raw
+            if self.calibrationMethod: 
+                if not self.calibrationLogic:
+                    klass = globals()[self.calibrationMethod.aClass]
+                    instance = klass()
+                    methodToCall = getattr(instance, self.calibrationMethod.aMethod)
+                    self.calibrationLogic = methodToCall   
+                
+                if self.varType==self.INTEGER:
+                    self.lastCalIValue = self.calibrationLogic( raw )
+                elif self.varType==self.FLOAT:
+                    self.lastCalFValue = self.calibrationLogic( raw )
+                else:
+                    self.lastCalSValue = self.calibrationLogic( raw )
             else:
-                self.lastCalSValue = self.calibrationLogic( raw )
-        else:
-            if self.varType==self.INTEGER:
-                self.lastCalIValue = raw 
-            elif self.varType==self.FLOAT:
-                self.lastCalFValue = raw
-            else:
-                self.lastCalSValue = raw 
+                if self.varType==self.INTEGER:
+                    self.lastCalIValue = raw 
+                elif self.varType==self.FLOAT:
+                    self.lastCalFValue = raw
+                else:
+                    self.lastCalSValue = raw 
         
-
+            value = self.getValue()
+            if (value>=self.limitMaxValue and value<=self.limitMinValue):
+                raise Exception("Invalid value in var "+self.code)  
+            
+            if saveifchange:
+                self.lastUpdate = datetime.now(utc)
+                self.save()
+        
+            """    
+            if (value>self.maxValue or value<self.minValue):
+                #Verificar si requiere alarma y crearla
+                if self.alarmType != None:
+                    sat = self.tmlyVarType.satellite
+                    alarm = Alarm.new(sat, self, datetime.utcnow() + timedelta(seconds=-1))
+                    alarm.save()
+            """    
+            
         
         
         
-        #Historico...
+        #Historico siempre, aunque el valor sea el mismo.
         value = self.getValue()
-        
         tvar = TmlyVar()
         tvar.code = self.code
         tvar.tmlyVarType = self
@@ -112,17 +132,6 @@ class TlmyVarType(models.Model):
         
         
 
-        if (value>=self.limitMaxValue and value<=self.limitMinValue):
-            raise Exception("Invalid value in var "+self.code)  
-        
         return tvar
-        """    
-        if (value>self.maxValue or value<self.minValue):
-            #Verificar si requiere alarma y crearla
-            if self.alarmType != None:
-                sat = self.tmlyVarType.satellite
-                alarm = Alarm.new(sat, self, datetime.utcnow() + timedelta(seconds=-1))
-                alarm.save()
-        """    
         
     
