@@ -101,13 +101,16 @@ if __name__ == '__main__':
                 """
                 Precargo todas los tipos variables de telemetria del satellite enviado como parametro, lo hago 
                 aqui para hacerlo solo una vez, para mejorar el software se deberia pensar en una recarga cada intervalo
-                de tiempo determinado para si cambian la configuracion tomar los cambios
+                de tiempo determinado por si cambian la configuracion tomar los cambios
                 """
                 telvars = TlmyVarType.objects.filter(satellite__code="FS2017")
                 
                 
                 """
-                Intento conectarme segun ip y puerto configurado 
+                Intento conectarme segun ip y puerto configurado, si la configuracion 
+                estuviera mal o no estuviera el servidor levantado el componente
+                de socket informa mediante exception, la misma es trapeada para volver
+                a intentar ciclicamente (Informe de error mediante)
                 """
                 s.connect( (uhfServerIp, int(uhfServerPort)) )
                 try:
@@ -119,7 +122,7 @@ if __name__ == '__main__':
                         chunk = s.recv(int(BUFFER_SIZE))
                         
                         """
-                        Si la informacion no es una trama de bits completa la proceso
+                        Si la informacion es una trama de bits completa la proceso
                         """
                         if chunk == b'':
                             raise RuntimeError("socket connection broken")
@@ -146,6 +149,7 @@ if __name__ == '__main__':
                             """
                             for tt in telvars:
                                 """
+                                TODO
                                 code draft
                                 val = chunk[tt.position]
                                 tt.setValue(val)
