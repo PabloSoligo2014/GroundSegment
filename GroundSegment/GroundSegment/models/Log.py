@@ -36,9 +36,12 @@ class Log(models.Model):
         
         return log
     
+    def __str__(self):
+        return str(self.created)+", "+self.code 
+    
     code           = models.CharField('Codigo del tipo de log', max_length=24, help_text='Codigo' )
-    description    = models.CharField('Decripcion log', max_length=512, help_text='Decripcion del log')
+    description    = models.TextField('Decripcion log', max_length=512, help_text='Decripcion del log')
     module         = models.CharField('Modulo', max_length=64, help_text='Modulo que genera el log' )
     logType        = models.IntegerField("Tipo de log", default=0, choices=LOGTYPE) 
-    
     created        = models.DateTimeField(auto_now_add=True)
+    

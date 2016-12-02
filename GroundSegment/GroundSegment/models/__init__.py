@@ -18,7 +18,7 @@ from GroundSegment.models.TmlyVar import TmlyVar
 from GroundSegment.models.UHFRawData import UHFRawData
 from GroundSegment.models.SubSystem import SubSystem
 from GroundSegment.models.Calibration import Calibration
-
+from GroundSegment.models.Log import Log
 
 
 from GroundSegment.models.Alarm import * 

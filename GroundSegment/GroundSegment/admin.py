@@ -1,6 +1,5 @@
 '''
 Created on 16 de ago. de 2016
-
 @author: pabli
 '''
 
@@ -29,6 +28,7 @@ from GroundSegment.models.TmlyVar import TmlyVar
 
 from GroundSegment.models.Calibration import Calibration
 from GroundSegment.models.SubSystem import SubSystem
+from GroundSegment.models.Log import Log
 
 
 class SatelliteAdmin(admin.ModelAdmin):
@@ -137,6 +137,16 @@ admin.site.register(Calibration ,CalibrationAdmin)
 class SubSystemAdmin(admin.ModelAdmin):
     pass
 admin.site.register(SubSystem ,SubSystemAdmin)
+
+
+class LogAdmin(admin.ModelAdmin):
+    list_display = ('code', 'description', 'module', 'logType')
+    search_fields = ['module', 'logType']
+    list_filter = ['module', 'logType']
+    def queryset(self, request):
+        qs = super(LogAdmin, self).queryset(request)
+        return qs.all().order_by("-id") [:15]
+admin.site.register(Log ,LogAdmin)
 
 
 
