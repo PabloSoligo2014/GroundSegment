@@ -23,6 +23,8 @@ from django.db.models.query import QuerySet
 class UHFRawData(models.Model):
     created     = models.DateTimeField(auto_now_add=True)
     data        = models.BinaryField()
+    source      = models.CharField('Origen del dato, tipicamente cubesat/simulacion', max_length=24, help_text='Origen del dato, tipicamente cubesat/simulacion', default='simulation')
+    
     
 
 

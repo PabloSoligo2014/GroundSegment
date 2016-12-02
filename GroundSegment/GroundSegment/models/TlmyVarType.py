@@ -59,6 +59,9 @@ class TlmyVarType(models.Model):
     alarmType           = models.ForeignKey(Alarm, related_name="tmlyVarType", blank=True, null=True, db_index=False) 
     calibrationMethod   = models.ForeignKey(Calibration, related_name="tlmyVarTypes", blank=True, null=True, db_index=False)
     calibrationLogic    = None
+    position            = models.IntegerField(default=0)
+    subPosition         = models.IntegerField(default=0)
+    
     
     
     def __str__(self):

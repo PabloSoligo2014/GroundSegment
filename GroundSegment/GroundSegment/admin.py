@@ -37,7 +37,8 @@ class SatelliteAdmin(admin.ModelAdmin):
 admin.site.register(Satellite, SatelliteAdmin)
 
 class ParameterAdmin(admin.ModelAdmin):
-    pass
+    search_fields = ['module']
+    list_display = ('module', 'key', 'value', 'description')
 
 admin.site.register(Parameter, ParameterAdmin)
 

@@ -24,6 +24,7 @@ admin.site.site_title = 'MDIAE Ground Segment'
 
 # Text to put in each page's <h1>.
 admin.site.site_header = 'MDIAE Ground Segment'
+  
 
 # Text to put at the top of the admin index page.
 admin.site.index_title = 'Control Panel'
