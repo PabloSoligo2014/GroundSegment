@@ -8,7 +8,8 @@ Interface con UHF y futuro procesador de telemetria. Conecta con un servidor TCP
 antena. El servidor envia paquetes tcp/ip tan pronto como los tiene disponible. La comunicacion es bidireccional y acepta 
 telecomandos, eso aun no esta implementado.
 
-TESTING: Puede ser testeado perfectamente usando un servidor TCP/IP virtual del tipo packetsender 
+TESTING: Puede ser testeado perfectamente usando un servidor TCP/IP de test del tipo packetsender 
+    ->https://packetsender.com/
 """
 import socket
 import time
@@ -31,10 +32,11 @@ Ejemplo de ejecucion
 if __name__ == '__main__':
    
     """
-    Valores por default  de path del proyecto y marca para guardado 
+    Valores por default de path del proyecto y marca para guardado 
     de telemetria cruda (Marcar si el origen de la telemetria es simulado o real)
-    El path del proyecto es dependiente de la maquina y por eso se deja configurable, 
-    es necesario para poder leer y escribir sobre las entidades
+    El path del proyecto es dependiente de la maquina y por eso se deja configurable
+    por linea de comandos.Esto es necesario para poder leer y escribir facilmente
+    sobre las entidades
     """
     #proj_path = "/home/ubuntumate/git/GroundSegment/GroundSegment"
     proj_path = "C:\\Users\\pabli\\git\\GroundSegment\\GroundSegment"
@@ -82,6 +84,9 @@ if __name__ == '__main__':
         BUFFER_SIZE             = loadOrCreateParam("UHF_BUFFER_SIZE", "GroundStation", "1024", "Tamanio del buffer del cliente TCP")
         DISCONNECTION_SLEEP     = loadOrCreateParam("UHF_DISCONNECTION_SLEEP", "GroundStation", "10", "Tiempo en que se duerme la aplicacion ante una desconexion a la espera de volver a intentar")
     
+        """
+        Log guardar en el registro de log los sucesos que se consideren relevante para futura autoria o debug
+        """
         Log.create("UHFInterface started", "The uhf interface module was started", module, Log.INFORMATION).save()
 
         print("Done..trying to connect ip ", uhfServerIp, " ,port", uhfServerPort)
