@@ -87,7 +87,7 @@ if __name__ == '__main__':
         """
         Log guardar en el registro de log los sucesos que se consideren relevante para futura autoria o debug
         """
-        Log.create("UHFInterface started", "The uhf interface module was started", module, Log.INFORMATION).save()
+        Log.create("TlmyCmdProcessor started", "The uhf interface module was started", module, Log.INFORMATION).save()
 
         print("Done..trying to connect ip ", uhfServerIp, " ,port", uhfServerPort)
         
@@ -99,11 +99,13 @@ if __name__ == '__main__':
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             try:
                 """
-                Precargo todas los tipos variables de telemetria del satellite enviado como parametro, lo hago 
+                Precargo todas los tipos variables de telemetria del satelite enviado argumento, lo hago 
                 aqui para hacerlo solo una vez, para mejorar el software se deberia pensar en una recarga cada intervalo
                 de tiempo determinado por si cambian la configuracion tomar los cambios
                 """
-                telvars = TlmyVarType.objects.filter(satellite__code="FS2017")
+                telvars = TlmyVarType.objects.filter(satellite__code=satellite)
+                Log.create("LoadTlmy", "Load telemetry var types, count: "+str(len(telvars)), module, Log.INFORMATION).save()
+
                 
                 
                 """
@@ -161,12 +163,12 @@ if __name__ == '__main__':
                     s.close()
             
             except Exception as err:
-                Log.create("ERROR UHFInterface", "Error/Exception "+str(err), module, Log.ERROR).save()
+                Log.create("ERROR TlmyCmdProcessor", "Error/Exception "+str(err), module, Log.ERROR).save()
                 #TODO, quitar print
                 print(err)
                  
             except IOError as err2:
-                Log.create("IOERROR UHFInterface", "Error/Exception "+str(err2), module, Log.ERROR).save()
+                Log.create("IOERROR TlmyCmdProcessor", "Error/Exception "+str(err2), module, Log.ERROR).save()
                 #TODO, quitar print
                 print("Error..")
                 

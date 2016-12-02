@@ -143,9 +143,16 @@ class LogAdmin(admin.ModelAdmin):
     list_display = ('code', 'description', 'module', 'logType')
     search_fields = ['module', 'logType']
     list_filter = ['module', 'logType']
-    def queryset(self, request):
-        qs = super(LogAdmin, self).queryset(request)
-        return qs.all().order_by("-id") [:15]
+    
+    
+    
+
+    def get_queryset(self, request):
+    #def queryset(self, request):
+        qs = super(LogAdmin, self).get_queryset(request)
+        tmp = qs.all().order_by("-id")
+        return tmp
+    
 admin.site.register(Log ,LogAdmin)
 
 
