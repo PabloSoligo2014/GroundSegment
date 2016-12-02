@@ -138,7 +138,7 @@ if __name__ == '__main__':
                     print("Successfully connection to..", uhfServerPort)
                     while True:
                         """
-                        Me quedo esperando recibir informacion
+                        Me quedo esperando recibir informacion del socket (IPC)
                         """                        
                         chunk = s.recv(int(BUFFER_SIZE))
                         
