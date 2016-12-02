@@ -6,9 +6,14 @@ Created on 28 de nov. de 2016
 """
 Ahora por reflexion genero en la base todos los metodos
 """
+
 import os, sys, inspect
+sys.path.append('/home/ubuntumate/git/GroundSegment/GroundSegment/')
+
 from GroundSegment.settings import BASE_DIR
 import GroundSegment
+
+
 
 ROOT_DIR = BASE_DIR
 proj_path = ROOT_DIR

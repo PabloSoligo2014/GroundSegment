@@ -118,7 +118,9 @@ admin.site.register(Notification ,NotificationAdmin)
 
 
 class TmlyVarTypeAdmin(admin.ModelAdmin):
-    pass
+    #fields = ()
+    search_fields = ['code']
+    list_display = ('code', 'description', 'satellite', 'lastCalFValue', 'lastUpdate', 'varType')
 admin.site.register(TlmyVarType ,TmlyVarTypeAdmin)
 
 class TmlyVarAdmin(admin.ModelAdmin):
