@@ -72,7 +72,20 @@ if __name__ == '__main__':
         from GroundSegment.models.Parameter import Parameter
         from GroundSegment.models.TlmyVarType import TlmyVarType
         from GroundSegment.models.Log import Log
+        from GroundSegment.models.Watchdog import Watchdog
         from GroundSegment.Utils.Utils import *
+        
+        
+        """
+        Si el watchdog no fue creado aun en ejecuciones anteriores lo creo ahora
+        """
+        
+        wd, created = Watchdog.objects.get_or_create(
+                                        code='TlmyCmdProcessor',
+                                        description='Watchdog del procesador de telemetria y telecomandos',
+                                        module="TlmyCmdProcessor",
+                                        tolerance=10,
+                                    )   
         
         
         
@@ -91,6 +104,12 @@ if __name__ == '__main__':
 
         print("Done..trying to connect ip ", uhfServerIp, " ,port", uhfServerPort)
         
+        """
+        Bucle infinito, el software debe funcionar 7x24, si el software de la antena no estuviera 
+        funcionando simplemente se duerme un tiempo parametrizable y vuelve a intentar la conexion
+        hasta que este disponible. Dado que no es posible instalarlo como servicio, el watchdog se 
+        realizar manualmente.
+        """
         while True:
             print("Create o recreate socket...", str(datetime.datetime.utcnow()) )
             """
@@ -122,6 +141,12 @@ if __name__ == '__main__':
                         Me quedo esperando recibir informacion
                         """                        
                         chunk = s.recv(int(BUFFER_SIZE))
+                        
+                        
+                        """
+                        Buena o mala la telemetria fue recibida, reseteo el watchdog
+                        """
+                        wd.reset()
                         
                         """
                         Si la informacion es una trama de bits completa la proceso
