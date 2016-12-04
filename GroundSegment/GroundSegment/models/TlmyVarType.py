@@ -9,6 +9,7 @@ import sys
 from GroundSegment.models.Satellite import Satellite
 from GroundSegment.models.Alarm.Alarm import Alarm
 from GroundSegment.models.Calibration import Calibration
+from GroundSegment.models.PacketType import PacketType
 from Calibration.GenericCalibration import *
 from django.utils.timezone import datetime, now, timedelta, utc
 
@@ -61,6 +62,10 @@ class TlmyVarType(models.Model):
     calibrationLogic    = None
     position            = models.IntegerField(default=0)
     subPosition         = models.IntegerField(default=0)
+    bitsLen             = models.IntegerField(default=0)
+    #TODO deberia mejorar esto tal que se adapte a distintos paquetes
+    #packetType          = models.ForeignKey(PacketType, related_name="")
+    
     
     
     
