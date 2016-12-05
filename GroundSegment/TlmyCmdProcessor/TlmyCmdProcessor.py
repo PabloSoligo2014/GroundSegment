@@ -1,9 +1,8 @@
-'''
+"""
+@package docstring
 Created on 15 de nov. de 2016
 @author: Pablo Soligo
-'''
 
-"""
 Interface con UHF y futuro procesador de telemetria. Conecta con un servidor TCP/IP provisto por el fabricante de la 
 antena. El servidor envia paquetes tcp/ip tan pronto como los tiene disponible. La comunicacion es bidireccional y acepta 
 telecomandos, eso aun no esta implementado.

@@ -1,0 +1,82 @@
+\hypertarget{class_ground_segment_1_1migrations_1_10023__watchdog_1_1_migration}{}\section{Ground\+Segment.\+migrations.0023\+\_\+watchdog.Migration Class Reference}
+\label{class_ground_segment_1_1migrations_1_10023__watchdog_1_1_migration}\index{Ground\+Segment.\+migrations.\+0023\+\_\+watchdog.\+Migration@{Ground\+Segment.\+migrations.\+0023\+\_\+watchdog.\+Migration}}
+
+
+Inheritance diagram for Ground\+Segment.\+migrations.0023\+\_\+watchdog.Migration\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_ground_segment_1_1migrations_1_10023__watchdog_1_1_migration__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ground\+Segment.\+migrations.0023\+\_\+watchdog.Migration\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_ground_segment_1_1migrations_1_10023__watchdog_1_1_migration__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+list \hyperlink{class_ground_segment_1_1migrations_1_10023__watchdog_1_1_migration_aead5603959161c899852891cd6e63cc1}{dependencies}
+\item 
+list \hyperlink{class_ground_segment_1_1migrations_1_10023__watchdog_1_1_migration_aedbaf5f24fd223907b71a2784f5302e3}{operations}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 8 of file 0023\+\_\+watchdog.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_ground_segment_1_1migrations_1_10023__watchdog_1_1_migration_aead5603959161c899852891cd6e63cc1}{}\index{Ground\+Segment\+::migrations\+::0023\+\_\+watchdog\+::\+Migration@{Ground\+Segment\+::migrations\+::0023\+\_\+watchdog\+::\+Migration}!dependencies@{dependencies}}
+\index{dependencies@{dependencies}!Ground\+Segment\+::migrations\+::0023\+\_\+watchdog\+::\+Migration@{Ground\+Segment\+::migrations\+::0023\+\_\+watchdog\+::\+Migration}}
+\subsubsection[{dependencies}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+migrations.\+0023\+\_\+watchdog.\+Migration.\+dependencies\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1migrations_1_10023__watchdog_1_1_migration_aead5603959161c899852891cd6e63cc1}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 = [
+2         (\textcolor{stringliteral}{'GroundSegment'}, \textcolor{stringliteral}{'0022\_auto\_20161202\_1258'}),
+3     ]
+\end{DoxyCode}
+
+
+Definition at line 10 of file 0023\+\_\+watchdog.\+py.
+
+\hypertarget{class_ground_segment_1_1migrations_1_10023__watchdog_1_1_migration_aedbaf5f24fd223907b71a2784f5302e3}{}\index{Ground\+Segment\+::migrations\+::0023\+\_\+watchdog\+::\+Migration@{Ground\+Segment\+::migrations\+::0023\+\_\+watchdog\+::\+Migration}!operations@{operations}}
+\index{operations@{operations}!Ground\+Segment\+::migrations\+::0023\+\_\+watchdog\+::\+Migration@{Ground\+Segment\+::migrations\+::0023\+\_\+watchdog\+::\+Migration}}
+\subsubsection[{operations}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+migrations.\+0023\+\_\+watchdog.\+Migration.\+operations\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1migrations_1_10023__watchdog_1_1_migration_aedbaf5f24fd223907b71a2784f5302e3}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 = [
+2         migrations.CreateModel(
+3             name=\textcolor{stringliteral}{'Watchdog'},
+4             fields=[
+5                 (\textcolor{stringliteral}{'id'}, models.AutoField(auto\_created=\textcolor{keyword}{True}, primary\_key=\textcolor{keyword}{True}, serialize=\textcolor{keyword}{False}, verbose\_name=\textcolor{stringliteral}{
+      'ID'})),
+6                 (\textcolor{stringliteral}{'code'}, models.CharField(help\_text=\textcolor{stringliteral}{'Codigo'}, max\_length=24, verbose\_name=\textcolor{stringliteral}{'Codigo del
+       watchdog'})),
+7                 (\textcolor{stringliteral}{'description'}, models.TextField(help\_text=\textcolor{stringliteral}{'Decripcion del watchdog'}, max\_length=512, 
+      verbose\_name=\textcolor{stringliteral}{'Decripcion watchdog'})),
+8                 (\textcolor{stringliteral}{'module'}, models.CharField(help\_text=\textcolor{stringliteral}{'Modulo que genera actualiza el watchdog'}, max\_length
+      =64, verbose\_name=\textcolor{stringliteral}{'Modulo'})),
+9                 (\textcolor{stringliteral}{'lastUpdate'}, models.DateTimeField(auto\_now\_add=\textcolor{keyword}{True})),
+10                 (\textcolor{stringliteral}{'tolerance'}, models.FloatField(verbose\_name=\textcolor{stringliteral}{'Tiempo de tolerancia'})),
+11             ],
+12         ),
+13     ]
+\end{DoxyCode}
+
+
+Definition at line 14 of file 0023\+\_\+watchdog.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ubuntumate/git/\+Ground\+Segment/\+Ground\+Segment/\+Ground\+Segment/migrations/\hyperlink{0023__watchdog_8py}{0023\+\_\+watchdog.\+py}\end{DoxyCompactItemize}

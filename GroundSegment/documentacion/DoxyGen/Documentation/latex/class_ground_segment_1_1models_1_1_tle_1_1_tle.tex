@@ -1,0 +1,122 @@
+\hypertarget{class_ground_segment_1_1models_1_1_tle_1_1_tle}{}\section{Ground\+Segment.\+models.\+Tle.\+Tle Class Reference}
+\label{class_ground_segment_1_1models_1_1_tle_1_1_tle}\index{Ground\+Segment.\+models.\+Tle.\+Tle@{Ground\+Segment.\+models.\+Tle.\+Tle}}
+
+
+Inheritance diagram for Ground\+Segment.\+models.\+Tle.\+Tle\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{class_ground_segment_1_1models_1_1_tle_1_1_tle__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ground\+Segment.\+models.\+Tle.\+Tle\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{class_ground_segment_1_1models_1_1_tle_1_1_tle__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_ground_segment_1_1models_1_1_tle_1_1_tle_1_1_meta}{Meta}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_tle_1_1_tle_aaa9c5ef171cfeab993957d279ded8364}{get\+Line1} (self)
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_tle_1_1_tle_a904163c4f0018e52ddbd06a520787c6b}{get\+Line2} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_tle_1_1_tle_a66ec63c8a5d9f0a43b9aa48993e531a6}{tle\+Date\+Time} = models.\+Date\+Time\+Field(auto\+\_\+now\+\_\+add=True)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_tle_1_1_tle_ae3785c68a686c40d0505afe276d13d04}{downloaded} = models.\+Date\+Time\+Field(auto\+\_\+now\+\_\+add=True)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_tle_1_1_tle_ac5a4980b37f61f042cb30d0a268755eb}{lines} = models.\+Text\+Field(max\+\_\+length=124, )
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_tle_1_1_tle_a95bfe88e371279e78d31945379bd3785}{satellite} = models.\+Foreign\+Key(\hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite}{Satellite}, related\+\_\+name=\textquotesingle{}tles\textquotesingle{})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Clase/Entidad TLE.
+Almacena la informacion de los TLE incluyendo su fecha de descarga y la epoca de TLE 
+\end{DoxyVerb}
+ 
+
+Definition at line 21 of file Tle.\+py.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_ground_segment_1_1models_1_1_tle_1_1_tle_aaa9c5ef171cfeab993957d279ded8364}{}\index{Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}!get\+Line1@{get\+Line1}}
+\index{get\+Line1@{get\+Line1}!Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}}
+\subsubsection[{get\+Line1}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Tle.\+Tle.\+get\+Line1 (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_tle_1_1_tle_aaa9c5ef171cfeab993957d279ded8364}
+\begin{DoxyVerb}Retorma la primera linea del TLE en formato texto plano
+@rtype:   string
+@return:  primera linea del TLE en texto plano.
+\end{DoxyVerb}
+ 
+
+Definition at line 47 of file Tle.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_tle_1_1_tle_a904163c4f0018e52ddbd06a520787c6b}{}\index{Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}!get\+Line2@{get\+Line2}}
+\index{get\+Line2@{get\+Line2}!Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}}
+\subsubsection[{get\+Line2}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Tle.\+Tle.\+get\+Line2 (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_tle_1_1_tle_a904163c4f0018e52ddbd06a520787c6b}
+\begin{DoxyVerb}Retorma la segunda linea del TLE en formato texto plano
+@rtype:   string
+@return:  segunda linea del TLE en texto plano.
+\end{DoxyVerb}
+ 
+
+Definition at line 58 of file Tle.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_ground_segment_1_1models_1_1_tle_1_1_tle_ae3785c68a686c40d0505afe276d13d04}{}\index{Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}!downloaded@{downloaded}}
+\index{downloaded@{downloaded}!Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}}
+\subsubsection[{downloaded}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Tle.\+Tle.\+downloaded = models.\+Date\+Time\+Field(auto\+\_\+now\+\_\+add=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_tle_1_1_tle_ae3785c68a686c40d0505afe276d13d04}
+
+
+Definition at line 31 of file Tle.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_tle_1_1_tle_ac5a4980b37f61f042cb30d0a268755eb}{}\index{Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}!lines@{lines}}
+\index{lines@{lines}!Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}}
+\subsubsection[{lines}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Tle.\+Tle.\+lines = models.\+Text\+Field(max\+\_\+length=124, )\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_tle_1_1_tle_ac5a4980b37f61f042cb30d0a268755eb}
+
+
+Definition at line 36 of file Tle.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_tle_1_1_tle_a95bfe88e371279e78d31945379bd3785}{}\index{Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}!satellite@{satellite}}
+\index{satellite@{satellite}!Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}}
+\subsubsection[{satellite}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Tle.\+Tle.\+satellite = models.\+Foreign\+Key({\bf Satellite}, related\+\_\+name=\textquotesingle{}tles\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_tle_1_1_tle_a95bfe88e371279e78d31945379bd3785}
+
+
+Definition at line 41 of file Tle.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_tle_1_1_tle_a66ec63c8a5d9f0a43b9aa48993e531a6}{}\index{Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}!tle\+Date\+Time@{tle\+Date\+Time}}
+\index{tle\+Date\+Time@{tle\+Date\+Time}!Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}}
+\subsubsection[{tle\+Date\+Time}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Tle.\+Tle.\+tle\+Date\+Time = models.\+Date\+Time\+Field(auto\+\_\+now\+\_\+add=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_tle_1_1_tle_a66ec63c8a5d9f0a43b9aa48993e531a6}
+
+
+Definition at line 27 of file Tle.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ubuntumate/git/\+Ground\+Segment/\+Ground\+Segment/\+Ground\+Segment/models/\hyperlink{_tle_8py}{Tle.\+py}\end{DoxyCompactItemize}

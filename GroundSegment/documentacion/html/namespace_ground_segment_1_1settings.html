@@ -218,11 +218,24 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
       </table>
 </div><div class="memdoc">
 <b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespace_ground_segment_1_1settings.html">    1</a></span>&#160;= {</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;    <span class="stringliteral">&#39;default&#39;</span>: {</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;        <span class="stringliteral">&#39;ENGINE&#39;</span>: <span class="stringliteral">&#39;django.db.backends.sqlite3&#39;</span>,</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;        <span class="stringliteral">&#39;NAME&#39;</span>: os.path.join(BASE_DIR, <span class="stringliteral">&#39;db.sqlite3&#39;</span>),</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    }</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;}</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;   </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    <span class="stringliteral">&#39;default&#39;</span>: {</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;                <span class="stringliteral">&#39;ENGINE&#39;</span>: <span class="stringliteral">&#39;django.db.backends.postgresql_psycopg2&#39;</span>,</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;                <span class="stringliteral">&#39;NAME&#39;</span>: <span class="stringliteral">&#39;DBGroundSegment&#39;</span>,</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                <span class="stringliteral">&#39;USER&#39;</span>: <span class="stringliteral">&#39;gs&#39;</span>,</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                <span class="stringliteral">&#39;PASSWORD&#39;</span>: <span class="stringliteral">&#39;gs&#39;</span>,</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                <span class="stringliteral">&#39;HOST&#39;</span>: <span class="stringliteral">&#39;127.0.0.1&#39;</span>,</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                <span class="stringliteral">&#39;PORT&#39;</span>: <span class="stringliteral">&#39;5432&#39;</span>,</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                <span class="stringliteral">&#39;CONN_MAX_AGE&#39;</span>: 600,</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;         }</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">#     </span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">#     &#39;default&#39;: {</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">#          &#39;ENGINE&#39;: &#39;django.db.backends.sqlite3&#39;,</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="namespace_ground_segment_1_1settings.html#a96d9de6863371f2594631eee01ef0600">   16</a></span>&#160;<span class="comment">#          &#39;NAME&#39;: os.path.join(BASE_DIR, &#39;db.sqlite3&#39;),</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">#      }</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;     </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
 </div><!-- fragment -->
 <p>Definición en la línea <a class="el" href="settings_8py_source.html#l00087">87</a> del archivo <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
@@ -376,7 +389,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
       </table>
 </div><div class="memdoc">
 
-<p>Definición en la línea <a class="el" href="settings_8py_source.html#l00121">121</a> del archivo <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p>Definición en la línea <a class="el" href="settings_8py_source.html#l00134">134</a> del archivo <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>
@@ -407,15 +420,15 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="namespace_ground_segment_1_1settings.html#a96d9de6863371f2594631eee01ef0600">   16</a></span>&#160;        },</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                 </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    },</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="stringliteral">&#39;loggers&#39;</span>: {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="stringliteral">&#39;django.db.backends&#39;</span>: {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="stringliteral">&#39;handlers&#39;</span>: [<span class="stringliteral">&#39;file&#39;</span>],</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="stringliteral">&#39;level&#39;</span>: <span class="stringliteral">&#39;DEBUG&#39;</span>,</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="namespace_ground_segment_1_1settings.html#a962d63c2c779045196141e0ac3e0415a">   23</a></span>&#160;        },</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">#     &#39;loggers&#39;: {</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">#         &#39;django.db.backends&#39;: {</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">#             &#39;handlers&#39;: [&#39;file&#39;],</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">#             &#39;level&#39;: &#39;DEBUG&#39;,</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="namespace_ground_segment_1_1settings.html#a962d63c2c779045196141e0ac3e0415a">   23</a></span>&#160;<span class="comment">#         },</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">#    }</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
 </div><!-- fragment -->
-<p>Definición en la línea <a class="el" href="settings_8py_source.html#l00152">152</a> del archivo <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p>Definición en la línea <a class="el" href="settings_8py_source.html#l00165">165</a> del archivo <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>
@@ -429,7 +442,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
       </table>
 </div><div class="memdoc">
 
-<p>Definición en la línea <a class="el" href="settings_8py_source.html#l00139">139</a> del archivo <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p>Definición en la línea <a class="el" href="settings_8py_source.html#l00152">152</a> del archivo <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>
@@ -495,7 +508,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
       </table>
 </div><div class="memdoc">
 
-<p>Definición en la línea <a class="el" href="settings_8py_source.html#l00140">140</a> del archivo <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p>Definición en la línea <a class="el" href="settings_8py_source.html#l00153">153</a> del archivo <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>
@@ -509,7 +522,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
       </table>
 </div><div class="memdoc">
 
-<p>Definición en la línea <a class="el" href="settings_8py_source.html#l00138">138</a> del archivo <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p>Definición en la línea <a class="el" href="settings_8py_source.html#l00151">151</a> del archivo <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>
@@ -527,7 +540,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    <span class="stringliteral">&#39;django.contrib.staticfiles.finders.AppDirectoriesFinder&#39;</span>,</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;)</div>
 </div><!-- fragment -->
-<p>Definición en la línea <a class="el" href="settings_8py_source.html#l00143">143</a> del archivo <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p>Definición en la línea <a class="el" href="settings_8py_source.html#l00156">156</a> del archivo <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>
@@ -570,7 +583,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
       </table>
 </div><div class="memdoc">
 
-<p>Definición en la línea <a class="el" href="settings_8py_source.html#l00123">123</a> del archivo <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p>Definición en la línea <a class="el" href="settings_8py_source.html#l00136">136</a> del archivo <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>
@@ -584,7 +597,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
       </table>
 </div><div class="memdoc">
 
-<p>Definición en la línea <a class="el" href="settings_8py_source.html#l00125">125</a> del archivo <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p>Definición en la línea <a class="el" href="settings_8py_source.html#l00138">138</a> del archivo <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>
@@ -598,7 +611,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
       </table>
 </div><div class="memdoc">
 
-<p>Definición en la línea <a class="el" href="settings_8py_source.html#l00127">127</a> del archivo <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p>Definición en la línea <a class="el" href="settings_8py_source.html#l00140">140</a> del archivo <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>
@@ -612,7 +625,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
       </table>
 </div><div class="memdoc">
 
-<p>Definición en la línea <a class="el" href="settings_8py_source.html#l00129">129</a> del archivo <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p>Definición en la línea <a class="el" href="settings_8py_source.html#l00142">142</a> del archivo <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>

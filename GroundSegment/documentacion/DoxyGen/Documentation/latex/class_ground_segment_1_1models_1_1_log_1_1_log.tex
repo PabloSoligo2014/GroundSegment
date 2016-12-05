@@ -1,0 +1,168 @@
+\hypertarget{class_ground_segment_1_1models_1_1_log_1_1_log}{}\section{Ground\+Segment.\+models.\+Log.\+Log Class Reference}
+\label{class_ground_segment_1_1models_1_1_log_1_1_log}\index{Ground\+Segment.\+models.\+Log.\+Log@{Ground\+Segment.\+models.\+Log.\+Log}}
+
+
+Inheritance diagram for Ground\+Segment.\+models.\+Log.\+Log\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_ground_segment_1_1models_1_1_log_1_1_log__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ground\+Segment.\+models.\+Log.\+Log\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_ground_segment_1_1models_1_1_log_1_1_log__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_log_1_1_log_a68eae7e99771c95ea2ba04e8f6492f0a}{create} (cls, \hyperlink{class_ground_segment_1_1models_1_1_log_1_1_log_ae8de250667b9b871ac02617cae717eef}{code}, \hyperlink{class_ground_segment_1_1models_1_1_log_1_1_log_aec39855e51031089ade633107205980c}{description}, \hyperlink{class_ground_segment_1_1models_1_1_log_1_1_log_a641912d76965a5802c808ca609194bf2}{module}, \hyperlink{class_ground_segment_1_1models_1_1_log_1_1_log_a71704dacd9c83ffc71076bb1e05293fd}{log\+Type})
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_log_1_1_log_a2e40a86e6a49bd14738fe7ccb9903347}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_ground_segment_1_1models_1_1_log_1_1_log_ac016eb00e329747a1632e3109e7e7426}{I\+N\+F\+O\+R\+M\+A\+T\+I\+O\+N} = 0
+\item 
+int \hyperlink{class_ground_segment_1_1models_1_1_log_1_1_log_a36e7a5112aeccaa699704764d43e46dd}{W\+A\+R\+N\+I\+N\+G} = 1
+\item 
+int \hyperlink{class_ground_segment_1_1models_1_1_log_1_1_log_a2a3ccda2ab71251c423d1ca45863f699}{E\+R\+R\+O\+R} = 2
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_log_1_1_log_ab1692e268594b524bb18dd71c2542ea1}{L\+O\+G\+T\+Y\+P\+E}
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_log_1_1_log_ae8de250667b9b871ac02617cae717eef}{code} = models.\+Char\+Field(\textquotesingle{}Codigo del tipo de log\textquotesingle{}, max\+\_\+length=24, help\+\_\+text=\textquotesingle{}Codigo\textquotesingle{} )
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_log_1_1_log_aec39855e51031089ade633107205980c}{description} = models.\+Text\+Field(\textquotesingle{}Decripcion log\textquotesingle{}, max\+\_\+length=512, help\+\_\+text=\textquotesingle{}Decripcion del log\textquotesingle{})
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_log_1_1_log_a641912d76965a5802c808ca609194bf2}{module} = models.\+Char\+Field(\textquotesingle{}Modulo\textquotesingle{}, max\+\_\+length=64, help\+\_\+text=\textquotesingle{}Modulo que genera el log\textquotesingle{} )
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_log_1_1_log_a71704dacd9c83ffc71076bb1e05293fd}{log\+Type} = models.\+Integer\+Field(\char`\"{}Tipo de log\char`\"{}, default=0, choices=\hyperlink{class_ground_segment_1_1models_1_1_log_1_1_log_ab1692e268594b524bb18dd71c2542ea1}{L\+O\+G\+T\+Y\+P\+E})
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_log_1_1_log_acb07a0dee966edc415ff1e5edd2d44cb}{created} = models.\+Date\+Time\+Field(auto\+\_\+now\+\_\+add=True)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Entidad de log global de todo el sistema    
+\end{DoxyVerb}
+\begin{DoxyVerb}Tipos de log, respeta la filosofia del event log del SO
+\end{DoxyVerb}
+ 
+
+Definition at line 10 of file Log.\+py.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_ground_segment_1_1models_1_1_log_1_1_log_a2e40a86e6a49bd14738fe7ccb9903347}{}\index{Ground\+Segment\+::models\+::\+Log\+::\+Log@{Ground\+Segment\+::models\+::\+Log\+::\+Log}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!Ground\+Segment\+::models\+::\+Log\+::\+Log@{Ground\+Segment\+::models\+::\+Log\+::\+Log}}
+\subsubsection[{\+\_\+\+\_\+str\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Log.\+Log.\+\_\+\+\_\+str\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_log_1_1_log_a2e40a86e6a49bd14738fe7ccb9903347}
+
+
+Definition at line 39 of file Log.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_log_1_1_log_a68eae7e99771c95ea2ba04e8f6492f0a}{}\index{Ground\+Segment\+::models\+::\+Log\+::\+Log@{Ground\+Segment\+::models\+::\+Log\+::\+Log}!create@{create}}
+\index{create@{create}!Ground\+Segment\+::models\+::\+Log\+::\+Log@{Ground\+Segment\+::models\+::\+Log\+::\+Log}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Log.\+Log.\+create (
+\begin{DoxyParamCaption}
+\item[{}]{cls, }
+\item[{}]{code, }
+\item[{}]{description, }
+\item[{}]{module, }
+\item[{}]{log\+Type}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_log_1_1_log_a68eae7e99771c95ea2ba04e8f6492f0a}
+
+
+Definition at line 30 of file Log.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_ground_segment_1_1models_1_1_log_1_1_log_ae8de250667b9b871ac02617cae717eef}{}\index{Ground\+Segment\+::models\+::\+Log\+::\+Log@{Ground\+Segment\+::models\+::\+Log\+::\+Log}!code@{code}}
+\index{code@{code}!Ground\+Segment\+::models\+::\+Log\+::\+Log@{Ground\+Segment\+::models\+::\+Log\+::\+Log}}
+\subsubsection[{code}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Log.\+Log.\+code = models.\+Char\+Field(\textquotesingle{}Codigo del tipo de log\textquotesingle{}, max\+\_\+length=24, help\+\_\+text=\textquotesingle{}Codigo\textquotesingle{} )\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_log_1_1_log_ae8de250667b9b871ac02617cae717eef}
+
+
+Definition at line 42 of file Log.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_log_1_1_log_acb07a0dee966edc415ff1e5edd2d44cb}{}\index{Ground\+Segment\+::models\+::\+Log\+::\+Log@{Ground\+Segment\+::models\+::\+Log\+::\+Log}!created@{created}}
+\index{created@{created}!Ground\+Segment\+::models\+::\+Log\+::\+Log@{Ground\+Segment\+::models\+::\+Log\+::\+Log}}
+\subsubsection[{created}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Log.\+Log.\+created = models.\+Date\+Time\+Field(auto\+\_\+now\+\_\+add=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_log_1_1_log_acb07a0dee966edc415ff1e5edd2d44cb}
+
+
+Definition at line 46 of file Log.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_log_1_1_log_aec39855e51031089ade633107205980c}{}\index{Ground\+Segment\+::models\+::\+Log\+::\+Log@{Ground\+Segment\+::models\+::\+Log\+::\+Log}!description@{description}}
+\index{description@{description}!Ground\+Segment\+::models\+::\+Log\+::\+Log@{Ground\+Segment\+::models\+::\+Log\+::\+Log}}
+\subsubsection[{description}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Log.\+Log.\+description = models.\+Text\+Field(\textquotesingle{}Decripcion log\textquotesingle{}, max\+\_\+length=512, help\+\_\+text=\textquotesingle{}Decripcion del log\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_log_1_1_log_aec39855e51031089ade633107205980c}
+
+
+Definition at line 43 of file Log.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_log_1_1_log_a2a3ccda2ab71251c423d1ca45863f699}{}\index{Ground\+Segment\+::models\+::\+Log\+::\+Log@{Ground\+Segment\+::models\+::\+Log\+::\+Log}!E\+R\+R\+O\+R@{E\+R\+R\+O\+R}}
+\index{E\+R\+R\+O\+R@{E\+R\+R\+O\+R}!Ground\+Segment\+::models\+::\+Log\+::\+Log@{Ground\+Segment\+::models\+::\+Log\+::\+Log}}
+\subsubsection[{E\+R\+R\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}int Ground\+Segment.\+models.\+Log.\+Log.\+E\+R\+R\+O\+R = 2\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_log_1_1_log_a2a3ccda2ab71251c423d1ca45863f699}
+
+
+Definition at line 20 of file Log.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_log_1_1_log_ac016eb00e329747a1632e3109e7e7426}{}\index{Ground\+Segment\+::models\+::\+Log\+::\+Log@{Ground\+Segment\+::models\+::\+Log\+::\+Log}!I\+N\+F\+O\+R\+M\+A\+T\+I\+O\+N@{I\+N\+F\+O\+R\+M\+A\+T\+I\+O\+N}}
+\index{I\+N\+F\+O\+R\+M\+A\+T\+I\+O\+N@{I\+N\+F\+O\+R\+M\+A\+T\+I\+O\+N}!Ground\+Segment\+::models\+::\+Log\+::\+Log@{Ground\+Segment\+::models\+::\+Log\+::\+Log}}
+\subsubsection[{I\+N\+F\+O\+R\+M\+A\+T\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}int Ground\+Segment.\+models.\+Log.\+Log.\+I\+N\+F\+O\+R\+M\+A\+T\+I\+O\+N = 0\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_log_1_1_log_ac016eb00e329747a1632e3109e7e7426}
+
+
+Definition at line 18 of file Log.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_log_1_1_log_ab1692e268594b524bb18dd71c2542ea1}{}\index{Ground\+Segment\+::models\+::\+Log\+::\+Log@{Ground\+Segment\+::models\+::\+Log\+::\+Log}!L\+O\+G\+T\+Y\+P\+E@{L\+O\+G\+T\+Y\+P\+E}}
+\index{L\+O\+G\+T\+Y\+P\+E@{L\+O\+G\+T\+Y\+P\+E}!Ground\+Segment\+::models\+::\+Log\+::\+Log@{Ground\+Segment\+::models\+::\+Log\+::\+Log}}
+\subsubsection[{L\+O\+G\+T\+Y\+P\+E}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Log.\+Log.\+L\+O\+G\+T\+Y\+P\+E\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_log_1_1_log_ab1692e268594b524bb18dd71c2542ea1}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 = (
+2         (INFORMATION, \textcolor{stringliteral}{'Information'}),
+3         (WARNING, \textcolor{stringliteral}{'Warning'}),
+4         (ERROR, \textcolor{stringliteral}{'Error'}),
+5         
+6     )
+\end{DoxyCode}
+
+
+Definition at line 22 of file Log.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_log_1_1_log_a71704dacd9c83ffc71076bb1e05293fd}{}\index{Ground\+Segment\+::models\+::\+Log\+::\+Log@{Ground\+Segment\+::models\+::\+Log\+::\+Log}!log\+Type@{log\+Type}}
+\index{log\+Type@{log\+Type}!Ground\+Segment\+::models\+::\+Log\+::\+Log@{Ground\+Segment\+::models\+::\+Log\+::\+Log}}
+\subsubsection[{log\+Type}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Log.\+Log.\+log\+Type = models.\+Integer\+Field(\char`\"{}Tipo de log\char`\"{}, default=0, choices={\bf L\+O\+G\+T\+Y\+P\+E})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_log_1_1_log_a71704dacd9c83ffc71076bb1e05293fd}
+
+
+Definition at line 45 of file Log.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_log_1_1_log_a641912d76965a5802c808ca609194bf2}{}\index{Ground\+Segment\+::models\+::\+Log\+::\+Log@{Ground\+Segment\+::models\+::\+Log\+::\+Log}!module@{module}}
+\index{module@{module}!Ground\+Segment\+::models\+::\+Log\+::\+Log@{Ground\+Segment\+::models\+::\+Log\+::\+Log}}
+\subsubsection[{module}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Log.\+Log.\+module = models.\+Char\+Field(\textquotesingle{}Modulo\textquotesingle{}, max\+\_\+length=64, help\+\_\+text=\textquotesingle{}Modulo que genera el log\textquotesingle{} )\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_log_1_1_log_a641912d76965a5802c808ca609194bf2}
+
+
+Definition at line 44 of file Log.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_log_1_1_log_a36e7a5112aeccaa699704764d43e46dd}{}\index{Ground\+Segment\+::models\+::\+Log\+::\+Log@{Ground\+Segment\+::models\+::\+Log\+::\+Log}!W\+A\+R\+N\+I\+N\+G@{W\+A\+R\+N\+I\+N\+G}}
+\index{W\+A\+R\+N\+I\+N\+G@{W\+A\+R\+N\+I\+N\+G}!Ground\+Segment\+::models\+::\+Log\+::\+Log@{Ground\+Segment\+::models\+::\+Log\+::\+Log}}
+\subsubsection[{W\+A\+R\+N\+I\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}int Ground\+Segment.\+models.\+Log.\+Log.\+W\+A\+R\+N\+I\+N\+G = 1\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_log_1_1_log_a36e7a5112aeccaa699704764d43e46dd}
+
+
+Definition at line 19 of file Log.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ubuntumate/git/\+Ground\+Segment/\+Ground\+Segment/\+Ground\+Segment/models/\hyperlink{_log_8py}{Log.\+py}\end{DoxyCompactItemize}

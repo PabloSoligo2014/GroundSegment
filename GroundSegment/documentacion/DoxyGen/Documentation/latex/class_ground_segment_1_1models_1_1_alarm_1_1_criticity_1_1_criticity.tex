@@ -1,0 +1,103 @@
+\hypertarget{class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity}{}\section{Ground\+Segment.\+models.\+Alarm.\+Criticity.\+Criticity Class Reference}
+\label{class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity}\index{Ground\+Segment.\+models.\+Alarm.\+Criticity.\+Criticity@{Ground\+Segment.\+models.\+Alarm.\+Criticity.\+Criticity}}
+
+
+Inheritance diagram for Ground\+Segment.\+models.\+Alarm.\+Criticity.\+Criticity\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ground\+Segment.\+models.\+Alarm.\+Criticity.\+Criticity\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_1_1_meta}{Meta}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_a5d57294aac104240387d30b90f52e373}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_a40e1efee5388c763ea32538c5fbc2077}{code} = models.\+Char\+Field(\textquotesingle{}Codigo de criticidad\textquotesingle{}, max\+\_\+length=24, help\+\_\+text=\textquotesingle{}Codigo del satelite, ejemplo F\+S2017\textquotesingle{}, unique=True)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_ae4c538dfc524b4715722c42d6bf23f06}{description} = models.\+Char\+Field(\textquotesingle{}Decripcion de la criticidad\textquotesingle{}, max\+\_\+length=100, help\+\_\+text=\textquotesingle{}Decripcion del satelite\textquotesingle{}, unique=True)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_a6421ed3051ec960dd0ed52e4dd9cd88e}{color} = models.\+Char\+Field(max\+\_\+length=7, default=\char`\"{}\#F\+F0000\char`\"{})
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_a1cd251b97d58bdfcb133ba4cf85675f7}{sound} = models.\+File\+Field(\char`\"{}/media\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Criticidad del evento o la alarma. Define el nivel de gravedad y atributos asociados, tipicamente
+    -Gravedad
+    -Color
+    -Sonido
+    -etc\end{DoxyVerb}
+ 
+
+Definition at line 11 of file Criticity.\+py.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_a5d57294aac104240387d30b90f52e373}{}\index{Ground\+Segment\+::models\+::\+Alarm\+::\+Criticity\+::\+Criticity@{Ground\+Segment\+::models\+::\+Alarm\+::\+Criticity\+::\+Criticity}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!Ground\+Segment\+::models\+::\+Alarm\+::\+Criticity\+::\+Criticity@{Ground\+Segment\+::models\+::\+Alarm\+::\+Criticity\+::\+Criticity}}
+\subsubsection[{\+\_\+\+\_\+str\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Alarm.\+Criticity.\+Criticity.\+\_\+\+\_\+str\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_a5d57294aac104240387d30b90f52e373}
+
+
+Definition at line 29 of file Criticity.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_a40e1efee5388c763ea32538c5fbc2077}{}\index{Ground\+Segment\+::models\+::\+Alarm\+::\+Criticity\+::\+Criticity@{Ground\+Segment\+::models\+::\+Alarm\+::\+Criticity\+::\+Criticity}!code@{code}}
+\index{code@{code}!Ground\+Segment\+::models\+::\+Alarm\+::\+Criticity\+::\+Criticity@{Ground\+Segment\+::models\+::\+Alarm\+::\+Criticity\+::\+Criticity}}
+\subsubsection[{code}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Alarm.\+Criticity.\+Criticity.\+code = models.\+Char\+Field(\textquotesingle{}Codigo de criticidad\textquotesingle{}, max\+\_\+length=24, help\+\_\+text=\textquotesingle{}Codigo del satelite, ejemplo F\+S2017\textquotesingle{}, unique=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_a40e1efee5388c763ea32538c5fbc2077}
+
+
+Definition at line 22 of file Criticity.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_a6421ed3051ec960dd0ed52e4dd9cd88e}{}\index{Ground\+Segment\+::models\+::\+Alarm\+::\+Criticity\+::\+Criticity@{Ground\+Segment\+::models\+::\+Alarm\+::\+Criticity\+::\+Criticity}!color@{color}}
+\index{color@{color}!Ground\+Segment\+::models\+::\+Alarm\+::\+Criticity\+::\+Criticity@{Ground\+Segment\+::models\+::\+Alarm\+::\+Criticity\+::\+Criticity}}
+\subsubsection[{color}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Alarm.\+Criticity.\+Criticity.\+color = models.\+Char\+Field(max\+\_\+length=7, default=\char`\"{}\#F\+F0000\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_a6421ed3051ec960dd0ed52e4dd9cd88e}
+
+
+Definition at line 24 of file Criticity.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_ae4c538dfc524b4715722c42d6bf23f06}{}\index{Ground\+Segment\+::models\+::\+Alarm\+::\+Criticity\+::\+Criticity@{Ground\+Segment\+::models\+::\+Alarm\+::\+Criticity\+::\+Criticity}!description@{description}}
+\index{description@{description}!Ground\+Segment\+::models\+::\+Alarm\+::\+Criticity\+::\+Criticity@{Ground\+Segment\+::models\+::\+Alarm\+::\+Criticity\+::\+Criticity}}
+\subsubsection[{description}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Alarm.\+Criticity.\+Criticity.\+description = models.\+Char\+Field(\textquotesingle{}Decripcion de la criticidad\textquotesingle{}, max\+\_\+length=100, help\+\_\+text=\textquotesingle{}Decripcion del satelite\textquotesingle{}, unique=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_ae4c538dfc524b4715722c42d6bf23f06}
+
+
+Definition at line 23 of file Criticity.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_a1cd251b97d58bdfcb133ba4cf85675f7}{}\index{Ground\+Segment\+::models\+::\+Alarm\+::\+Criticity\+::\+Criticity@{Ground\+Segment\+::models\+::\+Alarm\+::\+Criticity\+::\+Criticity}!sound@{sound}}
+\index{sound@{sound}!Ground\+Segment\+::models\+::\+Alarm\+::\+Criticity\+::\+Criticity@{Ground\+Segment\+::models\+::\+Alarm\+::\+Criticity\+::\+Criticity}}
+\subsubsection[{sound}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Alarm.\+Criticity.\+Criticity.\+sound = models.\+File\+Field(\char`\"{}/media\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_alarm_1_1_criticity_1_1_criticity_a1cd251b97d58bdfcb133ba4cf85675f7}
+
+
+Definition at line 25 of file Criticity.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ubuntumate/git/\+Ground\+Segment/\+Ground\+Segment/\+Ground\+Segment/models/\+Alarm/\hyperlink{_criticity_8py}{Criticity.\+py}\end{DoxyCompactItemize}

@@ -1,6 +1,8 @@
 var searchData=
 [
   ['value',['value',['../class_ground_segment_1_1models_1_1_parameter_1_1_parameter.html#a7186899b0882d6b4134ca24ed6f2bbc8',1,'GroundSegment::models::Parameter::Parameter']]],
+  ['varsubtype',['VARSUBTYPE',['../class_ground_segment_1_1models_1_1_tlmy_var_type_1_1_tlmy_var_type.html#a4d07d8c0064f8f2d2edbfb5b53001d9b',1,'GroundSegment.models.TlmyVarType.TlmyVarType.VARSUBTYPE()'],['../class_ground_segment_1_1models_1_1_tlmy_var_type_1_1_tlmy_var_type.html#ad7c03c17c8743df66707b060faeb94a3',1,'GroundSegment.models.TlmyVarType.TlmyVarType.varSubType()']]],
+  ['vartype',['VARTYPE',['../class_ground_segment_1_1models_1_1_tlmy_var_type_1_1_tlmy_var_type.html#a9a9b6dcda859afbf512855888fd787fa',1,'GroundSegment.models.TlmyVarType.TlmyVarType.VARTYPE()'],['../class_ground_segment_1_1models_1_1_tlmy_var_type_1_1_tlmy_var_type.html#a35be15cacdc2b07e3e0ef9a5962ef57a',1,'GroundSegment.models.TlmyVarType.TlmyVarType.varType()'],['../class_ground_segment_1_1models_1_1_tlmy_var_type_1_1_tlmy_var_type.html#a3b48452b095327f2cefab2aec6b48c9b',1,'GroundSegment.models.TlmyVarType.TlmyVarType.varType()']]],
   ['velocityx',['velocityX',['../class_ground_segment_1_1models_1_1_propagation_detail_1_1_propagation_detail.html#a29de2a45acb09acda6998ce7afb12ed0',1,'GroundSegment::models::PropagationDetail::PropagationDetail']]],
   ['velocityy',['velocityY',['../class_ground_segment_1_1models_1_1_propagation_detail_1_1_propagation_detail.html#af415fab52fc62626041d4d7a75604413',1,'GroundSegment::models::PropagationDetail::PropagationDetail']]],
   ['velocityz',['velocityZ',['../class_ground_segment_1_1models_1_1_propagation_detail_1_1_propagation_detail.html#ac562c9a45f93f8f9d46f7aa89adaf569',1,'GroundSegment::models::PropagationDetail::PropagationDetail']]],

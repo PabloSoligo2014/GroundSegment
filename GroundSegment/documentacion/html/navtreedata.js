@@ -14,9 +14,9 @@ var NAVTREE =
       [ "Índice de clases", "classes.html", null ],
       [ "Jerarquía de la clase", "hierarchy.html", "hierarchy" ],
       [ "Miembros de las clases", "functions.html", [
-        [ "Todo", "functions.html", null ],
+        [ "Todo", "functions.html", "functions_dup" ],
         [ "Funciones", "functions_func.html", null ],
-        [ "Variables", "functions_vars.html", null ]
+        [ "Variables", "functions_vars.html", "functions_vars" ]
       ] ]
     ] ],
     [ "Archivos", null, [
@@ -33,7 +33,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "0001__initial_8py.html",
-"class_ground_segment_1_1models_1_1_tle_1_1_tle.html"
+"class_ground_segment_1_1models_1_1_parameter_1_1_parameter.html#a435572aa3457b11e8aa00a7efa0dc7e9",
+"namespace_ground_segment_1_1models_1_1_sitio.html"
 ];
 
 var SYNCONMSG = 'click en deshabilitar sincronización';

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=latex 2016.6.2)  28 SEP 2016 11:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=latex 2016.6.2)  5 DEC 2016 10:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -519,6 +519,7 @@ Writing index file api.idx
 (./GroundSegment.models.Alarm.AlarmState-module.aux)
 (./GroundSegment.models.Alarm.AlarmType-module.aux)
 (./GroundSegment.models.Alarm.Criticity-module.aux)
+(./GroundSegment.models.Calibration-module.aux)
 (./GroundSegment.models.CommandType-module.aux)
 (./GroundSegment.models.CommandTypeParameter-module.aux)
 (./GroundSegment.models.Consts-module.aux)
@@ -532,11 +533,14 @@ Writing index file api.idx
 (./GroundSegment.models.Pasada-module.aux)
 (./GroundSegment.models.Propagation-module.aux)
 (./GroundSegment.models.PropagationDetail-module.aux)
+(./GroundSegment.models.Satellite-module.aux)
 (./GroundSegment.models.SatelliteState-module.aux)
 (./GroundSegment.models.Site-module.aux)
 (./GroundSegment.models.Sitio-module.aux)
+(./GroundSegment.models.SubSystem-module.aux)
 (./GroundSegment.models.Tle-module.aux)
 (./GroundSegment.models.TlmyVarType-module.aux)
+(./GroundSegment.models.TmlyVar-module.aux)
 (./GroundSegment.models.Transforms-module.aux))
 \openout1 = `api.aux'.
 
@@ -628,7 +632,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \tf@toc=\write5
 \openout5 = `api.toc'.
 
- [3]
+ [3] [4]
 \openout2 = `GroundSegment.models-module.aux'.
 
  (./GroundSegment.models-module.tex
@@ -639,28 +643,28 @@ File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 26.
+ [5
+
+]
+
+LaTeX Warning: Reference `GroundSegment:models:UHFRawData' on page 6 undefined 
+on input line 198.
 
 
-LaTeX Warning: Reference `GroundSegment:models:Satellite' on page 4 undefined o
-n input line 138.
+LaTeX Warning: Reference `GroundSegment:models:UHFRawData' on page 6 undefined 
+on input line 198.
 
-
-LaTeX Warning: Reference `GroundSegment:models:Satellite' on page 4 undefined o
-n input line 138.
-
-[4
-
-]) [5]
+) [6]
 \openout2 = `GroundSegment.models.Alarm-module.aux'.
 
- (./GroundSegment.models.Alarm-module.tex) [6
+ (./GroundSegment.models.Alarm-module.tex) [7
 
 
 ]
 \openout2 = `GroundSegment.models.Alarm.Action-module.aux'.
 
 
-(./GroundSegment.models.Alarm.Action-module.tex) [7
+(./GroundSegment.models.Alarm.Action-module.tex) [8
 
 
 ]
@@ -672,35 +676,47 @@ LaTeX Font Info:    Try loading font information for T1+lmtt on input line 37.
 
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [8
+) [9
 
 
-]) [9]
+]) [10]
 \openout2 = `GroundSegment.models.Alarm.AlarmState-module.aux'.
 
 
-(./GroundSegment.models.Alarm.AlarmState-module.tex) [10
+(./GroundSegment.models.Alarm.AlarmState-module.tex) [11
 
 
 ]
 \openout2 = `GroundSegment.models.Alarm.AlarmType-module.aux'.
 
 
-(./GroundSegment.models.Alarm.AlarmType-module.tex) [11
+(./GroundSegment.models.Alarm.AlarmType-module.tex) [12
 
 
 ]
 \openout2 = `GroundSegment.models.Alarm.Criticity-module.aux'.
 
 
-(./GroundSegment.models.Alarm.Criticity-module.tex) [12
+(./GroundSegment.models.Alarm.Criticity-module.tex
+Overfull \hbox (39.4935pt too wide) in paragraph at lines 45--45
+[]\T1/lmtt/m/n/10 Criticidad del evento o la alarma. Define el nivel de graveda
+d y atributos asociados, tipicamente[] 
+ []
+
+) [13
+
+
+]
+\openout2 = `GroundSegment.models.Calibration-module.aux'.
+
+ (./GroundSegment.models.Calibration-module.tex) [14
 
 
 ]
 \openout2 = `GroundSegment.models.CommandType-module.aux'.
 
 
-(./GroundSegment.models.CommandType-module.tex) [13
+(./GroundSegment.models.CommandType-module.tex) [15
 
 
 ]
@@ -712,7 +728,7 @@ Overfull \hbox (58.75821pt too wide) in paragraph at lines 32--42
 [] 
  []
 
-) [14
+) [16
 
 
 ]
@@ -724,7 +740,7 @@ Overfull \hbox (3.93704pt too wide) in paragraph at lines 73--74
  __new__(),
  []
 
-) [15
+) [17
 
 
 ]
@@ -733,7 +749,7 @@ Overfull \hbox (3.93704pt too wide) in paragraph at lines 73--74
  (./GroundSegment.models.Notification-module.tex
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 26.
-) [16
+) [18
 
 
 ]
@@ -752,7 +768,7 @@ Overfull \hbox (246.75777pt too wide) in paragraph at lines 32--42
 [] 
  []
 
-) [17
+) [19
 
 
 ]
@@ -763,7 +779,7 @@ Overfull \hbox (5.66087pt too wide) in paragraph at lines 32--42
 [] 
  []
 
-) [18
+) [20
 
 
 ]
@@ -780,7 +796,25 @@ Overfull \hbox (120.25569pt too wide) in paragraph at lines 32--42
 [] 
  []
 
-) [19
+
+Overfull \hbox (147.74529pt too wide) in paragraph at lines 45--45
+[]\T1/lmtt/m/n/12 Plantilla para la notificacion, al momento de enviar una el m
+ensaje se toma el texto de la plantilla[] 
+ []
+
+
+Overfull \hbox (172.4453pt too wide) in paragraph at lines 46--46
+[]\T1/lmtt/m/n/12 se realizan los remplazos por la information asociada (delimi
+tada entre [])  y se genera el texto final.[] 
+ []
+
+
+Overfull \hbox (172.4453pt too wide) in paragraph at lines 50--50
+[]    \T1/lmtt/m/n/12 Se ha generado la alarma numero [pk] a hora abordo [dtOnB
+oard] y es del tipo [alarmaType.code]...etc[] 
+ []
+
+) [21
 
 
 ]
@@ -808,10 +842,10 @@ Overfull \hbox (24.97852pt too wide) in paragraph at lines 115--116
 \T1/lmtt/m/n/12 models.ForeignKey(AlarmTypeNotificationType, 
  []
 
-[20
+[22
 
 
-]) [21]
+]) [23]
 \openout2 = `GroundSegment.models.Notification.NotificationType-module.aux'.
 
  (./GroundSegment.models.Notification.NotificationType-module.tex
@@ -825,27 +859,27 @@ Overfull \hbox (111.86882pt too wide) in paragraph at lines 32--42
 [] 
  []
 
-) [22
+) [24
 
 
 ]
 \openout2 = `GroundSegment.models.Parameter-module.aux'.
 
- (./GroundSegment.models.Parameter-module.tex) [23
+ (./GroundSegment.models.Parameter-module.tex) [25
 
 
 ]
 \openout2 = `GroundSegment.models.Pasada-module.aux'.
 
 
-(./GroundSegment.models.Pasada-module.tex) [24
+(./GroundSegment.models.Pasada-module.tex) [26
 
 
 ]
 \openout2 = `GroundSegment.models.Propagation-module.aux'.
 
 
-(./GroundSegment.models.Propagation-module.tex) [25
+(./GroundSegment.models.Propagation-module.tex) [27
 
 
 ]
@@ -857,49 +891,95 @@ Overfull \hbox (54.7947pt too wide) in paragraph at lines 32--42
 [] 
  []
 
-) [26
+) [28
 
 
 ]
+\openout2 = `GroundSegment.models.Satellite-module.aux'.
+
+ (./GroundSegment.models.Satellite-module.tex
+Overfull \hbox (31.15352pt too wide) in paragraph at lines 173--174
+\T1/lmtt/m/n/12 models.BooleanField('Activacion/desactivacion 
+ []
+
+[29
+
+
+]) [30]
 \openout2 = `GroundSegment.models.SatelliteState-module.aux'.
 
- (./GroundSegment.models.SatelliteState-module.tex) [27
+ (./GroundSegment.models.SatelliteState-module.tex) [31
 
 
 ]
 \openout2 = `GroundSegment.models.Site-module.aux'.
 
 
-(./GroundSegment.models.Site-module.tex) [28
+(./GroundSegment.models.Site-module.tex) [32
 
 
 ]
 \openout2 = `GroundSegment.models.Sitio-module.aux'.
 
 
-(./GroundSegment.models.Sitio-module.tex) [29
+(./GroundSegment.models.Sitio-module.tex) [33
+
+
+]
+\openout2 = `GroundSegment.models.SubSystem-module.aux'.
+
+
+(./GroundSegment.models.SubSystem-module.tex) [34
 
 
 ]
 \openout2 = `GroundSegment.models.Tle-module.aux'.
 
 
-(./GroundSegment.models.Tle-module.tex [30
+(./GroundSegment.models.Tle-module.tex [35
 
 
-]) [31]
+]) [36]
 \openout2 = `GroundSegment.models.TlmyVarType-module.aux'.
 
 
 (./GroundSegment.models.TlmyVarType-module.tex
-Overfull \hbox (4.21036pt too wide) in paragraph at lines 32--42
+Overfull \hbox (3.83536pt too wide) in paragraph at lines 32--42
 [] 
  []
 
-) [32
+[37
 
 
-]
+]) [38]
+\openout2 = `GroundSegment.models.TmlyVar-module.aux'.
+
+ (./GroundSegment.models.TmlyVar-module.tex
+Overfull \hbox (197.8786pt too wide) in paragraph at lines 124--124
+[]\T1/lmtt/m/n/12 if (value>self.tmlyVarType.maxValue or value<self.tmlyVarType
+.minValue):[] 
+ []
+
+
+Overfull \hbox (18.80351pt too wide) in paragraph at lines 125--125
+[]    \T1/lmtt/m/n/12 #Verificar si requiere alarma y crearla[] 
+ []
+
+
+Overfull \hbox (12.62851pt too wide) in paragraph at lines 126--126
+[]    \T1/lmtt/m/n/12 if self.tmlyVarType.alarmType != None:[] 
+ []
+
+
+Overfull \hbox (315.20366pt too wide) in paragraph at lines 128--128
+[]        \T1/lmtt/m/n/12 alarm = Alarm.new(sat, self.tmlyVarType, datetime.utc
+now() + timedelta(seconds=-1))[] 
+ []
+
+[39
+
+
+]) [40]
 \openout2 = `GroundSegment.models.Transforms-module.aux'.
 
  (./GroundSegment.models.Transforms-module.tex
@@ -907,7 +987,7 @@ Overfull \hbox (50.70082pt too wide) in paragraph at lines 32--42
 [] 
  []
 
-) [33
+) [41
 
 
 ] (./api.ind
@@ -917,316 +997,422 @@ mr/m/n/12 ,
  []
 
 
-Overfull \hbox (4.263pt too wide) in paragraph at lines 7--9
+Overfull \hbox (15.65822pt too wide) in paragraph at lines 7--9
+[]| \T1/lmr/m/n/12 Ground-Seg-ment.models.Calibration \T1/lmr/m/it/12 (mod-
+ []
+
+
+Overfull \hbox (4.263pt too wide) in paragraph at lines 9--11
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.CommandType
  []
 
 
-Overfull \hbox (57.62506pt too wide) in paragraph at lines 9--11
+Overfull \hbox (57.62506pt too wide) in paragraph at lines 11--13
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.CommandTypeParameter
  []
 
 
-Overfull \hbox (10.85231pt too wide) in paragraph at lines 11--13
+Overfull \hbox (10.85231pt too wide) in paragraph at lines 13--15
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Consts \T1/lmr/m/it/12 (mod-ule)\T1/l
 mr/m/n/12 ,
  []
 
 
-Overfull \hbox (19.13823pt too wide) in paragraph at lines 13--15
+Overfull \hbox (19.13823pt too wide) in paragraph at lines 15--17
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Notification \T1/lmr/m/it/12 (pack-
  []
 
 
-Overfull \hbox (10.92273pt too wide) in paragraph at lines 15--17
+Overfull \hbox (10.92273pt too wide) in paragraph at lines 17--19
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Parameter \T1/lmr/m/it/12 (mod-
  []
 
 
-Overfull \hbox (12.5804pt too wide) in paragraph at lines 17--19
+Overfull \hbox (12.5804pt too wide) in paragraph at lines 19--21
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Pasada \T1/lmr/m/it/12 (mod-ule)\T1/l
 mr/m/n/12 ,
  []
 
 
-Overfull \hbox (20.38873pt too wide) in paragraph at lines 19--21
+Overfull \hbox (20.38873pt too wide) in paragraph at lines 21--23
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Propagation \T1/lmr/m/it/12 (mod-
  []
 
 
-Overfull \hbox (18.94598pt too wide) in paragraph at lines 21--23
+Overfull \hbox (18.94598pt too wide) in paragraph at lines 23--25
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.PropagationDetail
  []
 
 
-Overfull \hbox (26.10188pt too wide) in paragraph at lines 23--25
+Overfull \hbox (26.10188pt too wide) in paragraph at lines 27--29
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.SatelliteState \T1/lmr/m/it/12 (mod-
  []
 
 
-Overfull \hbox (10.33012pt too wide) in paragraph at lines 25--27
+Overfull \hbox (10.33012pt too wide) in paragraph at lines 29--31
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Site \T1/lmr/m/it/12 (mod-ule)\T1/lmr
 /m/n/12 , [][][][][][] 
  []
 
 
-Overfull \hbox (13.59377pt too wide) in paragraph at lines 29--31
+Overfull \hbox (14.09212pt too wide) in paragraph at lines 33--35
+[]| \T1/lmr/m/n/12 Ground-Seg-ment.models.SubSystem \T1/lmr/m/it/12 (mod-
+ []
+
+
+Overfull \hbox (13.59377pt too wide) in paragraph at lines 35--37
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Tle \T1/lmr/m/it/12 (mod-ule)\T1/lmr/
 m/n/12 , [][][][][][]--
  []
 
 
-Overfull \hbox (29.68835pt too wide) in paragraph at lines 31--33
+Overfull \hbox (29.68835pt too wide) in paragraph at lines 37--39
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.TlmyVarType \T1/lmr/m/it/12 (mod-
  []
 
 
-Overfull \hbox (15.13571pt too wide) in paragraph at lines 33--35
+Overfull \hbox (3.57732pt too wide) in paragraph at lines 39--41
+[]| \T1/lmr/m/n/12 Ground-Seg-ment.models.TmlyVar \T1/lmr/m/it/12 (mod-
+ []
+
+
+Overfull \hbox (15.13571pt too wide) in paragraph at lines 41--43
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Transforms \T1/lmr/m/it/12 (mod-
  []
 
 
-Overfull \hbox (1.6657pt too wide) in paragraph at lines 35--37
+Overfull \hbox (1.6657pt too wide) in paragraph at lines 43--45
 []\T1/lmr/m/n/12 GroundSegment.models.Alarm.Action.Action
  []
 
 
-Overfull \hbox (37.87764pt too wide) in paragraph at lines 37--39
+Overfull \hbox (37.87764pt too wide) in paragraph at lines 45--47
 []\T1/lmr/m/n/12 GroundSegment.models.Alarm.Alarm.Alarm \T1/lmr/m/it/12 (class)
 \T1/lmr/m/n/12 ,
  []
 
 
-Overfull \hbox (74.52386pt too wide) in paragraph at lines 39--41
+Overfull \hbox (74.52386pt too wide) in paragraph at lines 47--49
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Alarm.Alarm.Alarm.__init__
  []
 
 
-Overfull \hbox (80.48163pt too wide) in paragraph at lines 41--43
+Overfull \hbox (80.48163pt too wide) in paragraph at lines 49--51
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Alarm.Alarm.Alarm.isOvercome
  []
 
 
-Overfull \hbox (41.90251pt too wide) in paragraph at lines 43--45
+Overfull \hbox (41.90251pt too wide) in paragraph at lines 51--53
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Alarm.Alarm.Alarm.new
  []
 
 
-Overfull \hbox (63.57417pt too wide) in paragraph at lines 45--47
+Overfull \hbox (63.57417pt too wide) in paragraph at lines 53--55
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Alarm.Alarm.Alarm.setClose
  []
 
 
-Overfull \hbox (63.8359pt too wide) in paragraph at lines 47--49
+Overfull \hbox (63.8359pt too wide) in paragraph at lines 55--57
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Alarm.Alarm.Alarm.setOpen
  []
 
 
-Overfull \hbox (51.92982pt too wide) in paragraph at lines 49--51
+Overfull \hbox (51.92982pt too wide) in paragraph at lines 57--59
 []\T1/lmr/m/n/12 GroundSegment.models.Alarm.AlarmState.AlarmState
  []
 
 
-Overfull \hbox (124.19916pt too wide) in paragraph at lines 51--53
+Overfull \hbox (124.19916pt too wide) in paragraph at lines 59--61
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Alarm.AlarmState.AlarmState.__str__
  []
 
 
-Overfull \hbox (51.27745pt too wide) in paragraph at lines 53--55
+Overfull \hbox (51.27745pt too wide) in paragraph at lines 61--63
 []\T1/lmr/m/n/12 GroundSegment.models.Alarm.AlarmType.AlarmType
  []
 
 
-Overfull \hbox (123.54678pt too wide) in paragraph at lines 55--57
+Overfull \hbox (123.54678pt too wide) in paragraph at lines 63--65
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Alarm.AlarmType.AlarmType.__str__
  []
 
 
-Overfull \hbox (127.15074pt too wide) in paragraph at lines 57--59
+Overfull \hbox (127.15074pt too wide) in paragraph at lines 65--67
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Alarm.AlarmType.AlarmType.getAlarms
  []
 
 
-Overfull \hbox (18.97289pt too wide) in paragraph at lines 59--61
+Overfull \hbox (18.97289pt too wide) in paragraph at lines 67--69
 []\T1/lmr/m/n/12 GroundSegment.models.Alarm.Criticity.Criticity
  []
 
 
-Overfull \hbox (90.26306pt too wide) in paragraph at lines 61--63
+Overfull \hbox (90.26306pt too wide) in paragraph at lines 69--71
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Alarm.Criticity.Criticity.__str__
  []
 
 
-Overfull \hbox (56.84036pt too wide) in paragraph at lines 63--65
+Overfull \hbox (14.40872pt too wide) in paragraph at lines 71--73
+[]\T1/lmr/m/n/12 GroundSegment.models.Calibration.Calibration
+ []
+
+
+Overfull \hbox (86.67805pt too wide) in paragraph at lines 73--75
+[]| \T1/lmr/m/n/12 Ground-Seg-ment.models.Calibration.Calibration.__str__
+ []
+
+
+Overfull \hbox (56.84036pt too wide) in paragraph at lines 75--77
 []\T1/lmr/m/n/12 GroundSegment.models.CommandType.CommandType
  []
 
 
-Overfull \hbox (129.1097pt too wide) in paragraph at lines 65--67
+Overfull \hbox (129.1097pt too wide) in paragraph at lines 77--79
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.CommandType.CommandType.__str__
  []
 
 
-Overfull \hbox (163.56448pt too wide) in paragraph at lines 67--69
+Overfull \hbox (163.56448pt too wide) in paragraph at lines 79--81
 []\T1/lmr/m/n/12 GroundSegment.models.CommandTypeParameter.CommandTypeParameter
 
  []
 
 
-Overfull \hbox (252.9767pt too wide) in paragraph at lines 69--71
+Overfull \hbox (252.9767pt too wide) in paragraph at lines 81--83
 []\T1/lmr/m/n/12 GroundSegment.models.Notification.AlarmTypeNotificationType.Al
 armTypeNotificationType
  []
 
 
-Overfull \hbox (325.24603pt too wide) in paragraph at lines 71--73
+Overfull \hbox (325.24603pt too wide) in paragraph at lines 83--85
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Notification.AlarmTypeNotificationTyp
 e.AlarmTypeNotificationType.__str__
  []
 
 
-Overfull \hbox (43.45155pt too wide) in paragraph at lines 73--75
+Overfull \hbox (43.45155pt too wide) in paragraph at lines 85--87
 []\T1/lmr/m/n/12 GroundSegment.models.Notification.Contact.Contact
  []
 
 
-Overfull \hbox (115.72089pt too wide) in paragraph at lines 75--77
+Overfull \hbox (115.72089pt too wide) in paragraph at lines 87--89
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Notification.Contact.Contact.__str__
  []
 
+[42
 
-Overfull \hbox (82.6103pt too wide) in paragraph at lines 77--79
+
+]
+Overfull \hbox (82.6103pt too wide) in paragraph at lines 89--91
 []\T1/lmr/m/n/12 GroundSegment.models.Notification.Notification.Notification
  []
 
 
-Overfull \hbox (154.87964pt too wide) in paragraph at lines 79--81
+Overfull \hbox (154.87964pt too wide) in paragraph at lines 91--93
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Notification.Notification.Notificatio
 n.__str__
  []
 
 
-Overfull \hbox (126.11024pt too wide) in paragraph at lines 81--83
+Overfull \hbox (126.11024pt too wide) in paragraph at lines 93--95
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Notification.Notification.Notificatio
 n.new
  []
 
 
-Overfull \hbox (135.48518pt too wide) in paragraph at lines 83--85
+Overfull \hbox (135.48518pt too wide) in paragraph at lines 95--97
 []\T1/lmr/m/n/12 GroundSegment.models.Notification.NotificationType.Notificatio
 nType
  []
 
 
-Overfull \hbox (207.75452pt too wide) in paragraph at lines 85--87
+Overfull \hbox (207.75452pt too wide) in paragraph at lines 97--99
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Notification.NotificationType.Notific
 ationType.__str__
  []
 
 
-Overfull \hbox (4.93774pt too wide) in paragraph at lines 87--89
+Overfull \hbox (4.93774pt too wide) in paragraph at lines 99--101
 []\T1/lmr/m/n/12 GroundSegment.models.Parameter.Parameter
  []
 
-[34
 
-
-]
-Overfull \hbox (77.20708pt too wide) in paragraph at lines 89--91
+Overfull \hbox (77.20708pt too wide) in paragraph at lines 101--103
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Parameter.Parameter.__str__
  []
 
 
-Overfull \hbox (58.88135pt too wide) in paragraph at lines 91--93
+Overfull \hbox (58.88135pt too wide) in paragraph at lines 103--105
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Parameter.Parameter.create
  []
 
 
-Overfull \hbox (64.42653pt too wide) in paragraph at lines 93--95
+Overfull \hbox (64.42653pt too wide) in paragraph at lines 105--107
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Parameter.Parameter.getKey
  []
 
 
-Overfull \hbox (72.58583pt too wide) in paragraph at lines 95--97
+Overfull \hbox (72.58583pt too wide) in paragraph at lines 107--109
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Parameter.Parameter.getValue
  []
 
 
-Overfull \hbox (10.60013pt too wide) in paragraph at lines 97--99
+Overfull \hbox (10.60013pt too wide) in paragraph at lines 109--111
 []\T1/lmr/m/n/12 GroundSegment.models.Pasada.Pasada \T1/lmr/m/it/12 (class)\T1/
 lmr/m/n/12 ,
  []
 
 
-Overfull \hbox (43.3944pt too wide) in paragraph at lines 99--101
+Overfull \hbox (43.3944pt too wide) in paragraph at lines 111--113
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Pasada.Pasada.__str__
  []
 
 
-Overfull \hbox (23.86975pt too wide) in paragraph at lines 101--103
+Overfull \hbox (23.86975pt too wide) in paragraph at lines 113--115
 []\T1/lmr/m/n/12 GroundSegment.models.Propagation.Propagation
  []
 
 
-Overfull \hbox (86.20633pt too wide) in paragraph at lines 103--105
+Overfull \hbox (86.20633pt too wide) in paragraph at lines 115--117
 []\T1/lmr/m/n/12 GroundSegment.models.PropagationDetail.PropagationDetail
  []
 
 
-Overfull \hbox (130.75067pt too wide) in paragraph at lines 105--107
+Overfull \hbox (130.75067pt too wide) in paragraph at lines 117--119
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.PropagationDetail.PropagationDetail.s
 ave
  []
 
 
-Overfull \hbox (35.29605pt too wide) in paragraph at lines 107--109
+Overfull \hbox (21.24387pt too wide) in paragraph at lines 119--121
+[]\T1/lmr/m/n/12 GroundSegment.models.Satellite.Satellite \T1/lmr/m/it/12 (clas
+s)\T1/lmr/m/n/12 ,
+ []
+
+
+Overfull \hbox (54.03813pt too wide) in paragraph at lines 121--123
+[]| \T1/lmr/m/n/12 Ground-Seg-ment.models.Satellite.Satellite.__str__
+ []
+
+
+Overfull \hbox (106.17807pt too wide) in paragraph at lines 123--125
+[]| \T1/lmr/m/n/12 Ground-Seg-ment.models.Satellite.Satellite.getCelestialPosit
+ion
+ []
+
+
+Overfull \hbox (47.13641pt too wide) in paragraph at lines 125--127
+[]| \T1/lmr/m/n/12 Ground-Seg-ment.models.Satellite.Satellite.getCode
+ []
+
+
+Overfull \hbox (66.94159pt too wide) in paragraph at lines 127--129
+[]| \T1/lmr/m/n/12 Ground-Seg-ment.models.Satellite.Satellite.getLastTLE
+ []
+
+
+Overfull \hbox (25.26874pt too wide) in paragraph at lines 129--131
+[]| \T1/lmr/m/n/12 Ground-Seg-ment.models.Satellite.Satellite.new
+ []
+
+
+Overfull \hbox (57.57706pt too wide) in paragraph at lines 131--133
+[]| \T1/lmr/m/n/12 Ground-Seg-ment.models.Satellite.Satellite.newAlarm
+ []
+
+
+Overfull \hbox (35.29605pt too wide) in paragraph at lines 133--135
 []\T1/lmr/m/n/12 GroundSegment.models.SatelliteState.SatelliteState
  []
 
 
-Overfull \hbox (107.56538pt too wide) in paragraph at lines 109--111
+Overfull \hbox (107.56538pt too wide) in paragraph at lines 135--137
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.SatelliteState.SatelliteState.__str__
 
  []
 
 
-Overfull \hbox (50.898pt too wide) in paragraph at lines 112--114
+Overfull \hbox (50.898pt too wide) in paragraph at lines 138--140
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Site.Site.getPass \T1/lmr/m/it/12 (me
 thod)\T1/lmr/m/n/12 ,
  []
 
 
-Overfull \hbox (17.82281pt too wide) in paragraph at lines 114--116
+Overfull \hbox (17.82281pt too wide) in paragraph at lines 140--142
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Site.Site.setAltitude
  []
 
 
-Overfull \hbox (18.96732pt too wide) in paragraph at lines 116--118
+Overfull \hbox (18.96732pt too wide) in paragraph at lines 142--144
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Site.Site.setLatitude
  []
 
 
-Overfull \hbox (26.80095pt too wide) in paragraph at lines 118--120
+Overfull \hbox (26.80095pt too wide) in paragraph at lines 144--146
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Site.Site.setLongitude
  []
 
 
-Overfull \hbox (51.09332pt too wide) in paragraph at lines 122--124
+Overfull \hbox (11.27652pt too wide) in paragraph at lines 146--148
+[]\T1/lmr/m/n/12 GroundSegment.models.SubSystem.SubSystem
+ []
+
+
+Overfull \hbox (83.54585pt too wide) in paragraph at lines 148--150
+[]| \T1/lmr/m/n/12 Ground-Seg-ment.models.SubSystem.SubSystem.__str__
+ []
+
+
+Overfull \hbox (51.09332pt too wide) in paragraph at lines 152--154
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Tle.Tle.getLine1 \T1/lmr/m/it/12 (met
 hod)\T1/lmr/m/n/12 ,
  []
 
 
-Overfull \hbox (51.09332pt too wide) in paragraph at lines 124--126
+Overfull \hbox (51.09332pt too wide) in paragraph at lines 154--156
 []| \T1/lmr/m/n/12 Ground-Seg-ment.models.Tle.Tle.getLine2 \T1/lmr/m/it/12 (met
 hod)\T1/lmr/m/n/12 ,
  []
 
-[35
 
-])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 148.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 148.
+Overfull \hbox (42.469pt too wide) in paragraph at lines 156--158
+[]\T1/lmr/m/n/12 GroundSegment.models.TlmyVarType.TlmyVarType
+ []
+
+
+Overfull \hbox (114.73833pt too wide) in paragraph at lines 158--160
+[]| \T1/lmr/m/n/12 Ground-Seg-ment.models.TlmyVarType.TlmyVarType.__str__
+ []
+
+
+Overfull \hbox (110.11708pt too wide) in paragraph at lines 160--162
+[]| \T1/lmr/m/n/12 Ground-Seg-ment.models.TlmyVarType.TlmyVarType.getValue
+ []
+
+
+Overfull \hbox (108.87677pt too wide) in paragraph at lines 162--164
+[]| \T1/lmr/m/n/12 Ground-Seg-ment.models.TlmyVarType.TlmyVarType.setValue
+ []
+
+
+Overfull \hbox (29.72198pt too wide) in paragraph at lines 164--166
+[]\T1/lmr/m/n/12 GroundSegment.models.TmlyVar.TmlyVar \T1/lmr/m/it/12 (class)\T
+1/lmr/m/n/12 ,
+ []
+
+
+Overfull \hbox (57.895pt too wide) in paragraph at lines 166--168
+[]| \T1/lmr/m/n/12 Ground-Seg-ment.models.TmlyVar.TmlyVar.getValue
+ []
+
+
+Overfull \hbox (56.6547pt too wide) in paragraph at lines 168--170
+[]| \T1/lmr/m/n/12 Ground-Seg-ment.models.TmlyVar.TmlyVar.setValue
+ []
+
+[43])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 152.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 152.
  (./api.aux (./GroundSegment.models-module.aux)
 (./GroundSegment.models.Alarm-module.aux)
 (./GroundSegment.models.Alarm.Action-module.aux)
@@ -1234,6 +1420,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 148.
 (./GroundSegment.models.Alarm.AlarmState-module.aux)
 (./GroundSegment.models.Alarm.AlarmType-module.aux)
 (./GroundSegment.models.Alarm.Criticity-module.aux)
+(./GroundSegment.models.Calibration-module.aux)
 (./GroundSegment.models.CommandType-module.aux)
 (./GroundSegment.models.CommandTypeParameter-module.aux)
 (./GroundSegment.models.Consts-module.aux)
@@ -1247,29 +1434,35 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 148.
 (./GroundSegment.models.Pasada-module.aux)
 (./GroundSegment.models.Propagation-module.aux)
 (./GroundSegment.models.PropagationDetail-module.aux)
+(./GroundSegment.models.Satellite-module.aux)
 (./GroundSegment.models.SatelliteState-module.aux)
 (./GroundSegment.models.Site-module.aux)
 (./GroundSegment.models.Sitio-module.aux)
+(./GroundSegment.models.SubSystem-module.aux)
 (./GroundSegment.models.Tle-module.aux)
 (./GroundSegment.models.TlmyVarType-module.aux)
+(./GroundSegment.models.TmlyVar-module.aux)
 (./GroundSegment.models.Transforms-module.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 148.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 148.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 152.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 152.
 Package rerunfilecheck Info: File `api.out' has not changed.
-(rerunfilecheck)             Checksum: 44839A66C1C5AF5996278B974A9589E0;6976.
+(rerunfilecheck)             Checksum: BEEA1812F70E2A03E691B4F0F79AF19E;8285.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 148.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 152.
  ) 
 Here is how much of TeX's memory you used:
- 6535 strings out of 494958
- 109466 string characters out of 6180055
- 189335 words of memory out of 5000000
- 9477 multiletter control sequences out of 15000+600000
+ 6619 strings out of 494958
+ 112777 string characters out of 6180055
+ 202807 words of memory out of 5000000
+ 9533 multiletter control sequences out of 15000+600000
  73406 words of font info for 61 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  36i,12n,43p,652b,435s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on api.dvi (35 pages, 192088 bytes).
+Output written on api.dvi (43 pages, 238928 bytes).

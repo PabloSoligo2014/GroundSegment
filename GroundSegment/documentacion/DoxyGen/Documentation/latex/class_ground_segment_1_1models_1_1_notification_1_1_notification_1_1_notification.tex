@@ -1,0 +1,137 @@
+\hypertarget{class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification}{}\section{Ground\+Segment.\+models.\+Notification.\+Notification.\+Notification Class Reference}
+\label{class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification}\index{Ground\+Segment.\+models.\+Notification.\+Notification.\+Notification@{Ground\+Segment.\+models.\+Notification.\+Notification.\+Notification}}
+
+
+Inheritance diagram for Ground\+Segment.\+models.\+Notification.\+Notification.\+Notification\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ground\+Segment.\+models.\+Notification.\+Notification.\+Notification\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification_ad9be3de0a1aef79bd4828cf5f3db8973}{new} (cls, kwargs)
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification_aa9325e10b792980bc5670b3c250c0234}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification_a5d4145d0ba4943ac10e0a269ea3ae54e}{subject} = models.\+Char\+Field(\textquotesingle{}Asunto de la notificacion\textquotesingle{}, max\+\_\+length=\hyperlink{class_ground_segment_1_1models_1_1_consts_1_1_consts_af293fcd2dc1b82ccc52722f90ac343ca}{Consts.\+Consts.\+medium\+String} , help\+\_\+text=\textquotesingle{}Asunto de la notificacion\textquotesingle{}, default=\char`\"{}subject default\char`\"{})
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification_aab87e972d1da9172d2e7cce622b8fce3}{text} = models.\+Text\+Field(null=False, default=\char`\"{}Sin mensaje\char`\"{})
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification_a1c85d3bd1dfb69b866c0b0023dd8bc6f}{contacts} = models.\+Many\+To\+Many\+Field(\hyperlink{class_ground_segment_1_1models_1_1_notification_1_1_contact_1_1_contact}{Contact}, related\+\_\+name=\char`\"{}notifications\char`\"{}, limit\+\_\+choices\+\_\+to=100)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification_ad668e7d1e333d3c3d4114276108046d7}{alarm\+Type\+Notification\+Type} = models.\+Foreign\+Key(\hyperlink{class_ground_segment_1_1models_1_1_notification_1_1_alarm_type_notification_type_1_1_alarm_type_notification_type}{Alarm\+Type\+Notification\+Type}, related\+\_\+name=\char`\"{}notifications\char`\"{}, on\+\_\+delete=models.\+P\+R\+O\+T\+E\+C\+T, null=True)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification_aec220ade3819946a0fb450d03e5ef97c}{sended} = models.\+Boolean\+Field(default=False)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification_a12664635efcb42cc8aef3d64c43b24d9}{ntry} = models.\+Integer\+Field(default=0)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Notifacion efectiva enviada o por enviar. Generada a partir de la configuracion del sistema
+
+Objetivo
+=========
+    Repositorio para las notificaciones generadas y enviadas.
+
+ 
+Implementacion
+=========
+    Se utiliza una unica entidad, las notificaciones se marcan como envidas cuando pueden ser despachadas o se
+    indican la cantidad de intentos y se marcan como fallidas
+\end{DoxyVerb}
+ 
+
+Definition at line 15 of file Notification.\+py.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification_aa9325e10b792980bc5670b3c250c0234}{}\index{Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification@{Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification@{Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification}}
+\subsubsection[{\+\_\+\+\_\+str\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Notification.\+Notification.\+Notification.\+\_\+\+\_\+str\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification_aa9325e10b792980bc5670b3c250c0234}
+
+
+Definition at line 77 of file Notification.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification_ad9be3de0a1aef79bd4828cf5f3db8973}{}\index{Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification@{Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification}!new@{new}}
+\index{new@{new}!Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification@{Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification}}
+\subsubsection[{new}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Notification.\+Notification.\+Notification.\+new (
+\begin{DoxyParamCaption}
+\item[{}]{cls, }
+\item[{}]{kwargs}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification_ad9be3de0a1aef79bd4828cf5f3db8973}
+
+
+Definition at line 48 of file Notification.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification_ad668e7d1e333d3c3d4114276108046d7}{}\index{Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification@{Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification}!alarm\+Type\+Notification\+Type@{alarm\+Type\+Notification\+Type}}
+\index{alarm\+Type\+Notification\+Type@{alarm\+Type\+Notification\+Type}!Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification@{Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification}}
+\subsubsection[{alarm\+Type\+Notification\+Type}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Notification.\+Notification.\+Notification.\+alarm\+Type\+Notification\+Type = models.\+Foreign\+Key({\bf Alarm\+Type\+Notification\+Type}, related\+\_\+name=\char`\"{}notifications\char`\"{}, on\+\_\+delete=models.\+P\+R\+O\+T\+E\+C\+T, null=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification_ad668e7d1e333d3c3d4114276108046d7}
+
+
+Definition at line 42 of file Notification.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification_a1c85d3bd1dfb69b866c0b0023dd8bc6f}{}\index{Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification@{Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification}!contacts@{contacts}}
+\index{contacts@{contacts}!Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification@{Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification}}
+\subsubsection[{contacts}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Notification.\+Notification.\+Notification.\+contacts = models.\+Many\+To\+Many\+Field({\bf Contact}, related\+\_\+name=\char`\"{}notifications\char`\"{}, limit\+\_\+choices\+\_\+to=100)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification_a1c85d3bd1dfb69b866c0b0023dd8bc6f}
+
+
+Definition at line 40 of file Notification.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification_a12664635efcb42cc8aef3d64c43b24d9}{}\index{Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification@{Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification}!ntry@{ntry}}
+\index{ntry@{ntry}!Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification@{Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification}}
+\subsubsection[{ntry}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Notification.\+Notification.\+Notification.\+ntry = models.\+Integer\+Field(default=0)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification_a12664635efcb42cc8aef3d64c43b24d9}
+
+
+Definition at line 45 of file Notification.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification_aec220ade3819946a0fb450d03e5ef97c}{}\index{Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification@{Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification}!sended@{sended}}
+\index{sended@{sended}!Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification@{Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification}}
+\subsubsection[{sended}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Notification.\+Notification.\+Notification.\+sended = models.\+Boolean\+Field(default=False)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification_aec220ade3819946a0fb450d03e5ef97c}
+
+
+Definition at line 44 of file Notification.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification_a5d4145d0ba4943ac10e0a269ea3ae54e}{}\index{Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification@{Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification}!subject@{subject}}
+\index{subject@{subject}!Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification@{Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification}}
+\subsubsection[{subject}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Notification.\+Notification.\+Notification.\+subject = models.\+Char\+Field(\textquotesingle{}Asunto de la notificacion\textquotesingle{}, max\+\_\+length={\bf Consts.\+Consts.\+medium\+String} , help\+\_\+text=\textquotesingle{}Asunto de la notificacion\textquotesingle{}, default=\char`\"{}subject default\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification_a5d4145d0ba4943ac10e0a269ea3ae54e}
+
+
+Definition at line 35 of file Notification.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification_aab87e972d1da9172d2e7cce622b8fce3}{}\index{Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification@{Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification}!text@{text}}
+\index{text@{text}!Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification@{Ground\+Segment\+::models\+::\+Notification\+::\+Notification\+::\+Notification}}
+\subsubsection[{text}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Notification.\+Notification.\+Notification.\+text = models.\+Text\+Field(null=False, default=\char`\"{}Sin mensaje\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_notification_1_1_notification_1_1_notification_aab87e972d1da9172d2e7cce622b8fce3}
+
+
+Definition at line 36 of file Notification.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ubuntumate/git/\+Ground\+Segment/\+Ground\+Segment/\+Ground\+Segment/models/\+Notification/\hyperlink{_notification_8py}{Notification.\+py}\end{DoxyCompactItemize}

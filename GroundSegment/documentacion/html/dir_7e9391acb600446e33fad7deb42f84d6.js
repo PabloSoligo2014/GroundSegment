@@ -21,7 +21,11 @@ var dir_7e9391acb600446e33fad7deb42f84d6 =
       [ "AlarmTypeNotificationTypeAdmin", "class_ground_segment_1_1admin_1_1_alarm_type_notification_type_admin.html", null ],
       [ "MessageTemplateAdmin", "class_ground_segment_1_1admin_1_1_message_template_admin.html", null ],
       [ "NotificationTypeAdmin", "class_ground_segment_1_1admin_1_1_notification_type_admin.html", null ],
-      [ "NotificationAdmin", "class_ground_segment_1_1admin_1_1_notification_admin.html", null ]
+      [ "NotificationAdmin", "class_ground_segment_1_1admin_1_1_notification_admin.html", null ],
+      [ "TmlyVarTypeAdmin", "class_ground_segment_1_1admin_1_1_tmly_var_type_admin.html", null ],
+      [ "TmlyVarAdmin", "class_ground_segment_1_1admin_1_1_tmly_var_admin.html", null ],
+      [ "CalibrationAdmin", "class_ground_segment_1_1admin_1_1_calibration_admin.html", null ],
+      [ "SubSystemAdmin", "class_ground_segment_1_1admin_1_1_sub_system_admin.html", null ]
     ] ],
     [ "forms.py", "forms_8py.html", [
       [ "SimulatorForm", "class_ground_segment_1_1forms_1_1_simulator_form.html", "class_ground_segment_1_1forms_1_1_simulator_form" ],
@@ -32,6 +36,7 @@ var dir_7e9391acb600446e33fad7deb42f84d6 =
     [ "tests.py", "tests_8py.html", [
       [ "Test", "class_ground_segment_1_1tests_1_1_test.html", "class_ground_segment_1_1tests_1_1_test" ]
     ] ],
+    [ "tests_settings.py", "tests__settings_8py.html", "tests__settings_8py" ],
     [ "urls.py", "urls_8py.html", "urls_8py" ],
     [ "views.py", "views_8py.html", [
       [ "AboutView", "class_ground_segment_1_1views_1_1_about_view.html", null ],

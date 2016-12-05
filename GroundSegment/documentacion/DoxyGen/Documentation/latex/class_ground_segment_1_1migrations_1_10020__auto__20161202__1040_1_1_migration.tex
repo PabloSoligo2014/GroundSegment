@@ -1,0 +1,87 @@
+\hypertarget{class_ground_segment_1_1migrations_1_10020__auto__20161202__1040_1_1_migration}{}\section{Ground\+Segment.\+migrations.0020\+\_\+auto\+\_\+20161202\+\_\+1040.Migration Class Reference}
+\label{class_ground_segment_1_1migrations_1_10020__auto__20161202__1040_1_1_migration}\index{Ground\+Segment.\+migrations.\+0020\+\_\+auto\+\_\+20161202\+\_\+1040.\+Migration@{Ground\+Segment.\+migrations.\+0020\+\_\+auto\+\_\+20161202\+\_\+1040.\+Migration}}
+
+
+Inheritance diagram for Ground\+Segment.\+migrations.0020\+\_\+auto\+\_\+20161202\+\_\+1040.Migration\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_ground_segment_1_1migrations_1_10020__auto__20161202__1040_1_1_migration__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ground\+Segment.\+migrations.0020\+\_\+auto\+\_\+20161202\+\_\+1040.Migration\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_ground_segment_1_1migrations_1_10020__auto__20161202__1040_1_1_migration__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+list \hyperlink{class_ground_segment_1_1migrations_1_10020__auto__20161202__1040_1_1_migration_a64b2c65a34df479d7993b602faf4509e}{dependencies}
+\item 
+list \hyperlink{class_ground_segment_1_1migrations_1_10020__auto__20161202__1040_1_1_migration_aaff1b2e3abd1729957533fd1b092344a}{operations}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 8 of file 0020\+\_\+auto\+\_\+20161202\+\_\+1040.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_ground_segment_1_1migrations_1_10020__auto__20161202__1040_1_1_migration_a64b2c65a34df479d7993b602faf4509e}{}\index{Ground\+Segment\+::migrations\+::0020\+\_\+auto\+\_\+20161202\+\_\+1040\+::\+Migration@{Ground\+Segment\+::migrations\+::0020\+\_\+auto\+\_\+20161202\+\_\+1040\+::\+Migration}!dependencies@{dependencies}}
+\index{dependencies@{dependencies}!Ground\+Segment\+::migrations\+::0020\+\_\+auto\+\_\+20161202\+\_\+1040\+::\+Migration@{Ground\+Segment\+::migrations\+::0020\+\_\+auto\+\_\+20161202\+\_\+1040\+::\+Migration}}
+\subsubsection[{dependencies}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+migrations.\+0020\+\_\+auto\+\_\+20161202\+\_\+1040.\+Migration.\+dependencies\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1migrations_1_10020__auto__20161202__1040_1_1_migration_a64b2c65a34df479d7993b602faf4509e}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 = [
+2         (\textcolor{stringliteral}{'GroundSegment'}, \textcolor{stringliteral}{'0019\_auto\_20161202\_1004'}),
+3     ]
+\end{DoxyCode}
+
+
+Definition at line 10 of file 0020\+\_\+auto\+\_\+20161202\+\_\+1040.\+py.
+
+\hypertarget{class_ground_segment_1_1migrations_1_10020__auto__20161202__1040_1_1_migration_aaff1b2e3abd1729957533fd1b092344a}{}\index{Ground\+Segment\+::migrations\+::0020\+\_\+auto\+\_\+20161202\+\_\+1040\+::\+Migration@{Ground\+Segment\+::migrations\+::0020\+\_\+auto\+\_\+20161202\+\_\+1040\+::\+Migration}!operations@{operations}}
+\index{operations@{operations}!Ground\+Segment\+::migrations\+::0020\+\_\+auto\+\_\+20161202\+\_\+1040\+::\+Migration@{Ground\+Segment\+::migrations\+::0020\+\_\+auto\+\_\+20161202\+\_\+1040\+::\+Migration}}
+\subsubsection[{operations}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+migrations.\+0020\+\_\+auto\+\_\+20161202\+\_\+1040.\+Migration.\+operations\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1migrations_1_10020__auto__20161202__1040_1_1_migration_aaff1b2e3abd1729957533fd1b092344a}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 = [
+2         migrations.AlterField(
+3             model\_name=\textcolor{stringliteral}{'tlmyvartype'},
+4             name=\textcolor{stringliteral}{'limitMaxValue'},
+5             field=models.FloatField(default=1.7976931348623157e+308, verbose\_name=\textcolor{stringliteral}{'Maximo'}),
+6         ),
+7         migrations.AlterField(
+8             model\_name=\textcolor{stringliteral}{'tlmyvartype'},
+9             name=\textcolor{stringliteral}{'limitMinValue'},
+10             field=models.FloatField(default=2.2250738585072014e-308, verbose\_name=\textcolor{stringliteral}{'Minimo'}),
+11         ),
+12         migrations.AlterField(
+13             model\_name=\textcolor{stringliteral}{'tlmyvartype'},
+14             name=\textcolor{stringliteral}{'maxValue'},
+15             field=models.FloatField(default=0, verbose\_name=\textcolor{stringliteral}{'Maximo valor tolerable'}),
+16         ),
+17         migrations.AlterField(
+18             model\_name=\textcolor{stringliteral}{'tlmyvartype'},
+19             name=\textcolor{stringliteral}{'minValue'},
+20             field=models.FloatField(default=0, verbose\_name=\textcolor{stringliteral}{'Minimo valor tolerable'}),
+21         ),
+22     ]
+\end{DoxyCode}
+
+
+Definition at line 14 of file 0020\+\_\+auto\+\_\+20161202\+\_\+1040.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ubuntumate/git/\+Ground\+Segment/\+Ground\+Segment/\+Ground\+Segment/migrations/\hyperlink{0020__auto__20161202__1040_8py}{0020\+\_\+auto\+\_\+20161202\+\_\+1040.\+py}\end{DoxyCompactItemize}

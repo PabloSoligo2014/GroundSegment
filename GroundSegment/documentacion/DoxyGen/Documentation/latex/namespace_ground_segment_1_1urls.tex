@@ -1,0 +1,44 @@
+\hypertarget{namespace_ground_segment_1_1urls}{}\section{Ground\+Segment.\+urls Namespace Reference}
+\label{namespace_ground_segment_1_1urls}\index{Ground\+Segment.\+urls@{Ground\+Segment.\+urls}}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+list \hyperlink{namespace_ground_segment_1_1urls_a457e62f34e0ac5ed0455686f6e0f68c6}{urlpatterns}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}GroundSegment URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/1.9/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.conf.urls import url, include
+    2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
+\end{DoxyVerb}
+ 
+
+\subsection{Variable Documentation}
+\hypertarget{namespace_ground_segment_1_1urls_a457e62f34e0ac5ed0455686f6e0f68c6}{}\index{Ground\+Segment\+::urls@{Ground\+Segment\+::urls}!urlpatterns@{urlpatterns}}
+\index{urlpatterns@{urlpatterns}!Ground\+Segment\+::urls@{Ground\+Segment\+::urls}}
+\subsubsection[{urlpatterns}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+urls.\+urlpatterns}\label{namespace_ground_segment_1_1urls_a457e62f34e0ac5ed0455686f6e0f68c6}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 = [
+2     url(\textcolor{stringliteral}{r'^admin/'}, admin.site.urls),
+3     url(\textcolor{stringliteral}{r'^about/$'}, AboutView.as\_view(template\_name=\textcolor{stringliteral}{"about.html"})),
+4     url(\textcolor{stringliteral}{r'^satellites/$'}, SatelliteListView.as\_view(template\_name=\textcolor{stringliteral}{"satelliteListView.html"})),
+5     url(\textcolor{stringliteral}{r'^propagationTest/$'}, PropagationTestView.as\_view(template\_name=\textcolor{stringliteral}{"propagationTest.html"})),
+6 ]
+\end{DoxyCode}
+
+
+Definition at line 32 of file urls.\+py.
+
