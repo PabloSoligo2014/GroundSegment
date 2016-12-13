@@ -6,7 +6,9 @@ Created on 28 de nov. de 2016
 
 import os, sys
 
-sys.path.append('C:\\Users\\pabli\\git\\GroundSegment\\GroundSegment')
+
+    
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from GroundSegment.settings import BASE_DIR
 

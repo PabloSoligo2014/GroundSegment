@@ -16,6 +16,7 @@ import datetime
 from django.conf import settings
 import os
 import sys
+from django.utils import timezone
 
 
 #ubuntumate@VBUbuntumate:~/Downloads/CheckoutBox/Software$ java -jar start.jar
@@ -24,21 +25,44 @@ import sys
 
 """
 Ejemplo de ejecucion 
->python TlmyCmdProcessor.py "SIMULATION" "C:\\Users\\pabli\\git\\GroundSegment\\GroundSegment" "FS2017"
+>python TlmyCmdProcessor.py "SIMULATION" "FS2017" 
+
+Deprecated: Ya no es necesario indicar el path, lo toma del directorio de ejecucion del fuente "C:\\Users\\pabli\\git\\GroundSegment\\GroundSegment"
+>python3.4 TlmyCmdProcessor.py "SIMULATION" "FS2017" 
+
+Deprecated: Ya no es necesario indicar el path, lo toma del directorio de ejecucion del fuente "/home/ubuntumate/git/GroundSegment/GroundSegment" 
 """
 
 
+
+
+
+"""Servicio, aplicacion encargada de decodificar, trasnformar y persistir la telemetria del satelite y de codificar y transmitir los 
+telecomandos.
+@param source Indica si la ejecucion es para servir a una simulacion o datos reales. Los paquetes persistidos quedan con esta cadena como marca
+para uso futuro y especialmente para poder distinguir datos simulados de datos reales.
+@param satellite Codigo de satelite con el que se esta comunicando. El satelite tiene que estar dado de alta en el catalogo. La trama de telemetria sera
+decodificada en funcion de la configuracion de variables de telemetria del satelite indicado como parametro
+"""
 if __name__ == '__main__':
-   
+    
+    """Funcion principal del eervicio, aplicacion encargada de decodificar, trasnformar y persistir la telemetria del satelite y de codificar y transmitir los 
+    telecomandos.
+    @param source Indica si la ejecucion es para servir a una simulacion o datos reales. Los paquetes persistidos quedan con esta cadena como marca
+    para uso futuro y especialmente para poder distinguir datos simulados de datos reales.
+    @param satellite Codigo de satelite con el que se esta comunicando. El satelite tiene que estar dado de alta en el catalogo. La trama de telemetria sera
+    decodificada en funcion de la configuracion de variables de telemetria del satelite indicado como parametro
     """
-    Valores por default de path del proyecto y marca para guardado 
+    
+    
+    
+    """
+    Valores por default para guardado 
     de telemetria cruda (Marcar si el origen de la telemetria es simulado o real)
-    El path del proyecto es dependiente de la maquina y por eso se deja configurable
-    por linea de comandos.Esto es necesario para poder leer y escribir facilmente
-    sobre las entidades
     """
-    #proj_path = "/home/ubuntumate/git/GroundSegment/GroundSegment"
-    proj_path = "C:\\Users\\pabli\\git\\GroundSegment\\GroundSegment"
+    
+    """Obtiene el path del proyecto segun carpeta de ejecucion"""
+    proj_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     source = "SIMULATION"
     satellite = "FS2017"
     module = "TlmyCmdProcessor"
@@ -48,8 +72,7 @@ if __name__ == '__main__':
     
     if len(sys.argv)>1:
         source      = sys.argv[1]
-        proj_path   = sys.argv[2]
-        satellite   = sys.argv[3] 
+        satellite   = sys.argv[2] 
     
     #https://www.stavros.io/posts/standalone-django-scripts-definitive-guide/
     
@@ -157,7 +180,7 @@ if __name__ == '__main__':
                             Me guardo el crudo tal cual llego antes de procesarlo, la tabla donde se guarda es UHFRawData
                             """
                             print("Len-",len(chunk))
-                            print("\nData Received("+str(datetime.datetime.utcnow())+")->", chunk)
+                            print("\nData Received("+str(timezone.datetime.utcnow() )+")->", chunk)
                             data = UHFRawData()
                             data.source = source
                             data.data = chunk

@@ -24,7 +24,7 @@ class Watchdog(models.Model):
         return w
     
     def reset(self):
-        self.lastUpdate = datetime.utcnow()
+        self.lastUpdate = now()
         self.save()
         
     def isValid(self):

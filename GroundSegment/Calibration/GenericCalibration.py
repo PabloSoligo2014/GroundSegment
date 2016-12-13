@@ -20,6 +20,24 @@ class GCalibration(BaseCalibration):
         #Cambio la cuadratica por una lineal para que no se me vaya de rango
         return raw*0.2 + 1
     
+    def LeftPanelTempCalibration(self, raw):
+        #return raw**2 - 10*raw + 3
+        #Cambio la cuadratica por una lineal para que no se me vaya de rango
+        return raw*0.1 + 1
+    
+        
+    def RightPanelTempCalibration(self, raw):
+        #return raw**2 - 10*raw + 3
+        #Cambio la cuadratica por una lineal para que no se me vaya de rango
+        return raw*0.1 + 1
+    
+    def SolarSensorACalibration(self, raw):
+        #return raw**2 - 10*raw + 3
+        #Cambio la cuadratica por una lineal para que no se me vaya de rango
+        return raw*0.1 + 1
+    
+    
+    
     def discretCalibration(self, raw):
         if raw<0:
             return 0
