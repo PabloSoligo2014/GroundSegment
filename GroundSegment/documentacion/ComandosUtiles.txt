@@ -2,6 +2,12 @@ Comandos utiles:
 
 
 ----------------------------------
+Para trabajar con Doxygen de manera visual
+Instalar y correr doxywizard
+Comando: doxywizard
+----------------------------------
+
+----------------------------------
 instalacion para uso de postgres sql
 ----------------------------------
 sudo apt-get update

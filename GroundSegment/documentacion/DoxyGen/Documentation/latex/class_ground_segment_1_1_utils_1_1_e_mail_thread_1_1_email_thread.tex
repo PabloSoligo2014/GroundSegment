@@ -1,0 +1,107 @@
+\hypertarget{class_ground_segment_1_1_utils_1_1_e_mail_thread_1_1_email_thread}{}\section{Ground\+Segment.\+Utils.\+E\+Mail\+Thread.\+Email\+Thread Class Reference}
+\label{class_ground_segment_1_1_utils_1_1_e_mail_thread_1_1_email_thread}\index{Ground\+Segment.\+Utils.\+E\+Mail\+Thread.\+Email\+Thread@{Ground\+Segment.\+Utils.\+E\+Mail\+Thread.\+Email\+Thread}}
+
+
+Inheritance diagram for Ground\+Segment.\+Utils.\+E\+Mail\+Thread.\+Email\+Thread\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{class_ground_segment_1_1_utils_1_1_e_mail_thread_1_1_email_thread__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ground\+Segment.\+Utils.\+E\+Mail\+Thread.\+Email\+Thread\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{class_ground_segment_1_1_utils_1_1_e_mail_thread_1_1_email_thread__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_ground_segment_1_1_utils_1_1_e_mail_thread_1_1_email_thread_a352cb687f49acd51fa5e62d4e4d32e33}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{class_ground_segment_1_1_utils_1_1_e_mail_thread_1_1_email_thread_a9776ad6602db5213aadf8eca5dd811dd}{subject}, \hyperlink{class_ground_segment_1_1_utils_1_1_e_mail_thread_1_1_email_thread_a684eab461e7b4c0529e4e886c0d8f36e}{body}, \hyperlink{class_ground_segment_1_1_utils_1_1_e_mail_thread_1_1_email_thread_a238ce0a810aab91c034ed714f01e4267}{recipients})
+\item 
+def \hyperlink{class_ground_segment_1_1_utils_1_1_e_mail_thread_1_1_email_thread_aae8ce7ccb27a8d92ce06cfa6726a723e}{run} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_ground_segment_1_1_utils_1_1_e_mail_thread_1_1_email_thread_a9776ad6602db5213aadf8eca5dd811dd}{subject}
+\item 
+\hyperlink{class_ground_segment_1_1_utils_1_1_e_mail_thread_1_1_email_thread_a238ce0a810aab91c034ed714f01e4267}{recipients}
+\item 
+\hyperlink{class_ground_segment_1_1_utils_1_1_e_mail_thread_1_1_email_thread_a684eab461e7b4c0529e4e886c0d8f36e}{body}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 12 of file E\+Mail\+Thread.\+py.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_ground_segment_1_1_utils_1_1_e_mail_thread_1_1_email_thread_a352cb687f49acd51fa5e62d4e4d32e33}{}\index{Ground\+Segment\+::\+Utils\+::\+E\+Mail\+Thread\+::\+Email\+Thread@{Ground\+Segment\+::\+Utils\+::\+E\+Mail\+Thread\+::\+Email\+Thread}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!Ground\+Segment\+::\+Utils\+::\+E\+Mail\+Thread\+::\+Email\+Thread@{Ground\+Segment\+::\+Utils\+::\+E\+Mail\+Thread\+::\+Email\+Thread}}
+\subsubsection[{\+\_\+\+\_\+init\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+Utils.\+E\+Mail\+Thread.\+Email\+Thread.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{subject, }
+\item[{}]{body, }
+\item[{}]{recipients}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1_utils_1_1_e_mail_thread_1_1_email_thread_a352cb687f49acd51fa5e62d4e4d32e33}
+
+
+Definition at line 13 of file E\+Mail\+Thread.\+py.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_ground_segment_1_1_utils_1_1_e_mail_thread_1_1_email_thread_aae8ce7ccb27a8d92ce06cfa6726a723e}{}\index{Ground\+Segment\+::\+Utils\+::\+E\+Mail\+Thread\+::\+Email\+Thread@{Ground\+Segment\+::\+Utils\+::\+E\+Mail\+Thread\+::\+Email\+Thread}!run@{run}}
+\index{run@{run}!Ground\+Segment\+::\+Utils\+::\+E\+Mail\+Thread\+::\+Email\+Thread@{Ground\+Segment\+::\+Utils\+::\+E\+Mail\+Thread\+::\+Email\+Thread}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+Utils.\+E\+Mail\+Thread.\+Email\+Thread.\+run (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1_utils_1_1_e_mail_thread_1_1_email_thread_aae8ce7ccb27a8d92ce06cfa6726a723e}
+\begin{DoxyVerb}msg = EmailMessage(self.subject, self.html_content, EMAIL_HOST_USER, self.recipient_list)
+msg.content_subtype = "html"
+msg.send()
+\end{DoxyVerb}
+ 
+
+Definition at line 19 of file E\+Mail\+Thread.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_ground_segment_1_1_utils_1_1_e_mail_thread_1_1_email_thread_a684eab461e7b4c0529e4e886c0d8f36e}{}\index{Ground\+Segment\+::\+Utils\+::\+E\+Mail\+Thread\+::\+Email\+Thread@{Ground\+Segment\+::\+Utils\+::\+E\+Mail\+Thread\+::\+Email\+Thread}!body@{body}}
+\index{body@{body}!Ground\+Segment\+::\+Utils\+::\+E\+Mail\+Thread\+::\+Email\+Thread@{Ground\+Segment\+::\+Utils\+::\+E\+Mail\+Thread\+::\+Email\+Thread}}
+\subsubsection[{body}]{\setlength{\rightskip}{0pt plus 5cm}Ground\+Segment.\+Utils.\+E\+Mail\+Thread.\+Email\+Thread.\+body}\label{class_ground_segment_1_1_utils_1_1_e_mail_thread_1_1_email_thread_a684eab461e7b4c0529e4e886c0d8f36e}
+
+
+Definition at line 16 of file E\+Mail\+Thread.\+py.
+
+\hypertarget{class_ground_segment_1_1_utils_1_1_e_mail_thread_1_1_email_thread_a238ce0a810aab91c034ed714f01e4267}{}\index{Ground\+Segment\+::\+Utils\+::\+E\+Mail\+Thread\+::\+Email\+Thread@{Ground\+Segment\+::\+Utils\+::\+E\+Mail\+Thread\+::\+Email\+Thread}!recipients@{recipients}}
+\index{recipients@{recipients}!Ground\+Segment\+::\+Utils\+::\+E\+Mail\+Thread\+::\+Email\+Thread@{Ground\+Segment\+::\+Utils\+::\+E\+Mail\+Thread\+::\+Email\+Thread}}
+\subsubsection[{recipients}]{\setlength{\rightskip}{0pt plus 5cm}Ground\+Segment.\+Utils.\+E\+Mail\+Thread.\+Email\+Thread.\+recipients}\label{class_ground_segment_1_1_utils_1_1_e_mail_thread_1_1_email_thread_a238ce0a810aab91c034ed714f01e4267}
+
+
+Definition at line 15 of file E\+Mail\+Thread.\+py.
+
+\hypertarget{class_ground_segment_1_1_utils_1_1_e_mail_thread_1_1_email_thread_a9776ad6602db5213aadf8eca5dd811dd}{}\index{Ground\+Segment\+::\+Utils\+::\+E\+Mail\+Thread\+::\+Email\+Thread@{Ground\+Segment\+::\+Utils\+::\+E\+Mail\+Thread\+::\+Email\+Thread}!subject@{subject}}
+\index{subject@{subject}!Ground\+Segment\+::\+Utils\+::\+E\+Mail\+Thread\+::\+Email\+Thread@{Ground\+Segment\+::\+Utils\+::\+E\+Mail\+Thread\+::\+Email\+Thread}}
+\subsubsection[{subject}]{\setlength{\rightskip}{0pt plus 5cm}Ground\+Segment.\+Utils.\+E\+Mail\+Thread.\+Email\+Thread.\+subject}\label{class_ground_segment_1_1_utils_1_1_e_mail_thread_1_1_email_thread_a9776ad6602db5213aadf8eca5dd811dd}
+
+
+Definition at line 14 of file E\+Mail\+Thread.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ubuntumate/git/\+Ground\+Segment/\+Ground\+Segment/\+Ground\+Segment/\+Utils/\hyperlink{_e_mail_thread_8py}{E\+Mail\+Thread.\+py}\end{DoxyCompactItemize}

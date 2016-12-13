@@ -1,0 +1,129 @@
+\hypertarget{class_ground_segment_1_1models_1_1_command_type_1_1_command_type}{}\section{Ground\+Segment.\+models.\+Command\+Type.\+Command\+Type Class Reference}
+\label{class_ground_segment_1_1models_1_1_command_type_1_1_command_type}\index{Ground\+Segment.\+models.\+Command\+Type.\+Command\+Type@{Ground\+Segment.\+models.\+Command\+Type.\+Command\+Type}}
+
+
+Inheritance diagram for Ground\+Segment.\+models.\+Command\+Type.\+Command\+Type\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{class_ground_segment_1_1models_1_1_command_type_1_1_command_type__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ground\+Segment.\+models.\+Command\+Type.\+Command\+Type\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{class_ground_segment_1_1models_1_1_command_type_1_1_command_type__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_command_type_1_1_command_type_a49cb55136b78a70beb2029c2831329c8}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_command_type_1_1_command_type_ac77c0cba489bd7a6fdaa1b1708874788}{code} = models.\+Char\+Field(\textquotesingle{}Codigo del tipo de comando\textquotesingle{}, max\+\_\+length=24, help\+\_\+text=\textquotesingle{}Codigo del tipo de comando\textquotesingle{}, unique=True)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_command_type_1_1_command_type_aaa9751ec3f77c395d30ccee44158b402}{description} = models.\+Char\+Field(\textquotesingle{}Decripcion del tipo de comando\textquotesingle{}, max\+\_\+length=100, help\+\_\+text=\textquotesingle{}Decripcion del tipo de comando\textquotesingle{}, unique=True)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_command_type_1_1_command_type_ac4a5af6d55267d8927df6f12056ba3ca}{satellite} = models.\+Foreign\+Key(\hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite}{Satellite}, related\+\_\+name=\textquotesingle{}commands\+Type\textquotesingle{})
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_command_type_1_1_command_type_a7d70980b38a0c4a182eb5eaf5e03a682}{satellite\+States} = models.\+Many\+To\+Many\+Field(\hyperlink{class_ground_segment_1_1models_1_1_satellite_state_1_1_satellite_state}{Satellite\+State}, related\+\_\+name=\textquotesingle{}commands\+Type\textquotesingle{})
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_command_type_1_1_command_type_a4fd1cf4f72c8b1bfd70917acaab44cfc}{active} = models.\+Boolean\+Field(default=True)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_command_type_1_1_command_type_a3cda63f48be91dcfde6d1ca9aa4cabec}{transactional} = models.\+Boolean\+Field(default=False)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_command_type_1_1_command_type_a3b7254a7759af25a5d8f1766a4c868b4}{timeout} = models.\+Integer\+Field(\textquotesingle{}Tiempo en segundos?\textquotesingle{}, default=0, null=False)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_command_type_1_1_command_type_a069e16acae24ff0ca455f5ea0d5e62da}{notes} = models.\+Text\+Field(\textquotesingle{}Consecuencias, restricciones del comando\textquotesingle{}, max\+\_\+length=512, null=True)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 14 of file Command\+Type.\+py.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_ground_segment_1_1models_1_1_command_type_1_1_command_type_a49cb55136b78a70beb2029c2831329c8}{}\index{Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type@{Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type@{Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type}}
+\subsubsection[{\+\_\+\+\_\+str\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Command\+Type.\+Command\+Type.\+\_\+\+\_\+str\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_command_type_1_1_command_type_a49cb55136b78a70beb2029c2831329c8}
+
+
+Definition at line 24 of file Command\+Type.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_ground_segment_1_1models_1_1_command_type_1_1_command_type_a4fd1cf4f72c8b1bfd70917acaab44cfc}{}\index{Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type@{Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type}!active@{active}}
+\index{active@{active}!Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type@{Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type}}
+\subsubsection[{active}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Command\+Type.\+Command\+Type.\+active = models.\+Boolean\+Field(default=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_command_type_1_1_command_type_a4fd1cf4f72c8b1bfd70917acaab44cfc}
+
+
+Definition at line 19 of file Command\+Type.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_command_type_1_1_command_type_ac77c0cba489bd7a6fdaa1b1708874788}{}\index{Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type@{Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type}!code@{code}}
+\index{code@{code}!Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type@{Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type}}
+\subsubsection[{code}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Command\+Type.\+Command\+Type.\+code = models.\+Char\+Field(\textquotesingle{}Codigo del tipo de comando\textquotesingle{}, max\+\_\+length=24, help\+\_\+text=\textquotesingle{}Codigo del tipo de comando\textquotesingle{}, unique=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_command_type_1_1_command_type_ac77c0cba489bd7a6fdaa1b1708874788}
+
+
+Definition at line 15 of file Command\+Type.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_command_type_1_1_command_type_aaa9751ec3f77c395d30ccee44158b402}{}\index{Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type@{Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type}!description@{description}}
+\index{description@{description}!Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type@{Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type}}
+\subsubsection[{description}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Command\+Type.\+Command\+Type.\+description = models.\+Char\+Field(\textquotesingle{}Decripcion del tipo de comando\textquotesingle{}, max\+\_\+length=100, help\+\_\+text=\textquotesingle{}Decripcion del tipo de comando\textquotesingle{}, unique=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_command_type_1_1_command_type_aaa9751ec3f77c395d30ccee44158b402}
+
+
+Definition at line 16 of file Command\+Type.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_command_type_1_1_command_type_a069e16acae24ff0ca455f5ea0d5e62da}{}\index{Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type@{Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type}!notes@{notes}}
+\index{notes@{notes}!Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type@{Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type}}
+\subsubsection[{notes}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Command\+Type.\+Command\+Type.\+notes = models.\+Text\+Field(\textquotesingle{}Consecuencias, restricciones del comando\textquotesingle{}, max\+\_\+length=512, null=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_command_type_1_1_command_type_a069e16acae24ff0ca455f5ea0d5e62da}
+
+
+Definition at line 22 of file Command\+Type.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_command_type_1_1_command_type_ac4a5af6d55267d8927df6f12056ba3ca}{}\index{Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type@{Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type}!satellite@{satellite}}
+\index{satellite@{satellite}!Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type@{Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type}}
+\subsubsection[{satellite}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Command\+Type.\+Command\+Type.\+satellite = models.\+Foreign\+Key({\bf Satellite}, related\+\_\+name=\textquotesingle{}commands\+Type\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_command_type_1_1_command_type_ac4a5af6d55267d8927df6f12056ba3ca}
+
+
+Definition at line 17 of file Command\+Type.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_command_type_1_1_command_type_a7d70980b38a0c4a182eb5eaf5e03a682}{}\index{Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type@{Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type}!satellite\+States@{satellite\+States}}
+\index{satellite\+States@{satellite\+States}!Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type@{Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type}}
+\subsubsection[{satellite\+States}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Command\+Type.\+Command\+Type.\+satellite\+States = models.\+Many\+To\+Many\+Field({\bf Satellite\+State}, related\+\_\+name=\textquotesingle{}commands\+Type\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_command_type_1_1_command_type_a7d70980b38a0c4a182eb5eaf5e03a682}
+
+
+Definition at line 18 of file Command\+Type.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_command_type_1_1_command_type_a3b7254a7759af25a5d8f1766a4c868b4}{}\index{Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type@{Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type}!timeout@{timeout}}
+\index{timeout@{timeout}!Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type@{Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type}}
+\subsubsection[{timeout}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Command\+Type.\+Command\+Type.\+timeout = models.\+Integer\+Field(\textquotesingle{}Tiempo en segundos?\textquotesingle{}, default=0, null=False)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_command_type_1_1_command_type_a3b7254a7759af25a5d8f1766a4c868b4}
+
+
+Definition at line 21 of file Command\+Type.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_command_type_1_1_command_type_a3cda63f48be91dcfde6d1ca9aa4cabec}{}\index{Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type@{Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type}!transactional@{transactional}}
+\index{transactional@{transactional}!Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type@{Ground\+Segment\+::models\+::\+Command\+Type\+::\+Command\+Type}}
+\subsubsection[{transactional}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Command\+Type.\+Command\+Type.\+transactional = models.\+Boolean\+Field(default=False)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_command_type_1_1_command_type_a3cda63f48be91dcfde6d1ca9aa4cabec}
+
+
+Definition at line 20 of file Command\+Type.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ubuntumate/git/\+Ground\+Segment/\+Ground\+Segment/\+Ground\+Segment/models/\hyperlink{_command_type_8py}{Command\+Type.\+py}\end{DoxyCompactItemize}

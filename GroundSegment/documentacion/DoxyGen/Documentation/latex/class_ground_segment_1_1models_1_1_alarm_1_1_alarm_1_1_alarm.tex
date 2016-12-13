@@ -1,0 +1,185 @@
+\hypertarget{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm}{}\section{Ground\+Segment.\+models.\+Alarm.\+Alarm.\+Alarm Class Reference}
+\label{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm}\index{Ground\+Segment.\+models.\+Alarm.\+Alarm.\+Alarm@{Ground\+Segment.\+models.\+Alarm.\+Alarm.\+Alarm}}
+
+
+Inheritance diagram for Ground\+Segment.\+models.\+Alarm.\+Alarm.\+Alarm\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ground\+Segment.\+models.\+Alarm.\+Alarm.\+Alarm\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_a2689d35e506c6fc25613bda35d1a0994}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, args, kwargs)
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_a93e8b0cb1730a3afe7349d6b4c7a9153}{new} (cls, \hyperlink{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_a605cb206ae2e10d3a552d9dd47f5ba58}{satellite}, alarmtype, \hyperlink{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_a020cb3f0f8923b094ba710029d0dd433}{dt\+Arrival})
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_a99cb5236d959b768b4aa99bdeed9b909}{set\+Open} (self)
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_a5a8f40f21689e3f971da72697ec6ccdb}{set\+Close} (self)
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_aab0965a0660e28177d0ed9e9893ccc41}{is\+Overcome} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_aa22cb77ce71da33580d369eed7306091}{dt\+Arrival}
+\item 
+\hyperlink{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_a485c4c559bb998a413e46817a9930b40}{state}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_af5f6eb07782af5a907880d9120c1bca4}{alarm\+Type} = models.\+Foreign\+Key(\hyperlink{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_type_1_1_alarm_type}{Alarm\+Type}, related\+\_\+name=\char`\"{}alarms\char`\"{})
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_a567e2e2aa9906455d4678df229dac10c}{state} = models.\+Integer\+Field()
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_a020cb3f0f8923b094ba710029d0dd433}{dt\+Arrival} = models.\+Date\+Time\+Field(default=0)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_a605cb206ae2e10d3a552d9dd47f5ba58}{satellite} = models.\+Foreign\+Key(\hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite}{Satellite}, related\+\_\+name=\textquotesingle{}alarms\textquotesingle{})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Clase/Entidad encargada de almacenar las alarmas producidas por situaciones fuera de las esperadas.
+Las alarmas pueden producirse por valores de telemetria por fuera de los rangos aceptados o situaciones no nominales    
+\end{DoxyVerb}
+ 
+
+Definition at line 33 of file Alarm.\+py.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_a2689d35e506c6fc25613bda35d1a0994}{}\index{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm@{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm@{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm}}
+\subsubsection[{\+\_\+\+\_\+init\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Alarm.\+Alarm.\+Alarm.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{args, }
+\item[{}]{kwargs}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_a2689d35e506c6fc25613bda35d1a0994}
+
+
+Definition at line 52 of file Alarm.\+py.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_aab0965a0660e28177d0ed9e9893ccc41}{}\index{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm@{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm}!is\+Overcome@{is\+Overcome}}
+\index{is\+Overcome@{is\+Overcome}!Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm@{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm}}
+\subsubsection[{is\+Overcome}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Alarm.\+Alarm.\+Alarm.\+is\+Overcome (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_aab0965a0660e28177d0ed9e9893ccc41}
+\begin{DoxyVerb}Indica si la alarma no fue antendida en el tiempo dispuesto para ello   
+\end{DoxyVerb}
+ 
+
+Definition at line 122 of file Alarm.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_a93e8b0cb1730a3afe7349d6b4c7a9153}{}\index{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm@{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm}!new@{new}}
+\index{new@{new}!Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm@{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm}}
+\subsubsection[{new}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Alarm.\+Alarm.\+Alarm.\+new (
+\begin{DoxyParamCaption}
+\item[{}]{cls, }
+\item[{}]{satellite, }
+\item[{}]{alarmtype, }
+\item[{}]{dt\+Arrival}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_a93e8b0cb1730a3afe7349d6b4c7a9153}
+
+
+Definition at line 62 of file Alarm.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_a5a8f40f21689e3f971da72697ec6ccdb}{}\index{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm@{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm}!set\+Close@{set\+Close}}
+\index{set\+Close@{set\+Close}!Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm@{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm}}
+\subsubsection[{set\+Close}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Alarm.\+Alarm.\+Alarm.\+set\+Close (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_a5a8f40f21689e3f971da72697ec6ccdb}
+\begin{DoxyVerb}Este metodo verifica si es posible el cambio de estado de la alarma a cerrada y en caso de ser posible lo realiza.
+Genera una excepcion en caso de no poder cumplirse la operacion
+\end{DoxyVerb}
+ 
+
+Definition at line 112 of file Alarm.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_a99cb5236d959b768b4aa99bdeed9b909}{}\index{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm@{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm}!set\+Open@{set\+Open}}
+\index{set\+Open@{set\+Open}!Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm@{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm}}
+\subsubsection[{set\+Open}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Alarm.\+Alarm.\+Alarm.\+set\+Open (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_a99cb5236d959b768b4aa99bdeed9b909}
+\begin{DoxyVerb}Este metodo verifica si es posible el cambio de estado de la alarma a abierta y en caso de ser posible lo realiza.
+Genera una excepcion en caso de no poder cumplirse la operacion
+\end{DoxyVerb}
+ 
+
+Definition at line 105 of file Alarm.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_af5f6eb07782af5a907880d9120c1bca4}{}\index{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm@{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm}!alarm\+Type@{alarm\+Type}}
+\index{alarm\+Type@{alarm\+Type}!Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm@{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm}}
+\subsubsection[{alarm\+Type}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Alarm.\+Alarm.\+Alarm.\+alarm\+Type = models.\+Foreign\+Key({\bf Alarm\+Type}, related\+\_\+name=\char`\"{}alarms\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_af5f6eb07782af5a907880d9120c1bca4}
+
+
+Definition at line 39 of file Alarm.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_a020cb3f0f8923b094ba710029d0dd433}{}\index{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm@{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm}!dt\+Arrival@{dt\+Arrival}}
+\index{dt\+Arrival@{dt\+Arrival}!Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm@{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm}}
+\subsubsection[{dt\+Arrival}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Alarm.\+Alarm.\+Alarm.\+dt\+Arrival = models.\+Date\+Time\+Field(default=0)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_a020cb3f0f8923b094ba710029d0dd433}
+
+
+Definition at line 42 of file Alarm.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_aa22cb77ce71da33580d369eed7306091}{}\index{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm@{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm}!dt\+Arrival@{dt\+Arrival}}
+\index{dt\+Arrival@{dt\+Arrival}!Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm@{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm}}
+\subsubsection[{dt\+Arrival}]{\setlength{\rightskip}{0pt plus 5cm}Ground\+Segment.\+models.\+Alarm.\+Alarm.\+Alarm.\+dt\+Arrival}\label{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_aa22cb77ce71da33580d369eed7306091}
+
+
+Definition at line 55 of file Alarm.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_a605cb206ae2e10d3a552d9dd47f5ba58}{}\index{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm@{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm}!satellite@{satellite}}
+\index{satellite@{satellite}!Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm@{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm}}
+\subsubsection[{satellite}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Alarm.\+Alarm.\+Alarm.\+satellite = models.\+Foreign\+Key({\bf Satellite}, related\+\_\+name=\textquotesingle{}alarms\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_a605cb206ae2e10d3a552d9dd47f5ba58}
+
+
+Definition at line 43 of file Alarm.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_a567e2e2aa9906455d4678df229dac10c}{}\index{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm@{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm}!state@{state}}
+\index{state@{state}!Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm@{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Alarm.\+Alarm.\+Alarm.\+state = models.\+Integer\+Field()\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_a567e2e2aa9906455d4678df229dac10c}
+
+
+Definition at line 41 of file Alarm.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_a485c4c559bb998a413e46817a9930b40}{}\index{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm@{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm}!state@{state}}
+\index{state@{state}!Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm@{Ground\+Segment\+::models\+::\+Alarm\+::\+Alarm\+::\+Alarm}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}Ground\+Segment.\+models.\+Alarm.\+Alarm.\+Alarm.\+state}\label{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_a485c4c559bb998a413e46817a9930b40}
+
+
+Definition at line 57 of file Alarm.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ubuntumate/git/\+Ground\+Segment/\+Ground\+Segment/\+Ground\+Segment/models/\+Alarm/\hyperlink{_alarm_8py}{Alarm.\+py}\end{DoxyCompactItemize}

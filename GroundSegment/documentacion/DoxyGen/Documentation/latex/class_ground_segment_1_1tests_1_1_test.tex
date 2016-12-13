@@ -1,0 +1,110 @@
+\hypertarget{class_ground_segment_1_1tests_1_1_test}{}\section{Ground\+Segment.\+tests.\+Test Class Reference}
+\label{class_ground_segment_1_1tests_1_1_test}\index{Ground\+Segment.\+tests.\+Test@{Ground\+Segment.\+tests.\+Test}}
+
+
+Inheritance diagram for Ground\+Segment.\+tests.\+Test\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{class_ground_segment_1_1tests_1_1_test__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ground\+Segment.\+tests.\+Test\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{class_ground_segment_1_1tests_1_1_test__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_ground_segment_1_1tests_1_1_test_ad2192ed0cee22fe08d3980d23032502e}{set\+Up} (self)
+\item 
+def \hyperlink{class_ground_segment_1_1tests_1_1_test_ad677e9b9c39104329499389f0fef9233}{tear\+Down} (self)
+\item 
+def \hyperlink{class_ground_segment_1_1tests_1_1_test_ada579a287b743c4cdc58dcd30538a804}{set\+Up\+Class} (cls)
+\item 
+def \hyperlink{class_ground_segment_1_1tests_1_1_test_aafc81ba3cc12c75d5ad32f106ec98ebf}{test\+Next\+Pass} (self)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 25 of file tests.\+py.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_ground_segment_1_1tests_1_1_test_ad2192ed0cee22fe08d3980d23032502e}{}\index{Ground\+Segment\+::tests\+::\+Test@{Ground\+Segment\+::tests\+::\+Test}!set\+Up@{set\+Up}}
+\index{set\+Up@{set\+Up}!Ground\+Segment\+::tests\+::\+Test@{Ground\+Segment\+::tests\+::\+Test}}
+\subsubsection[{set\+Up}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+tests.\+Test.\+set\+Up (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1tests_1_1_test_ad2192ed0cee22fe08d3980d23032502e}
+
+
+Definition at line 28 of file tests.\+py.
+
+\hypertarget{class_ground_segment_1_1tests_1_1_test_ada579a287b743c4cdc58dcd30538a804}{}\index{Ground\+Segment\+::tests\+::\+Test@{Ground\+Segment\+::tests\+::\+Test}!set\+Up\+Class@{set\+Up\+Class}}
+\index{set\+Up\+Class@{set\+Up\+Class}!Ground\+Segment\+::tests\+::\+Test@{Ground\+Segment\+::tests\+::\+Test}}
+\subsubsection[{set\+Up\+Class}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+tests.\+Test.\+set\+Up\+Class (
+\begin{DoxyParamCaption}
+\item[{}]{cls}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1tests_1_1_test_ada579a287b743c4cdc58dcd30538a804}
+\begin{DoxyVerb}Crea los maestros de operacion para el resto de los test de esta unidad
+\end{DoxyVerb}
+ 
+
+Definition at line 37 of file tests.\+py.
+
+\hypertarget{class_ground_segment_1_1tests_1_1_test_ad677e9b9c39104329499389f0fef9233}{}\index{Ground\+Segment\+::tests\+::\+Test@{Ground\+Segment\+::tests\+::\+Test}!tear\+Down@{tear\+Down}}
+\index{tear\+Down@{tear\+Down}!Ground\+Segment\+::tests\+::\+Test@{Ground\+Segment\+::tests\+::\+Test}}
+\subsubsection[{tear\+Down}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+tests.\+Test.\+tear\+Down (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1tests_1_1_test_ad677e9b9c39104329499389f0fef9233}
+
+
+Definition at line 33 of file tests.\+py.
+
+\hypertarget{class_ground_segment_1_1tests_1_1_test_aafc81ba3cc12c75d5ad32f106ec98ebf}{}\index{Ground\+Segment\+::tests\+::\+Test@{Ground\+Segment\+::tests\+::\+Test}!test\+Next\+Pass@{test\+Next\+Pass}}
+\index{test\+Next\+Pass@{test\+Next\+Pass}!Ground\+Segment\+::tests\+::\+Test@{Ground\+Segment\+::tests\+::\+Test}}
+\subsubsection[{test\+Next\+Pass}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+tests.\+Test.\+test\+Next\+Pass (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1tests_1_1_test_aafc81ba3cc12c75d5ad32f106ec98ebf}
+\begin{DoxyVerb}Testeo no finalizado
+
+
+sat = Satellite.objects.get(noradId="25544")
+
+site = Site()
+site.setLatitude(-31.524075)
+site.setLongitude(-64.463522)
+site.setAltitude(730.0)
+site.save()
+
+fro = datetime.utcnow()
+to = datetime.utcnow() + timedelta(minutes=30)
+
+ 
+
+site.getPass(fro, to, sat)
+\end{DoxyVerb}
+ 
+
+Definition at line 63 of file tests.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ubuntumate/git/\+Ground\+Segment/\+Ground\+Segment/\+Ground\+Segment/\hyperlink{tests_8py}{tests.\+py}\end{DoxyCompactItemize}

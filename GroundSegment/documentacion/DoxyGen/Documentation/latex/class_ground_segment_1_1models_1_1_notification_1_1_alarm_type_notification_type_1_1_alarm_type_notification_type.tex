@@ -1,0 +1,97 @@
+\hypertarget{class_ground_segment_1_1models_1_1_notification_1_1_alarm_type_notification_type_1_1_alarm_type_notification_type}{}\section{Ground\+Segment.\+models.\+Notification.\+Alarm\+Type\+Notification\+Type.\+Alarm\+Type\+Notification\+Type Class Reference}
+\label{class_ground_segment_1_1models_1_1_notification_1_1_alarm_type_notification_type_1_1_alarm_type_notification_type}\index{Ground\+Segment.\+models.\+Notification.\+Alarm\+Type\+Notification\+Type.\+Alarm\+Type\+Notification\+Type@{Ground\+Segment.\+models.\+Notification.\+Alarm\+Type\+Notification\+Type.\+Alarm\+Type\+Notification\+Type}}
+
+
+Inheritance diagram for Ground\+Segment.\+models.\+Notification.\+Alarm\+Type\+Notification\+Type.\+Alarm\+Type\+Notification\+Type\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{class_ground_segment_1_1models_1_1_notification_1_1_alarm_type_notification_type_1_1_alarm_type_669364a24915e31838f70ba6bda3b980}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ground\+Segment.\+models.\+Notification.\+Alarm\+Type\+Notification\+Type.\+Alarm\+Type\+Notification\+Type\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{class_ground_segment_1_1models_1_1_notification_1_1_alarm_type_notification_type_1_1_alarm_type_notification_type__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_notification_1_1_alarm_type_notification_type_1_1_alarm_type_notification_type_a038b5d3c7dd5fbbdb225843c1c552be5}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_notification_1_1_alarm_type_notification_type_1_1_alarm_type_notification_type_adcaf2d8b90b3972c1288fd6e05affe82}{notification\+Type} = models.\+Foreign\+Key(\hyperlink{class_ground_segment_1_1models_1_1_notification_1_1_notification_type_1_1_notification_type}{Notification\+Type}, on\+\_\+delete=models.\+P\+R\+O\+T\+E\+C\+T, related\+\_\+name=\char`\"{}Alarm\+Type\+Notification\+Types\char`\"{})
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_notification_1_1_alarm_type_notification_type_1_1_alarm_type_notification_type_aadf8abea727afcb6b9dd7a0cc7355206}{alarm\+Type} = models.\+Foreign\+Key(\hyperlink{class_ground_segment_1_1models_1_1_alarm_1_1_alarm_type_1_1_alarm_type}{Alarm\+Type}, on\+\_\+delete=models.\+P\+R\+O\+T\+E\+C\+T, related\+\_\+name=\char`\"{}Alarm\+Type\+Notification\+Types\char`\"{})
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_notification_1_1_alarm_type_notification_type_1_1_alarm_type_notification_type_ab3c9522d5f6e0d6f4cb640240f98e384}{message\+Template} = models.\+Foreign\+Key(\hyperlink{class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template}{Message\+Template},on\+\_\+delete=models.\+P\+R\+O\+T\+E\+C\+T, related\+\_\+name=\char`\"{}Alarm\+Type\+Notification\+Types\char`\"{})
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_notification_1_1_alarm_type_notification_type_1_1_alarm_type_notification_type_a066d4f1b841dc5989008f0613d8ebd73}{contacts} = models.\+Many\+To\+Many\+Field(\hyperlink{class_ground_segment_1_1models_1_1_notification_1_1_contact_1_1_contact}{Contact}, related\+\_\+name=\char`\"{}alarm\+Type\+Notification\+Type\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Clase/Entidad de configuracion donde se determina si una alarma de determinado tipo es candidata a la 
+notificacion, que tipo de notificacion de usarse, con que plantilla y cuales son los destinatarios de
+esa notificacion.
+\end{DoxyVerb}
+ 
+
+Definition at line 13 of file Alarm\+Type\+Notification\+Type.\+py.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_ground_segment_1_1models_1_1_notification_1_1_alarm_type_notification_type_1_1_alarm_type_notification_type_a038b5d3c7dd5fbbdb225843c1c552be5}{}\index{Ground\+Segment\+::models\+::\+Notification\+::\+Alarm\+Type\+Notification\+Type\+::\+Alarm\+Type\+Notification\+Type@{Ground\+Segment\+::models\+::\+Notification\+::\+Alarm\+Type\+Notification\+Type\+::\+Alarm\+Type\+Notification\+Type}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!Ground\+Segment\+::models\+::\+Notification\+::\+Alarm\+Type\+Notification\+Type\+::\+Alarm\+Type\+Notification\+Type@{Ground\+Segment\+::models\+::\+Notification\+::\+Alarm\+Type\+Notification\+Type\+::\+Alarm\+Type\+Notification\+Type}}
+\subsubsection[{\+\_\+\+\_\+str\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Notification.\+Alarm\+Type\+Notification\+Type.\+Alarm\+Type\+Notification\+Type.\+\_\+\+\_\+str\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_notification_1_1_alarm_type_notification_type_1_1_alarm_type_notification_type_a038b5d3c7dd5fbbdb225843c1c552be5}
+
+
+Definition at line 26 of file Alarm\+Type\+Notification\+Type.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_ground_segment_1_1models_1_1_notification_1_1_alarm_type_notification_type_1_1_alarm_type_notification_type_aadf8abea727afcb6b9dd7a0cc7355206}{}\index{Ground\+Segment\+::models\+::\+Notification\+::\+Alarm\+Type\+Notification\+Type\+::\+Alarm\+Type\+Notification\+Type@{Ground\+Segment\+::models\+::\+Notification\+::\+Alarm\+Type\+Notification\+Type\+::\+Alarm\+Type\+Notification\+Type}!alarm\+Type@{alarm\+Type}}
+\index{alarm\+Type@{alarm\+Type}!Ground\+Segment\+::models\+::\+Notification\+::\+Alarm\+Type\+Notification\+Type\+::\+Alarm\+Type\+Notification\+Type@{Ground\+Segment\+::models\+::\+Notification\+::\+Alarm\+Type\+Notification\+Type\+::\+Alarm\+Type\+Notification\+Type}}
+\subsubsection[{alarm\+Type}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Notification.\+Alarm\+Type\+Notification\+Type.\+Alarm\+Type\+Notification\+Type.\+alarm\+Type = models.\+Foreign\+Key({\bf Alarm\+Type}, on\+\_\+delete=models.\+P\+R\+O\+T\+E\+C\+T, related\+\_\+name=\char`\"{}Alarm\+Type\+Notification\+Types\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_notification_1_1_alarm_type_notification_type_1_1_alarm_type_notification_type_aadf8abea727afcb6b9dd7a0cc7355206}
+
+
+Definition at line 21 of file Alarm\+Type\+Notification\+Type.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_notification_1_1_alarm_type_notification_type_1_1_alarm_type_notification_type_a066d4f1b841dc5989008f0613d8ebd73}{}\index{Ground\+Segment\+::models\+::\+Notification\+::\+Alarm\+Type\+Notification\+Type\+::\+Alarm\+Type\+Notification\+Type@{Ground\+Segment\+::models\+::\+Notification\+::\+Alarm\+Type\+Notification\+Type\+::\+Alarm\+Type\+Notification\+Type}!contacts@{contacts}}
+\index{contacts@{contacts}!Ground\+Segment\+::models\+::\+Notification\+::\+Alarm\+Type\+Notification\+Type\+::\+Alarm\+Type\+Notification\+Type@{Ground\+Segment\+::models\+::\+Notification\+::\+Alarm\+Type\+Notification\+Type\+::\+Alarm\+Type\+Notification\+Type}}
+\subsubsection[{contacts}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Notification.\+Alarm\+Type\+Notification\+Type.\+Alarm\+Type\+Notification\+Type.\+contacts = models.\+Many\+To\+Many\+Field({\bf Contact}, related\+\_\+name=\char`\"{}alarm\+Type\+Notification\+Type\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_notification_1_1_alarm_type_notification_type_1_1_alarm_type_notification_type_a066d4f1b841dc5989008f0613d8ebd73}
+
+
+Definition at line 24 of file Alarm\+Type\+Notification\+Type.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_notification_1_1_alarm_type_notification_type_1_1_alarm_type_notification_type_ab3c9522d5f6e0d6f4cb640240f98e384}{}\index{Ground\+Segment\+::models\+::\+Notification\+::\+Alarm\+Type\+Notification\+Type\+::\+Alarm\+Type\+Notification\+Type@{Ground\+Segment\+::models\+::\+Notification\+::\+Alarm\+Type\+Notification\+Type\+::\+Alarm\+Type\+Notification\+Type}!message\+Template@{message\+Template}}
+\index{message\+Template@{message\+Template}!Ground\+Segment\+::models\+::\+Notification\+::\+Alarm\+Type\+Notification\+Type\+::\+Alarm\+Type\+Notification\+Type@{Ground\+Segment\+::models\+::\+Notification\+::\+Alarm\+Type\+Notification\+Type\+::\+Alarm\+Type\+Notification\+Type}}
+\subsubsection[{message\+Template}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Notification.\+Alarm\+Type\+Notification\+Type.\+Alarm\+Type\+Notification\+Type.\+message\+Template = models.\+Foreign\+Key({\bf Message\+Template},on\+\_\+delete=models.\+P\+R\+O\+T\+E\+C\+T, related\+\_\+name=\char`\"{}Alarm\+Type\+Notification\+Types\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_notification_1_1_alarm_type_notification_type_1_1_alarm_type_notification_type_ab3c9522d5f6e0d6f4cb640240f98e384}
+
+
+Definition at line 22 of file Alarm\+Type\+Notification\+Type.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_notification_1_1_alarm_type_notification_type_1_1_alarm_type_notification_type_adcaf2d8b90b3972c1288fd6e05affe82}{}\index{Ground\+Segment\+::models\+::\+Notification\+::\+Alarm\+Type\+Notification\+Type\+::\+Alarm\+Type\+Notification\+Type@{Ground\+Segment\+::models\+::\+Notification\+::\+Alarm\+Type\+Notification\+Type\+::\+Alarm\+Type\+Notification\+Type}!notification\+Type@{notification\+Type}}
+\index{notification\+Type@{notification\+Type}!Ground\+Segment\+::models\+::\+Notification\+::\+Alarm\+Type\+Notification\+Type\+::\+Alarm\+Type\+Notification\+Type@{Ground\+Segment\+::models\+::\+Notification\+::\+Alarm\+Type\+Notification\+Type\+::\+Alarm\+Type\+Notification\+Type}}
+\subsubsection[{notification\+Type}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Notification.\+Alarm\+Type\+Notification\+Type.\+Alarm\+Type\+Notification\+Type.\+notification\+Type = models.\+Foreign\+Key({\bf Notification\+Type}, on\+\_\+delete=models.\+P\+R\+O\+T\+E\+C\+T, related\+\_\+name=\char`\"{}Alarm\+Type\+Notification\+Types\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_notification_1_1_alarm_type_notification_type_1_1_alarm_type_notification_type_adcaf2d8b90b3972c1288fd6e05affe82}
+
+
+Definition at line 20 of file Alarm\+Type\+Notification\+Type.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ubuntumate/git/\+Ground\+Segment/\+Ground\+Segment/\+Ground\+Segment/models/\+Notification/\hyperlink{_alarm_type_notification_type_8py}{Alarm\+Type\+Notification\+Type.\+py}\end{DoxyCompactItemize}

@@ -4,6 +4,7 @@ var namespace_ground_segment_1_1admin =
     [ "AlarmStateAdmin", "class_ground_segment_1_1admin_1_1_alarm_state_admin.html", null ],
     [ "AlarmTypeAdmin", "class_ground_segment_1_1admin_1_1_alarm_type_admin.html", null ],
     [ "AlarmTypeNotificationTypeAdmin", "class_ground_segment_1_1admin_1_1_alarm_type_notification_type_admin.html", null ],
+    [ "CalibrationAdmin", "class_ground_segment_1_1admin_1_1_calibration_admin.html", null ],
     [ "CommandTypeAdmin", "class_ground_segment_1_1admin_1_1_command_type_admin.html", null ],
     [ "ContactAdmin", "class_ground_segment_1_1admin_1_1_contact_admin.html", null ],
     [ "CriticityAdmin", "class_ground_segment_1_1admin_1_1_criticity_admin.html", null ],
@@ -14,5 +15,8 @@ var namespace_ground_segment_1_1admin =
     [ "PasadaAdmin", "class_ground_segment_1_1admin_1_1_pasada_admin.html", null ],
     [ "SatelliteAdmin", "class_ground_segment_1_1admin_1_1_satellite_admin.html", null ],
     [ "SatelliteStateAdmin", "class_ground_segment_1_1admin_1_1_satellite_state_admin.html", null ],
-    [ "SitioAdmin", "class_ground_segment_1_1admin_1_1_sitio_admin.html", null ]
+    [ "SitioAdmin", "class_ground_segment_1_1admin_1_1_sitio_admin.html", null ],
+    [ "SubSystemAdmin", "class_ground_segment_1_1admin_1_1_sub_system_admin.html", null ],
+    [ "TmlyVarAdmin", "class_ground_segment_1_1admin_1_1_tmly_var_admin.html", null ],
+    [ "TmlyVarTypeAdmin", "class_ground_segment_1_1admin_1_1_tmly_var_type_admin.html", null ]
 ];

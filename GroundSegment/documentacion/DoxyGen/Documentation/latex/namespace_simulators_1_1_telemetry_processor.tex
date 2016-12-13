@@ -1,0 +1,270 @@
+\hypertarget{namespace_simulators_1_1_telemetry_processor}{}\section{Simulators.\+Telemetry\+Processor Namespace Reference}
+\label{namespace_simulators_1_1_telemetry_processor}\index{Simulators.\+Telemetry\+Processor@{Simulators.\+Telemetry\+Processor}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespace_simulators_1_1_telemetry_processor_abaafce9813e342f6c47b481cf02095fd}{Save\+Tlmy\+Updates} (dirty\+Object, \hyperlink{namespace_simulators_1_1_telemetry_processor_adc73b3fce91792369a602ff747603555}{n})
+\item 
+def \hyperlink{namespace_simulators_1_1_telemetry_processor_a1a2a116f3331f2f0ad2765ed544d020b}{Raw\+Save\+Tlmy\+Updates} (dirty\+Object, \hyperlink{namespace_simulators_1_1_telemetry_processor_adc73b3fce91792369a602ff747603555}{n})
+\item 
+def \hyperlink{namespace_simulators_1_1_telemetry_processor_ad9e1575da9b3c1f3fde7e7cc688995d8}{Save\+Tlmy} (\hyperlink{namespace_simulators_1_1_telemetry_processor_aa425ba047b0408bf6e05f599222c6bee}{dirty\+Objects}, \hyperlink{namespace_simulators_1_1_telemetry_processor_adc73b3fce91792369a602ff747603555}{n})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{namespace_simulators_1_1_telemetry_processor_adc73b3fce91792369a602ff747603555}{n} = 0
+\item 
+\hyperlink{namespace_simulators_1_1_telemetry_processor_a8c49f30b06ce8e1d4f1cb129990137f0}{R\+O\+O\+T\+\_\+\+D\+I\+R} = B\+A\+S\+E\+\_\+\+D\+I\+R
+\item 
+\hyperlink{namespace_simulators_1_1_telemetry_processor_a9d556f1e0ebadc73e343a76eec24be68}{proj\+\_\+path} = \hyperlink{namespace_simulators_1_1_telemetry_processor_a8c49f30b06ce8e1d4f1cb129990137f0}{R\+O\+O\+T\+\_\+\+D\+I\+R}
+\item 
+tuple \hyperlink{namespace_simulators_1_1_telemetry_processor_a5febb933bf5e066cf21cae50f488f344}{application} = get\+\_\+wsgi\+\_\+application()
+\item 
+tuple \hyperlink{namespace_simulators_1_1_telemetry_processor_abc826fa3560eab24e061626347bca797}{cant} = Tlmy\+Var\+Type.\+objects.\+all()
+\item 
+int \hyperlink{namespace_simulators_1_1_telemetry_processor_a4c9006577ee9d8c413d6101dff7d6f4a}{createcount} = 100000
+\item 
+tuple \hyperlink{namespace_simulators_1_1_telemetry_processor_a0853713b806ec7ae27394839316688a4}{sat} = Satellite.\+objects.\+get(code=\char`\"{}F\+S2017\char`\"{})
+\item 
+\hyperlink{namespace_simulators_1_1_telemetry_processor_a9d4a2dfca542d1b8b21e429e2d0678a6}{afrom} = \hyperlink{namespace_simulators_1_1_telemetry_processor_abc826fa3560eab24e061626347bca797}{cant}
+\item 
+list \hyperlink{namespace_simulators_1_1_telemetry_processor_a55a89e1c665ed41a1547f8d4532e524e}{tlm\+Var\+Type\+List} = \mbox{[}$\,$\mbox{]}
+\item 
+tuple \hyperlink{namespace_simulators_1_1_telemetry_processor_aba1ed44c3244daa9240167e6b3b375b4}{ra} = rn.\+Random()
+\item 
+tuple \hyperlink{namespace_simulators_1_1_telemetry_processor_a534cc8f0eed75a7ae421b8bde43586f9}{tm} = \hyperlink{class_ground_segment_1_1models_1_1_tlmy_var_type_1_1_tlmy_var_type}{Tlmy\+Var\+Type}()
+\item 
+tuple \hyperlink{namespace_simulators_1_1_telemetry_processor_a8856d395177605add01698b1a6a13c0a}{t0} = time.\+time()
+\item 
+tuple \hyperlink{namespace_simulators_1_1_telemetry_processor_a12bc7f6b923142a1a0cc282b21648fd5}{t1} = time.\+time()
+\item 
+tuple \hyperlink{namespace_simulators_1_1_telemetry_processor_adf9bda1e07561e22f7fd77bc9467ace6}{all\+Tlmy\+Var} = Tlmy\+Var\+Type.\+objects.\+filter(satellite=\hyperlink{namespace_simulators_1_1_telemetry_processor_a0853713b806ec7ae27394839316688a4}{sat})
+\item 
+dictionary \hyperlink{namespace_simulators_1_1_telemetry_processor_a135852f6b75dc272f6d1db863bd290c6}{tlmy\+Simulator} = \{\}
+\item 
+dictionary \hyperlink{namespace_simulators_1_1_telemetry_processor_a937de4fb49355315e9cf23ca29d51a3a}{d\+All\+Tlmy\+Var} = \{\}
+\item 
+tuple \hyperlink{namespace_simulators_1_1_telemetry_processor_a4cb7a92c4d13d088c7763dd6a5597446}{threads} = list()
+\item 
+tuple \hyperlink{namespace_simulators_1_1_telemetry_processor_a7fe4cce5cc73c8db7435572440377e9d}{sim\+Cant} = int( input(\char`\"{}Indique cantidad de simulaciones...\char`\"{}) )
+\item 
+list \hyperlink{namespace_simulators_1_1_telemetry_processor_aa425ba047b0408bf6e05f599222c6bee}{dirty\+Objects} = \mbox{[}$\,$\mbox{]}
+\item 
+tuple \hyperlink{namespace_simulators_1_1_telemetry_processor_a6dd741085429d34d1cba94d3e166de78}{tstart} = time.\+time()
+\item 
+list \hyperlink{namespace_simulators_1_1_telemetry_processor_a9e946b833e211303ea3536275fec883f}{tel} = \hyperlink{namespace_simulators_1_1_telemetry_processor_a937de4fb49355315e9cf23ca29d51a3a}{d\+All\+Tlmy\+Var}\mbox{[}\hyperlink{jquery_8js_ab26645c014aa005ecedef329ecf58c99}{k}\mbox{]}
+\item 
+tuple \hyperlink{namespace_simulators_1_1_telemetry_processor_ac1232c885cb32bbc1c21e374e335299b}{tend} = time.\+time()
+\item 
+tuple \hyperlink{namespace_simulators_1_1_telemetry_processor_a5c52853408a5a4a37c50b60b7051ef1f}{t} = threading.\+Thread(target=\hyperlink{namespace_simulators_1_1_telemetry_processor_ad9e1575da9b3c1f3fde7e7cc688995d8}{Save\+Tlmy}(\hyperlink{namespace_simulators_1_1_telemetry_processor_aa425ba047b0408bf6e05f599222c6bee}{dirty\+Objects}, \hyperlink{namespace_simulators_1_1_telemetry_processor_adc73b3fce91792369a602ff747603555}{n}))
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Created on 25 de nov. de 2016
+
+@author: pabli
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\hypertarget{namespace_simulators_1_1_telemetry_processor_a1a2a116f3331f2f0ad2765ed544d020b}{}\index{Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}!Raw\+Save\+Tlmy\+Updates@{Raw\+Save\+Tlmy\+Updates}}
+\index{Raw\+Save\+Tlmy\+Updates@{Raw\+Save\+Tlmy\+Updates}!Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}}
+\subsubsection[{Raw\+Save\+Tlmy\+Updates}]{\setlength{\rightskip}{0pt plus 5cm}def Simulators.\+Telemetry\+Processor.\+Raw\+Save\+Tlmy\+Updates (
+\begin{DoxyParamCaption}
+\item[{}]{dirty\+Object, }
+\item[{}]{n}
+\end{DoxyParamCaption}
+)}\label{namespace_simulators_1_1_telemetry_processor_a1a2a116f3331f2f0ad2765ed544d020b}
+
+
+Definition at line 32 of file Telemetry\+Processor.\+py.
+
+\hypertarget{namespace_simulators_1_1_telemetry_processor_ad9e1575da9b3c1f3fde7e7cc688995d8}{}\index{Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}!Save\+Tlmy@{Save\+Tlmy}}
+\index{Save\+Tlmy@{Save\+Tlmy}!Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}}
+\subsubsection[{Save\+Tlmy}]{\setlength{\rightskip}{0pt plus 5cm}def Simulators.\+Telemetry\+Processor.\+Save\+Tlmy (
+\begin{DoxyParamCaption}
+\item[{}]{dirty\+Objects, }
+\item[{}]{n}
+\end{DoxyParamCaption}
+)}\label{namespace_simulators_1_1_telemetry_processor_ad9e1575da9b3c1f3fde7e7cc688995d8}
+
+
+Definition at line 76 of file Telemetry\+Processor.\+py.
+
+\hypertarget{namespace_simulators_1_1_telemetry_processor_abaafce9813e342f6c47b481cf02095fd}{}\index{Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}!Save\+Tlmy\+Updates@{Save\+Tlmy\+Updates}}
+\index{Save\+Tlmy\+Updates@{Save\+Tlmy\+Updates}!Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}}
+\subsubsection[{Save\+Tlmy\+Updates}]{\setlength{\rightskip}{0pt plus 5cm}def Simulators.\+Telemetry\+Processor.\+Save\+Tlmy\+Updates (
+\begin{DoxyParamCaption}
+\item[{}]{dirty\+Object, }
+\item[{}]{n}
+\end{DoxyParamCaption}
+)}\label{namespace_simulators_1_1_telemetry_processor_abaafce9813e342f6c47b481cf02095fd}
+
+
+Definition at line 23 of file Telemetry\+Processor.\+py.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{namespace_simulators_1_1_telemetry_processor_a9d4a2dfca542d1b8b21e429e2d0678a6}{}\index{Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}!afrom@{afrom}}
+\index{afrom@{afrom}!Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}}
+\subsubsection[{afrom}]{\setlength{\rightskip}{0pt plus 5cm}Simulators.\+Telemetry\+Processor.\+afrom = {\bf cant}}\label{namespace_simulators_1_1_telemetry_processor_a9d4a2dfca542d1b8b21e429e2d0678a6}
+
+
+Definition at line 100 of file Telemetry\+Processor.\+py.
+
+\hypertarget{namespace_simulators_1_1_telemetry_processor_adf9bda1e07561e22f7fd77bc9467ace6}{}\index{Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}!all\+Tlmy\+Var@{all\+Tlmy\+Var}}
+\index{all\+Tlmy\+Var@{all\+Tlmy\+Var}!Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}}
+\subsubsection[{all\+Tlmy\+Var}]{\setlength{\rightskip}{0pt plus 5cm}tuple Simulators.\+Telemetry\+Processor.\+all\+Tlmy\+Var = Tlmy\+Var\+Type.\+objects.\+filter(satellite={\bf sat})}\label{namespace_simulators_1_1_telemetry_processor_adf9bda1e07561e22f7fd77bc9467ace6}
+
+
+Definition at line 150 of file Telemetry\+Processor.\+py.
+
+\hypertarget{namespace_simulators_1_1_telemetry_processor_a5febb933bf5e066cf21cae50f488f344}{}\index{Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}!application@{application}}
+\index{application@{application}!Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}}
+\subsubsection[{application}]{\setlength{\rightskip}{0pt plus 5cm}tuple Simulators.\+Telemetry\+Processor.\+application = get\+\_\+wsgi\+\_\+application()}\label{namespace_simulators_1_1_telemetry_processor_a5febb933bf5e066cf21cae50f488f344}
+
+
+Definition at line 68 of file Telemetry\+Processor.\+py.
+
+\hypertarget{namespace_simulators_1_1_telemetry_processor_abc826fa3560eab24e061626347bca797}{}\index{Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}!cant@{cant}}
+\index{cant@{cant}!Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}}
+\subsubsection[{cant}]{\setlength{\rightskip}{0pt plus 5cm}tuple Simulators.\+Telemetry\+Processor.\+cant = Tlmy\+Var\+Type.\+objects.\+all()}\label{namespace_simulators_1_1_telemetry_processor_abc826fa3560eab24e061626347bca797}
+
+
+Definition at line 94 of file Telemetry\+Processor.\+py.
+
+\hypertarget{namespace_simulators_1_1_telemetry_processor_a4c9006577ee9d8c413d6101dff7d6f4a}{}\index{Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}!createcount@{createcount}}
+\index{createcount@{createcount}!Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}}
+\subsubsection[{createcount}]{\setlength{\rightskip}{0pt plus 5cm}int Simulators.\+Telemetry\+Processor.\+createcount = 100000}\label{namespace_simulators_1_1_telemetry_processor_a4c9006577ee9d8c413d6101dff7d6f4a}
+
+
+Definition at line 95 of file Telemetry\+Processor.\+py.
+
+\hypertarget{namespace_simulators_1_1_telemetry_processor_a937de4fb49355315e9cf23ca29d51a3a}{}\index{Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}!d\+All\+Tlmy\+Var@{d\+All\+Tlmy\+Var}}
+\index{d\+All\+Tlmy\+Var@{d\+All\+Tlmy\+Var}!Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}}
+\subsubsection[{d\+All\+Tlmy\+Var}]{\setlength{\rightskip}{0pt plus 5cm}dictionary Simulators.\+Telemetry\+Processor.\+d\+All\+Tlmy\+Var = \{\}}\label{namespace_simulators_1_1_telemetry_processor_a937de4fb49355315e9cf23ca29d51a3a}
+
+
+Definition at line 162 of file Telemetry\+Processor.\+py.
+
+\hypertarget{namespace_simulators_1_1_telemetry_processor_aa425ba047b0408bf6e05f599222c6bee}{}\index{Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}!dirty\+Objects@{dirty\+Objects}}
+\index{dirty\+Objects@{dirty\+Objects}!Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}}
+\subsubsection[{dirty\+Objects}]{\setlength{\rightskip}{0pt plus 5cm}list Simulators.\+Telemetry\+Processor.\+dirty\+Objects = \mbox{[}$\,$\mbox{]}}\label{namespace_simulators_1_1_telemetry_processor_aa425ba047b0408bf6e05f599222c6bee}
+
+
+Definition at line 173 of file Telemetry\+Processor.\+py.
+
+\hypertarget{namespace_simulators_1_1_telemetry_processor_adc73b3fce91792369a602ff747603555}{}\index{Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}!n@{n}}
+\index{n@{n}!Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}}
+\subsubsection[{n}]{\setlength{\rightskip}{0pt plus 5cm}int Simulators.\+Telemetry\+Processor.\+n = 0}\label{namespace_simulators_1_1_telemetry_processor_adc73b3fce91792369a602ff747603555}
+
+
+Definition at line 53 of file Telemetry\+Processor.\+py.
+
+\hypertarget{namespace_simulators_1_1_telemetry_processor_a9d556f1e0ebadc73e343a76eec24be68}{}\index{Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}!proj\+\_\+path@{proj\+\_\+path}}
+\index{proj\+\_\+path@{proj\+\_\+path}!Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}}
+\subsubsection[{proj\+\_\+path}]{\setlength{\rightskip}{0pt plus 5cm}Simulators.\+Telemetry\+Processor.\+proj\+\_\+path = {\bf R\+O\+O\+T\+\_\+\+D\+I\+R}}\label{namespace_simulators_1_1_telemetry_processor_a9d556f1e0ebadc73e343a76eec24be68}
+
+
+Definition at line 56 of file Telemetry\+Processor.\+py.
+
+\hypertarget{namespace_simulators_1_1_telemetry_processor_aba1ed44c3244daa9240167e6b3b375b4}{}\index{Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}!ra@{ra}}
+\index{ra@{ra}!Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}}
+\subsubsection[{ra}]{\setlength{\rightskip}{0pt plus 5cm}tuple Simulators.\+Telemetry\+Processor.\+ra = rn.\+Random()}\label{namespace_simulators_1_1_telemetry_processor_aba1ed44c3244daa9240167e6b3b375b4}
+
+
+Definition at line 102 of file Telemetry\+Processor.\+py.
+
+\hypertarget{namespace_simulators_1_1_telemetry_processor_a8c49f30b06ce8e1d4f1cb129990137f0}{}\index{Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}!R\+O\+O\+T\+\_\+\+D\+I\+R@{R\+O\+O\+T\+\_\+\+D\+I\+R}}
+\index{R\+O\+O\+T\+\_\+\+D\+I\+R@{R\+O\+O\+T\+\_\+\+D\+I\+R}!Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}}
+\subsubsection[{R\+O\+O\+T\+\_\+\+D\+I\+R}]{\setlength{\rightskip}{0pt plus 5cm}Simulators.\+Telemetry\+Processor.\+R\+O\+O\+T\+\_\+\+D\+I\+R = B\+A\+S\+E\+\_\+\+D\+I\+R}\label{namespace_simulators_1_1_telemetry_processor_a8c49f30b06ce8e1d4f1cb129990137f0}
+
+
+Definition at line 54 of file Telemetry\+Processor.\+py.
+
+\hypertarget{namespace_simulators_1_1_telemetry_processor_a0853713b806ec7ae27394839316688a4}{}\index{Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}!sat@{sat}}
+\index{sat@{sat}!Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}}
+\subsubsection[{sat}]{\setlength{\rightskip}{0pt plus 5cm}tuple Simulators.\+Telemetry\+Processor.\+sat = Satellite.\+objects.\+get(code=\char`\"{}F\+S2017\char`\"{})}\label{namespace_simulators_1_1_telemetry_processor_a0853713b806ec7ae27394839316688a4}
+
+
+Definition at line 96 of file Telemetry\+Processor.\+py.
+
+\hypertarget{namespace_simulators_1_1_telemetry_processor_a7fe4cce5cc73c8db7435572440377e9d}{}\index{Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}!sim\+Cant@{sim\+Cant}}
+\index{sim\+Cant@{sim\+Cant}!Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}}
+\subsubsection[{sim\+Cant}]{\setlength{\rightskip}{0pt plus 5cm}tuple Simulators.\+Telemetry\+Processor.\+sim\+Cant = int( input(\char`\"{}Indique cantidad de simulaciones...\char`\"{}) )}\label{namespace_simulators_1_1_telemetry_processor_a7fe4cce5cc73c8db7435572440377e9d}
+
+
+Definition at line 169 of file Telemetry\+Processor.\+py.
+
+\hypertarget{namespace_simulators_1_1_telemetry_processor_a5c52853408a5a4a37c50b60b7051ef1f}{}\index{Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}!t@{t}}
+\index{t@{t}!Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}}
+\subsubsection[{t}]{\setlength{\rightskip}{0pt plus 5cm}tuple Simulators.\+Telemetry\+Processor.\+t = threading.\+Thread(target={\bf Save\+Tlmy}({\bf dirty\+Objects}, {\bf n}))}\label{namespace_simulators_1_1_telemetry_processor_a5c52853408a5a4a37c50b60b7051ef1f}
+
+
+Definition at line 189 of file Telemetry\+Processor.\+py.
+
+\hypertarget{namespace_simulators_1_1_telemetry_processor_a8856d395177605add01698b1a6a13c0a}{}\index{Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}!t0@{t0}}
+\index{t0@{t0}!Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}}
+\subsubsection[{t0}]{\setlength{\rightskip}{0pt plus 5cm}tuple Simulators.\+Telemetry\+Processor.\+t0 = time.\+time()}\label{namespace_simulators_1_1_telemetry_processor_a8856d395177605add01698b1a6a13c0a}
+
+
+Definition at line 141 of file Telemetry\+Processor.\+py.
+
+\hypertarget{namespace_simulators_1_1_telemetry_processor_a12bc7f6b923142a1a0cc282b21648fd5}{}\index{Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}!t1@{t1}}
+\index{t1@{t1}!Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}}
+\subsubsection[{t1}]{\setlength{\rightskip}{0pt plus 5cm}tuple Simulators.\+Telemetry\+Processor.\+t1 = time.\+time()}\label{namespace_simulators_1_1_telemetry_processor_a12bc7f6b923142a1a0cc282b21648fd5}
+
+
+Definition at line 143 of file Telemetry\+Processor.\+py.
+
+\hypertarget{namespace_simulators_1_1_telemetry_processor_a9e946b833e211303ea3536275fec883f}{}\index{Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}!tel@{tel}}
+\index{tel@{tel}!Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}}
+\subsubsection[{tel}]{\setlength{\rightskip}{0pt plus 5cm}list Simulators.\+Telemetry\+Processor.\+tel = {\bf d\+All\+Tlmy\+Var}\mbox{[}{\bf k}\mbox{]}}\label{namespace_simulators_1_1_telemetry_processor_a9e946b833e211303ea3536275fec883f}
+
+
+Definition at line 177 of file Telemetry\+Processor.\+py.
+
+\hypertarget{namespace_simulators_1_1_telemetry_processor_ac1232c885cb32bbc1c21e374e335299b}{}\index{Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}!tend@{tend}}
+\index{tend@{tend}!Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}}
+\subsubsection[{tend}]{\setlength{\rightskip}{0pt plus 5cm}tuple Simulators.\+Telemetry\+Processor.\+tend = time.\+time()}\label{namespace_simulators_1_1_telemetry_processor_ac1232c885cb32bbc1c21e374e335299b}
+
+
+Definition at line 181 of file Telemetry\+Processor.\+py.
+
+\hypertarget{namespace_simulators_1_1_telemetry_processor_a4cb7a92c4d13d088c7763dd6a5597446}{}\index{Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}!threads@{threads}}
+\index{threads@{threads}!Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}}
+\subsubsection[{threads}]{\setlength{\rightskip}{0pt plus 5cm}tuple Simulators.\+Telemetry\+Processor.\+threads = list()}\label{namespace_simulators_1_1_telemetry_processor_a4cb7a92c4d13d088c7763dd6a5597446}
+
+
+Definition at line 168 of file Telemetry\+Processor.\+py.
+
+\hypertarget{namespace_simulators_1_1_telemetry_processor_a55a89e1c665ed41a1547f8d4532e524e}{}\index{Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}!tlm\+Var\+Type\+List@{tlm\+Var\+Type\+List}}
+\index{tlm\+Var\+Type\+List@{tlm\+Var\+Type\+List}!Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}}
+\subsubsection[{tlm\+Var\+Type\+List}]{\setlength{\rightskip}{0pt plus 5cm}list Simulators.\+Telemetry\+Processor.\+tlm\+Var\+Type\+List = \mbox{[}$\,$\mbox{]}}\label{namespace_simulators_1_1_telemetry_processor_a55a89e1c665ed41a1547f8d4532e524e}
+
+
+Definition at line 101 of file Telemetry\+Processor.\+py.
+
+\hypertarget{namespace_simulators_1_1_telemetry_processor_a135852f6b75dc272f6d1db863bd290c6}{}\index{Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}!tlmy\+Simulator@{tlmy\+Simulator}}
+\index{tlmy\+Simulator@{tlmy\+Simulator}!Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}}
+\subsubsection[{tlmy\+Simulator}]{\setlength{\rightskip}{0pt plus 5cm}dictionary Simulators.\+Telemetry\+Processor.\+tlmy\+Simulator = \{\}}\label{namespace_simulators_1_1_telemetry_processor_a135852f6b75dc272f6d1db863bd290c6}
+
+
+Definition at line 152 of file Telemetry\+Processor.\+py.
+
+\hypertarget{namespace_simulators_1_1_telemetry_processor_a534cc8f0eed75a7ae421b8bde43586f9}{}\index{Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}!tm@{tm}}
+\index{tm@{tm}!Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}}
+\subsubsection[{tm}]{\setlength{\rightskip}{0pt plus 5cm}tuple Simulators.\+Telemetry\+Processor.\+tm = {\bf Tlmy\+Var\+Type}()}\label{namespace_simulators_1_1_telemetry_processor_a534cc8f0eed75a7ae421b8bde43586f9}
+
+
+Definition at line 108 of file Telemetry\+Processor.\+py.
+
+\hypertarget{namespace_simulators_1_1_telemetry_processor_a6dd741085429d34d1cba94d3e166de78}{}\index{Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}!tstart@{tstart}}
+\index{tstart@{tstart}!Simulators\+::\+Telemetry\+Processor@{Simulators\+::\+Telemetry\+Processor}}
+\subsubsection[{tstart}]{\setlength{\rightskip}{0pt plus 5cm}tuple Simulators.\+Telemetry\+Processor.\+tstart = time.\+time()}\label{namespace_simulators_1_1_telemetry_processor_a6dd741085429d34d1cba94d3e166de78}
+
+
+Definition at line 174 of file Telemetry\+Processor.\+py.
+

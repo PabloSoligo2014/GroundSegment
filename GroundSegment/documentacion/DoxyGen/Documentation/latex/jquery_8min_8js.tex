@@ -1,0 +1,899 @@
+\hypertarget{jquery_8min_8js}{}\section{/home/ubuntumate/git/\+Ground\+Segment/\+Ground\+Segment/documentacion/coverage\+\_\+html/jquery.min.\+js File Reference}
+\label{jquery_8min_8js}\index{/home/ubuntumate/git/\+Ground\+Segment/\+Ground\+Segment/documentacion/coverage\+\_\+html/jquery.\+min.\+js@{/home/ubuntumate/git/\+Ground\+Segment/\+Ground\+Segment/documentacion/coverage\+\_\+html/jquery.\+min.\+js}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{jquery_8min_8js_a6b37e2ba954dee4f481d0d3170d4266c}{j\+Query} \hyperlink{jquery_8min_8js_ad4af1263c287812d3b2a1196d6e226b8}{extend} (\{css\+Hooks\+:\{opacity\+:\{get\+:function(elem, computed)\{\hyperlink{bootstrap_8min_8js_ab46cc49ddd78779f76bf855060e8f4db}{if}(computed)\{var ret=\hyperlink{jquery_8js_a88b21f8ba3af86d6981b1da520ece33b}{cur\+C\+S\+S}(elem,\char`\"{}opacity\char`\"{});return ret===\char`\"{}\char`\"{}?\char`\"{}1\char`\"{}\+:ret;\}\hyperlink{jquery_8min_8js_a0544c3fe466e421738dae463968b70ba}{else}\{return elem.\+style.\+opacity;\}\}\}\}, css\+Number\+:\{\char`\"{}fill\+Opacity\char`\"{}\+:true,\char`\"{}font\+Weight\char`\"{}\+:true,\char`\"{}line\+Height\char`\"{}\+:true,\char`\"{}opacity\char`\"{}\+:true,\char`\"{}orphans\char`\"{}\+:true,\char`\"{}widows\char`\"{}\+:true,\char`\"{}z\+Index\char`\"{}\+:true,\char`\"{}zoom\char`\"{}\+:true\}, css\+Props\+:\{\char`\"{}float\char`\"{}\+:j\+Query.\+support.\+css\+Float?\char`\"{}css\+Float\char`\"{}\+:\char`\"{}style\+Float\char`\"{}\}, style\+:function(elem, name, value, extra)\{\hyperlink{bootstrap_8min_8js_ab46cc49ddd78779f76bf855060e8f4db}{if}(!elem$\vert$$\vert$elem.\+node\+Type===3$\vert$$\vert$elem.\+node\+Type===8$\vert$$\vert$!elem.\+style)\{return;\}var ret, type, orig\+Name=j\+Query.\+camel\+Case(name), style=elem.\+style, hooks=j\+Query.\+css\+Hooks\mbox{[}orig\+Name\mbox{]};name=j\+Query.\+css\+Props\mbox{[}orig\+Name\mbox{]}$\vert$$\vert$orig\+Name;\hyperlink{bootstrap_8min_8js_ab46cc49ddd78779f76bf855060e8f4db}{if}(value!==\hyperlink{jquery_8min_8js_a08113a236cc18d2a9d5ce27e638012be}{undefined})\{type=typeof value;\hyperlink{bootstrap_8min_8js_ab46cc49ddd78779f76bf855060e8f4db}{if}(type===\char`\"{}string\char`\"{}\&\&(ret=rrel\+Num.\+exec(value)))\{value=(+(ret\mbox{[}1\mbox{]}+1)$\ast$+ret\mbox{[}2\mbox{]})+parse\+Float(\hyperlink{jquery_8js_a89ad527fcd82c01ebb587332f5b4fcd4}{j\+Query.\+css}(elem, name));type=\char`\"{}number\char`\"{};\}if(value==null$\vert$$\vert$type===\char`\"{}number\char`\"{}\&\&is\+Na\+N(value))\{return;\}\hyperlink{bootstrap_8min_8js_ab46cc49ddd78779f76bf855060e8f4db}{if}(type===\char`\"{}number\char`\"{}\&\&!j\+Query.\+css\+Number\mbox{[}orig\+Name\mbox{]})\{value+=\char`\"{}px\char`\"{};\}if(!hooks$\vert$$\vert$!(\char`\"{}set\char`\"{}in hooks)$\vert$$\vert$(value=hooks.\+set(elem, value))!==\hyperlink{jquery_8min_8js_a08113a236cc18d2a9d5ce27e638012be}{undefined})\{\hyperlink{jquery_8min_8js_abe4cc9788f52e49485473dc699537388}{try}\{style\mbox{[}name\mbox{]}=value;\}\hyperlink{jquery_8min_8js_a5bf45fc51bc0426586792b5f9cb95431}{catch}(\hyperlink{bootstrap_8min_8js_ab5902775854a8b8440bcd25e0fe1c120}{e})\{\}\}\}\hyperlink{jquery_8min_8js_a0544c3fe466e421738dae463968b70ba}{else}\{\hyperlink{bootstrap_8min_8js_ab46cc49ddd78779f76bf855060e8f4db}{if}(hooks \&\&\char`\"{}get\char`\"{}in hooks \&\&(ret=hooks.\+get(elem, false, extra))!==\hyperlink{jquery_8min_8js_a08113a236cc18d2a9d5ce27e638012be}{undefined})\{return ret;\}return style\mbox{[}name\mbox{]};\}\}, css\+:function(elem, name, extra)\{var ret, hooks;name=j\+Query.\+camel\+Case(name);hooks=j\+Query.\+css\+Hooks\mbox{[}name\mbox{]};name=j\+Query.\+css\+Props\mbox{[}name\mbox{]}$\vert$$\vert$name;\hyperlink{bootstrap_8min_8js_ab46cc49ddd78779f76bf855060e8f4db}{if}(name===\char`\"{}css\+Float\char`\"{})\{name=\char`\"{}float\char`\"{};\}if(hooks \&\&\char`\"{}get\char`\"{}in hooks \&\&(ret=hooks.\+get(elem, true, extra))!==\hyperlink{jquery_8min_8js_a08113a236cc18d2a9d5ce27e638012be}{undefined})\{return ret;\}\hyperlink{jquery_8min_8js_a0544c3fe466e421738dae463968b70ba}{else} \hyperlink{bootstrap_8min_8js_ab46cc49ddd78779f76bf855060e8f4db}{if}(\hyperlink{jquery_8js_a88b21f8ba3af86d6981b1da520ece33b}{cur\+C\+S\+S})\{return \hyperlink{jquery_8js_a88b21f8ba3af86d6981b1da520ece33b}{cur\+C\+S\+S}(elem, name);\}\}, swap\+:function(elem, options, callback)\{var old=\{\}, ret, name;for(name in options)\{old\mbox{[}name\mbox{]}=elem.\+style\mbox{[}name\mbox{]};elem.\+style\mbox{[}name\mbox{]}=options\mbox{[}name\mbox{]};\}ret=\hyperlink{bootstrap_8min_8js_aba2247af8276415699e6fb0e9cf0390e}{callback.\+call}(elem);for(name in options)\{elem.\+style\mbox{[}name\mbox{]}=old\mbox{[}name\mbox{]};\}return ret;\}\})
+\item 
+\hyperlink{jquery_8min_8js_ad4148068c9694f14decaa4430f7059e3}{if} (document.\+default\+View \&\&document.\+default\+View.\+get\+Computed\+Style)
+\item 
+\hyperlink{jquery_8min_8js_a9697f39bfd79ec27fcad2a63d885a3f2}{if} (document.\+document\+Element.\+current\+Style)
+\item 
+function \hyperlink{jquery_8min_8js_a6520fbbeac78eeb0f519393470dc873b}{get\+Width\+Or\+Height} (elem, name, extra)
+\item 
+\hyperlink{jquery_8min_8js_a6b37e2ba954dee4f481d0d3170d4266c}{j\+Query} \hyperlink{jquery_8min_8js_a4f71f7bda290910bc36404e27909e461}{each} (\mbox{[}\char`\"{}height\char`\"{},\char`\"{}width\char`\"{}\mbox{]}, function(i, name)\{j\+Query.\+css\+Hooks\mbox{[}name\mbox{]}=\{get\+:function(elem, computed, extra)\{\hyperlink{bootstrap_8min_8js_ab46cc49ddd78779f76bf855060e8f4db}{if}(computed)\{\hyperlink{bootstrap_8min_8js_ab46cc49ddd78779f76bf855060e8f4db}{if}(elem.\+offset\+Width!==0)\{return \hyperlink{jquery_8min_8js_a6520fbbeac78eeb0f519393470dc873b}{get\+Width\+Or\+Height}(elem, name, extra);\}\hyperlink{jquery_8min_8js_a0544c3fe466e421738dae463968b70ba}{else}\{return j\+Query.\+swap(elem, css\+Show, function()\{return \hyperlink{jquery_8min_8js_a6520fbbeac78eeb0f519393470dc873b}{get\+Width\+Or\+Height}(elem, name, extra);\});\}\}\}, set\+:function(elem, value)\{return rnum.\+test(value)?value+\char`\"{}px\char`\"{}\+:value;\}\};\})
+\item 
+\hyperlink{jquery_8min_8js_abc7375d3165b805c35ce8ca2e1a31e81}{if} (!j\+Query.\+support.\+opacity)
+\item 
+\hyperlink{jquery_8min_8js_a6b37e2ba954dee4f481d0d3170d4266c}{j\+Query} (function()\{\hyperlink{bootstrap_8min_8js_ab46cc49ddd78779f76bf855060e8f4db}{if}(!j\+Query.\+support.\+reliable\+Margin\+Right)\{j\+Query.\+css\+Hooks.\+margin\+Right=\{get\+:function(elem, computed)\{return j\+Query.\+swap(elem,\{\char`\"{}display\char`\"{}\+:\char`\"{}inline-\/block\char`\"{}\}, function()\{\hyperlink{bootstrap_8min_8js_ab46cc49ddd78779f76bf855060e8f4db}{if}(computed)\{return \hyperlink{jquery_8js_a88b21f8ba3af86d6981b1da520ece33b}{cur\+C\+S\+S}(elem,\char`\"{}margin-\/right\char`\"{});\}else\{return elem.\+style.\+margin\+Right;\}\});\}\};\}\})
+\item 
+\hyperlink{jquery_8min_8js_a0335a19470806a284d8c38df8f5b5718}{if} (j\+Query.\+expr \&\&j\+Query.\+expr.\+filters)
+\item 
+\hyperlink{jquery_8min_8js_a6b37e2ba954dee4f481d0d3170d4266c}{j\+Query} \hyperlink{jquery_8min_8js_ad9011b1ef5842d0a97eb696de2e2d955}{each} (\{margin\+:\char`\"{}\char`\"{}, padding\+:\char`\"{}\char`\"{}, border\+:\char`\"{}Width\char`\"{}\}, function(prefix, suffix)\{j\+Query.\+css\+Hooks\mbox{[}prefix+suffix\mbox{]}=\{expand\+:function(value)\{var i, parts=typeof value===\char`\"{}string\char`\"{}?value.\+split(\char`\"{} \char`\"{})\+:\mbox{[}value\mbox{]}, expanded=\{\};for(i=0;i$<$ 4;i++)\{expanded\mbox{[}prefix+css\+Expand\mbox{[}i\mbox{]}+suffix\mbox{]}=parts\mbox{[}i\mbox{]}$\vert$$\vert$parts\mbox{[}i-\/2\mbox{]}$\vert$$\vert$parts\mbox{[}0\mbox{]};\}return expanded;\}\};\})
+\item 
+\hyperlink{jquery_8min_8js_a5bf45fc51bc0426586792b5f9cb95431}{catch} (\hyperlink{bootstrap_8min_8js_ab5902775854a8b8440bcd25e0fe1c120}{e})
+\item 
+function \hyperlink{jquery_8min_8js_ae8bffbac8c6b2208e0ca37b475ec0b70}{add\+To\+Prefilters\+Or\+Transports} (structure)
+\item 
+function \hyperlink{jquery_8min_8js_a68255d4a8bea7697ffb37179fd49e996}{inspect\+Prefilters\+Or\+Transports} (structure, options, original\+Options, jq\+X\+H\+R, data\+Type, inspected)
+\item 
+function \hyperlink{jquery_8min_8js_a113ade43cfd5328ebd5ccc84f45fe4de}{ajax\+Extend} (target, src)
+\item 
+\hyperlink{jquery_8min_8js_a6b37e2ba954dee4f481d0d3170d4266c}{j\+Query} \hyperlink{jquery_8min_8js_a3295774355a0453ce862406e280491c7}{each} (\char`\"{}ajax\+Start ajax\+Stop ajax\+Complete ajax\+Error ajax\+Success ajax\+Send\char`\"{}.split(\char`\"{} \char`\"{}), function(i, o)\{j\+Query.\+fn\mbox{[}o\mbox{]}=function(f)\{return this.\+on(o, f);\};\})
+\item 
+function \hyperlink{jquery_8min_8js_a3c4f3b337daa2444fa73ee856be5f9d8}{build\+Params} (prefix, obj, traditional, add)
+\item 
+function \hyperlink{jquery_8min_8js_a71c2db7846f21963cee426cb81003c63}{ajax\+Handle\+Responses} (s, jq\+X\+H\+R, responses)
+\item 
+function \hyperlink{jquery_8min_8js_ad8bc8d3f922c608661a3113cfef57dbe}{ajax\+Convert} (s, response)
+\item 
+\hyperlink{jquery_8min_8js_a6b37e2ba954dee4f481d0d3170d4266c}{j\+Query} \hyperlink{jquery_8min_8js_ad8dafb12eb91b36256788a05632f1274}{ajax\+Setup} (\{jsonp\+:\char`\"{}callback\char`\"{}, jsonp\+Callback\+:function()\{return j\+Query.\+expando+\char`\"{}\+\_\+\char`\"{}+(jsc++);\}\})
+\item 
+\hyperlink{jquery_8min_8js_a6b37e2ba954dee4f481d0d3170d4266c}{j\+Query} \hyperlink{jquery_8min_8js_a6ff1e7cd7724f7985e733dbacc3d651a}{ajax\+Prefilter} (\char`\"{}json jsonp\char`\"{}, function(s, original\+Settings, jq\+X\+H\+R)\{var inspect\+Data=(typeof s.\+data===\char`\"{}string\char`\"{})\&\&/$^\wedge$application\textbackslash{}/x\textbackslash{}-\/www\textbackslash{}-\/form\textbackslash{}-\/urlencoded/.test(s.\+content\+Type);\hyperlink{bootstrap_8min_8js_ab46cc49ddd78779f76bf855060e8f4db}{if}(s.\+data\+Types\mbox{[}0\mbox{]}===\char`\"{}jsonp\char`\"{}$\vert$$\vert$s.\+jsonp!==false \&\&(jsre.\+test(s.\+url)$\vert$$\vert$inspect\+Data \&\&jsre.\+test(s.\+data)))\{var response\+Container, jsonp\+Callback=s.\+jsonp\+Callback=j\+Query.\+is\+Function(s.\+jsonp\+Callback)?s.\+jsonp\+Callback()\+:s.\+jsonp\+Callback, previous=\hyperlink{jquery_8min_8js_a04a8a2bbfa9c15500892b8e5033d625b}{window}\mbox{[}jsonp\+Callback\mbox{]}, url=s.\+url, data=s.\+data, replace=\char`\"{}\$1\char`\"{}+jsonp\+Callback+\char`\"{}\$2\char`\"{};\hyperlink{bootstrap_8min_8js_ab46cc49ddd78779f76bf855060e8f4db}{if}(s.\+jsonp!==false)\{url=url.\+replace(\hyperlink{jquery_8min_8js_ab687d9997e3450705762096521c8d5b6}{jsre}, replace);\hyperlink{bootstrap_8min_8js_ab46cc49ddd78779f76bf855060e8f4db}{if}(s.\+url===url)\{\hyperlink{bootstrap_8min_8js_ab46cc49ddd78779f76bf855060e8f4db}{if}(inspect\+Data)\{data=data.\+replace(\hyperlink{jquery_8min_8js_ab687d9997e3450705762096521c8d5b6}{jsre}, replace);\}\hyperlink{bootstrap_8min_8js_ab46cc49ddd78779f76bf855060e8f4db}{if}(s.\+data===data)\{url+=(/\textbackslash{}?/.test(url)?\char`\"{}\&\char`\"{}\+:\char`\"{}?\char`\"{})+s.\+jsonp+\char`\"{}=\char`\"{}+jsonp\+Callback;\}\}\}s.\+url=url;s.\+data=data;\hyperlink{jquery_8min_8js_a04a8a2bbfa9c15500892b8e5033d625b}{window}\mbox{[}jsonp\+Callback\mbox{]}=function(response)\{response\+Container=\mbox{[}response\mbox{]};\};jq\+X\+H\+R.\+always(function()\{\hyperlink{jquery_8min_8js_a04a8a2bbfa9c15500892b8e5033d625b}{window}\mbox{[}jsonp\+Callback\mbox{]}=previous;\hyperlink{bootstrap_8min_8js_ab46cc49ddd78779f76bf855060e8f4db}{if}(response\+Container \&\&j\+Query.\+is\+Function(previous))\{\hyperlink{jquery_8min_8js_a04a8a2bbfa9c15500892b8e5033d625b}{window}\mbox{[}jsonp\+Callback\mbox{]}(response\+Container\mbox{[}0\mbox{]});\}\});s.\+converters\mbox{[}\char`\"{}script json\char`\"{}\mbox{]}=function()\{\hyperlink{bootstrap_8min_8js_ab46cc49ddd78779f76bf855060e8f4db}{if}(!response\+Container)\{j\+Query.\+error(jsonp\+Callback+\char`\"{} was not called\char`\"{});\}return response\+Container\mbox{[}0\mbox{]};\};s.\+data\+Types\mbox{[}0\mbox{]}=\char`\"{}json\char`\"{};return\char`\"{}script\char`\"{};\}\})
+\item 
+\hyperlink{jquery_8min_8js_a6b37e2ba954dee4f481d0d3170d4266c}{j\+Query} \hyperlink{jquery_8min_8js_a78cf5df02f23670998deb2beb87dadf2}{ajax\+Transport} (\char`\"{}script\char`\"{}, function(s)\{\hyperlink{bootstrap_8min_8js_ab46cc49ddd78779f76bf855060e8f4db}{if}(s.\+cross\+Domain)\{var script, head=document.\+head$\vert$$\vert$document.\+get\+Elements\+By\+Tag\+Name(\char`\"{}head\char`\"{})\mbox{[}0\mbox{]}$\vert$$\vert$document.\+document\+Element;return\{send\+:function(\+\_\+, callback)\{script=document.\+create\+Element(\char`\"{}script\char`\"{});script.\+async=\char`\"{}async\char`\"{};if(s.\+script\+Charset)\{script.\+charset=s.\+script\+Charset;\}script.\+src=s.\+url;script.\+onload=script.\+onreadystatechange=function(\+\_\+, is\+Abort)\{\hyperlink{bootstrap_8min_8js_ab46cc49ddd78779f76bf855060e8f4db}{if}(is\+Abort$\vert$$\vert$!script.\+ready\+State$\vert$$\vert$/loaded$\vert$complete/.test(script.\+ready\+State))\{script.\+onload=script.\+onreadystatechange=null;\hyperlink{bootstrap_8min_8js_ab46cc49ddd78779f76bf855060e8f4db}{if}(head \&\&script.\+parent\+Node)\{head.\+remove\+Child(script);\}script=\hyperlink{jquery_8min_8js_a08113a236cc18d2a9d5ce27e638012be}{undefined};\hyperlink{bootstrap_8min_8js_ab46cc49ddd78779f76bf855060e8f4db}{if}(!is\+Abort)\{callback(200,\char`\"{}success\char`\"{});\}\}\};head.\+insert\+Before(script, head.\+first\+Child);\}, abort\+:function()\{\hyperlink{bootstrap_8min_8js_ab46cc49ddd78779f76bf855060e8f4db}{if}(script)\{script.\+onload(0, 1);\}\}\};\}\})
+\item 
+function \hyperlink{jquery_8min_8js_acea019a8b67e4d114deb75d1e0b3474a}{create\+Standard\+X\+H\+R} ()
+\item 
+function \hyperlink{jquery_8min_8js_a54bf63f1b5f905292db45a1d6a9dc300}{create\+Active\+X\+H\+R} ()
+\item 
+\hyperlink{jquery_8min_8js_a6b37e2ba954dee4f481d0d3170d4266c}{j\+Query} ajax\+Settings \hyperlink{jquery_8min_8js_a34f9b8d6433890202c2448132d14ce88}{xhr} ())
+\item 
+\hyperlink{jquery_8min_8js_a73af22ef549fdf3e80d13cdcc0c48b90}{if} (j\+Query.\+support.\+ajax)
+\item 
+function \hyperlink{jquery_8min_8js_a3c7bcef859b0811abb1dbf890c6cc635}{create\+Fx\+Now} ()
+\item 
+function \hyperlink{jquery_8min_8js_aaeb681870fd06de7aa9dbd4bd36466f8}{clear\+Fx\+Now} ()
+\item 
+function \hyperlink{jquery_8min_8js_a746cbbb92205506c6214852fa439f6a8}{gen\+Fx} (type, num)
+\item 
+\hyperlink{jquery_8min_8js_a6b37e2ba954dee4f481d0d3170d4266c}{j\+Query} \hyperlink{jquery_8min_8js_a3d5cde5aceb6673997b41b4b7b3d4824}{extend} (j\+Query.\+fx,\{tick\+:function()\{var timer, timers=j\+Query.\+timers, i=0;for(;i$<$ timers.\+length;i++)\{timer=timers\mbox{[}i\mbox{]};\hyperlink{bootstrap_8min_8js_ab46cc49ddd78779f76bf855060e8f4db}{if}(!timer()\&\&timers\mbox{[}i\mbox{]}===timer)\{timers.\+splice(i-\/-\/, 1);\}\}\hyperlink{bootstrap_8min_8js_ab46cc49ddd78779f76bf855060e8f4db}{if}(!timers.\+length)\{j\+Query.\+fx.\+stop();\}\}, interval\+:13, stop\+:function()\{clear\+Interval(\hyperlink{jquery_8min_8js_aa447439fbe7027e58837a297297c9d8a}{timer\+Id});\hyperlink{jquery_8min_8js_aa447439fbe7027e58837a297297c9d8a}{timer\+Id}=null;\}, speeds\+:\{slow\+:600, fast\+:200, \+\_\+default\+:400\}, step\+:\{opacity\+:function(fx)\{j\+Query.\+style(fx.\+elem,\char`\"{}opacity\char`\"{}, fx.\+now);\}, \+\_\+default\+:function(fx)\{\hyperlink{bootstrap_8min_8js_ab46cc49ddd78779f76bf855060e8f4db}{if}(fx.\+elem.\+style \&\&fx.\+elem.\+style\mbox{[}fx.\+prop\mbox{]}!=null)\{fx.\+elem.\+style\mbox{[}fx.\+prop\mbox{]}=fx.\+now+fx.\+unit;\}\hyperlink{jquery_8min_8js_a0544c3fe466e421738dae463968b70ba}{else}\{fx.\+elem\mbox{[}fx.\+prop\mbox{]}=fx.\+now;\}\}\}\})
+\item 
+\hyperlink{jquery_8min_8js_a6b37e2ba954dee4f481d0d3170d4266c}{j\+Query} \hyperlink{jquery_8min_8js_acebad9f409893becc010742cef1ee30c}{each} (fx\+Attrs.\+concat.\+apply(\mbox{[}$\,$\mbox{]}, \hyperlink{jquery_8min_8js_af1c3406ca964c24ab4501096941d2821}{fx\+Attrs}), function(i, prop)\{\hyperlink{bootstrap_8min_8js_ab46cc49ddd78779f76bf855060e8f4db}{if}(prop.\+index\+Of(\char`\"{}margin\char`\"{}))\{j\+Query.\+fx.\+step\mbox{[}prop\mbox{]}=function(fx)\{j\+Query.\+style(fx.\+elem, prop, Math.\+max(0, fx.\+now)+fx.\+unit);\};\}\})
+\item 
+function \hyperlink{jquery_8min_8js_a711148c165c73ba4480bc86267ae8617}{default\+Display} (node\+Name)
+\item 
+\hyperlink{jquery_8min_8js_a42c3df43773c232c70917e84f7ce77cd}{if} (\char`\"{}get\+Bounding\+Client\+Rect\char`\"{}in document.\+document\+Element)
+\item 
+function \hyperlink{jquery_8min_8js_ab8e6e1fb3b8b51b6afe437c63df0e09f}{get\+Window} (elem)
+\item 
+\hyperlink{jquery_8min_8js_ab5582cce20b35070b73869356a852365}{if} (typeof define===\char`\"{}function\char`\"{}\&\&define.\+amd \&\&\hyperlink{jquery_8min_8js_a6b37e2ba954dee4f481d0d3170d4266c}{define.\+amd.\+j\+Query})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+function \hyperlink{jquery_8min_8js_a04a8a2bbfa9c15500892b8e5033d625b}{window}
+\item 
+function \hyperlink{jquery_8min_8js_a08113a236cc18d2a9d5ce27e638012be}{undefined}
+\item 
+var \hyperlink{jquery_8min_8js_add5237586d970a38a81f990e8eb28c6c}{j\+Query}
+\item 
+var \hyperlink{jquery_8min_8js_ac538d11682940a0991bba1ce046507f3}{ropacity}
+\item 
+\hyperlink{jquery_8min_8js_a6b37e2ba954dee4f481d0d3170d4266c}{j\+Query} fn \hyperlink{jquery_8min_8js_a7f3289748d8b48665399d82540f341dd}{css}
+\item 
+\hyperlink{jquery_8min_8js_a6b37e2ba954dee4f481d0d3170d4266c}{j\+Query} \hyperlink{jquery_8min_8js_a2bac46970b28aa533a08cecff26eea5b}{cur\+C\+S\+S} = \hyperlink{jquery_8js_a89ad527fcd82c01ebb587332f5b4fcd4}{j\+Query.\+css}
+\item 
+var \hyperlink{jquery_8min_8js_a0e39f72d512af99fb5992d66f1a1c821}{r20} = /\%20/g
+\item 
+var \hyperlink{jquery_8min_8js_a07117e28ee58d2d2664cfbaf741e10c1}{rbracket} = /\textbackslash{}\mbox{[}\textbackslash{}\mbox{]}\$/
+\item 
+var \hyperlink{jquery_8min_8js_a4fd9dfc4eb645b441a3e84730c50154b}{r\+C\+R\+L\+F} = /\textbackslash{}r?\textbackslash{}n/g
+\item 
+var \hyperlink{jquery_8min_8js_a6990b6955b6bec9dd39f3814cfb56d6d}{rhash} = /\#.$\ast$\$/
+\item 
+var \hyperlink{jquery_8min_8js_af506d11612139f03091db71089d92e8b}{rheaders} = /$^\wedge$(.$\ast$?)\+:\mbox{[} \textbackslash{}t\mbox{]}$\ast$(\mbox{[}$^\wedge$\textbackslash{}r\textbackslash{}n\mbox{]}$\ast$)\textbackslash{}r?\$/mg
+\item 
+var \hyperlink{jquery_8min_8js_a54bf469241c9049d37808034934f6dc3}{rinput} = /$^\wedge$(?\+:color$\vert$date$\vert$datetime$\vert$datetime-\/local$\vert$email$\vert$hidden$\vert$month$\vert$number$\vert$password$\vert$range$\vert$search$\vert$tel$\vert$text$\vert$time$\vert$url$\vert$week)\$/i
+\item 
+var \hyperlink{jquery_8min_8js_af4dd13c90298bbf53ce08ec707dc9e2a}{rlocal\+Protocol} = /$^\wedge$(?\+:about$\vert$app$\vert$app\textbackslash{}-\/storage$\vert$.+\textbackslash{}-\/extension$\vert$file$\vert$res$\vert$widget)\+:\$/
+\item 
+var \hyperlink{jquery_8min_8js_a537d744d72e31ec312aa3f16ef576d3f}{rno\+Content} = /$^\wedge$(?\+:G\+E\+T$\vert$H\+E\+A\+D)\$/
+\item 
+var \hyperlink{jquery_8min_8js_a0f02b710647fcf95e74593954fb9b4cb}{rprotocol}
+\item 
+var \hyperlink{jquery_8min_8js_a24860b63c0c43befe5cbf4927dac07ff}{rscript}
+\item 
+\hyperlink{jquery_8min_8js_abe4cc9788f52e49485473dc699537388}{try}
+\item 
+\hyperlink{jquery_8min_8js_a4c35110da3c335cfca38505ee65a5e79}{ajax\+Loc\+Parts} = rurl.\+exec( ajax\+Location.\+to\+Lower\+Case() ) $\vert$$\vert$ \mbox{[}$\,$\mbox{]}
+\item 
+var \hyperlink{jquery_8min_8js_a27ebbbd9426033ee0ee3c97762118ca0}{jsc} = j\+Query.\+now()
+\item 
+var \hyperlink{jquery_8min_8js_ab687d9997e3450705762096521c8d5b6}{jsre} = /(\textbackslash{}=)\textbackslash{}?(\&$\vert$\$)$\vert$\textbackslash{}?\textbackslash{}?/i
+\item 
+var \hyperlink{jquery_8min_8js_a271c099ab18ab35c15cac2faa2a097aa}{xhr\+On\+Unload\+Abort}
+\item 
+var \hyperlink{jquery_8min_8js_aa23ed64cf7afc9b028419517bf23fcea}{xhr\+Id} = 0
+\item 
+var \hyperlink{jquery_8min_8js_a068f27a70831ff3a9e0ffa79e063847f}{xhr\+Callbacks}
+\item 
+\hyperlink{jquery_8min_8js_a6b37e2ba954dee4f481d0d3170d4266c}{j\+Query} ajax\+Settings \hyperlink{jquery_8min_8js_a107163291c96103089efc0b57154549f}{xhr}
+\item 
+var \hyperlink{jquery_8min_8js_a14a9e27eab12cadd44520052adf7d177}{elemdisplay} = \{\}
+\item 
+var \hyperlink{jquery_8min_8js_a9279fd026c60d4da87a1b1f1af3aa33d}{iframe}
+\item 
+var \hyperlink{jquery_8min_8js_ab3ec3ba779124e6b90898a4c16ae0680}{iframe\+Doc}
+\item 
+var \hyperlink{jquery_8min_8js_a28b1e14ecaade6675453a292b2c1dba6}{rfxtypes} = /$^\wedge$(?\+:\hyperlink{bootstrap_8min_8js_aa8e797a9bda5e7e313be3518054164a3}{toggle}$\vert$show$\vert$hide)\$/
+\item 
+var \hyperlink{jquery_8min_8js_a7907e208847275b29993c85031275f9f}{rfxnum} = /$^\wedge$(\mbox{[}+\textbackslash{}-\/\mbox{]}=)?(\mbox{[}\textbackslash{}\hyperlink{bootstrap_8min_8js_aeb337d295abaddb5ec3cb34cc2e2bbc9}{d}+.\textbackslash{}-\/\mbox{]}+)(\mbox{[}\hyperlink{bootstrap_8min_8js_a9252b696bd8018d152e6640fcbe6e3b8}{a}-\/z\%\mbox{]}$\ast$)\$/i
+\item 
+var \hyperlink{jquery_8min_8js_aa447439fbe7027e58837a297297c9d8a}{timer\+Id}
+\item 
+var \hyperlink{jquery_8min_8js_af1c3406ca964c24ab4501096941d2821}{fx\+Attrs}
+\item 
+var \hyperlink{jquery_8min_8js_a008b3271e2f410e89917bc6d96096296}{fx\+Now}
+\item 
+\hyperlink{jquery_8min_8js_a6b37e2ba954dee4f481d0d3170d4266c}{j\+Query} fx \hyperlink{jquery_8min_8js_a51532cd3a348653408fed927fea3a585}{prototype}
+\item 
+var \hyperlink{jquery_8min_8js_a14b08b1738e695553cc8e53645a9ea03}{get\+Offset}
+\item 
+var \hyperlink{jquery_8min_8js_ab3eb1277a64eee719b82a7322363e7c8}{rtable} = /$^\wedge$t(?\+:able$\vert$\hyperlink{bootstrap_8min_8js_aeb337d295abaddb5ec3cb34cc2e2bbc9}{d}$\vert$h)\$/i
+\item 
+var \hyperlink{jquery_8min_8js_ac094d32f571d9352360e0fe90ea536a2}{rroot} = /$^\wedge$(?\+:body$\vert$html)\$/i
+\item 
+\hyperlink{jquery_8min_8js_a0544c3fe466e421738dae463968b70ba}{else}
+\item 
+\hyperlink{jquery_8min_8js_a6b37e2ba954dee4f481d0d3170d4266c}{j\+Query} fn \hyperlink{jquery_8min_8js_a4a9f594d20d927164551fc7fa4751a2f}{offset}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{jquery_8min_8js_ae8bffbac8c6b2208e0ca37b475ec0b70}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!add\+To\+Prefilters\+Or\+Transports@{add\+To\+Prefilters\+Or\+Transports}}
+\index{add\+To\+Prefilters\+Or\+Transports@{add\+To\+Prefilters\+Or\+Transports}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{add\+To\+Prefilters\+Or\+Transports}]{\setlength{\rightskip}{0pt plus 5cm}function add\+To\+Prefilters\+Or\+Transports (
+\begin{DoxyParamCaption}
+\item[{}]{structure}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_ae8bffbac8c6b2208e0ca37b475ec0b70}
+
+
+Definition at line 7034 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_ad8bc8d3f922c608661a3113cfef57dbe}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!ajax\+Convert@{ajax\+Convert}}
+\index{ajax\+Convert@{ajax\+Convert}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{ajax\+Convert}]{\setlength{\rightskip}{0pt plus 5cm}function ajax\+Convert (
+\begin{DoxyParamCaption}
+\item[{}]{s, }
+\item[{}]{response}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_ad8bc8d3f922c608661a3113cfef57dbe}
+
+
+Definition at line 7884 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a113ade43cfd5328ebd5ccc84f45fe4de}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!ajax\+Extend@{ajax\+Extend}}
+\index{ajax\+Extend@{ajax\+Extend}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{ajax\+Extend}]{\setlength{\rightskip}{0pt plus 5cm}function ajax\+Extend (
+\begin{DoxyParamCaption}
+\item[{}]{target, }
+\item[{}]{src}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_a113ade43cfd5328ebd5ccc84f45fe4de}
+
+
+Definition at line 7112 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a71c2db7846f21963cee426cb81003c63}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!ajax\+Handle\+Responses@{ajax\+Handle\+Responses}}
+\index{ajax\+Handle\+Responses@{ajax\+Handle\+Responses}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{ajax\+Handle\+Responses}]{\setlength{\rightskip}{0pt plus 5cm}function ajax\+Handle\+Responses (
+\begin{DoxyParamCaption}
+\item[{}]{s, }
+\item[{}]{jq\+X\+H\+R, }
+\item[{}]{responses}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_a71c2db7846f21963cee426cb81003c63}
+
+
+Definition at line 7819 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a6ff1e7cd7724f7985e733dbacc3d651a}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!ajax\+Prefilter@{ajax\+Prefilter}}
+\index{ajax\+Prefilter@{ajax\+Prefilter}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{ajax\+Prefilter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf j\+Query} ajax\+Prefilter (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}json jsonp\char`\"{}}]{, }
+\item[{function(s, original\+Settings, jq\+X\+H\+R)\{var inspect\+Data=(typeof s.\+data===\char`\"{}string\char`\"{})\&\&/$^\wedge$application\textbackslash{}/x\textbackslash{}-\/www\textbackslash{}-\/form\textbackslash{}-\/urlencoded/.test(s.\+content\+Type);{\bf if}(s.\+data\+Types\mbox{[}0\mbox{]}===\char`\"{}jsonp\char`\"{}$\vert$$\vert$s.\+jsonp!==false \&\&(jsre.\+test(s.\+url)$\vert$$\vert$inspect\+Data \&\&jsre.\+test(s.\+data)))\{var response\+Container, jsonp\+Callback=s.\+jsonp\+Callback=j\+Query.\+is\+Function(s.\+jsonp\+Callback)?s.\+jsonp\+Callback()\+:s.\+jsonp\+Callback, previous={\bf window}\mbox{[}jsonp\+Callback\mbox{]}, url=s.\+url, data=s.\+data, replace=\char`\"{}\$1\char`\"{}+jsonp\+Callback+\char`\"{}\$2\char`\"{};{\bf if}(s.\+jsonp!==false)\{url=url.\+replace({\bf jsre}, replace);{\bf if}(s.\+url===url)\{{\bf if}(inspect\+Data)\{data=data.\+replace({\bf jsre}, replace);\}{\bf if}(s.\+data===data)\{url+=(/\textbackslash{}?/.test(url)?\char`\"{}\&\char`\"{}\+:\char`\"{}?\char`\"{})+s.\+jsonp+\char`\"{}=\char`\"{}+jsonp\+Callback;\}\}\}s.\+url=url;s.\+data=data;{\bf window}\mbox{[}jsonp\+Callback\mbox{]}=function(response)\{response\+Container=\mbox{[}response\mbox{]};\};jq\+X\+H\+R.\+always(function()\{{\bf window}\mbox{[}jsonp\+Callback\mbox{]}=previous;{\bf if}(response\+Container \&\&j\+Query.\+is\+Function(previous))\{{\bf window}\mbox{[}jsonp\+Callback\mbox{]}(response\+Container\mbox{[}0\mbox{]});\}\});s.\+converters\mbox{[}\char`\"{}script json\char`\"{}\mbox{]}=function()\{{\bf if}(!response\+Container)\{j\+Query.\+error(jsonp\+Callback+\char`\"{} was not called\char`\"{});\}return response\+Container\mbox{[}0\mbox{]};\};s.\+data\+Types\mbox{[}0\mbox{]}=\char`\"{}json\char`\"{};return\char`\"{}script\char`\"{};\}\}}]{}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_a6ff1e7cd7724f7985e733dbacc3d651a}
+\hypertarget{jquery_8min_8js_ad8dafb12eb91b36256788a05632f1274}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!ajax\+Setup@{ajax\+Setup}}
+\index{ajax\+Setup@{ajax\+Setup}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{ajax\+Setup}]{\setlength{\rightskip}{0pt plus 5cm}{\bf j\+Query} ajax\+Setup (
+\begin{DoxyParamCaption}
+\item[{\{jsonp\+:\char`\"{}callback\char`\"{}, jsonp\+Callback\+:function()\{return j\+Query.\+expando+\char`\"{}\+\_\+\char`\"{}+(jsc++);\}\}}]{}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_ad8dafb12eb91b36256788a05632f1274}
+\hypertarget{jquery_8min_8js_a78cf5df02f23670998deb2beb87dadf2}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!ajax\+Transport@{ajax\+Transport}}
+\index{ajax\+Transport@{ajax\+Transport}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{ajax\+Transport}]{\setlength{\rightskip}{0pt plus 5cm}{\bf j\+Query} ajax\+Transport (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}script\char`\"{}}]{, }
+\item[{function(s)\{{\bf if}(s.\+cross\+Domain)\{var script, head=document.\+head$\vert$$\vert$document.\+get\+Elements\+By\+Tag\+Name(\char`\"{}head\char`\"{})\mbox{[}0\mbox{]}$\vert$$\vert$document.\+document\+Element;return\{send\+:function(\+\_\+, callback)\{script=document.\+create\+Element(\char`\"{}script\char`\"{});script.\+async=\char`\"{}async\char`\"{};if(s.\+script\+Charset)\{script.\+charset=s.\+script\+Charset;\}script.\+src=s.\+url;script.\+onload=script.\+onreadystatechange=function(\+\_\+, is\+Abort)\{{\bf if}(is\+Abort$\vert$$\vert$!script.\+ready\+State$\vert$$\vert$/loaded$\vert$complete/.test(script.\+ready\+State))\{script.\+onload=script.\+onreadystatechange=null;{\bf if}(head \&\&script.\+parent\+Node)\{head.\+remove\+Child(script);\}script={\bf undefined};{\bf if}(!is\+Abort)\{callback(200,\char`\"{}success\char`\"{});\}\}\};head.\+insert\+Before(script, head.\+first\+Child);\}, abort\+:function()\{{\bf if}(script)\{script.\+onload(0, 1);\}\}\};\}\}}]{}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_a78cf5df02f23670998deb2beb87dadf2}
+\hypertarget{jquery_8min_8js_a3c4f3b337daa2444fa73ee856be5f9d8}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!build\+Params@{build\+Params}}
+\index{build\+Params@{build\+Params}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{build\+Params}]{\setlength{\rightskip}{0pt plus 5cm}function build\+Params (
+\begin{DoxyParamCaption}
+\item[{}]{prefix, }
+\item[{}]{obj, }
+\item[{}]{traditional, }
+\item[{}]{add}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_a3c4f3b337daa2444fa73ee856be5f9d8}
+
+
+Definition at line 7769 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a5bf45fc51bc0426586792b5f9cb95431}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!catch@{catch}}
+\index{catch@{catch}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{catch}]{\setlength{\rightskip}{0pt plus 5cm}catch (
+\begin{DoxyParamCaption}
+\item[{}]{e}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_a5bf45fc51bc0426586792b5f9cb95431}
+
+
+Definition at line 7022 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_aaeb681870fd06de7aa9dbd4bd36466f8}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!clear\+Fx\+Now@{clear\+Fx\+Now}}
+\index{clear\+Fx\+Now@{clear\+Fx\+Now}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{clear\+Fx\+Now}]{\setlength{\rightskip}{0pt plus 5cm}function clear\+Fx\+Now (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_aaeb681870fd06de7aa9dbd4bd36466f8}
+
+
+Definition at line 8697 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a54bf63f1b5f905292db45a1d6a9dc300}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!create\+Active\+X\+H\+R@{create\+Active\+X\+H\+R}}
+\index{create\+Active\+X\+H\+R@{create\+Active\+X\+H\+R}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{create\+Active\+X\+H\+R}]{\setlength{\rightskip}{0pt plus 5cm}function create\+Active\+X\+H\+R (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_a54bf63f1b5f905292db45a1d6a9dc300}
+
+
+Definition at line 8155 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a3c7bcef859b0811abb1dbf890c6cc635}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!create\+Fx\+Now@{create\+Fx\+Now}}
+\index{create\+Fx\+Now@{create\+Fx\+Now}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{create\+Fx\+Now}]{\setlength{\rightskip}{0pt plus 5cm}function create\+Fx\+Now (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_a3c7bcef859b0811abb1dbf890c6cc635}
+
+
+Definition at line 8692 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_acea019a8b67e4d114deb75d1e0b3474a}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!create\+Standard\+X\+H\+R@{create\+Standard\+X\+H\+R}}
+\index{create\+Standard\+X\+H\+R@{create\+Standard\+X\+H\+R}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{create\+Standard\+X\+H\+R}]{\setlength{\rightskip}{0pt plus 5cm}function create\+Standard\+X\+H\+R (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_acea019a8b67e4d114deb75d1e0b3474a}
+
+
+Definition at line 8149 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a711148c165c73ba4480bc86267ae8617}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!default\+Display@{default\+Display}}
+\index{default\+Display@{default\+Display}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{default\+Display}]{\setlength{\rightskip}{0pt plus 5cm}function default\+Display (
+\begin{DoxyParamCaption}
+\item[{}]{node\+Name}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_a711148c165c73ba4480bc86267ae8617}
+
+
+Definition at line 9015 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a4f71f7bda290910bc36404e27909e461}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!each@{each}}
+\index{each@{each}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{each}]{\setlength{\rightskip}{0pt plus 5cm}{\bf j\+Query} each (
+\begin{DoxyParamCaption}
+\item[{function(i, name)\{j\+Query.\+css\+Hooks\mbox{[}name\mbox{]}=\{get\+:function(elem, computed, extra)\{{\bf if}(computed)\{{\bf if}(elem.\+offset\+Width!==0)\{return {\bf get\+Width\+Or\+Height}(elem, name, extra);\}{\bf else}\{return j\+Query.\+swap(elem, css\+Show, function()\{return {\bf get\+Width\+Or\+Height}(elem, name, extra);\});\}\}\}, set\+:function(elem, value)\{return rnum.\+test(value)?value+\char`\"{}px\char`\"{}\+:value;\}\};\}}]{}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_a4f71f7bda290910bc36404e27909e461}
+\hypertarget{jquery_8min_8js_ad9011b1ef5842d0a97eb696de2e2d955}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!each@{each}}
+\index{each@{each}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{each}]{\setlength{\rightskip}{0pt plus 5cm}{\bf j\+Query} each (
+\begin{DoxyParamCaption}
+\item[{\{margin\+:\char`\"{}\char`\"{}, padding\+:\char`\"{}\char`\"{}, border\+:\char`\"{}Width\char`\"{}\}}]{, }
+\item[{function(prefix, suffix)\{j\+Query.\+css\+Hooks\mbox{[}prefix+suffix\mbox{]}=\{expand\+:function(value)\{var i, parts=typeof value===\char`\"{}string\char`\"{}?value.\+split(\char`\"{} \char`\"{})\+:\mbox{[}value\mbox{]}, expanded=\{\};for(i=0;i$<$ 4;i++)\{expanded\mbox{[}prefix+css\+Expand\mbox{[}i\mbox{]}+suffix\mbox{]}=parts\mbox{[}i\mbox{]}$\vert$$\vert$parts\mbox{[}i-\/2\mbox{]}$\vert$$\vert$parts\mbox{[}0\mbox{]};\}return expanded;\}\};\}}]{}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_ad9011b1ef5842d0a97eb696de2e2d955}
+\hypertarget{jquery_8min_8js_a3295774355a0453ce862406e280491c7}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!each@{each}}
+\index{each@{each}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{each}]{\setlength{\rightskip}{0pt plus 5cm}{\bf j\+Query} each (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}ajax\+Start ajax\+Stop ajax\+Complete ajax\+Error ajax\+Success ajax\+Send\char`\"{}.}]{split\char`\"{} \char`\"{}, }
+\item[{function(i, o)\{j\+Query.\+fn\mbox{[}o\mbox{]}=function(f)\{return this.\+on(o, f);\};\}}]{}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_a3295774355a0453ce862406e280491c7}
+\hypertarget{jquery_8min_8js_acebad9f409893becc010742cef1ee30c}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!each@{each}}
+\index{each@{each}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{each}]{\setlength{\rightskip}{0pt plus 5cm}{\bf j\+Query} each (
+\begin{DoxyParamCaption}
+\item[{fx\+Attrs.\+concat.}]{apply\mbox{[}$\,$\mbox{]}, fx\+Attrs, }
+\item[{function(i, prop)\{{\bf if}(prop.\+index\+Of(\char`\"{}margin\char`\"{}))\{j\+Query.\+fx.\+step\mbox{[}prop\mbox{]}=function(fx)\{j\+Query.\+style(fx.\+elem, prop, Math.\+max(0, fx.\+now)+fx.\+unit);\};\}\}}]{}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_acebad9f409893becc010742cef1ee30c}
+\hypertarget{jquery_8min_8js_ad4af1263c287812d3b2a1196d6e226b8}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!extend@{extend}}
+\index{extend@{extend}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{extend}]{\setlength{\rightskip}{0pt plus 5cm}{\bf j\+Query} fn extend (
+\begin{DoxyParamCaption}
+\item[{\{css\+Hooks\+:\{opacity\+:\{get\+:function(elem, computed)\{{\bf if}(computed)\{var ret={\bf cur\+C\+S\+S}(elem,\char`\"{}opacity\char`\"{});return ret===\char`\"{}\char`\"{}?\char`\"{}1\char`\"{}\+:ret;\}{\bf else}\{return elem.\+style.\+opacity;\}\}\}\}, css\+Number\+:\{\char`\"{}fill\+Opacity\char`\"{}\+:true,\char`\"{}font\+Weight\char`\"{}\+:true,\char`\"{}line\+Height\char`\"{}\+:true,\char`\"{}opacity\char`\"{}\+:true,\char`\"{}orphans\char`\"{}\+:true,\char`\"{}widows\char`\"{}\+:true,\char`\"{}z\+Index\char`\"{}\+:true,\char`\"{}zoom\char`\"{}\+:true\}, css\+Props\+:\{\char`\"{}float\char`\"{}\+:j\+Query.\+support.\+css\+Float?\char`\"{}css\+Float\char`\"{}\+:\char`\"{}style\+Float\char`\"{}\}, style\+:function(elem, name, value, extra)\{{\bf if}(!elem$\vert$$\vert$elem.\+node\+Type===3$\vert$$\vert$elem.\+node\+Type===8$\vert$$\vert$!elem.\+style)\{return;\}var ret, type, orig\+Name=j\+Query.\+camel\+Case(name), style=elem.\+style, hooks=j\+Query.\+css\+Hooks\mbox{[}orig\+Name\mbox{]};name=j\+Query.\+css\+Props\mbox{[}orig\+Name\mbox{]}$\vert$$\vert$orig\+Name;{\bf if}(value!=={\bf undefined})\{type=typeof value;{\bf if}(type===\char`\"{}string\char`\"{}\&\&(ret=rrel\+Num.\+exec(value)))\{value=(+(ret\mbox{[}1\mbox{]}+1)$\ast$+ret\mbox{[}2\mbox{]})+parse\+Float({\bf j\+Query.\+css}(elem, name));type=\char`\"{}number\char`\"{};\}if(value==null$\vert$$\vert$type===\char`\"{}number\char`\"{}\&\&is\+Na\+N(value))\{return;\}{\bf if}(type===\char`\"{}number\char`\"{}\&\&!j\+Query.\+css\+Number\mbox{[}orig\+Name\mbox{]})\{value+=\char`\"{}px\char`\"{};\}if(!hooks$\vert$$\vert$!(\char`\"{}set\char`\"{}in hooks)$\vert$$\vert$(value=hooks.\+set(elem, value))!=={\bf undefined})\{{\bf try}\{style\mbox{[}name\mbox{]}=value;\}{\bf catch}({\bf e})\{\}\}\}{\bf else}\{{\bf if}(hooks \&\&\char`\"{}get\char`\"{}in hooks \&\&(ret=hooks.\+get(elem, false, extra))!=={\bf undefined})\{return ret;\}return style\mbox{[}name\mbox{]};\}\}, css\+:function(elem, name, extra)\{var ret, hooks;name=j\+Query.\+camel\+Case(name);hooks=j\+Query.\+css\+Hooks\mbox{[}name\mbox{]};name=j\+Query.\+css\+Props\mbox{[}name\mbox{]}$\vert$$\vert$name;{\bf if}(name===\char`\"{}css\+Float\char`\"{})\{name=\char`\"{}float\char`\"{};\}if(hooks \&\&\char`\"{}get\char`\"{}in hooks \&\&(ret=hooks.\+get(elem, true, extra))!=={\bf undefined})\{return ret;\}{\bf else} {\bf if}({\bf cur\+C\+S\+S})\{return {\bf cur\+C\+S\+S}(elem, name);\}\}, swap\+:function(elem, options, callback)\{var old=\{\}, ret, name;for(name in options)\{old\mbox{[}name\mbox{]}=elem.\+style\mbox{[}name\mbox{]};elem.\+style\mbox{[}name\mbox{]}=options\mbox{[}name\mbox{]};\}ret={\bf callback.\+call}(elem);for(name in options)\{elem.\+style\mbox{[}name\mbox{]}=old\mbox{[}name\mbox{]};\}return ret;\}\}}]{}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_ad4af1263c287812d3b2a1196d6e226b8}
+\hypertarget{jquery_8min_8js_a3d5cde5aceb6673997b41b4b7b3d4824}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!extend@{extend}}
+\index{extend@{extend}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{extend}]{\setlength{\rightskip}{0pt plus 5cm}{\bf j\+Query} extend (
+\begin{DoxyParamCaption}
+\item[{j\+Query.}]{fx, }
+\item[{\{tick\+:function()\{var timer, timers=j\+Query.\+timers, i=0;for(;i$<$ timers.\+length;i++)\{timer=timers\mbox{[}i\mbox{]};{\bf if}(!timer()\&\&timers\mbox{[}i\mbox{]}===timer)\{timers.\+splice(i-\/-\/, 1);\}\}{\bf if}(!timers.\+length)\{j\+Query.\+fx.\+stop();\}\}, interval\+:13, stop\+:function()\{clear\+Interval({\bf timer\+Id});{\bf timer\+Id}=null;\}, speeds\+:\{slow\+:600, fast\+:200, \+\_\+default\+:400\}, step\+:\{opacity\+:function(fx)\{j\+Query.\+style(fx.\+elem,\char`\"{}opacity\char`\"{}, fx.\+now);\}, \+\_\+default\+:function(fx)\{{\bf if}(fx.\+elem.\+style \&\&fx.\+elem.\+style\mbox{[}fx.\+prop\mbox{]}!=null)\{fx.\+elem.\+style\mbox{[}fx.\+prop\mbox{]}=fx.\+now+fx.\+unit;\}{\bf else}\{fx.\+elem\mbox{[}fx.\+prop\mbox{]}=fx.\+now;\}\}\}\}}]{}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_a3d5cde5aceb6673997b41b4b7b3d4824}
+\hypertarget{jquery_8min_8js_a746cbbb92205506c6214852fa439f6a8}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!gen\+Fx@{gen\+Fx}}
+\index{gen\+Fx@{gen\+Fx}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{gen\+Fx}]{\setlength{\rightskip}{0pt plus 5cm}function gen\+Fx (
+\begin{DoxyParamCaption}
+\item[{}]{type, }
+\item[{}]{num}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_a746cbbb92205506c6214852fa439f6a8}
+
+
+Definition at line 8702 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a6520fbbeac78eeb0f519393470dc873b}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!get\+Width\+Or\+Height@{get\+Width\+Or\+Height}}
+\index{get\+Width\+Or\+Height@{get\+Width\+Or\+Height}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{get\+Width\+Or\+Height}]{\setlength{\rightskip}{0pt plus 5cm}function get\+Width\+Or\+Height (
+\begin{DoxyParamCaption}
+\item[{}]{elem, }
+\item[{}]{name, }
+\item[{}]{extra}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_a6520fbbeac78eeb0f519393470dc873b}
+
+
+Definition at line 6793 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_ab8e6e1fb3b8b51b6afe437c63df0e09f}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!get\+Window@{get\+Window}}
+\index{get\+Window@{get\+Window}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{get\+Window}]{\setlength{\rightskip}{0pt plus 5cm}function get\+Window (
+\begin{DoxyParamCaption}
+\item[{}]{elem}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_ab8e6e1fb3b8b51b6afe437c63df0e09f}
+
+
+Definition at line 9299 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_ad4148068c9694f14decaa4430f7059e3}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!if@{if}}
+\index{if@{if}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{if}]{\setlength{\rightskip}{0pt plus 5cm}if (
+\begin{DoxyParamCaption}
+\item[{document.\+default\+View \&\&document.\+default\+View.}]{get\+Computed\+Style}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_ad4148068c9694f14decaa4430f7059e3}
+
+
+Definition at line 6720 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a9697f39bfd79ec27fcad2a63d885a3f2}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!if@{if}}
+\index{if@{if}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{if}]{\setlength{\rightskip}{0pt plus 5cm}if (
+\begin{DoxyParamCaption}
+\item[{document.\+document\+Element.}]{current\+Style}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_a9697f39bfd79ec27fcad2a63d885a3f2}
+
+
+Definition at line 6750 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_abc7375d3165b805c35ce8ca2e1a31e81}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!if@{if}}
+\index{if@{if}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{if}]{\setlength{\rightskip}{0pt plus 5cm}if (
+\begin{DoxyParamCaption}
+\item[{!j\+Query.\+support.}]{opacity}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_abc7375d3165b805c35ce8ca2e1a31e81}
+
+
+Definition at line 6869 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a0335a19470806a284d8c38df8f5b5718}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!if@{if}}
+\index{if@{if}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{if}]{\setlength{\rightskip}{0pt plus 5cm}if (
+\begin{DoxyParamCaption}
+\item[{j\+Query.\+expr \&\&j\+Query.\+expr.}]{filters}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_a0335a19470806a284d8c38df8f5b5718}
+
+
+Definition at line 6930 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a73af22ef549fdf3e80d13cdcc0c48b90}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!if@{if}}
+\index{if@{if}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{if}]{\setlength{\rightskip}{0pt plus 5cm}if (
+\begin{DoxyParamCaption}
+\item[{j\+Query.\+support.}]{ajax}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_a73af22ef549fdf3e80d13cdcc0c48b90}
+
+
+Definition at line 8185 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a42c3df43773c232c70917e84f7ce77cd}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!if@{if}}
+\index{if@{if}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{if}]{\setlength{\rightskip}{0pt plus 5cm}if (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}get\+Bounding\+Client\+Rect\char`\"{}in document.}]{document\+Element}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_a42c3df43773c232c70917e84f7ce77cd}
+
+
+Definition at line 9066 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_ab5582cce20b35070b73869356a852365}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!if@{if}}
+\index{if@{if}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{if}]{\setlength{\rightskip}{0pt plus 5cm}if (
+\begin{DoxyParamCaption}
+\item[{typeof}]{define = {\ttfamily ==~\char`\"{}function\char`\"{}~\&\&~define.amd~\&\&~{\bf define.\+amd.\+j\+Query}}}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_ab5582cce20b35070b73869356a852365}
+
+
+Definition at line 9398 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a68255d4a8bea7697ffb37179fd49e996}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!inspect\+Prefilters\+Or\+Transports@{inspect\+Prefilters\+Or\+Transports}}
+\index{inspect\+Prefilters\+Or\+Transports@{inspect\+Prefilters\+Or\+Transports}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{inspect\+Prefilters\+Or\+Transports}]{\setlength{\rightskip}{0pt plus 5cm}function inspect\+Prefilters\+Or\+Transports (
+\begin{DoxyParamCaption}
+\item[{}]{structure, }
+\item[{}]{options, }
+\item[{}]{original\+Options, }
+\item[{}]{jq\+X\+H\+R, }
+\item[{}]{data\+Type, }
+\item[{}]{inspected}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_a68255d4a8bea7697ffb37179fd49e996}
+
+
+Definition at line 7070 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a6b37e2ba954dee4f481d0d3170d4266c}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!j\+Query@{j\+Query}}
+\index{j\+Query@{j\+Query}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{j\+Query}]{\setlength{\rightskip}{0pt plus 5cm}j\+Query (
+\begin{DoxyParamCaption}
+\item[{function()\{{\bf if}(!j\+Query.\+support.\+reliable\+Margin\+Right)\{j\+Query.\+css\+Hooks.\+margin\+Right=\{get\+:function(elem, computed)\{return j\+Query.\+swap(elem,\{\char`\"{}display\char`\"{}\+:\char`\"{}inline-\/block\char`\"{}\}, function()\{{\bf if}(computed)\{return {\bf cur\+C\+S\+S}(elem,\char`\"{}margin-\/right\char`\"{});\}else\{return elem.\+style.\+margin\+Right;\}\});\}\};\}\}}]{}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_a6b37e2ba954dee4f481d0d3170d4266c}
+\hypertarget{jquery_8min_8js_a34f9b8d6433890202c2448132d14ce88}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!xhr@{xhr}}
+\index{xhr@{xhr}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{xhr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf j\+Query} ajax\+Settings xhr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{jquery_8min_8js_a34f9b8d6433890202c2448132d14ce88}
+
+
+\subsection{Variable Documentation}
+\hypertarget{jquery_8min_8js_a4c35110da3c335cfca38505ee65a5e79}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!ajax\+Loc\+Parts@{ajax\+Loc\+Parts}}
+\index{ajax\+Loc\+Parts@{ajax\+Loc\+Parts}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{ajax\+Loc\+Parts}]{\setlength{\rightskip}{0pt plus 5cm}ajax\+Loc\+Parts = rurl.\+exec( ajax\+Location.\+to\+Lower\+Case() ) $\vert$$\vert$ \mbox{[}$\,$\mbox{]}}\label{jquery_8min_8js_a4c35110da3c335cfca38505ee65a5e79}
+
+
+Definition at line 7031 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a7f3289748d8b48665399d82540f341dd}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!css@{css}}
+\index{css@{css}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{css}]{\setlength{\rightskip}{0pt plus 5cm}{\bf j\+Query} fn css}\label{jquery_8min_8js_a7f3289748d8b48665399d82540f341dd}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \textcolor{keyword}{function}( name, value ) \{
+    \textcolor{keywordflow}{return} \hyperlink{jquery_8min_8js_add5237586d970a38a81f990e8eb28c6c}{jQuery}.access( \textcolor{keyword}{this}, \textcolor{keyword}{function}( elem, name, value ) \{
+        \textcolor{keywordflow}{return} value !== \hyperlink{jquery_8min_8js_a08113a236cc18d2a9d5ce27e638012be}{undefined} ?
+            \hyperlink{jquery_8min_8js_add5237586d970a38a81f990e8eb28c6c}{jQuery}.style( elem, name, value ) :
+            \hyperlink{jquery_8min_8js_add5237586d970a38a81f990e8eb28c6c}{jQuery}.css( elem, name );
+    \}, name, value, arguments.length > 1 );
+\}
+\end{DoxyCode}
+
+
+Definition at line 6573 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a2bac46970b28aa533a08cecff26eea5b}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!cur\+C\+S\+S@{cur\+C\+S\+S}}
+\index{cur\+C\+S\+S@{cur\+C\+S\+S}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{cur\+C\+S\+S}]{\setlength{\rightskip}{0pt plus 5cm}cur\+C\+S\+S = {\bf j\+Query.\+css}}\label{jquery_8min_8js_a2bac46970b28aa533a08cecff26eea5b}
+
+
+Definition at line 6718 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a14a9e27eab12cadd44520052adf7d177}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!elemdisplay@{elemdisplay}}
+\index{elemdisplay@{elemdisplay}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{elemdisplay}]{\setlength{\rightskip}{0pt plus 5cm}var elemdisplay = \{\}}\label{jquery_8min_8js_a14a9e27eab12cadd44520052adf7d177}
+
+
+Definition at line 8362 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a0544c3fe466e421738dae463968b70ba}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!else@{else}}
+\index{else@{else}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{else}]{\setlength{\rightskip}{0pt plus 5cm}else}\label{jquery_8min_8js_a0544c3fe466e421738dae463968b70ba}
+
+
+Definition at line 9089 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_af1c3406ca964c24ab4501096941d2821}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!fx\+Attrs@{fx\+Attrs}}
+\index{fx\+Attrs@{fx\+Attrs}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{fx\+Attrs}]{\setlength{\rightskip}{0pt plus 5cm}var fx\+Attrs}\label{jquery_8min_8js_af1c3406ca964c24ab4501096941d2821}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= [
+        
+        [ \textcolor{stringliteral}{"height"}, \textcolor{stringliteral}{"marginTop"}, \textcolor{stringliteral}{"marginBottom"}, \textcolor{stringliteral}{"paddingTop"}, \textcolor{stringliteral}{"paddingBottom"} ],
+        
+        [ \textcolor{stringliteral}{"width"}, \textcolor{stringliteral}{"marginLeft"}, \textcolor{stringliteral}{"marginRight"}, \textcolor{stringliteral}{"paddingLeft"}, \textcolor{stringliteral}{"paddingRight"} ],
+        
+        [ \textcolor{stringliteral}{"opacity"} ]
+    ]
+\end{DoxyCode}
+
+
+Definition at line 8367 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a008b3271e2f410e89917bc6d96096296}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!fx\+Now@{fx\+Now}}
+\index{fx\+Now@{fx\+Now}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{fx\+Now}]{\setlength{\rightskip}{0pt plus 5cm}var fx\+Now}\label{jquery_8min_8js_a008b3271e2f410e89917bc6d96096296}
+
+
+Definition at line 8367 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a14b08b1738e695553cc8e53645a9ea03}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!get\+Offset@{get\+Offset}}
+\index{get\+Offset@{get\+Offset}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{get\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}var get\+Offset}\label{jquery_8min_8js_a14b08b1738e695553cc8e53645a9ea03}
+
+
+Definition at line 9062 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a9279fd026c60d4da87a1b1f1af3aa33d}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!iframe@{iframe}}
+\index{iframe@{iframe}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{iframe}]{\setlength{\rightskip}{0pt plus 5cm}var iframe}\label{jquery_8min_8js_a9279fd026c60d4da87a1b1f1af3aa33d}
+
+
+Definition at line 8362 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_ab3ec3ba779124e6b90898a4c16ae0680}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!iframe\+Doc@{iframe\+Doc}}
+\index{iframe\+Doc@{iframe\+Doc}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{iframe\+Doc}]{\setlength{\rightskip}{0pt plus 5cm}var iframe\+Doc}\label{jquery_8min_8js_ab3ec3ba779124e6b90898a4c16ae0680}
+
+
+Definition at line 8362 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_add5237586d970a38a81f990e8eb28c6c}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!j\+Query@{j\+Query}}
+\index{j\+Query@{j\+Query}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{j\+Query}]{\setlength{\rightskip}{0pt plus 5cm}{\bf window} j\+Query}\label{jquery_8min_8js_add5237586d970a38a81f990e8eb28c6c}
+
+
+Definition at line 22 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a27ebbbd9426033ee0ee3c97762118ca0}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!jsc@{jsc}}
+\index{jsc@{jsc}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{jsc}]{\setlength{\rightskip}{0pt plus 5cm}var jsc = j\+Query.\+now()}\label{jquery_8min_8js_a27ebbbd9426033ee0ee3c97762118ca0}
+
+
+Definition at line 7971 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_ab687d9997e3450705762096521c8d5b6}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!jsre@{jsre}}
+\index{jsre@{jsre}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{jsre}]{\setlength{\rightskip}{0pt plus 5cm}var jsre = /(\textbackslash{}=)\textbackslash{}?(\&$\vert$\$)$\vert$\textbackslash{}?\textbackslash{}?/i}\label{jquery_8min_8js_ab687d9997e3450705762096521c8d5b6}
+
+
+Definition at line 7972 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a4a9f594d20d927164551fc7fa4751a2f}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!offset@{offset}}
+\index{offset@{offset}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{offset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf j\+Query} offset}\label{jquery_8min_8js_a4a9f594d20d927164551fc7fa4751a2f}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \textcolor{keyword}{function}( options ) \{
+    \textcolor{keywordflow}{if} ( arguments.length ) \{
+        \textcolor{keywordflow}{return} options === \hyperlink{jquery_8min_8js_a08113a236cc18d2a9d5ce27e638012be}{undefined} ?
+            \textcolor{keyword}{this} :
+            this.\hyperlink{jquery_8min_8js_a4f71f7bda290910bc36404e27909e461}{each}(\textcolor{keyword}{function}( i ) \{
+                \hyperlink{jquery_8min_8js_add5237586d970a38a81f990e8eb28c6c}{jQuery}.offset.setOffset( \textcolor{keyword}{this}, options, i );
+            \});
+    \}
+
+    var elem = \textcolor{keyword}{this}[0],
+        doc = elem && elem.ownerDocument;
+
+    \textcolor{keywordflow}{if} ( !doc ) \{
+        \textcolor{keywordflow}{return} null;
+    \}
+
+    \textcolor{keywordflow}{if} ( elem === doc.body ) \{
+        \textcolor{keywordflow}{return} \hyperlink{jquery_8min_8js_add5237586d970a38a81f990e8eb28c6c}{jQuery}.offset.bodyOffset( elem );
+    \}
+
+    \textcolor{keywordflow}{return} \hyperlink{jquery_8min_8js_a14b08b1738e695553cc8e53645a9ea03}{getOffset}( elem, doc, doc.documentElement );
+\}
+\end{DoxyCode}
+
+
+Definition at line 9144 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a51532cd3a348653408fed927fea3a585}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!prototype@{prototype}}
+\index{prototype@{prototype}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{prototype}]{\setlength{\rightskip}{0pt plus 5cm}{\bf j\+Query} fx prototype}\label{jquery_8min_8js_a51532cd3a348653408fed927fea3a585}
+
+
+Definition at line 8782 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a0e39f72d512af99fb5992d66f1a1c821}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!r20@{r20}}
+\index{r20@{r20}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{r20}]{\setlength{\rightskip}{0pt plus 5cm}var r20 = /\%20/g}\label{jquery_8min_8js_a0e39f72d512af99fb5992d66f1a1c821}
+
+
+Definition at line 6971 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a07117e28ee58d2d2664cfbaf741e10c1}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!rbracket@{rbracket}}
+\index{rbracket@{rbracket}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{rbracket}]{\setlength{\rightskip}{0pt plus 5cm}var rbracket = /\textbackslash{}\mbox{[}\textbackslash{}\mbox{]}\$/}\label{jquery_8min_8js_a07117e28ee58d2d2664cfbaf741e10c1}
+
+
+Definition at line 6972 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a4fd9dfc4eb645b441a3e84730c50154b}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!r\+C\+R\+L\+F@{r\+C\+R\+L\+F}}
+\index{r\+C\+R\+L\+F@{r\+C\+R\+L\+F}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{r\+C\+R\+L\+F}]{\setlength{\rightskip}{0pt plus 5cm}var r\+C\+R\+L\+F = /\textbackslash{}r?\textbackslash{}n/g}\label{jquery_8min_8js_a4fd9dfc4eb645b441a3e84730c50154b}
+
+
+Definition at line 6973 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a7907e208847275b29993c85031275f9f}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!rfxnum@{rfxnum}}
+\index{rfxnum@{rfxnum}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{rfxnum}]{\setlength{\rightskip}{0pt plus 5cm}var rfxnum = /$^\wedge$(\mbox{[}+\textbackslash{}-\/\mbox{]}=)?(\mbox{[}\textbackslash{}{\bf d}+.\textbackslash{}-\/\mbox{]}+)(\mbox{[}{\bf a}-\/z\%\mbox{]}$\ast$)\$/i}\label{jquery_8min_8js_a7907e208847275b29993c85031275f9f}
+
+
+Definition at line 8365 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a28b1e14ecaade6675453a292b2c1dba6}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!rfxtypes@{rfxtypes}}
+\index{rfxtypes@{rfxtypes}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{rfxtypes}]{\setlength{\rightskip}{0pt plus 5cm}var rfxtypes = /$^\wedge$(?\+:{\bf toggle}$\vert$show$\vert$hide)\$/}\label{jquery_8min_8js_a28b1e14ecaade6675453a292b2c1dba6}
+
+
+Definition at line 8364 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a6990b6955b6bec9dd39f3814cfb56d6d}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!rhash@{rhash}}
+\index{rhash@{rhash}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{rhash}]{\setlength{\rightskip}{0pt plus 5cm}var rhash = /\#.$\ast$\$/}\label{jquery_8min_8js_a6990b6955b6bec9dd39f3814cfb56d6d}
+
+
+Definition at line 6974 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_af506d11612139f03091db71089d92e8b}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!rheaders@{rheaders}}
+\index{rheaders@{rheaders}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{rheaders}]{\setlength{\rightskip}{0pt plus 5cm}var rheaders = /$^\wedge$(.$\ast$?)\+:\mbox{[} \textbackslash{}t\mbox{]}$\ast$(\mbox{[}$^\wedge$\textbackslash{}r\textbackslash{}n\mbox{]}$\ast$)\textbackslash{}r?\$/mg}\label{jquery_8min_8js_af506d11612139f03091db71089d92e8b}
+
+
+Definition at line 6975 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a54bf469241c9049d37808034934f6dc3}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!rinput@{rinput}}
+\index{rinput@{rinput}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{rinput}]{\setlength{\rightskip}{0pt plus 5cm}var rinput = /$^\wedge$(?\+:color$\vert$date$\vert$datetime$\vert$datetime-\/local$\vert$email$\vert$hidden$\vert$month$\vert$number$\vert$password$\vert$range$\vert$search$\vert$tel$\vert$text$\vert$time$\vert$url$\vert$week)\$/i}\label{jquery_8min_8js_a54bf469241c9049d37808034934f6dc3}
+
+
+Definition at line 6976 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_af4dd13c90298bbf53ce08ec707dc9e2a}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!rlocal\+Protocol@{rlocal\+Protocol}}
+\index{rlocal\+Protocol@{rlocal\+Protocol}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{rlocal\+Protocol}]{\setlength{\rightskip}{0pt plus 5cm}var rlocal\+Protocol = /$^\wedge$(?\+:about$\vert$app$\vert$app\textbackslash{}-\/storage$\vert$.+\textbackslash{}-\/extension$\vert$file$\vert$res$\vert$widget)\+:\$/}\label{jquery_8min_8js_af4dd13c90298bbf53ce08ec707dc9e2a}
+
+
+Definition at line 6978 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a537d744d72e31ec312aa3f16ef576d3f}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!rno\+Content@{rno\+Content}}
+\index{rno\+Content@{rno\+Content}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{rno\+Content}]{\setlength{\rightskip}{0pt plus 5cm}var rno\+Content = /$^\wedge$(?\+:G\+E\+T$\vert$H\+E\+A\+D)\$/}\label{jquery_8min_8js_a537d744d72e31ec312aa3f16ef576d3f}
+
+
+Definition at line 6979 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_ac538d11682940a0991bba1ce046507f3}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!ropacity@{ropacity}}
+\index{ropacity@{ropacity}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{ropacity}]{\setlength{\rightskip}{0pt plus 5cm}var ropacity}\label{jquery_8min_8js_ac538d11682940a0991bba1ce046507f3}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= /opacity=([^)]*)/,
+    
+    rupper = /([A-\hyperlink{jquery_8js_adc18d83abfd9f87d396e8fd6b6ac0fe1}{Z}]|^ms)/g,
+    rnum = /^[\(\backslash\)-+]?(?:\(\backslash\)\hyperlink{bootstrap_8min_8js_aeb337d295abaddb5ec3cb34cc2e2bbc9}{d}*\(\backslash\).)?\hyperlink{bootstrap_8min_8js_aeb337d295abaddb5ec3cb34cc2e2bbc9}{\(\backslash\)d}+$/i,
+    rnumnonpx = /^-?(?:\hyperlink{bootstrap_8min_8js_aeb337d295abaddb5ec3cb34cc2e2bbc9}{\(\backslash\)d}*\(\backslash\).)?\hyperlink{bootstrap_8min_8js_aeb337d295abaddb5ec3cb34cc2e2bbc9}{\(\backslash\)d}+(?!px)[^\(\backslash\)\hyperlink{bootstrap_8min_8js_aeb337d295abaddb5ec3cb34cc2e2bbc9}{d}\(\backslash\)\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a5b740cec8cab496e71b6896c16dfba9d}{s}]+$/i,
+    rrelNum = /^([\(\backslash\)-+])=([\(\backslash\)-+.\(\backslash\)de]+)/,
+    rmargin = /^margin/,
+
+    cssShow = \{ position: \textcolor{stringliteral}{"absolute"}, visibility: \textcolor{stringliteral}{"hidden"}, display: \textcolor{stringliteral}{"block"} \},
+
+    
+    cssExpand = [ \textcolor{stringliteral}{"Top"}, \textcolor{stringliteral}{"Right"}, \textcolor{stringliteral}{"Bottom"}, \textcolor{stringliteral}{"Left"} ],
+
+    \hyperlink{jquery_8min_8js_a2bac46970b28aa533a08cecff26eea5b}{curCSS},
+
+    getComputedStyle,
+    currentStyle
+\end{DoxyCode}
+
+
+Definition at line 6555 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a0f02b710647fcf95e74593954fb9b4cb}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!rprotocol@{rprotocol}}
+\index{rprotocol@{rprotocol}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{rprotocol}]{\setlength{\rightskip}{0pt plus 5cm}var rprotocol}\label{jquery_8min_8js_a0f02b710647fcf95e74593954fb9b4cb}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= /^\(\backslash\)/\(\backslash\)
+    rquery = /\(\backslash\)?/
+\end{DoxyCode}
+
+
+Definition at line 6980 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_ac094d32f571d9352360e0fe90ea536a2}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!rroot@{rroot}}
+\index{rroot@{rroot}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{rroot}]{\setlength{\rightskip}{0pt plus 5cm}var rroot = /$^\wedge$(?\+:body$\vert$html)\$/i}\label{jquery_8min_8js_ac094d32f571d9352360e0fe90ea536a2}
+
+
+Definition at line 9064 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a24860b63c0c43befe5cbf4927dac07ff}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!rscript@{rscript}}
+\index{rscript@{rscript}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{rscript}]{\setlength{\rightskip}{0pt plus 5cm}var rscript}\label{jquery_8min_8js_a24860b63c0c43befe5cbf4927dac07ff}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= /<\hyperlink{jquery_8debounce_8min_8js_ac0431efac4d7c393d1e70b86115cb93f}{script\(\backslash\)b}[^<]*(?:(?!<\(\backslash\)/script>)<[^<]*)*<\(\backslash\)/script>/gi,
+    rselectTextarea = /^(?:select|textarea)/i,
+    rspacesAjax = /\(\backslash\)\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a5b740cec8cab496e71b6896c16dfba9d}{s}+/,
+    rts = /([?&])\_=[^&]*/,
+    rurl = /^([\(\backslash\)w\(\backslash\)+\(\backslash\).\(\backslash\)-]+:)(?:\(\backslash\)/\(\backslash\)/([^\(\backslash\)/?#:]*)(?::(\hyperlink{bootstrap_8min_8js_aeb337d295abaddb5ec3cb34cc2e2bbc9}{\(\backslash\)d}+))?)?/,
+
+    
+    \_load = \hyperlink{jquery_8min_8js_add5237586d970a38a81f990e8eb28c6c}{jQuery}.fn.load,
+
+    
+    prefilters = \{\},
+
+    
+    transports = \{\},
+
+    
+    ajaxLocation,
+
+    
+    \hyperlink{jquery_8min_8js_a4c35110da3c335cfca38505ee65a5e79}{ajaxLocParts},
+
+    
+    allTypes = [\textcolor{stringliteral}{"*/"}] + [\textcolor{stringliteral}{"*"}]
+\end{DoxyCode}
+
+
+Definition at line 6982 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_ab3eb1277a64eee719b82a7322363e7c8}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!rtable@{rtable}}
+\index{rtable@{rtable}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{rtable}]{\setlength{\rightskip}{0pt plus 5cm}var rtable = /$^\wedge$t(?\+:able$\vert${\bf d}$\vert$h)\$/i}\label{jquery_8min_8js_ab3eb1277a64eee719b82a7322363e7c8}
+
+
+Definition at line 9063 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_aa447439fbe7027e58837a297297c9d8a}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!timer\+Id@{timer\+Id}}
+\index{timer\+Id@{timer\+Id}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{timer\+Id}]{\setlength{\rightskip}{0pt plus 5cm}var timer\+Id}\label{jquery_8min_8js_aa447439fbe7027e58837a297297c9d8a}
+
+
+Definition at line 8365 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_abe4cc9788f52e49485473dc699537388}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!try@{try}}
+\index{try@{try}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{try}]{\setlength{\rightskip}{0pt plus 5cm}try}\label{jquery_8min_8js_abe4cc9788f52e49485473dc699537388}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+\{
+    ajaxLocation = location.href
+\end{DoxyCode}
+
+
+Definition at line 7020 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a08113a236cc18d2a9d5ce27e638012be}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!undefined@{undefined}}
+\index{undefined@{undefined}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{undefined}]{\setlength{\rightskip}{0pt plus 5cm}function undefined}\label{jquery_8min_8js_a08113a236cc18d2a9d5ce27e638012be}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+\{
+
+
+var document = \hyperlink{jquery_8min_8js_a04a8a2bbfa9c15500892b8e5033d625b}{window}.document,
+    navigator = \hyperlink{jquery_8min_8js_a04a8a2bbfa9c15500892b8e5033d625b}{window}.navigator,
+    location = \hyperlink{jquery_8min_8js_a04a8a2bbfa9c15500892b8e5033d625b}{window}.location
+\end{DoxyCode}
+
+
+Definition at line 16 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a04a8a2bbfa9c15500892b8e5033d625b}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!window@{window}}
+\index{window@{window}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{window}]{\setlength{\rightskip}{0pt plus 5cm}window}\label{jquery_8min_8js_a04a8a2bbfa9c15500892b8e5033d625b}
+j\+Query Java\+Script Library v1.\+7.\+2 \href{http://jquery.com/}{\tt http\+://jquery.\+com/}
+
+Copyright 2011, John Resig Dual licensed under the M\+I\+T or G\+P\+L Version 2 licenses. \href{http://jquery.org/license}{\tt http\+://jquery.\+org/license}
+
+Includes Sizzle.\+js \href{http://sizzlejs.com/}{\tt http\+://sizzlejs.\+com/} Copyright 2011, The Dojo Foundation Released under the M\+I\+T, B\+S\+D, and G\+P\+L Licenses.
+
+Date\+: Wed Jul 30 14\+:06\+:55 U\+T\+C 2014 
+
+Definition at line 16 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a107163291c96103089efc0b57154549f}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!xhr@{xhr}}
+\index{xhr@{xhr}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{xhr}]{\setlength{\rightskip}{0pt plus 5cm}function xhr}\label{jquery_8min_8js_a107163291c96103089efc0b57154549f}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \hyperlink{jquery_8min_8js_a04a8a2bbfa9c15500892b8e5033d625b}{window}.ActiveXObject ?
+    
+    \textcolor{keyword}{function}() \{
+        \textcolor{keywordflow}{return} !this.isLocal && \hyperlink{jquery_8min_8js_acea019a8b67e4d114deb75d1e0b3474a}{createStandardXHR}() || 
+      \hyperlink{jquery_8min_8js_a54bf63f1b5f905292db45a1d6a9dc300}{createActiveXHR}();
+    \} :
+    
+    \hyperlink{jquery_8min_8js_acea019a8b67e4d114deb75d1e0b3474a}{createStandardXHR}
+\end{DoxyCode}
+
+
+Definition at line 8163 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a068f27a70831ff3a9e0ffa79e063847f}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!xhr\+Callbacks@{xhr\+Callbacks}}
+\index{xhr\+Callbacks@{xhr\+Callbacks}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{xhr\+Callbacks}]{\setlength{\rightskip}{0pt plus 5cm}var xhr\+Callbacks}\label{jquery_8min_8js_a068f27a70831ff3a9e0ffa79e063847f}
+
+
+Definition at line 8145 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_aa23ed64cf7afc9b028419517bf23fcea}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!xhr\+Id@{xhr\+Id}}
+\index{xhr\+Id@{xhr\+Id}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{xhr\+Id}]{\setlength{\rightskip}{0pt plus 5cm}var xhr\+Id = 0}\label{jquery_8min_8js_aa23ed64cf7afc9b028419517bf23fcea}
+
+
+Definition at line 8145 of file jquery.\+min.\+js.
+
+\hypertarget{jquery_8min_8js_a271c099ab18ab35c15cac2faa2a097aa}{}\index{jquery.\+min.\+js@{jquery.\+min.\+js}!xhr\+On\+Unload\+Abort@{xhr\+On\+Unload\+Abort}}
+\index{xhr\+On\+Unload\+Abort@{xhr\+On\+Unload\+Abort}!jquery.\+min.\+js@{jquery.\+min.\+js}}
+\subsubsection[{xhr\+On\+Unload\+Abort}]{\setlength{\rightskip}{0pt plus 5cm}var xhr\+On\+Unload\+Abort}\label{jquery_8min_8js_a271c099ab18ab35c15cac2faa2a097aa}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \hyperlink{jquery_8min_8js_a04a8a2bbfa9c15500892b8e5033d625b}{window}.ActiveXObject ? \textcolor{keyword}{function}() \{
+        
+        \textcolor{keywordflow}{for} ( var key in \hyperlink{jquery_8min_8js_a068f27a70831ff3a9e0ffa79e063847f}{xhrCallbacks} ) \{
+            xhrCallbacks[ key ]( 0, 1 );
+        \}
+    \} : \textcolor{keyword}{false}
+\end{DoxyCode}
+
+
+Definition at line 8139 of file jquery.\+min.\+js.
+

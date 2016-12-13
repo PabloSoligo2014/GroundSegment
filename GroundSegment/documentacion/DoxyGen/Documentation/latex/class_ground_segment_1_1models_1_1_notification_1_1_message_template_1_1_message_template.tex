@@ -1,0 +1,91 @@
+\hypertarget{class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template}{}\section{Ground\+Segment.\+models.\+Notification.\+Message\+Template.\+Message\+Template Class Reference}
+\label{class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template}\index{Ground\+Segment.\+models.\+Notification.\+Message\+Template.\+Message\+Template@{Ground\+Segment.\+models.\+Notification.\+Message\+Template.\+Message\+Template}}
+
+
+Inheritance diagram for Ground\+Segment.\+models.\+Notification.\+Message\+Template.\+Message\+Template\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ground\+Segment.\+models.\+Notification.\+Message\+Template.\+Message\+Template\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template_a2778ecc4f32ea50d6199ea3411ffcfec}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template_a6c324264a61bc988b25b3b25a8196dcd}{name} = models.\+Char\+Field(\textquotesingle{}Nombre de la plantilla\textquotesingle{}, max\+\_\+length=\hyperlink{class_ground_segment_1_1models_1_1_consts_1_1_consts_a3788d24e86a0ffb03efc2a6bb1f88643}{Consts.\+small\+String}, help\+\_\+text=\textquotesingle{}Nombre de la plantilla\textquotesingle{}, unique=True, default=\char`\"{}sin nombre\char`\"{})
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template_a4a30265144c01c3f2f44e6fd7d27c663}{subject} = models.\+Char\+Field(\textquotesingle{}Asunto del mensaje\textquotesingle{}, max\+\_\+length=\hyperlink{class_ground_segment_1_1models_1_1_consts_1_1_consts_a3788d24e86a0ffb03efc2a6bb1f88643}{Consts.\+small\+String}, help\+\_\+text=\textquotesingle{}Asunto del mensaje\textquotesingle{}, unique=True, default=\char`\"{}sin nombre\char`\"{})
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template_a376fac3f79b54f6690e09fae5e2ea2d5}{text} = models.\+Text\+Field(null=False, default=\char`\"{}Sin mensaje\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Plantilla para la notificacion, al momento de enviar una el mensaje se toma el texto de la plantilla
+se realizan los remplazos por la information asociada (delimitada entre [])  y se genera el texto final.
+
+Ej:
+
+    Se ha generado la alarma numero [pk] a hora abordo [dtOnBoard] y es del tipo [alarmaType.code]...etc
+\end{DoxyVerb}
+ 
+
+Definition at line 10 of file Message\+Template.\+py.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template_a2778ecc4f32ea50d6199ea3411ffcfec}{}\index{Ground\+Segment\+::models\+::\+Notification\+::\+Message\+Template\+::\+Message\+Template@{Ground\+Segment\+::models\+::\+Notification\+::\+Message\+Template\+::\+Message\+Template}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!Ground\+Segment\+::models\+::\+Notification\+::\+Message\+Template\+::\+Message\+Template@{Ground\+Segment\+::models\+::\+Notification\+::\+Message\+Template\+::\+Message\+Template}}
+\subsubsection[{\+\_\+\+\_\+str\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Notification.\+Message\+Template.\+Message\+Template.\+\_\+\+\_\+str\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template_a2778ecc4f32ea50d6199ea3411ffcfec}
+
+
+Definition at line 26 of file Message\+Template.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template_a6c324264a61bc988b25b3b25a8196dcd}{}\index{Ground\+Segment\+::models\+::\+Notification\+::\+Message\+Template\+::\+Message\+Template@{Ground\+Segment\+::models\+::\+Notification\+::\+Message\+Template\+::\+Message\+Template}!name@{name}}
+\index{name@{name}!Ground\+Segment\+::models\+::\+Notification\+::\+Message\+Template\+::\+Message\+Template@{Ground\+Segment\+::models\+::\+Notification\+::\+Message\+Template\+::\+Message\+Template}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Notification.\+Message\+Template.\+Message\+Template.\+name = models.\+Char\+Field(\textquotesingle{}Nombre de la plantilla\textquotesingle{}, max\+\_\+length={\bf Consts.\+small\+String}, help\+\_\+text=\textquotesingle{}Nombre de la plantilla\textquotesingle{}, unique=True, default=\char`\"{}sin nombre\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template_a6c324264a61bc988b25b3b25a8196dcd}
+
+
+Definition at line 20 of file Message\+Template.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template_a4a30265144c01c3f2f44e6fd7d27c663}{}\index{Ground\+Segment\+::models\+::\+Notification\+::\+Message\+Template\+::\+Message\+Template@{Ground\+Segment\+::models\+::\+Notification\+::\+Message\+Template\+::\+Message\+Template}!subject@{subject}}
+\index{subject@{subject}!Ground\+Segment\+::models\+::\+Notification\+::\+Message\+Template\+::\+Message\+Template@{Ground\+Segment\+::models\+::\+Notification\+::\+Message\+Template\+::\+Message\+Template}}
+\subsubsection[{subject}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Notification.\+Message\+Template.\+Message\+Template.\+subject = models.\+Char\+Field(\textquotesingle{}Asunto del mensaje\textquotesingle{}, max\+\_\+length={\bf Consts.\+small\+String}, help\+\_\+text=\textquotesingle{}Asunto del mensaje\textquotesingle{}, unique=True, default=\char`\"{}sin nombre\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template_a4a30265144c01c3f2f44e6fd7d27c663}
+
+
+Definition at line 21 of file Message\+Template.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template_a376fac3f79b54f6690e09fae5e2ea2d5}{}\index{Ground\+Segment\+::models\+::\+Notification\+::\+Message\+Template\+::\+Message\+Template@{Ground\+Segment\+::models\+::\+Notification\+::\+Message\+Template\+::\+Message\+Template}!text@{text}}
+\index{text@{text}!Ground\+Segment\+::models\+::\+Notification\+::\+Message\+Template\+::\+Message\+Template@{Ground\+Segment\+::models\+::\+Notification\+::\+Message\+Template\+::\+Message\+Template}}
+\subsubsection[{text}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Notification.\+Message\+Template.\+Message\+Template.\+text = models.\+Text\+Field(null=False, default=\char`\"{}Sin mensaje\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_notification_1_1_message_template_1_1_message_template_a376fac3f79b54f6690e09fae5e2ea2d5}
+
+
+Definition at line 22 of file Message\+Template.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ubuntumate/git/\+Ground\+Segment/\+Ground\+Segment/\+Ground\+Segment/models/\+Notification/\hyperlink{_message_template_8py}{Message\+Template.\+py}\end{DoxyCompactItemize}
