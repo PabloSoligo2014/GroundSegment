@@ -1,4 +1,4 @@
-from Calibration.AutoInspect import AutoInspect
+#from Calibration.AutoInspect import AutoInspect
 
 
-AutoInspect()
+#AutoInspect()
