@@ -56,10 +56,12 @@ if __name__ == '__main__':
     
     
     
-    uhfs = UHFRawData.objects.filter(source="CUBESAT")
+    uhfs = UHFRawData.objects.filter(id__gte=996, id__lte=1482)
+    
+    
+    
     
     for u in uhfs:
-        str = ""
         
         print(u.getBlob())
         

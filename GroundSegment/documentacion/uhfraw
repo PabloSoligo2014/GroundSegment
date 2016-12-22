@@ -1,0 +1,3 @@
+select *
+from "GroundSegment_uhfrawdata" as uhf
+where length(uhf.data)>32
