@@ -29,6 +29,7 @@ from GroundSegment.models.TmlyVar import TmlyVar
 from GroundSegment.models.Calibration import Calibration
 from GroundSegment.models.SubSystem import SubSystem
 from GroundSegment.models.Log import Log
+from GroundSegment.models.Coefficient import Coefficient
 
 
 class SatelliteAdmin(admin.ModelAdmin):
@@ -117,10 +118,20 @@ class NotificationAdmin(admin.ModelAdmin):
 admin.site.register(Notification ,NotificationAdmin)
 
 
+class CoefficientInline(admin.TabularInline):
+    model = Coefficient
+
+    
+
 class TmlyVarTypeAdmin(admin.ModelAdmin):
     #fields = ()
     search_fields = ['code']
     list_display = ('code', 'description', 'satellite', 'lastCalFValue', 'lastUpdate', 'varType')
+    
+    inlines = [
+        CoefficientInline,
+    ]
+    
 admin.site.register(TlmyVarType ,TmlyVarTypeAdmin)
 
 class TmlyVarAdmin(admin.ModelAdmin):

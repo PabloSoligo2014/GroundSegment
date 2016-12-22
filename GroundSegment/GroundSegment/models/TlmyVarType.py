@@ -98,11 +98,11 @@ class TlmyVarType(models.Model):
                     self.calibrationLogic = methodToCall   
                 
                 if self.varType==self.INTEGER:
-                    self.lastCalIValue = self.calibrationLogic( raw )
+                    self.lastCalIValue = self.calibrationLogic(self,  raw )
                 elif self.varType==self.FLOAT:
-                    self.lastCalFValue = self.calibrationLogic( raw )
+                    self.lastCalFValue = self.calibrationLogic(self,  raw )
                 else:
-                    self.lastCalSValue = self.calibrationLogic( raw )
+                    self.lastCalSValue = self.calibrationLogic(self,  raw )
             else:
                 if self.varType==self.INTEGER:
                     self.lastCalIValue = raw 

@@ -30,7 +30,7 @@ class UHFRawData(models.Model):
         return len(self.data)
     
     def getBlob(self):
-        result = []
+        result = bytearray()
         dl = self.getDataLen()
         for i in range(dl):
             result += self.data[i]

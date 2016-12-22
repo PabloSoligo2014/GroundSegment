@@ -20,6 +20,7 @@ from GroundSegment.models.SubSystem import SubSystem
 from GroundSegment.models.Calibration import Calibration
 from GroundSegment.models.Log import Log
 from GroundSegment.models.Watchdog import Watchdog
+from GroundSegment.models.Coefficient import Coefficient
 
 from GroundSegment.models.Alarm import * 
 
