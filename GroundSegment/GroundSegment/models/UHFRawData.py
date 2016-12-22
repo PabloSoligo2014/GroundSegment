@@ -29,6 +29,7 @@ class UHFRawData(models.Model):
         
         return len(self.data)
     
+<<<<<<< HEAD
     def getBlob(self):
         result = []
         dl = self.getDataLen()
@@ -37,3 +38,33 @@ class UHFRawData(models.Model):
                 
         return result
     
+=======
+    
+    
+"""  
+
+
+
+def getBlobVectorSize(blobData):
+    blobSize = unpack_from('!I',blobData, offset=4)
+    return blobSize[0]
+
+def readBlob(blobData):
+    blobEncoding = unpack_from('!I',blobData, offset=0)
+    formatStr = "!"
+
+    if (blobEncoding[0] == 23):       #encoding vector<double> 
+
+        vectorSize = getBlobVectorSize(blobData)       
+        for x in range(0, vectorSize):
+            formatStr += "d"
+
+    else:
+        raise ValueError("Unexpected blob encoding: %d" % blobEncoding[0])
+
+    return getBlobVectorValues(blobData,formatStr)
+    
+"""
+
+        
+>>>>>>> branch 'master' of https://github.com/PabloSoligo2014/GroundSegment.git
