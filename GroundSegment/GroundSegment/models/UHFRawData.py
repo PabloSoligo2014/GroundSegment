@@ -29,7 +29,6 @@ class UHFRawData(models.Model):
         
         return len(self.data)
     
-<<<<<<< HEAD
     def getBlob(self):
         result = []
         dl = self.getDataLen()
@@ -38,7 +37,6 @@ class UHFRawData(models.Model):
                 
         return result
     
-=======
     
     
 """  
@@ -67,4 +65,3 @@ def readBlob(blobData):
 """
 
         
->>>>>>> branch 'master' of https://github.com/PabloSoligo2014/GroundSegment.git

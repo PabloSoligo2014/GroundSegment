@@ -57,16 +57,12 @@ if __name__ == '__main__':
     
     
     
-<<<<<<< HEAD
     uhfs = UHFRawData.objects.filter(id__gte=996, id__lte=1482)
     
     
     
-=======
     #uhfs = UHFRawData.objects.filter(source="CUBESAT")
->>>>>>> branch 'master' of https://github.com/PabloSoligo2014/GroundSegment.git
     
-<<<<<<< HEAD
     for u in uhfs:
         
         print(u.getBlob())
@@ -75,9 +71,7 @@ if __name__ == '__main__':
         #print("str->", str)
         
             
-=======
     #uhfs = UHFRawData.objects.filter(id_gte=996, id_lte=1482)
->>>>>>> branch 'master' of https://github.com/PabloSoligo2014/GroundSegment.git
     
     """
     struct.pack('>I', 5000) # works fine
