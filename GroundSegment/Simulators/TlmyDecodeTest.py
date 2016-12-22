@@ -5,6 +5,8 @@ Created on 25 de nov. de 2016
 '''
 
 import os, sys
+from _pytest._code.source import Source
+from _struct import unpack
 
 sys.path.append('C:\\Users\\pabli\\git\\GroundSegment\\GroundSegment')
 #sys.path.append('/home/ubuntumate/git/GroundSegment/GroundSegment/')
@@ -43,8 +45,7 @@ from GroundSegment.models.TlmyVarType import TlmyVarType
 from GroundSegment.models.TmlyVar import TmlyVar
 from GroundSegment.models.UHFRawData import UHFRawData
 import struct
-
-
+from Simulators.ax25 import printpacket
 
 #1- 7 bytes - Destination Callsign
 #2- 7 bytes - Source Callsign
@@ -56,17 +57,9 @@ if __name__ == '__main__':
     
     
     
-    uhfs = UHFRawData.objects.filter(source="CUBESAT")
+    #uhfs = UHFRawData.objects.filter(source="CUBESAT")
     
-    for u in uhfs:
-        str = ""
-        
-        print(u.getBlob())
-        
-        
-        #print("str->", str)
-        
-            
+    #uhfs = UHFRawData.objects.filter(id_gte=996, id_lte=1482)
     
     """
     struct.pack('>I', 5000) # works fine
@@ -84,42 +77,65 @@ if __name__ == '__main__':
     bytearray((0x00, 0x00, 0xc3, 0x50)) == struct.pack(">I", 50000)
     struct.pack('>I', 50000).encode("hex") '0000c350'
     
-    
-
-    
-    datatype1 = "98 82 84 40 40 40 00 88 8A AC 96 92 A8 00 03 F0 01 A7 00 B0 00 00 00 00 E7 00 EC 00 31 CC CC 39 02 98 01 BA 03 04 00 04 00 00 00 3D 00 DF 00 E7 01 00 00 00 00 00 00 00 00 7F 1F 62 00 13 00 13 00 13 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 05 AD 00 00 00 00 27 DF 0A BF 0A DF 0A 04 00 04 00 04 00 00 16 6B D3"
-    datatype2 = "98 82 84 40 40 40 00 88 8A AC 96 92 A8 00 03 F0 04 14 01 24 01 00 00 02 97 01 B5 03 04 00 04 00 00 00 3F 00 E1 00 E7 01 FA 75"
-    datatype3 = "E2 08 80 3C 38 98 E2 2A 16 14 F2 74 54 45 DA 66 6D 16 49 E6"
-    
-    splDt1 = datatype1.split(" ")
-    splDt2 = datatype2.split(" ")
-    #print(spl)
-    
-    framecommand=bytearray.fromhex(splDt1[16])
-    print("Dt1", framecommand)
-    
-    framecommand=bytearray.fromhex(splDt2[16])
-    print("Dt2", framecommand)
-    
-    print("4b", splDt1[17:17+4])
-    
-    str1 = ''.join(e for e in splDt1[17:17+4])
-    framelength=bytearray.fromhex(str1)
-    print("Framel, ", framelength)
-    
-    print("Frame length: ", struct.unpack('<I', framelength) )
-    
     """
-    
-    
-    
 
-    #uhf = UHFRawData.objects.filter(source="CUBESAT")
+    
+    #datatype2 = "98 82 84 40 40 40 00 88 8A AC 96 92 A8 00 03 F0 01 A7 00 B0 00 00 00 00 E7 00 EC 00 31 CC CC 39 02 98 01 BA 03 04 00 04 00 00 00 3D 00 DF 00 E7 01 00 00 00 00 00 00 00 00 7F 1F 62 00 13 00 13 00 13 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 05 AD 00 00 00 00 27 DF 0A BF 0A DF 0A 04 00 04 00 04 00 00 16 6B D3"
+    #datatype2 = "98 82 84 40 40 40 00 88 8A AC 96 92 A8 00 03 F0 01 B6 00 C0 00 00 00 00 E7 00 ED 00 32 CC CC 37 02 98 01 AD 03 04 00 04 00 00 00 3D 00 DF 00 E8 01 00 00 00 00 00 00 00 00 7F 1F 62 00 13 00 13 00 13 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 05 AD 00 00 00 00 27 DF 0A BF 0A DF 0A 04 00 04 00 05 00 00 16 88 7D "
+    datatype2 = "98 82 84 40 40 40 00 88 8A AC 96 92 A8 00 03 F0 01 C5 00 D0 00 00 00 00 E6 00 ED 00 31 CC CC 39 02 98 01 B5 03 04 00 04 00 00 00 3D 00 DF 00 E8 01 00 00 00 00 00 00 00 00 7F 1F 62 00 13 00 13 00 13 00 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 05 AD 00 00 00 00 27 DF 0A DF 0A DF 0A 03 00 05 00 04 00 00 16 31 55"
+    #datatype2 = "98 82 84 40 40 40 00 88 8A AC 96 92 A8 00 03 F0 04 14 01 24 01 00 00 02 97 01 B5 03 04 00 04 00 00 00 3F 00 E1 00 E7 01 FA 75"
+    datatype3 = "E2 08 80 3C 38 98 E2 2A 16 14 F2 74 54 45 DA 66 6D 16 49 E6"
+
+    baDataType2 = bytearray.fromhex(datatype2)
+    print(baDataType2)
+    
+    destination = baDataType2[0:7]
+    source      = baDataType2[7:7+7]
+    control     = baDataType2[7+7:7+7+1]
+    protocol    = baDataType2[7+7+1:7+7+1+1]
+    print("Destination", destination)
+    print("Source", source)
+    print("Control", control)
+    print("Protocol", protocol)
+    vardataoffset = 7+7+1+1
+    payload = baDataType2[ vardataoffset: ]
+    print("Payload len ", len(payload) )
+    
+    frametype = payload[0]
+    print("Frametype ", frametype)
+    
+    resetcause = payload[69]
+    print("resetcause", resetcause)
+    
+    
+    MPPTmode = payload[74]
+    print("MPPTmode ", MPPTmode)
+    
+    pkn1 = payload[1:3]
+    #pkn2 = payload[2]
+    
+    
+    print(unpack("<H", pkn1))
+    #print(unpack(">I", pkn1)
+    
+    PAtemp = payload[29:29+2]
+    iPaTemp = unpack("<H", PAtemp)
+    print("PaTemp ", (iPaTemp[0]*0.32258) - 50)
+    
+    busV = payload[31:31+2]
+    ibusV = unpack("<H", busV)
+    print("Bus ", (ibusV[0]*0.016581))
+    
+    #<number position="41" type="short" name="BattV" unit="V" gain="0.001" offset="0"/>
+    
+    bat = payload[41:41+2]
+    ibat = unpack("<H", bat)
+    print("Bat ", (ibat[0]*0.001))
     
     
         
+    bat = payload[41:41+2]
+    ibat = unpack("<H", bat)
+    print("Bat ", (ibat[0]*0.001))
     
-    
-    
-    
-    
+     

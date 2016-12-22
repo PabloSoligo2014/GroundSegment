@@ -26,8 +26,7 @@ class UHFRawData(models.Model):
     source      = models.CharField('Origen del dato, tipicamente cubesat/simulacion', max_length=24, help_text='Origen del dato, tipicamente cubesat/simulacion', default='simulation')
     
     
-    def getBlob(self):
-        return unpack_from('c', self.data, offset=8)
+    
     
 """  
 
