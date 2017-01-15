@@ -11,6 +11,7 @@ from django.utils.timezone import utc
 from GroundSegment.Utils.UtilsFunctions import *
 #from GroundSegment.models.Satellite import Satellite
 #from django.contrib.admin.utils import help_text_for_field
+"""
 
 class Site(models.Model):
     name        = models.CharField("Nombre del Sitio", max_length=100, unique=True)
@@ -90,6 +91,6 @@ class Site(models.Model):
         #    print(pr.positionX, pr.positionY, pr.positionZ)
         
       
-        
+"""        
        
        

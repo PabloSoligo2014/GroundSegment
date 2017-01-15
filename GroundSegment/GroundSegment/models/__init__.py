@@ -7,7 +7,7 @@ from GroundSegment.models.Tle import Tle
 from GroundSegment.models.Propagation import Propagation
 from GroundSegment.models.PropagationDetail import PropagationDetail
 from GroundSegment.models.Pasada import Pasada
-from GroundSegment.models.Site import Site
+#from GroundSegment.models.Site import Site
 from GroundSegment.models.Notification.Notification import Notification
 from GroundSegment.models.Notification.Contact  import Contact
 from GroundSegment.models.Notification.MessageTemplate import MessageTemplate
