@@ -20,6 +20,7 @@ from django.db.models.query import QuerySet
 
 
 
+
 class Satellite(models.Model):
     
     """
@@ -135,6 +136,34 @@ class Satellite(models.Model):
         #param.value = (datetime.now(utc)).strftime("%B %d, %Y")
         #param.save()
 
+    
+    def setLastTLE(self, filename):
+        """
+        Almacena un TLE que no es descargado de NORAD. Tiene como objetivo en etapas de test poder
+        operar con TLEs generados artificialmente o poder remplazar un TLE modificado
+        #TODO: completar descripcion por ceci
+        """
+        from GroundSegment.models.Tle import Tle
+        #Abro el archivo fisico segun ruta
+        file = open(filename, 'r')
+        ol = file.read()
+        lns = ol.split("\n")
+        
+        sgp4sat = twoline2rv(lns[0], lns[1], wgs72)  # es un objeto de clase (satelite)
+            
+            
+        tle = Tle()
+        tle.satellite = self
+        tle.tleDateTime = sgp4sat.epoch
+        tle.downloaded = datetime.now(utc)
+        tle.lines = ol
+        #print("Salvando TLE")
+        tle.save()
+        
+        file.close()
+        
+        
+        
     
     def getLastTLE(self):
         #Implementar que retorne el ultimo TLE, ir a buscar a los TLEs descargado

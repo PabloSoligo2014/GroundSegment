@@ -12,7 +12,7 @@ from django.utils.timezone import datetime, now, timedelta, utc
 from _datetime import datetime
 from GroundSegment.models.Alarm.AlarmType import AlarmType
 from GroundSegment.models.Alarm.Alarm import Alarm
-from GroundSegment.models.Site import Site
+#from GroundSegment.models.Site import Site
 from django.core.exceptions import ObjectDoesNotExist
 from GroundSegment.models.Notification.Contact import Contact
 from GroundSegment.models.Notification.MessageTemplate import MessageTemplate

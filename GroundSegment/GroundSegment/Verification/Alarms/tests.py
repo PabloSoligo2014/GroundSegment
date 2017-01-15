@@ -12,7 +12,7 @@ from django.utils.timezone import datetime, now, timedelta, utc
 from _datetime import datetime
 from GroundSegment.models.Alarm.AlarmType import AlarmType
 from GroundSegment.models.Alarm.Alarm import Alarm
-from GroundSegment.models.Site import Site
+#from GroundSegment.models.Site import Site
 
 
 class AlarmTestCase(unittest.TestCase):
