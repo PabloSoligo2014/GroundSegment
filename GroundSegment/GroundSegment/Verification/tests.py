@@ -27,9 +27,10 @@ class Test(unittest.TestCase):
                     pass
     
     def testSetTlmyVar(self):
-        tmt = TmlyVar
+        pass
+        #tmt = TmlyVar
         
-        tvt = TmlyVarType.objects.
+        #tvt = TmlyVarType.objects.
                 
             
         

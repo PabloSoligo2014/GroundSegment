@@ -14,7 +14,7 @@ from django.utils.timezone import datetime, now, timedelta, utc
 from _datetime import datetime
 from GroundSegment.models.Alarm.AlarmType import AlarmType
 from GroundSegment.models.Alarm.Alarm import Alarm
-from GroundSegment.models.Site import Site
+#from GroundSegment.models.Site import Site
 from django.core.exceptions import ObjectDoesNotExist
 
 
@@ -58,7 +58,27 @@ class Test(unittest.TestCase):
 
         
     
-    
+    def testSetLastTle(self):
+        self.setUpClass()
+        sat = Satellite.objects.get(code="FS2017")
+        
+        import os
+        settings_dir = os.path.dirname(__file__)
+        PROJECT_ROOT = os.path.abspath(os.path.dirname(settings_dir))
+        FILES_FOLDER = os.path.join(PROJECT_ROOT, 'Files/')
+        
+        
+
+       
+        path = FILES_FOLDER+'99937TLE.txt'
+        
+        sat.setLastTLE(path)
+        
+        ln1 = sat.getLastTLE().getLine1()
+        ln2 = sat.getLastTLE().getLine2()
+        
+        print("Linea 1> ", ln1)
+        print("Linea 2> ", ln2)
   
     def testNextPass(self):
         """

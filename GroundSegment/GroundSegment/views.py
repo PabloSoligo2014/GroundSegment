@@ -5,6 +5,11 @@ from GroundSegment.forms import PropagateTestForm
 from django.http import HttpResponse
 from GroundSegment.forms import SimulatorForm
 
+"""
+Autorefresh para vistas de telemetria en tiempo real...
+http://www.b-list.org/weblog/2006/jul/31/django-tips-simple-ajax-example-part-1/
+"""
+
 class AboutView(TemplateView):
     template_name = "about.html"
     
