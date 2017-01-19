@@ -16,6 +16,7 @@ import datetime
 from django.conf import settings
 import os
 import sys
+
 from django.utils import timezone
 
 
@@ -34,6 +35,11 @@ Deprecated: Ya no es necesario indicar el path, lo toma del directorio de ejecuc
 """
 
 
+def cls():
+    os.system('cls' if os.name=='nt' else 'clear')
+
+
+
 
 
 
@@ -45,6 +51,9 @@ para uso futuro y especialmente para poder distinguir datos simulados de datos r
 decodificada en funcion de la configuracion de variables de telemetria del satelite indicado como parametro
 """
 if __name__ == '__main__':
+    
+
+
     
     """Funcion principal del eervicio, aplicacion encargada de decodificar, trasnformar y persistir la telemetria del satelite y de codificar y transmitir los 
     telecomandos.
@@ -84,6 +93,8 @@ if __name__ == '__main__':
     from django.core.wsgi import get_wsgi_application
     application = get_wsgi_application()
     
+   
+    
     try:
         #Si me desconecto intento nuevamente conectarme despues de un sleep
         #y asi in eternum....
@@ -111,20 +122,13 @@ if __name__ == '__main__':
         
         
         
-        """
-        Cargo todos los parametros de configuracion del sistema
-        """
-        uhfServerIp             = loadOrCreateParam("UHF_SERVER_IP", "GroundStation", "127.0.0.1", "IP del servidor TCP de la antena UHF")
-        uhfServerPort           = loadOrCreateParam("UHF_SERVER_PORT", "GroundStation", "3210", "Puerto del servidor TCP de la antena UHF")    
-        BUFFER_SIZE             = loadOrCreateParam("UHF_BUFFER_SIZE", "GroundStation", "1024", "Tamanio del buffer del cliente TCP")
-        DISCONNECTION_SLEEP     = loadOrCreateParam("UHF_DISCONNECTION_SLEEP", "GroundStation", "10", "Tiempo en que se duerme la aplicacion ante una desconexion a la espera de volver a intentar")
-    
+       
         """
         Log guardar en el registro de log los sucesos que se consideren relevante para futura autoria o debug
         """
         Log.create("TlmyCmdProcessor started", "The uhf interface module was started", module, Log.INFORMATION).save()
 
-        print("Done..trying to connect ip ", uhfServerIp, " ,port", uhfServerPort)
+        
         
         """
         Bucle infinito, el software debe funcionar 7x24, si el software de la antena no estuviera 
@@ -132,96 +136,120 @@ if __name__ == '__main__':
         hasta que este disponible. Dado que no es posible instalarlo como servicio, el watchdog se 
         realizar manualmente.
         """
+        
+        
+            
         while True:
-            print("Create o recreate socket...", str(datetime.datetime.utcnow()) )
             """
-            Creo el socket -Cliente- que se conectara al software de la antena
-            """            
-            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            try:
+            Limite de conexiones fallidas antes de recargar configuracion...
+            
+            """
+            """
+            Cargo todos los parametros de configuracion del sistema
+            """
+            uhfServerIp             = loadOrCreateParam("UHF_SERVER_IP", "GroundStation", "127.0.0.1", "IP del servidor TCP de la antena UHF")
+            uhfServerPort           = loadOrCreateParam("UHF_SERVER_PORT", "GroundStation", "3210", "Puerto del servidor TCP de la antena UHF")    
+            BUFFER_SIZE             = loadOrCreateParam("UHF_BUFFER_SIZE", "GroundStation", "1024", "Tamanio del buffer del cliente TCP")
+            DISCONNECTION_SLEEP     = loadOrCreateParam("UHF_DISCONNECTION_SLEEP", "GroundStation", "10", "Tiempo en que se duerme la aplicacion ante una desconexion a la espera de volver a intentar")
+            cls()
+            print("Done..trying to connect ip ", uhfServerIp, " ,port", uhfServerPort)
+            unconnectionLimit       = 0
+            
+            while unconnectionLimit<10:
+                cls()
+                print("Create o recreate socket...", str(datetime.datetime.utcnow()) )
                 """
-                Precargo todas los tipos variables de telemetria del satelite enviado argumento, lo hago 
-                aqui para hacerlo solo una vez, para mejorar el software se deberia pensar en una recarga cada intervalo
-                de tiempo determinado por si cambian la configuracion tomar los cambios
-                """
-                telvars = TlmyVarType.objects.filter(satellite__code=satellite)
-                Log.create("LoadTlmy", "Load telemetry var types, count: "+str(len(telvars)), module, Log.INFORMATION).save()
-
-                
-                
-                """
-                Intento conectarme segun ip y puerto configurado, si la configuracion 
-                estuviera mal o no estuviera el servidor levantado el componente
-                de socket informa mediante exception, la misma es trapeada para volver
-                a intentar ciclicamente (Informe de error mediante)
-                """
-                s.connect( (uhfServerIp, int(uhfServerPort)) )
+                Creo el socket -Cliente- que se conectara al software de la antena
+                """            
+                s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 try:
-                    print("Successfully connection to..", uhfServerPort)
-                    while True:
-                        """
-                        Me quedo esperando recibir informacion del socket (IPC)
-                        """                        
-                        chunk = s.recv(int(BUFFER_SIZE))
-                        
-                        
-                        """
-                        Buena o mala la telemetria fue recibida, reseteo el watchdog
-                        """
-                        wd.reset()
-                        
-                        """
-                        Si la informacion es una trama de bits completa la proceso
-                        """
-                        if chunk == b'':
-                            raise RuntimeError("socket connection broken")
-                        else:
+                    """
+                    Precargo todas los tipos variables de telemetria del satelite enviado argumento, lo hago 
+                    aqui para hacerlo solo una vez, para mejorar el software se deberia pensar en una recarga cada intervalo
+                    de tiempo determinado por si cambian la configuracion tomar los cambios
+                    """
+                    telvars = TlmyVarType.objects.filter(satellite__code=satellite)
+                    Log.create("LoadTlmy", "Load telemetry var types, count: "+str(len(telvars)), module, Log.INFORMATION).save()
+    
+                    
+                    
+                    """
+                    Intento conectarme segun ip y puerto configurado, si la configuracion 
+                    estuviera mal o no estuviera el servidor levantado el componente
+                    de socket informa mediante exception, la misma es trapeada para volver
+                    a intentar ciclicamente (Informe de error mediante)
+                    """
+                    s.connect( (uhfServerIp, int(uhfServerPort)) )
+                    try:
+                        print("Successfully connection to..", uhfServerPort)
+                        while True:
                             """
-                            Me guardo el crudo tal cual llego antes de procesarlo, la tabla donde se guarda es UHFRawData
-                            """
-                            print("Len-",len(chunk))
-                            print("\nData Received("+str(timezone.datetime.utcnow() )+")->", chunk)
-                            data = UHFRawData()
-                            data.source = source
-                            data.data = chunk
-                            data.save()
-                                                        
-                            """
-                            Ahora proceso los datos en funcion de las variables de telemetria configuradas en el sistema. 
-                            Las mismas ya tienen internamente sus funciones de calibracion segun configuracion
-                            """
+                            Me quedo esperando recibir informacion del socket (IPC)
+                            """                        
+                            chunk = s.recv(int(BUFFER_SIZE))
+                            
+                            unconnectionLimit = 0
                             
                             """
-                            Recorro todas los tipos de variable de telemetria, las busco en la posicion en la trama, 
-                            y actualizo su valor, la clase TlmyVarType internamente se encarga de todo, la transformacion en variable
-                            de ingenieria y la persistencia en tiempo real e historica
+                            Buena o mala la telemetria fue recibida, reseteo el watchdog
                             """
-                            for tt in telvars:
+                            wd.reset()
+                            
+                            """
+                            Si la informacion es una trama de bits completa la proceso
+                            """
+                            if chunk == b'':
+                                raise RuntimeError("socket connection broken")
+                            else:
                                 """
-                                TODO
-                                code draft
-                                val = chunk[tt.position]
-                                tt.setValue(val)
+                                Me guardo el crudo tal cual llego antes de procesarlo, la tabla donde se guarda es UHFRawData
+                                """
+                                print("Len-",len(chunk))
+                                print("\nData Received("+str(timezone.datetime.utcnow() )+")->", chunk)
+                                data = UHFRawData()
+                                data.source = source
+                                data.data = chunk
+                                data.save()
+                                                            
+                                """
+                                Ahora proceso los datos en funcion de las variables de telemetria configuradas en el sistema. 
+                                Las mismas ya tienen internamente sus funciones de calibracion segun configuracion
+                                """
                                 
                                 """
-                                
-                        ##f.close()
-                finally:
-                    s.close()
-            
-            except Exception as err:
-                Log.create("ERROR TlmyCmdProcessor", "Error/Exception "+str(err), module, Log.ERROR).save()
-                #TODO, quitar print
-                print(err)
-                 
-            except IOError as err2:
-                Log.create("IOERROR TlmyCmdProcessor", "Error/Exception "+str(err2), module, Log.ERROR).save()
-                #TODO, quitar print
-                print("Error..")
+                                Recorro todas los tipos de variable de telemetria, las busco en la posicion en la trama, 
+                                y actualizo su valor, la clase TlmyVarType internamente se encarga de todo, la transformacion en variable
+                                de ingenieria y la persistencia en tiempo real e historica
+                                """
+                                for tt in telvars:
+                                    """
+                                    TODO
+                                    code draft
+                                    val = chunk[tt.position]
+                                    tt.setValue(val)
+                                    
+                                    """
+                                    
+                            ##f.close()
+                    finally:
+                        s.close()
                 
-              
-            print("Sleeping..")
-            time.sleep(int(DISCONNECTION_SLEEP))
+                except Exception as err:
+                    Log.create("ERROR TlmyCmdProcessor", "Error/Exception "+str(err), module, Log.ERROR).save()
+                    #TODO, quitar print
+                   
+                    print(str(datetime.datetime.utcnow()), err)
+                    unconnectionLimit = unconnectionLimit + 1
+                     
+                except IOError as err2:
+                    Log.create("IOERROR TlmyCmdProcessor", "Error/Exception "+str(err2), module, Log.ERROR).save()
+                    #TODO, quitar print
+                    
+                    print(str(datetime.datetime.utcnow()), err2)
+                    unconnectionLimit = unconnectionLimit + 1
+                  
+                print("Sleeping..")
+                time.sleep(int(DISCONNECTION_SLEEP))
                     
     except ValueError as ve:
         Log.create("Failed connection..", "Error/Exception "+str(ve), module, Log.ERROR).save()
