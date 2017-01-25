@@ -21,6 +21,8 @@ from GroundSegment.models.Calibration import Calibration
 from GroundSegment.models.Log import Log
 from GroundSegment.models.Watchdog import Watchdog
 from GroundSegment.models.Coefficient import Coefficient
+from GroundSegment.models.DCPData import DCPData
+from GroundSegment.models.DCPPlatform import DCPPlatform
 
 from GroundSegment.models.Alarm import * 
 
