@@ -21,17 +21,17 @@ class DCPPlatform(models.Model):
         #y setear tiempo real, por ahora solo tiempo real
         from GroundSegment.models.DCPData import DCPData
         dspData = DCPData()
-        dspData.dcp_plataform = self
-        dspData.dataTime = datetime
-        dspData.receive_dataTime = utc
-        dspData.snow = snow
-        dspData.Precipitation = precipitation
-        dspData.Temperature = temperature
-        dspData.Humidity = humidity
-        dspData.Wind_dir = windDir
-        dspData.Wind_speed = windSpeed
-        dspData.Bat_volts = batVolt
-        dspData.cm_data = cmData
+        dspData.dcp_plataform   = self
+        dspData.dataTime        = datetime
+        dspData.receive_dataTime= utc
+        dspData.snow            = snow
+        dspData.Precipitation   = precipitation
+        dspData.Temperature     = temperature
+        dspData.Humidity        = humidity
+        dspData.Wind_dir        = windDir
+        dspData.Wind_speed      = windSpeed
+        dspData.Bat_volts       = batVolt
+        dspData.cm_data         = cmData
         dspData.save()
         
         return dspData
