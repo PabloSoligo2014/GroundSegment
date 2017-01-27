@@ -157,9 +157,6 @@ class LogAdmin(admin.ModelAdmin):
     list_display = ('code', 'description', 'module', 'logType')
     search_fields = ['module', 'logType']
     list_filter = ['module', 'logType']
-    
-    
-    
 
     def get_queryset(self, request):
     #def queryset(self, request):
