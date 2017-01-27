@@ -10,6 +10,18 @@ from groundSegment_propagationdetail inner join groundSegment_propagation on gro
 where groundSegment_propagation.satellite_id=3 and groundSegment_propagationdetail.earthDistance<>0
 
 
+select *
+from "GroundSegment_uhfrawdata" as uhf
+where length(uhf.data)>32
+
+
+insert into public."GroundSegment_uhfrawdata" (created, data, source)
+SELECT t1.created, t1.ndata, t1.source
+    FROM dblink('dbname=DBGroundSegment_tmp', 'select created, data as ndata, source from "GroundSegment_uhfrawdata"')
+      AS t1(created timestamp,ndata bytea,source text)
+
+
+
 
 
 
