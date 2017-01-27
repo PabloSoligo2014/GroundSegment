@@ -31,6 +31,9 @@ from GroundSegment.models.SubSystem import SubSystem
 from GroundSegment.models.Log import Log
 from GroundSegment.models.Coefficient import Coefficient
 
+from GroundSegment.models.DCPPlatform import DCPPlatform
+from GroundSegment.models.DCPData import DCPData
+
 
 class SatelliteAdmin(admin.ModelAdmin):
     pass
@@ -165,6 +168,16 @@ class LogAdmin(admin.ModelAdmin):
         return tmp
     
 admin.site.register(Log ,LogAdmin)
+
+class DCPPlatformAdmin(admin.ModelAdmin):
+    pass
+    
+admin.site.register(DCPPlatform ,DCPPlatformAdmin)
+
+class DCPDataAdmin(admin.ModelAdmin):
+    list_display = ('dcp_plataform', 'dataTime', 'snow', 'Precipitation', 'Temperature', 'Humidity', 'Wind_dir', 'Wind_speed', 'Bat_volts', 'cm_data' )
+    readonly_fields=('dcp_plataform', 'dataTime', 'snow', 'Precipitation', 'Temperature', 'Humidity', 'Wind_dir', 'Wind_speed', 'Bat_volts', 'cm_data' )
+admin.site.register(DCPData ,DCPDataAdmin)
 
 
 
