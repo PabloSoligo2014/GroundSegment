@@ -13,6 +13,14 @@ from GroundSegment.models.PacketType import PacketType
 from Calibration.GenericCalibration import *
 from django.utils.timezone import datetime, now, timedelta, utc
 
+from django.db.models.deletion import CASCADE
+from celery.worker.strategy import default
+from GroundSegment.models.FrameType import FrameType
+    
+
+
+
+
 
 
 
@@ -63,8 +71,9 @@ class TlmyVarType(models.Model):
     position            = models.IntegerField(default=0)
     subPosition         = models.IntegerField(default=0)
     bitsLen             = models.IntegerField(default=0)
-    #TODO deberia mejorar esto tal que se adapte a distintos paquetes
-    #packetType          = models.ForeignKey(PacketType, related_name="")
+    
+    
+    frameType           = models.ForeignKey(FrameType, related_name="tlmyVarTypes", default=1)
     
     
     

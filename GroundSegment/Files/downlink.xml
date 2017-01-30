@@ -1,0 +1,205 @@
+<packet xmlns="downlinkPacketParser">
+    <sequence_number position="1" type="short" xmlns="" name="packetNumber"/>
+    <number position="3" type="int" xmlns="" name="OBCUpTime"/>
+	<number position="7" type="char" xmlns="" name="commandCounter"/>
+	
+	<option position="0" type="char" xmlns="" name="frameType">
+
+        <item id="1" value="allTelemetry">
+            <number position="8" type="short" name="obcT1" unit="ºC" gain="0.38991" offset="-67.84"/>
+            <number position="10" type="short" name="obcT2" unit="ºC" gain="0.38991" offset="-67.84"/>
+
+			<number position="12" type="char" name="antSSide" offset="16"/>
+			
+            <number position="13.0" type="boolean" name="antSArmed"/>
+
+            <number position="13.1" type="boolean" name="antSA4Deploying"/>
+            <number position="13.2" type="boolean" name="antSA4Timeout"/>
+            <number position="13.3" type="boolean" name="antSA4Undeployed"/>
+
+            <number position="13.5" type="boolean" name="antSA3Deploying"/>
+            <number position="13.6" type="boolean" name="antSA3Timeout"/>
+            <number position="13.7" type="boolean" name="antSA3Undeployed"/>
+
+            <number position="14.0" type="boolean" name="antSIgnoreFlag"/>
+
+            <number position="14.1" type="boolean" name="antSA2Deploying"/>
+            <number position="14.2" type="boolean" name="antSA2Timeout"/>
+            <number position="14.3" type="boolean" name="antSA2Undeployed"/>
+
+            <number position="14.5" type="boolean" name="antSA1Deploying"/>
+            <number position="14.6" type="boolean" name="antSA1Timeout"/>
+            <number position="14.7" type="boolean" name="antSA1Undeployed"/>
+
+            <number position="15" type="short" name="antSTemp" unit="ºC" conversionTable="antStempTable.txt"/>
+
+			<number position="17" type="short" name="RXDoppler" unit="Hz" conversionTable="TrxUVVdoppler.txt"/>
+			<number position="19" type="short" name="RSSI" unit="dBm" conversionTable="TrxUVVrssi.txt"/>
+            <number position="21" type="short" name="TXReflectedPower" unit="mW" squareGain ="0.000239" gain="0"/>
+            <number position="23" type="short" name="TXFWPower" unit="mW" squareGain ="0.000239" gain="0"/>
+            <number position="25" type="short" name="TXcurrent" unit="mA" gain="0.395" offset="0"/>
+            <number position="27" type="short" name="RXcurrent" unit="mA" gain="0.395" offset="0"/>
+            <number position="29" type="short" name="PAtemp" unit="ºC" gain="0.32258" offset="-50"/>
+            <number position="31" type="short" name="busV" unit="V" gain="0.016581" offset="0"/>
+			
+            <number position="33" type="short" name="PV3" unit="V" gain="0.001" offset="0"/>
+            <number position="35" type="short" name="PV2" unit="V" gain="0.001" offset="0"/>
+            <number position="37" type="short" name="PV1" unit="V" gain="0.001" offset="0"/>
+
+            <number position="39" type="short" name="Pcurrent" unit="mA" gain="1" offset="0"/>
+            <number position="41" type="short" name="BattV" unit="V" gain="0.001" offset="0"/>
+            <number position="43" type="short" name="TotalC" unit="mA" gain="1" offset="0"/>
+
+            <number position="45" type="2sshort" name="TempSW1" unit="ºC" gain="1" offset="0"/>
+            <number position="47" type="2sshort" name="TempSW2" unit="ºC" gain="1" offset="0"/>
+            <number position="49" type="2sshort" name="TempSW3" unit="ºC" gain="1" offset="0"/>
+            <number position="51" type="2sshort" name="TempBatt" unit="ºC" gain="1" offset="0"/>
+            <number position="53" type="2sshort" name="TempExtBatt1" unit="ºC" gain="1" offset="0"/>
+            <number position="55" type="2sshort" name="TempExtBatt2" unit="ºC" gain="1" offset="0"/>
+
+            <number position="57" type="short" name="LU_5V1"/>
+            <number position="59" type="short" name="LU_5V2"/>
+            <number position="61" type="short" name="LU_5V3"/>
+            <number position="63" type="short" name="LU_3.3V1"/>
+            <number position="65" type="short" name="LU_3.3V2"/>
+            <number position="67" type="short" name="LU_3.3V3"/>
+
+			<option position="69" type="char" name="resetCause">
+				<item id="0" value="Power On Reset"/>
+				<item id="1" value="External Reset"/>
+				<item id="2" value="Brown Out Reset"/>
+				<item id="3" value="WDT reset"/>
+				<item id="4" value="JTAG reset"/>
+				<item id="5" value="Other reason"/>
+			</option>
+
+            <number position="70" type="short" name="bootCounter"/>
+            <number position="72" type="short" name="swErrors"/>
+
+			<option position="74" type="char" name="MPPTmode">
+				<item id="0" value="Hardware"/>
+				<item id="1" value="MPPT"/>
+				<item id="2" value="Fixed SW PPT"/>
+			</option>
+
+            <number position="75.0" type="boolean" name="status_3.3V3"/>
+            <number position="75.1" type="boolean" name="status_3.3V2"/>
+            <number position="75.2" type="boolean" name="status_3.3V1"/>
+            <number position="75.3" type="boolean" name="status_5V3"/>
+            <number position="75.4" type="boolean" name="status_5V2"/>
+            <number position="75.5" type="boolean" name="status_5V1"/>
+
+            <number position="76" type="short" name="tempP1" unit="ºC" gain="0.0078125"/>
+            <number position="78" type="short" name="tempP2" unit="ºC" gain="0.0078125"/>
+            <number position="80" type="short" name="tempP3" unit="ºC" gain="0.0078125"/>
+            <number position="82" type="short" name="PD_P1"/>
+            <number position="84" type="short" name="PD_P2"/>
+            <number position="86" type="short" name="PD_P3"/>
+
+            <number position="88" type="2sshort" name="IMTQ_temp" unit="ºC" gain="0.00390625"/>
+
+        </item>
+        
+        <item id="2" value="antsTelemetry">
+			<number position="8" type="char" name="antSSide" offset="16"/>
+            <number position="9.0" type="boolean" name="antSArmed"/>
+
+            <number position="9.1" type="boolean" name="antSA4Deploying"/>
+            <number position="9.2" type="boolean" name="antSA4Timeout"/>
+            <number position="9.3" type="boolean" name="antSA4Undeployed"/>
+
+            <number position="9.5" type="boolean" name="antSA3Deploying"/>
+            <number position="9.6" type="boolean" name="antSA3Timeout"/>
+            <number position="9.7" type="boolean" name="antSA3Undeployed"/>
+
+            <number position="10.0" type="boolean" name="antSIgnoreFlag"/>
+
+            <number position="10.1" type="boolean" name="antSA2Deploying"/>
+            <number position="10.2" type="boolean" name="antSA2Timeout"/>
+            <number position="10.3" type="boolean" name="antSA2Undeployed"/>
+
+            <number position="10.5" type="boolean" name="antSA1Deploying"/>
+            <number position="10.6" type="boolean" name="antSA1Timeout"/>
+            <number position="10.7" type="boolean" name="antSA1Undeployed"/>
+
+            <number position="11" type="short" name="antSTemp" unit="ºC" conversionTable="antStempTable.txt"/>
+        </item>
+
+        <item id="3" value="EPSTelemetry">
+            <number position="8" type="short" name="PV3" unit="V" gain="0.001" offset="0"/>
+            <number position="10" type="short" name="PV2" unit="V" gain="0.001" offset="0"/>
+            <number position="12" type="short" name="PV1" unit="V" gain="0.001" offset="0"/>
+
+            <number position="14" type="short" name="Pcurrent" unit="mA" gain="1" offset="0"/>
+            <number position="16" type="short" name="BattV" unit="V" gain="0.001" offset="0"/>
+            <number position="18" type="short" name="TotalC" unit="mA" gain="1" offset="0"/>
+
+            <number position="20" type="2sshort" name="TempSW1" unit="ºC" gain="1" offset="0"/>
+            <number position="22" type="2sshort" name="TempSW2" unit="ºC" gain="1" offset="0"/>
+            <number position="24" type="2sshort" name="TempSW3" unit="ºC" gain="1" offset="0"/>
+            <number position="26" type="2sshort" name="TempBatt" unit="ºC" gain="1" offset="0"/>
+            <number position="28" type="2sshort" name="TempExtBatt1" unit="ºC" gain="1" offset="0"/>
+            <number position="30" type="2sshort" name="TempExtBatt2" unit="ºC" gain="1" offset="0"/>
+
+            <number position="32" type="short" name="LU_5V1"/>
+            <number position="34" type="short" name="LU_5V2"/>
+            <number position="36" type="short" name="LU_5V3"/>
+            <number position="38" type="short" name="LU_3.3V1"/>
+            <number position="40" type="short" name="LU_3.3V2"/>
+            <number position="42" type="short" name="LU_3.3V3"/>
+
+			<option position="44" type="char" name="resetCause">
+				<item id="0" value="Power On Reset"/>
+				<item id="1" value="External Reset"/>
+				<item id="2" value="Brown Out Reset"/>
+				<item id="3" value="WDT reset"/>
+				<item id="4" value="JTAG reset"/>
+				<item id="5" value="Other reason"/>
+			</option>
+			
+            <number position="45" type="short" name="bootCounter"/>
+            <number position="47" type="short" name="swErrors"/>
+
+			<option position="49" type="char" name="MPPTmode">
+				<item id="0" value="Hardware"/>
+				<item id="1" value="MPPT"/>
+				<item id="2" value="Fixed SW PPT"/>
+			</option>
+
+            <number position="50.0" type="boolean" name="status_3.3V3"/>
+            <number position="50.1" type="boolean" name="status_3.3V2"/>
+            <number position="50.2" type="boolean" name="status_3.3V1"/>
+            <number position="50.3" type="boolean" name="status_5V3"/>
+            <number position="50.4" type="boolean" name="status_5V2"/>
+            <number position="50.5" type="boolean" name="status_5V1"/>
+        </item>
+
+        <item id="4" value="TrxUVTelemetry">
+            <number position="8" type="short" name="RXDoppler" unit="Hz" conversionTable="TrxUVVdoppler.txt"/>
+			<number position="10" type="short" name="RSSI" unit="dBm" conversionTable="TrxUVVrssi.txt"/>
+            <number position="12" type="short" name="TXReflectedPower" unit="mW" squareGain ="0.000239" gain="0"/>
+            <number position="14" type="short" name="TXFWPower" unit="mW" squareGain ="0.000239" gain="0"/>
+            <number position="16" type="short" name="TXcurrent" unit="mA" gain="0.395" offset="0"/>
+            <number position="18" type="short" name="RXcurrent" unit="mA" gain="0.395" offset="0"/>
+            <number position="20" type="short" name="PAtemp" unit="ºC" gain="0.32258" offset="-50"/>
+            <number position="22" type="short" name="busV" unit="V" gain="0.016185" offset="0"/>
+        </item>
+
+        <item id="5" value="OBCTelemetry">
+            <number position="8" type="short" name="obcT1" unit="ºC" gain="0.38991" offset="-67.84"/>
+            <number position="10" type="short" name="obcT2" unit="ºC" gain="0.38991" offset="-67.84"/>
+        </item>
+		
+		<item id="6" value="antSActTelemetry">
+            <number position="8" type="char" name="antSSide" offset="16"/>
+			<number position="9" type="char" name="antSant" offset="0"/>
+			<number position="10" type="char" name="antScount" offset="0"/>
+			<number position="11" type="short" name="antStime" gain="0.05" offset="0" unit="s" />
+            
+        </item>
+
+		<item id="170" value="rawI2Cpacket">
+		</item>
+    </option>
+
+</packet>

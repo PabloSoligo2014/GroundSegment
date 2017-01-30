@@ -1,0 +1,94 @@
+<uplink xmlns="uplinkPacketParser">
+
+  <packet name="resetEPS" xmlns="">
+	<number position="0" value="3" type="char"/>
+  </packet>
+  
+  <packet name="telemetryEPS" xmlns="">
+	<number position="0" value="2" type="char"/>
+	<number position="1" value="3" type="char"/>
+  </packet>
+  
+    <packet name="setModeTrxUV" xmlns="">
+	<number position="0" value="4" type="char"/>
+	<number position="1" name="modeTrxUV" type="char"/>
+  </packet>
+
+  <packet name="setRateTrxUV" xmlns="">
+	<number position="0" value="4" type="char"/>
+	<number position="1" value="8" type="char"/>
+	<number position="2" name="rateTrxUV" type="char"/>
+  </packet>
+  
+  <packet name="telemetryTrxUV" xmlns="">
+	<number position="0" value="2" type="char"/>
+	<number position="1" value="4" type="char"/>
+  </packet>
+  
+  <packet name="setIdleTrxUV" xmlns="">
+	<number position="0" value="4" type="char"/>
+	<number position="1" name="idleTrxUV" type="char"/>
+  </packet>
+  
+  <packet name="telemetryOBC" xmlns="">
+	<number position="0" value="2" type="char"/>
+	<number position="1" value="2" type="char"/>
+  </packet>
+  
+  <packet name="beaconOBC" xmlns="">
+	<number position="0" value="6" type="char"/>
+	<number position="1" name="beaconIntOBC" type="char"/>
+  </packet>
+  
+  <packet name="talemetryAntS" xmlns="">
+	<number position="0" value="2" type="char"/>
+	<number position="1" value="1" type="char"/>
+	<number position="2" value="2" type="char"/>
+	<number position="3" name="sideAntS" type="char"/>
+  </packet>
+  
+  <packet name="deployStatusAntS" xmlns="">
+	<number position="0" value="2" type="char"/>
+	<number position="1" value="1" type="char"/>
+	<number position="2" value="3" type="char"/>
+	<number position="3" name="sideAntS" type="char"/>
+	<number position="4" name="antennaAntS" type="char"/>
+  </packet>
+  
+  <packet name="deployAllAntS" xmlns="">
+	<number position="0" value="5" type="char"/>
+  </packet>
+  
+  <packet name="sendRAW" xmlns="">
+	<number position="0" value="170" type="char"/>
+	<text position="1" name="addressRAW" encoding="hex" maxsize="1"/>
+	<number position="2" name="recRAW" type="char"/>
+	<text position="3" name="textRAW" encoding="hex"/>
+  </packet>
+  
+  <packet name="sendText" xmlns="">
+	<text position="0" name="text2send"/>
+  </packet>
+ 
+  <packet name="sendDecimal" xmlns="">
+	<text position="0" name="decimal2send" encoding="decimal"/>
+  </packet>
+ 
+  <packet name="sendHEX" xmlns="">
+	<text position="0" name="hex2send" encoding="hex"/>
+  </packet>
+
+  <packet name="startiMTQ" xmlns="">
+	<number position="0" value="7" type="char"/>
+	<number position="1" value="1" type="char"/>
+	<number position="2" name="iMTQX" type="char"/>
+	<number position="3" name="iMTQY" type="char"/>
+	<number position="4" name="iMTQZ" type="char"/>
+  </packet>
+  
+  <packet name="stopiMTQ" xmlns="">
+	<number position="0" value="7" type="char"/>
+	<number position="1" value="2" type="char"/>
+  </packet>
+  
+</uplink> 

@@ -168,7 +168,7 @@ if __name__ == '__main__':
                     aqui para hacerlo solo una vez, para mejorar el software se deberia pensar en una recarga cada intervalo
                     de tiempo determinado por si cambian la configuracion tomar los cambios
                     """
-                    telvars = TlmyVarType.objects.filter(satellite__code=satellite)
+                    
                     Log.create("LoadTlmy", "Load telemetry var types, count: "+str(len(telvars)), module, Log.INFORMATION).save()
     
                     
@@ -221,15 +221,26 @@ if __name__ == '__main__':
                                 y actualizo su valor, la clase TlmyVarType internamente se encarga de todo, la transformacion en variable
                                 de ingenieria y la persistencia en tiempo real e historica
                                 """
+                                
+                                frameTypeId = chunk[0]
+                                telvars = TlmyVarType.objects.filter(satellite__code=satellite).filter(frameType__aid=frameTypeId)
+                                
+                                """
+                                <sequence_number position="1" type="short" xmlns="" name="packetNumber"/>
+                                <number position="3" type="int" xmlns="" name="OBCUpTime"/>
+                                <number position="7" type="char" xmlns="" name="commandCounter"/>
+                                """
+                                packetNumber    = chunk[1-2] "pack"
+                                OBCUpTime       = chunk[1,2,3,4]
+                                commandCounter  = chunk[7]
                                 for tt in telvars:
-                                    """
-                                    TODO
-                                    code draft
+                                    
+                                    #TODO
+                                    #code draft
                                     val = chunk[tt.position]
                                     tt.setValue(val)
                                     
-                                    """
-                                    
+                                                                        
                             ##f.close()
                     finally:
                         s.close()

@@ -35,6 +35,7 @@ from GroundSegment.models.DCPPlatform import DCPPlatform
 from GroundSegment.models.DCPData import DCPData
 
 
+
 class SatelliteAdmin(admin.ModelAdmin):
     pass
 
@@ -176,5 +177,11 @@ class DCPDataAdmin(admin.ModelAdmin):
     readonly_fields=('dcp_plataform', 'dataTime', 'snow', 'Precipitation', 'Temperature', 'Humidity', 'Wind_dir', 'Wind_speed', 'Bat_volts', 'cm_data' )
 admin.site.register(DCPData ,DCPDataAdmin)
 
+
+from GroundSegment.models.FrameType import FrameType
+class FrameTypeAdmin(admin.ModelAdmin):
+    list_display = ( 'aid', 'description')
+    
+admin.site.register(FrameType ,FrameTypeAdmin)
 
 

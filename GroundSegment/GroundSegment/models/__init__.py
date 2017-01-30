@@ -23,7 +23,7 @@ from GroundSegment.models.Watchdog import Watchdog
 from GroundSegment.models.Coefficient import Coefficient
 from GroundSegment.models.DCPData import DCPData
 from GroundSegment.models.DCPPlatform import DCPPlatform
-
 from GroundSegment.models.Alarm import * 
 
 
+from GroundSegment.models.FrameType import FrameType
