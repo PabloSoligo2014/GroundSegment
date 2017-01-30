@@ -18,6 +18,7 @@ import os
 import sys
 
 from django.utils import timezone
+from _struct import unpack
 
 
 #ubuntumate@VBUbuntumate:~/Downloads/CheckoutBox/Software$ java -jar start.jar
@@ -52,6 +53,29 @@ decodificada en funcion de la configuracion de variables de telemetria del satel
 """
 if __name__ == '__main__':
     
+    PosFrameCommand         = 0
+    LenFrameCommand         = 1
+    
+    PosFrameLen             = PosFrameCommand+LenFrameCommand
+    LenFrameLen             = 4
+    
+    PosDataRate             = PosFrameLen+LenFrameLen
+    LenDataRate             = 4
+    
+    PosModuluationNameLen   = PosDataRate+LenDataRate 
+    LenModuluationNameLen   = 1
+    
+    PosModulationName       = PosModuluationNameLen+LenModuluationNameLen
+    LenModulationName       = 0
+    
+    PosRSSI                 = PosModulationName+LenModulationName 
+    LenRSSI                 = 8
+    
+    PosFrequency            = PosRSSI+LenRSSI
+    LenFrequency            = 8
+    
+    PosPktLen               = PosFrequency+LenFrequency
+    LenPktLen               = 2
 
 
     
@@ -107,6 +131,7 @@ if __name__ == '__main__':
         from GroundSegment.models.Log import Log
         from GroundSegment.models.Watchdog import Watchdog
         from GroundSegment.Utils.Utils import *
+        from GroundSegment.models.DownlinkFrame import DownlinkFrame 
         
         
         """
@@ -210,7 +235,74 @@ if __name__ == '__main__':
                                 data.source = source
                                 data.data = chunk
                                 data.save()
-                                                            
+                                
+                                framecommand = unpack("<B",chunk[PosFrameCommand:PosFrameCommand+LenFrameCommand])[0] 
+                                frameLength  = unpack("<I",chunk[PosFrameLen:PosFrameLen+LenFrameLen])
+                                datarate     = unpack("<I",chunk[PosDataRate:PosDataRate+LenDataRate])
+                                modulationnamelen = (unpack("<B",chunk[PosModuluationNameLen:PosModuluationNameLen+LenModuluationNameLen]))[0]
+                                modulationname    = chunk[PosModulationName:PosModulationName+modulationnamelen] 
+                                PosRSSI           = PosModulationName+modulationnamelen 
+                                rssi              = unpack("<d", chunk[PosRSSI:PosRSSI+LenRSSI])
+                                PosFrequency        = PosRSSI+LenRSSI
+                                freq                = unpack("<d", chunk[PosFrequency:PosFrequency+LenFrequency])
+                                PosPktLen           = PosFrequency+LenFrequency
+                                pktLen             = unpack("<H",  chunk[PosPktLen:PosPktLen+LenPktLen])
+                                PosUtcTime = PosPktLen+pktLen[0]
+                                LenUtcTime = 4
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                PosPayload = PosPktLen+int(LenPktLen)
+                                ax25 = chunk[PosPayload:PosPayload+pktLen[0]]
+                                
+                                
+                                destination  = ax25[0:7]
+                                asource      = ax25[7:7+7]
+                                control      = ax25[7+7:7+7+1]
+                                protocol     = ax25[7+7+1:7+7+1+1]
+                                
+                        
+                                     
+                                vardataoffset = 7+7+1+1
+                                payload = ax25[ vardataoffset: ]
+                                
+                                
+                                print(framecommand, ", ", frameLength, ", ", datarate, ", ", modulationname, "rssi", rssi, "Freq ", freq, "PktLen", pktLen)
+                                
+                                dl = DownlinkFrame()
+                                
+                                dl.frameCommand = framecommand
+                                dl.frameLength    = frameLength[0]
+                                dl.dataRate       = datarate[0]
+                                dl.modulationName = str(modulationname)
+                                dl.rssi           = rssi[0]
+                                dl.frequency      = freq[0]
+                                dl.packetLength   = pktLen[0]
+                                dl.save()
+                                
+                                
+                                
+                                 
+                                #frameTypeId = unpack("<B",payload[0])
+                                pn= unpack("<H",  payload[1:3])
+                                print("packet number:", pn)
+                                
+                                frameTypeId = payload[0]
+                                telvars = TlmyVarType.objects.filter(satellite__code=satellite).filter(frameType__aid=frameTypeId)
+                                
+                                for tt in telvars:
+                                    
+                                    #TODO
+                                    #code draft
+                                    val = payload[tt.position]
+                                    tv = tt.setValue(val, True)
+                                    tv.save()
+                                
+                                                         
                                 """
                                 Ahora proceso los datos en funcion de las variables de telemetria configuradas en el sistema. 
                                 Las mismas ya tienen internamente sus funciones de calibracion segun configuracion
@@ -221,26 +313,18 @@ if __name__ == '__main__':
                                 y actualizo su valor, la clase TlmyVarType internamente se encarga de todo, la transformacion en variable
                                 de ingenieria y la persistencia en tiempo real e historica
                                 """
+                                """
                                 
-                                frameTypeId = chunk[0]
-                                telvars = TlmyVarType.objects.filter(satellite__code=satellite).filter(frameType__aid=frameTypeId)
-                                
+                                """
                                 """
                                 <sequence_number position="1" type="short" xmlns="" name="packetNumber"/>
                                 <number position="3" type="int" xmlns="" name="OBCUpTime"/>
                                 <number position="7" type="char" xmlns="" name="commandCounter"/>
                                 """
-                                packetNumber    = chunk[1-2] "pack"
-                                OBCUpTime       = chunk[1,2,3,4]
-                                commandCounter  = chunk[7]
-                                for tt in telvars:
-                                    
-                                    #TODO
-                                    #code draft
-                                    val = chunk[tt.position]
-                                    tt.setValue(val)
-                                    
-                                                                        
+#                                 packetNumber    = chunk[1-2] "pack"
+#                                 OBCUpTime       = chunk[1,2,3,4]
+#                                 commandCounter  = chunk[7]
+                                                     
                             ##f.close()
                     finally:
                         s.close()

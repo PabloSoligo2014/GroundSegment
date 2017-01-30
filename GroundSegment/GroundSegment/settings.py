@@ -26,7 +26,8 @@ SECRET_KEY = 'ty%av@!oii2d@fg5rhp4$36+r*vc7wke2sg4q39^+)shzi$q0c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']
 
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -44,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_extensions',
+    #'django_extensions',
     #python3.4 manage.py graph_models -a -o myapp_models.png
     'GroundSegment',
     
