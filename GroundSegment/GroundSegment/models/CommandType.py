@@ -11,6 +11,7 @@ from GroundSegment.models.SatelliteState import SatelliteState
 
 
 
+
 class CommandType(models.Model):
     code           = models.CharField('Codigo del tipo de comando', max_length=24, help_text='Codigo del tipo de comando', unique=True)
     description    = models.CharField('Decripcion del tipo de comando', max_length=100, help_text='Decripcion del tipo de comando', unique=True)
