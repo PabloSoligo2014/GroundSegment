@@ -54,38 +54,49 @@ if __name__ == '__main__':
     sock.listen(1)
     
     
-    minutos = input("Ingrese cantidad de minutos para la prueba...")
-    frecuencia = input("Ingrese la frecuencia de la prueba...")
+    #minutos = input("Ingrese cantidad de minutos para la prueba...")
+    #frecuencia = input("Ingrese la frecuencia de la prueba...")
     
     # Wait for a connection
     print('waiting for a connection')
     #sock.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
-    connection, client_address = sock.accept()
     
-    
-    tiempoactual = datetime.datetime.utcnow()
-    
-    
-    
-    uhfs = UHFRawData.objects.filter(id__gte=1002, id__lte=1490)
-    
-    
-    i = 0
     while True:
-        print('connection from', client_address)
-
-        binaryClientData = connection.recv(BUFFER_SIZE)
+        try:
+            
+            connection, client_address = sock.accept()
+            
+            print('Cliente conectado...')
+            
+            tiempoactual = datetime.datetime.utcnow()
+            
+            
+            
+            uhfs = UHFRawData.objects.filter(id__gte=1002, id__lte=1490)
+            
+            
+            i = 0
+            while True:
+                print('connection from', client_address)
         
-        my_bytes = uhfs[i].getBlob()
-        i = i + 1
-        if i==uhfs.count():
-            i=0
-             
-        connection.send (my_bytes)
+                #binaryClientData = connection.recv(BUFFER_SIZE)
+                
+                my_bytes = uhfs[i].getBlob()
+                i = i + 1
+                if i==uhfs.count():
+                    i=0
+                     
+                connection.send (my_bytes)
+                
+                time.sleep(1)
+        except Exception as err:
+            print("Error: {0}".format(err))
         
-        time.sleep(1000)
-    
-    
+        
+        print('Reconexion post exception, esperando 10 segundos')
+        time.sleep(3)
+        print('Reconectando...')
+        
     """
     try:
         
