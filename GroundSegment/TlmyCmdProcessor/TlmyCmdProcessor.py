@@ -169,7 +169,7 @@ if __name__ == '__main__':
                     de tiempo determinado por si cambian la configuracion tomar los cambios
                     """
                     
-                    Log.create("LoadTlmy", "Load telemetry var types, count: "+str(len(telvars)), module, Log.INFORMATION).save()
+                    #Log.create("LoadTlmy", "Load telemetry var types, count: "+str(len(telvars)), module, Log.INFORMATION).save()
     
                     
                     

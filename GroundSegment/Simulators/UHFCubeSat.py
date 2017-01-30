@@ -46,7 +46,7 @@ if __name__ == '__main__':
     BUFFER_SIZE = 2000
     
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server_address = ('10.77.180.120', 3210)
+    server_address = ('10.77.171.180', 3210)
     sock.bind(server_address)
     
     # Listen for incoming connections
@@ -65,20 +65,30 @@ if __name__ == '__main__':
     
     tiempoactual = datetime.datetime.utcnow()
     
-    uhfs = UHFRawData.objects.filter(id__gte=996, id__lte=1482)
     
     
-    newFileBytes = [123, 3, 255, 0, 100]
-    f = open('somefile.bin', 'wb')
-    newFileByteArray = bytearray(newFileBytes)
-    f.write(newFileByteArray)
-    
-    f.close()
+    uhfs = UHFRawData.objects.filter(id__gte=1002, id__lte=1490)
     
     
-    try:
+    i = 0
+    while True:
         print('connection from', client_address)
 
+        binaryClientData = connection.recv(BUFFER_SIZE)
+        
+        my_bytes = uhfs[i].getBlob()
+        i = i + 1
+        if i==uhfs.count():
+            i=0
+             
+        connection.send (my_bytes)
+        
+        time.sleep(1000)
+    
+    
+    """
+    try:
+        
         # Receive the data in small chunks and retransmit it
         print('Hora de inicio de prueba:', tiempoactual)
         
@@ -123,3 +133,5 @@ if __name__ == '__main__':
         connection.close()
         
     print('Finalizado')
+
+    """
