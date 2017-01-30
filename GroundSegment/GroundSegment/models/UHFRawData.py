@@ -16,6 +16,7 @@ from GroundSegment.models.SatelliteState import SatelliteState
 from GroundSegment.models.Parameter import Parameter
 from django.db.models.query import QuerySet
 from struct import *
+from celery.worker.strategy import default
 
 
 
@@ -24,6 +25,7 @@ class UHFRawData(models.Model):
     created     = models.DateTimeField(auto_now_add=True)
     data        = models.BinaryField()
     source      = models.CharField('Origen del dato, tipicamente cubesat/simulacion', max_length=24, help_text='Origen del dato, tipicamente cubesat/simulacion', default='simulation')
+    dataLen         = models.IntegerField("Dimension del campo data, autoguardado", default=0)
     
     def getDataLen(self):
         
@@ -36,6 +38,11 @@ class UHFRawData(models.Model):
             result += self.data[i]
                 
         return result
+    
+    def save(self, *args, **kwargs):
+        self.dataLen = len(self.data)
+        return super(UHFRawData, self).save(*args, **kwargs)
+
     
     
     

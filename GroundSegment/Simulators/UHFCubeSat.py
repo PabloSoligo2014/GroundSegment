@@ -72,9 +72,9 @@ if __name__ == '__main__':
             
             
             
-            uhfs = UHFRawData.objects.filter(id__gte=1002, id__lte=1490)
-            
-            
+            #uhfs = UHFRawData.objects.filter(id__gte=1002, id__lte=1490)
+             
+            uhfs = UHFRawData.objects.filter(dataLen__gt=32).exclude(source="SIMULATION")
             i = 0
             while True:
                 print('connection from', client_address)
