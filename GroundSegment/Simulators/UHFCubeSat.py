@@ -11,11 +11,11 @@ import struct
 import datetime
 from _datetime import timedelta
 import os
+#from django.conf import settings
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "GroundSegment.settings")
 
-from GroundSegment.settings import BASE_DIR
-
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 n = 0
 ROOT_DIR = BASE_DIR

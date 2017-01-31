@@ -100,7 +100,7 @@ class TlmyVarType(models.Model):
         #Optimizacion importante, solo salvo si el valor cambio con el anterior
         #cosa que normalmente no pasa!!
         #Si el raw anterior es igual al actual me libero de todo.
-        if raw!=self.lastRawValue:
+        if True: #raw!=self.lastRawValue:
             self.lastRawValue = raw
             if self.calibrationMethod: 
                 if not self.calibrationLogic:
