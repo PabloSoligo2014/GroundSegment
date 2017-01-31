@@ -16,6 +16,7 @@ from django.utils.timezone import datetime, now, timedelta, utc
 from django.db.models.deletion import CASCADE
 from celery.worker.strategy import default
 from GroundSegment.models.FrameType import FrameType
+from GroundSegment.models.UnitOfMeasurement import UnitOfMeasurement
     
 
 
@@ -75,6 +76,7 @@ class TlmyVarType(models.Model):
     
     frameType           = models.ForeignKey(FrameType, related_name="tlmyVarTypes", default=1)
     
+    unitOfMeasurement   = models.ForeignKey(UnitOfMeasurement, related_name="tlmyVarTypes", null=True)
     
     
     
@@ -90,6 +92,7 @@ class TlmyVarType(models.Model):
             return self.lastCalFValue
         else:
             return self.lastCalSValue
+        
     
     def setValue(self, raw, saveifchange=False):
         from GroundSegment.models.TmlyVar import TmlyVar

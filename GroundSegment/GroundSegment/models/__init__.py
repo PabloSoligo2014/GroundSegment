@@ -25,5 +25,5 @@ from GroundSegment.models.DCPData import DCPData
 from GroundSegment.models.DCPPlatform import DCPPlatform
 from GroundSegment.models.Alarm import * 
 from GroundSegment.models.DownlinkFrame import DownlinkFrame 
-
+from GroundSegment.models.UnitOfMeasurement import UnitOfMeasurement
 from GroundSegment.models.FrameType import FrameType
