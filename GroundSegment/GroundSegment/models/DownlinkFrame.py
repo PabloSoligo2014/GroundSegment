@@ -25,6 +25,13 @@ class DownlinkFrame(models.Model):
     packetLength   = models.IntegerField('Dimension del paquete', help_text='Dimension del paquete')
     satellite      = models.ForeignKey(Satellite, on_delete=CASCADE, related_name="downloadlinkFrames")
     
+    ax25Destination = models.CharField('ax25 destination value', max_length=16, help_text='ax25 destination value', null=True)
+    ax25Source      = models.CharField('ax25 Source value', max_length=16, help_text='ax25 Source value', null=True)
+    ax25Protocol    = models.CharField('ax25 Protocol value', max_length=16, help_text='ax25 Protocol value', null=True)
+    ax25Control     = models.CharField('ax25 Control value', max_length=16, help_text='ax25 Control value', null=True)
+    packetNumber    = models.IntegerField(default=0) 
+    frameTypeId     = models.IntegerField(default=0) 
+    
     
     
     def __str__(self):

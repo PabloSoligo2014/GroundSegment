@@ -100,7 +100,7 @@ class TlmyVarType(models.Model):
         #Optimizacion importante, solo salvo si el valor cambio con el anterior
         #cosa que normalmente no pasa!!
         #Si el raw anterior es igual al actual me libero de todo.
-        if True: #raw!=self.lastRawValue:
+        if raw!=self.lastRawValue:
             self.lastRawValue = raw
             if self.calibrationMethod: 
                 if not self.calibrationLogic:
@@ -111,17 +111,26 @@ class TlmyVarType(models.Model):
                 
                 if self.varType==self.INTEGER:
                     self.lastCalIValue = self.calibrationLogic(self,  raw )
+           
                 elif self.varType==self.FLOAT:
                     self.lastCalFValue = self.calibrationLogic(self,  raw )
                 else:
                     self.lastCalSValue = self.calibrationLogic(self,  raw )
             else:
                 if self.varType==self.INTEGER:
-                    self.lastCalIValue = raw 
+                    self.lastCalIValue = raw
                 elif self.varType==self.FLOAT:
                     self.lastCalFValue = raw
                 else:
                     self.lastCalSValue = raw 
+                
+            """
+            Si el tipo no es cadena llevo el dato a cadena
+            """
+            if self.varType==self.INTEGER:
+                self.lastCalSValue = str(self.lastCalIValue)
+            elif self.varType==self.FLOAT:
+                self.lastCalSValue = str(self.lastCalFValue)
         
             value = self.getValue()
             if self.varType!=self.STRING:

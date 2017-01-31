@@ -130,7 +130,7 @@ class CoefficientInline(admin.TabularInline):
 class TmlyVarTypeAdmin(admin.ModelAdmin):
     #fields = ()
     search_fields = ['code']
-    list_display = ('code', 'description', 'satellite', 'lastCalFValue', 'lastUpdate', 'varType')
+    list_display = ('code', 'description', 'satellite', 'lastCalSValue', 'lastUpdate', 'varType')
     
     inlines = [
         CoefficientInline,

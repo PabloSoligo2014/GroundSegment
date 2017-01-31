@@ -271,29 +271,39 @@ if __name__ == '__main__':
                                 vardataoffset = 7+7+1+1
                                 payload = ax25[ vardataoffset: ]
                                 
+                                pn = unpack("<H",  payload[1:3])
+                                print("packet number:", pn)
                                 
-                                print(framecommand, ", ", frameLength, ", ", datarate, ", ", modulationname, "rssi", rssi, "Freq ", freq, "PktLen", pktLen)
+                                frameTypeId = payload[0]
+                                
+                                #print(framecommand, ", ", frameLength, ", ", datarate, ", ", modulationname, "rssi", rssi, "Freq ", freq, "PktLen", pktLen)
                                 
                                 dl = DownlinkFrame()
                                 
-                                dl.frameCommand = framecommand
-                                dl.frameLength    = frameLength[0]
-                                dl.dataRate       = datarate[0]
-                                dl.modulationName = str(modulationname)
-                                dl.rssi           = rssi[0]
-                                dl.frequency      = freq[0]
-                                dl.packetLength   = pktLen[0]
-                                dl.satellite      = sat
+                                dl.frameCommand     = framecommand
+                                dl.frameLength      = frameLength[0]
+                                dl.dataRate         = datarate[0]
+                                dl.modulationName   = str(modulationname)
+                                dl.rssi             = rssi[0]
+                                dl.frequency        = freq[0]
+                                dl.packetLength     = pktLen[0]
+                                dl.satellite        = sat
+                                dl.ax25Destination  = "Pending"#destination.decode("utf-8") 
+                                dl.ax25Source       = "Pending"#asource.decode("utf-8") 
+                                dl.ax25Protocol     = "Pending"#protocol.decode("utf-8") 
+                                dl.ax25Control      = "Pending"#control.decode("utf-8") 
+                                dl.packetNumber     = pn[0]
+                                dl.frameTypeId      = frameTypeId 
+                                                            
+                                
+                                
                                 dl.save()
                                 
                                 
                                 
                                  
                                 #frameTypeId = unpack("<B",payload[0])
-                                pn= unpack("<H",  payload[1:3])
-                                print("packet number:", pn)
                                 
-                                frameTypeId = payload[0]
                                 telvars = TlmyVarType.objects.filter(satellite__code=satellite).filter(frameType__aid=frameTypeId)
                                 
                                 for tt in telvars:
@@ -341,10 +351,12 @@ if __name__ == '__main__':
                             ##f.close()
                     finally:
                         s.close()
+                        
                 
                 except Exception as err:
                     Log.create("ERROR TlmyCmdProcessor", "Error/Exception "+str(err), module, Log.ERROR).save()
                     #TODO, quitar print
+                   
                    
                     print(str(datetime.datetime.utcnow()), err)
                     unconnectionLimit = unconnectionLimit + 1
