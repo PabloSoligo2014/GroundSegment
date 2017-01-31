@@ -94,3 +94,13 @@ epydoc --pdf --graph all --output "/home/ubuntumate/git/GroundSegment/GroundSegm
 
 http://pythonhosted.org/theape/documentation/developer/explorations/explore_graphs/explore_pyreverse.html
 
+---------------------------
+Entorno para Web Service
+---------------------------
+
+pip install djangorestframework
+pip install markdown       # Markdown support for the browsable API.
+pip install django-filter  # Filtering support
+
+nota!: lo reinstale con pip3 (creo que para python3 es lo que hay que hacer) 
+
