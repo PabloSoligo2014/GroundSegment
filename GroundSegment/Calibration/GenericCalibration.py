@@ -13,7 +13,7 @@ class GCalibration(BaseCalibration):
         return raw*0.2 + 1
 
     def linealCalibration(self, obj, raw):
-        return raw*obj.coefficients.get(code="GAIN").value - obj.coefficients.get(code="OFFSET").value
+        return raw*obj.coefficients.get(code="GAIN").value + obj.coefficients.get(code="OFFSET").value
 
     
     def cuadraticCalibration(self, obj, raw):

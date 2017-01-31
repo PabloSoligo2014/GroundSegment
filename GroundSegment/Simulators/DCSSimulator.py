@@ -34,6 +34,8 @@ if __name__ == '__main__':
     
     while True:
         for d in DCPPlatform.objects.all():
+            
+            
             res = d.setData(utc, random.randrange(0,10), random.randrange(0,10), random.randrange(0,10), random.randrange(0,10), random.randrange(360), random.randrange(0,10), random.randrange(0,10), random.randrange(0,10))
             print("Dato DCS simulado insertado", res)
         time.sleep(60)

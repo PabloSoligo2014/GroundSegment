@@ -7,6 +7,7 @@ Created on Jan 30, 2017
 from django.db import models
 from GroundSegment.models.Satellite import Satellite
 from GroundSegment.models.SatelliteState import SatelliteState
+from django.db.models.deletion import CASCADE
 
 
 
@@ -22,6 +23,7 @@ class DownlinkFrame(models.Model):
     rssi           = models.FloatField(help_text='RSSI')
     frequency      = models.FloatField(help_text='Frecuencia')
     packetLength   = models.IntegerField('Dimension del paquete', help_text='Dimension del paquete')
+    satellite      = models.ForeignKey(Satellite, on_delete=CASCADE, related_name="downloadlinkFrames")
     
     
     
