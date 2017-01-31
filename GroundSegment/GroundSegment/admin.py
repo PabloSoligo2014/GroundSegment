@@ -185,3 +185,10 @@ class FrameTypeAdmin(admin.ModelAdmin):
 admin.site.register(FrameType ,FrameTypeAdmin)
 
 
+from GroundSegment.models.UnitOfMeasurement import UnitOfMeasurement
+class UnitOfMeasurementAdmin(admin.ModelAdmin):
+    pass
+    
+admin.site.register(UnitOfMeasurement ,UnitOfMeasurementAdmin)
+
+
