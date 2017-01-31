@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     #'django_extensions',
     #python3.4 manage.py graph_models -a -o myapp_models.png
     'GroundSegment',
-    
+    'rest_framework',
 ]
 
 MIDDLEWARE_CLASSES = [

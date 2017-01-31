@@ -3,16 +3,17 @@ Created on Jan 25, 2017
 
 @author: ubuntumate
 '''
-
-
 from django.db import models
-
 from django.utils.timezone import datetime, now, timedelta, utc
-
+from GroundSegment.models.Sitio import Sitio
 
 class DCPPlatform(models.Model):
-    code = models.CharField('Codigo de la Plataforma', max_length=24, help_text='Codigo de la Plataforma', unique=True)
-    
+    code        = models.CharField('Codigo de la Plataforma', max_length=24, unique=True)
+    sitio       = models.ForeignKey(Sitio,related_name='dcpplatform', null=True)
+    type        = models.CharField('Tipo de Plataforma', max_length=24, null=True)
+    equip_marca = models.CharField('Marca del Equipo', max_length=24, null=True)
+    equip_model = models.CharField('Modelo del Equipo', max_length=24, null=True)
+
     def __str__(self):
         return self.code
     

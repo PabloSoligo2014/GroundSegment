@@ -59,3 +59,17 @@ class PropagationTestView(FormView):
         response['Last-sat'] = last_book.publication_date.strftime('%a, %d %b %Y %H:%M:%S GMT')
         return response
     """
+    
+"""
+WEB SERVICE
+"""
+
+from django.shortcuts import render
+from GroundSegment.models.DCPData import DCPData
+from GroundSegment.models.serializer import FileSerializer
+from rest_framework.viewsets import ModelViewSet
+
+
+class DCPDataViewSet(ModelViewSet):
+    queryset = DCPData.objects.all()
+    serializer_class = FileSerializer
