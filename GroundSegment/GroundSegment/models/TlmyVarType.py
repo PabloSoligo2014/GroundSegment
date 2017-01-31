@@ -121,9 +121,10 @@ class TlmyVarType(models.Model):
                     self.lastCalSValue = raw 
         
             value = self.getValue()
-            if (value>=self.limitMaxValue and value<=self.limitMinValue):
-                raise Exception("Invalid value in var "+self.code)  
-            
+            if self.varType!=self.STRING:
+                if (value>=self.limitMaxValue and value<=self.limitMinValue):
+                    raise Exception("Invalid value in var "+self.code)  
+                
             if saveifchange:
                 self.lastUpdate = datetime.now(utc)
                 self.save()

@@ -39,9 +39,16 @@ class TmlyVar(models.Model):
     def setValue(self, raw):
         
         #Primero transformo en un valor calibrado para su posterior analisis de limites
-        self.calIValue = raw
-        self.calFValue = raw
-        self.calSValue = str(raw)
+        
+        self.calSValue = "-"
+        if self.tmlyVarType.varType==self.tmlyVarType.INTEGER:
+            self.calIValue = raw
+        elif self.tmlyVarType.varType==self.tmlyVarType.FLOAT:
+            self.calFValue = raw
+        else:
+            self.calSValue = str(raw)
+
+        
         """        
         value = self.getValue()
         
