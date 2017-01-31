@@ -6,7 +6,7 @@ Created on Jan 31, 2017
 from GroundSegment.models.DCPData import DCPData
 from rest_framework.serializers import ModelSerializer
 
-class FileSerializer(ModelSerializer):
+class DCPDataSerializer(ModelSerializer):
     class Meta:
         model = DCPData
         fields = ('dcp_plataform', 'Temperature')

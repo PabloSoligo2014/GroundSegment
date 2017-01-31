@@ -66,10 +66,10 @@ WEB SERVICE
 
 from django.shortcuts import render
 from GroundSegment.models.DCPData import DCPData
-from GroundSegment.models.serializer import FileSerializer
+from GroundSegment.models.serializer import DCPDataSerializer
 from rest_framework.viewsets import ModelViewSet
 
 
 class DCPDataViewSet(ModelViewSet):
     queryset = DCPData.objects.all()
-    serializer_class = FileSerializer
+    serializer_class = DCPDataSerializer
