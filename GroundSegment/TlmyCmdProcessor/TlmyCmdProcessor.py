@@ -39,7 +39,8 @@ Deprecated: Ya no es necesario indicar el path, lo toma del directorio de ejecuc
 def cls():
     os.system('cls' if os.name=='nt' else 'clear')
 
-
+def is_set(x, n):
+    return x & 2**n != 0 
 
 
 
@@ -153,7 +154,7 @@ if __name__ == '__main__':
         """
         Log.create("TlmyCmdProcessor started", "The uhf interface module was started", module, Log.INFORMATION).save()
 
-        
+        sat = Satellite.objects.get(code=satellite)
         
         """
         Bucle infinito, el software debe funcionar 7x24, si el software de la antena no estuviera 
@@ -282,6 +283,7 @@ if __name__ == '__main__':
                                 dl.rssi           = rssi[0]
                                 dl.frequency      = freq[0]
                                 dl.packetLength   = pktLen[0]
+                                dl.satellite      = sat
                                 dl.save()
                                 
                                 
@@ -298,8 +300,19 @@ if __name__ == '__main__':
                                     
                                     #TODO
                                     #code draft
-                                    val = payload[tt.position]
-                                    tv = tt.setValue(val, True)
+                                    
+                                    if tt.bitsLen >= 8:
+                                        bitLen_div =tt.bitsLen // 8
+                                        if bitLen_div == 1:
+                                            raw = unpack("<B",  payload[tt.position:tt.position+bitLen_div])[0]
+                                        else:
+                                            raw = unpack("<H",  payload[tt.position:tt.position+bitLen_div])[0]
+                                    else:
+                                        raw = is_set(payload[tt.position], tt.bitsLen)                                         
+                                             
+                                    
+                                    
+                                    tv = tt.setValue(raw, True)
                                     tv.save()
                                 
                                                          

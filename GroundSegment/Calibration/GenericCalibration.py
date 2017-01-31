@@ -41,6 +41,26 @@ class GCalibration(BaseCalibration):
         return 0.001
     
     
+    def resetCauseCalibration(self, obj,  raw):
+        if raw==0:
+            return "Power On Reset"
+        elif raw==1:
+            return "External Reset"
+        elif raw==2:
+            return "Brown Out Reset"
+        elif raw==3:
+            return "WDT reset"
+        elif raw==4:
+            return "JTAG reset"
+        elif raw==5:
+            return "Other reason"
+        else:
+            return "Calibration ERROR!!"
+       
+            
+    
+
+    
     def discretCalibration(self, obj, raw):
         if raw<0:
             return 0
