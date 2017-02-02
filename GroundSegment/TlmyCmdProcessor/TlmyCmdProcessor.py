@@ -230,11 +230,13 @@ if __name__ == '__main__':
                                 """
                                 Me guardo el crudo tal cual llego antes de procesarlo, la tabla donde se guarda es UHFRawData
                                 """
-                                print("Len-",len(chunk))
-                                print("\nData Received("+str(timezone.datetime.utcnow() )+")->", chunk)
+                                
+                                print("\nData Received("+str(timezone.datetime.utcnow() )+"), Tamano: ", len(chunk), "\nData->", chunk)
+                                
                                 data = UHFRawData()
                                 data.source = source
                                 data.data = chunk
+                                data.processed = False
                                 data.save()
                                 
                                 framecommand = unpack("<B",chunk[PosFrameCommand:PosFrameCommand+LenFrameCommand])[0] 
@@ -325,7 +327,12 @@ if __name__ == '__main__':
                                     tv = tt.setValue(raw, True)
                                     tv.save()
                                 
-                                                         
+                                print("\nData processed("+str(timezone.datetime.utcnow() )+")")
+                                data.processed = True
+                                data.save()
+                                
+                                          
+                                #dl.processed = True                   
                                 """
                                 Ahora proceso los datos en funcion de las variables de telemetria configuradas en el sistema. 
                                 Las mismas ya tienen internamente sus funciones de calibracion segun configuracion
