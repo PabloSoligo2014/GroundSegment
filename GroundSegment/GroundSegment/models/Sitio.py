@@ -8,6 +8,7 @@ import ephem
 from GroundSegment.models.Satellite import Satellite
 from datetime import datetime
 from GroundSegment.Utils.UtilsFunctions import *
+from GroundSegment.models.State import State
 #from django.contrib.admin.utils import help_text_for_field
 
 class Sitio(models.Model):
@@ -16,6 +17,8 @@ class Sitio(models.Model):
     lon      = models.FloatField('Longitud', help_text='[Grados Decimales]')
     h        = models.FloatField('Altura', help_text='[metros]')
     maskElev = models.FloatField('Mascara de Elevacion', help_text='[grados]', default=0.0)
+    
+    state    = models.ForeignKey(State,related_name='sitios', null=True)
 
     def __str__(self):
         return self.name

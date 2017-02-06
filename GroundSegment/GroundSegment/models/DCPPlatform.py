@@ -7,8 +7,11 @@ from django.db import models
 from django.utils.timezone import datetime, now, timedelta, utc
 from GroundSegment.models.Sitio import Sitio
 
+
 class DCPPlatform(models.Model):
     code        = models.CharField('Codigo de la Plataforma', max_length=24, unique=True)
+    
+    
     sitio       = models.ForeignKey(Sitio,related_name='dcpplatform', null=True)
     type        = models.CharField('Tipo de Plataforma', max_length=24, null=True)
     equip_marca = models.CharField('Marca del Equipo', max_length=24, null=True, default='no conocido')
