@@ -27,3 +27,6 @@ from GroundSegment.models.Alarm import *
 from GroundSegment.models.DownlinkFrame import DownlinkFrame 
 from GroundSegment.models.UnitOfMeasurement import UnitOfMeasurement
 from GroundSegment.models.FrameType import FrameType
+from GroundSegment.models.Country import Country
+from GroundSegment.models.State import State
+
