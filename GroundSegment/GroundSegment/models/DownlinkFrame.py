@@ -12,6 +12,7 @@ from django.db.models.deletion import CASCADE
 
 
 
+
 class DownlinkFrame(models.Model):
     
     
