@@ -3,6 +3,8 @@ Created on 16 de ago. de 2016
 @author: pabli
 '''
 
+from django.utils.html import mark_safe
+
 from django.contrib import admin
 from GroundSegment.models.Satellite import Satellite
 from GroundSegment.models.Tle import Tle
@@ -30,6 +32,7 @@ from GroundSegment.models.Calibration import Calibration
 from GroundSegment.models.SubSystem import SubSystem
 from GroundSegment.models.Log import Log
 from GroundSegment.models.Coefficient import Coefficient
+
 
 from GroundSegment.models.DCPPlatform import DCPPlatform
 from GroundSegment.models.DCPData import DCPData
@@ -127,17 +130,38 @@ admin.site.register(Notification ,NotificationAdmin)
 class CoefficientInline(admin.TabularInline):
     model = Coefficient
 
+   
+def showHistory(modeladmin, request, queryset):
+    for q in queryset:
+        print("ShowHistory de ", q.code) 
     
+        
+showHistory.short_description = "Mostrar historial de las variables seleccionadas..."
+
 
 class TmlyVarTypeAdmin(admin.ModelAdmin):
     #fields = ()
     search_fields = ['code']
-    list_display = ('code', 'description', 'satellite', 'lastCalSValue', 'unitOfMeasurement', 'lastUpdate', 'varType')
+    list_display = ('code', 'description', 'satellite', 'lastCalSValue', 'unitOfMeasurement', 'lastUpdate',)
     fields = ('code', 'description', 'satellite', 'limitMaxValue', 'limitMinValue', 'maxValue', 'minValue', 'varType', 'alarmType', 'calibrationMethod', 'frameType', 'position', 'bitsLen', 'unitOfMeasurement')
 
     inlines = [
         CoefficientInline,
     ]
+    
+    actions = [showHistory]
+    
+
+        #queryset.update(status='p')
+        #make_published.short_description = "Mark selected stories as published"
+    
+    #def btnShowHistory(self, obj):
+    #    return mark_safe('<type="submit" value="Submit">')
+    
+    #title.short_description = 'Action'
+    #title.allow_tags = True
+
+    
     
 admin.site.register(TlmyVarType ,TmlyVarTypeAdmin)
 
