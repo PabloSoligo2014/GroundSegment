@@ -33,6 +33,8 @@ from GroundSegment.models.Coefficient import Coefficient
 
 from GroundSegment.models.DCPPlatform import DCPPlatform
 from GroundSegment.models.DCPData import DCPData
+from GroundSegment.models.Country import Country
+from GroundSegment.models.State import State
 
 
 
@@ -175,7 +177,7 @@ admin.site.register(DCPPlatform ,DCPPlatformAdmin)
 
 class DCPDataAdmin(admin.ModelAdmin):
     list_display = ('dcp_plataform', 'dataTime', 'Precipitation','Humidity')
-    readonly_fields=('dcp_plataform', 'dataTime', 'Precipitation','Humidity')
+#    readonly_fields=('dcp_plataform', 'dataTime', 'Precipitation','Humidity')
 admin.site.register(DCPData ,DCPDataAdmin)
 
 
@@ -192,4 +194,13 @@ class UnitOfMeasurementAdmin(admin.ModelAdmin):
     
 admin.site.register(UnitOfMeasurement ,UnitOfMeasurementAdmin)
 
+class CountryAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(Country, CountryAdmin)
+
+class StateAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(State, StateAdmin)
 

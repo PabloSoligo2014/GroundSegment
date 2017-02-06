@@ -9,4 +9,4 @@ from rest_framework.serializers import ModelSerializer
 class DCPDataSerializer(ModelSerializer):
     class Meta:
         model = DCPData
-        fields = ('dcp_plataform', 'Temperature')
+        fields = ('dcp_plataform', 'Temp_max', 'Temp_media','Temp_min','Atm_preasure','Humidity','Precipitation')

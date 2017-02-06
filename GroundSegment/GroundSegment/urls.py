@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, patterns, include
 from django.contrib import admin
-from GroundSegment.views import AboutView, SatelliteListView, PropagationTestView, DCPDataViewSet
+from GroundSegment.views import AboutView, SatelliteListView, PropagationTestView, DCPDataList
 from django.conf.urls.static import static
 from django.conf import settings
 from rest_framework.routers import SimpleRouter
@@ -30,15 +30,12 @@ admin.site.site_header = 'MDIAE Ground Segment'
 # Text to put at the top of the admin index page.
 admin.site.index_title = 'Control Panel'
 
-router = SimpleRouter()
-router.register(r'DCPData', DCPDataViewSet)
-
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^about/$', AboutView.as_view(template_name="about.html")),
     url(r'^satellites/$', SatelliteListView.as_view(template_name="satelliteListView.html")),
     url(r'^propagationTest/$', PropagationTestView.as_view(template_name="propagationTest.html")),
-    url(r'^', include(router.urls)),
+    url(r'^DCPData/(?P<start_date>.+)/(?P<end_date>.+)/$', DCPDataList.as_view()),
 ]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
     
