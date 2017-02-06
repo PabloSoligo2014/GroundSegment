@@ -174,8 +174,8 @@ class DCPPlatformAdmin(admin.ModelAdmin):
 admin.site.register(DCPPlatform ,DCPPlatformAdmin)
 
 class DCPDataAdmin(admin.ModelAdmin):
-    list_display = ('dcp_plataform', 'dataTime', 'snow', 'Precipitation', 'Temperature', 'Humidity', 'Wind_dir', 'Wind_speed', 'Bat_volts', 'cm_data' )
-    readonly_fields=('dcp_plataform', 'dataTime', 'snow', 'Precipitation', 'Temperature', 'Humidity', 'Wind_dir', 'Wind_speed', 'Bat_volts', 'cm_data' )
+    list_display = ('dcp_plataform', 'dataTime', 'Precipitation','Humidity')
+    readonly_fields=('dcp_plataform', 'dataTime', 'Precipitation','Humidity')
 admin.site.register(DCPData ,DCPDataAdmin)
 
 
