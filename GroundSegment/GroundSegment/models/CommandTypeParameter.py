@@ -8,4 +8,9 @@ from django.db import models
 
 
 class CommandTypeParameter(models.Model):
-    pass
+    code           = models.CharField('Codigo del parametro', max_length=24, help_text='Codigo del parametro')
+    description    = models.CharField('Decripcion del parametro', max_length=100, help_text='Decripcion del satelite')
+    
+    def __str__(self):
+        return self.code
+    

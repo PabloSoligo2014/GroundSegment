@@ -1,3 +1,4 @@
+<number position="3" name="sideAntS" type="char"/>
 <uplink xmlns="uplinkPacketParser">
 
   <packet name="resetEPS" xmlns="">
@@ -9,7 +10,7 @@
 	<number position="1" value="3" type="char"/>
   </packet>
   
-    <packet name="setModeTrxUV" xmlns="">
+  <packet name="setModeTrxUV" xmlns="">
 	<number position="0" value="4" type="char"/>
 	<number position="1" name="modeTrxUV" type="char"/>
   </packet>
@@ -44,7 +45,6 @@
 	<number position="0" value="2" type="char"/>
 	<number position="1" value="1" type="char"/>
 	<number position="2" value="2" type="char"/>
-	<number position="3" name="sideAntS" type="char"/>
   </packet>
   
   <packet name="deployStatusAntS" xmlns="">

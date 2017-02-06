@@ -28,5 +28,5 @@ class DCPData(models.Model):
     Temp_min         = models.FloatField(help_text='Temperatura minima [C]',default=0.0)
     
     def __str__(self):
-        return str(self.Temperature) 
+        return str(self.Temp_max) 
     
