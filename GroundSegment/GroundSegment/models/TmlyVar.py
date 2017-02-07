@@ -22,7 +22,7 @@ class TmlyVar(models.Model):
     #created     = models.DateTimeField()
     #Quito la relacion para que no me obligue a guardar el padre
     #para despues guardar al hijo
-    #tmlyVarType = models.ForeignKey(TlmyVarType, related_name="tmlyVars")
+    tmlyVarType = models.ForeignKey(TlmyVarType, related_name="tmlyVars")
     
     
     def getValue(self):

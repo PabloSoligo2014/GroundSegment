@@ -104,3 +104,9 @@ pip install django-filter  # Filtering support
 
 nota!: lo reinstale con pip3 (creo que para python3 es lo que hay que hacer) 
 
+
+---------------------------
+Entorno para ploting de telemetria historica 
+---------------------------
+
+pip3 install django-graphos

@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     #python3.4 manage.py graph_models -a -o myapp_models.png
     'GroundSegment',
     'rest_framework',
+    'graphos',
 ]
 
 MIDDLEWARE_CLASSES = [

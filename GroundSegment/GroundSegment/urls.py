@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, patterns, include
 from django.contrib import admin
-from GroundSegment.views import AboutView, SatelliteListView, PropagationTestView, DCPDataList
+from GroundSegment.views import AboutView, SatelliteListView, PropagationTestView, DCPDataList, SimplePlotView
 from django.conf.urls.static import static
 from django.conf import settings
 from rest_framework.routers import SimpleRouter
@@ -34,7 +34,12 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^about/$', AboutView.as_view(template_name="about.html")),
     url(r'^satellites/$', SatelliteListView.as_view(template_name="satelliteListView.html")),
+    #(?P<page_slug>[\w-]+)-(?P<page_id>\w+)
+    url(r'^simplePlot/(?P<tvt1>[\w-]+)-(?P<tvt2>\w+)-(?P<tvt3>\w+)-(?P<tvt4>\w+)', SimplePlotView.as_view(template_name="simplePlot.html")),
+    
     url(r'^propagationTest/$', PropagationTestView.as_view(template_name="propagationTest.html")),
+    
+    
     url(r'^DCPData/(?P<start_date>.+)/(?P<end_date>.+)/$', DCPDataList.as_view()),
 ]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

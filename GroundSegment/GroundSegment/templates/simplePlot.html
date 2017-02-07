@@ -1,0 +1,54 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<meta http-equiv="refresh" content="10">  
+<h1>Historico simple</h1>
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+    google.load("visualization", "1", {packages:["corechart"]});
+</script>
+
+<table  style="width:100%">
+    <tr>
+	{% for chart in charts %}
+        <td>{{ chart.as_html }}</td>
+    	{% if not forloop.last and forloop.counter == 2 or forloop.counter == 4 %}
+    </tr>
+    <tr>
+    	{% endif %}
+	{% endfor %}
+    </tr>
+</table>
+
+
+<!--  
+
+down vote
+accepted
+you can use the forloop.counter and do something like:
+
+<table>
+    <tr>
+		{% for person in people %}
+		        <td>{{ person }}</td>
+		    {% if not forloop.last and forloop.counter == 3 or forloop.counter == 6 %}
+		    </tr>
+		    <tr>
+		    {% endif %}
+		{% endfor %}
+    </tr>
+  <tr>
+    <td>{{ chart1.as_html }}</td>
+    <td>{{ chart2.as_html }}</td> 
+  </tr>
+   <tr>
+    <td>{{ chart3.as_html }}</td>
+    <td>{{ chart4.as_html }}</td> 
+  </tr>
+  
+-->
+
+ 
+ {% endblock %}

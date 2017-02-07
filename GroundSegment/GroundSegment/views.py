@@ -4,6 +4,9 @@ from GroundSegment.models.Satellite import Satellite
 from GroundSegment.forms import PropagateTestForm
 from django.http import HttpResponse
 from GroundSegment.forms import SimulatorForm
+from django.views.generic.base import View
+from GroundSegment.models.TlmyVarType import TlmyVarType
+from GroundSegment.models.TmlyVar import TmlyVar
 
 
 """
@@ -26,7 +29,97 @@ class SimulatorView(FormView):
         form.alarmSimulator()
         return super(PropagationTestView, self).form_valid(form)
     
+
+class SimplePlotView(TemplateView):
+    #http://127.0.0.1:8000/simplePlot/100001-100002-100003-100010
+    template_name = 'simplePlot.html'
+    #queryset = TmlyVar.objects.filter(code='obcT1').order_by('-created')[:50] 
+    #context_object_name = "objects"
     
+    
+    
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        
+        from graphos.sources.simple import SimpleDataSource
+        from graphos.renderers.gchart import LineChart
+        
+        tvt1pk = self.kwargs['tvt1']
+        tvt2pk = self.kwargs['tvt2']
+        tvt3pk = self.kwargs['tvt3']
+        tvt4pk = self.kwargs['tvt4']
+        
+        tvt1 = TlmyVarType.objects.get(pk=tvt1pk)
+        tvt2 = TlmyVarType.objects.get(pk=tvt2pk)
+        tvt3 = TlmyVarType.objects.get(pk=tvt3pk)
+        tvt4 = TlmyVarType.objects.get(pk=tvt4pk)
+        
+        tvtVector = []
+        tvtVector.append(tvt1)
+        tvtVector.append(tvt2)
+        tvtVector.append(tvt3)
+        tvtVector.append(tvt4)
+        
+        context = super(SimplePlotView, self).get_context_data(**kwargs)
+        
+        valuesVector = []
+        
+        for tvt in tvtVector:
+            valuesVector.append(TmlyVar.objects.filter(tmlyVarType=tvt).order_by('created')[:50]) 
+        
+        
+        
+        i = 0
+        context['charts'] = []
+        for values in valuesVector:
+            data = []
+            data.append(['Fecha', tvtVector[i].code])
+            for v in values:
+                data.append( [v.created.strftime("%H:%M:%-S"), v.getValue()]   )
+            
+            data_source = SimpleDataSource(data=data)
+            # Chart object
+            chart = LineChart(data_source)
+            chart.options['title']      = tvtVector[i].description+ " (Ultimos 50 valores)"  
+            chart.options['subtitle']   = "Ultimos 50 valores"  
+            #chart.options['lineWidth']  = 5 
+            chart.options['smooth']     = False
+            
+            
+            chart.options['series'] =    { 
+                                          '0': { 'color': '#DB3411' }
+                                         }
+                                        
+            """
+            series: {
+            0: { color: '#e2431e' },
+            1: { color: '#e7711b' },
+            2: { color: '#f1ca3a' },
+            3: { color: '#6f9654' },
+            4: { color: '#1c91c0' },
+            5: { color: '#43459d' },
+                    }
+            """
+            
+            #chart.options['curveType']  = 'function'
+            
+            
+            chart.options['legend']  = { 'position': 'bottom' }
+            
+            #legend: { position: 'bottom' }
+            
+            
+            
+            i=i+1
+            context['charts'].append(chart)
+            
+        
+        
+        return context
+    
+    #return render(request, 'yourtemplate.html', context)
+    
+
 class SatelliteListView(ListView):
     
     model = Satellite
