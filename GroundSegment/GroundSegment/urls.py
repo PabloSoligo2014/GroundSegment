@@ -35,7 +35,8 @@ urlpatterns = [
     url(r'^about/$', AboutView.as_view(template_name="about.html")),
     url(r'^satellites/$', SatelliteListView.as_view(template_name="satelliteListView.html")),
     #(?P<page_slug>[\w-]+)-(?P<page_id>\w+)
-    url(r'^simplePlot/(?P<tvt1>[\w-]+)-(?P<tvt2>\w+)-(?P<tvt3>\w+)-(?P<tvt4>\w+)', SimplePlotView.as_view(template_name="simplePlot.html")),
+    #url(r'^simplePlot/(?P<tvt1>[\w-]+)-(?P<tvt2>\w+)-(?P<tvt3>\w+)-(?P<tvt4>\w+)', SimplePlotView.as_view(template_name="simplePlot.html")),
+    url(r'^simplePlot/(?P<tvts>[\w-]+)', SimplePlotView.as_view(template_name="simplePlot.html"), name='SimplePlotView'),
     
     url(r'^propagationTest/$', PropagationTestView.as_view(template_name="propagationTest.html")),
     

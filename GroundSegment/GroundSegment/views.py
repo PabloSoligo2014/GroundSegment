@@ -43,22 +43,17 @@ class SimplePlotView(TemplateView):
         
         from graphos.sources.simple import SimpleDataSource
         from graphos.renderers.gchart import LineChart
-        
-        tvt1pk = self.kwargs['tvt1']
-        tvt2pk = self.kwargs['tvt2']
-        tvt3pk = self.kwargs['tvt3']
-        tvt4pk = self.kwargs['tvt4']
-        
-        tvt1 = TlmyVarType.objects.get(pk=tvt1pk)
-        tvt2 = TlmyVarType.objects.get(pk=tvt2pk)
-        tvt3 = TlmyVarType.objects.get(pk=tvt3pk)
-        tvt4 = TlmyVarType.objects.get(pk=tvt4pk)
-        
         tvtVector = []
-        tvtVector.append(tvt1)
-        tvtVector.append(tvt2)
-        tvtVector.append(tvt3)
-        tvtVector.append(tvt4)
+        
+        
+        
+        tvts = self.kwargs['tvts']
+        
+        tvts = tvts.split('-')
+        
+        for pk in tvts:        
+            tvt = TlmyVarType.objects.get(pk=pk)
+            tvtVector.append(tvt)
         
         context = super(SimplePlotView, self).get_context_data(**kwargs)
         
@@ -82,6 +77,10 @@ class SimplePlotView(TemplateView):
             chart = LineChart(data_source)
             chart.options['title']      = tvtVector[i].description+ " (Ultimos 50 valores)"  
             chart.options['subtitle']   = "Ultimos 50 valores"  
+            #chart.options['width']      = 200
+            chart.options['height']     = 300
+            chart.options['isStacked']     = 'relative'
+            
             #chart.options['lineWidth']  = 5 
             chart.options['smooth']     = False
             

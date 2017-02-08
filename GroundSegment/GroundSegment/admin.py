@@ -39,6 +39,11 @@ from GroundSegment.models.DCPData import DCPData
 from GroundSegment.models.Country import Country
 from GroundSegment.models.State import State
 
+from django.shortcuts import redirect
+from django.http import HttpResponseRedirect, HttpResponse
+from GroundSegment.views import SimplePlotView
+
+
 
 
 class SatelliteAdmin(admin.ModelAdmin):
@@ -132,9 +137,17 @@ class CoefficientInline(admin.TabularInline):
 
    
 def showHistory(modeladmin, request, queryset):
-    for q in queryset:
-        print("ShowHistory de ", q.code) 
+    param = [] 
     
+    for q in queryset:
+        param.append(str(q.pk))
+    
+    fparam = "-".join(param)
+  
+    #from django.conf.urls import include, url
+    #from django.core.urlresolvers import reverse
+    return redirect('SimplePlotView', tvts=fparam)
+  
         
 showHistory.short_description = "Mostrar historial de las variables seleccionadas..."
 

@@ -2,6 +2,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% load groundsegment_tags %}
 <meta http-equiv="refresh" content="10">  
 <h1>Historico simple</h1>
 
@@ -10,17 +11,20 @@
     google.load("visualization", "1", {packages:["corechart"]});
 </script>
 
-<table  style="width:100%">
-    <tr>
-	{% for chart in charts %}
-        <td>{{ chart.as_html }}</td>
-    	{% if not forloop.last and forloop.counter == 2 or forloop.counter == 4 %}
-    </tr>
-    <tr>
-    	{% endif %}
-	{% endfor %}
-    </tr>
+<table style="width:100%">
+<tr>
+{% for chart in charts %}
+  <td>
+  {{ chart.as_html }}
+  </td>
+  {% if not forloop.counter|mod:2 %}
+    </tr><tr>
+  {% endif %}
+{% endfor %}
+</tr>
 </table>
+
+
 
 
 <!--  
