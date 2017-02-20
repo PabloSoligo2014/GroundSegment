@@ -110,3 +110,8 @@ Entorno para ploting de telemetria historica
 ---------------------------
 
 pip3 install django-graphos
+
+-----------------------------
+Restore de base de datos
+-----------------------------
+pg_restore -h localhost -p 5432 -U postgres -d DBGroundSegment_dev -v "D:\backupblabla.backup"
