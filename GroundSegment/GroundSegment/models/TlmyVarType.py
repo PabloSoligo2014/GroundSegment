@@ -164,4 +164,3 @@ class TlmyVarType(models.Model):
 
         return tvar
         
-    

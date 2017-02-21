@@ -15,10 +15,20 @@ Including another URLconf
 """
 from django.conf.urls import url, patterns, include
 from django.contrib import admin
-from GroundSegment.views import AboutView, SatelliteListView, PropagationTestView, DCPDataList, SimplePlotView
+from GroundSegment.views import AboutView, SatelliteListView, PropagationTestView, DCPDataViewSet,\
+    TlmyVarTypeView
 from django.conf.urls.static import static
 from django.conf import settings
 from rest_framework.routers import SimpleRouter
+from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
+from GroundSegment.models import TlmyVarType
+from aptsources.distinfo import Template
+from GroundSegment.models.TlmyVarType import TlmyVarType
+
+
+
+
 
 # Text to put at the end of each page's <title>.
 admin.site.site_title = 'MDIAE Ground Segment'
@@ -30,18 +40,16 @@ admin.site.site_header = 'MDIAE Ground Segment'
 # Text to put at the top of the admin index page.
 admin.site.index_title = 'Control Panel'
 
+router = SimpleRouter()
+router.register(r'DCPData', DCPDataViewSet)
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^TlmyVarType/$', TlmyVarTypeView.as_view(template_name = "TlmyVarType.html")),
     url(r'^about/$', AboutView.as_view(template_name="about.html")),
     url(r'^satellites/$', SatelliteListView.as_view(template_name="satelliteListView.html")),
-    #(?P<page_slug>[\w-]+)-(?P<page_id>\w+)
-    #url(r'^simplePlot/(?P<tvt1>[\w-]+)-(?P<tvt2>\w+)-(?P<tvt3>\w+)-(?P<tvt4>\w+)', SimplePlotView.as_view(template_name="simplePlot.html")),
-    url(r'^simplePlot/(?P<tvts>[\w-]+)', SimplePlotView.as_view(template_name="simplePlot.html"), name='SimplePlotView'),
-    
     url(r'^propagationTest/$', PropagationTestView.as_view(template_name="propagationTest.html")),
-    
-    
-    url(r'^DCPData/(?P<start_date>.+)/(?P<end_date>.+)/$', DCPDataList.as_view()),
+    url(r'^', include(router.urls)),
 ]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
     
