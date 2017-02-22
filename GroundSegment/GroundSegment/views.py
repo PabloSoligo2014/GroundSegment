@@ -31,6 +31,7 @@ class SimplePlotView(TemplateView):
         
         from graphos.sources.simple import SimpleDataSource
         from graphos.renderers.gchart import LineChart
+        from GroundSegment.models.TmlyVar import TmlyVar
         tvtVector = []
         
         

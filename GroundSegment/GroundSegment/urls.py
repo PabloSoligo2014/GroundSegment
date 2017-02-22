@@ -25,6 +25,7 @@ from django.views.generic.detail import DetailView
 from GroundSegment.models import TlmyVarType
 from aptsources.distinfo import Template
 from GroundSegment.models.TlmyVarType import TlmyVarType
+from GroundSegment.views import SimplePlotView
 
 
 
@@ -50,6 +51,7 @@ urlpatterns = [
     url(r'^satellites/$', SatelliteListView.as_view(template_name="satelliteListView.html")),
     url(r'^propagationTest/$', PropagationTestView.as_view(template_name="propagationTest.html")),
     url(r'^', include(router.urls)),
+    url(r'^simplePlot/(?P<tvts>[\w-]+)', SimplePlotView.as_view(template_name="simplePlot.html"), name='SimplePlotView'),
 ]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
     
