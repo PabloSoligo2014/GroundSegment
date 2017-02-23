@@ -28,7 +28,8 @@ from GroundSegment.models.TlmyVarType import TlmyVarType
 from GroundSegment.views.SimplePlotView import SimplePlotView, GetChartData
 
 
-
+#from django.contrib.auth import views as auth_views
+from django.contrib.auth.views import login, logout
 
 
 # Text to put at the end of each page's <title>.
@@ -46,13 +47,16 @@ router.register(r'DCPData', DCPDataViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    #url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
+    url(r'^login/$', login, {'template_name': 'login.html'}, name='login'),
+    url(r'^logout$', logout, {'template_name': 'login.html', }, name="logout"),
     url(r'^TlmyVarType/$', TlmyVarTypeView.as_view(template_name = "TlmyVarType.html")),
     url(r'^about/$', AboutView.as_view(template_name="about.html")),
     url(r'^satellites/$', SatelliteListView.as_view(template_name="satelliteListView.html")),
     url(r'^propagationTest/$', PropagationTestView.as_view(template_name="propagationTest.html")),
     url(r'^', include(router.urls)),
     url(r'^simplePlot/(?P<tvts>[\w-]+)', SimplePlotView.as_view(template_name="simplePlot.html"), name='SimplePlotView'),
-    
+    url(r'^home$', 'myapp.views.home', name='home'),
 ]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
     

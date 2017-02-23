@@ -93,10 +93,10 @@ DATABASES = {
     'default': {
                 'ENGINE': 'django.db.backends.postgresql_psycopg2',
                 'NAME': 'DBGroundSegment',
-                'USER': 'postgres',
-                'PASSWORD': 'postgres',
-                'HOST': '10.77.171.181',
-                #'HOST': '192.168.0.103',
+                'USER': 'sa',
+                'PASSWORD': 'sa',
+                #'HOST': '10.77.171.181',
+                'HOST': '127.0.0.1',
                 'PORT': '5432',
                 'CONN_MAX_AGE': 600,
          }
@@ -201,3 +201,8 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+
+# Redirect when login is correct.
+LOGIN_REDIRECT_URL = "/home"
+# Redirect when login is not correct.
+LOGIN_URL = '/'
