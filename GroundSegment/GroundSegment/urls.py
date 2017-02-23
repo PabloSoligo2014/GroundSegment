@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, patterns, include
 from django.contrib import admin
-from GroundSegment.views import AboutView, SatelliteListView, PropagationTestView, DCPDataViewSet,\
+from GroundSegment.views.views import AboutView, SatelliteListView, PropagationTestView, DCPDataViewSet,\
     TlmyVarTypeView
 from django.conf.urls.static import static
 from django.conf import settings
@@ -25,7 +25,7 @@ from django.views.generic.detail import DetailView
 from GroundSegment.models import TlmyVarType
 from aptsources.distinfo import Template
 from GroundSegment.models.TlmyVarType import TlmyVarType
-from GroundSegment.views import SimplePlotView
+from GroundSegment.views.SimplePlotView import SimplePlotView, GetChartData
 
 
 
@@ -52,6 +52,7 @@ urlpatterns = [
     url(r'^propagationTest/$', PropagationTestView.as_view(template_name="propagationTest.html")),
     url(r'^', include(router.urls)),
     url(r'^simplePlot/(?P<tvts>[\w-]+)', SimplePlotView.as_view(template_name="simplePlot.html"), name='SimplePlotView'),
+    
 ]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
     

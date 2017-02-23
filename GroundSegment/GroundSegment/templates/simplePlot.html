@@ -3,12 +3,41 @@
 
 {% block content %}
 {% load groundsegment_tags %}
-<meta http-equiv="refresh" content="10">  
+<meta http-equiv="refresh" content="30">  
 <h1>Historico simple</h1>
 
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">
     google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(load_page_data);
+    
+    
+    function load_page_data(){
+        $.ajax({
+            url: '/ajax/getchartdata/',
+            type: 'get',
+            //Son los ultimos 50, no necesita parametros data: {'startdate':startdate,'enddate':enddate},
+            async: false,
+            success: function(data){
+                if(data){
+                    chart_data = $.parseJSON(data);
+                    drawChart(chart_data, "My Chart", "Data");
+                }
+            },
+        });
+    }
+
+    function drawChart(chart_data, chart1_main_title, chart1_vaxis_title) {
+        var chart1_data = new google.visualization.DataTable(chart_data);
+        var chart1_options = {
+            title: chart1_main_title,
+            vAxis: {title: chart1_vaxis_title,  titleTextStyle: {color: 'red'}}
+        };
+
+        var chart1_chart = new google.visualization.BarChart(document.getElementById('chart1_div'));
+        chart1_chart.draw(chart1_data, chart1_options);
+    }
+    
 </script>
 
 <table style="width:100%">

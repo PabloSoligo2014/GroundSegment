@@ -41,7 +41,7 @@ from GroundSegment.models.State import State
 
 from django.shortcuts import redirect
 from django.http import HttpResponseRedirect, HttpResponse
-from GroundSegment.views import SimplePlotView
+from GroundSegment.views.SimplePlotView import SimplePlotView
 
 
 
