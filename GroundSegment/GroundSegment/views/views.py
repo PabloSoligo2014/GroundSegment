@@ -10,6 +10,12 @@ from django.core.urlresolvers import reverse_lazy
 from django.db.models.query import QuerySet
 from django.template.base import kwarg_re
 
+
+
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render_to_response
+from django.template.context import RequestContext
+from django.core.urlresolvers import reverse #para error reverse c
 """
 Autorefresh para vistas de telemetria en tiempo real...
 http://www.b-list.org/weblog/2006/jul/31/django-tips-simple-ajax-example-part-1/
@@ -18,10 +24,7 @@ http://www.b-list.org/weblog/2006/jul/31/django-tips-simple-ajax-example-part-1/
 class AboutView(TemplateView):
     template_name = "about.html"
     
-  
-    
-    
-    
+
 class SimulatorView(FormView):
     template_name = 'simulators.html'
     form_class = SimulatorForm
@@ -32,7 +35,6 @@ class SimulatorView(FormView):
         # It should return an HttpResponse.
         form.alarmSimulator()
         return super(PropagationTestView, self).form_valid(form)
-    
     
 class SatelliteListView(ListView):
     
@@ -107,9 +109,6 @@ class TlmyVarTypeView(ListView):
     QuerySet = TlmyVarType.objects.all()[:5]
     context_object_name = "TlmyVarTypes"
 
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import render_to_response
-from django.template.context import RequestContext
 
 @login_required()
 def home(request):
