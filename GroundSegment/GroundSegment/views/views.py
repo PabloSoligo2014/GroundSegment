@@ -2,7 +2,7 @@ from django.views.generic import TemplateView
 from django.views.generic import ListView, FormView
 from GroundSegment.models.Satellite import Satellite
 from GroundSegment.forms import PropagateTestForm
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
 from GroundSegment.forms import SimulatorForm
 from django.template.context_processors import request
 from django.contrib.messages.api import success
@@ -16,6 +16,11 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
 from django.core.urlresolvers import reverse #para error reverse c
+from django.views.generic.base import View
+from django import views
+from lxml.html._diffcommand import description
+import code
+from django.contrib.admin.utils import help_text_for_field
 """
 Autorefresh para vistas de telemetria en tiempo real...
 http://www.b-list.org/weblog/2006/jul/31/django-tips-simple-ajax-example-part-1/
@@ -36,14 +41,7 @@ class SimulatorView(FormView):
         form.alarmSimulator()
         return super(PropagationTestView, self).form_valid(form)
     
-class SatelliteListView(ListView):
-    
-    model = Satellite
-    template_name = "satelliteListView.html"
-    paginate_by = '5'
-    queryset = Satellite.objects.all()
-    context_object_name = "satellites"
-    
+   
     
 class PropagationTestView(FormView):
     
@@ -101,18 +99,30 @@ class DCPDataViewSet(ModelViewSet):
   
 
 from GroundSegment.models.TlmyVarType import TlmyVarType
-
-
-class TlmyVarTypeView(ListView):
-    model = TlmyVarType
-    template_name = "TlmyVarType.html"
-    QuerySet = TlmyVarType.objects.all()[:5]
-    context_object_name = "TlmyVarTypes"
-
+from braces.views import LoginRequiredMixin
+from GroundSegment.models.Satellite import FormViewSat
 
 @login_required()
 def home(request):
     return render_to_response('home.html', {'user': request.user}, context_instance=RequestContext(request))
 
+class TlmyVarTypeView(LoginRequiredMixin, ListView):
+    template_name   = "TlmyVarType.html"
+    model           = TlmyVarType
+    QuerySet        = TlmyVarType.objects.all()
+    context_object_name = "TlmyVarTypes"
+
+
+class SatelliteListView(LoginRequiredMixin,ListView):
+    model = Satellite
+    template_name = "satelliteListView.html"
+    paginate_by = '5'
+    queryset = Satellite.objects.all()
+    context_object_name = "satellites"
+
+@login_required()
+def post_Sat(request):
+        form = FormViewSat()
+        return render(request, 'sat_form.html', {'form': form})
 
 

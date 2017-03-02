@@ -17,10 +17,6 @@ from GroundSegment.models.Parameter import Parameter
 from django.db.models.query import QuerySet
 
 
-
-
-
-
 class Satellite(models.Model):
     
     """
@@ -274,3 +270,19 @@ class Satellite(models.Model):
     
     def __str__(self):
         return self.code
+
+
+   
+from django.forms import ModelForm
+'''
+Herencia del Modelo para crear Formulario
+'''
+class FormViewSat(ModelForm):
+    
+    class Meta:
+        model = Satellite
+        fields = "__all__" 
+        
+        
+        
+        

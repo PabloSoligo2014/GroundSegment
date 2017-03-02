@@ -15,8 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, patterns, include
 from django.contrib import admin
-from GroundSegment.views.views import AboutView, SatelliteListView, PropagationTestView, DCPDataViewSet,\
-    TlmyVarTypeView
+from GroundSegment.views.views import AboutView, SatelliteListView, PropagationTestView, DCPDataViewSet,TlmyVarTypeView,post_Sat
 from django.conf.urls.static import static
 from django.conf import settings
 from rest_framework.routers import SimpleRouter
@@ -26,7 +25,7 @@ from GroundSegment.models import TlmyVarType
 from aptsources.distinfo import Template
 from GroundSegment.models.TlmyVarType import TlmyVarType
 from GroundSegment.views.SimplePlotView import SimplePlotView, GetChartData
-from GroundSegment.views.views import TlmyVarType
+
 
 
 #from django.contrib.auth import views as auth_views
@@ -54,14 +53,14 @@ urlpatterns = [
     #url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
     url(r'^login/$', login, {'template_name': 'login.html'}, name='login'),
     url(r'^logout$', logout, {'template_name': 'login.html', }, name="logout"),
-    #url(r'^TlmyVarType/$', TlmyVarTypeView.as_view(template_name = "TlmyVarType.html")),
+    url(r'^home/$', GroundSegment.views.views.home, name='home'),
+    url(r'^home/TlmyVarType/$', TlmyVarTypeView.as_view(), name='TlmyVarType'),
     url(r'^about/$', AboutView.as_view(template_name="about.html")),
-    url(r'^satellites/$', SatelliteListView.as_view(template_name="satelliteListView.html")),
+    url(r'^home/satellites/$', SatelliteListView.as_view(),name="satelliteListView"),
+    url(r'^home/satellites/sat_form/$', GroundSegment.views.views.post_Sat, name="post_Sat"),
     url(r'^propagationTest/$', PropagationTestView.as_view(template_name="propagationTest.html")),
     url(r'^', include(router.urls)),
-    url(r'^simplePlot/(?P<tvts>[\w-]+)', SimplePlotView.as_view(template_name="simplePlot.html"), name='SimplePlotView'),
-    url(r'^$', 'GroundSegment.views.views.home', name='home'),
-    url(r'^/TlmyVarType/$', 'GroundSegment.views.views.TlmyVarType' , name='TlmyVarType'),
+    url(r'^simplePlot/(?P<tvts>[\w-]+)', SimplePlotView.as_view(template_name="simplePlot.html"), name='SimplePlotView'), 
 ]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
     
