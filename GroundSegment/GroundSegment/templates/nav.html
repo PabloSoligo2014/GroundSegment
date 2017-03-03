@@ -1,5 +1,4 @@
 {% block header %}
-
 <nav class="navbar navbar-inverse">
   	<div class="container-fluid">
     	<div class="navbar-header">
@@ -10,7 +9,10 @@
 	  			<li><a href="{% url 'satelliteListView' %}">Satelites</a></li> 	
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-      			<li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      			<li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-user"></span> Sign Up </a></li>
+				{% if user.is_authenticated %}
+				<li><a>| Welcome,{{ user.username }}</a></li>
+				{% endif %}
       		</ul>
 	</div>
 </nav>

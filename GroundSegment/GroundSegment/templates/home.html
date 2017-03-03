@@ -40,5 +40,11 @@
      
         </table>
 
+        {% if perms.TlmyVarType %}
+             <p>Usted tiene permiso para editar {{perms.add_tlmyvartype}}</p>
+        {% else %}
+             <h2>Usted  no tiene permiso</h2>
+        {% endif %}
+
  
 {% endblock %}

@@ -274,11 +274,12 @@ class Satellite(models.Model):
 
    
 from django.forms import ModelForm
+from django import forms
 '''
 Herencia del Modelo para crear Formulario
 '''
 class FormViewSat(ModelForm):
-    
+    #description = forms.CharField(error_messages={'required': 'Campo Obligatorio!'})
     class Meta:
         model = Satellite
         fields = "__all__" 

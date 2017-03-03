@@ -101,7 +101,7 @@ class DCPDataViewSet(ModelViewSet):
 from GroundSegment.models.TlmyVarType import TlmyVarType
 from braces.views import LoginRequiredMixin
 from GroundSegment.models.Satellite import FormViewSat
-
+from django.http import HttpResponseRedirect
 @login_required()
 def home(request):
     return render_to_response('home.html', {'user': request.user}, context_instance=RequestContext(request))
@@ -122,7 +122,15 @@ class SatelliteListView(LoginRequiredMixin,ListView):
 
 @login_required()
 def post_Sat(request):
+    #if request.method == 'POST':
+    form = FormViewSat(request.POST)
+    if form.is_valid():
+        task = form.save(commit=False)
+        task.usern = request.user
+        task.save()
+        return render(request, 'home/satellite.html', {'form': form})
+    else:
         form = FormViewSat()
-        return render(request, 'sat_form.html', {'form': form})
+    return render(request, 'sat_form.html', {'form': form})
 
 
