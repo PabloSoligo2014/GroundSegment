@@ -14,7 +14,7 @@ from Calibration.GenericCalibration import *
 from django.utils.timezone import datetime, now, timedelta, utc
 
 from django.db.models.deletion import CASCADE
-from celery.worker.strategy import default
+
 from GroundSegment.models.FrameType import FrameType
 from GroundSegment.models.UnitOfMeasurement import UnitOfMeasurement
     

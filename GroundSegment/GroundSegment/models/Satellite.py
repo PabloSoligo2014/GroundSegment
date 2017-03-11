@@ -178,7 +178,7 @@ class Satellite(models.Model):
             delta = dtn - self.tles.last().tleDateTime
             #print("dif: ", delta.days*24*60)
             if delta.days*24*60>12:
-                print("Tle no actualizado, descargar nuevo tle")
+                #print("Tle no actualizado, descargar nuevo tle")
                 self.__downloadLastTle()
             else:
                 pass

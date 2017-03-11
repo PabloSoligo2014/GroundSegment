@@ -16,7 +16,6 @@ from GroundSegment.models.SatelliteState import SatelliteState
 from GroundSegment.models.Parameter import Parameter
 from django.db.models.query import QuerySet
 from struct import *
-from celery.worker.strategy import default
 
 
 

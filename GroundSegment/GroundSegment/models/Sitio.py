@@ -72,3 +72,13 @@ class Sitio(models.Model):
         
         
         return None
+    
+    def getPasses(self, satellite, afrom, ato):
+        """
+        Obtiene la tabla de pasadas completa para un rango, las tablas se generar en bloques
+        de un dia si ya fue creada y con el ultimo TLE disponible
+        retorna el resultado pero no recalcula si ya fue calculado antes
+        """
+        #TODO Seguir aca con la tabla de pasadas por dia!
+        tle = satellite.getLastTLE()
+        tle.epoch

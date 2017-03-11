@@ -6,6 +6,7 @@ Created on Aug 24, 2016
 
 from django.db import models
 from GroundSegment.models.Satellite import Satellite
+import ephem
 
 #     created     = models.DateTimeField(editable=False)
 #     modified    = models.DateTimeField()
@@ -34,6 +35,8 @@ class Tle(models.Model):
     """
     
     lines = models.TextField(max_length=124, )
+    
+    epoch = models.DateTimeField("Epoca del TLE", null=True)
     """
     Lineas del TLE
     """
@@ -62,6 +65,26 @@ class Tle(models.Model):
         @return:  segunda linea del TLE en texto plano.
         """
         return self.lines.split("\n")[1]
+    
+    def getEpoch(self):
+        
+        
+        if self.epoch==None:
+            #Todavia no fue salvado
+            
+            #uso pyephem para extraer la fecha del tle
+            etle = ephem.readtle("irrelevant", self.getLine1(), self.getLine2())
+            self.epoch = etle._epoch
+        
+        return self.epoch
+    
+    def save(self):
+        if self.epoch==None:
+            #Todavia no fue salvado
+            etle = ephem.readtle("irrelevant", self.getLine1(), self.getLine2())
+            self.epoch = etle._epoch
+            
+        super(Tle, self).save()
 
         
     class Meta:

@@ -98,9 +98,9 @@ http://pythonhosted.org/theape/documentation/developer/explorations/explore_grap
 Entorno para Web Service
 ---------------------------
 
-pip install djangorestframework
-pip install markdown       # Markdown support for the browsable API.
-pip install django-filter  # Filtering support
+pip3 install djangorestframework
+pip3 install markdown       # Markdown support for the browsable API.
+pip3 install django-filter  # Filtering support
 
 nota!: lo reinstale con pip3 (creo que para python3 es lo que hay que hacer) 
 
@@ -121,3 +121,6 @@ pg_restore -h localhost -p 5432 -U postgres -d DBGroundSegment_dev -v "D:\backup
 Sessiones Privadas
 --------------------------------
 sudo apt-get install python-django-braces
+#Nota Pablo Soligo
+Tambien funciona pip3 install django-braces (Lo tuve que instalar en windows) 
+Falto este Elbio : pip3 lxml que onda?
