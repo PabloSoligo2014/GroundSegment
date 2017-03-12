@@ -111,7 +111,8 @@ class Sitio(models.Model):
                 """
                 No hay pasadas para la fecha solicitada o pertenecen a TLE viejos debo regenerar
                 """
-                pg = PassGeneration.create(tle, satellite, self)
+                pg = PassGeneration.create(afrom, tle, satellite, self)
+                
                 
             
             

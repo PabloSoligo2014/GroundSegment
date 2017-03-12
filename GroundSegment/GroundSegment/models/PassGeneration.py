@@ -79,7 +79,7 @@ class PassGeneration(models.Model):
                 p.passGeneration = result
                 p.startTime = rt
                 p.endTime   = st
-                
+                p.save()
               
                         
                 observer.date = ephem.date( st )
