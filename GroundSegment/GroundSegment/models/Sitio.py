@@ -6,9 +6,11 @@ Created on Sep 5, 2016
 from django.db import models
 import ephem
 from GroundSegment.models.Satellite import Satellite
-from datetime import datetime
+from datetime import datetime, timedelta
 from GroundSegment.Utils.UtilsFunctions import *
 from GroundSegment.models.State import State
+
+from django.db.models import Q
 #from django.contrib.admin.utils import help_text_for_field
 
 class Sitio(models.Model):
@@ -73,12 +75,46 @@ class Sitio(models.Model):
         
         return None
     
+    def getAsEphemObserver(self):
+        
+        observer = ephem.Observer()
+        observer.lat = str(self.lat)
+        observer.long = str(self.lon)
+        observer.elevation = self.h
+        observer.pressure = 0
+        observer.horizon = '-0:34'
+        return observer
+    
     def getPasses(self, satellite, afrom, ato):
         """
         Obtiene la tabla de pasadas completa para un rango, las tablas se generar en bloques
         de un dia si ya fue creada y con el ultimo TLE disponible
         retorna el resultado pero no recalcula si ya fue calculado antes
         """
+        from GroundSegment.models.PassGeneration import PassGeneration
         #TODO Seguir aca con la tabla de pasadas por dia!
         tle = satellite.getLastTLE()
-        tle.epoch
+        
+        """
+        Separo por dias la solicitud, y reviso una a una si estan y con que TLE fueron 
+        generados
+        """
+        afrom = afrom.date()
+        ato = ato.date()
+        
+        while afrom<=ato:
+            """
+            Existe propagacion para este sitio para este satelite y para este dia?
+            """
+            pg = PassGeneration.objects.filter(Q(satellite=satellite) & Q(sitio=self) & Q(tle__epoch__gte=tle.getEpoch() ))
+            if len(pg)==0:
+                """
+                No hay pasadas para la fecha solicitada o pertenecen a TLE viejos debo regenerar
+                """
+                pg = PassGeneration.create(tle, satellite, self)
+                
+            
+            
+            afrom = afrom + timedelta(days=1)
+            
+            

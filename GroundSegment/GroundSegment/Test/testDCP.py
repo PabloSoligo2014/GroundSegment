@@ -29,7 +29,7 @@ class Test(unittest.TestCase):
             d.save()
          
         for d in DCPPlatform.objects.all():
-            d.setData(utc, random.randrange(0,10), random.randrange(0,10), random.randrange(0,10), random.randrange(0,10), random.randrange(360), random.randrange(0,10), random.randrange(0,10), random.randrange(0,10))
+            d.setData(utc, random.randrange(0,10), random.randrange(0,10), random.randrange(0,10), random.randrange(0,10), random.randrange(360), random.randrange(0,10))
         
 
 

@@ -31,7 +31,7 @@ class Satellite(models.Model):
     notes          = models.TextField('Observaciones sobre el satelite', max_length=512, null=True) 
     
     @classmethod
-    def new(cls, code, description, noradId):
+    def new(cls, code, description, noradId, satelliteState=None):
         """
         Constructor de clase
     
@@ -49,9 +49,11 @@ class Satellite(models.Model):
         result.description = description
         result.noradId     = noradId
         
+        result.state       = satelliteState
+        
         return result
     
-    
+   
     
     def getCode(self):
         return self.code

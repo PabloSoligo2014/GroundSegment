@@ -25,12 +25,12 @@ class AlarmTestCase(unittest.TestCase):
         """
         
         
-        ss = SatelliteState()
+        ss = ss, created = SatelliteState.objects.get_or_create(code="NOMINAL", description="NOMINAL")
         ss.code = "NOMINAL"
         ss.description = "NOMINAL"
         ss.save()
         
-        sat2 = Satellite.new("FS2017", "FS2017", 25544)
+        sat2 = Satellite.new("FS2017", "FS2017", 25599)
         sat2.state = ss
         sat2.save()
         

@@ -29,4 +29,5 @@ from GroundSegment.models.UnitOfMeasurement import UnitOfMeasurement
 from GroundSegment.models.FrameType import FrameType
 from GroundSegment.models.Country import Country
 from GroundSegment.models.State import State
+from GroundSegment.models.PassGeneration import PassGeneration
 

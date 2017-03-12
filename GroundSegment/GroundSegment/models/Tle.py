@@ -7,6 +7,10 @@ Created on Aug 24, 2016
 from django.db import models
 from GroundSegment.models.Satellite import Satellite
 import ephem
+from django.utils.timezone import datetime, now, timedelta, utc
+from sgp4.io import twoline2rv
+from sgp4.earth_gravity import wgs72
+import pytz
 
 #     created     = models.DateTimeField(editable=False)
 #     modified    = models.DateTimeField()
@@ -25,16 +29,24 @@ class Tle(models.Model):
     Almacena la informacion de los TLE incluyendo su fecha de descarga y la epoca de TLE 
     """
     
-    tleDateTime = models.DateTimeField(auto_now_add=True)
     """
     Fecha generacion del TLE, si no fuera seteada se utilizara la fecha hora actual
     """
-    downloaded = models.DateTimeField(auto_now_add=True)
+    tleDateTime = models.DateTimeField(auto_now_add=True)
+
+    
     """
     Fecha de descarga del TLE
     """
+    downloaded = models.DateTimeField(auto_now_add=True)
+    
     
     lines = models.TextField(max_length=124, )
+    
+    """
+    Epoca del TLE, es fundamental para saber si se esta trabajando con un TLE
+    actualizado o es necesario descargar uno nuevo
+    """
     
     epoch = models.DateTimeField("Epoca del TLE", null=True)
     """
@@ -73,18 +85,30 @@ class Tle(models.Model):
             #Todavia no fue salvado
             
             #uso pyephem para extraer la fecha del tle
-            etle = ephem.readtle("irrelevant", self.getLine1(), self.getLine2())
-            self.epoch = etle._epoch
+            etle =  twoline2rv(self.getLine1(), self.getLine2(), wgs72) 
+            self.epoch = etle.epoch.replace(tzinfo=pytz.utc)
         
         return self.epoch
     
     def save(self):
         if self.epoch==None:
             #Todavia no fue salvado
-            etle = ephem.readtle("irrelevant", self.getLine1(), self.getLine2())
-            self.epoch = etle._epoch
+            etle =  twoline2rv(self.getLine1(), self.getLine2(), wgs72) 
+            self.epoch = etle.epoch.replace(tzinfo=pytz.utc)
             
         super(Tle, self).save()
+        
+    def __str__(self):
+        return "Satellite: "+self.satellite.code+", epoch: "+str(self.getEpoch())
+    
+    
+    def getAsEphemBody(self):
+         
+        localsat = ephem.readtle(self.satellite.code, self.getLine1(), self.getLine2()) 
+        return localsat
+        
+        
+        return localsat
 
         
     class Meta:

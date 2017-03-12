@@ -123,4 +123,10 @@ Sessiones Privadas
 sudo apt-get install python-django-braces
 #Nota Pablo Soligo
 Tambien funciona pip3 install django-braces (Lo tuve que instalar en windows) 
-Falto este Elbio : pip3 lxml que onda?
+Falto este Elbio? o no se usa y quedo la referencia? : pip3 install lxml
+
+
+------------------------------------
+Manejo de fechas con huso horario
+------------------------------------
+pip3 install pytz

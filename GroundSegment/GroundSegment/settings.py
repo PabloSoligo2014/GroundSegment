@@ -93,8 +93,8 @@ DATABASES = {
     'default': {
                 'ENGINE': 'django.db.backends.postgresql_psycopg2',
                 'NAME': 'DBGroundSegment',
-                'USER': 'sa',
-                'PASSWORD': 'sa',
+                'USER': 'postgres',
+                'PASSWORD': 'postgres',
                 #'HOST': '10.77.171.181',
                 'HOST': '127.0.0.1',
                 'PORT': '5432',

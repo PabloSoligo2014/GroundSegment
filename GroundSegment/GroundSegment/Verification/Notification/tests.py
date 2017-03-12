@@ -36,7 +36,7 @@ class Test(unittest.TestCase):
         try:
             sat2 = Satellite.objects.get(code="FS2017")
         except ObjectDoesNotExist:
-            sat2 = Satellite.new("FS2017", "FS2017", 25544)
+            sat2 = Satellite.new("FS2017", "FS2017", 25549)
             sat2.state = ss
             sat2.save()
             
