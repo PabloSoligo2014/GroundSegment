@@ -108,7 +108,7 @@ class Tle(models.Model):
         return localsat
         
         
-        return localsat
+        
 
         
     class Meta:

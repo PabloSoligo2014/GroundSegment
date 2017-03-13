@@ -15,9 +15,15 @@ from django.utils.timezone import pytz
 from GroundSegment.models.Country import Country
 from GroundSegment.models.State import State
 
+import os, sys
+
+
+
 
 class testTle(unittest.TestCase):
 
+    def setUp(self):
+        print("SETUP-----------------------------")
 
     
     def test01Descarga(self):
@@ -60,22 +66,40 @@ class testTle(unittest.TestCase):
             
             
     def test02EphemBody(self):
+        
+        
         iss = Satellite.objects.get(code="ISS")
         tle = iss.getLastTLE()
         eb = tle.getAsEphemBody()
-        self.assertIsNone(eb, "No es generado el objeto tle como body")
+        self.assertIsNotNone(eb, "No es generado el objeto tle como body")
         
     def test03PassGeneration(self):
         
+        """
+        proj_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        os.environ.setdefault("DJANGO_SETTINGS_MODULE", "DtnSatSimulator.settings")
+        sys.path.append(proj_path)
+        os.chdir(proj_path)
+        from django.core.wsgi import get_wsgi_application
+        application = get_wsgi_application()
+        """
         
-        country, created = Country.objects.get_or_create(code="ARG", name="Argentina", description="Argentina")
-        state, created = State.objects.get_or_create(code="COR", name="Cordoba", description="Cordoba", country=country)
         
-        st, created = Sitio.objects.get_or_create(name="ETC", lat=-31.524075, lon=-64.463522, h=730.0, maskElev=0, state)
+        
+        country = Country.objects.get_or_create(code="ARG", name="Argentina", description="Argentina")
+        state   = State.objects.get_or_create(code="COR", name="Cordoba", description="Cordoba", country=country[0])
+        st      = Sitio.objects.get_or_create(name="ETC", lat=-31.5240, lon=-64.4635, h=730, maskElev=0.0, state=state[0])
+        
         
         iss = Satellite.objects.get(code="ISS")
         tle = iss.getLastTLE()
         eb = tle.getAsEphemBody()
+        
+        afrom = timezone.now()
+        ato = afrom+timedelta(days=3)
+        
+        st[0].getPasses(iss, afrom, ato)
+        
         
             
             

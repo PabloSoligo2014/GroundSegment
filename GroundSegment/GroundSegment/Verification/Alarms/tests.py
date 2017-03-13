@@ -30,8 +30,8 @@ class AlarmTestCase(unittest.TestCase):
         ss.description = "NOMINAL"
         ss.save()
         
-        sat2 = Satellite.new("FS2017", "FS2017", 25599)
-        sat2.state = ss
+        sat2 = Satellite.new("FS2017", "FS2017", 25599, ss)
+        
         sat2.save()
         
         #Creo al menos un tipo de alarma y una criticidad

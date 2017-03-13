@@ -8,7 +8,7 @@ import ephem
 from GroundSegment.models.Satellite import Satellite
 from GroundSegment.models.Tle import Tle
 from GroundSegment.models.Sitio import Sitio
-from datetime import timedelta
+from datetime import timedelta, timezone, datetime
 from django.utils.timezone import pytz
 
 
@@ -41,7 +41,10 @@ class PassGeneration(models.Model):
         observer    = result.sitio.getAsEphemObserver()
         sat         = result.tle.getAsEphemBody()
         
-        pivotdate = day
+        
+        d = day.today()
+        pivotdate = datetime.combine(d, datetime.min.time()).replace(tzinfo=pytz.UTC)
+         
         untildate = pivotdate + timedelta(days=1)
             
         while pivotdate<=untildate:
@@ -78,12 +81,12 @@ class PassGeneration(models.Model):
                 p.sitio = result.sitio
                 p.passGeneration = result
                 p.startTime = rt
-                p.endTime   = st
+                p.stopTime   = st
                 p.save()
               
                         
                 observer.date = ephem.date( st )
-                pivotdate = st.replace(tzinfo=pytz.UTC)
+                pivotdate = st
             except Exception as ValueError:
                 #ValueError('that satellite seems to stay always below your horizon',)
                 pivotdate = pivotdate+timedelta(minutes=1)
