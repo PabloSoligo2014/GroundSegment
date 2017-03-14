@@ -20,9 +20,31 @@ from datetime import timedelta
 
 from GroundSegment.models.Sitio import Sitio
 from GroundSegment.models.Satellite import Satellite
+from GroundSegment.models.Pasada import Pasada
+from GroundSegment.models.PassGeneration import PassGeneration
+
 
 if __name__ == '__main__':
     
+    
+    #from GroundSegment.models.Pasada import Pasada
+    #for p in Pasada.objects.all():
+    #    p.delete()
+    
+    #from GroundSegment.models.PassGeneration import PassGeneration
+    #for pg in PassGeneration.objects.all():
+    #    pg.delete()
+    
+    for p in Pasada.objects.all():
+        p.delete()
+    
+
+
+
+
+
+    for pg in PassGeneration.objects.all():
+        pg.delete()
     
     
     
@@ -30,7 +52,7 @@ if __name__ == '__main__':
     sat = Satellite.objects.get(code="ISS")
     
     afrom = timezone.now()
-    ato = afrom+timedelta(days=3)
+    ato = afrom+timedelta(days=5)
     
     sitio.getPasses(sat, afrom, ato)
     

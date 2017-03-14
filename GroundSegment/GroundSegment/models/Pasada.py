@@ -20,8 +20,8 @@ class Pasada(models.Model):
     satellite       = models.ForeignKey(Satellite, related_name='pasadas')
     tle             = models.ForeignKey(Tle, related_name='pasadas', null=True)
     sitio           = models.ForeignKey(Sitio,related_name='pasadas')
-    startTime       = models.DateTimeField(auto_now_add=True)
-    stopTime        = models.DateTimeField(auto_now_add=True)
+    startTime       = models.DateTimeField()
+    stopTime        = models.DateTimeField()
     duration        = models.FloatField('Duracion', help_text='[minutos]', default=0.0)
     passGeneration  = models.ForeignKey(PassGeneration, on_delete=CASCADE, related_name="passes")
     

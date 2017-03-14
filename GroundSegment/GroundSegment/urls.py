@@ -33,6 +33,7 @@ from django.contrib.auth.views import login, logout
 import GroundSegment
 #from DistUpgrade.DistUpgradeViewGtk3 import view
 from GroundSegment import views
+from GroundSegment.views.PassView import PassView
 
 
 # Text to put at the end of each page's <title>.
@@ -61,6 +62,7 @@ urlpatterns = [
     url(r'^propagationTest/$', PropagationTestView.as_view(template_name="propagationTest.html")),
     url(r'^', include(router.urls)),
     url(r'^simplePlot/(?P<tvts>[\w-]+)', SimplePlotView.as_view(template_name="simplePlot.html"), name='SimplePlotView'), 
+    url(r'^pasadas/$', PassView.as_view(), name='PassView'),
 ]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
     

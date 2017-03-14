@@ -101,21 +101,31 @@ class Sitio(models.Model):
         """
         afrom = afrom.date()
         ato = ato.date()
+        pgs = []
         
         while afrom<=ato:
             """
             Existe propagacion para este sitio para este satelite y para este dia?
             """
-            pg = PassGeneration.objects.filter(Q(satellite=satellite) & Q(sitio=self) & Q(tle__epoch__gte=tle.getEpoch() ))
+            pg = PassGeneration.objects.filter(Q(day=afrom) & Q(satellite=satellite) & Q(sitio=self) & Q(tle__epoch__gte=tle.getEpoch() ))
             if len(pg)==0:
                 """
                 No hay pasadas para la fecha solicitada o pertenecen a TLE viejos debo regenerar
                 """
                 pg = PassGeneration.create(afrom, tle, satellite, self)
-                
+                pgs.append(pg)
                 
             
             
             afrom = afrom + timedelta(days=1)
             
+        """
+        Genero lo que faltaba ahora retorno los resultados
+        """
+        result = []
+        pgs = PassGeneration.objects.filter(Q(day=afrom) & Q(satellite=satellite) & Q(sitio=self) & Q(tle__epoch__gte=tle.getEpoch() ))
+        for pg in pgs:
+            for p in pg.passes.all():
+                result.append(p)
             
+        return result

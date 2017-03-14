@@ -24,6 +24,10 @@ class PassGeneration(models.Model):
     sitio       = models.ForeignKey(Sitio,related_name='passGenerations')
     day         = models.DateField("Fecha que se toma en consideracion")
     
+    
+    def __str__(self):
+        return "TLE Epoch "+str(self.tle.epoch)
+    
     @classmethod
     def create(cls, day, tle, satellite, sitio):
         result = cls()
@@ -42,7 +46,7 @@ class PassGeneration(models.Model):
         sat         = result.tle.getAsEphemBody()
         
         
-        d = day.today()
+        d = day
         pivotdate = datetime.combine(d, datetime.min.time()).replace(tzinfo=pytz.UTC)
          
         untildate = pivotdate + timedelta(days=1)
