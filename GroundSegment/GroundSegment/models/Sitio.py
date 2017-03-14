@@ -11,6 +11,7 @@ from GroundSegment.Utils.UtilsFunctions import *
 from GroundSegment.models.State import State
 
 from django.db.models import Q
+
 #from django.contrib.admin.utils import help_text_for_field
 
 class Sitio(models.Model):
@@ -101,6 +102,11 @@ class Sitio(models.Model):
         """
         afrom = afrom.date()
         ato = ato.date()
+        
+        
+        oafrom = afrom  
+        oato   = ato
+        
         pgs = []
         
         while afrom<=ato:
@@ -122,10 +128,11 @@ class Sitio(models.Model):
         """
         Genero lo que faltaba ahora retorno los resultados
         """
-        result = []
-        pgs = PassGeneration.objects.filter(Q(day=afrom) & Q(satellite=satellite) & Q(sitio=self) & Q(tle__epoch__gte=tle.getEpoch() ))
-        for pg in pgs:
-            for p in pg.passes.all():
-                result.append(p)
-            
-        return result
+        #pgs = PassGeneration.objects.filter(Q(satellite=satellite) & Q(sitio=self) & Q(day__range(oafrom, oato)) )    
+
+        from GroundSegment.models.Pasada import Pasada
+        qs = Pasada.objects.filter( Q(passGeneration__satellite=satellite) & Q(passGeneration__sitio=self) & Q(passGeneration__day__range=(oafrom, oato)) & Q(tle__epoch__gte=tle.getEpoch() ) ).order_by('startTime')
+                         
+        
+        #                           
+        return qs

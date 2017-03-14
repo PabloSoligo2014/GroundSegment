@@ -27,16 +27,16 @@ from GroundSegment.models.PassGeneration import PassGeneration
 if __name__ == '__main__':
     
     
-    #from GroundSegment.models.Pasada import Pasada
-    #for p in Pasada.objects.all():
-    #    p.delete()
-    
-    #from GroundSegment.models.PassGeneration import PassGeneration
-    #for pg in PassGeneration.objects.all():
-    #    pg.delete()
-    
+    from GroundSegment.models.Pasada import Pasada
     for p in Pasada.objects.all():
         p.delete()
+    
+    from GroundSegment.models.PassGeneration import PassGeneration
+    for pg in PassGeneration.objects.all():
+        pg.delete()
+    
+    #for p in Pasada.objects.all():
+    #    p.delete()
     
 
 

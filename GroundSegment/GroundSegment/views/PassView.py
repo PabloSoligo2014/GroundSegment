@@ -15,7 +15,7 @@ class PassView(ListView):
     model = Pasada
     
     template_name = "pasadas.html"
-    paginate_by = 10
+    paginate_by = 50
     
     def get_queryset(self):
         
@@ -46,18 +46,23 @@ class PassView(ListView):
         
         try:
             sat = Satellite.objects.get(pk=filter_sat)
+            
         except:
             sat=None
         try:
             site = Sitio.objects.get(pk=filter_site)
+            
         except:
             site = None
-            
+           
+        self.satellite = sat 
+        self.sitio = site 
             
         if sat!=None and site!=None:
             new_context = site.getPasses(sat, filter_desde, filter_hasta)
         else:
             new_context = []
+            
         
         #TODO TERMINAR ESTO Deberia funcionar ya    
         #new_context = Pasada.objects.filter(Q(passGeneration__satellite__pk=filter_sat) & Q(passGeneration__sitio__pk=filter_site) ).order_by('startTime')
@@ -78,6 +83,9 @@ class PassView(ListView):
         
         context['current_sat_id'] = self.current_sat_id
         context['current_site_id'] = self.current_site_id
+        context['satellite'] = self.satellite
+        context['sitio'] = self.sitio
+        
         
         #context['orderby'] = self.request.GET.get('orderby', 'give-default-value')
         
