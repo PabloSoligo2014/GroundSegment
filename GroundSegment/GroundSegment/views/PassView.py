@@ -8,7 +8,7 @@ from GroundSegment.models.Pasada import Pasada
 from django.db.models import Q
 from GroundSegment.models.Satellite import Satellite
 from GroundSegment.models.Sitio import Sitio
-from _datetime import datetime
+from datetime import datetime
 import dateutil.parser
 
 class PassView(ListView):
