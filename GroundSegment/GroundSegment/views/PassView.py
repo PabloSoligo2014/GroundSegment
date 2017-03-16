@@ -72,19 +72,19 @@ class PassView(ListView):
     def get_context_data(self, **kwargs):
         context = super(PassView, self).get_context_data(**kwargs)
         
-        context['sat_list']     = Satellite.objects.all()  
-        context['site_list']    = Sitio.objects.all()  
+        context['sat_list']         = Satellite.objects.all()  
+        context['site_list']        = Sitio.objects.all()  
         
         
-        context['tbsatellite']    = self.request.GET.get('tbsatellite', 'give-default-value')
-        context['tbsitio']   = self.request.GET.get('tbsitio', 'give-default-value')
-        context['tbdesde']  = self.request.GET.get('tbdesde', 'give-default-value')
-        context['tbhasta']  = self.request.GET.get('tbhasta', 'give-default-value')
+        context['tbsatellite']      = self.request.GET.get('tbsatellite', 'give-default-value')
+        context['tbsitio']          = self.request.GET.get('tbsitio', 'give-default-value')
+        context['tbdesde']          = self.request.GET.get('tbdesde', 'give-default-value')
+        context['tbhasta']          = self.request.GET.get('tbhasta', 'give-default-value')
         
-        context['current_sat_id'] = self.current_sat_id
-        context['current_site_id'] = self.current_site_id
-        context['satellite'] = self.satellite
-        context['sitio'] = self.sitio
+        context['current_sat_id']   = self.current_sat_id
+        context['current_site_id']  = self.current_site_id
+        context['satellite']        = self.satellite
+        context['sitio']            = self.sitio
         
         
         #context['orderby'] = self.request.GET.get('orderby', 'give-default-value')
