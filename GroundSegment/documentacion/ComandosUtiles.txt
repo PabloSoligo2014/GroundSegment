@@ -103,7 +103,9 @@ pip3 install markdown       # Markdown support for the browsable API.
 pip3 install django-filter  # Filtering support
 
 nota!: lo reinstale con pip3 (creo que para python3 es lo que hay que hacer) 
+nota!: problemas de instalacion: sudo easy_install3 -U pip (pip.__main__' (<class 'ImportError'>: cannot import name 'IncompleteRead'))
 
+sudo pip3 install python-dateutil
 
 ---------------------------
 Entorno para ploting de telemetria historica 

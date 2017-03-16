@@ -30,6 +30,13 @@ class Pasada(models.Model):
     def getDuration(self):
         return (self.stopTime-self.startTime).total_seconds()
     
+    def getDurationStr(self):
+        """
+        pasar la duracion de la pasada a un string que indique min:sec
+        """
+        return (self.stopTime-self.startTime)
+        
+    
     def save(self, *args, **kwargs):
         self.duration = self.getDuration()
         super(Pasada, self).save(*args, **kwargs)
