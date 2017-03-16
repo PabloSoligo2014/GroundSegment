@@ -9,6 +9,7 @@ from GroundSegment.models.Satellite import Satellite
 from datetime import datetime, timedelta
 from GroundSegment.Utils.UtilsFunctions import *
 from GroundSegment.models.State import State
+from GroundSegment.validators import *
 
 from django.db.models import Q
 
@@ -16,7 +17,7 @@ from django.db.models import Q
 
 class Sitio(models.Model):
     name     = models.CharField("Nombre del Sitio", max_length=24, unique=True)
-    lat      = models.FloatField('Latitud', help_text='[Dato en Grados Decimales]')
+    lat      = models.FloatField('Latitud', help_text='[Dato en Grados Decimales]', validators=[validate_lat])
     lon      = models.FloatField('Longitud', help_text='[Grados Decimales]')
     h        = models.FloatField('Altura', help_text='[metros]')
     maskElev = models.FloatField('Mascara de Elevacion', help_text='[grados]', default=0.0)

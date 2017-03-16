@@ -105,6 +105,11 @@ admin.site.register(Pasada,PasadaAdmin)
 
 class SitioAdmin(admin.ModelAdmin):
     pass
+
+    def clean(self):
+        # Validation goes here :)
+        raise forms.ValidationError("MAL!!!")
+
 admin.site.register(Sitio,SitioAdmin)
 
 class ContactAdmin(admin.ModelAdmin):
