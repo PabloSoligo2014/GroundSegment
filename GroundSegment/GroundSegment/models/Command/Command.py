@@ -22,6 +22,11 @@ class Command(models.Model):
     expiration  = models.DateTimeField()
     
     
+    def send(self):
+        self.save()
+    
+    
+    
     def __str__(self):
         return "Tipo de comando: "+self.commandType.code
 
