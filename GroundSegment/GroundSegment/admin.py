@@ -9,8 +9,8 @@ from django.contrib import admin
 from GroundSegment.models.Satellite import Satellite
 from GroundSegment.models.Tle import Tle
 from GroundSegment.models.Parameter import Parameter
-from GroundSegment.models.CommandType import CommandType
-from GroundSegment.models.CommandTypeParameter import CommandTypeParameter  
+from GroundSegment.models.Command.CommandType import CommandType
+from GroundSegment.models.Command.CommandTypeParameter import CommandTypeParameter  
 from GroundSegment.models.SatelliteState import SatelliteState
 #from GroundSegment.models.Pasada import Pass
 from GroundSegment.models.Alarm.AlarmType import AlarmType

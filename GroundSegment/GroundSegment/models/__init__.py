@@ -1,7 +1,5 @@
 from GroundSegment.models.Satellite import Satellite
 from GroundSegment.models.Parameter import Parameter
-from GroundSegment.models.CommandType import CommandType
-from GroundSegment.models.CommandTypeParameter import CommandTypeParameter
 from GroundSegment.models.SatelliteState import SatelliteState
 from GroundSegment.models.Tle import Tle
 from GroundSegment.models.Propagation import Propagation
@@ -31,3 +29,8 @@ from GroundSegment.models.Country import Country
 from GroundSegment.models.State import State
 from GroundSegment.models.PassGeneration import PassGeneration
 
+
+from GroundSegment.models.Command.PassScript import PassScript
+from GroundSegment.models.Command.CommandType import CommandType
+from GroundSegment.models.Command.CommandTypeParameter import CommandTypeParameter
+from GroundSegment.models.Command.Command import Command

@@ -21,6 +21,7 @@ class CommandType(models.Model):
     transactional  = models.BooleanField(default=False) 
     timeout        = models.IntegerField('Tiempo en segundos?', default=0, null=False) 
     notes          = models.TextField('Consecuencias, restricciones del comando', max_length=512, null=True)
+    maxRetry       = models.IntegerField(default=2)
     
     def __str__(self):
         return self.code
