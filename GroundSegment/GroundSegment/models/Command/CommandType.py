@@ -39,7 +39,7 @@ class CommandType(models.Model):
         
         return result
     
-    
+    """
     #@classmethod
     def newCommand(self, satellite, expiration):
         from .Command import Command
@@ -54,8 +54,11 @@ class CommandType(models.Model):
         result.sent         = None
         result.retry        = 0
         result.expiration   = expiration
+        #Mejorar la forma en que se trabajan las enumeraciones!
+        result.state        = 0
         
         return result
+    """
     
     def __str__(self):
         return self.code
