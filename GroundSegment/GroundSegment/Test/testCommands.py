@@ -117,7 +117,7 @@ class Test(unittest.TestCase):
         self.cmdmgr.expirateAll()
         
         adt = (datetime.utcnow()+timedelta(seconds=120)).replace(tzinfo=pytz.UTC)
-        cmd = self.cmdmgr.newCommand(self.ct, adt)
+        cmd = self.cmdmgr.newCommand(self.ct, adt, adt)
         cmd.send()
         
         self.assertEqual(cmd.getState()[1], cmd.COMMAND_STATE[0][1] , "El estado del commando no es el correcto para un comando recien creado")
@@ -126,6 +126,17 @@ class Test(unittest.TestCase):
         
         self.assertEqual(cmd.getState()[1], cmd.COMMAND_STATE[4][1] , "El estado del commando no es el correcto para un comando recien creado")
         
+    def test05InContact(self):
+        
+        self.assertFalse(self.sat.inContact, "Error al obtener situacion de enlace del satelite")
+        
+        self.sat.setInContact(True)
+        
+        self.assertTrue(self.sat.inContact, "Error al obtener situacion de enlace del satelite")
+        
+        self.sat.setInContact(False)
+        
+        self.assertFalse(self.sat.inContact, "Error al obtener situacion de enlace del satelite")
         
         
         

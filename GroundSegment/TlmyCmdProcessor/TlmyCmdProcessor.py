@@ -21,6 +21,7 @@ from django.utils import timezone
 from _struct import unpack
 
 
+
 #ubuntumate@VBUbuntumate:~/Downloads/CheckoutBox/Software$ java -jar start.jar
 #C:\Users\pabli\Documents\Programas\CheckoutBox\Software java -jar start.jar
 #python Main.py CUBESAT o SIMULATION
@@ -133,6 +134,7 @@ if __name__ == '__main__':
         from GroundSegment.models.Watchdog import Watchdog
         from GroundSegment.Utils.Utils import *
         from GroundSegment.models.DownlinkFrame import DownlinkFrame 
+        from GroundSegment.Managers.CommandManager import CommandManager
         
         
         """
@@ -154,7 +156,8 @@ if __name__ == '__main__':
         """
         Log.create("TlmyCmdProcessor started", "The uhf interface module was started", module, Log.INFORMATION).save()
 
-        sat = Satellite.objects.get(code=satellite)
+        sat     = Satellite.objects.get(code=satellite)
+        cmdmgr  = CommandManager(sat)
         
         """
         Bucle infinito, el software debe funcionar 7x24, si el software de la antena no estuviera 
@@ -209,153 +212,179 @@ if __name__ == '__main__':
                     try:
                         print("Successfully connection to..", uhfServerPort)
                         while True:
-                            """
-                            Me quedo esperando recibir informacion del socket (IPC)
-                            """                        
-                            chunk = s.recv(int(BUFFER_SIZE))
                             
-                            unconnectionLimit = 0
-                            
-                            """
-                            Buena o mala la telemetria fue recibida, reseteo el watchdog
-                            """
-                            wd.reset()
-                            
-                            """
-                            Si la informacion es una trama de bits completa la proceso
-                            """
-                            if chunk == b'':
-                                raise RuntimeError("socket connection broken")
-                            else:
+                            try:
                                 """
-                                Me guardo el crudo tal cual llego antes de procesarlo, la tabla donde se guarda es UHFRawData
+                                Establezco un timeout para la bajada, con o sin bajada los comandos deben ser enviados
                                 """
+                                s.settimeout(5.0)
                                 
-                                print("\nData Received("+str(timezone.datetime.utcnow() )+"), Tamano: ", len(chunk), "\nData->", chunk)
+                                """
+                                Me quedo esperando recibir informacion del socket (IPC)
+                                """                        
+                                chunk = s.recv(int(BUFFER_SIZE))
                                 
-                                data = UHFRawData()
-                                data.source = source
-                                data.data = chunk
-                                data.processed = False
-                                data.save()
+                                unconnectionLimit = 0
                                 
-                                framecommand = unpack("<B",chunk[PosFrameCommand:PosFrameCommand+LenFrameCommand])[0] 
-                                frameLength  = unpack("<I",chunk[PosFrameLen:PosFrameLen+LenFrameLen])
-                                datarate     = unpack("<I",chunk[PosDataRate:PosDataRate+LenDataRate])
-                                modulationnamelen = (unpack("<B",chunk[PosModuluationNameLen:PosModuluationNameLen+LenModuluationNameLen]))[0]
-                                modulationname    = chunk[PosModulationName:PosModulationName+modulationnamelen] 
-                                PosRSSI           = PosModulationName+modulationnamelen 
-                                rssi              = unpack("<d", chunk[PosRSSI:PosRSSI+LenRSSI])
-                                PosFrequency        = PosRSSI+LenRSSI
-                                freq                = unpack("<d", chunk[PosFrequency:PosFrequency+LenFrequency])
-                                PosPktLen           = PosFrequency+LenFrequency
-                                pktLen             = unpack("<H",  chunk[PosPktLen:PosPktLen+LenPktLen])
-                                PosUtcTime = PosPktLen+pktLen[0]
-                                LenUtcTime = 4
+                                """
+                                Buena o mala la telemetria fue recibida, reseteo el watchdog
+                                """
+                                wd.reset()
                                 
+                                """
+                                Si recibo telemetria, defenitivamente estoy en contacto
+                                """
+                                sat.setInContact(True)
                                 
-                                
-                                
-                                
-                                
-                                
-                                PosPayload = PosPktLen+int(LenPktLen)
-                                ax25 = chunk[PosPayload:PosPayload+pktLen[0]]
-                                
-                                
-                                destination  = ax25[0:7]
-                                asource      = ax25[7:7+7]
-                                control      = ax25[7+7:7+7+1]
-                                protocol     = ax25[7+7+1:7+7+1+1]
-                                
-                        
+                                """
+                                Si la informacion es una trama de bits completa la proceso
+                                """
+                                if chunk == b'':
+                                    raise RuntimeError("socket connection broken")
+                                else:
+                                    """
+                                    Me guardo el crudo tal cual llego antes de procesarlo, la tabla donde se guarda es UHFRawData
+                                    """
+                                    
+                                    print("\nData Received("+str(timezone.datetime.utcnow() )+"), Tamano: ", len(chunk), "\nData->", chunk)
+                                    
+                                    data = UHFRawData()
+                                    data.source = source
+                                    data.data = chunk
+                                    data.processed = False
+                                    data.save()
+                                    
+                                    framecommand = unpack("<B",chunk[PosFrameCommand:PosFrameCommand+LenFrameCommand])[0] 
+                                    frameLength  = unpack("<I",chunk[PosFrameLen:PosFrameLen+LenFrameLen])
+                                    datarate     = unpack("<I",chunk[PosDataRate:PosDataRate+LenDataRate])
+                                    modulationnamelen = (unpack("<B",chunk[PosModuluationNameLen:PosModuluationNameLen+LenModuluationNameLen]))[0]
+                                    modulationname    = chunk[PosModulationName:PosModulationName+modulationnamelen] 
+                                    PosRSSI           = PosModulationName+modulationnamelen 
+                                    rssi              = unpack("<d", chunk[PosRSSI:PosRSSI+LenRSSI])
+                                    PosFrequency        = PosRSSI+LenRSSI
+                                    freq                = unpack("<d", chunk[PosFrequency:PosFrequency+LenFrequency])
+                                    PosPktLen           = PosFrequency+LenFrequency
+                                    pktLen             = unpack("<H",  chunk[PosPktLen:PosPktLen+LenPktLen])
+                                    PosUtcTime = PosPktLen+pktLen[0]
+                                    LenUtcTime = 4
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    PosPayload = PosPktLen+int(LenPktLen)
+                                    ax25 = chunk[PosPayload:PosPayload+pktLen[0]]
+                                    
+                                    
+                                    destination  = ax25[0:7]
+                                    asource      = ax25[7:7+7]
+                                    control      = ax25[7+7:7+7+1]
+                                    protocol     = ax25[7+7+1:7+7+1+1]
+                                    
+                            
+                                         
+                                    vardataoffset = 7+7+1+1
+                                    payload = ax25[ vardataoffset: ]
+                                    
+                                    pn = unpack("<H",  payload[1:3])
+                                    print("packet number:", pn)
+                                    
+                                    frameTypeId = payload[0]
+                                    
+                                    #print(framecommand, ", ", frameLength, ", ", datarate, ", ", modulationname, "rssi", rssi, "Freq ", freq, "PktLen", pktLen)
+                                    
+                                    dl = DownlinkFrame()
+                                    
+                                    dl.frameCommand     = framecommand
+                                    dl.frameLength      = frameLength[0]
+                                    dl.dataRate         = datarate[0]
+                                    dl.modulationName   = str(modulationname)
+                                    dl.rssi             = rssi[0]
+                                    dl.frequency        = freq[0]
+                                    dl.packetLength     = pktLen[0]
+                                    dl.satellite        = sat
+                                    dl.ax25Destination  = "Pending"#destination.decode("utf-8") 
+                                    dl.ax25Source       = "Pending"#asource.decode("utf-8") 
+                                    dl.ax25Protocol     = "Pending"#protocol.decode("utf-8") 
+                                    dl.ax25Control      = "Pending"#control.decode("utf-8") 
+                                    dl.packetNumber     = pn[0]
+                                    dl.frameTypeId      = frameTypeId 
+                                                                
+                                    
+                                    
+                                    dl.save()
+                                    
+                                    
+                                    
                                      
-                                vardataoffset = 7+7+1+1
-                                payload = ax25[ vardataoffset: ]
-                                
-                                pn = unpack("<H",  payload[1:3])
-                                print("packet number:", pn)
-                                
-                                frameTypeId = payload[0]
-                                
-                                #print(framecommand, ", ", frameLength, ", ", datarate, ", ", modulationname, "rssi", rssi, "Freq ", freq, "PktLen", pktLen)
-                                
-                                dl = DownlinkFrame()
-                                
-                                dl.frameCommand     = framecommand
-                                dl.frameLength      = frameLength[0]
-                                dl.dataRate         = datarate[0]
-                                dl.modulationName   = str(modulationname)
-                                dl.rssi             = rssi[0]
-                                dl.frequency        = freq[0]
-                                dl.packetLength     = pktLen[0]
-                                dl.satellite        = sat
-                                dl.ax25Destination  = "Pending"#destination.decode("utf-8") 
-                                dl.ax25Source       = "Pending"#asource.decode("utf-8") 
-                                dl.ax25Protocol     = "Pending"#protocol.decode("utf-8") 
-                                dl.ax25Control      = "Pending"#control.decode("utf-8") 
-                                dl.packetNumber     = pn[0]
-                                dl.frameTypeId      = frameTypeId 
-                                                            
-                                
-                                
-                                dl.save()
-                                
-                                
-                                
-                                 
-                                #frameTypeId = unpack("<B",payload[0])
-                                
-                                telvars = TlmyVarType.objects.filter(satellite__code=satellite).filter(frameType__aid=frameTypeId)
-                                
-                                for tt in telvars:
+                                    #frameTypeId = unpack("<B",payload[0])
                                     
-                                    #TODO
-                                    #code draft
+                                    telvars = TlmyVarType.objects.filter(satellite__code=satellite).filter(frameType__aid=frameTypeId)
                                     
-                                    if tt.bitsLen >= 8:
-                                        bitLen_div =tt.bitsLen // 8
-                                        if bitLen_div == 1:
-                                            raw = unpack("<B",  payload[tt.position:tt.position+bitLen_div])[0]
+                                    for tt in telvars:
+                                        
+                                        #TODO
+                                        #code draft
+                                        
+                                        if tt.bitsLen >= 8:
+                                            bitLen_div =tt.bitsLen // 8
+                                            if bitLen_div == 1:
+                                                raw = unpack("<B",  payload[tt.position:tt.position+bitLen_div])[0]
+                                            else:
+                                                raw = unpack("<H",  payload[tt.position:tt.position+bitLen_div])[0]
                                         else:
-                                            raw = unpack("<H",  payload[tt.position:tt.position+bitLen_div])[0]
-                                    else:
-                                        raw = is_set(payload[tt.position], tt.bitsLen)                                         
-                                             
+                                            raw = is_set(payload[tt.position], tt.bitsLen)                                         
+                                                 
+                                        
+                                        
+                                        tv = tt.setValue(raw, True)
+                                        tv.save()
                                     
+                                    print("\nData processed("+str(timezone.datetime.utcnow() )+")")
+                                    data.processed = True
+                                    data.save()
                                     
-                                    tv = tt.setValue(raw, True)
-                                    tv.save()
-                                
-                                print("\nData processed("+str(timezone.datetime.utcnow() )+")")
-                                data.processed = True
-                                data.save()
-                                
-                                          
-                                #dl.processed = True                   
+                                              
+                                    #dl.processed = True                   
+                                    """
+                                    Ahora proceso los datos en funcion de las variables de telemetria configuradas en el sistema. 
+                                    Las mismas ya tienen internamente sus funciones de calibracion segun configuracion
+                                    """
+                                    
+                                    """
+                                    Recorro todas los tipos de variable de telemetria, las busco en la posicion en la trama, 
+                                    y actualizo su valor, la clase TlmyVarType internamente se encarga de todo, la transformacion en variable
+                                    de ingenieria y la persistencia en tiempo real e historica
+                                    """
+                                    """
+                                    
+                                    """
+                                    """
+                                    <sequence_number position="1" type="short" xmlns="" name="packetNumber"/>
+                                    <number position="3" type="int" xmlns="" name="OBCUpTime"/>
+                                    <number position="7" type="char" xmlns="" name="commandCounter"/>
+                                    """
+    #                                 packetNumber    = chunk[1-2] "pack"
+    #                                 OBCUpTime       = chunk[1,2,3,4]
+    #                                 commandCounter  = chunk[7]
+                                                         
+                                ##f.close()
+                            except socket.timeout:
+                                #Error de timeout de sockets, si el satelite esta en linea 
+                                print("Socket timeout")
+                            """
+                            Si el satelite esta en linea debo mandar comandos pendientes
+                            """
+                            pendingCommands = cmdmgr.getPendingCommands()
+                            for com in pendingCommands:
+                                print("Se hardcodea ejecucion comando ", str(com.pk))
+                                com.setExecuted()
                                 """
-                                Ahora proceso los datos en funcion de las variables de telemetria configuradas en el sistema. 
-                                Las mismas ya tienen internamente sus funciones de calibracion segun configuracion
+                                TODO: Encodear y mandar al satelite por el mismo socket aca!
                                 """
-                                
-                                """
-                                Recorro todas los tipos de variable de telemetria, las busco en la posicion en la trama, 
-                                y actualizo su valor, la clase TlmyVarType internamente se encarga de todo, la transformacion en variable
-                                de ingenieria y la persistencia en tiempo real e historica
-                                """
-                                """
-                                
-                                """
-                                """
-                                <sequence_number position="1" type="short" xmlns="" name="packetNumber"/>
-                                <number position="3" type="int" xmlns="" name="OBCUpTime"/>
-                                <number position="7" type="char" xmlns="" name="commandCounter"/>
-                                """
-#                                 packetNumber    = chunk[1-2] "pack"
-#                                 OBCUpTime       = chunk[1,2,3,4]
-#                                 commandCounter  = chunk[7]
-                                                     
-                            ##f.close()
+                            
                     finally:
                         s.close()
                         

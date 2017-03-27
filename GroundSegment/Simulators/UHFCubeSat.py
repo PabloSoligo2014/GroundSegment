@@ -46,7 +46,8 @@ if __name__ == '__main__':
     BUFFER_SIZE = 2000
     
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server_address = ('10.77.171.180', 3210)
+    #server_address = ('10.77.171.180', 3210)
+    server_address = ('0.0.0.0', 3210)
     sock.bind(server_address)
     
     # Listen for incoming connections
@@ -88,7 +89,7 @@ if __name__ == '__main__':
                      
                 connection.send (my_bytes)
                 
-                time.sleep(1)
+                time.sleep(10)
         except Exception as err:
             print("Error: {0}".format(err))
         

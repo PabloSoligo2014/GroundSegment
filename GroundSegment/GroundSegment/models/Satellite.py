@@ -29,6 +29,7 @@ class Satellite(models.Model):
     active         = models.BooleanField('Activacion/desactivacion del satelite', default=True)
     state          = models.ForeignKey(SatelliteState, related_name='satellites')
     notes          = models.TextField('Observaciones sobre el satelite', max_length=512, null=True) 
+    inContact      = models.BooleanField("Si el satelite esta con enlace activo", default=False)
     
     @classmethod
     def new(cls, code, description, noradId, satelliteState=None):
@@ -53,6 +54,10 @@ class Satellite(models.Model):
         
         return result
     
+    
+    def setInContact(self, value):
+        self.inContact = value
+        return self
    
     
     def getCode(self):

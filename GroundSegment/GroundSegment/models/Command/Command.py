@@ -9,6 +9,7 @@ from GroundSegment.models.Satellite import Satellite
 
 from django.utils.timezone import datetime, now, timedelta
 import pytz
+from datetime import timezone
 #from GroundSegment.models.Satellite import Satellite
 #from GroundSegment.models.SatelliteState import SatelliteState
 
@@ -28,6 +29,10 @@ class Command(models.Model):
     
     commandType = models.ForeignKey(CommandType, related_name="commands")
     created     = models.DateTimeField()
+    
+    #Tiempo en el cual debe ser ejecutado
+    executeAt   = models.DateTimeField(default=datetime(2000, 1, 1, tzinfo=timezone.utc))
+    
     sent        = models.DateTimeField(null=True)
     executed    = models.DateTimeField(null=True)
     state       = models.IntegerField(choices=COMMAND_STATE, default=0)
@@ -36,7 +41,10 @@ class Command(models.Model):
     TODO: Meter los parametros del comando!!!
     """
     satellite   = models.ForeignKey(Satellite, related_name="commands")
-    expiration  = models.DateTimeField()
+    
+    
+    #Tiempo hasta el cual se puede intentar enviar    
+    expiration  = models.DateTimeField(default=datetime(2000, 1, 1, tzinfo=timezone.utc))
     
     
     def setExpirated(self):

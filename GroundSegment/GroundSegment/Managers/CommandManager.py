@@ -55,7 +55,7 @@ class CommandManager(models.Manager):
         
         return pc.count()
         
-    def newCommand(self, commandType, expiration):
+    def newCommand(self, commandType, expiration, timetag=datetime.utcnow().replace(tzinfo=pytz.UTC) ):
        
         cmd = Command()
         
@@ -68,6 +68,7 @@ class CommandManager(models.Manager):
         cmd.sent         = None
         cmd.retry        = 0
         cmd.expiration   = expiration
+        cmd.executeAt    = timetag
         #Mejorar la forma en que se trabajan las enumeraciones!
         cmd.state        = 0
         
@@ -92,7 +93,7 @@ class CommandManager(models.Manager):
         self.__setExpiredCommands()
         
         
-        cmds = Command.objects.filter(Q(satellite=self.satellite)&Q(state=0))
+        cmds = Command.objects.filter(Q(satellite=self.satellite)&Q(state=0)).order_by('executeAt')
         
         
         return cmds
