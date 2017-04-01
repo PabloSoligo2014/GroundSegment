@@ -24,6 +24,9 @@ class CommandType(models.Model):
     notes          = models.TextField('Consecuencias, restricciones del comando', max_length=512, null=True)
     maxRetry       = models.IntegerField(default=2)
     
+    commandCode    = models.CharField('Codigo de comando segun el satelite, por ejemplo para isis cubesat telemetryEPS->23', max_length=24, default='0')
+    
+    
     @classmethod
     def create(cls, code, description, satellite, satelliteState, transactional, timeout, notes, maxRetry):
         result = cls()

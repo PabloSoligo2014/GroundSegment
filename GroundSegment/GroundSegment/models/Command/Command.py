@@ -46,6 +46,9 @@ class Command(models.Model):
     #Tiempo hasta el cual se puede intentar enviar    
     expiration  = models.DateTimeField(default=datetime(2000, 1, 1, tzinfo=timezone.utc))
     
+    #TODO, quitar null=True
+    binarycmd   = models.BinaryField("Comando en formato binario listo para ser enviado por TCP/IP", null=True)
+    
     
     def setExpirated(self):
         self.state  = 4
