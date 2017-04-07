@@ -98,7 +98,7 @@ admin.site.register(AlarmState, AlarmStateAdmin)
 
 
 class PasadaAdmin(admin.ModelAdmin):
-    list_display = ('satellite', 'sitio', 'startTime', 'stopTime')
+    list_display = ('satellite', 'sitio', 'startTime', 'stopTime', 'getDurationStr')
     list_filter = ['satellite', 'sitio', 'startTime']
 
 admin.site.register(Pasada,PasadaAdmin)
