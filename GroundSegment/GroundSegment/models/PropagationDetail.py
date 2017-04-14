@@ -9,8 +9,7 @@ from GroundSegment.models.Propagation import Propagation
 import math
 
 class PropagationDetail(models.Model):
-    created     = models.DateTimeField(auto_now_add=True)
-    
+    created     = models.DateTimeField(auto_now_add=True)    
     dt          = models.DateTimeField()
     propagation = models.ForeignKey(Propagation, related_name='propagationDetails')
     
