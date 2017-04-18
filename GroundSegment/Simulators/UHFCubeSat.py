@@ -43,7 +43,7 @@ from GroundSegment.models.UHFRawData import UHFRawData
 
 if __name__ == '__main__':
     
-    BUFFER_SIZE = 2000
+    BUFFER_SIZE = 1024
     
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     #server_address = ('10.77.171.180', 3210)
@@ -64,8 +64,8 @@ if __name__ == '__main__':
     
     while True:
         try:
-            
-            connection, client_address = sock.accept()
+            #(clientsocket, address)
+            clientsocket, client_address = sock.accept()
             
             print('Cliente conectado...')
             
@@ -78,16 +78,26 @@ if __name__ == '__main__':
             uhfs = UHFRawData.objects.filter(dataLen__gt=32).exclude(source="SIMULATION")
             i = 0
             while True:
-                print('connection from', client_address)
-        
-                #binaryClientData = connection.recv(BUFFER_SIZE)
                 
+                #, "binary client data", binaryClientData
+                print('Esperando comandos segmento terreno...')
+                binaryClientData = clientsocket.recv(BUFFER_SIZE)
+                print('Comandos->', binaryClientData)
+                
+                
+                
+                print('connection from', client_address)
                 my_bytes = uhfs[i].getBlob()
                 i = i + 1
                 if i==uhfs.count():
                     i=0
+                print('Enviando datos...')
+                clientsocket.send (my_bytes)
+                print('Datos enviados')
+                
+                
+                
                      
-                connection.send (my_bytes)
                 
                 time.sleep(10)
         except Exception as err:

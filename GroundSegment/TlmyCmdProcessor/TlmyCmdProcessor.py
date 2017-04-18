@@ -183,7 +183,7 @@ if __name__ == '__main__':
             cls()
             print("Done..trying to connect ip ", uhfServerIp, " ,port", uhfServerPort)
             unconnectionLimit       = 0
-            
+            i = 0
             while unconnectionLimit<10:
                 cls()
                 print("Create o recreate socket...", str(datetime.datetime.utcnow()) )
@@ -212,6 +212,8 @@ if __name__ == '__main__':
                     try:
                         print("Successfully connection to..", uhfServerPort)
                         while True:
+                            
+                            
                             
                             try:
                                 """
@@ -374,16 +376,27 @@ if __name__ == '__main__':
                             except socket.timeout:
                                 #Error de timeout de sockets, si el satelite esta en linea 
                                 print("Socket timeout")
+                                
                             """
                             Si el satelite esta en linea debo mandar comandos pendientes
                             """
                             pendingCommands = cmdmgr.getPendingCommands()
+                            print("Comandos pendientes de envio: ", pendingCommands.count())
+                            s.send(('-SIN COMANDOS-'+str(i)).encode())
+                            i = i + 1
+                                
                             for com in pendingCommands:
                                 print("Se hardcodea ejecucion comando ", str(com.pk))
+                                Arreglar aca, hay un problema con binarycmd!
+                                s.send(com.binarycmd)
+                                print("Comando ", com.binarycmd, " enviado")
+                                
+                                
                                 com.setExecuted()
                                 """
                                 TODO: Encodear y mandar al satelite por el mismo socket aca!
                                 """
+                            
                             
                     finally:
                         s.close()
