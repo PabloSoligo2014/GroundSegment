@@ -141,8 +141,8 @@ admin.site.register(Notification ,NotificationAdmin)
 class CoefficientInline(admin.TabularInline):
     model = Coefficient
 
-   
-def showHistory(modeladmin, request, queryset):
+
+def showHistoryLastTime(modeladmin, request, queryset):
     param = [] 
     
     for q in queryset:
@@ -152,23 +152,35 @@ def showHistory(modeladmin, request, queryset):
   
     #from django.conf.urls import include, url
     #from django.core.urlresolvers import reverse
-    return redirect('SimplePlotView', tvts=fparam)
+    return redirect('SimplePlotView', tvts=fparam, minutes=10)
+   
+def showHistoryLast50(modeladmin, request, queryset):
+    param = [] 
+    
+    for q in queryset:
+        param.append(str(q.pk))
+    
+    fparam = "-".join(param)
+  
+    #from django.conf.urls import include, url
+    #from django.core.urlresolvers import reverse
+    return redirect('SimplePlotView', tvts=fparam, minutes=-1)
   
         
-showHistory.short_description = "Mostrar historial de las variables seleccionadas..."
-
+showHistoryLast50.short_description = "Mostrar historial de las variables seleccionadas (Ultimas 50)..."
+showHistoryLastTime.short_description = "Mostrar historial de las variables seleccionadas (Ultimos 10 minutos)..."
 
 class TmlyVarTypeAdmin(admin.ModelAdmin):
     #fields = ()
     search_fields = ['code']
     list_display = ('code', 'description', 'satellite', 'lastCalSValue', 'unitOfMeasurement', 'lastUpdate',)
     fields = ('code', 'description', 'satellite', 'limitMaxValue', 'limitMinValue', 'maxValue', 'minValue', 'varType', 'alarmType', 'calibrationMethod', 'frameType', 'position', 'bitsLen', 'unitOfMeasurement')
-
+    list_filter = ('satellite', )
     inlines = [
         CoefficientInline,
     ]
     
-    actions = [showHistory]
+    actions = [showHistoryLast50, showHistoryLastTime]
     
 
         #queryset.update(status='p')

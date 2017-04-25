@@ -6,6 +6,9 @@ Created on Feb 23, 2017
 
 from django.views.generic import TemplateView
 from GroundSegment.models.TlmyVarType import TlmyVarType
+from django.db.models import Q
+from django.utils import timezone
+from datetime import timedelta
 
 
 #url(r'ajax/getchartdata/$', GetChartData.as_view(), name='getchartdata'), 
@@ -39,13 +42,20 @@ class SimplePlotView(TemplateView):
         
         valuesVector = []
         
+        minutes = int(self.kwargs['minutes'])
+         
+        now = timezone.now()
         for tvt in tvtVector:
-            valuesVector.append(TmlyVar.objects.filter(tmlyVarType=tvt).order_by('created')[:50]) 
-        
-        
+            if minutes==-1:
+                valuesVector.append(TmlyVar.objects.filter(tmlyVarType=tvt).order_by('created')[:50]) 
+            else:
+                vars = TmlyVar.objects.filter(Q(tmlyVarType=tvt) & Q(created__gte=now-timedelta(minutes=minutes) ) ).order_by('created')  
+                valuesVector.append(vars)
+            
         
         i = 0
         context['charts'] = []
+        
         for values in valuesVector:
             data = []
             data.append(['Fecha', tvtVector[i].code])
@@ -55,8 +65,8 @@ class SimplePlotView(TemplateView):
             data_source = SimpleDataSource(data=data)
             # Chart object
             chart = LineChart(data_source)
-            chart.options['title']      = tvtVector[i].description+ " (Ultimos 50 valores)"  
-            chart.options['subtitle']   = "Ultimos 50 valores"  
+            chart.options['title']      = tvtVector[i].description+ " (Ultimos valores)"  
+            chart.options['subtitle']   = "Ultimos valores"  
             #chart.options['width']      = 200
             chart.options['height']     = 300
             chart.options['isStacked']     = 'relative'

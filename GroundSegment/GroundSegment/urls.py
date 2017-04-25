@@ -61,7 +61,10 @@ urlpatterns = [
     url(r'^home/satellites/sat_form/$', GroundSegment.views.views.post_Sat, name="post_Sat"),
     url(r'^propagationTest/$', PropagationTestView.as_view(template_name="propagationTest.html")),
     url(r'^', include(router.urls)),
-    url(r'^simplePlot/(?P<tvts>[\w-]+)', SimplePlotView.as_view(template_name="simplePlot.html"), name='SimplePlotView'), 
+    #url(r'^simplePlot/(?P<tvts>[\w-]+)', SimplePlotView.as_view(template_name="simplePlot.html"), name='SimplePlotView'), 
+    url(r'^simplePlot/(?P<tvts>[\w-]+)/(?P<minutes>(\d+))/$', SimplePlotView.as_view(template_name="simplePlot.html"), name='SimplePlotView'), 
+    #(r'^v1/(?P<variable_a>(\d+))/(?P<variable_b>(\d+))/$', r'custom1.views.v1')
+    
     url(r'^pasadas/$', PassView.as_view(), name='PassView'),
 ]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
