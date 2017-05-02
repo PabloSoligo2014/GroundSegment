@@ -50,6 +50,17 @@ class Command(models.Model):
     binarycmd   = models.BinaryField("Comando en formato binario listo para ser enviado por TCP/IP", null=True)
     
     
+    def getBinaryCommand(self):
+        result = bytearray()
+        dl = self.getBinaryCommandLen()
+        for i in range(dl):
+            result += self.binarycmd[i]
+                
+        return result
+    
+    def getBinaryCommandLen(self):
+        return len(self.binarycmd)
+    
     def setExpirated(self):
         self.state  = 4
         self.save()

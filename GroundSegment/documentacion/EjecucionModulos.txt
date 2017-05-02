@@ -1,0 +1,14 @@
+#Ejecucion de server 
+#cd /home/ubuntumate/git/GroundSegment/GroundSegment/
+python3.4 manage.py runserver 0.0.0.0:8000
+
+
+#Procesador de telemetria y telecomandos
+#cd /home/ubuntumate/git/GroundSegment/GroundSegment/TlmyCmdProcessor
+python3.4 TlmyCmdProcessor.py "SIMULATION" "FS2017" 
+
+
+#Simulador de telemetria y receptor de telecomandos...
+cd /home/ubuntumate/git/GroundSegment/GroundSegment/Simulators
+
+

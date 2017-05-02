@@ -22,6 +22,7 @@ from _struct import unpack
 
 
 
+
 #ubuntumate@VBUbuntumate:~/Downloads/CheckoutBox/Software$ java -jar start.jar
 #C:\Users\pabli\Documents\Programas\CheckoutBox\Software java -jar start.jar
 #python Main.py CUBESAT o SIMULATION
@@ -135,7 +136,7 @@ if __name__ == '__main__':
         from GroundSegment.Utils.Utils import *
         from GroundSegment.models.DownlinkFrame import DownlinkFrame 
         from GroundSegment.Managers.CommandManager import CommandManager
-        
+        from GroundSegment.Utils.BColor import bcolors
         
         """
         Si el watchdog no fue creado aun en ejecuciones anteriores lo creo ahora
@@ -181,7 +182,7 @@ if __name__ == '__main__':
             BUFFER_SIZE             = loadOrCreateParam("UHF_BUFFER_SIZE", "GroundStation", "1024", "Tamanio del buffer del cliente TCP")
             DISCONNECTION_SLEEP     = loadOrCreateParam("UHF_DISCONNECTION_SLEEP", "GroundStation", "10", "Tiempo en que se duerme la aplicacion ante una desconexion a la espera de volver a intentar")
             cls()
-            print("Done..trying to connect ip ", uhfServerIp, " ,port", uhfServerPort)
+            print(bcolors.OKGREEN+"Done..trying to connect ip "+bcolors.OKGREEN, uhfServerIp,bcolors.OKGREEN+" ,port"+bcolors.OKGREEN, uhfServerPort)
             unconnectionLimit       = 0
             i = 0
             while unconnectionLimit<10:
@@ -247,8 +248,11 @@ if __name__ == '__main__':
                                     """
                                     Me guardo el crudo tal cual llego antes de procesarlo, la tabla donde se guarda es UHFRawData
                                     """
+                                    os.system('cls||clear')
+                                    print(bcolors.OKGREEN+"--------------------Data Received-------------------"+bcolors.OKGREEN)
+                                    print("Data length:", len(chunk))
                                     
-                                    print("\nData Received("+str(timezone.datetime.utcnow() )+"), Tamano: ", len(chunk), "\nData->", chunk)
+                                    #print("\nData Received("+str(timezone.datetime.utcnow() )+"), Tamano: ", , "\nData->", chunk)
                                     
                                     data = UHFRawData()
                                     data.source = source
@@ -291,7 +295,7 @@ if __name__ == '__main__':
                                     payload = ax25[ vardataoffset: ]
                                     
                                     pn = unpack("<H",  payload[1:3])
-                                    print("packet number:", pn)
+                                    print("Packet number:", pn)
                                     
                                     frameTypeId = payload[0]
                                     
@@ -344,7 +348,7 @@ if __name__ == '__main__':
                                         tv = tt.setValue(raw, True)
                                         tv.save()
                                     
-                                    print("\nData processed("+str(timezone.datetime.utcnow() )+")")
+                                    print("Data processed("+str(timezone.datetime.utcnow() )+")")
                                     data.processed = True
                                     data.save()
                                     
@@ -375,7 +379,7 @@ if __name__ == '__main__':
                                 ##f.close()
                             except socket.timeout:
                                 #Error de timeout de sockets, si el satelite esta en linea 
-                                print("Socket timeout")
+                                print(bcolors.WARNING+"Socket timeout"+bcolors.OKGREEN)
                                 
                             """
                             Si el satelite esta en linea debo mandar comandos pendientes
@@ -387,8 +391,7 @@ if __name__ == '__main__':
                                 
                             for com in pendingCommands:
                                 print("Se hardcodea ejecucion comando ", str(com.pk))
-                                Arreglar aca, hay un problema con binarycmd!
-                                s.send(com.binarycmd)
+                                s.send(com.getBinaryCommand())
                                 print("Comando ", com.binarycmd, " enviado")
                                 
                                 
@@ -407,17 +410,18 @@ if __name__ == '__main__':
                     #TODO, quitar print
                    
                    
-                    print(str(datetime.datetime.utcnow()), err)
+                    print(bcolors.WARNING+str(datetime.datetime.utcnow())+bcolors.WARNING, err)
                     unconnectionLimit = unconnectionLimit + 1
                      
                 except IOError as err2:
                     Log.create("IOERROR TlmyCmdProcessor", "Error/Exception "+str(err2), module, Log.ERROR).save()
                     #TODO, quitar print
                     
-                    print(str(datetime.datetime.utcnow()), err2)
+                    print(bcolors.WARNING+str(datetime.datetime.utcnow())+bcolors.WARNING, err2)
                     unconnectionLimit = unconnectionLimit + 1
                   
-                print("Sleeping..")
+                
+                print(bcolors.OKBLUE+"Sleeping.."+bcolors.OKBLUE)
                 time.sleep(int(DISCONNECTION_SLEEP))
                     
     except ValueError as ve:

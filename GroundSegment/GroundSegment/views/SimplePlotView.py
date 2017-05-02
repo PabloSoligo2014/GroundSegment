@@ -49,7 +49,7 @@ class SimplePlotView(TemplateView):
             if minutes==-1:
                 valuesVector.append(TmlyVar.objects.filter(tmlyVarType=tvt).order_by('created')[:50]) 
             else:
-                vars = TmlyVar.objects.filter(Q(tmlyVarType=tvt) & Q(created__gte=now-timedelta(minutes=minutes) ) ).order_by('created')  
+                vars = TmlyVar.objects.filter(Q(tmlyVarType=tvt) & Q(created__gte=now-timedelta(minutes=minutes) ) ).order_by('created') 
                 valuesVector.append(vars)
             
         
@@ -59,9 +59,12 @@ class SimplePlotView(TemplateView):
         for values in valuesVector:
             data = []
             data.append(['Fecha', tvtVector[i].code])
-            for v in values:
-                data.append( [v.created.strftime("%H:%M:%-S"), v.getValue()]   )
-            
+            if values.count()==0:
+                data.append([0,0])
+            else:
+                for v in values:
+                    data.append( [v.created.strftime("%H:%M:%-S"), v.getValue()]   )
+                
             data_source = SimpleDataSource(data=data)
             # Chart object
             chart = LineChart(data_source)
