@@ -43,6 +43,12 @@ from GroundSegment.models.UHFRawData import UHFRawData
 
 if __name__ == '__main__':
     
+    
+    if len(sys.argv)>1:
+        sleeptime       = float(sys.argv[1])
+    else:
+        sleeptime       = 10.0
+    
     BUFFER_SIZE = 1024
     
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -76,6 +82,7 @@ if __name__ == '__main__':
             #uhfs = UHFRawData.objects.filter(id__gte=1002, id__lte=1490)
              
             uhfs = UHFRawData.objects.filter(dataLen__gt=32).exclude(source="SIMULATION")
+            print("Hay ",uhfs.count(), "disponibles para el envio")
             i = 0
             while True:
                 
@@ -99,7 +106,7 @@ if __name__ == '__main__':
                 
                      
                 
-                time.sleep(10)
+                time.sleep(sleeptime)
         except Exception as err:
             print("Error: {0}".format(err))
         

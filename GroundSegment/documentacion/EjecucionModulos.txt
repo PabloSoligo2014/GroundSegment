@@ -6,9 +6,14 @@ python3.4 manage.py runserver 0.0.0.0:8000
 #Procesador de telemetria y telecomandos
 #cd /home/ubuntumate/git/GroundSegment/GroundSegment/TlmyCmdProcessor
 python3.4 TlmyCmdProcessor.py "SIMULATION" "FS2017" 
+#En windows
+python TlmyCmdProcessor.py "SIMULATION" "FS2017" 
 
 
 #Simulador de telemetria y receptor de telecomandos...
 cd /home/ubuntumate/git/GroundSegment/GroundSegment/Simulators
+cd C:\Users\pabli\git\GroundSegment\GroundSegment\Simulators\
 
+#El parametro indica el tiempo de sleep entre envio de telemetria y envio de telemetria
+python UHFCubeSat.py 10
 

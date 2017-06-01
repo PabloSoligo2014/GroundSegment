@@ -21,14 +21,14 @@ from struct import *
 
 
 class UHFRawData(models.Model):
-    created     = models.DateTimeField(auto_now_add=True)
-    data        = models.BinaryField()
-    source      = models.CharField('Origen del dato, tipicamente cubesat/simulacion', max_length=24, help_text='Origen del dato, tipicamente cubesat/simulacion', default='simulation')
-    dataLen     = models.IntegerField("Dimension del campo data, autoguardado", default=0)
-    processed   = models.BooleanField("Indica si el paquete raw fue procesado", default=False)
+    created         = models.DateTimeField(auto_now_add=True)
+    data            = models.BinaryField()
+    source          = models.CharField('Origen del dato, tipicamente cubesat/simulacion', max_length=24, help_text='Origen del dato, tipicamente cubesat/simulacion', default='simulation')
+    dataLen         = models.IntegerField("Dimension del campo data, autoguardado", default=0)
+    processed       = models.BooleanField("Indica si el paquete raw fue procesado", default=False)
+    processedTime   = models.FloatField("Tiempo en milisegundos que domoro en ser procesada", default=0.0)
     
     def getDataLen(self):
-        
         return len(self.data)
     
     def getBlob(self):

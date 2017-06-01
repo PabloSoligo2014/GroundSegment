@@ -22,7 +22,7 @@ from rest_framework.routers import SimpleRouter
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from GroundSegment.models import TlmyVarType
-from aptsources.distinfo import Template
+#from aptsources.distinfo import Template
 from GroundSegment.models.TlmyVarType import TlmyVarType
 from GroundSegment.views.SimplePlotView import SimplePlotView, GetChartData
 

@@ -18,7 +18,9 @@ from django.template.context import RequestContext
 from django.core.urlresolvers import reverse #para error reverse c
 from django.views.generic.base import View
 from django import views
-from lxml.html._diffcommand import description
+#Elbio comento esto temporalmente porque me trae problemas ejecutarlo sobre windows
+#y las maquinas que conectan al RF Checkout box funcionan con windows
+#from lxml.html._diffcommand import description
 import code
 from django.contrib.admin.utils import help_text_for_field
 """
