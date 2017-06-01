@@ -31,6 +31,9 @@ class Satellite(models.Model):
     notes          = models.TextField('Observaciones sobre el satelite', max_length=512, null=True) 
     inContact      = models.BooleanField("Si el satelite esta con enlace activo", default=False)
     
+    commServerIP       = models.CharField('IP servidor/cortex ', max_length=24, help_text='IP servidor/cortex', default='127.0.0.1')
+    commServerPort     = models.CharField('Puerto servidor/cortex', max_length=24, help_text='Puerto servidor/cortex', default='3210')   
+    
     @classmethod
     def new(cls, code, description, noradId, satelliteState=None):
         """

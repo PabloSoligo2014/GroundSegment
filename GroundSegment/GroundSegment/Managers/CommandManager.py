@@ -68,7 +68,7 @@ class CommandManager(models.Manager):
         cmd.sent         = None
         cmd.retry        = 0
         cmd.expiration   = expiration
-        cmd.executeAt    = timetag
+        cmd.executeAt    = timetag.replace(tzinfo=pytz.UTC) 
         #Mejorar la forma en que se trabajan las enumeraciones!
         cmd.state        = 0
         

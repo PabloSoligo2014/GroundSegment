@@ -182,8 +182,12 @@ if __name__ == '__main__':
             """
             Cargo todos los parametros de configuracion del sistema
             """
+            
+            """Deprecated, ahora el ip/puerto del cortex o equipo UHF es atributo del satelite"""
             uhfServerIp             = loadOrCreateParam("UHF_SERVER_IP", "GroundStation", "127.0.0.1", "IP del servidor TCP de la antena UHF")
             uhfServerPort           = loadOrCreateParam("UHF_SERVER_PORT", "GroundStation", "3210", "Puerto del servidor TCP de la antena UHF")    
+            
+            
             BUFFER_SIZE             = loadOrCreateParam("UHF_BUFFER_SIZE", "GroundStation", "1024", "Tamanio del buffer del cliente TCP")
             DISCONNECTION_SLEEP     = loadOrCreateParam("UHF_DISCONNECTION_SLEEP", "GroundStation", "10", "Tiempo en que se duerme la aplicacion ante una desconexion a la espera de volver a intentar")
             cls()
@@ -216,7 +220,7 @@ if __name__ == '__main__':
                     de socket informa mediante exception, la misma es trapeada para volver
                     a intentar ciclicamente (Informe de error mediante)
                     """
-                    s.connect( (uhfServerIp, int(uhfServerPort)) )
+                    s.connect( (sat.commServerIP, int(sat.commServerPort)) )
                     try:
                         Console.log("Successfully connection to.."+uhfServerPort)
            
