@@ -232,7 +232,7 @@ if __name__ == '__main__':
                                 """
                                 Establezco un timeout para la bajada, con o sin bajada los comandos deben ser enviados
                                 """
-                                s.settimeout(5.0)
+                                #s.settimeout(5.0)
                                 
                                 """
                                 Me quedo esperando recibir informacion del socket (IPC)
@@ -404,7 +404,7 @@ if __name__ == '__main__':
                                 
                             """
                             Si el satelite esta en linea debo mandar comandos pendientes
-                            """
+                            
                             pendingCommands = cmdmgr.getPendingCommands()
                             Console.log("Comandos pendientes de envio: "+str(pendingCommands.count()))
                            
@@ -422,9 +422,10 @@ if __name__ == '__main__':
                                 
                                 
                                 com.setExecuted()
-                                """
-                                TODO: Encodear y mandar al satelite por el mismo socket aca!
-                                """
+                                
+                                #TODO: Encodear y mandar al satelite por el mismo socket aca!
+                                
+                            """
                             
                             
                     finally:
