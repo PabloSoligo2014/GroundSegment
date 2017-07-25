@@ -37,6 +37,8 @@ from django.db import models
 class CommandManager(models.Manager):
     '''
     classdocs
+    Administra la creacion de comandos, quiza sea mejor hacerlos desde el satellite directamente
+    
     '''
     
 

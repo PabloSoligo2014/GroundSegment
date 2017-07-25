@@ -9,7 +9,7 @@ from Calibration.BaseCalibration import BaseCalibration
 
 
 class GCalibration(BaseCalibration):
-    def duplicateAndSum(self, raw):
+    def duplicateAndSum(self, obj, raw):
         return raw*0.2 + 1
 
     def linealCalibration(self, obj, raw):

@@ -72,7 +72,7 @@ if __name__ == '__main__':
         try:
             #(clientsocket, address)
             clientsocket, client_address = sock.accept()
-            
+            clientsocket.settimeout(0) 
             print('Cliente conectado...')
             
             tiempoactual = datetime.datetime.utcnow()
@@ -86,10 +86,6 @@ if __name__ == '__main__':
             i = 0
             while True:
                 
-                #, "binary client data", binaryClientData
-                print('Esperando comandos segmento terreno...')
-                binaryClientData = clientsocket.recv(BUFFER_SIZE)
-                print('Comandos->', binaryClientData)
                 
                 
                 
@@ -102,8 +98,13 @@ if __name__ == '__main__':
                 clientsocket.send (my_bytes)
                 print('Datos enviados')
                 
-                
-                
+                try:
+                    #, "binary client data", binaryClientData
+                    print('Esperando comandos segmento terreno...')
+                    binaryClientData = clientsocket.recv(BUFFER_SIZE)
+                    print('Comandos->', binaryClientData)
+                except Exception as err:
+                    print("Exception recibiendo comandos: {0}".format(err))
                      
                 
                 time.sleep(sleeptime)

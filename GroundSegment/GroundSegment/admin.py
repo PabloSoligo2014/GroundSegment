@@ -59,7 +59,7 @@ admin.site.register(Parameter, ParameterAdmin)
 
 class CommandTypeAdmin(admin.ModelAdmin):
     empty_value_display = ''
-    fields = ('code', 'description', 'active', 'transactional', 'satellite', 'satelliteStates', 'timeout', 'notes')
+    fields = ('code', 'description', 'active', 'transactional', 'satellite', 'satelliteStates', 'maxRetry', 'commandCode', 'timeout', 'notes')
     list_display = ('code', 'description', 'transactional', 'satellite', 'timeout', 'notes')
     #list_filter = (NameFilter,)
     search_fields = ['code']

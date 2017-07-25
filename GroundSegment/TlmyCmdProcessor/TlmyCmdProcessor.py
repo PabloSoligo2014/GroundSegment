@@ -18,7 +18,10 @@ import os
 import sys
 
 from django.utils import timezone
-from _struct import unpack
+from _struct import unpack, pack
+from array import array
+import binascii
+
 
 
 
@@ -56,6 +59,17 @@ para uso futuro y especialmente para poder distinguir datos simulados de datos r
 @param satellite Codigo de satelite con el que se esta comunicando. El satelite tiene que estar dado de alta en el catalogo. La trama de telemetria sera
 decodificada en funcion de la configuracion de variables de telemetria del satelite indicado como parametro
 """
+
+
+
+def __showAsHex(ba):
+    
+    result = ""
+    for b in ba:
+        result = result+hex(b)+" "
+     
+    return result
+
 if __name__ == '__main__':
     
     PosFrameCommand         = 0
@@ -220,14 +234,12 @@ if __name__ == '__main__':
                     de socket informa mediante exception, la misma es trapeada para volver
                     a intentar ciclicamente (Informe de error mediante)
                     """
+                    socket.setdefaulttimeout(5.0)
                     s.connect( (sat.commServerIP, int(sat.commServerPort)) )
+                    
                     try:
                         Console.log("Successfully connection to.."+uhfServerPort)
-           
                         while True:
-                            
-                            
-                            
                             try:
                                 """
                                 Establezco un timeout para la bajada, con o sin bajada los comandos deben ser enviados
@@ -258,6 +270,7 @@ if __name__ == '__main__':
                                 Si la informacion es una trama de bits completa la proceso
                                 """
                                 if chunk == b'':
+                                    #print("Socket connection broken")
                                     raise RuntimeError("socket connection broken")
                                 else:
                                     """
@@ -291,12 +304,6 @@ if __name__ == '__main__':
                                     PosUtcTime = PosPktLen+pktLen[0]
                                     LenUtcTime = 4
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
                                     PosPayload = PosPktLen+int(LenPktLen)
                                     ax25 = chunk[PosPayload:PosPayload+pktLen[0]]
                                     
@@ -306,7 +313,7 @@ if __name__ == '__main__':
                                     control      = ax25[7+7:7+7+1]
                                     protocol     = ax25[7+7+1:7+7+1+1]
                                     
-                            
+                                    #A8 A4 B0 AA AC 40 60 40 40 40 40 40 40 E1 03 F0 02 03 83 A5
                                          
                                     vardataoffset = 7+7+1+1
                                     payload = ax25[ vardataoffset: ]
@@ -336,13 +343,7 @@ if __name__ == '__main__':
                                     dl.packetNumber     = pn[0]
                                     dl.frameTypeId      = frameTypeId 
                                                                 
-                                    
-                                    
                                     dl.save()
-                                    
-                                    
-                                    
-                                     
                                     #frameTypeId = unpack("<B",payload[0])
                                     
                                     telvars = TlmyVarType.objects.filter(satellite__code=satellite).filter(frameType__aid=frameTypeId)
@@ -373,6 +374,8 @@ if __name__ == '__main__':
                                     data.save()
                                     
                                               
+                                              
+                                    
                                     #dl.processed = True                   
                                     """
                                     Ahora proceso los datos en funcion de las variables de telemetria configuradas en el sistema. 
@@ -395,7 +398,58 @@ if __name__ == '__main__':
     #                                 packetNumber    = chunk[1-2] "pack"
     #                                 OBCUpTime       = chunk[1,2,3,4]
     #                                 commandCounter  = chunk[7]
-                                                         
+                                    #print("Send harcode command")
+                                    
+                                    #header =  b'\x56\xA8\xA4\xB0\xAA\xAC\x40\x60\x40\x40\x40\x40\x40\x40\xE1\x03\xF0'
+                                    #pkt = b'\x56\xA8\xA4\xB0\xAA\xAC\x40\x60\x40\x40\x40\x40\x40\x40\xE1\x03\xF0\x17\x00\x00\x00\x02\x02'
+                                    #sentbytes = s.send(pkt)
+                                    
+                                    
+                                    #Aca esta la posta: https://www.qb50.eu/index.php/tech-docs/category/16-archive?download=19:scs-docs
+                                    #1- 7 bytes - Destination Callsign
+                                    #2- 7 bytes - Source Callsign
+                                    #3- 2 bytes - Control Bytes
+                                    #4- Variable - Data bytes (Data sent by the OBC)
+                                    #5- 2 bytes - FCS (AX25 CRC)
+                                    """
+                                    destination  = ax25[0:7]
+                                    asource      = ax25[7:7+7]
+                                    control      = ax25[7+7:7+7+1]
+                                    protocol     = ax25[7+7+1:7+7+1+1]
+                                    vardataoffset = 7+7+1+1
+                                    payload = ax25[ vardataoffset: ]
+                                    """
+                                    ilen = len(asource+destination+control+protocol+pack('BB', 2, 2 ))+4
+                                    pkt = b'\x56'+pack('>I', ilen)+asource+destination+control+protocol+pack('BB', 2, 2 )     
+                                    __showAsHex(pkt)
+                                    
+                                    crc = binascii.crc_hqx(pkt, 0)
+                                    pcrc = pack('H', crc)
+                                    
+                                    
+                                    #Este calcula el CRC-CCITT (XModem)
+                                    #__showAsHex(pack('H', binascii.crc_hqx(b'\xA8\xA4\xB0\xAA\xAC\x40\x60\x40\x40\x40\x40\x40\x40\xE1\x03\xF0\x02\x02', 0)))
+                                    
+                                    #Este calcula CRC 16 pelado
+                                    #__showAsHex(pack('H', binascii.crc_hqx(b'\xA8\xA4\xB0\xAA\xAC\x40\x60\x40\x40\x40\x40\x40\x40\xE1\x03\xF0\x02\x02', 0)))
+                                    
+                                    #'A8 A4 B0 AA AC 40 60 40 40 40 40 40 40 E1 03 F0 02 02 0A B4'
+                                    #sentbytes = s.send(b'\x56\xA8\xA4\xB0\xAA\xAC\x40\x60\x40\x40\x40\x40\x40\x40\xE1\x03\xF0\x02\x02')
+                                    #ISO 3309 (HDLC) Recommendations
+                                    #https://www.tapr.org/pdf/AX25.2.2.pdf
+                                    #Este guacho no rompe la conexion
+                                    #sentbytes = s.send(b'\x56\x07\x00\x00\x00\x02\x02')
+                                    
+                                    
+                                    #pkt = b'\x56\xA8\xA4\xB0\xAA\xAC\x40\x60\x40\x40\x40\x40\x40\x40\xE1\x03\xF0\x02\x02'
+                                    #sentbytes = s.send(pkt)
+                                    #sentbytes = s.send(pack('BIBB', 56, 3, 2, 2 ))
+                                    
+                                    
+                                    
+                                    print("hardcode command, bytes sent :", sentbytes )
+                                    
+                                      
                                 ##f.close()
                             except socket.timeout:
                                 #Error de timeout de sockets, si el satelite esta en linea 
@@ -404,28 +458,39 @@ if __name__ == '__main__':
                                 
                             """
                             Si el satelite esta en linea debo mandar comandos pendientes
-                            
+                            """
                             pendingCommands = cmdmgr.getPendingCommands()
-                            Console.log("Comandos pendientes de envio: "+str(pendingCommands.count()))
-                           
-                            s.send(('-SIN COMANDOS-'+str(i)).encode())
+                            #Console.log("Comandos pendientes de envio: "+str(pendingCommands.count()))
+                            
+                            
+                            #s.send(('-SIN COMANDOS-'+str(i)).encode())
                             i = i + 1
                                 
                             for com in pendingCommands:
                                 
                                 Console.log("Se hardcodea ejecucion comando "+str(com.pk))
-                           
-                               
-                                s.send(com.getBinaryCommand())
-                               
+                                #freq                = unpack("<d", chunk[PosFrequency:PosFrequency+LenFrequency])
+                                
+                                #oframecommand = pack('c', 56)
+                                #cmd = com.getBinaryCommand()
+                                #opayload = pack('c', 2, cmd[1])
+                                
+                                #a = array('b', )
+                                
+                                #s.send(com.getBinaryCommand())
+                                
+                                
+                                #s.send(pack('cIcc', b'a', 7 ,b'2', b'2'))
+                                
+                                
+                                
                                 Console.log("Comando "+str(com.binarycmd)+" enviado")
                                 
                                 
                                 com.setExecuted()
-                                
-                                #TODO: Encodear y mandar al satelite por el mismo socket aca!
-                                
-                            """
+                                """
+                                TODO: Encodear y mandar al satelite por el mismo socket aca!
+                                """
                             
                             
                     finally:

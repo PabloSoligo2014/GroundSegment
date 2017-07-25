@@ -15,7 +15,8 @@ from sgp4.io import twoline2rv
 from GroundSegment.models.SatelliteState import SatelliteState
 from GroundSegment.models.Parameter import Parameter
 from django.db.models.query import QuerySet
-
+from django.db.models import Q
+import pytz
 
 class Satellite(models.Model):
     
@@ -112,10 +113,6 @@ class Satellite(models.Model):
             
         #u: macecilia
         #p: MaCeciliaSpace17
-    
-            
-        
-            
         data = {'identity': username.value , 'password': password.value}
             
             
@@ -277,6 +274,60 @@ class Satellite(models.Model):
         result.satellite = self
         result.save()
         return result
+    
+    def getCommandType(self):
+        '''Retorna los tipos de comandos disponibles para este satelite'''
+        return self.commandsType.all()
+    
+    def sendCommand(self, cmd):
+        cmd.send()
+        
+        
+    def __setExpiredCommands(self):
+        #cmds = Command.objects.filter(Q(satellite=self)&Q(expiration__lte=datetime.utcnow().replace(tzinfo=pytz.UTC)    ))
+        cmds = self.commands.filter(expiration__lte=datetime.utcnow().replace(tzinfo=pytz.UTC))
+        for c in cmds:
+            c.setExpirated()
+        
+        return cmds.count()
+    
+    def getPendingCommands(self):
+        """
+        Mato los comandos vencidos
+        """
+        self.__setExpiredCommands()
+        cmds = self.commands.filter(state=0).order_by('executeAt')
+        return cmds
+        
+        
+    def expirateAll(self):
+        pc = self.getPendingCommands()
+        for c in pc:
+            c.setExpirated()
+        
+        return pc.count()
+        
+    def newCommand(self, commandType, expiration, timetag=datetime.utcnow().replace(tzinfo=pytz.UTC) ):
+        from GroundSegment.models.Command.Command import Command
+
+        cmd = Command()
+        
+        
+        if commandType.satellite!=self:
+            raise Exception("Este tipo de comando no puede ser aplicado al satelite pasado como parametro")
+        
+        cmd.satellite    = self
+        cmd.commandType  = commandType
+        cmd.created      = now()
+        cmd.sent         = None
+        cmd.retry        = 0
+        cmd.expiration   = expiration.replace(tzinfo=pytz.UTC) 
+        cmd.executeAt    = timetag.replace(tzinfo=pytz.UTC) 
+        #Mejorar la forma en que se trabajan las enumeraciones!
+        cmd.state        = 0
+        
+        return cmd
+        
     
     def __str__(self):
         return self.code
