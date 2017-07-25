@@ -76,6 +76,7 @@ usuario: pablito
 password: violento
 
 
+
 -----------------------------------
 Documentacion automatica
 -----------------------------------
@@ -126,6 +127,12 @@ sudo apt-get install python-django-braces
 #Nota Pablo Soligo
 Tambien funciona pip3 install django-braces (Lo tuve que instalar en windows) 
 Falto este Elbio? o no se usa y quedo la referencia? : pip3 install lxml
+
+
+------------------------------------
+Necesario para AX.25
+------------------------------------
+pip3 install bitarray
 
 
 ------------------------------------
