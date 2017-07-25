@@ -21,7 +21,9 @@ from django.utils import timezone
 from _struct import unpack, pack
 from array import array
 import binascii
-
+from GroundSegment.Utils.AX25 import *
+import crcmod
+from binascii import hexlify, unhexlify
 
 
 
@@ -405,6 +407,26 @@ if __name__ == '__main__':
                                     #sentbytes = s.send(pkt)
                                     
                                     
+                                    """
+                                    ATENCION 1: el checksum es CRC_16_X_25 (http://www.sunshine2k.de/coding/javascript/crc/crc_js.html) y para el ejemplo
+                                    :pkt = b'\x56\xA8\xA4\xB0\xAA\xAC\x40\x60\x40\x40\x40\x40\x40\x40\xE1\x03\xF0\x17\x00\x00\x00\x02\x02'
+                                    '              A8  A4  B0  AA  AC  40  60  40  40  40  40  40  40  E1  03  F0  02 02 0A B4'
+                                    A8  A4  B0  AA  AC  40  60  40  40  40  40  40  40  E1  03  F0  02 02
+                                    se debe calcular desde xA8, se debe excluir el flag de inicio y fin.
+                                    ATENCION 2: el checksum es de 16 bits y los bytes estan invertidos!!!
+                                    
+                                    x-25    0x11021    True    0x0000    0xFFFF    0x906E
+                                    
+                                    Esto ha sido probado y funciona correctamente, lo retornado por 
+                                    crcX25.hexdigest() debe ser dado vuelta
+                                    
+                                    crcX25 = crcmod.predefined.Crc('x-25')
+                                    s = unhexlify('A8A4B0AAAC4060404040404040E103F00202')
+                                    crcX25.update(s)
+                                    crcX25.hexdigest()
+                                    """
+                                    
+                                    
                                     #Aca esta la posta: https://www.qb50.eu/index.php/tech-docs/category/16-archive?download=19:scs-docs
                                     #1- 7 bytes - Destination Callsign
                                     #2- 7 bytes - Source Callsign
@@ -420,19 +442,26 @@ if __name__ == '__main__':
                                     payload = ax25[ vardataoffset: ]
                                     """
                                     ilen = len(asource+destination+control+protocol+pack('BB', 2, 2 ))+4
-                                    pkt = b'\x56'+pack('>I', ilen)+asource+destination+control+protocol+pack('BB', 2, 2 )     
                                     __showAsHex(pkt)
                                     
-                                    crc = binascii.crc_hqx(pkt, 0)
-                                    pcrc = pack('H', crc)
                                     
+                                    
+                                    crcX25 = crcmod.predefined.Crc('x-25')
+                                    s = unhexlify('A8A4B0AAAC4060404040404040E103F00202')
+                                    crcX25.update(s)
+                                    crcX25.hexdigest()
+                                    fv = crcX25.hexdigest()[2:] + crcX25.hexdigest()[:2] 
+                                    pcrc = pack('H', crcX25.crcValue)
+                                    
+                                    pkt = b'\x56'+pack('>I', ilen)+asource+destination+control+protocol+pack('BB', 2, 2 )+pcrc     
+                                    
+                                    
+                                    sentbytes = s.send(pkt)
                                     
                                     #Este calcula el CRC-CCITT (XModem)
                                     #__showAsHex(pack('H', binascii.crc_hqx(b'\xA8\xA4\xB0\xAA\xAC\x40\x60\x40\x40\x40\x40\x40\x40\xE1\x03\xF0\x02\x02', 0)))
-                                    
                                     #Este calcula CRC 16 pelado
                                     #__showAsHex(pack('H', binascii.crc_hqx(b'\xA8\xA4\xB0\xAA\xAC\x40\x60\x40\x40\x40\x40\x40\x40\xE1\x03\xF0\x02\x02', 0)))
-                                    
                                     #'A8 A4 B0 AA AC 40 60 40 40 40 40 40 40 E1 03 F0 02 02 0A B4'
                                     #sentbytes = s.send(b'\x56\xA8\xA4\xB0\xAA\xAC\x40\x60\x40\x40\x40\x40\x40\x40\xE1\x03\xF0\x02\x02')
                                     #ISO 3309 (HDLC) Recommendations

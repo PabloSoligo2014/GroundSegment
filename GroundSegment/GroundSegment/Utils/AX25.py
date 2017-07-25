@@ -189,69 +189,82 @@ class AX25(object):
             # Bit unstuff
             bits_unstuff = bit_unstuff(bits_noflag)
     
-        # Chop to length
-        bits_bytes = bits_unstuff.tobytes()
-
-        # Split bits
-        
- #       header = bits_unstuff[:240]
+            # Chop to length
+            bits_bytes = bits_unstuff.tobytes()
+    
+            # Split bits
+            
+     #       header = bits_unstuff[:240]
             h_dest = bits_unstuff[:56]
-        h_src  = bits_unstuff[56:112]
-        for n in range(14,len(bits_bytes)-1):
-            if bits_bytes[n:n+2]=="\x03\xF0":
-                break
-        if n==len(bits_bytes)-1 :
+            h_src  = bits_unstuff[56:112]
+            for n in range(14,len(bits_bytes)-1):
+                if bits_bytes[n:n+2]=="\x03\xF0":
+                    break
+            if n==len(bits_bytes)-1 :
+                self.destination = "no decode"
+                self.source = "no decode"
+                self.info = "no decode"
+                self.digis = "no decode"
+                return 
+    
+            
+            digilen = (n-14)*8/7
+            h_digi = bits_unstuff[112:112+(n-14)*8]
+            h_len = 112 + (n-14)*8 + 16
+            fcs = bits_unstuff[-16:]
+            info = bits_unstuff[h_len:-16]
+    
+    
+            # Decode addresses
+            destination = self.callsign_decode(h_dest)
+            source = self.callsign_decode(h_src)
+        
+            if digilen == 0:
+                digipeaters = ()
+            else:
+                digipeters =  self.callsign_decode(h_digi)
+                #     digipeaters = (self.callsign_decode(header[112:168]), self.callsign_decode(header[168:224]))
+                print( "Destination:\t", destination[:-1])
+                print( "Source:\t\t", source[:-1])
+                #       print "Digipeater1:\t", digipeaters[0][:-1], "-", digipeaters[0][-1]
+                print( "Digipeaters:\t", digipeaters)
+                print( "Info:\t\t", info.tobytes())
+            
+            self.destination = destination
+            self.source = source
+            self.info = info.tobytes()
+            self.digis = digipeaters 
+        except:
             self.destination = "no decode"
             self.source = "no decode"
             self.info = "no decode"
             self.digis = "no decode"
             return 
 
-        
-        digilen = (n-14)*8/7
-        h_digi = bits_unstuff[112:112+(n-14)*8]
-        h_len = 112 + (n-14)*8 + 16
-        fcs = bits_unstuff[-16:]
-            info = bits_unstuff[h_len:-16]
-
-
-        # Decode addresses
-            destination = self.callsign_decode(h_dest)
-            source = self.callsign_decode(h_src)
-    
-        if digilen == 0:
-            digipeaters = ()
-        else:
-            digipeters =  self.callsign_decode(h_digi)
-   #     digipeaters = (self.callsign_decode(header[112:168]), self.callsign_decode(header[168:224]))
-            print "Destination:\t", destination[:-1]
-            print "Source:\t\t", source[:-1]
- #       print "Digipeater1:\t", digipeaters[0][:-1], "-", digipeaters[0][-1]
-            print "Digipeaters:\t", digipeaters
-            print "Info:\t\t", info.tobytes()
-        
-        self.destination = destination
-        self.source = source
-        self.info = info.tobytes()
-        self.digis = digipeaters 
-    except:
-        self.destination = "no decode"
-        self.source = "no decode"
-        self.info = "no decode"
-        self.digis = "no decode"
-        return 
-
 
     
     def __repr__(self):
         return self.__str__()
+    
     def __str__(self):
+        """
         return b"{source}>{destination},{digis}:{info}".format(
             destination = self.destination,
             source = self.source,
             digis = b",".join(self.digipeaters),
             info = self.info
-        )
+        )"""
+        
+        digis = b",".join(self.digipeaters)
+        return self.__showAsHex(self.destination)+self.__showAsHex(self.source)+self.__showAsHex(digis)+self.__showAsHex(self.info)
+        
+    def __showAsHex(self ,ba):
+    
+        result = ""
+        for b in ba:
+            result = result+hex(b)+" "
+     
+        return result
     
     
     def fcs(self):

@@ -76,6 +76,13 @@ usuario: pablito
 password: violento
 
 
+-----------------------------------
+CRC
+-----------------------------------
+#pip3 install pyCRC <-No usado
+pip3 install crcmod
+
+
 
 -----------------------------------
 Documentacion automatica
