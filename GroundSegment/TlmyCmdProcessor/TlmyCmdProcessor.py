@@ -11,6 +11,8 @@ TESTING: Puede ser testeado perfectamente usando un servidor TCP/IP de test del 
     ->https://packetsender.com/
 """
 import socket
+from struct import unpack, pack
+import crcmod
 import time
 import datetime
 from django.conf import settings
@@ -18,11 +20,10 @@ import os
 import sys
 
 from django.utils import timezone
-from _struct import unpack, pack
+
 from array import array
 import binascii
-from GroundSegment.Utils.AX25 import *
-import crcmod
+
 from binascii import hexlify, unhexlify
 
 
@@ -441,17 +442,20 @@ if __name__ == '__main__':
                                     vardataoffset = 7+7+1+1
                                     payload = ax25[ vardataoffset: ]
                                     """
-                                    ilen = len(asource+destination+control+protocol+pack('BB', 2, 2 ))+4
-                                    __showAsHex(pkt)
+                                    ilen = len(asource+destination+control+protocol+pack('BB', 2, 2 ))+2
                                     
                                     
                                     
+                                    
+                                    
+                                    pk = unhexlify('A8A4B0AAAC4060404040404040E103F00202')
                                     crcX25 = crcmod.predefined.Crc('x-25')
-                                    s = unhexlify('A8A4B0AAAC4060404040404040E103F00202')
-                                    crcX25.update(s)
+                                    crcX25.update(pk)
                                     crcX25.hexdigest()
-                                    fv = crcX25.hexdigest()[2:] + crcX25.hexdigest()[:2] 
-                                    pcrc = pack('H', crcX25.crcValue)
+                                    #fv = crcX25.hexdigest()[2:] + crcX25.hexdigest()[:2] 
+                                    
+                                    #Es little endian
+                                    pcrc = pack('<H', crcX25.crcValue)
                                     
                                     pkt = b'\x56'+pack('>I', ilen)+asource+destination+control+protocol+pack('BB', 2, 2 )+pcrc     
                                     
