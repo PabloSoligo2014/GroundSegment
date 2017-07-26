@@ -21,5 +21,5 @@ fs2017 = Satellite.objects.get(code="FS2017")
 fs2017.getCommandType()
 ct = fs2017.getCommandType().get(code="GT")
 
-cmd = fs2017.newCommand(ct, datetime.now()+timedelta(minutes=5))
+cmd = fs2017.newCommand(ct, datetime.utcnow()+timedelta(minutes=5))
 fs2017.sendCommand(cmd)

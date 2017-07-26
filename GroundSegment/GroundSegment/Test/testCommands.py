@@ -39,7 +39,7 @@ class Test(unittest.TestCase):
             ct = CommandType.objects.get(code="GT")
             
         except ObjectDoesNotExist:
-            ct = CommandType.create("GT", "Get Telemetry", sat, ss, False, 60, "Sin notas", 3)
+            ct = CommandType.create("GT", "Get Telemetry", sat, ss, False, 60, "Sin notas", 3, )
             ct.save()
             
         self.ct = ct

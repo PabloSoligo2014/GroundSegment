@@ -26,6 +26,8 @@ import binascii
 
 from binascii import hexlify, unhexlify
 
+from django.core.exceptions import ObjectDoesNotExist
+
 
 
 
@@ -64,14 +66,6 @@ decodificada en funcion de la configuracion de variables de telemetria del satel
 """
 
 
-
-def __showAsHex(ba):
-    
-    result = ""
-    for b in ba:
-        result = result+hex(b)+" "
-     
-    return result
 
 if __name__ == '__main__':
     
@@ -159,6 +153,7 @@ if __name__ == '__main__':
         from GroundSegment.models.DownlinkFrame import DownlinkFrame 
         from GroundSegment.Managers.CommandManager import CommandManager
         from GroundSegment.Utils.BColor import bcolors
+        from GroundSegment.models.FrameType import FrameType
         
         """
         Si el watchdog no fue creado aun en ejecuciones anteriores lo creo ahora
@@ -247,7 +242,7 @@ if __name__ == '__main__':
                                 """
                                 Establezco un timeout para la bajada, con o sin bajada los comandos deben ser enviados
                                 """
-                                #s.settimeout(5.0)
+                                s.settimeout(5.0)
                                 
                                 """
                                 Me quedo esperando recibir informacion del socket (IPC)
@@ -349,6 +344,11 @@ if __name__ == '__main__':
                                     dl.save()
                                     #frameTypeId = unpack("<B",payload[0])
                                     
+                                    try:
+                                        Console.log("Se recibio telemetria de :"+FrameType.objects.get(pk=frameTypeId).description)
+                                    except ObjectDoesNotExist:
+                                        print("Tipo de telemetria no encontrado")
+                                    
                                     telvars = TlmyVarType.objects.filter(satellite__code=satellite).filter(frameType__aid=frameTypeId)
                                     
                                     for tt in telvars:
@@ -379,109 +379,7 @@ if __name__ == '__main__':
                                               
                                               
                                     
-                                    #dl.processed = True                   
-                                    """
-                                    Ahora proceso los datos en funcion de las variables de telemetria configuradas en el sistema. 
-                                    Las mismas ya tienen internamente sus funciones de calibracion segun configuracion
-                                    """
-                                    
-                                    """
-                                    Recorro todas los tipos de variable de telemetria, las busco en la posicion en la trama, 
-                                    y actualizo su valor, la clase TlmyVarType internamente se encarga de todo, la transformacion en variable
-                                    de ingenieria y la persistencia en tiempo real e historica
-                                    """
-                                    """
-                                    
-                                    """
-                                    """
-                                    <sequence_number position="1" type="short" xmlns="" name="packetNumber"/>
-                                    <number position="3" type="int" xmlns="" name="OBCUpTime"/>
-                                    <number position="7" type="char" xmlns="" name="commandCounter"/>
-                                    """
-    #                                 packetNumber    = chunk[1-2] "pack"
-    #                                 OBCUpTime       = chunk[1,2,3,4]
-    #                                 commandCounter  = chunk[7]
-                                    #print("Send harcode command")
-                                    
-                                    #header =  b'\x56\xA8\xA4\xB0\xAA\xAC\x40\x60\x40\x40\x40\x40\x40\x40\xE1\x03\xF0'
-                                    #pkt = b'\x56\xA8\xA4\xB0\xAA\xAC\x40\x60\x40\x40\x40\x40\x40\x40\xE1\x03\xF0\x17\x00\x00\x00\x02\x02'
-                                    #sentbytes = s.send(pkt)
-                                    
-                                    
-                                    """
-                                    ATENCION 1: el checksum es CRC_16_X_25 (http://www.sunshine2k.de/coding/javascript/crc/crc_js.html) y para el ejemplo
-                                    :pkt = b'\x56\xA8\xA4\xB0\xAA\xAC\x40\x60\x40\x40\x40\x40\x40\x40\xE1\x03\xF0\x17\x00\x00\x00\x02\x02'
-                                    '              A8  A4  B0  AA  AC  40  60  40  40  40  40  40  40  E1  03  F0  02 02 0A B4'
-                                    A8  A4  B0  AA  AC  40  60  40  40  40  40  40  40  E1  03  F0  02 02
-                                    se debe calcular desde xA8, se debe excluir el flag de inicio y fin.
-                                    ATENCION 2: el checksum es de 16 bits y los bytes estan invertidos!!!
-                                    
-                                    x-25    0x11021    True    0x0000    0xFFFF    0x906E
-                                    
-                                    Esto ha sido probado y funciona correctamente, lo retornado por 
-                                    crcX25.hexdigest() debe ser dado vuelta
-                                    
-                                    crcX25 = crcmod.predefined.Crc('x-25')
-                                    s = unhexlify('A8A4B0AAAC4060404040404040E103F00202')
-                                    crcX25.update(s)
-                                    crcX25.hexdigest()
-                                    """
-                                    
-                                    
-                                    #Aca esta la posta: https://www.qb50.eu/index.php/tech-docs/category/16-archive?download=19:scs-docs
-                                    #1- 7 bytes - Destination Callsign
-                                    #2- 7 bytes - Source Callsign
-                                    #3- 2 bytes - Control Bytes
-                                    #4- Variable - Data bytes (Data sent by the OBC)
-                                    #5- 2 bytes - FCS (AX25 CRC)
-                                    """
-                                    destination  = ax25[0:7]
-                                    asource      = ax25[7:7+7]
-                                    control      = ax25[7+7:7+7+1]
-                                    protocol     = ax25[7+7+1:7+7+1+1]
-                                    vardataoffset = 7+7+1+1
-                                    payload = ax25[ vardataoffset: ]
-                                    """
-                                    ilen = len(asource+destination+control+protocol+pack('BB', 2, 2 ))+2
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    pk = unhexlify('A8A4B0AAAC4060404040404040E103F00202')
-                                    crcX25 = crcmod.predefined.Crc('x-25')
-                                    crcX25.update(pk)
-                                    crcX25.hexdigest()
-                                    #fv = crcX25.hexdigest()[2:] + crcX25.hexdigest()[:2] 
-                                    
-                                    #Es little endian
-                                    pcrc = pack('<H', crcX25.crcValue)
-                                    
-                                    pkt = b'\x56'+pack('>I', ilen)+asource+destination+control+protocol+pack('BB', 2, 2 )+pcrc     
-                                    
-                                    
-                                    sentbytes = s.send(pkt)
-                                    
-                                    #Este calcula el CRC-CCITT (XModem)
-                                    #__showAsHex(pack('H', binascii.crc_hqx(b'\xA8\xA4\xB0\xAA\xAC\x40\x60\x40\x40\x40\x40\x40\x40\xE1\x03\xF0\x02\x02', 0)))
-                                    #Este calcula CRC 16 pelado
-                                    #__showAsHex(pack('H', binascii.crc_hqx(b'\xA8\xA4\xB0\xAA\xAC\x40\x60\x40\x40\x40\x40\x40\x40\xE1\x03\xF0\x02\x02', 0)))
-                                    #'A8 A4 B0 AA AC 40 60 40 40 40 40 40 40 E1 03 F0 02 02 0A B4'
-                                    #sentbytes = s.send(b'\x56\xA8\xA4\xB0\xAA\xAC\x40\x60\x40\x40\x40\x40\x40\x40\xE1\x03\xF0\x02\x02')
-                                    #ISO 3309 (HDLC) Recommendations
-                                    #https://www.tapr.org/pdf/AX25.2.2.pdf
-                                    #Este guacho no rompe la conexion
-                                    #sentbytes = s.send(b'\x56\x07\x00\x00\x00\x02\x02')
-                                    
-                                    
-                                    #pkt = b'\x56\xA8\xA4\xB0\xAA\xAC\x40\x60\x40\x40\x40\x40\x40\x40\xE1\x03\xF0\x02\x02'
-                                    #sentbytes = s.send(pkt)
-                                    #sentbytes = s.send(pack('BIBB', 56, 3, 2, 2 ))
-                                    
-                                    
-                                    
-                                    print("hardcode command, bytes sent :", sentbytes )
-                                    
+                                                                        
                                       
                                 ##f.close()
                             except socket.timeout:
@@ -492,38 +390,33 @@ if __name__ == '__main__':
                             """
                             Si el satelite esta en linea debo mandar comandos pendientes
                             """
+                            
+                            
                             pendingCommands = cmdmgr.getPendingCommands()
-                            #Console.log("Comandos pendientes de envio: "+str(pendingCommands.count()))
-                            
-                            
-                            #s.send(('-SIN COMANDOS-'+str(i)).encode())
+                        
                             i = i + 1
                                 
+                            header = b'\x56'
+                            
+                            ilen = 0
                             for com in pendingCommands:
                                 
                                 Console.log("Se hardcodea ejecucion comando "+str(com.pk))
-                                #freq                = unpack("<d", chunk[PosFrequency:PosFrequency+LenFrequency])
                                 
-                                #oframecommand = pack('c', 56)
-                                #cmd = com.getBinaryCommand()
-                                #opayload = pack('c', 2, cmd[1])
-                                
-                                #a = array('b', )
-                                
-                                #s.send(com.getBinaryCommand())
-                                
-                                
-                                #s.send(pack('cIcc', b'a', 7 ,b'2', b'2'))
+                                prepack = asource+destination+control+protocol+unhexlify(com.commandType.commandCode)
+                                #El byte de inicio \x56 + 4 bytes del entero que indica el tamanio + el tamanio del paquete
+                                ilen = 1+4+len(prepack)
+                                #Mucha atencion con <I, big endian / little endian
+                                prepackpluslen = header+pack('<I', ilen)+prepack
+                                s.send(prepackpluslen)
                                 
                                 
                                 
-                                Console.log("Comando "+str(com.binarycmd)+" enviado")
+                                Console.log("Comando "+str(com.commandType.commandCode)+" enviado")
                                 
                                 
                                 com.setExecuted()
-                                """
-                                TODO: Encodear y mandar al satelite por el mismo socket aca!
-                                """
+                                #TODO: Encodear y mandar al satelite por el mismo socket aca!
                             
                             
                     finally:

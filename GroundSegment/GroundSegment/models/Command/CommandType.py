@@ -28,7 +28,7 @@ class CommandType(models.Model):
     
     
     @classmethod
-    def create(cls, code, description, satellite, satelliteState, transactional, timeout, notes, maxRetry):
+    def create(cls, code, description, satellite, satelliteState, transactional, timeout, notes, maxRetry, commandCode):
         result = cls()
         result.code             = code
         result.description      = description
@@ -38,7 +38,7 @@ class CommandType(models.Model):
         result.timeout          = timeout
         result.notes            = notes
         result.maxRetry         = maxRetry
-        
+        result.commandCode      = commandCode
         
         return result
     

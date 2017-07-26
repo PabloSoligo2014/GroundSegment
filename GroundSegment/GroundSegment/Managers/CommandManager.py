@@ -82,7 +82,12 @@ class CommandManager(models.Manager):
     
     
     def __setExpiredCommands(self):
-        cmds = Command.objects.filter(Q(satellite=self.satellite)&Q(expiration__lte=        datetime.utcnow().replace(tzinfo=pytz.UTC)    ))
+        cmds = Command.objects.filter(Q(satellite=self.satellite)&
+                                      Q(expiration__lte= datetime.utcnow().replace(tzinfo=pytz.UTC))&
+                                      Q(state__in=[0,]))
+       
+        
+        
         for c in cmds:
             c.setExpirated()
         
