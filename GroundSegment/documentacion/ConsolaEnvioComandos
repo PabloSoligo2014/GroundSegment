@@ -5,6 +5,9 @@ Consola shell de envio de comandos.
 cd C:\Users\pabli\git\GroundSegment\GroundSegment
 python
 
+cd /home/ubuntumate/git/GroundSegment/GroundSegment
+python3.4
+
 import sys; print('%s %s' % (sys.executable or sys.platform, sys.version))
 import os; os.environ['DJANGO_SETTINGS_MODULE'] = 'GroundSegment.settings'; import django
 from django.core.wsgi import get_wsgi_application
@@ -19,7 +22,7 @@ os.system('cls' if os.name=='nt' else 'clear')
 
 fs2017 = Satellite.objects.get(code="FS2017")
 fs2017.getCommandType()
-ct = fs2017.getCommandType().get(code="GT")
+ct = fs2017.getCommandType().get(code="telemetryOBC")
 
 cmd = fs2017.newCommand(ct, datetime.utcnow()+timedelta(minutes=5))
 fs2017.sendCommand(cmd)
