@@ -99,32 +99,42 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Inheritance diagram for GroundSegment.models.Sitio.Sitio:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ground_segment_1_1models_1_1_sitio_1_1_sitio__inherit__graph.png" border="0" usemap="#_ground_segment_8models_8_sitio_8_sitio_inherit__map" alt="Inheritance graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <div class="dynheader">
 Collaboration diagram for GroundSegment.models.Sitio.Sitio:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ground_segment_1_1models_1_1_sitio_1_1_sitio__coll__graph.png" border="0" usemap="#_ground_segment_8models_8_sitio_8_sitio_coll__map" alt="Collaboration graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a76b0e7facd2de38df048e845ebd100ae"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ground_segment_1_1models_1_1_sitio_1_1_sitio.html#a76b0e7facd2de38df048e845ebd100ae">__str__</a> (self)</td></tr>
 <tr class="separator:a76b0e7facd2de38df048e845ebd100ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7064b2318b27416ccbe44acfb96a5c32"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ground_segment_1_1models_1_1_sitio_1_1_sitio.html#a7064b2318b27416ccbe44acfb96a5c32">getPass</a> (self, satcode, idate)</td></tr>
+<tr class="separator:a7064b2318b27416ccbe44acfb96a5c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac23a61be5e990c70e7ffe19ac108d1ca"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ground_segment_1_1models_1_1_sitio_1_1_sitio.html#ac23a61be5e990c70e7ffe19ac108d1ca">getAsEphemObserver</a> (self)</td></tr>
+<tr class="separator:ac23a61be5e990c70e7ffe19ac108d1ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcc0813ee9504959117d74eb68ff8a80"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ground_segment_1_1models_1_1_sitio_1_1_sitio.html#adcc0813ee9504959117d74eb68ff8a80">getPasses</a> (self, satellite, afrom, ato)</td></tr>
+<tr class="separator:adcc0813ee9504959117d74eb68ff8a80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:ad9bfe4bfea9a9a600a9cf0a17dfe2abf"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ground_segment_1_1models_1_1_sitio_1_1_sitio.html#ad9bfe4bfea9a9a600a9cf0a17dfe2abf">name</a> = models.CharField(&quot;Nombre del <a class="el" href="class_ground_segment_1_1models_1_1_sitio_1_1_sitio.html">Sitio</a>&quot;, max_length=24, unique=True)</td></tr>
 <tr class="separator:ad9bfe4bfea9a9a600a9cf0a17dfe2abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a981bccda8fdc7772f7ce19d23e3c6bd7"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ground_segment_1_1models_1_1_sitio_1_1_sitio.html#a981bccda8fdc7772f7ce19d23e3c6bd7">lat</a> = models.FloatField('Latitud', help_text='[Dato en Grados Decimales]', unique=True)</td></tr>
+<tr class="memitem:a981bccda8fdc7772f7ce19d23e3c6bd7"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ground_segment_1_1models_1_1_sitio_1_1_sitio.html#a981bccda8fdc7772f7ce19d23e3c6bd7">lat</a> = models.FloatField('Latitud', help_text='[Dato en Grados Decimales]', validators=[validate_lat])</td></tr>
 <tr class="separator:a981bccda8fdc7772f7ce19d23e3c6bd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58939f0d8d5fff5d4807f745c6ba3335"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ground_segment_1_1models_1_1_sitio_1_1_sitio.html#a58939f0d8d5fff5d4807f745c6ba3335">lon</a> = models.FloatField('Longitud', help_text='[Grados Decimales]', unique=True)</td></tr>
+<tr class="memitem:a58939f0d8d5fff5d4807f745c6ba3335"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ground_segment_1_1models_1_1_sitio_1_1_sitio.html#a58939f0d8d5fff5d4807f745c6ba3335">lon</a> = models.FloatField('Longitud', help_text='[Grados Decimales]')</td></tr>
 <tr class="separator:a58939f0d8d5fff5d4807f745c6ba3335"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0345de18d6f8cc930f291c639a915366"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ground_segment_1_1models_1_1_sitio_1_1_sitio.html#a0345de18d6f8cc930f291c639a915366">h</a> = models.FloatField('altura', help_text='[metros]', unique=True)</td></tr>
+<tr class="memitem:a0345de18d6f8cc930f291c639a915366"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ground_segment_1_1models_1_1_sitio_1_1_sitio.html#a0345de18d6f8cc930f291c639a915366">h</a> = models.FloatField('Altura', help_text='[metros]')</td></tr>
 <tr class="separator:a0345de18d6f8cc930f291c639a915366"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae26c1d2a62cbe1a3dcae871012c0d5bd"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ground_segment_1_1models_1_1_sitio_1_1_sitio.html#ae26c1d2a62cbe1a3dcae871012c0d5bd">maskElev</a> = models.FloatField('Mascara de Elevacion', help_text='[grados]', default=0.0)</td></tr>
+<tr class="separator:ae26c1d2a62cbe1a3dcae871012c0d5bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2322dc336db534f7eec708e7e17b732f"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ground_segment_1_1models_1_1_sitio_1_1_sitio.html#a2322dc336db534f7eec708e7e17b732f">state</a> = models.ForeignKey(<a class="el" href="class_ground_segment_1_1models_1_1_state_1_1_state.html">State</a>,related_name='sitios', null=True)</td></tr>
+<tr class="separator:a2322dc336db534f7eec708e7e17b732f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_sitio_8py_source.html#l00010">10</a> of file <a class="el" href="_sitio_8py_source.html">Sitio.py</a>.</p>
+<p>Definition at line <a class="el" href="_sitio_8py_source.html#l00018">18</a> of file <a class="el" href="_sitio_8py_source.html">Sitio.py</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a76b0e7facd2de38df048e845ebd100ae"></a>
 <div class="memitem">
@@ -140,7 +150,111 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sitio_8py_source.html#l00016">16</a> of file <a class="el" href="_sitio_8py_source.html">Sitio.py</a>.</p>
+<p>Definition at line <a class="el" href="_sitio_8py_source.html#l00027">27</a> of file <a class="el" href="_sitio_8py_source.html">Sitio.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac23a61be5e990c70e7ffe19ac108d1ca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def GroundSegment.models.Sitio.Sitio.getAsEphemObserver </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_sitio_8py_source.html#l00080">80</a> of file <a class="el" href="_sitio_8py_source.html">Sitio.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7064b2318b27416ccbe44acfb96a5c32"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def GroundSegment.models.Sitio.Sitio.getPass </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>satcode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>idate</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_sitio_8py_source.html#l00030">30</a> of file <a class="el" href="_sitio_8py_source.html">Sitio.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ground_segment_1_1models_1_1_sitio_1_1_sitio_a7064b2318b27416ccbe44acfb96a5c32_cgraph.png" border="0" usemap="#class_ground_segment_1_1models_1_1_sitio_1_1_sitio_a7064b2318b27416ccbe44acfb96a5c32_cgraph" alt=""/></div>
+<map name="class_ground_segment_1_1models_1_1_sitio_1_1_sitio_a7064b2318b27416ccbe44acfb96a5c32_cgraph" id="class_ground_segment_1_1models_1_1_sitio_1_1_sitio_a7064b2318b27416ccbe44acfb96a5c32_cgraph">
+<area shape="rect" id="node2" href="namespace_ground_segment_1_1_utils_1_1_utils_functions.html#a56710bc5345e79be360f85d92fecc3aa" title="GroundSegment.Utils.Utils\lFunctions.datetime_from_time" alt="" coords="249,5,448,47"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="adcc0813ee9504959117d74eb68ff8a80"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def GroundSegment.models.Sitio.Sitio.getPasses </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>satellite</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>afrom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>ato</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Obtiene la tabla de pasadas completa para un rango, las tablas se generar en bloques
+de un dia si ya fue creada y con el ultimo TLE disponible
+retorna el resultado pero no recalcula si ya fue calculado antes
+</pre> 
+<p>Definition at line <a class="el" href="_sitio_8py_source.html#l00090">90</a> of file <a class="el" href="_sitio_8py_source.html">Sitio.py</a>.</p>
 
 </div>
 </div>
@@ -153,7 +267,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">tuple GroundSegment.models.Sitio.Sitio.h = models.FloatField('altura', help_text='[metros]', unique=True)</td>
+          <td class="memname">tuple GroundSegment.models.Sitio.Sitio.h = models.FloatField('Altura', help_text='[metros]')</td>
         </tr>
       </table>
   </td>
@@ -163,7 +277,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sitio_8py_source.html#l00014">14</a> of file <a class="el" href="_sitio_8py_source.html">Sitio.py</a>.</p>
+<p>Definition at line <a class="el" href="_sitio_8py_source.html#l00022">22</a> of file <a class="el" href="_sitio_8py_source.html">Sitio.py</a>.</p>
 
 </div>
 </div>
@@ -175,7 +289,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">tuple GroundSegment.models.Sitio.Sitio.lat = models.FloatField('Latitud', help_text='[Dato en Grados Decimales]', unique=True)</td>
+          <td class="memname">tuple GroundSegment.models.Sitio.Sitio.lat = models.FloatField('Latitud', help_text='[Dato en Grados Decimales]', validators=[validate_lat])</td>
         </tr>
       </table>
   </td>
@@ -185,7 +299,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sitio_8py_source.html#l00012">12</a> of file <a class="el" href="_sitio_8py_source.html">Sitio.py</a>.</p>
+<p>Definition at line <a class="el" href="_sitio_8py_source.html#l00020">20</a> of file <a class="el" href="_sitio_8py_source.html">Sitio.py</a>.</p>
 
 </div>
 </div>
@@ -197,7 +311,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">tuple GroundSegment.models.Sitio.Sitio.lon = models.FloatField('Longitud', help_text='[Grados Decimales]', unique=True)</td>
+          <td class="memname">tuple GroundSegment.models.Sitio.Sitio.lon = models.FloatField('Longitud', help_text='[Grados Decimales]')</td>
         </tr>
       </table>
   </td>
@@ -207,7 +321,29 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sitio_8py_source.html#l00013">13</a> of file <a class="el" href="_sitio_8py_source.html">Sitio.py</a>.</p>
+<p>Definition at line <a class="el" href="_sitio_8py_source.html#l00021">21</a> of file <a class="el" href="_sitio_8py_source.html">Sitio.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae26c1d2a62cbe1a3dcae871012c0d5bd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple GroundSegment.models.Sitio.Sitio.maskElev = models.FloatField('Mascara de Elevacion', help_text='[grados]', default=0.0)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_sitio_8py_source.html#l00023">23</a> of file <a class="el" href="_sitio_8py_source.html">Sitio.py</a>.</p>
 
 </div>
 </div>
@@ -229,7 +365,29 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sitio_8py_source.html#l00011">11</a> of file <a class="el" href="_sitio_8py_source.html">Sitio.py</a>.</p>
+<p>Definition at line <a class="el" href="_sitio_8py_source.html#l00019">19</a> of file <a class="el" href="_sitio_8py_source.html">Sitio.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2322dc336db534f7eec708e7e17b732f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple GroundSegment.models.Sitio.Sitio.state = models.ForeignKey(<a class="el" href="class_ground_segment_1_1models_1_1_state_1_1_state.html">State</a>,related_name='sitios', null=True)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_sitio_8py_source.html#l00025">25</a> of file <a class="el" href="_sitio_8py_source.html">Sitio.py</a>.</p>
 
 </div>
 </div>

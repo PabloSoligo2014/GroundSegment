@@ -1,0 +1,99 @@
+\hypertarget{class_ground_segment_1_1migrations_1_10030__auto__20170125__1955_1_1_migration}{}\section{Ground\+Segment.\+migrations.0030\+\_\+auto\+\_\+20170125\+\_\+1955.Migration Class Reference}
+\label{class_ground_segment_1_1migrations_1_10030__auto__20170125__1955_1_1_migration}\index{Ground\+Segment.\+migrations.\+0030\+\_\+auto\+\_\+20170125\+\_\+1955.\+Migration@{Ground\+Segment.\+migrations.\+0030\+\_\+auto\+\_\+20170125\+\_\+1955.\+Migration}}
+
+
+Inheritance diagram for Ground\+Segment.\+migrations.0030\+\_\+auto\+\_\+20170125\+\_\+1955.Migration\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_ground_segment_1_1migrations_1_10030__auto__20170125__1955_1_1_migration__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ground\+Segment.\+migrations.0030\+\_\+auto\+\_\+20170125\+\_\+1955.Migration\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_ground_segment_1_1migrations_1_10030__auto__20170125__1955_1_1_migration__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+list \hyperlink{class_ground_segment_1_1migrations_1_10030__auto__20170125__1955_1_1_migration_ab326e8a19320df8ed5a25b926a7e0592}{dependencies}
+\item 
+list \hyperlink{class_ground_segment_1_1migrations_1_10030__auto__20170125__1955_1_1_migration_a1057b51df665a31780a95e62bc1f8fd4}{operations}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 9 of file 0030\+\_\+auto\+\_\+20170125\+\_\+1955.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_ground_segment_1_1migrations_1_10030__auto__20170125__1955_1_1_migration_ab326e8a19320df8ed5a25b926a7e0592}{}\index{Ground\+Segment\+::migrations\+::0030\+\_\+auto\+\_\+20170125\+\_\+1955\+::\+Migration@{Ground\+Segment\+::migrations\+::0030\+\_\+auto\+\_\+20170125\+\_\+1955\+::\+Migration}!dependencies@{dependencies}}
+\index{dependencies@{dependencies}!Ground\+Segment\+::migrations\+::0030\+\_\+auto\+\_\+20170125\+\_\+1955\+::\+Migration@{Ground\+Segment\+::migrations\+::0030\+\_\+auto\+\_\+20170125\+\_\+1955\+::\+Migration}}
+\subsubsection[{dependencies}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+migrations.\+0030\+\_\+auto\+\_\+20170125\+\_\+1955.\+Migration.\+dependencies\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1migrations_1_10030__auto__20170125__1955_1_1_migration_ab326e8a19320df8ed5a25b926a7e0592}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 = [
+2         (\textcolor{stringliteral}{'GroundSegment'}, \textcolor{stringliteral}{'0029\_pasada\_duration'}),
+3     ]
+\end{DoxyCode}
+
+
+Definition at line 11 of file 0030\+\_\+auto\+\_\+20170125\+\_\+1955.\+py.
+
+\hypertarget{class_ground_segment_1_1migrations_1_10030__auto__20170125__1955_1_1_migration_a1057b51df665a31780a95e62bc1f8fd4}{}\index{Ground\+Segment\+::migrations\+::0030\+\_\+auto\+\_\+20170125\+\_\+1955\+::\+Migration@{Ground\+Segment\+::migrations\+::0030\+\_\+auto\+\_\+20170125\+\_\+1955\+::\+Migration}!operations@{operations}}
+\index{operations@{operations}!Ground\+Segment\+::migrations\+::0030\+\_\+auto\+\_\+20170125\+\_\+1955\+::\+Migration@{Ground\+Segment\+::migrations\+::0030\+\_\+auto\+\_\+20170125\+\_\+1955\+::\+Migration}}
+\subsubsection[{operations}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+migrations.\+0030\+\_\+auto\+\_\+20170125\+\_\+1955.\+Migration.\+operations\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1migrations_1_10030__auto__20170125__1955_1_1_migration_a1057b51df665a31780a95e62bc1f8fd4}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 = [
+2         migrations.CreateModel(
+3             name=\textcolor{stringliteral}{'DCPData'},
+4             fields=[
+5                 (\textcolor{stringliteral}{'id'}, models.AutoField(auto\_created=\textcolor{keyword}{True}, primary\_key=\textcolor{keyword}{True}, serialize=\textcolor{keyword}{False}, verbose\_name=\textcolor{stringliteral}{
+      'ID'})),
+6                 (\textcolor{stringliteral}{'dataTime'}, models.DateTimeField(auto\_now\_add=\textcolor{keyword}{True})),
+7                 (\textcolor{stringliteral}{'receive\_dataTime'}, models.DateTimeField(auto\_now\_add=\textcolor{keyword}{True})),
+8                 (\textcolor{stringliteral}{'snow'}, models.FloatField(default=0.0, help\_text=\textcolor{stringliteral}{'Nieve\_colchon'})),
+9                 (\textcolor{stringliteral}{'Precipitation'}, models.FloatField(default=0.0, help\_text=\textcolor{stringliteral}{'Precipitacion\_Totalizador'})),
+10                 (\textcolor{stringliteral}{'Temperature'}, models.FloatField(default=0.0, help\_text=\textcolor{stringliteral}{'Temperatura [C]'})),
+11                 (\textcolor{stringliteral}{'Humidity'}, models.FloatField(default=0.0, help\_text=\textcolor{stringliteral}{'Humedad [%]'})),
+12                 (\textcolor{stringliteral}{'Wind\_dir'}, models.FloatField(default=0.0, help\_text=\textcolor{stringliteral}{'Direccion del Viento [grados]'})),
+13                 (\textcolor{stringliteral}{'Wind\_speed'}, models.FloatField(default=0.0, help\_text=\textcolor{stringliteral}{'Velocidad del viento [KPH]'})),
+14                 (\textcolor{stringliteral}{'Bat\_volts'}, models.FloatField(default=0.0, help\_text=\textcolor{stringliteral}{'Tension de Bateria [volts]'})),
+15                 (\textcolor{stringliteral}{'cm\_data'}, models.FloatField(default=0.0, help\_text=\textcolor{stringliteral}{'cm ???????'})),
+16             ],
+17         ),
+18         migrations.CreateModel(
+19             name=\textcolor{stringliteral}{'DCPPlatform'},
+20             fields=[
+21                 (\textcolor{stringliteral}{'id'}, models.AutoField(auto\_created=\textcolor{keyword}{True}, primary\_key=\textcolor{keyword}{True}, serialize=\textcolor{keyword}{False}, verbose\_name=\textcolor{stringliteral}{
+      'ID'})),
+22                 (\textcolor{stringliteral}{'code'}, models.CharField(help\_text=\textcolor{stringliteral}{'Codigo de la Plataforma'}, max\_length=24, unique=\textcolor{keyword}{True}, 
+      verbose\_name=\textcolor{stringliteral}{'Codigo de la Plataforma'})),
+23             ],
+24         ),
+25         migrations.AddField(
+26             model\_name=\textcolor{stringliteral}{'dcpdata'},
+27             name=\textcolor{stringliteral}{'dcp\_plataform'},
+28             field=models.ForeignKey(on\_delete=django.db.models.deletion.CASCADE, related\_name=\textcolor{stringliteral}{'dcpdatas'}, 
+      to=\textcolor{stringliteral}{'GroundSegment.DCPPlatform'}),
+29         ),
+30     ]
+\end{DoxyCode}
+
+
+Definition at line 15 of file 0030\+\_\+auto\+\_\+20170125\+\_\+1955.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ubuntumate/git/\+Ground\+Segment/\+Ground\+Segment/\+Ground\+Segment/migrations/\hyperlink{0030__auto__20170125__1955_8py}{0030\+\_\+auto\+\_\+20170125\+\_\+1955.\+py}\end{DoxyCompactItemize}

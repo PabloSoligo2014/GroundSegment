@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{c}{\PYGdefaultZsh{}Instancio el satélite FS2019}
+\PYGdefault{n}{sat} \PYGdefault{o}{=} \PYGdefault{n}{Satellite}\PYGdefault{o}{.}\PYGdefault{n}{objects}\PYGdefault{o}{.}\PYGdefault{n}{get}\PYGdefault{p}{(}\PYGdefault{n}{code}\PYGdefault{o}{=}\PYGdefault{l+s}{\PYGdefaultZdq{}FS2019\PYGdefaultZdq{}}\PYGdefault{p}{)}
+\PYGdefault{o}{...}
+
+\PYGdefault{c}{\PYGdefaultZsh{}Consulto si la temperatura de la OBC esta por debajo de 10 grados y tambien}
+\PYGdefault{c}{\PYGdefaultZsh{}Verifico que el heater este apagado}
+\PYGdefault{k}{if} \PYGdefault{n}{sat}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{get}\PYGdefault{p}{(}\PYGdefault{n}{code}\PYGdefault{o}{=}\PYGdefault{l+s}{\PYGdefaultZdq{}obcT1\PYGdefaultZdq{}}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{getValue}\PYGdefault{p}{()}\PYGdefault{o}{\PYGdefaultZlt{}}\PYGdefault{l+m+mi}{10} \PYGdefault{o+ow}{and}
+   \PYGdefault{n}{sat}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{get}\PYGdefault{p}{(}\PYGdefault{n}{code}\PYGdefault{o}{=}\PYGdefault{l+s}{\PYGdefaultZdq{}HeaterOn\PYGdefaultZdq{}}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{getValue}\PYGdefault{p}{()}\PYGdefault{o}{==}\PYGdefault{n+nb+bp}{False}\PYGdefault{p}{:}
+
+   \PYGdefault{c}{\PYGdefaultZsh{}Obtengo el tipo de comando para encender el heater}
+   \PYGdefault{n}{ct} \PYGdefault{o}{=} \PYGdefault{n}{sat}\PYGdefault{o}{.}\PYGdefault{n}{getCommandType}\PYGdefault{p}{()}\PYGdefault{o}{.}\PYGdefault{n}{get}\PYGdefault{p}{(}\PYGdefault{n}{code}\PYGdefault{o}{=}\PYGdefault{l+s}{\PYGdefaultZdq{}HeaterTurnOn\PYGdefaultZdq{}}\PYGdefault{p}{)}
+   \PYGdefault{c}{\PYGdefaultZsh{}Creo un nuevo comando para el satelite, con fecha de vencimiento 5 minutos desde la fecha de creación.}
+   \PYGdefault{c}{\PYGdefaultZsh{}Es un comando de ejecución en tiempo real y por tanto no se agrega un tercer parametro de fecha de ejecución}
+   \PYGdefault{n}{cmd} \PYGdefault{o}{=} \PYGdefault{n}{sat}\PYGdefault{o}{.}\PYGdefault{n}{newCommand}\PYGdefault{p}{(}\PYGdefault{n}{ct}\PYGdefault{p}{,} \PYGdefault{n}{datetime}\PYGdefault{o}{.}\PYGdefault{n}{utcnow}\PYGdefault{p}{()}\PYGdefault{o}{+}\PYGdefault{n}{timedelta}\PYGdefault{p}{(}\PYGdefault{n}{minutes}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{5}\PYGdefault{p}{))}
+   \PYGdefault{c}{\PYGdefaultZsh{}Finalmente envío el comando.}
+   \PYGdefault{n}{sat}\PYGdefault{o}{.}\PYGdefault{n}{sendCommand}\PYGdefault{p}{(}\PYGdefault{n}{cmd}\PYGdefault{p}{)}
+\end{Verbatim}

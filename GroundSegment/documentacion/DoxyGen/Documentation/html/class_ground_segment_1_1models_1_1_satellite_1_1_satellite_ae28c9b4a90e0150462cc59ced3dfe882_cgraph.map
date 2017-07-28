@@ -1,0 +1,6 @@
+<map id="GroundSegment.models.Satellite.Satellite.expirateAll" name="GroundSegment.models.Satellite.Satellite.expirateAll">
+<area shape="rect" id="node2" href="$class_ground_segment_1_1_managers_1_1_command_manager_1_1_command_manager.html#a17a09b602e86f74c74cfd1ebe3dfe832" title="GroundSegment.Managers.Command\lManager.CommandManager.getPending\lCommands" alt="" coords="271,5,525,61"/>
+<area shape="rect" id="node4" href="$class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a996d22d63af5cc9d9323e8fba7d52c82" title="GroundSegment.models.Satellite.\lSatellite.getPendingCommands" alt="" coords="289,85,507,126"/>
+<area shape="rect" id="node3" href="$class_ground_segment_1_1_managers_1_1_command_manager_1_1_command_manager.html#a2c517875a09510c5d0d77117c673e2e0" title="GroundSegment.Managers.Command\lManager.CommandManager._\l_setExpiredCommands" alt="" coords="573,5,815,61"/>
+<area shape="rect" id="node5" href="$class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ab1e6097a665e229a183ae7502e890725" title="GroundSegment.models.Satellite.\lSatellite.__setExpiredCommands" alt="" coords="585,85,803,126"/>
+</map>

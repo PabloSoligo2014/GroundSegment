@@ -1,0 +1,130 @@
+\hypertarget{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation}{}\section{Ground\+Segment.\+models.\+Pass\+Generation.\+Pass\+Generation Class Reference}
+\label{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation}\index{Ground\+Segment.\+models.\+Pass\+Generation.\+Pass\+Generation@{Ground\+Segment.\+models.\+Pass\+Generation.\+Pass\+Generation}}
+
+
+Inheritance diagram for Ground\+Segment.\+models.\+Pass\+Generation.\+Pass\+Generation\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ground\+Segment.\+models.\+Pass\+Generation.\+Pass\+Generation\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation_a07354412d0bbfed5b5793458b6b42faf}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation_aca8b71f499f46286ed32051f3c3a3234}{create} (cls, \hyperlink{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation_a0468102949615d7326a6b3c3a270994f}{day}, \hyperlink{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation_a71db0ead15e88702108257298c413ffe}{tle}, \hyperlink{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation_a0f1c573d07a1127b70c0e4b3085e0149}{satellite}, \hyperlink{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation_a3917c0e67d8a74db52404c6696d2e1c8}{sitio})
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation_a996c25b5465779183f0e8876416efd1c}{created} = models.\+Date\+Time\+Field(auto\+\_\+now\+\_\+add=True)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation_a71db0ead15e88702108257298c413ffe}{tle} = models.\+Foreign\+Key(\hyperlink{class_ground_segment_1_1models_1_1_tle_1_1_tle}{Tle}, related\+\_\+name=\textquotesingle{}pass\+Generations\textquotesingle{})
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation_a0f1c573d07a1127b70c0e4b3085e0149}{satellite} = models.\+Foreign\+Key(\hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite}{Satellite}, related\+\_\+name=\textquotesingle{}pass\+Generations\textquotesingle{})
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation_a3917c0e67d8a74db52404c6696d2e1c8}{sitio} = models.\+Foreign\+Key(\hyperlink{class_ground_segment_1_1models_1_1_sitio_1_1_sitio}{Sitio},related\+\_\+name=\textquotesingle{}pass\+Generations\textquotesingle{})
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation_a0468102949615d7326a6b3c3a270994f}{day} = models.\+Date\+Field(\char`\"{}Fecha que se toma en consideracion\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 20 of file Pass\+Generation.\+py.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation_a07354412d0bbfed5b5793458b6b42faf}{}\index{Ground\+Segment\+::models\+::\+Pass\+Generation\+::\+Pass\+Generation@{Ground\+Segment\+::models\+::\+Pass\+Generation\+::\+Pass\+Generation}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!Ground\+Segment\+::models\+::\+Pass\+Generation\+::\+Pass\+Generation@{Ground\+Segment\+::models\+::\+Pass\+Generation\+::\+Pass\+Generation}}
+\subsubsection[{\+\_\+\+\_\+str\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Pass\+Generation.\+Pass\+Generation.\+\_\+\+\_\+str\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation_a07354412d0bbfed5b5793458b6b42faf}
+
+
+Definition at line 28 of file Pass\+Generation.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation_aca8b71f499f46286ed32051f3c3a3234}{}\index{Ground\+Segment\+::models\+::\+Pass\+Generation\+::\+Pass\+Generation@{Ground\+Segment\+::models\+::\+Pass\+Generation\+::\+Pass\+Generation}!create@{create}}
+\index{create@{create}!Ground\+Segment\+::models\+::\+Pass\+Generation\+::\+Pass\+Generation@{Ground\+Segment\+::models\+::\+Pass\+Generation\+::\+Pass\+Generation}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Pass\+Generation.\+Pass\+Generation.\+create (
+\begin{DoxyParamCaption}
+\item[{}]{cls, }
+\item[{}]{day, }
+\item[{}]{tle, }
+\item[{}]{satellite, }
+\item[{}]{sitio}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation_aca8b71f499f46286ed32051f3c3a3234}
+
+
+Definition at line 32 of file Pass\+Generation.\+py.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation_aca8b71f499f46286ed32051f3c3a3234_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation_a996c25b5465779183f0e8876416efd1c}{}\index{Ground\+Segment\+::models\+::\+Pass\+Generation\+::\+Pass\+Generation@{Ground\+Segment\+::models\+::\+Pass\+Generation\+::\+Pass\+Generation}!created@{created}}
+\index{created@{created}!Ground\+Segment\+::models\+::\+Pass\+Generation\+::\+Pass\+Generation@{Ground\+Segment\+::models\+::\+Pass\+Generation\+::\+Pass\+Generation}}
+\subsubsection[{created}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Pass\+Generation.\+Pass\+Generation.\+created = models.\+Date\+Time\+Field(auto\+\_\+now\+\_\+add=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation_a996c25b5465779183f0e8876416efd1c}
+
+
+Definition at line 21 of file Pass\+Generation.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation_a0468102949615d7326a6b3c3a270994f}{}\index{Ground\+Segment\+::models\+::\+Pass\+Generation\+::\+Pass\+Generation@{Ground\+Segment\+::models\+::\+Pass\+Generation\+::\+Pass\+Generation}!day@{day}}
+\index{day@{day}!Ground\+Segment\+::models\+::\+Pass\+Generation\+::\+Pass\+Generation@{Ground\+Segment\+::models\+::\+Pass\+Generation\+::\+Pass\+Generation}}
+\subsubsection[{day}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Pass\+Generation.\+Pass\+Generation.\+day = models.\+Date\+Field(\char`\"{}Fecha que se toma en consideracion\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation_a0468102949615d7326a6b3c3a270994f}
+
+
+Definition at line 25 of file Pass\+Generation.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation_a0f1c573d07a1127b70c0e4b3085e0149}{}\index{Ground\+Segment\+::models\+::\+Pass\+Generation\+::\+Pass\+Generation@{Ground\+Segment\+::models\+::\+Pass\+Generation\+::\+Pass\+Generation}!satellite@{satellite}}
+\index{satellite@{satellite}!Ground\+Segment\+::models\+::\+Pass\+Generation\+::\+Pass\+Generation@{Ground\+Segment\+::models\+::\+Pass\+Generation\+::\+Pass\+Generation}}
+\subsubsection[{satellite}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Pass\+Generation.\+Pass\+Generation.\+satellite = models.\+Foreign\+Key({\bf Satellite}, related\+\_\+name=\textquotesingle{}pass\+Generations\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation_a0f1c573d07a1127b70c0e4b3085e0149}
+
+
+Definition at line 23 of file Pass\+Generation.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation_a3917c0e67d8a74db52404c6696d2e1c8}{}\index{Ground\+Segment\+::models\+::\+Pass\+Generation\+::\+Pass\+Generation@{Ground\+Segment\+::models\+::\+Pass\+Generation\+::\+Pass\+Generation}!sitio@{sitio}}
+\index{sitio@{sitio}!Ground\+Segment\+::models\+::\+Pass\+Generation\+::\+Pass\+Generation@{Ground\+Segment\+::models\+::\+Pass\+Generation\+::\+Pass\+Generation}}
+\subsubsection[{sitio}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Pass\+Generation.\+Pass\+Generation.\+sitio = models.\+Foreign\+Key({\bf Sitio},related\+\_\+name=\textquotesingle{}pass\+Generations\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation_a3917c0e67d8a74db52404c6696d2e1c8}
+
+
+Definition at line 24 of file Pass\+Generation.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation_a71db0ead15e88702108257298c413ffe}{}\index{Ground\+Segment\+::models\+::\+Pass\+Generation\+::\+Pass\+Generation@{Ground\+Segment\+::models\+::\+Pass\+Generation\+::\+Pass\+Generation}!tle@{tle}}
+\index{tle@{tle}!Ground\+Segment\+::models\+::\+Pass\+Generation\+::\+Pass\+Generation@{Ground\+Segment\+::models\+::\+Pass\+Generation\+::\+Pass\+Generation}}
+\subsubsection[{tle}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Pass\+Generation.\+Pass\+Generation.\+tle = models.\+Foreign\+Key({\bf Tle}, related\+\_\+name=\textquotesingle{}pass\+Generations\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation_a71db0ead15e88702108257298c413ffe}
+
+
+Definition at line 22 of file Pass\+Generation.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ubuntumate/git/\+Ground\+Segment/\+Ground\+Segment/\+Ground\+Segment/models/\hyperlink{_pass_generation_8py}{Pass\+Generation.\+py}\end{DoxyCompactItemize}

@@ -106,252 +106,369 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">from</span> <a class="code" href="class_ground_segment_1_1models_1_1_satellite_state_1_1_satellite_state.html">GroundSegment.models.SatelliteState</a> <span class="keyword">import</span> SatelliteState</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">from</span> <a class="code" href="class_ground_segment_1_1models_1_1_parameter_1_1_parameter.html">GroundSegment.models.Parameter</a> <span class="keyword">import</span> Parameter</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">from</span> django.db.models.query <span class="keyword">import</span> QuerySet</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">from</span> django.db.models <span class="keyword">import</span> Q</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">import</span> pytz</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html">Satellite</a>(models.Model):</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="stringliteral">    Clase/Entidad Satelite. </span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ae4a43a1ee941bff4914f4fed1e2775a1">   29</a></span>&#160;    code           = models.CharField(<span class="stringliteral">&#39;Codigo del satelite&#39;</span>, max_length=24, help_text=<span class="stringliteral">&#39;Codigo del satelite, ejemplo FS2017&#39;</span>, unique=<span class="keyword">True</span>)</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a076215a5d0896cf97edbf312c7605000">   30</a></span>&#160;    description    = models.CharField(<span class="stringliteral">&#39;Decripcion del satelite&#39;</span>, max_length=100, help_text=<span class="stringliteral">&#39;Decripcion del satelite&#39;</span>, unique=<span class="keyword">True</span>)</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a7962e5b81ff68f4fdedb33ce54bd4368">   31</a></span>&#160;    noradId        = models.IntegerField(<span class="stringliteral">&#39;Codigo norad del satelite&#39;</span>, help_text=<span class="stringliteral">&#39;Codigo norad del satelite&#39;</span>, unique=<span class="keyword">True</span>)</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a43cd47392c46ca0c6c7c92a8828d7d26">   32</a></span>&#160;    active         = models.BooleanField(<span class="stringliteral">&#39;Activacion/desactivacion del satelite&#39;</span>, default=<span class="keyword">True</span>)</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a4cdd4dae77da6f58058ca51ac71bd31d">   33</a></span>&#160;    state          = models.ForeignKey(SatelliteState, related_name=<span class="stringliteral">&#39;satellites&#39;</span>)</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a6ae6b5fad6dd1a31200d8dd8e0ba07a0">   34</a></span>&#160;    notes          = models.TextField(<span class="stringliteral">&#39;Observaciones sobre el satelite&#39;</span>, max_length=512, null=<span class="keyword">True</span>) </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    @classmethod</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a31da88247812f3de8ee84b91b50f27b7">   37</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a31da88247812f3de8ee84b91b50f27b7">new</a>(cls, code, description, noradId):</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="stringliteral">        Constructor de clase</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="stringliteral">    </span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="stringliteral">        @noradId  m: Identificacion unica asignada por NORAD</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="stringliteral">        @code m: Codigo unico (unique) del satelite dentro del sistema de segmento terreno MDIAE 2015-2017 </span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="stringliteral">        @description  b: number</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="stringliteral">        @rtype:   Satellite</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="stringliteral">        @return:  Nueva instancia del satelite</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html">Satellite</a>(models.Model):</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="stringliteral">    Clase/Entidad Satelite. </span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ae4a43a1ee941bff4914f4fed1e2775a1">   27</a></span>&#160;    code           = models.CharField(<span class="stringliteral">&#39;Codigo del satelite&#39;</span>, max_length=24, help_text=<span class="stringliteral">&#39;Codigo del satelite, ejemplo FS2017&#39;</span>, unique=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a076215a5d0896cf97edbf312c7605000">   28</a></span>&#160;    description    = models.CharField(<span class="stringliteral">&#39;Decripcion del satelite&#39;</span>, max_length=100, help_text=<span class="stringliteral">&#39;Decripcion del satelite&#39;</span>, unique=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a7962e5b81ff68f4fdedb33ce54bd4368">   29</a></span>&#160;    noradId        = models.IntegerField(<span class="stringliteral">&#39;Codigo norad del satelite&#39;</span>, help_text=<span class="stringliteral">&#39;Codigo norad del satelite&#39;</span>, unique=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a43cd47392c46ca0c6c7c92a8828d7d26">   30</a></span>&#160;    active         = models.BooleanField(<span class="stringliteral">&#39;Activacion/desactivacion del satelite&#39;</span>, default=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a4cdd4dae77da6f58058ca51ac71bd31d">   31</a></span>&#160;    state          = models.ForeignKey(SatelliteState, related_name=<span class="stringliteral">&#39;satellites&#39;</span>)</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a6ae6b5fad6dd1a31200d8dd8e0ba07a0">   32</a></span>&#160;    notes          = models.TextField(<span class="stringliteral">&#39;Observaciones sobre el satelite&#39;</span>, max_length=512, null=<span class="keyword">True</span>) </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a5ee2ef851142b9b94e44d850425d62c1">   33</a></span>&#160;    inContact      = models.BooleanField(<span class="stringliteral">&quot;Si el satelite esta con enlace activo&quot;</span>, default=<span class="keyword">False</span>)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a17c5c47d8ef48fe204723f224800a4cc">   35</a></span>&#160;    commServerIP       = models.CharField(<span class="stringliteral">&#39;IP servidor/cortex &#39;</span>, max_length=24, help_text=<span class="stringliteral">&#39;IP servidor/cortex&#39;</span>, default=<span class="stringliteral">&#39;127.0.0.1&#39;</span>)</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a3dce35fcdd0293a4c147483ec91abcb3">   36</a></span>&#160;    commServerPort     = models.CharField(<span class="stringliteral">&#39;Puerto servidor/cortex&#39;</span>, max_length=24, help_text=<span class="stringliteral">&#39;Puerto servidor/cortex&#39;</span>, default=<span class="stringliteral">&#39;3210&#39;</span>)   </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    @classmethod</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a2f064a4aef74f3fd6808147eb36bfaea">   39</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a2f064a4aef74f3fd6808147eb36bfaea">new</a>(cls, code, description, noradId, satelliteState=None):</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="stringliteral">        Constructor de clase</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="stringliteral">    </span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="stringliteral">        @noradId  m: Identificacion unica asignada por NORAD</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="stringliteral">        @code m: Codigo unico (unique) del satelite dentro del sistema de segmento terreno MDIAE 2015-2017 </span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="stringliteral">        @description  b: number</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="stringliteral">        @rtype:   Satellite</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="stringliteral">        @return:  Nueva instancia del satelite</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        result = cls()</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        result.code        = code</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        result.description = description</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        result.noradId     = noradId</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">return</span> result</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    </div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a514073889905f270022336e51caf420e">   59</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a514073889905f270022336e51caf420e">getCode</a>(self):</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ae4a43a1ee941bff4914f4fed1e2775a1">code</a></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        result = <a class="code" href="namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor.html#af0147d96af788791368b9d5746f8699b">cls</a>()</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        result.code        = code</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        result.description = description</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        result.noradId     = noradId</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        result.state       = satelliteState</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">return</span> result</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="stringliteral">    Metodo privado doble __</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">def </span>__downloadLastTle(self):</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="comment">#Solo me traigo el tle si hace un dia que no me lo traigo</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">from</span> <a class="code" href="class_ground_segment_1_1models_1_1_tle_1_1_tle.html">GroundSegment.models.Tle</a> <span class="keyword">import</span> Tle</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">try</span>:</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            loginURL = Parameter.objects.get(key=<span class="stringliteral">&quot;NoradLoginURL&quot;</span>)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">except</span> Parameter.DoesNotExist:</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            loginURL = <span class="keywordtype">None</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">if</span> loginURL==<span class="keywordtype">None</span>:</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            loginURL = <a class="code" href="class_ground_segment_1_1models_1_1_parameter_1_1_parameter.html">Parameter</a>()</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            loginURL.key = <span class="stringliteral">&quot;NoradLoginURL&quot;</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            loginURL.value = <span class="stringliteral">&quot;https://www.space-track.org/ajaxauth/login&quot;</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            loginURL.module = <span class="stringliteral">&quot;Temporal&quot;</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            loginURL.save()</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">try</span>:</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            username = Parameter.objects.get(key=<span class="stringliteral">&quot;NoradUserName&quot;</span>)</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">except</span> Parameter.DoesNotExist:</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            username = <span class="keywordtype">None</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">if</span> username==<span class="keywordtype">None</span>:</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            username = <a class="code" href="class_ground_segment_1_1models_1_1_parameter_1_1_parameter.html">Parameter</a>()</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            username.key = <span class="stringliteral">&quot;NoradUserName&quot;</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            username.value = <span class="stringliteral">&quot;macecilia&quot;</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            username.module = <span class="stringliteral">&quot;Temporal&quot;</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            username.save()</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">try</span>:</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            password = Parameter.objects.get(key=<span class="stringliteral">&quot;NoradPassword&quot;</span>)</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">except</span> Parameter.DoesNotExist:</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            password = <span class="keywordtype">None</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">if</span> password==<span class="keywordtype">None</span>:</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            password = <a class="code" href="class_ground_segment_1_1models_1_1_parameter_1_1_parameter.html">Parameter</a>()</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            password.key = <span class="stringliteral">&quot;NoradPassword&quot;</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            password.value = <span class="stringliteral">&quot;MaCeciliaSpace17&quot;</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            password.module = <span class="stringliteral">&quot;Temporal&quot;</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            password.save()</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a809a4f9f567603df662192d40a4147c2">   62</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a809a4f9f567603df662192d40a4147c2">setInContact</a>(self, value):</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a5bb0cfae504099155343019582b87213">   63</a></span>&#160;        self.<a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a5ee2ef851142b9b94e44d850425d62c1">inContact</a> = value</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">return</span> self</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;   </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a514073889905f270022336e51caf420e">   67</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a514073889905f270022336e51caf420e">getCode</a>(self):</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ae4a43a1ee941bff4914f4fed1e2775a1">code</a></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="stringliteral">    Metodo privado doble __</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">def </span>__downloadLastTle(self):</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="comment">#Solo me traigo el tle si hace un dia que no me lo traigo</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keyword">from</span> <a class="code" href="class_ground_segment_1_1models_1_1_tle_1_1_tle.html">GroundSegment.models.Tle</a> <span class="keyword">import</span> Tle</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">try</span>:</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            loginURL = Parameter.objects.get(key=<span class="stringliteral">&quot;NoradLoginURL&quot;</span>)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">except</span> Parameter.DoesNotExist:</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            loginURL = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">if</span> loginURL==<span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            loginURL = <a class="code" href="class_ground_segment_1_1models_1_1_parameter_1_1_parameter.html">Parameter</a>()</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            loginURL.key = <span class="stringliteral">&quot;NoradLoginURL&quot;</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            loginURL.value = <span class="stringliteral">&quot;https://www.space-track.org/ajaxauth/login&quot;</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            loginURL.module = <span class="stringliteral">&quot;Temporal&quot;</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            loginURL.save()</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">try</span>:</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            username = Parameter.objects.get(key=<span class="stringliteral">&quot;NoradUserName&quot;</span>)</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">except</span> Parameter.DoesNotExist:</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            username = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">if</span> username==<span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            username = <a class="code" href="class_ground_segment_1_1models_1_1_parameter_1_1_parameter.html">Parameter</a>()</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            username.key = <span class="stringliteral">&quot;NoradUserName&quot;</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            username.value = <span class="stringliteral">&quot;macecilia&quot;</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            username.module = <span class="stringliteral">&quot;Temporal&quot;</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            username.save()</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">try</span>:</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            password = Parameter.objects.get(key=<span class="stringliteral">&quot;NoradPassword&quot;</span>)</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">except</span> Parameter.DoesNotExist:</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            password = <span class="keywordtype">None</span></div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="comment">#u: macecilia</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="comment">#p: MaCeciliaSpace17</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        data = {<span class="stringliteral">&#39;identity&#39;</span>: username.value , <span class="stringliteral">&#39;password&#39;</span>: password.value}</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">if</span> password==<span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            password = <a class="code" href="class_ground_segment_1_1models_1_1_parameter_1_1_parameter.html">Parameter</a>()</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            password.key = <span class="stringliteral">&quot;NoradPassword&quot;</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            password.value = <span class="stringliteral">&quot;MaCeciliaSpace17&quot;</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            password.module = <span class="stringliteral">&quot;Temporal&quot;</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            password.save()</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        </div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        s = session()</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        rp = s.post(loginURL.value, data)</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="comment">#self.noradId noradid hardcodeado</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        fquery = <span class="stringliteral">&quot;https://www.space-track.org/basicspacedata/query/class/tle_latest/ORDINAL/1/NORAD_CAT_ID/&quot;</span> + str(self.<a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a7962e5b81ff68f4fdedb33ce54bd4368">noradId</a>) + <span class="stringliteral">&quot;/orderby/TLE_LINE1 ASC/format/tle&quot;</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="comment"># print(s.cookies)</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        rg = s.get(fquery)</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        TLE = rg.text.split(<span class="stringliteral">&quot;\n&quot;</span>)</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        sgp4sat = twoline2rv(TLE[0], TLE[1], wgs72)  <span class="comment"># es un objeto de clase (satelite)</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="comment">#u: macecilia</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="comment">#p: MaCeciliaSpace17</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        data = {<span class="stringliteral">&#39;identity&#39;</span>: username.value , <span class="stringliteral">&#39;password&#39;</span>: password.value}</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        s = session()</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        rp = s.post(loginURL.value, data)</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="comment">#self.noradId noradid hardcodeado</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        fquery = <span class="stringliteral">&quot;https://www.space-track.org/basicspacedata/query/class/tle_latest/ORDINAL/1/NORAD_CAT_ID/&quot;</span> + str(self.<a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a7962e5b81ff68f4fdedb33ce54bd4368">noradId</a>) + <span class="stringliteral">&quot;/orderby/TLE_LINE1 ASC/format/tle&quot;</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="comment"># print(s.cookies)</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        rg = s.get(fquery)</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            </div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        tle = <a class="code" href="class_ground_segment_1_1models_1_1_tle_1_1_tle.html">Tle</a>()</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        tle.satellite = self</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        tle.tleDateTime = sgp4sat.epoch</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        tle.downloaded = datetime.now(utc)</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        tle.lines = rg.text</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="comment">#print(&quot;Salvando TLE&quot;)</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        tle.save()</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="comment">#param.value = (datetime.now(utc)).strftime(&quot;%B %d, %Y&quot;)</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="comment">#param.save()</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    </div>
-<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ae2cd61983a5d3797c175b719ced66dd5">  139</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ae2cd61983a5d3797c175b719ced66dd5">getLastTLE</a>(self):</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="comment">#Implementar que retorne el ultimo TLE, ir a buscar a los TLEs descargado</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="stringliteral">        Verificar la fecha de ultima descarga del TLE, si puede existir un TLE nuevo intentar descargarlo</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keywordflow">if</span> (self.tles.exists()==<span class="keyword">False</span>):</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <span class="comment">#No hay tle debo descargar el primero</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            self.<a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a791db38b46b47572cb648b30c74828d4">__downloadLastTle</a>()</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            <span class="comment">#&gt;&gt;&gt; ds = datetime.date.today()</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <span class="comment">#&gt;&gt;&gt; dd = datetime.date(2009, 12, 9)</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            <span class="comment">#&gt;&gt;&gt; ds - dd</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            <span class="comment">#datetime.timedelta(2)</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            dtn = datetime.now(utc)</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            delta = dtn - self.tles.last().tleDateTime</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <span class="comment">#print(&quot;dif: &quot;, delta.days*24*60)</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <span class="keywordflow">if</span> delta.days*24*60&gt;12:</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                print(<span class="stringliteral">&quot;Tle no actualizado, descargar nuevo tle&quot;</span>)</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                self.<a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a791db38b46b47572cb648b30c74828d4">__downloadLastTle</a>()</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                <span class="keywordflow">pass</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                <span class="comment">#TLE actualizado no hago nada! </span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                <span class="comment">#self.__downloadLastTle()   </span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                <span class="comment">#print(&quot;Tle actualizado&quot;)</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordflow">return</span> self.tles.last()</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            </div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    </div>
-<div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ae29d261034411899685e71315d36411a">  169</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ae29d261034411899685e71315d36411a">getCelestialPosition</a>(self, dtm=datetime.now(utc)):</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="comment">#Implementar el metodo para que retorne la posicion instantane del satelite    </span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keyword">from</span> <a class="code" href="class_ground_segment_1_1models_1_1_propagation_1_1_propagation.html">GroundSegment.models.Propagation</a> <span class="keyword">import</span> Propagation</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keyword">from</span> <a class="code" href="class_ground_segment_1_1models_1_1_propagation_detail_1_1_propagation_detail.html">GroundSegment.models.PropagationDetail</a> <span class="keyword">import</span> PropagationDetail</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="comment">#if PropagationDetail.objects.all().count()&gt;0:</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="comment">#    print(PropagationDetail.objects.last().dt)</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        </div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        min_dt = dtm - timedelta(seconds=1)</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        max_dt = dtm + timedelta(seconds=1)</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="comment">#Si ya esta propagado no vuelvo a propagar</span></div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="comment">#Asqueroso como se filtra por fecha, no hay forma mejor?? YourModel.objects.filter(datetime_published=datetime(2008, 03, 27))</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        prps = PropagationDetail.objects.filter(dt__range=(min_dt, max_dt)).filter(propagation__satellite=self)</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="comment">#.filter(propagation__satellite__code=self.code) </span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="comment">#print(prps)</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="comment">#Me aseguro de tener TLE</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        </div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordflow">if</span> prps.count()==0:        </div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        </div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            <span class="comment">#self.__downloadLastTle()</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            tle = self.<a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ae2cd61983a5d3797c175b719ced66dd5">getLastTLE</a>()</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        </div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            ls = tle.lines.split(<span class="stringliteral">&quot;\n&quot;</span>) </div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                </div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <span class="comment">#print(&quot;TLE0:&quot;, ls[0])</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <span class="comment">#print(&quot;TLE1:&quot;, ls[1])</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            sgp4sat = twoline2rv(ls[0], ls[1], wgs72)</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            position, velocity = sgp4sat.propagate(dtm.year, dtm.month, dtm.day, dtm.hour , dtm.minute, dtm.second) <span class="comment">#(2000, 6, 29, 12, 50, 19)</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            </div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            propagation = <a class="code" href="class_ground_segment_1_1models_1_1_propagation_1_1_propagation.html">Propagation</a>()</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            propagation.tle = tle</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            propagation.satellite = self</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            propagation.final = <span class="keyword">False</span></div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            </div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            </div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            propagationDetail = <a class="code" href="class_ground_segment_1_1models_1_1_propagation_detail_1_1_propagation_detail.html">PropagationDetail</a>()</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            propagation.save()</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            propagationDetail.propagation = propagation</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            </div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            propagationDetail.positionX = position[0]</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            propagationDetail.positionY = position[1]</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            propagationDetail.positionZ = position[2]</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            </div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            propagationDetail.velocityX = velocity[0]</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            propagationDetail.velocityY = velocity[1]</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            propagationDetail.velocityZ = velocity[2]</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            propagationDetail.dt = dtm</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            </div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            propagation.save()</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            propagationDetail.save()</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            </div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            <span class="comment">#print(satellite.error)    # nonzero on error</span></div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <span class="comment">#print(satellite.error_message)</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            <span class="comment">#print(position)</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            <span class="comment">#(5576.056952..., -3999.371134..., -1521.957159...)</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <span class="comment">#print(velocity)</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            <span class="comment">#(4.772627..., 5.119817..., 4.275553...)</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            </div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            <span class="comment">#Primero reviso que la propagacion ya no este realizada</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            <span class="keywordflow">return</span> position, velocity</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            </div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            <span class="keywordflow">return</span> prps[0].positionX, prps[0].positionY, prps[0].positionZ</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    </div>
-<div class="line"><a name="l00237"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#aeaa5108842200cd7d39e9fc0546d09a5">  237</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#aeaa5108842200cd7d39e9fc0546d09a5">newAlarm</a>(self, alarmType):</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="keyword">from</span> <a class="code" href="class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm.html">GroundSegment.models.Alarm</a> <span class="keyword">import</span> Alarm</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        result = <a class="code" href="class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm.html">Alarm</a>()</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="comment">#Por defecto esta en estado pendiente</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        result.alarmType = alarmType</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        result.satellite = self</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        result.save()</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="keywordflow">return</span> result</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    </div>
-<div class="line"><a name="l00246"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a0256a218df8e5fe93b8d2189e5c55849">  246</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a0256a218df8e5fe93b8d2189e5c55849">__str__</a>(self):</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ae4a43a1ee941bff4914f4fed1e2775a1">code</a></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        TLE = rg.text.split(<span class="stringliteral">&quot;\n&quot;</span>)</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        sgp4sat = twoline2rv(TLE[0], TLE[1], wgs72)  <span class="comment"># es un objeto de clase (satelite)</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        tle = <a class="code" href="class_ground_segment_1_1models_1_1_tle_1_1_tle.html">Tle</a>()</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        tle.satellite = self</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        tle.tleDateTime = sgp4sat.epoch</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        tle.downloaded = datetime.now(utc)</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        tle.lines = rg.text</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="comment">#print(&quot;Salvando TLE&quot;)</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        tle.save()</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="comment">#param.value = (datetime.now(utc)).strftime(&quot;%B %d, %Y&quot;)</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="comment">#param.save()</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    </div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a53156f48e5812862d08044c43a6bfb18">  143</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a53156f48e5812862d08044c43a6bfb18">setLastTLE</a>(self, filename):</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="stringliteral">        Almacena un TLE que no es descargado de NORAD. Tiene como objetivo en etapas de test poder</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="stringliteral">        operar con TLEs generados artificialmente o poder remplazar un TLE modificado</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="stringliteral">        #TODO: completar descripcion por ceci</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keyword">from</span> <a class="code" href="class_ground_segment_1_1models_1_1_tle_1_1_tle.html">GroundSegment.models.Tle</a> <span class="keyword">import</span> Tle</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="comment">#Abro el archivo fisico segun ruta</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        file = open(filename, <span class="stringliteral">&#39;</span><span class="stringliteral">r&#39;)</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="stringliteral">        ol = file.read()</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="stringliteral">        lns = ol.split(</span><span class="stringliteral">&quot;\n&quot;</span>)</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        sgp4sat = twoline2rv(lns[0], lns[1], wgs72)  <span class="comment"># es un objeto de clase (satelite)</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        tle = <a class="code" href="class_ground_segment_1_1models_1_1_tle_1_1_tle.html">Tle</a>()</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        tle.satellite = self</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        tle.tleDateTime = sgp4sat.epoch</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        tle.downloaded = datetime.now(utc)</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        tle.lines = ol</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="comment">#print(&quot;Salvando TLE&quot;)</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        tle.save()</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        file.close()</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        </div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    </div>
+<div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ae2cd61983a5d3797c175b719ced66dd5">  171</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ae2cd61983a5d3797c175b719ced66dd5">getLastTLE</a>(self):</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="comment">#Implementar que retorne el ultimo TLE, ir a buscar a los TLEs descargado</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="stringliteral">        Verificar la fecha de ultima descarga del TLE, si puede existir un TLE nuevo intentar descargarlo</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordflow">if</span> (self.tles.exists()==<span class="keyword">False</span>):</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            <span class="comment">#No hay tle debo descargar el primero</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            self.<a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a791db38b46b47572cb648b30c74828d4">__downloadLastTle</a>()</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            <span class="comment">#&gt;&gt;&gt; ds = datetime.date.today()</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            <span class="comment">#&gt;&gt;&gt; dd = datetime.date(2009, 12, 9)</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            <span class="comment">#&gt;&gt;&gt; ds - dd</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            <span class="comment">#datetime.timedelta(2)</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            dtn = datetime.now(utc)</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            delta = dtn - self.tles.last().tleDateTime</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            <span class="comment">#print(&quot;dif: &quot;, delta.days*24*60)</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            <span class="keywordflow">if</span> delta.days*24*60&gt;12:</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                <span class="comment">#print(&quot;Tle no actualizado, descargar nuevo tle&quot;)</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                self.<a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a791db38b46b47572cb648b30c74828d4">__downloadLastTle</a>()</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                <span class="keywordflow">pass</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                <span class="comment">#TLE actualizado no hago nada! </span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                <span class="comment">#self.__downloadLastTle()   </span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                <span class="comment">#print(&quot;Tle actualizado&quot;)</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            </div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordflow">return</span> self.tles.last()</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    </div>
+<div class="line"><a name="l00201"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ae29d261034411899685e71315d36411a">  201</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ae29d261034411899685e71315d36411a">getCelestialPosition</a>(self, dtm=datetime.now(utc)):</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="comment">#Implementar el metodo para que retorne la posicion instantane del satelite    </span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keyword">from</span> <a class="code" href="class_ground_segment_1_1models_1_1_propagation_1_1_propagation.html">GroundSegment.models.Propagation</a> <span class="keyword">import</span> Propagation</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="keyword">from</span> <a class="code" href="class_ground_segment_1_1models_1_1_propagation_detail_1_1_propagation_detail.html">GroundSegment.models.PropagationDetail</a> <span class="keyword">import</span> PropagationDetail</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        </div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="comment">#if PropagationDetail.objects.all().count()&gt;0:</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="comment">#    print(PropagationDetail.objects.last().dt)</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        min_dt = dtm - timedelta(seconds=1)</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        max_dt = dtm + timedelta(seconds=1)</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="comment">#Si ya esta propagado no vuelvo a propagar</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="comment">#Asqueroso como se filtra por fecha, no hay forma mejor?? YourModel.objects.filter(datetime_published=datetime(2008, 03, 27))</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        prps = PropagationDetail.objects.filter(dt__range=(min_dt, max_dt)).filter(propagation__satellite=self)</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <span class="comment">#.filter(propagation__satellite__code=self.code) </span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="comment">#print(prps)</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="comment">#Me aseguro de tener TLE</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        </div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        </div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <span class="keywordflow">if</span> prps.count()==0:        </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        </div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            <span class="comment">#self.__downloadLastTle()</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            tle = self.<a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ae2cd61983a5d3797c175b719ced66dd5">getLastTLE</a>()</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        </div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            ls = tle.lines.split(<span class="stringliteral">&quot;\n&quot;</span>) </div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                </div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            <span class="comment">#print(&quot;TLE0:&quot;, ls[0])</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            <span class="comment">#print(&quot;TLE1:&quot;, ls[1])</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            sgp4sat = twoline2rv(ls[0], ls[1], wgs72)</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        </div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            position, velocity = sgp4sat.propagate(dtm.year, dtm.month, dtm.day, dtm.hour , dtm.minute, dtm.second) <span class="comment">#(2000, 6, 29, 12, 50, 19)</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            </div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            propagation = <a class="code" href="class_ground_segment_1_1models_1_1_propagation_1_1_propagation.html">Propagation</a>()</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            propagation.tle = tle</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            propagation.satellite = self</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            propagation.final = <span class="keyword">False</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            </div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            </div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            propagationDetail = <a class="code" href="class_ground_segment_1_1models_1_1_propagation_detail_1_1_propagation_detail.html">PropagationDetail</a>()</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            propagation.save()</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            propagationDetail.propagation = propagation</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            </div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            propagationDetail.positionX = position[0]</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            propagationDetail.positionY = position[1]</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            propagationDetail.positionZ = position[2]</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            </div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            propagationDetail.velocityX = velocity[0]</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            propagationDetail.velocityY = velocity[1]</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            propagationDetail.velocityZ = velocity[2]</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            propagationDetail.dt = dtm</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            </div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            propagation.save()</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            propagationDetail.save()</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            </div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            <span class="comment">#print(satellite.error)    # nonzero on error</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            <span class="comment">#print(satellite.error_message)</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            <span class="comment">#print(position)</span></div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <span class="comment">#(5576.056952..., -3999.371134..., -1521.957159...)</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <span class="comment">#print(velocity)</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            <span class="comment">#(4.772627..., 5.119817..., 4.275553...)</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            </div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            <span class="comment">#Primero reviso que la propagacion ya no este realizada</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            <span class="keywordflow">return</span> position, velocity</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            </div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            <span class="keywordflow">return</span> prps[0].positionX, prps[0].positionY, prps[0].positionZ</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    </div>
+<div class="line"><a name="l00269"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#aeaa5108842200cd7d39e9fc0546d09a5">  269</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#aeaa5108842200cd7d39e9fc0546d09a5">newAlarm</a>(self, alarmType):</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <span class="keyword">from</span> <a class="code" href="class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm.html">GroundSegment.models.Alarm</a> <span class="keyword">import</span> Alarm</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        result = <a class="code" href="class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm.html">Alarm</a>()</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <span class="comment">#Por defecto esta en estado pendiente</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        result.alarmType = alarmType</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        result.satellite = self</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        result.save()</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="keywordflow">return</span> result</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    </div>
+<div class="line"><a name="l00278"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a73f1ac4d056566b7f3bf97e247e67c23">  278</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a73f1ac4d056566b7f3bf97e247e67c23">getCommandType</a>(self):</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="stringliteral">&#39;&#39;&#39;Retorna los tipos de comandos disponibles para este satelite&#39;&#39;&#39;</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <span class="keywordflow">return</span> self.commandsType.all()</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    </div>
+<div class="line"><a name="l00282"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a52677e9afce3af3f71a06b7f4dd98041">  282</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a52677e9afce3af3f71a06b7f4dd98041">sendCommand</a>(self, cmd):</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        cmd.send()</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        </div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        </div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="keyword">def </span>__setExpiredCommands(self):</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <span class="comment">#cmds = Command.objects.filter(Q(satellite=self)&amp;Q(expiration__lte=datetime.utcnow().replace(tzinfo=pytz.UTC)    ))</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        cmds = self.commands.filter(expiration__lte=datetime.utcnow().replace(tzinfo=pytz.UTC))</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <span class="keywordflow">for</span> c <span class="keywordflow">in</span> cmds:</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            c.setExpirated()</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        </div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keywordflow">return</span> cmds.count()</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    </div>
+<div class="line"><a name="l00294"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a996d22d63af5cc9d9323e8fba7d52c82">  294</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a996d22d63af5cc9d9323e8fba7d52c82">getPendingCommands</a>(self):</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="stringliteral">        Mato los comandos vencidos</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        self.<a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ab1e6097a665e229a183ae7502e890725">__setExpiredCommands</a>()</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        cmds = self.commands.filter(state=0).order_by(<span class="stringliteral">&#39;executeAt&#39;</span>)</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <span class="keywordflow">return</span> cmds</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        </div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        </div>
+<div class="line"><a name="l00303"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ae28c9b4a90e0150462cc59ced3dfe882">  303</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ae28c9b4a90e0150462cc59ced3dfe882">expirateAll</a>(self):</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        pc = self.<a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a996d22d63af5cc9d9323e8fba7d52c82">getPendingCommands</a>()</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        <span class="keywordflow">for</span> c <span class="keywordflow">in</span> pc:</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            c.setExpirated()</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        </div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <span class="keywordflow">return</span> pc.count()</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        </div>
+<div class="line"><a name="l00310"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ae6307cbbfbd728d4f02515186fb8fc08">  310</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ae6307cbbfbd728d4f02515186fb8fc08">newCommand</a>(self, commandType, expiration, timetag=datetime.utcnow().replace(tzinfo=pytz.UTC) ):</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        <span class="keyword">from</span> <a class="code" href="namespace_ground_segment_1_1models_1_1_command_1_1_command.html">GroundSegment.models.Command.Command</a> <span class="keyword">import</span> Command</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        cmd = <a class="code" href="class_ground_segment_1_1models_1_1_command_1_1_command_1_1_command.html">Command</a>()</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        </div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        </div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <span class="keywordflow">if</span> commandType.satellite!=self:</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            <span class="keywordflow">raise</span> Exception(<span class="stringliteral">&quot;Este tipo de comando no puede ser aplicado al satelite pasado como parametro&quot;</span>)</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        </div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        cmd.satellite    = self</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        cmd.commandType  = commandType</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        cmd.created      = now()</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        cmd.sent         = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        cmd.retry        = 0</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        cmd.expiration   = expiration.replace(tzinfo=pytz.UTC) </div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        cmd.executeAt    = timetag.replace(tzinfo=pytz.UTC) </div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="comment">#Mejorar la forma en que se trabajan las enumeraciones!</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        cmd.state        = 0</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        </div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordflow">return</span> cmd</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        </div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    </div>
+<div class="line"><a name="l00332"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a0256a218df8e5fe93b8d2189e5c55849">  332</a></span>&#160;    <span class="keyword">def </span><a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a0256a218df8e5fe93b8d2189e5c55849">__str__</a>(self):</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ae4a43a1ee941bff4914f4fed1e2775a1">code</a></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;   </div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="keyword">from</span> django.forms <span class="keyword">import</span> ModelForm</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="keyword">from</span> django <span class="keyword">import</span> forms</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="stringliteral">Herencia del Modelo para crear Formulario</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;<span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_form_view_sat.html">  342</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_form_view_sat.html">FormViewSat</a>(ModelForm):</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="comment">#description = forms.CharField(error_messages={&#39;required&#39;: &#39;Campo Obligatorio!&#39;})</span></div>
+<div class="line"><a name="l00344"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_form_view_sat_1_1_meta.html">  344</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_ground_segment_1_1models_1_1_satellite_1_1_form_view_sat_1_1_meta.html">Meta</a>:</div>
+<div class="line"><a name="l00345"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_form_view_sat_1_1_meta.html#a40e3d789c88f51ff205f44aaf6c06a30">  345</a></span>&#160;        model = Satellite</div>
+<div class="line"><a name="l00346"></a><span class="lineno"><a class="line" href="class_ground_segment_1_1models_1_1_satellite_1_1_form_view_sat_1_1_meta.html#adba49f140eb2ffd6de1eff582d9d7d46">  346</a></span>&#160;        fields = <span class="stringliteral">&quot;__all__&quot;</span> </div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        </div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        </div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        </div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        </div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html_a5ee2ef851142b9b94e44d850425d62c1"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a5ee2ef851142b9b94e44d850425d62c1">GroundSegment.models.Satellite.Satellite.inContact</a></div><div class="ttdeci">tuple inContact</div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00033">Satellite.py:33</a></div></div>
 <div class="ttc" id="class_ground_segment_1_1models_1_1_parameter_1_1_parameter_html"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_parameter_1_1_parameter.html">GroundSegment.models.Parameter.Parameter</a></div><div class="ttdef"><b>Definition:</b> <a href="_parameter_8py_source.html#l00003">Parameter.py:3</a></div></div>
-<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html_a7962e5b81ff68f4fdedb33ce54bd4368"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a7962e5b81ff68f4fdedb33ce54bd4368">GroundSegment.models.Satellite.Satellite.noradId</a></div><div class="ttdeci">tuple noradId</div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00031">Satellite.py:31</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html_a7962e5b81ff68f4fdedb33ce54bd4368"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a7962e5b81ff68f4fdedb33ce54bd4368">GroundSegment.models.Satellite.Satellite.noradId</a></div><div class="ttdeci">tuple noradId</div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00029">Satellite.py:29</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html_a53156f48e5812862d08044c43a6bfb18"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a53156f48e5812862d08044c43a6bfb18">GroundSegment.models.Satellite.Satellite.setLastTLE</a></div><div class="ttdeci">def setLastTLE(self, filename)</div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00143">Satellite.py:143</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html_ae28c9b4a90e0150462cc59ced3dfe882"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ae28c9b4a90e0150462cc59ced3dfe882">GroundSegment.models.Satellite.Satellite.expirateAll</a></div><div class="ttdeci">def expirateAll(self)</div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00303">Satellite.py:303</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html_ab1e6097a665e229a183ae7502e890725"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ab1e6097a665e229a183ae7502e890725">GroundSegment.models.Satellite.Satellite.__setExpiredCommands</a></div><div class="ttdeci">def __setExpiredCommands(self)</div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00286">Satellite.py:286</a></div></div>
 <div class="ttc" id="class_ground_segment_1_1models_1_1_propagation_1_1_propagation_html"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_propagation_1_1_propagation.html">GroundSegment.models.Propagation.Propagation</a></div><div class="ttdef"><b>Definition:</b> <a href="_propagation_8py_source.html#l00012">Propagation.py:12</a></div></div>
-<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html_aeaa5108842200cd7d39e9fc0546d09a5"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#aeaa5108842200cd7d39e9fc0546d09a5">GroundSegment.models.Satellite.Satellite.newAlarm</a></div><div class="ttdeci">def newAlarm(self, alarmType)</div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00237">Satellite.py:237</a></div></div>
-<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html_a0256a218df8e5fe93b8d2189e5c55849"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a0256a218df8e5fe93b8d2189e5c55849">GroundSegment.models.Satellite.Satellite.__str__</a></div><div class="ttdeci">def __str__(self)</div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00246">Satellite.py:246</a></div></div>
-<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html_a791db38b46b47572cb648b30c74828d4"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a791db38b46b47572cb648b30c74828d4">GroundSegment.models.Satellite.Satellite.__downloadLastTle</a></div><div class="ttdeci">def __downloadLastTle(self)</div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00066">Satellite.py:66</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html_aeaa5108842200cd7d39e9fc0546d09a5"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#aeaa5108842200cd7d39e9fc0546d09a5">GroundSegment.models.Satellite.Satellite.newAlarm</a></div><div class="ttdeci">def newAlarm(self, alarmType)</div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00269">Satellite.py:269</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html_a0256a218df8e5fe93b8d2189e5c55849"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a0256a218df8e5fe93b8d2189e5c55849">GroundSegment.models.Satellite.Satellite.__str__</a></div><div class="ttdeci">def __str__(self)</div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00332">Satellite.py:332</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html_a791db38b46b47572cb648b30c74828d4"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a791db38b46b47572cb648b30c74828d4">GroundSegment.models.Satellite.Satellite.__downloadLastTle</a></div><div class="ttdeci">def __downloadLastTle(self)</div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00074">Satellite.py:74</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html_a996d22d63af5cc9d9323e8fba7d52c82"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a996d22d63af5cc9d9323e8fba7d52c82">GroundSegment.models.Satellite.Satellite.getPendingCommands</a></div><div class="ttdeci">def getPendingCommands(self)</div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00294">Satellite.py:294</a></div></div>
 <div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_state_1_1_satellite_state_html"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_state_1_1_satellite_state.html">GroundSegment.models.SatelliteState.SatelliteState</a></div><div class="ttdef"><b>Definition:</b> <a href="_satellite_state_8py_source.html#l00011">SatelliteState.py:11</a></div></div>
-<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html_ae29d261034411899685e71315d36411a"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ae29d261034411899685e71315d36411a">GroundSegment.models.Satellite.Satellite.getCelestialPosition</a></div><div class="ttdeci">def getCelestialPosition</div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00169">Satellite.py:169</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html_ae6307cbbfbd728d4f02515186fb8fc08"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ae6307cbbfbd728d4f02515186fb8fc08">GroundSegment.models.Satellite.Satellite.newCommand</a></div><div class="ttdeci">def newCommand</div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00310">Satellite.py:310</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html_ae29d261034411899685e71315d36411a"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ae29d261034411899685e71315d36411a">GroundSegment.models.Satellite.Satellite.getCelestialPosition</a></div><div class="ttdeci">def getCelestialPosition</div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00201">Satellite.py:201</a></div></div>
 <div class="ttc" id="class_ground_segment_1_1models_1_1_propagation_detail_1_1_propagation_detail_html"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_propagation_detail_1_1_propagation_detail.html">GroundSegment.models.PropagationDetail.PropagationDetail</a></div><div class="ttdef"><b>Definition:</b> <a href="_propagation_detail_8py_source.html#l00011">PropagationDetail.py:11</a></div></div>
-<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html">GroundSegment.models.Satellite.Satellite</a></div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00023">Satellite.py:23</a></div></div>
-<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html_a31da88247812f3de8ee84b91b50f27b7"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a31da88247812f3de8ee84b91b50f27b7">GroundSegment.models.Satellite.Satellite.new</a></div><div class="ttdeci">def new(cls, code, description, noradId)</div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00037">Satellite.py:37</a></div></div>
-<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html_ae4a43a1ee941bff4914f4fed1e2775a1"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ae4a43a1ee941bff4914f4fed1e2775a1">GroundSegment.models.Satellite.Satellite.code</a></div><div class="ttdeci">tuple code</div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00029">Satellite.py:29</a></div></div>
-<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html_a514073889905f270022336e51caf420e"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a514073889905f270022336e51caf420e">GroundSegment.models.Satellite.Satellite.getCode</a></div><div class="ttdeci">def getCode(self)</div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00059">Satellite.py:59</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_command_1_1_command_1_1_command_html"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_command_1_1_command_1_1_command.html">GroundSegment.models.Command.Command.Command</a></div><div class="ttdef"><b>Definition:</b> <a href="_command_8py_source.html#l00016">Command.py:16</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html_a2f064a4aef74f3fd6808147eb36bfaea"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a2f064a4aef74f3fd6808147eb36bfaea">GroundSegment.models.Satellite.Satellite.new</a></div><div class="ttdeci">def new</div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00039">Satellite.py:39</a></div></div>
+<div class="ttc" id="namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_html_af0147d96af788791368b9d5746f8699b"><div class="ttname"><a href="namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor.html#af0147d96af788791368b9d5746f8699b">TlmyCmdProcessor.TlmyCmdProcessor.cls</a></div><div class="ttdeci">def cls()</div><div class="ttdef"><b>Definition:</b> <a href="_tlmy_cmd_processor_8py_source.html#l00051">TlmyCmdProcessor.py:51</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html">GroundSegment.models.Satellite.Satellite</a></div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00021">Satellite.py:21</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_form_view_sat_html"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_form_view_sat.html">GroundSegment.models.Satellite.FormViewSat</a></div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00342">Satellite.py:342</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_form_view_sat_1_1_meta_html"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_form_view_sat_1_1_meta.html">GroundSegment.models.Satellite.FormViewSat.Meta</a></div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00344">Satellite.py:344</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html_ae4a43a1ee941bff4914f4fed1e2775a1"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ae4a43a1ee941bff4914f4fed1e2775a1">GroundSegment.models.Satellite.Satellite.code</a></div><div class="ttdeci">tuple code</div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00027">Satellite.py:27</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html_a514073889905f270022336e51caf420e"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a514073889905f270022336e51caf420e">GroundSegment.models.Satellite.Satellite.getCode</a></div><div class="ttdeci">def getCode(self)</div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00067">Satellite.py:67</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html_a73f1ac4d056566b7f3bf97e247e67c23"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a73f1ac4d056566b7f3bf97e247e67c23">GroundSegment.models.Satellite.Satellite.getCommandType</a></div><div class="ttdeci">def getCommandType(self)</div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00278">Satellite.py:278</a></div></div>
 <div class="ttc" id="class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm_html"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm.html">GroundSegment.models.Alarm.Alarm.Alarm</a></div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8py_source.html#l00033">Alarm.py:33</a></div></div>
-<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html_ae2cd61983a5d3797c175b719ced66dd5"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ae2cd61983a5d3797c175b719ced66dd5">GroundSegment.models.Satellite.Satellite.getLastTLE</a></div><div class="ttdeci">def getLastTLE(self)</div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00139">Satellite.py:139</a></div></div>
-<div class="ttc" id="class_ground_segment_1_1models_1_1_tle_1_1_tle_html"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_tle_1_1_tle.html">GroundSegment.models.Tle.Tle</a></div><div class="ttdef"><b>Definition:</b> <a href="_tle_8py_source.html#l00021">Tle.py:21</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html_ae2cd61983a5d3797c175b719ced66dd5"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ae2cd61983a5d3797c175b719ced66dd5">GroundSegment.models.Satellite.Satellite.getLastTLE</a></div><div class="ttdeci">def getLastTLE(self)</div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00171">Satellite.py:171</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html_a809a4f9f567603df662192d40a4147c2"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a809a4f9f567603df662192d40a4147c2">GroundSegment.models.Satellite.Satellite.setInContact</a></div><div class="ttdeci">def setInContact(self, value)</div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00062">Satellite.py:62</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_tle_1_1_tle_html"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_tle_1_1_tle.html">GroundSegment.models.Tle.Tle</a></div><div class="ttdef"><b>Definition:</b> <a href="_tle_8py_source.html#l00026">Tle.py:26</a></div></div>
+<div class="ttc" id="namespace_ground_segment_1_1models_1_1_command_1_1_command_html"><div class="ttname"><a href="namespace_ground_segment_1_1models_1_1_command_1_1_command.html">GroundSegment.models.Command.Command</a></div><div class="ttdef"><b>Definition:</b> <a href="_command_8py_source.html#l00001">Command.py:1</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_satellite_1_1_satellite_html_a52677e9afce3af3f71a06b7f4dd98041"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#a52677e9afce3af3f71a06b7f4dd98041">GroundSegment.models.Satellite.Satellite.sendCommand</a></div><div class="ttdeci">def sendCommand(self, cmd)</div><div class="ttdef"><b>Definition:</b> <a href="_satellite_8py_source.html#l00282">Satellite.py:282</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

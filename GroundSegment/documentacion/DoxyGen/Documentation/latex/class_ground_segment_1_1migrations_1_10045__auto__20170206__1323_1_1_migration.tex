@@ -1,0 +1,95 @@
+\hypertarget{class_ground_segment_1_1migrations_1_10045__auto__20170206__1323_1_1_migration}{}\section{Ground\+Segment.\+migrations.0045\+\_\+auto\+\_\+20170206\+\_\+1323.Migration Class Reference}
+\label{class_ground_segment_1_1migrations_1_10045__auto__20170206__1323_1_1_migration}\index{Ground\+Segment.\+migrations.\+0045\+\_\+auto\+\_\+20170206\+\_\+1323.\+Migration@{Ground\+Segment.\+migrations.\+0045\+\_\+auto\+\_\+20170206\+\_\+1323.\+Migration}}
+
+
+Inheritance diagram for Ground\+Segment.\+migrations.0045\+\_\+auto\+\_\+20170206\+\_\+1323.Migration\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_ground_segment_1_1migrations_1_10045__auto__20170206__1323_1_1_migration__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ground\+Segment.\+migrations.0045\+\_\+auto\+\_\+20170206\+\_\+1323.Migration\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_ground_segment_1_1migrations_1_10045__auto__20170206__1323_1_1_migration__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+list \hyperlink{class_ground_segment_1_1migrations_1_10045__auto__20170206__1323_1_1_migration_aabfcb5832fe101a80f900b0e0bf28f4e}{dependencies}
+\item 
+list \hyperlink{class_ground_segment_1_1migrations_1_10045__auto__20170206__1323_1_1_migration_a18d09ff0dfe44714c6d67c917136b054}{operations}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 9 of file 0045\+\_\+auto\+\_\+20170206\+\_\+1323.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_ground_segment_1_1migrations_1_10045__auto__20170206__1323_1_1_migration_aabfcb5832fe101a80f900b0e0bf28f4e}{}\index{Ground\+Segment\+::migrations\+::0045\+\_\+auto\+\_\+20170206\+\_\+1323\+::\+Migration@{Ground\+Segment\+::migrations\+::0045\+\_\+auto\+\_\+20170206\+\_\+1323\+::\+Migration}!dependencies@{dependencies}}
+\index{dependencies@{dependencies}!Ground\+Segment\+::migrations\+::0045\+\_\+auto\+\_\+20170206\+\_\+1323\+::\+Migration@{Ground\+Segment\+::migrations\+::0045\+\_\+auto\+\_\+20170206\+\_\+1323\+::\+Migration}}
+\subsubsection[{dependencies}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+migrations.\+0045\+\_\+auto\+\_\+20170206\+\_\+1323.\+Migration.\+dependencies\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1migrations_1_10045__auto__20170206__1323_1_1_migration_aabfcb5832fe101a80f900b0e0bf28f4e}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 = [
+2         (\textcolor{stringliteral}{'GroundSegment'}, \textcolor{stringliteral}{'0044\_auto\_20170206\_1250'}),
+3     ]
+\end{DoxyCode}
+
+
+Definition at line 11 of file 0045\+\_\+auto\+\_\+20170206\+\_\+1323.\+py.
+
+\hypertarget{class_ground_segment_1_1migrations_1_10045__auto__20170206__1323_1_1_migration_a18d09ff0dfe44714c6d67c917136b054}{}\index{Ground\+Segment\+::migrations\+::0045\+\_\+auto\+\_\+20170206\+\_\+1323\+::\+Migration@{Ground\+Segment\+::migrations\+::0045\+\_\+auto\+\_\+20170206\+\_\+1323\+::\+Migration}!operations@{operations}}
+\index{operations@{operations}!Ground\+Segment\+::migrations\+::0045\+\_\+auto\+\_\+20170206\+\_\+1323\+::\+Migration@{Ground\+Segment\+::migrations\+::0045\+\_\+auto\+\_\+20170206\+\_\+1323\+::\+Migration}}
+\subsubsection[{operations}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+migrations.\+0045\+\_\+auto\+\_\+20170206\+\_\+1323.\+Migration.\+operations\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1migrations_1_10045__auto__20170206__1323_1_1_migration_a18d09ff0dfe44714c6d67c917136b054}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 = [
+2         migrations.CreateModel(
+3             name=\textcolor{stringliteral}{'Country'},
+4             fields=[
+5                 (\textcolor{stringliteral}{'id'}, models.AutoField(auto\_created=\textcolor{keyword}{True}, primary\_key=\textcolor{keyword}{True}, serialize=\textcolor{keyword}{False}, verbose\_name=\textcolor{stringliteral}{
+      'ID'})),
+6                 (\textcolor{stringliteral}{'code'}, models.CharField(max\_length=24, unique=\textcolor{keyword}{True}, verbose\_name=\textcolor{stringliteral}{'Codigo del Pais'})),
+7                 (\textcolor{stringliteral}{'name'}, models.CharField(max\_length=24, unique=\textcolor{keyword}{True}, verbose\_name=\textcolor{stringliteral}{'Nombre del Pais'})),
+8                 (\textcolor{stringliteral}{'description'}, models.CharField(max\_length=24, unique=\textcolor{keyword}{True}, verbose\_name=\textcolor{stringliteral}{'Descripcion'})),
+9             ],
+10         ),
+11         migrations.CreateModel(
+12             name=\textcolor{stringliteral}{'State'},
+13             fields=[
+14                 (\textcolor{stringliteral}{'id'}, models.AutoField(auto\_created=\textcolor{keyword}{True}, primary\_key=\textcolor{keyword}{True}, serialize=\textcolor{keyword}{False}, verbose\_name=\textcolor{stringliteral}{
+      'ID'})),
+15                 (\textcolor{stringliteral}{'code'}, models.CharField(max\_length=24, unique=\textcolor{keyword}{True}, verbose\_name=\textcolor{stringliteral}{'Codigo del Estado'})),
+16                 (\textcolor{stringliteral}{'name'}, models.CharField(max\_length=24, verbose\_name=\textcolor{stringliteral}{'Nombre del Estado'})),
+17                 (\textcolor{stringliteral}{'description'}, models.CharField(max\_length=24, verbose\_name=\textcolor{stringliteral}{'Descripcion'})),
+18                 (\textcolor{stringliteral}{'country'}, models.ForeignKey(on\_delete=django.db.models.deletion.CASCADE, related\_name=\textcolor{stringliteral}{'
+      states'}, to=\textcolor{stringliteral}{'GroundSegment.Country'})),
+19             ],
+20         ),
+21         migrations.AddField(
+22             model\_name=\textcolor{stringliteral}{'sitio'},
+23             name=\textcolor{stringliteral}{'state'},
+24             field=models.ForeignKey(null=\textcolor{keyword}{True}, on\_delete=django.db.models.deletion.CASCADE, related\_name=\textcolor{stringliteral}{'
+      sitios'}, to=\textcolor{stringliteral}{'GroundSegment.State'}),
+25         ),
+26     ]
+\end{DoxyCode}
+
+
+Definition at line 15 of file 0045\+\_\+auto\+\_\+20170206\+\_\+1323.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ubuntumate/git/\+Ground\+Segment/\+Ground\+Segment/\+Ground\+Segment/migrations/\hyperlink{0045__auto__20170206__1323_8py}{0045\+\_\+auto\+\_\+20170206\+\_\+1323.\+py}\end{DoxyCompactItemize}

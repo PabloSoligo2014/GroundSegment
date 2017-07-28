@@ -104,30 +104,67 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="stringliteral">    1. Import the include() function: from django.conf.urls import url, include</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="stringliteral">    2. Add a URL to urlpatterns:  url(r&#39;^blog/&#39;, include(&#39;blog.urls&#39;))</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> url</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> url, include</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">from</span> <a class="code" href="namespace_ground_segment_1_1views.html">GroundSegment.views</a> <span class="keyword">import</span> AboutView, SatelliteListView, PropagationTestView</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">from</span> <a class="code" href="namespace_ground_segment_1_1views_1_1views.html">GroundSegment.views.views</a> <span class="keyword">import</span> AboutView, SatelliteListView, PropagationTestView, DCPDataViewSet,TlmyVarTypeView,post_Sat</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">from</span> django.conf.urls.static <span class="keyword">import</span> static</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">from</span> django.conf <span class="keyword">import</span> settings</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"># Text to put at the end of each page&#39;s &lt;title&gt;.</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;admin.site.site_title = <span class="stringliteral">&#39;MDIAE Ground Segment&#39;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"># Text to put in each page&#39;s &lt;h1&gt;.</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;admin.site.site_header = <span class="stringliteral">&#39;MDIAE Ground Segment&#39;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">from</span> rest_framework.routers <span class="keyword">import</span> SimpleRouter</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">from</span> django.views.generic.list <span class="keyword">import</span> ListView</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">from</span> django.views.generic.detail <span class="keyword">import</span> DetailView</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">from</span> <a class="code" href="namespace_ground_segment_1_1models.html">GroundSegment.models</a> <span class="keyword">import</span> TlmyVarType</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">#from aptsources.distinfo import Template</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">from</span> <a class="code" href="class_ground_segment_1_1models_1_1_tlmy_var_type_1_1_tlmy_var_type.html">GroundSegment.models.TlmyVarType</a> <span class="keyword">import</span> TlmyVarType</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">from</span> <a class="code" href="namespace_ground_segment_1_1views_1_1_simple_plot_view.html">GroundSegment.views.SimplePlotView</a> <span class="keyword">import</span> SimplePlotView, GetChartData</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"># Text to put at the top of the admin index page.</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;admin.site.index_title = <span class="stringliteral">&#39;Control Panel&#39;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="namespace_ground_segment_1_1urls.html#a457e62f34e0ac5ed0455686f6e0f68c6">   32</a></span>&#160;urlpatterns = [</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    url(<span class="stringliteral">r&#39;^admin/&#39;</span>, admin.site.urls),</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    url(<span class="stringliteral">r&#39;^about/$&#39;</span>, AboutView.as_view(template_name=<span class="stringliteral">&quot;about.html&quot;</span>)),</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    url(<span class="stringliteral">r&#39;^satellites/$&#39;</span>, SatelliteListView.as_view(template_name=<span class="stringliteral">&quot;satelliteListView.html&quot;</span>)),</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    url(<span class="stringliteral">r&#39;^propagationTest/$&#39;</span>, PropagationTestView.as_view(template_name=<span class="stringliteral">&quot;propagationTest.html&quot;</span>)),</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">#from django.contrib.auth import views as auth_views</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">from</span> django.contrib.auth.views <span class="keyword">import</span> login, logout</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">import</span> GroundSegment</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">#from DistUpgrade.DistUpgradeViewGtk3 import view</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">from</span> GroundSegment <span class="keyword">import</span> views</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">from</span> <a class="code" href="namespace_ground_segment_1_1views_1_1_pass_view.html">GroundSegment.views.PassView</a> <span class="keyword">import</span> PassView</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="ttc" id="namespace_ground_segment_1_1views_html"><div class="ttname"><a href="namespace_ground_segment_1_1views.html">GroundSegment.views</a></div><div class="ttdef"><b>Definition:</b> <a href="views_8py_source.html#l00001">views.py:1</a></div></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"># Text to put at the end of each page&#39;s &lt;title&gt;.</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;admin.site.site_title = <span class="stringliteral">&#39;MDIAE Ground Segment&#39;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"># Text to put in each page&#39;s &lt;h1&gt;.</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;admin.site.site_header = <span class="stringliteral">&#39;MDIAE Ground Segment&#39;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"># Text to put at the top of the admin index page.</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;admin.site.index_title = <span class="stringliteral">&#39;Control Panel&#39;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="namespace_ground_segment_1_1urls.html#a3203e9c93853da32af24ed41c0c786e4">   49</a></span>&#160;router = SimpleRouter()</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;router.register(<span class="stringliteral">r&#39;DCPData&#39;</span>, DCPDataViewSet)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="namespace_ground_segment_1_1urls.html#a457e62f34e0ac5ed0455686f6e0f68c6">   52</a></span>&#160;urlpatterns = [</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    url(<span class="stringliteral">r&#39;^admin/&#39;</span>, admin.site.urls),</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">#url(r&#39;^login/$&#39;, auth_views.login, {&#39;template_name&#39;: &#39;login.html&#39;}, name=&#39;login&#39;),</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    url(<span class="stringliteral">r&#39;^login/$&#39;</span>, login, {<span class="stringliteral">&#39;template_name&#39;</span>: <span class="stringliteral">&#39;login.html&#39;</span>}, name=<span class="stringliteral">&#39;login&#39;</span>),</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    url(<span class="stringliteral">r&#39;^logout$&#39;</span>, logout, {<span class="stringliteral">&#39;template_name&#39;</span>: <span class="stringliteral">&#39;login.html&#39;</span>, }, name=<span class="stringliteral">&quot;logout&quot;</span>),</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    url(<span class="stringliteral">r&#39;^home/$&#39;</span>, GroundSegment.views.views.home, name=<span class="stringliteral">&#39;home&#39;</span>),</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    url(<span class="stringliteral">r&#39;^home/TlmyVarType/$&#39;</span>, TlmyVarTypeView.as_view(), name=<span class="stringliteral">&#39;TlmyVarType&#39;</span>),</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    url(<span class="stringliteral">r&#39;^about/$&#39;</span>, AboutView.as_view(template_name=<span class="stringliteral">&quot;about.html&quot;</span>)),</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    url(<span class="stringliteral">r&#39;^home/satellites/$&#39;</span>, SatelliteListView.as_view(),name=<span class="stringliteral">&quot;satelliteListView&quot;</span>),</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    url(<span class="stringliteral">r&#39;^home/satellites/sat_form/$&#39;</span>, GroundSegment.views.views.post_Sat, name=<span class="stringliteral">&quot;post_Sat&quot;</span>),</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    url(<span class="stringliteral">r&#39;^propagationTest/$&#39;</span>, PropagationTestView.as_view(template_name=<span class="stringliteral">&quot;propagationTest.html&quot;</span>)),</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    url(<span class="stringliteral">r&#39;^&#39;</span>, include(router.urls)),</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">#url(r&#39;^simplePlot/(?P&lt;tvts&gt;[\w-]+)&#39;, SimplePlotView.as_view(template_name=&quot;simplePlot.html&quot;), name=&#39;SimplePlotView&#39;), </span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    url(<span class="stringliteral">r&#39;^simplePlot/(?P&lt;tvts&gt;[\w-]+)/(?P&lt;minutes&gt;(\d+))/$&#39;</span>, SimplePlotView.as_view(template_name=<span class="stringliteral">&quot;simplePlot.html&quot;</span>), name=<span class="stringliteral">&#39;SimplePlotView&#39;</span>), </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">#(r&#39;^v1/(?P&lt;variable_a&gt;(\d+))/(?P&lt;variable_b&gt;(\d+))/$&#39;, r&#39;custom1.views.v1&#39;)</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    url(<span class="stringliteral">r&#39;^pasadas/$&#39;</span>, PassView.as_view(), name=<span class="stringliteral">&#39;PassView&#39;</span>),</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    </div>
+<div class="ttc" id="namespace_ground_segment_1_1models_html"><div class="ttname"><a href="namespace_ground_segment_1_1models.html">GroundSegment.models</a></div><div class="ttdef"><b>Definition:</b> <a href="_ground_segment_2models_2____init_____8py_source.html#l00001">__init__.py:1</a></div></div>
+<div class="ttc" id="namespace_ground_segment_1_1views_1_1_pass_view_html"><div class="ttname"><a href="namespace_ground_segment_1_1views_1_1_pass_view.html">GroundSegment.views.PassView</a></div><div class="ttdef"><b>Definition:</b> <a href="_pass_view_8py_source.html#l00001">PassView.py:1</a></div></div>
+<div class="ttc" id="namespace_ground_segment_1_1views_1_1views_html"><div class="ttname"><a href="namespace_ground_segment_1_1views_1_1views.html">GroundSegment.views.views</a></div><div class="ttdef"><b>Definition:</b> <a href="views_8py_source.html#l00001">views.py:1</a></div></div>
+<div class="ttc" id="class_ground_segment_1_1models_1_1_tlmy_var_type_1_1_tlmy_var_type_html"><div class="ttname"><a href="class_ground_segment_1_1models_1_1_tlmy_var_type_1_1_tlmy_var_type.html">GroundSegment.models.TlmyVarType.TlmyVarType</a></div><div class="ttdef"><b>Definition:</b> <a href="_tlmy_var_type_8py_source.html#l00028">TlmyVarType.py:28</a></div></div>
+<div class="ttc" id="namespace_ground_segment_1_1views_1_1_simple_plot_view_html"><div class="ttname"><a href="namespace_ground_segment_1_1views_1_1_simple_plot_view.html">GroundSegment.views.SimplePlotView</a></div><div class="ttdef"><b>Definition:</b> <a href="_simple_plot_view_8py_source.html#l00001">SimplePlotView.py:1</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

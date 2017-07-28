@@ -9,12 +9,14 @@ from Calibration.BaseCalibration import BaseCalibration
 
 
 class GCalibration(BaseCalibration):
-    def duplicateAndSum(self, obj, raw):
-        return raw*0.2 + 1
+    
 
     def linealCalibration(self, obj, raw):
         return raw*obj.coefficients.get(code="GAIN").value + obj.coefficients.get(code="OFFSET").value
 
+
+    def duplicateAndSum(self, obj, raw):
+        return raw*0.2 + 1
     
     def cuadraticCalibration(self, obj, raw):
         #return raw**2 - 10*raw + 3

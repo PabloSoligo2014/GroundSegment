@@ -1,0 +1,73 @@
+\hypertarget{class_ground_segment_1_1migrations_1_10054__command__state_1_1_migration}{}\section{Ground\+Segment.\+migrations.0054\+\_\+command\+\_\+state.Migration Class Reference}
+\label{class_ground_segment_1_1migrations_1_10054__command__state_1_1_migration}\index{Ground\+Segment.\+migrations.\+0054\+\_\+command\+\_\+state.\+Migration@{Ground\+Segment.\+migrations.\+0054\+\_\+command\+\_\+state.\+Migration}}
+
+
+Inheritance diagram for Ground\+Segment.\+migrations.0054\+\_\+command\+\_\+state.Migration\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_ground_segment_1_1migrations_1_10054__command__state_1_1_migration__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ground\+Segment.\+migrations.0054\+\_\+command\+\_\+state.Migration\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_ground_segment_1_1migrations_1_10054__command__state_1_1_migration__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+list \hyperlink{class_ground_segment_1_1migrations_1_10054__command__state_1_1_migration_a8a66892d1bc008d544bb7388f023ae42}{dependencies}
+\item 
+list \hyperlink{class_ground_segment_1_1migrations_1_10054__command__state_1_1_migration_ae9e43473e39f5df3a98dbd3addfc7e99}{operations}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 8 of file 0054\+\_\+command\+\_\+state.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_ground_segment_1_1migrations_1_10054__command__state_1_1_migration_a8a66892d1bc008d544bb7388f023ae42}{}\index{Ground\+Segment\+::migrations\+::0054\+\_\+command\+\_\+state\+::\+Migration@{Ground\+Segment\+::migrations\+::0054\+\_\+command\+\_\+state\+::\+Migration}!dependencies@{dependencies}}
+\index{dependencies@{dependencies}!Ground\+Segment\+::migrations\+::0054\+\_\+command\+\_\+state\+::\+Migration@{Ground\+Segment\+::migrations\+::0054\+\_\+command\+\_\+state\+::\+Migration}}
+\subsubsection[{dependencies}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+migrations.\+0054\+\_\+command\+\_\+state.\+Migration.\+dependencies\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1migrations_1_10054__command__state_1_1_migration_a8a66892d1bc008d544bb7388f023ae42}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 = [
+2         (\textcolor{stringliteral}{'GroundSegment'}, \textcolor{stringliteral}{'0053\_auto\_20170325\_1256'}),
+3     ]
+\end{DoxyCode}
+
+
+Definition at line 10 of file 0054\+\_\+command\+\_\+state.\+py.
+
+\hypertarget{class_ground_segment_1_1migrations_1_10054__command__state_1_1_migration_ae9e43473e39f5df3a98dbd3addfc7e99}{}\index{Ground\+Segment\+::migrations\+::0054\+\_\+command\+\_\+state\+::\+Migration@{Ground\+Segment\+::migrations\+::0054\+\_\+command\+\_\+state\+::\+Migration}!operations@{operations}}
+\index{operations@{operations}!Ground\+Segment\+::migrations\+::0054\+\_\+command\+\_\+state\+::\+Migration@{Ground\+Segment\+::migrations\+::0054\+\_\+command\+\_\+state\+::\+Migration}}
+\subsubsection[{operations}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+migrations.\+0054\+\_\+command\+\_\+state.\+Migration.\+operations\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1migrations_1_10054__command__state_1_1_migration_ae9e43473e39f5df3a98dbd3addfc7e99}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 = [
+2         migrations.AddField(
+3             model\_name=\textcolor{stringliteral}{'command'},
+4             name=\textcolor{stringliteral}{'state'},
+5             field=models.IntegerField(choices=[(0, \textcolor{stringliteral}{'Pending'}), (1, \textcolor{stringliteral}{'Sent'}), (2, \textcolor{stringliteral}{'Failed'}), (3, \textcolor{stringliteral}{'Executed'}),
+       (4, \textcolor{stringliteral}{'Expirated'})], default=0, max\_length=1),
+6         ),
+7     ]
+\end{DoxyCode}
+
+
+Definition at line 14 of file 0054\+\_\+command\+\_\+state.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ubuntumate/git/\+Ground\+Segment/\+Ground\+Segment/\+Ground\+Segment/migrations/\hyperlink{0054__command__state_8py}{0054\+\_\+command\+\_\+state.\+py}\end{DoxyCompactItemize}

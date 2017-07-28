@@ -9,7 +9,7 @@ string \hyperlink{namespace_ground_segment_1_1settings_a962d63c2c779045196141e0a
 \item 
 \hyperlink{namespace_ground_segment_1_1settings_a7398b478a987ae21647fbb08b265ad10}{D\+E\+B\+U\+G} = True
 \item 
-list \hyperlink{namespace_ground_segment_1_1settings_ae76a78e05b49fb40b628ba756d926bc9}{A\+L\+L\+O\+W\+E\+D\+\_\+\+H\+O\+S\+T\+S} = \mbox{[}$\,$\mbox{]}
+list \hyperlink{namespace_ground_segment_1_1settings_ae76a78e05b49fb40b628ba756d926bc9}{A\+L\+L\+O\+W\+E\+D\+\_\+\+H\+O\+S\+T\+S} = \mbox{[}\textquotesingle{}localhost\textquotesingle{}, \textquotesingle{}127.\+0.\+0.\+1\textquotesingle{}, \textquotesingle{}\mbox{[}\+::1\mbox{]}\textquotesingle{}\mbox{]}
 \item 
 \hyperlink{namespace_ground_segment_1_1settings_a8f145226f6aaa8becf7066ef790b389b}{E\+M\+A\+I\+L\+\_\+\+U\+S\+E\+\_\+\+T\+L\+S} = True
 \item 
@@ -56,6 +56,12 @@ tuple \hyperlink{namespace_ground_segment_1_1settings_a99341177ff9700bce98aaa850
 tuple \hyperlink{namespace_ground_segment_1_1settings_abf83e5e190e2a3cf3ae8d8bac305e750}{S\+T\+A\+T\+I\+C\+F\+I\+L\+E\+S\+\_\+\+F\+I\+N\+D\+E\+R\+S}
 \item 
 dictionary \hyperlink{namespace_ground_segment_1_1settings_ac72e34b0dd6d700d555daae97bae8118}{L\+O\+G\+G\+I\+N\+G}
+\item 
+dictionary \hyperlink{namespace_ground_segment_1_1settings_ab3c36c6cb632b928ebc77a83b13dbda9}{R\+E\+S\+T\+\_\+\+F\+R\+A\+M\+E\+W\+O\+R\+K}
+\item 
+string \hyperlink{namespace_ground_segment_1_1settings_a6d76611e9864bdae4f8766581d7accf7}{L\+O\+G\+I\+N\+\_\+\+R\+E\+D\+I\+R\+E\+C\+T\+\_\+\+U\+R\+L} = \char`\"{}/home\char`\"{}
+\item 
+string \hyperlink{namespace_ground_segment_1_1settings_a9f2c02d37399152c46ed216451c55f9d}{L\+O\+G\+I\+N\+\_\+\+U\+R\+L} = \textquotesingle{}/\textquotesingle{}
 \end{DoxyCompactItemize}
 
 
@@ -75,10 +81,10 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 \subsection{Variable Documentation}
 \hypertarget{namespace_ground_segment_1_1settings_ae76a78e05b49fb40b628ba756d926bc9}{}\index{Ground\+Segment\+::settings@{Ground\+Segment\+::settings}!A\+L\+L\+O\+W\+E\+D\+\_\+\+H\+O\+S\+T\+S@{A\+L\+L\+O\+W\+E\+D\+\_\+\+H\+O\+S\+T\+S}}
 \index{A\+L\+L\+O\+W\+E\+D\+\_\+\+H\+O\+S\+T\+S@{A\+L\+L\+O\+W\+E\+D\+\_\+\+H\+O\+S\+T\+S}!Ground\+Segment\+::settings@{Ground\+Segment\+::settings}}
-\subsubsection[{A\+L\+L\+O\+W\+E\+D\+\_\+\+H\+O\+S\+T\+S}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+settings.\+A\+L\+L\+O\+W\+E\+D\+\_\+\+H\+O\+S\+T\+S = \mbox{[}$\,$\mbox{]}}\label{namespace_ground_segment_1_1settings_ae76a78e05b49fb40b628ba756d926bc9}
+\subsubsection[{A\+L\+L\+O\+W\+E\+D\+\_\+\+H\+O\+S\+T\+S}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+settings.\+A\+L\+L\+O\+W\+E\+D\+\_\+\+H\+O\+S\+T\+S = \mbox{[}\textquotesingle{}localhost\textquotesingle{}, \textquotesingle{}127.\+0.\+0.\+1\textquotesingle{}, \textquotesingle{}\mbox{[}\+::1\mbox{]}\textquotesingle{}\mbox{]}}\label{namespace_ground_segment_1_1settings_ae76a78e05b49fb40b628ba756d926bc9}
 
 
-Definition at line 28 of file settings.\+py.
+Definition at line 30 of file settings.\+py.
 
 \hypertarget{namespace_ground_segment_1_1settings_a96d9de6863371f2594631eee01ef0600}{}\index{Ground\+Segment\+::settings@{Ground\+Segment\+::settings}!B\+A\+S\+E\+\_\+\+D\+I\+R@{B\+A\+S\+E\+\_\+\+D\+I\+R}}
 \index{B\+A\+S\+E\+\_\+\+D\+I\+R@{B\+A\+S\+E\+\_\+\+D\+I\+R}!Ground\+Segment\+::settings@{Ground\+Segment\+::settings}}
@@ -98,79 +104,80 @@ Definition at line 16 of file settings.\+py.
 4     \textcolor{stringliteral}{'default'}: \{
 5                 \textcolor{stringliteral}{'ENGINE'}: \textcolor{stringliteral}{'django.db.backends.postgresql\_psycopg2'},
 6                 \textcolor{stringliteral}{'NAME'}: \textcolor{stringliteral}{'DBGroundSegment'},
-7                 \textcolor{stringliteral}{'USER'}: \textcolor{stringliteral}{'gs'},
-8                 \textcolor{stringliteral}{'PASSWORD'}: \textcolor{stringliteral}{'gs'},
-9                 \textcolor{stringliteral}{'HOST'}: \textcolor{stringliteral}{'127.0.0.1'},
-10                 \textcolor{stringliteral}{'PORT'}: \textcolor{stringliteral}{'5432'},
-11                 \textcolor{stringliteral}{'CONN\_MAX\_AGE'}: 600,
-12          \}
-13 \textcolor{comment}{#     }
-14 \textcolor{comment}{#     'default': \{}
-15 \textcolor{comment}{#          'ENGINE': 'django.db.backends.sqlite3',}
-16 \textcolor{comment}{#          'NAME': os.path.join(BASE\_DIR, 'db.sqlite3'),}
-17 \textcolor{comment}{#      \}}
-18      
-19 \}
+7                 \textcolor{stringliteral}{'USER'}: \textcolor{stringliteral}{'postgres'},
+8                 \textcolor{stringliteral}{'PASSWORD'}: \textcolor{stringliteral}{'postgres'},
+9                 \textcolor{comment}{#'HOST': '10.77.171.181',}
+10                 \textcolor{stringliteral}{'HOST'}: \textcolor{stringliteral}{'127.0.0.1'},
+11                 \textcolor{stringliteral}{'PORT'}: \textcolor{stringliteral}{'5432'},
+12                 \textcolor{stringliteral}{'CONN\_MAX\_AGE'}: 600,
+13          \}
+14 \textcolor{comment}{#     }
+15 \textcolor{comment}{#     'default': \{}
+16 \textcolor{comment}{#          'ENGINE': 'django.db.backends.sqlite3',}
+17 \textcolor{comment}{#          'NAME': os.path.join(BASE\_DIR, 'db.sqlite3'),}
+18 \textcolor{comment}{#      \}}
+19      
+20 \}
 \end{DoxyCode}
 
 
-Definition at line 87 of file settings.\+py.
+Definition at line 90 of file settings.\+py.
 
 \hypertarget{namespace_ground_segment_1_1settings_a7398b478a987ae21647fbb08b265ad10}{}\index{Ground\+Segment\+::settings@{Ground\+Segment\+::settings}!D\+E\+B\+U\+G@{D\+E\+B\+U\+G}}
 \index{D\+E\+B\+U\+G@{D\+E\+B\+U\+G}!Ground\+Segment\+::settings@{Ground\+Segment\+::settings}}
 \subsubsection[{D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}Ground\+Segment.\+settings.\+D\+E\+B\+U\+G = True}\label{namespace_ground_segment_1_1settings_a7398b478a987ae21647fbb08b265ad10}
 
 
-Definition at line 26 of file settings.\+py.
+Definition at line 27 of file settings.\+py.
 
 \hypertarget{namespace_ground_segment_1_1settings_ac016a8ca7717627c7aa8538920482b88}{}\index{Ground\+Segment\+::settings@{Ground\+Segment\+::settings}!D\+E\+F\+A\+U\+L\+T\+\_\+\+F\+R\+O\+M\+\_\+\+E\+M\+A\+I\+L@{D\+E\+F\+A\+U\+L\+T\+\_\+\+F\+R\+O\+M\+\_\+\+E\+M\+A\+I\+L}}
 \index{D\+E\+F\+A\+U\+L\+T\+\_\+\+F\+R\+O\+M\+\_\+\+E\+M\+A\+I\+L@{D\+E\+F\+A\+U\+L\+T\+\_\+\+F\+R\+O\+M\+\_\+\+E\+M\+A\+I\+L}!Ground\+Segment\+::settings@{Ground\+Segment\+::settings}}
 \subsubsection[{D\+E\+F\+A\+U\+L\+T\+\_\+\+F\+R\+O\+M\+\_\+\+E\+M\+A\+I\+L}]{\setlength{\rightskip}{0pt plus 5cm}Ground\+Segment.\+settings.\+D\+E\+F\+A\+U\+L\+T\+\_\+\+F\+R\+O\+M\+\_\+\+E\+M\+A\+I\+L = {\bf E\+M\+A\+I\+L\+\_\+\+H\+O\+S\+T\+\_\+\+U\+S\+E\+R}}\label{namespace_ground_segment_1_1settings_ac016a8ca7717627c7aa8538920482b88}
 
 
-Definition at line 36 of file settings.\+py.
+Definition at line 38 of file settings.\+py.
 
 \hypertarget{namespace_ground_segment_1_1settings_ada1dcaeb590c4106b8bd01b0bf16d8c7}{}\index{Ground\+Segment\+::settings@{Ground\+Segment\+::settings}!E\+M\+A\+I\+L\+\_\+\+B\+A\+C\+K\+E\+N\+D@{E\+M\+A\+I\+L\+\_\+\+B\+A\+C\+K\+E\+N\+D}}
 \index{E\+M\+A\+I\+L\+\_\+\+B\+A\+C\+K\+E\+N\+D@{E\+M\+A\+I\+L\+\_\+\+B\+A\+C\+K\+E\+N\+D}!Ground\+Segment\+::settings@{Ground\+Segment\+::settings}}
 \subsubsection[{E\+M\+A\+I\+L\+\_\+\+B\+A\+C\+K\+E\+N\+D}]{\setlength{\rightskip}{0pt plus 5cm}string Ground\+Segment.\+settings.\+E\+M\+A\+I\+L\+\_\+\+B\+A\+C\+K\+E\+N\+D = \textquotesingle{}django.\+core.\+mail.\+backends.\+smtp.\+Email\+Backend\textquotesingle{}}\label{namespace_ground_segment_1_1settings_ada1dcaeb590c4106b8bd01b0bf16d8c7}
 
 
-Definition at line 31 of file settings.\+py.
+Definition at line 33 of file settings.\+py.
 
 \hypertarget{namespace_ground_segment_1_1settings_a543f885a8ff97df8e4e3c215d0ef42a8}{}\index{Ground\+Segment\+::settings@{Ground\+Segment\+::settings}!E\+M\+A\+I\+L\+\_\+\+H\+O\+S\+T@{E\+M\+A\+I\+L\+\_\+\+H\+O\+S\+T}}
 \index{E\+M\+A\+I\+L\+\_\+\+H\+O\+S\+T@{E\+M\+A\+I\+L\+\_\+\+H\+O\+S\+T}!Ground\+Segment\+::settings@{Ground\+Segment\+::settings}}
 \subsubsection[{E\+M\+A\+I\+L\+\_\+\+H\+O\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}string Ground\+Segment.\+settings.\+E\+M\+A\+I\+L\+\_\+\+H\+O\+S\+T = \textquotesingle{}smtp.\+gmail.\+com\textquotesingle{}}\label{namespace_ground_segment_1_1settings_a543f885a8ff97df8e4e3c215d0ef42a8}
 
 
-Definition at line 32 of file settings.\+py.
+Definition at line 34 of file settings.\+py.
 
 \hypertarget{namespace_ground_segment_1_1settings_aedd7c143f3020b0a1156e678dc353726}{}\index{Ground\+Segment\+::settings@{Ground\+Segment\+::settings}!E\+M\+A\+I\+L\+\_\+\+H\+O\+S\+T\+\_\+\+P\+A\+S\+S\+W\+O\+R\+D@{E\+M\+A\+I\+L\+\_\+\+H\+O\+S\+T\+\_\+\+P\+A\+S\+S\+W\+O\+R\+D}}
 \index{E\+M\+A\+I\+L\+\_\+\+H\+O\+S\+T\+\_\+\+P\+A\+S\+S\+W\+O\+R\+D@{E\+M\+A\+I\+L\+\_\+\+H\+O\+S\+T\+\_\+\+P\+A\+S\+S\+W\+O\+R\+D}!Ground\+Segment\+::settings@{Ground\+Segment\+::settings}}
 \subsubsection[{E\+M\+A\+I\+L\+\_\+\+H\+O\+S\+T\+\_\+\+P\+A\+S\+S\+W\+O\+R\+D}]{\setlength{\rightskip}{0pt plus 5cm}string Ground\+Segment.\+settings.\+E\+M\+A\+I\+L\+\_\+\+H\+O\+S\+T\+\_\+\+P\+A\+S\+S\+W\+O\+R\+D = \textquotesingle{}preguntar\textquotesingle{}}\label{namespace_ground_segment_1_1settings_aedd7c143f3020b0a1156e678dc353726}
 
 
-Definition at line 33 of file settings.\+py.
+Definition at line 35 of file settings.\+py.
 
 \hypertarget{namespace_ground_segment_1_1settings_a0bc4395f3eefc35a5ad7741002256650}{}\index{Ground\+Segment\+::settings@{Ground\+Segment\+::settings}!E\+M\+A\+I\+L\+\_\+\+H\+O\+S\+T\+\_\+\+U\+S\+E\+R@{E\+M\+A\+I\+L\+\_\+\+H\+O\+S\+T\+\_\+\+U\+S\+E\+R}}
 \index{E\+M\+A\+I\+L\+\_\+\+H\+O\+S\+T\+\_\+\+U\+S\+E\+R@{E\+M\+A\+I\+L\+\_\+\+H\+O\+S\+T\+\_\+\+U\+S\+E\+R}!Ground\+Segment\+::settings@{Ground\+Segment\+::settings}}
 \subsubsection[{E\+M\+A\+I\+L\+\_\+\+H\+O\+S\+T\+\_\+\+U\+S\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}string Ground\+Segment.\+settings.\+E\+M\+A\+I\+L\+\_\+\+H\+O\+S\+T\+\_\+\+U\+S\+E\+R = \textquotesingle{}mdiaegroundsegment@gmail.\+com\textquotesingle{}}\label{namespace_ground_segment_1_1settings_a0bc4395f3eefc35a5ad7741002256650}
 
 
-Definition at line 34 of file settings.\+py.
+Definition at line 36 of file settings.\+py.
 
 \hypertarget{namespace_ground_segment_1_1settings_af36bc449cf8894642e0ceabe6b668810}{}\index{Ground\+Segment\+::settings@{Ground\+Segment\+::settings}!E\+M\+A\+I\+L\+\_\+\+P\+O\+R\+T@{E\+M\+A\+I\+L\+\_\+\+P\+O\+R\+T}}
 \index{E\+M\+A\+I\+L\+\_\+\+P\+O\+R\+T@{E\+M\+A\+I\+L\+\_\+\+P\+O\+R\+T}!Ground\+Segment\+::settings@{Ground\+Segment\+::settings}}
 \subsubsection[{E\+M\+A\+I\+L\+\_\+\+P\+O\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}int Ground\+Segment.\+settings.\+E\+M\+A\+I\+L\+\_\+\+P\+O\+R\+T = 587}\label{namespace_ground_segment_1_1settings_af36bc449cf8894642e0ceabe6b668810}
 
 
-Definition at line 35 of file settings.\+py.
+Definition at line 37 of file settings.\+py.
 
 \hypertarget{namespace_ground_segment_1_1settings_a8f145226f6aaa8becf7066ef790b389b}{}\index{Ground\+Segment\+::settings@{Ground\+Segment\+::settings}!E\+M\+A\+I\+L\+\_\+\+U\+S\+E\+\_\+\+T\+L\+S@{E\+M\+A\+I\+L\+\_\+\+U\+S\+E\+\_\+\+T\+L\+S}}
 \index{E\+M\+A\+I\+L\+\_\+\+U\+S\+E\+\_\+\+T\+L\+S@{E\+M\+A\+I\+L\+\_\+\+U\+S\+E\+\_\+\+T\+L\+S}!Ground\+Segment\+::settings@{Ground\+Segment\+::settings}}
 \subsubsection[{E\+M\+A\+I\+L\+\_\+\+U\+S\+E\+\_\+\+T\+L\+S}]{\setlength{\rightskip}{0pt plus 5cm}Ground\+Segment.\+settings.\+E\+M\+A\+I\+L\+\_\+\+U\+S\+E\+\_\+\+T\+L\+S = True}\label{namespace_ground_segment_1_1settings_a8f145226f6aaa8becf7066ef790b389b}
 
 
-Definition at line 30 of file settings.\+py.
+Definition at line 32 of file settings.\+py.
 
 \hypertarget{namespace_ground_segment_1_1settings_a87e988a27e0909411e0d3111b409f128}{}\index{Ground\+Segment\+::settings@{Ground\+Segment\+::settings}!I\+N\+S\+T\+A\+L\+L\+E\+D\+\_\+\+A\+P\+P\+S@{I\+N\+S\+T\+A\+L\+L\+E\+D\+\_\+\+A\+P\+P\+S}}
 \index{I\+N\+S\+T\+A\+L\+L\+E\+D\+\_\+\+A\+P\+P\+S@{I\+N\+S\+T\+A\+L\+L\+E\+D\+\_\+\+A\+P\+P\+S}!Ground\+Segment\+::settings@{Ground\+Segment\+::settings}}
@@ -184,22 +191,23 @@ Definition at line 30 of file settings.\+py.
 5     \textcolor{stringliteral}{'django.contrib.sessions'},
 6     \textcolor{stringliteral}{'django.contrib.messages'},
 7     \textcolor{stringliteral}{'django.contrib.staticfiles'},
-8     \textcolor{stringliteral}{'django\_extensions'},
+8     \textcolor{comment}{#'django\_extensions',}
 9     \textcolor{comment}{#python3.4 manage.py graph\_models -a -o myapp\_models.png}
 10     \textcolor{stringliteral}{'GroundSegment'},
-11     
-12 ]
+11     \textcolor{stringliteral}{'rest\_framework'},
+12     \textcolor{stringliteral}{'graphos'},
+13 ]
 \end{DoxyCode}
 
 
-Definition at line 39 of file settings.\+py.
+Definition at line 41 of file settings.\+py.
 
 \hypertarget{namespace_ground_segment_1_1settings_ad00a75a321dcbd00ef2dc2d0181ea4bb}{}\index{Ground\+Segment\+::settings@{Ground\+Segment\+::settings}!L\+A\+N\+G\+U\+A\+G\+E\+\_\+\+C\+O\+D\+E@{L\+A\+N\+G\+U\+A\+G\+E\+\_\+\+C\+O\+D\+E}}
 \index{L\+A\+N\+G\+U\+A\+G\+E\+\_\+\+C\+O\+D\+E@{L\+A\+N\+G\+U\+A\+G\+E\+\_\+\+C\+O\+D\+E}!Ground\+Segment\+::settings@{Ground\+Segment\+::settings}}
 \subsubsection[{L\+A\+N\+G\+U\+A\+G\+E\+\_\+\+C\+O\+D\+E}]{\setlength{\rightskip}{0pt plus 5cm}string Ground\+Segment.\+settings.\+L\+A\+N\+G\+U\+A\+G\+E\+\_\+\+C\+O\+D\+E = \textquotesingle{}en-\/us\textquotesingle{}}\label{namespace_ground_segment_1_1settings_ad00a75a321dcbd00ef2dc2d0181ea4bb}
 
 
-Definition at line 134 of file settings.\+py.
+Definition at line 138 of file settings.\+py.
 
 \hypertarget{namespace_ground_segment_1_1settings_ac72e34b0dd6d700d555daae97bae8118}{}\index{Ground\+Segment\+::settings@{Ground\+Segment\+::settings}!L\+O\+G\+G\+I\+N\+G@{L\+O\+G\+G\+I\+N\+G}}
 \index{L\+O\+G\+G\+I\+N\+G@{L\+O\+G\+G\+I\+N\+G}!Ground\+Segment\+::settings@{Ground\+Segment\+::settings}}
@@ -234,14 +242,28 @@ Definition at line 134 of file settings.\+py.
 \end{DoxyCode}
 
 
-Definition at line 165 of file settings.\+py.
+Definition at line 169 of file settings.\+py.
+
+\hypertarget{namespace_ground_segment_1_1settings_a6d76611e9864bdae4f8766581d7accf7}{}\index{Ground\+Segment\+::settings@{Ground\+Segment\+::settings}!L\+O\+G\+I\+N\+\_\+\+R\+E\+D\+I\+R\+E\+C\+T\+\_\+\+U\+R\+L@{L\+O\+G\+I\+N\+\_\+\+R\+E\+D\+I\+R\+E\+C\+T\+\_\+\+U\+R\+L}}
+\index{L\+O\+G\+I\+N\+\_\+\+R\+E\+D\+I\+R\+E\+C\+T\+\_\+\+U\+R\+L@{L\+O\+G\+I\+N\+\_\+\+R\+E\+D\+I\+R\+E\+C\+T\+\_\+\+U\+R\+L}!Ground\+Segment\+::settings@{Ground\+Segment\+::settings}}
+\subsubsection[{L\+O\+G\+I\+N\+\_\+\+R\+E\+D\+I\+R\+E\+C\+T\+\_\+\+U\+R\+L}]{\setlength{\rightskip}{0pt plus 5cm}string Ground\+Segment.\+settings.\+L\+O\+G\+I\+N\+\_\+\+R\+E\+D\+I\+R\+E\+C\+T\+\_\+\+U\+R\+L = \char`\"{}/home\char`\"{}}\label{namespace_ground_segment_1_1settings_a6d76611e9864bdae4f8766581d7accf7}
+
+
+Definition at line 206 of file settings.\+py.
+
+\hypertarget{namespace_ground_segment_1_1settings_a9f2c02d37399152c46ed216451c55f9d}{}\index{Ground\+Segment\+::settings@{Ground\+Segment\+::settings}!L\+O\+G\+I\+N\+\_\+\+U\+R\+L@{L\+O\+G\+I\+N\+\_\+\+U\+R\+L}}
+\index{L\+O\+G\+I\+N\+\_\+\+U\+R\+L@{L\+O\+G\+I\+N\+\_\+\+U\+R\+L}!Ground\+Segment\+::settings@{Ground\+Segment\+::settings}}
+\subsubsection[{L\+O\+G\+I\+N\+\_\+\+U\+R\+L}]{\setlength{\rightskip}{0pt plus 5cm}string Ground\+Segment.\+settings.\+L\+O\+G\+I\+N\+\_\+\+U\+R\+L = \textquotesingle{}/\textquotesingle{}}\label{namespace_ground_segment_1_1settings_a9f2c02d37399152c46ed216451c55f9d}
+
+
+Definition at line 208 of file settings.\+py.
 
 \hypertarget{namespace_ground_segment_1_1settings_a482e3bb1fe2f21c677c69b69e5b5798a}{}\index{Ground\+Segment\+::settings@{Ground\+Segment\+::settings}!M\+E\+D\+I\+A\+\_\+\+U\+R\+L@{M\+E\+D\+I\+A\+\_\+\+U\+R\+L}}
 \index{M\+E\+D\+I\+A\+\_\+\+U\+R\+L@{M\+E\+D\+I\+A\+\_\+\+U\+R\+L}!Ground\+Segment\+::settings@{Ground\+Segment\+::settings}}
 \subsubsection[{M\+E\+D\+I\+A\+\_\+\+U\+R\+L}]{\setlength{\rightskip}{0pt plus 5cm}string Ground\+Segment.\+settings.\+M\+E\+D\+I\+A\+\_\+\+U\+R\+L = \textquotesingle{}/media/\textquotesingle{}}\label{namespace_ground_segment_1_1settings_a482e3bb1fe2f21c677c69b69e5b5798a}
 
 
-Definition at line 152 of file settings.\+py.
+Definition at line 156 of file settings.\+py.
 
 \hypertarget{namespace_ground_segment_1_1settings_abd392b70ea7895ec177a28651e7616c8}{}\index{Ground\+Segment\+::settings@{Ground\+Segment\+::settings}!M\+I\+D\+D\+L\+E\+W\+A\+R\+E\+\_\+\+C\+L\+A\+S\+S\+E\+S@{M\+I\+D\+D\+L\+E\+W\+A\+R\+E\+\_\+\+C\+L\+A\+S\+S\+E\+S}}
 \index{M\+I\+D\+D\+L\+E\+W\+A\+R\+E\+\_\+\+C\+L\+A\+S\+S\+E\+S@{M\+I\+D\+D\+L\+E\+W\+A\+R\+E\+\_\+\+C\+L\+A\+S\+S\+E\+S}!Ground\+Segment\+::settings@{Ground\+Segment\+::settings}}
@@ -261,35 +283,52 @@ Definition at line 152 of file settings.\+py.
 \end{DoxyCode}
 
 
-Definition at line 52 of file settings.\+py.
+Definition at line 55 of file settings.\+py.
+
+\hypertarget{namespace_ground_segment_1_1settings_ab3c36c6cb632b928ebc77a83b13dbda9}{}\index{Ground\+Segment\+::settings@{Ground\+Segment\+::settings}!R\+E\+S\+T\+\_\+\+F\+R\+A\+M\+E\+W\+O\+R\+K@{R\+E\+S\+T\+\_\+\+F\+R\+A\+M\+E\+W\+O\+R\+K}}
+\index{R\+E\+S\+T\+\_\+\+F\+R\+A\+M\+E\+W\+O\+R\+K@{R\+E\+S\+T\+\_\+\+F\+R\+A\+M\+E\+W\+O\+R\+K}!Ground\+Segment\+::settings@{Ground\+Segment\+::settings}}
+\subsubsection[{R\+E\+S\+T\+\_\+\+F\+R\+A\+M\+E\+W\+O\+R\+K}]{\setlength{\rightskip}{0pt plus 5cm}dictionary Ground\+Segment.\+settings.\+R\+E\+S\+T\+\_\+\+F\+R\+A\+M\+E\+W\+O\+R\+K}\label{namespace_ground_segment_1_1settings_ab3c36c6cb632b928ebc77a83b13dbda9}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 = \{
+2     \textcolor{comment}{# Use Django's standard `django.contrib.auth` permissions,}
+3     \textcolor{comment}{# or allow read-only access for unauthenticated users.}
+4     \textcolor{stringliteral}{'DEFAULT\_PERMISSION\_CLASSES'}: [
+5         \textcolor{stringliteral}{'rest\_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'}
+6     ]
+7 \}
+\end{DoxyCode}
+
+
+Definition at line 197 of file settings.\+py.
 
 \hypertarget{namespace_ground_segment_1_1settings_af881d9abde1eaf859b6067764a32059a}{}\index{Ground\+Segment\+::settings@{Ground\+Segment\+::settings}!R\+O\+O\+T\+\_\+\+U\+R\+L\+C\+O\+N\+F@{R\+O\+O\+T\+\_\+\+U\+R\+L\+C\+O\+N\+F}}
 \index{R\+O\+O\+T\+\_\+\+U\+R\+L\+C\+O\+N\+F@{R\+O\+O\+T\+\_\+\+U\+R\+L\+C\+O\+N\+F}!Ground\+Segment\+::settings@{Ground\+Segment\+::settings}}
 \subsubsection[{R\+O\+O\+T\+\_\+\+U\+R\+L\+C\+O\+N\+F}]{\setlength{\rightskip}{0pt plus 5cm}string Ground\+Segment.\+settings.\+R\+O\+O\+T\+\_\+\+U\+R\+L\+C\+O\+N\+F = \textquotesingle{}Ground\+Segment.\+urls\textquotesingle{}}\label{namespace_ground_segment_1_1settings_af881d9abde1eaf859b6067764a32059a}
 
 
-Definition at line 63 of file settings.\+py.
+Definition at line 66 of file settings.\+py.
 
 \hypertarget{namespace_ground_segment_1_1settings_a962d63c2c779045196141e0ac3e0415a}{}\index{Ground\+Segment\+::settings@{Ground\+Segment\+::settings}!S\+E\+C\+R\+E\+T\+\_\+\+K\+E\+Y@{S\+E\+C\+R\+E\+T\+\_\+\+K\+E\+Y}}
 \index{S\+E\+C\+R\+E\+T\+\_\+\+K\+E\+Y@{S\+E\+C\+R\+E\+T\+\_\+\+K\+E\+Y}!Ground\+Segment\+::settings@{Ground\+Segment\+::settings}}
 \subsubsection[{S\+E\+C\+R\+E\+T\+\_\+\+K\+E\+Y}]{\setlength{\rightskip}{0pt plus 5cm}string Ground\+Segment.\+settings.\+S\+E\+C\+R\+E\+T\+\_\+\+K\+E\+Y = \textquotesingle{}ty\%av@!oii2d@fg5rhp4\$36+r$\ast$vc7wke2sg4q39$^\wedge$+)shzi\$q0c\textquotesingle{}}\label{namespace_ground_segment_1_1settings_a962d63c2c779045196141e0ac3e0415a}
 
 
-Definition at line 23 of file settings.\+py.
+Definition at line 24 of file settings.\+py.
 
 \hypertarget{namespace_ground_segment_1_1settings_a99341177ff9700bce98aaa850c09412d}{}\index{Ground\+Segment\+::settings@{Ground\+Segment\+::settings}!S\+T\+A\+T\+I\+C\+\_\+\+R\+O\+O\+T@{S\+T\+A\+T\+I\+C\+\_\+\+R\+O\+O\+T}}
 \index{S\+T\+A\+T\+I\+C\+\_\+\+R\+O\+O\+T@{S\+T\+A\+T\+I\+C\+\_\+\+R\+O\+O\+T}!Ground\+Segment\+::settings@{Ground\+Segment\+::settings}}
 \subsubsection[{S\+T\+A\+T\+I\+C\+\_\+\+R\+O\+O\+T}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+settings.\+S\+T\+A\+T\+I\+C\+\_\+\+R\+O\+O\+T = os.\+path.\+join({\bf B\+A\+S\+E\+\_\+\+D\+I\+R},\textquotesingle{}/static\textquotesingle{})}\label{namespace_ground_segment_1_1settings_a99341177ff9700bce98aaa850c09412d}
 
 
-Definition at line 153 of file settings.\+py.
+Definition at line 157 of file settings.\+py.
 
 \hypertarget{namespace_ground_segment_1_1settings_ae91e0e33f45cae10b6f1f4aef7862e1a}{}\index{Ground\+Segment\+::settings@{Ground\+Segment\+::settings}!S\+T\+A\+T\+I\+C\+\_\+\+U\+R\+L@{S\+T\+A\+T\+I\+C\+\_\+\+U\+R\+L}}
 \index{S\+T\+A\+T\+I\+C\+\_\+\+U\+R\+L@{S\+T\+A\+T\+I\+C\+\_\+\+U\+R\+L}!Ground\+Segment\+::settings@{Ground\+Segment\+::settings}}
 \subsubsection[{S\+T\+A\+T\+I\+C\+\_\+\+U\+R\+L}]{\setlength{\rightskip}{0pt plus 5cm}string Ground\+Segment.\+settings.\+S\+T\+A\+T\+I\+C\+\_\+\+U\+R\+L = \textquotesingle{}/static/\textquotesingle{}}\label{namespace_ground_segment_1_1settings_ae91e0e33f45cae10b6f1f4aef7862e1a}
 
 
-Definition at line 151 of file settings.\+py.
+Definition at line 155 of file settings.\+py.
 
 \hypertarget{namespace_ground_segment_1_1settings_abf83e5e190e2a3cf3ae8d8bac305e750}{}\index{Ground\+Segment\+::settings@{Ground\+Segment\+::settings}!S\+T\+A\+T\+I\+C\+F\+I\+L\+E\+S\+\_\+\+F\+I\+N\+D\+E\+R\+S@{S\+T\+A\+T\+I\+C\+F\+I\+L\+E\+S\+\_\+\+F\+I\+N\+D\+E\+R\+S}}
 \index{S\+T\+A\+T\+I\+C\+F\+I\+L\+E\+S\+\_\+\+F\+I\+N\+D\+E\+R\+S@{S\+T\+A\+T\+I\+C\+F\+I\+L\+E\+S\+\_\+\+F\+I\+N\+D\+E\+R\+S}!Ground\+Segment\+::settings@{Ground\+Segment\+::settings}}
@@ -303,7 +342,7 @@ Definition at line 151 of file settings.\+py.
 \end{DoxyCode}
 
 
-Definition at line 156 of file settings.\+py.
+Definition at line 160 of file settings.\+py.
 
 \hypertarget{namespace_ground_segment_1_1settings_aef52073a71704189e79714d515ba3de3}{}\index{Ground\+Segment\+::settings@{Ground\+Segment\+::settings}!T\+E\+M\+P\+L\+A\+T\+E\+S@{T\+E\+M\+P\+L\+A\+T\+E\+S}}
 \index{T\+E\+M\+P\+L\+A\+T\+E\+S@{T\+E\+M\+P\+L\+A\+T\+E\+S}!Ground\+Segment\+::settings@{Ground\+Segment\+::settings}}
@@ -328,40 +367,40 @@ Definition at line 156 of file settings.\+py.
 \end{DoxyCode}
 
 
-Definition at line 65 of file settings.\+py.
+Definition at line 68 of file settings.\+py.
 
 \hypertarget{namespace_ground_segment_1_1settings_a7f5b157199222270cc12a900b1dbb6cc}{}\index{Ground\+Segment\+::settings@{Ground\+Segment\+::settings}!T\+I\+M\+E\+\_\+\+Z\+O\+N\+E@{T\+I\+M\+E\+\_\+\+Z\+O\+N\+E}}
 \index{T\+I\+M\+E\+\_\+\+Z\+O\+N\+E@{T\+I\+M\+E\+\_\+\+Z\+O\+N\+E}!Ground\+Segment\+::settings@{Ground\+Segment\+::settings}}
 \subsubsection[{T\+I\+M\+E\+\_\+\+Z\+O\+N\+E}]{\setlength{\rightskip}{0pt plus 5cm}string Ground\+Segment.\+settings.\+T\+I\+M\+E\+\_\+\+Z\+O\+N\+E = \textquotesingle{}U\+T\+C\textquotesingle{}}\label{namespace_ground_segment_1_1settings_a7f5b157199222270cc12a900b1dbb6cc}
 
 
-Definition at line 136 of file settings.\+py.
+Definition at line 140 of file settings.\+py.
 
 \hypertarget{namespace_ground_segment_1_1settings_a58a4a6948688cc8ccf2f31d6bea3a954}{}\index{Ground\+Segment\+::settings@{Ground\+Segment\+::settings}!U\+S\+E\+\_\+\+I18\+N@{U\+S\+E\+\_\+\+I18\+N}}
 \index{U\+S\+E\+\_\+\+I18\+N@{U\+S\+E\+\_\+\+I18\+N}!Ground\+Segment\+::settings@{Ground\+Segment\+::settings}}
 \subsubsection[{U\+S\+E\+\_\+\+I18\+N}]{\setlength{\rightskip}{0pt plus 5cm}Ground\+Segment.\+settings.\+U\+S\+E\+\_\+\+I18\+N = True}\label{namespace_ground_segment_1_1settings_a58a4a6948688cc8ccf2f31d6bea3a954}
 
 
-Definition at line 138 of file settings.\+py.
+Definition at line 142 of file settings.\+py.
 
 \hypertarget{namespace_ground_segment_1_1settings_a8cf0ce46819ba284c86a1e87267378af}{}\index{Ground\+Segment\+::settings@{Ground\+Segment\+::settings}!U\+S\+E\+\_\+\+L10\+N@{U\+S\+E\+\_\+\+L10\+N}}
 \index{U\+S\+E\+\_\+\+L10\+N@{U\+S\+E\+\_\+\+L10\+N}!Ground\+Segment\+::settings@{Ground\+Segment\+::settings}}
 \subsubsection[{U\+S\+E\+\_\+\+L10\+N}]{\setlength{\rightskip}{0pt plus 5cm}Ground\+Segment.\+settings.\+U\+S\+E\+\_\+\+L10\+N = True}\label{namespace_ground_segment_1_1settings_a8cf0ce46819ba284c86a1e87267378af}
 
 
-Definition at line 140 of file settings.\+py.
+Definition at line 144 of file settings.\+py.
 
 \hypertarget{namespace_ground_segment_1_1settings_a1d9e63721f37542ce41c8145755c7d7e}{}\index{Ground\+Segment\+::settings@{Ground\+Segment\+::settings}!U\+S\+E\+\_\+\+T\+Z@{U\+S\+E\+\_\+\+T\+Z}}
 \index{U\+S\+E\+\_\+\+T\+Z@{U\+S\+E\+\_\+\+T\+Z}!Ground\+Segment\+::settings@{Ground\+Segment\+::settings}}
 \subsubsection[{U\+S\+E\+\_\+\+T\+Z}]{\setlength{\rightskip}{0pt plus 5cm}Ground\+Segment.\+settings.\+U\+S\+E\+\_\+\+T\+Z = True}\label{namespace_ground_segment_1_1settings_a1d9e63721f37542ce41c8145755c7d7e}
 
 
-Definition at line 142 of file settings.\+py.
+Definition at line 146 of file settings.\+py.
 
 \hypertarget{namespace_ground_segment_1_1settings_a5ae8b98baa409aa4ea87856e4114a64e}{}\index{Ground\+Segment\+::settings@{Ground\+Segment\+::settings}!W\+S\+G\+I\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+O\+N@{W\+S\+G\+I\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+O\+N}}
 \index{W\+S\+G\+I\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+O\+N@{W\+S\+G\+I\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+O\+N}!Ground\+Segment\+::settings@{Ground\+Segment\+::settings}}
 \subsubsection[{W\+S\+G\+I\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}string Ground\+Segment.\+settings.\+W\+S\+G\+I\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+O\+N = \textquotesingle{}{\bf Ground\+Segment.\+wsgi.\+application}\textquotesingle{}}\label{namespace_ground_segment_1_1settings_a5ae8b98baa409aa4ea87856e4114a64e}
 
 
-Definition at line 81 of file settings.\+py.
+Definition at line 84 of file settings.\+py.
 

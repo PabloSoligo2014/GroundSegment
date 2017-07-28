@@ -1,0 +1,93 @@
+\hypertarget{class_ground_segment_1_1models_1_1_state_1_1_state}{}\section{Ground\+Segment.\+models.\+State.\+State Class Reference}
+\label{class_ground_segment_1_1models_1_1_state_1_1_state}\index{Ground\+Segment.\+models.\+State.\+State@{Ground\+Segment.\+models.\+State.\+State}}
+
+
+Inheritance diagram for Ground\+Segment.\+models.\+State.\+State\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{class_ground_segment_1_1models_1_1_state_1_1_state__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ground\+Segment.\+models.\+State.\+State\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{class_ground_segment_1_1models_1_1_state_1_1_state__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_state_1_1_state_a79a6e0c8e9600f2bc1bdf7613745399b}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_state_1_1_state_a6a768e82c386021b965ac4b6f25006f0}{code} = models.\+Char\+Field(\textquotesingle{}Codigo del Estado\textquotesingle{}, max\+\_\+length=24, unique=True)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_state_1_1_state_a86dbd0b52a7eb954d59b33f4a29fb718}{name} = models.\+Char\+Field(\textquotesingle{}Nombre del Estado\textquotesingle{}, max\+\_\+length=24)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_state_1_1_state_a95d135c5695095cfbd949dd4076556e7}{description} = models.\+Char\+Field(\textquotesingle{}Descripcion\textquotesingle{}, max\+\_\+length=24)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_state_1_1_state_ab93fe4bbc192f2a1a26a25643671c373}{country} = models.\+Foreign\+Key(\hyperlink{class_ground_segment_1_1models_1_1_country_1_1_country}{Country},related\+\_\+name=\textquotesingle{}states\textquotesingle{})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 10 of file State.\+py.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_ground_segment_1_1models_1_1_state_1_1_state_a79a6e0c8e9600f2bc1bdf7613745399b}{}\index{Ground\+Segment\+::models\+::\+State\+::\+State@{Ground\+Segment\+::models\+::\+State\+::\+State}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!Ground\+Segment\+::models\+::\+State\+::\+State@{Ground\+Segment\+::models\+::\+State\+::\+State}}
+\subsubsection[{\+\_\+\+\_\+str\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+State.\+State.\+\_\+\+\_\+str\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_state_1_1_state_a79a6e0c8e9600f2bc1bdf7613745399b}
+
+
+Definition at line 16 of file State.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_ground_segment_1_1models_1_1_state_1_1_state_a6a768e82c386021b965ac4b6f25006f0}{}\index{Ground\+Segment\+::models\+::\+State\+::\+State@{Ground\+Segment\+::models\+::\+State\+::\+State}!code@{code}}
+\index{code@{code}!Ground\+Segment\+::models\+::\+State\+::\+State@{Ground\+Segment\+::models\+::\+State\+::\+State}}
+\subsubsection[{code}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+State.\+State.\+code = models.\+Char\+Field(\textquotesingle{}Codigo del Estado\textquotesingle{}, max\+\_\+length=24, unique=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_state_1_1_state_a6a768e82c386021b965ac4b6f25006f0}
+
+
+Definition at line 11 of file State.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_state_1_1_state_ab93fe4bbc192f2a1a26a25643671c373}{}\index{Ground\+Segment\+::models\+::\+State\+::\+State@{Ground\+Segment\+::models\+::\+State\+::\+State}!country@{country}}
+\index{country@{country}!Ground\+Segment\+::models\+::\+State\+::\+State@{Ground\+Segment\+::models\+::\+State\+::\+State}}
+\subsubsection[{country}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+State.\+State.\+country = models.\+Foreign\+Key({\bf Country},related\+\_\+name=\textquotesingle{}states\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_state_1_1_state_ab93fe4bbc192f2a1a26a25643671c373}
+
+
+Definition at line 14 of file State.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_state_1_1_state_a95d135c5695095cfbd949dd4076556e7}{}\index{Ground\+Segment\+::models\+::\+State\+::\+State@{Ground\+Segment\+::models\+::\+State\+::\+State}!description@{description}}
+\index{description@{description}!Ground\+Segment\+::models\+::\+State\+::\+State@{Ground\+Segment\+::models\+::\+State\+::\+State}}
+\subsubsection[{description}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+State.\+State.\+description = models.\+Char\+Field(\textquotesingle{}Descripcion\textquotesingle{}, max\+\_\+length=24)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_state_1_1_state_a95d135c5695095cfbd949dd4076556e7}
+
+
+Definition at line 13 of file State.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_state_1_1_state_a86dbd0b52a7eb954d59b33f4a29fb718}{}\index{Ground\+Segment\+::models\+::\+State\+::\+State@{Ground\+Segment\+::models\+::\+State\+::\+State}!name@{name}}
+\index{name@{name}!Ground\+Segment\+::models\+::\+State\+::\+State@{Ground\+Segment\+::models\+::\+State\+::\+State}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+State.\+State.\+name = models.\+Char\+Field(\textquotesingle{}Nombre del Estado\textquotesingle{}, max\+\_\+length=24)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_state_1_1_state_a86dbd0b52a7eb954d59b33f4a29fb718}
+
+
+Definition at line 12 of file State.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ubuntumate/git/\+Ground\+Segment/\+Ground\+Segment/\+Ground\+Segment/models/\hyperlink{_state_8py}{State.\+py}\end{DoxyCompactItemize}

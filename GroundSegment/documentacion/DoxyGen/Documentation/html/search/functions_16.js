@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xhr',['xhr',['../jquery_8min_8js.html#a34f9b8d6433890202c2448132d14ce88',1,'jquery.min.js']]]
+  ['writecookie',['writeCookie',['../resize_8js.html#ad0822459a7d442b8c5e4db795d0aabb4',1,'resize.js']]]
 ];

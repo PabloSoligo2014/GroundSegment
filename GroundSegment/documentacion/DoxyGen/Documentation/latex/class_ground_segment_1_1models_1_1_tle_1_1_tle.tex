@@ -29,6 +29,19 @@ class \hyperlink{class_ground_segment_1_1models_1_1_tle_1_1_tle_1_1_meta}{Meta}
 def \hyperlink{class_ground_segment_1_1models_1_1_tle_1_1_tle_aaa9c5ef171cfeab993957d279ded8364}{get\+Line1} (self)
 \item 
 def \hyperlink{class_ground_segment_1_1models_1_1_tle_1_1_tle_a904163c4f0018e52ddbd06a520787c6b}{get\+Line2} (self)
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_tle_1_1_tle_a049797b0a8b8006dbe6c65c2fef60b33}{get\+Epoch} (self)
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_tle_1_1_tle_af9530755ce563a47367a4636878d63bb}{save} (self)
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_tle_1_1_tle_a4d73692ec117481d770952be352f0e6b}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_tle_1_1_tle_a336e418e8038a25a0953b828857bb2c8}{get\+As\+Ephem\+Body} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_ground_segment_1_1models_1_1_tle_1_1_tle_ad99155dd9e68ea90cdfe8d44cf1ac897}{epoch}
 \end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
@@ -39,6 +52,8 @@ tuple \hyperlink{class_ground_segment_1_1models_1_1_tle_1_1_tle_ae3785c68a686c40
 \item 
 tuple \hyperlink{class_ground_segment_1_1models_1_1_tle_1_1_tle_ac5a4980b37f61f042cb30d0a268755eb}{lines} = models.\+Text\+Field(max\+\_\+length=124, )
 \item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_tle_1_1_tle_adbe4180b2b304b13ec62581aca377ffa}{epoch} = models.\+Date\+Time\+Field(\char`\"{}Epoca del T\+L\+E\char`\"{}, null=True)
+\item 
 tuple \hyperlink{class_ground_segment_1_1models_1_1_tle_1_1_tle_a95bfe88e371279e78d31945379bd3785}{satellite} = models.\+Foreign\+Key(\hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite}{Satellite}, related\+\_\+name=\textquotesingle{}tles\textquotesingle{})
 \end{DoxyCompactItemize}
 
@@ -47,13 +62,81 @@ tuple \hyperlink{class_ground_segment_1_1models_1_1_tle_1_1_tle_a95bfe88e371279e
 \begin{DoxyVerb}Clase/Entidad TLE.
 Almacena la informacion de los TLE incluyendo su fecha de descarga y la epoca de TLE 
 \end{DoxyVerb}
+\begin{DoxyVerb}Fecha generacion del TLE, si no fuera seteada se utilizara la fecha hora actual
+\end{DoxyVerb}
  
 
-Definition at line 21 of file Tle.\+py.
+Definition at line 26 of file Tle.\+py.
 
 
 
 \subsection{Member Function Documentation}
+\hypertarget{class_ground_segment_1_1models_1_1_tle_1_1_tle_a4d73692ec117481d770952be352f0e6b}{}\index{Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}}
+\subsubsection[{\+\_\+\+\_\+str\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Tle.\+Tle.\+\_\+\+\_\+str\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_tle_1_1_tle_a4d73692ec117481d770952be352f0e6b}
+
+
+Definition at line 101 of file Tle.\+py.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ground_segment_1_1models_1_1_tle_1_1_tle_a4d73692ec117481d770952be352f0e6b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_ground_segment_1_1models_1_1_tle_1_1_tle_a336e418e8038a25a0953b828857bb2c8}{}\index{Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}!get\+As\+Ephem\+Body@{get\+As\+Ephem\+Body}}
+\index{get\+As\+Ephem\+Body@{get\+As\+Ephem\+Body}!Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}}
+\subsubsection[{get\+As\+Ephem\+Body}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Tle.\+Tle.\+get\+As\+Ephem\+Body (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_tle_1_1_tle_a336e418e8038a25a0953b828857bb2c8}
+
+
+Definition at line 105 of file Tle.\+py.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ground_segment_1_1models_1_1_tle_1_1_tle_a336e418e8038a25a0953b828857bb2c8_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_ground_segment_1_1models_1_1_tle_1_1_tle_a049797b0a8b8006dbe6c65c2fef60b33}{}\index{Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}!get\+Epoch@{get\+Epoch}}
+\index{get\+Epoch@{get\+Epoch}!Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}}
+\subsubsection[{get\+Epoch}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Tle.\+Tle.\+get\+Epoch (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_tle_1_1_tle_a049797b0a8b8006dbe6c65c2fef60b33}
+
+
+Definition at line 81 of file Tle.\+py.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ground_segment_1_1models_1_1_tle_1_1_tle_a049797b0a8b8006dbe6c65c2fef60b33_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_ground_segment_1_1models_1_1_tle_1_1_tle_aaa9c5ef171cfeab993957d279ded8364}{}\index{Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}!get\+Line1@{get\+Line1}}
 \index{get\+Line1@{get\+Line1}!Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}}
 \subsubsection[{get\+Line1}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Tle.\+Tle.\+get\+Line1 (
@@ -67,7 +150,18 @@ Definition at line 21 of file Tle.\+py.
 \end{DoxyVerb}
  
 
-Definition at line 47 of file Tle.\+py.
+Definition at line 62 of file Tle.\+py.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ground_segment_1_1models_1_1_tle_1_1_tle_aaa9c5ef171cfeab993957d279ded8364_icgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{class_ground_segment_1_1models_1_1_tle_1_1_tle_a904163c4f0018e52ddbd06a520787c6b}{}\index{Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}!get\+Line2@{get\+Line2}}
 \index{get\+Line2@{get\+Line2}!Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}}
@@ -82,7 +176,51 @@ Definition at line 47 of file Tle.\+py.
 \end{DoxyVerb}
  
 
-Definition at line 58 of file Tle.\+py.
+Definition at line 73 of file Tle.\+py.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ground_segment_1_1models_1_1_tle_1_1_tle_a904163c4f0018e52ddbd06a520787c6b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_ground_segment_1_1models_1_1_tle_1_1_tle_af9530755ce563a47367a4636878d63bb}{}\index{Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}!save@{save}}
+\index{save@{save}!Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Tle.\+Tle.\+save (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_tle_1_1_tle_af9530755ce563a47367a4636878d63bb}
+
+
+Definition at line 93 of file Tle.\+py.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ground_segment_1_1models_1_1_tle_1_1_tle_af9530755ce563a47367a4636878d63bb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ground_segment_1_1models_1_1_tle_1_1_tle_af9530755ce563a47367a4636878d63bb_icgraph}
+\end{center}
+\end{figure}
+
 
 
 
@@ -92,28 +230,42 @@ Definition at line 58 of file Tle.\+py.
 \subsubsection[{downloaded}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Tle.\+Tle.\+downloaded = models.\+Date\+Time\+Field(auto\+\_\+now\+\_\+add=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_tle_1_1_tle_ae3785c68a686c40d0505afe276d13d04}
 
 
-Definition at line 31 of file Tle.\+py.
+Definition at line 41 of file Tle.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_tle_1_1_tle_adbe4180b2b304b13ec62581aca377ffa}{}\index{Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}!epoch@{epoch}}
+\index{epoch@{epoch}!Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}}
+\subsubsection[{epoch}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Tle.\+Tle.\+epoch = models.\+Date\+Time\+Field(\char`\"{}Epoca del T\+L\+E\char`\"{}, null=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_tle_1_1_tle_adbe4180b2b304b13ec62581aca377ffa}
+
+
+Definition at line 51 of file Tle.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_tle_1_1_tle_ad99155dd9e68ea90cdfe8d44cf1ac897}{}\index{Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}!epoch@{epoch}}
+\index{epoch@{epoch}!Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}}
+\subsubsection[{epoch}]{\setlength{\rightskip}{0pt plus 5cm}Ground\+Segment.\+models.\+Tle.\+Tle.\+epoch}\label{class_ground_segment_1_1models_1_1_tle_1_1_tle_ad99155dd9e68ea90cdfe8d44cf1ac897}
+
+
+Definition at line 84 of file Tle.\+py.
 
 \hypertarget{class_ground_segment_1_1models_1_1_tle_1_1_tle_ac5a4980b37f61f042cb30d0a268755eb}{}\index{Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}!lines@{lines}}
 \index{lines@{lines}!Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}}
 \subsubsection[{lines}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Tle.\+Tle.\+lines = models.\+Text\+Field(max\+\_\+length=124, )\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_tle_1_1_tle_ac5a4980b37f61f042cb30d0a268755eb}
 
 
-Definition at line 36 of file Tle.\+py.
+Definition at line 44 of file Tle.\+py.
 
 \hypertarget{class_ground_segment_1_1models_1_1_tle_1_1_tle_a95bfe88e371279e78d31945379bd3785}{}\index{Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}!satellite@{satellite}}
 \index{satellite@{satellite}!Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}}
 \subsubsection[{satellite}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Tle.\+Tle.\+satellite = models.\+Foreign\+Key({\bf Satellite}, related\+\_\+name=\textquotesingle{}tles\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_tle_1_1_tle_a95bfe88e371279e78d31945379bd3785}
 
 
-Definition at line 41 of file Tle.\+py.
+Definition at line 56 of file Tle.\+py.
 
 \hypertarget{class_ground_segment_1_1models_1_1_tle_1_1_tle_a66ec63c8a5d9f0a43b9aa48993e531a6}{}\index{Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}!tle\+Date\+Time@{tle\+Date\+Time}}
 \index{tle\+Date\+Time@{tle\+Date\+Time}!Ground\+Segment\+::models\+::\+Tle\+::\+Tle@{Ground\+Segment\+::models\+::\+Tle\+::\+Tle}}
 \subsubsection[{tle\+Date\+Time}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Tle.\+Tle.\+tle\+Date\+Time = models.\+Date\+Time\+Field(auto\+\_\+now\+\_\+add=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_tle_1_1_tle_a66ec63c8a5d9f0a43b9aa48993e531a6}
 
 
-Definition at line 27 of file Tle.\+py.
+Definition at line 35 of file Tle.\+py.
 
 
 

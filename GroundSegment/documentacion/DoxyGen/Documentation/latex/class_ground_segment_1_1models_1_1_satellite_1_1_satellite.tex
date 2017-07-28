@@ -21,9 +21,13 @@ Collaboration diagram for Ground\+Segment.\+models.\+Satellite.\+Satellite\+:\no
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a31da88247812f3de8ee84b91b50f27b7}{new} (cls, \hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_ae4a43a1ee941bff4914f4fed1e2775a1}{code}, \hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a076215a5d0896cf97edbf312c7605000}{description}, \hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a7962e5b81ff68f4fdedb33ce54bd4368}{norad\+Id})
+def \hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a2f064a4aef74f3fd6808147eb36bfaea}{new}
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a809a4f9f567603df662192d40a4147c2}{set\+In\+Contact} (self, value)
 \item 
 def \hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a514073889905f270022336e51caf420e}{get\+Code} (self)
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a53156f48e5812862d08044c43a6bfb18}{set\+Last\+T\+L\+E} (self, filename)
 \item 
 def \hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_ae2cd61983a5d3797c175b719ced66dd5}{get\+Last\+T\+L\+E} (self)
 \item 
@@ -31,7 +35,22 @@ def \hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_ae29d2
 \item 
 def \hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_aeaa5108842200cd7d39e9fc0546d09a5}{new\+Alarm} (self, alarm\+Type)
 \item 
+def \hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a73f1ac4d056566b7f3bf97e247e67c23}{get\+Command\+Type} (self)
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a52677e9afce3af3f71a06b7f4dd98041}{send\+Command} (self, cmd)
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a996d22d63af5cc9d9323e8fba7d52c82}{get\+Pending\+Commands} (self)
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_ae28c9b4a90e0150462cc59ced3dfe882}{expirate\+All} (self)
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_ae6307cbbfbd728d4f02515186fb8fc08}{new\+Command}
+\item 
 def \hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a0256a218df8e5fe93b8d2189e5c55849}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a5bb0cfae504099155343019582b87213}{in\+Contact}
 \end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
@@ -47,6 +66,12 @@ tuple \hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a43c
 tuple \hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a4cdd4dae77da6f58058ca51ac71bd31d}{state} = models.\+Foreign\+Key(\hyperlink{class_ground_segment_1_1models_1_1_satellite_state_1_1_satellite_state}{Satellite\+State}, related\+\_\+name=\textquotesingle{}satellites\textquotesingle{})
 \item 
 tuple \hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a6ae6b5fad6dd1a31200d8dd8e0ba07a0}{notes} = models.\+Text\+Field(\textquotesingle{}Observaciones sobre el satelite\textquotesingle{}, max\+\_\+length=512, null=True)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a5ee2ef851142b9b94e44d850425d62c1}{in\+Contact} = models.\+Boolean\+Field(\char`\"{}Si el satelite esta con enlace activo\char`\"{}, default=False)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a17c5c47d8ef48fe204723f224800a4cc}{comm\+Server\+I\+P} = models.\+Char\+Field(\textquotesingle{}I\+P servidor/cortex \textquotesingle{}, max\+\_\+length=24, help\+\_\+text=\textquotesingle{}I\+P servidor/cortex\textquotesingle{}, default=\textquotesingle{}127.\+0.\+0.\+1\textquotesingle{})
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a3dce35fcdd0293a4c147483ec91abcb3}{comm\+Server\+Port} = models.\+Char\+Field(\textquotesingle{}Puerto servidor/cortex\textquotesingle{}, max\+\_\+length=24, help\+\_\+text=\textquotesingle{}Puerto servidor/cortex\textquotesingle{}, default=\textquotesingle{}3210\textquotesingle{})
 \end{DoxyCompactItemize}
 
 
@@ -55,7 +80,7 @@ tuple \hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a6ae
 \end{DoxyVerb}
  
 
-Definition at line 23 of file Satellite.\+py.
+Definition at line 21 of file Satellite.\+py.
 
 
 
@@ -69,7 +94,29 @@ Definition at line 23 of file Satellite.\+py.
 )}\label{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a0256a218df8e5fe93b8d2189e5c55849}
 
 
-Definition at line 246 of file Satellite.\+py.
+Definition at line 332 of file Satellite.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_ae28c9b4a90e0150462cc59ced3dfe882}{}\index{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}!expirate\+All@{expirate\+All}}
+\index{expirate\+All@{expirate\+All}!Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}}
+\subsubsection[{expirate\+All}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Satellite.\+Satellite.\+expirate\+All (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_ae28c9b4a90e0150462cc59ced3dfe882}
+
+
+Definition at line 303 of file Satellite.\+py.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_ae28c9b4a90e0150462cc59ced3dfe882_cgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_ae29d261034411899685e71315d36411a}{}\index{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}!get\+Celestial\+Position@{get\+Celestial\+Position}}
 \index{get\+Celestial\+Position@{get\+Celestial\+Position}!Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}}
@@ -81,7 +128,18 @@ Definition at line 246 of file Satellite.\+py.
 )}\label{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_ae29d261034411899685e71315d36411a}
 
 
-Definition at line 169 of file Satellite.\+py.
+Definition at line 201 of file Satellite.\+py.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_ae29d261034411899685e71315d36411a_cgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a514073889905f270022336e51caf420e}{}\index{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}!get\+Code@{get\+Code}}
 \index{get\+Code@{get\+Code}!Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}}
@@ -92,7 +150,19 @@ Definition at line 169 of file Satellite.\+py.
 )}\label{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a514073889905f270022336e51caf420e}
 
 
-Definition at line 59 of file Satellite.\+py.
+Definition at line 67 of file Satellite.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a73f1ac4d056566b7f3bf97e247e67c23}{}\index{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}!get\+Command\+Type@{get\+Command\+Type}}
+\index{get\+Command\+Type@{get\+Command\+Type}!Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}}
+\subsubsection[{get\+Command\+Type}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Satellite.\+Satellite.\+get\+Command\+Type (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a73f1ac4d056566b7f3bf97e247e67c23}
+\begin{DoxyVerb}Retorna los tipos de comandos disponibles para este satelite\end{DoxyVerb}
+ 
+
+Definition at line 278 of file Satellite.\+py.
 
 \hypertarget{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_ae2cd61983a5d3797c175b719ced66dd5}{}\index{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}!get\+Last\+T\+L\+E@{get\+Last\+T\+L\+E}}
 \index{get\+Last\+T\+L\+E@{get\+Last\+T\+L\+E}!Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}}
@@ -105,18 +175,76 @@ Definition at line 59 of file Satellite.\+py.
 \end{DoxyVerb}
  
 
-Definition at line 139 of file Satellite.\+py.
+Definition at line 171 of file Satellite.\+py.
 
-\hypertarget{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a31da88247812f3de8ee84b91b50f27b7}{}\index{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}!new@{new}}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_ae2cd61983a5d3797c175b719ced66dd5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_ae2cd61983a5d3797c175b719ced66dd5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a996d22d63af5cc9d9323e8fba7d52c82}{}\index{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}!get\+Pending\+Commands@{get\+Pending\+Commands}}
+\index{get\+Pending\+Commands@{get\+Pending\+Commands}!Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}}
+\subsubsection[{get\+Pending\+Commands}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Satellite.\+Satellite.\+get\+Pending\+Commands (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a996d22d63af5cc9d9323e8fba7d52c82}
+\begin{DoxyVerb}Mato los comandos vencidos
+\end{DoxyVerb}
+ 
+
+Definition at line 294 of file Satellite.\+py.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a996d22d63af5cc9d9323e8fba7d52c82_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a996d22d63af5cc9d9323e8fba7d52c82_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a2f064a4aef74f3fd6808147eb36bfaea}{}\index{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}!new@{new}}
 \index{new@{new}!Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}}
 \subsubsection[{new}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Satellite.\+Satellite.\+new (
 \begin{DoxyParamCaption}
 \item[{}]{cls, }
 \item[{}]{code, }
 \item[{}]{description, }
-\item[{}]{norad\+Id}
+\item[{}]{norad\+Id, }
+\item[{}]{satellite\+State = {\ttfamily None}}
 \end{DoxyParamCaption}
-)}\label{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a31da88247812f3de8ee84b91b50f27b7}
+)}\label{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a2f064a4aef74f3fd6808147eb36bfaea}
 \begin{DoxyVerb}Constructor de clase
     
 @noradId  m: Identificacion unica asignada por NORAD
@@ -127,7 +255,18 @@ Definition at line 139 of file Satellite.\+py.
 \end{DoxyVerb}
  
 
-Definition at line 37 of file Satellite.\+py.
+Definition at line 39 of file Satellite.\+py.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a2f064a4aef74f3fd6808147eb36bfaea_cgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_aeaa5108842200cd7d39e9fc0546d09a5}{}\index{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}!new\+Alarm@{new\+Alarm}}
 \index{new\+Alarm@{new\+Alarm}!Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}}
@@ -139,7 +278,61 @@ Definition at line 37 of file Satellite.\+py.
 )}\label{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_aeaa5108842200cd7d39e9fc0546d09a5}
 
 
-Definition at line 237 of file Satellite.\+py.
+Definition at line 269 of file Satellite.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_ae6307cbbfbd728d4f02515186fb8fc08}{}\index{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}!new\+Command@{new\+Command}}
+\index{new\+Command@{new\+Command}!Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}}
+\subsubsection[{new\+Command}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Satellite.\+Satellite.\+new\+Command (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{command\+Type, }
+\item[{}]{expiration, }
+\item[{}]{timetag = {\ttfamily datetime.utcnow().replace(tzinfo=pytz.UTC)}}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_ae6307cbbfbd728d4f02515186fb8fc08}
+
+
+Definition at line 310 of file Satellite.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a52677e9afce3af3f71a06b7f4dd98041}{}\index{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}!send\+Command@{send\+Command}}
+\index{send\+Command@{send\+Command}!Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}}
+\subsubsection[{send\+Command}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Satellite.\+Satellite.\+send\+Command (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{cmd}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a52677e9afce3af3f71a06b7f4dd98041}
+
+
+Definition at line 282 of file Satellite.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a809a4f9f567603df662192d40a4147c2}{}\index{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}!set\+In\+Contact@{set\+In\+Contact}}
+\index{set\+In\+Contact@{set\+In\+Contact}!Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}}
+\subsubsection[{set\+In\+Contact}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Satellite.\+Satellite.\+set\+In\+Contact (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{value}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a809a4f9f567603df662192d40a4147c2}
+
+
+Definition at line 62 of file Satellite.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a53156f48e5812862d08044c43a6bfb18}{}\index{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}!set\+Last\+T\+L\+E@{set\+Last\+T\+L\+E}}
+\index{set\+Last\+T\+L\+E@{set\+Last\+T\+L\+E}!Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}}
+\subsubsection[{set\+Last\+T\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Satellite.\+Satellite.\+set\+Last\+T\+L\+E (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{filename}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a53156f48e5812862d08044c43a6bfb18}
+\begin{DoxyVerb}Almacena un TLE que no es descargado de NORAD. Tiene como objetivo en etapas de test poder
+operar con TLEs generados artificialmente o poder remplazar un TLE modificado
+#TODO: completar descripcion por ceci
+\end{DoxyVerb}
+ 
+
+Definition at line 143 of file Satellite.\+py.
 
 
 
@@ -149,42 +342,70 @@ Definition at line 237 of file Satellite.\+py.
 \subsubsection[{active}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Satellite.\+Satellite.\+active = models.\+Boolean\+Field(\textquotesingle{}Activacion/desactivacion del satelite\textquotesingle{}, default=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a43cd47392c46ca0c6c7c92a8828d7d26}
 
 
-Definition at line 32 of file Satellite.\+py.
+Definition at line 30 of file Satellite.\+py.
 
 \hypertarget{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_ae4a43a1ee941bff4914f4fed1e2775a1}{}\index{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}!code@{code}}
 \index{code@{code}!Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}}
 \subsubsection[{code}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Satellite.\+Satellite.\+code = models.\+Char\+Field(\textquotesingle{}Codigo del satelite\textquotesingle{}, max\+\_\+length=24, help\+\_\+text=\textquotesingle{}Codigo del satelite, ejemplo F\+S2017\textquotesingle{}, unique=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_ae4a43a1ee941bff4914f4fed1e2775a1}
 
 
-Definition at line 29 of file Satellite.\+py.
+Definition at line 27 of file Satellite.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a17c5c47d8ef48fe204723f224800a4cc}{}\index{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}!comm\+Server\+I\+P@{comm\+Server\+I\+P}}
+\index{comm\+Server\+I\+P@{comm\+Server\+I\+P}!Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}}
+\subsubsection[{comm\+Server\+I\+P}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Satellite.\+Satellite.\+comm\+Server\+I\+P = models.\+Char\+Field(\textquotesingle{}I\+P servidor/cortex \textquotesingle{}, max\+\_\+length=24, help\+\_\+text=\textquotesingle{}I\+P servidor/cortex\textquotesingle{}, default=\textquotesingle{}127.\+0.\+0.\+1\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a17c5c47d8ef48fe204723f224800a4cc}
+
+
+Definition at line 35 of file Satellite.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a3dce35fcdd0293a4c147483ec91abcb3}{}\index{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}!comm\+Server\+Port@{comm\+Server\+Port}}
+\index{comm\+Server\+Port@{comm\+Server\+Port}!Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}}
+\subsubsection[{comm\+Server\+Port}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Satellite.\+Satellite.\+comm\+Server\+Port = models.\+Char\+Field(\textquotesingle{}Puerto servidor/cortex\textquotesingle{}, max\+\_\+length=24, help\+\_\+text=\textquotesingle{}Puerto servidor/cortex\textquotesingle{}, default=\textquotesingle{}3210\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a3dce35fcdd0293a4c147483ec91abcb3}
+
+
+Definition at line 36 of file Satellite.\+py.
 
 \hypertarget{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a076215a5d0896cf97edbf312c7605000}{}\index{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}!description@{description}}
 \index{description@{description}!Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}}
 \subsubsection[{description}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Satellite.\+Satellite.\+description = models.\+Char\+Field(\textquotesingle{}Decripcion del satelite\textquotesingle{}, max\+\_\+length=100, help\+\_\+text=\textquotesingle{}Decripcion del satelite\textquotesingle{}, unique=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a076215a5d0896cf97edbf312c7605000}
 
 
-Definition at line 30 of file Satellite.\+py.
+Definition at line 28 of file Satellite.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a5ee2ef851142b9b94e44d850425d62c1}{}\index{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}!in\+Contact@{in\+Contact}}
+\index{in\+Contact@{in\+Contact}!Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}}
+\subsubsection[{in\+Contact}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Satellite.\+Satellite.\+in\+Contact = models.\+Boolean\+Field(\char`\"{}Si el satelite esta con enlace activo\char`\"{}, default=False)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a5ee2ef851142b9b94e44d850425d62c1}
+
+
+Definition at line 33 of file Satellite.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a5bb0cfae504099155343019582b87213}{}\index{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}!in\+Contact@{in\+Contact}}
+\index{in\+Contact@{in\+Contact}!Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}}
+\subsubsection[{in\+Contact}]{\setlength{\rightskip}{0pt plus 5cm}Ground\+Segment.\+models.\+Satellite.\+Satellite.\+in\+Contact}\label{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a5bb0cfae504099155343019582b87213}
+
+
+Definition at line 63 of file Satellite.\+py.
 
 \hypertarget{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a7962e5b81ff68f4fdedb33ce54bd4368}{}\index{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}!norad\+Id@{norad\+Id}}
 \index{norad\+Id@{norad\+Id}!Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}}
 \subsubsection[{norad\+Id}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Satellite.\+Satellite.\+norad\+Id = models.\+Integer\+Field(\textquotesingle{}Codigo norad del satelite\textquotesingle{}, help\+\_\+text=\textquotesingle{}Codigo norad del satelite\textquotesingle{}, unique=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a7962e5b81ff68f4fdedb33ce54bd4368}
 
 
-Definition at line 31 of file Satellite.\+py.
+Definition at line 29 of file Satellite.\+py.
 
 \hypertarget{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a6ae6b5fad6dd1a31200d8dd8e0ba07a0}{}\index{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}!notes@{notes}}
 \index{notes@{notes}!Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}}
 \subsubsection[{notes}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Satellite.\+Satellite.\+notes = models.\+Text\+Field(\textquotesingle{}Observaciones sobre el satelite\textquotesingle{}, max\+\_\+length=512, null=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a6ae6b5fad6dd1a31200d8dd8e0ba07a0}
 
 
-Definition at line 34 of file Satellite.\+py.
+Definition at line 32 of file Satellite.\+py.
 
 \hypertarget{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a4cdd4dae77da6f58058ca51ac71bd31d}{}\index{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}!state@{state}}
 \index{state@{state}!Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite@{Ground\+Segment\+::models\+::\+Satellite\+::\+Satellite}}
 \subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Satellite.\+Satellite.\+state = models.\+Foreign\+Key({\bf Satellite\+State}, related\+\_\+name=\textquotesingle{}satellites\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_satellite_1_1_satellite_a4cdd4dae77da6f58058ca51ac71bd31d}
 
 
-Definition at line 33 of file Satellite.\+py.
+Definition at line 31 of file Satellite.\+py.
 
 
 

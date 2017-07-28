@@ -1,0 +1,111 @@
+\hypertarget{class_ground_segment_1_1models_1_1_command_1_1_pass_script_1_1_pass_script}{}\section{Ground\+Segment.\+models.\+Command.\+Pass\+Script.\+Pass\+Script Class Reference}
+\label{class_ground_segment_1_1models_1_1_command_1_1_pass_script_1_1_pass_script}\index{Ground\+Segment.\+models.\+Command.\+Pass\+Script.\+Pass\+Script@{Ground\+Segment.\+models.\+Command.\+Pass\+Script.\+Pass\+Script}}
+
+
+Inheritance diagram for Ground\+Segment.\+models.\+Command.\+Pass\+Script.\+Pass\+Script\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{class_ground_segment_1_1models_1_1_command_1_1_pass_script_1_1_pass_script__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ground\+Segment.\+models.\+Command.\+Pass\+Script.\+Pass\+Script\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{class_ground_segment_1_1models_1_1_command_1_1_pass_script_1_1_pass_script__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_command_1_1_pass_script_1_1_pass_script_a4dcb308f74810861597d708fa7446255}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_command_1_1_pass_script_1_1_pass_script_ad19259b692f73bfba44c971de2996edd}{created} = models.\+Date\+Time\+Field(auto\+\_\+now\+\_\+add=True)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_command_1_1_pass_script_1_1_pass_script_a7166dcd816bbd9ed536d455007c50357}{author} = models.\+Foreign\+Key(User, related\+\_\+name=\textquotesingle{}pass\+Scripts\textquotesingle{})
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_command_1_1_pass_script_1_1_pass_script_a75020614d363fc6903dc9912b3fd06fe}{satellite} = models.\+Foreign\+Key(\hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite}{Satellite}, related\+\_\+name=\textquotesingle{}pass\+Scripts\textquotesingle{})
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_command_1_1_pass_script_1_1_pass_script_a48a085049e0623794c1742fde3752e42}{script} = models.\+Text\+Field(default=\char`\"{}Poner inclusion de django aca\char`\"{}, help\+\_\+text=\char`\"{}Codifique el scripts\char`\"{}, max\+\_\+length=5120)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_command_1_1_pass_script_1_1_pass_script_ac749a185584cb43885a148abaf414e4a}{apass} = models.\+Foreign\+Key(\hyperlink{class_ground_segment_1_1models_1_1_pasada_1_1_pasada}{Pasada}, related\+\_\+name=\char`\"{}pass\+Scripts\char`\"{}, null=True)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_command_1_1_pass_script_1_1_pass_script_a9e6d8cd987531f5cd7cabfb170a3970b}{applied} = models.\+Boolean\+Field(default=False)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 15 of file Pass\+Script.\+py.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_ground_segment_1_1models_1_1_command_1_1_pass_script_1_1_pass_script_a4dcb308f74810861597d708fa7446255}{}\index{Ground\+Segment\+::models\+::\+Command\+::\+Pass\+Script\+::\+Pass\+Script@{Ground\+Segment\+::models\+::\+Command\+::\+Pass\+Script\+::\+Pass\+Script}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!Ground\+Segment\+::models\+::\+Command\+::\+Pass\+Script\+::\+Pass\+Script@{Ground\+Segment\+::models\+::\+Command\+::\+Pass\+Script\+::\+Pass\+Script}}
+\subsubsection[{\+\_\+\+\_\+str\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Command.\+Pass\+Script.\+Pass\+Script.\+\_\+\+\_\+str\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_command_1_1_pass_script_1_1_pass_script_a4dcb308f74810861597d708fa7446255}
+
+
+Definition at line 27 of file Pass\+Script.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_ground_segment_1_1models_1_1_command_1_1_pass_script_1_1_pass_script_ac749a185584cb43885a148abaf414e4a}{}\index{Ground\+Segment\+::models\+::\+Command\+::\+Pass\+Script\+::\+Pass\+Script@{Ground\+Segment\+::models\+::\+Command\+::\+Pass\+Script\+::\+Pass\+Script}!apass@{apass}}
+\index{apass@{apass}!Ground\+Segment\+::models\+::\+Command\+::\+Pass\+Script\+::\+Pass\+Script@{Ground\+Segment\+::models\+::\+Command\+::\+Pass\+Script\+::\+Pass\+Script}}
+\subsubsection[{apass}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Command.\+Pass\+Script.\+Pass\+Script.\+apass = models.\+Foreign\+Key({\bf Pasada}, related\+\_\+name=\char`\"{}pass\+Scripts\char`\"{}, null=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_command_1_1_pass_script_1_1_pass_script_ac749a185584cb43885a148abaf414e4a}
+
+
+Definition at line 21 of file Pass\+Script.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_command_1_1_pass_script_1_1_pass_script_a9e6d8cd987531f5cd7cabfb170a3970b}{}\index{Ground\+Segment\+::models\+::\+Command\+::\+Pass\+Script\+::\+Pass\+Script@{Ground\+Segment\+::models\+::\+Command\+::\+Pass\+Script\+::\+Pass\+Script}!applied@{applied}}
+\index{applied@{applied}!Ground\+Segment\+::models\+::\+Command\+::\+Pass\+Script\+::\+Pass\+Script@{Ground\+Segment\+::models\+::\+Command\+::\+Pass\+Script\+::\+Pass\+Script}}
+\subsubsection[{applied}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Command.\+Pass\+Script.\+Pass\+Script.\+applied = models.\+Boolean\+Field(default=False)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_command_1_1_pass_script_1_1_pass_script_a9e6d8cd987531f5cd7cabfb170a3970b}
+
+
+Definition at line 22 of file Pass\+Script.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_command_1_1_pass_script_1_1_pass_script_a7166dcd816bbd9ed536d455007c50357}{}\index{Ground\+Segment\+::models\+::\+Command\+::\+Pass\+Script\+::\+Pass\+Script@{Ground\+Segment\+::models\+::\+Command\+::\+Pass\+Script\+::\+Pass\+Script}!author@{author}}
+\index{author@{author}!Ground\+Segment\+::models\+::\+Command\+::\+Pass\+Script\+::\+Pass\+Script@{Ground\+Segment\+::models\+::\+Command\+::\+Pass\+Script\+::\+Pass\+Script}}
+\subsubsection[{author}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Command.\+Pass\+Script.\+Pass\+Script.\+author = models.\+Foreign\+Key(User, related\+\_\+name=\textquotesingle{}pass\+Scripts\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_command_1_1_pass_script_1_1_pass_script_a7166dcd816bbd9ed536d455007c50357}
+
+
+Definition at line 18 of file Pass\+Script.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_command_1_1_pass_script_1_1_pass_script_ad19259b692f73bfba44c971de2996edd}{}\index{Ground\+Segment\+::models\+::\+Command\+::\+Pass\+Script\+::\+Pass\+Script@{Ground\+Segment\+::models\+::\+Command\+::\+Pass\+Script\+::\+Pass\+Script}!created@{created}}
+\index{created@{created}!Ground\+Segment\+::models\+::\+Command\+::\+Pass\+Script\+::\+Pass\+Script@{Ground\+Segment\+::models\+::\+Command\+::\+Pass\+Script\+::\+Pass\+Script}}
+\subsubsection[{created}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Command.\+Pass\+Script.\+Pass\+Script.\+created = models.\+Date\+Time\+Field(auto\+\_\+now\+\_\+add=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_command_1_1_pass_script_1_1_pass_script_ad19259b692f73bfba44c971de2996edd}
+
+
+Definition at line 17 of file Pass\+Script.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_command_1_1_pass_script_1_1_pass_script_a75020614d363fc6903dc9912b3fd06fe}{}\index{Ground\+Segment\+::models\+::\+Command\+::\+Pass\+Script\+::\+Pass\+Script@{Ground\+Segment\+::models\+::\+Command\+::\+Pass\+Script\+::\+Pass\+Script}!satellite@{satellite}}
+\index{satellite@{satellite}!Ground\+Segment\+::models\+::\+Command\+::\+Pass\+Script\+::\+Pass\+Script@{Ground\+Segment\+::models\+::\+Command\+::\+Pass\+Script\+::\+Pass\+Script}}
+\subsubsection[{satellite}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Command.\+Pass\+Script.\+Pass\+Script.\+satellite = models.\+Foreign\+Key({\bf Satellite}, related\+\_\+name=\textquotesingle{}pass\+Scripts\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_command_1_1_pass_script_1_1_pass_script_a75020614d363fc6903dc9912b3fd06fe}
+
+
+Definition at line 19 of file Pass\+Script.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_command_1_1_pass_script_1_1_pass_script_a48a085049e0623794c1742fde3752e42}{}\index{Ground\+Segment\+::models\+::\+Command\+::\+Pass\+Script\+::\+Pass\+Script@{Ground\+Segment\+::models\+::\+Command\+::\+Pass\+Script\+::\+Pass\+Script}!script@{script}}
+\index{script@{script}!Ground\+Segment\+::models\+::\+Command\+::\+Pass\+Script\+::\+Pass\+Script@{Ground\+Segment\+::models\+::\+Command\+::\+Pass\+Script\+::\+Pass\+Script}}
+\subsubsection[{script}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Command.\+Pass\+Script.\+Pass\+Script.\+script = models.\+Text\+Field(default=\char`\"{}Poner inclusion de django aca\char`\"{}, help\+\_\+text=\char`\"{}Codifique el scripts\char`\"{}, max\+\_\+length=5120)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_command_1_1_pass_script_1_1_pass_script_a48a085049e0623794c1742fde3752e42}
+
+
+Definition at line 20 of file Pass\+Script.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ubuntumate/git/\+Ground\+Segment/\+Ground\+Segment/\+Ground\+Segment/models/\+Command/\hyperlink{_pass_script_8py}{Pass\+Script.\+py}\end{DoxyCompactItemize}

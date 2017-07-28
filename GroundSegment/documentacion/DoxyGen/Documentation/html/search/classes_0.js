@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['aboutview',['AboutView',['../class_ground_segment_1_1views_1_1_about_view.html',1,'GroundSegment::views']]],
+  ['aboutview',['AboutView',['../class_ground_segment_1_1views_1_1views_1_1_about_view.html',1,'GroundSegment::views::views']]],
   ['action',['Action',['../class_ground_segment_1_1models_1_1_alarm_1_1_action_1_1_action.html',1,'GroundSegment::models::Alarm::Action']]],
   ['alarm',['Alarm',['../class_ground_segment_1_1models_1_1_alarm_1_1_alarm_1_1_alarm.html',1,'GroundSegment::models::Alarm::Alarm']]],
   ['alarmadmin',['AlarmAdmin',['../class_ground_segment_1_1admin_1_1_alarm_admin.html',1,'GroundSegment::admin']]],

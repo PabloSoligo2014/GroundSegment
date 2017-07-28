@@ -1,0 +1,183 @@
+\hypertarget{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame}{}\section{Ground\+Segment.\+models.\+Downlink\+Frame.\+Downlink\+Frame Class Reference}
+\label{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame}\index{Ground\+Segment.\+models.\+Downlink\+Frame.\+Downlink\+Frame@{Ground\+Segment.\+models.\+Downlink\+Frame.\+Downlink\+Frame}}
+
+
+Inheritance diagram for Ground\+Segment.\+models.\+Downlink\+Frame.\+Downlink\+Frame\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ground\+Segment.\+models.\+Downlink\+Frame.\+Downlink\+Frame\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a2ee34c8bf18c852a937c8a57f92acf52}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a74e777653258421b97095109554e348c}{frame\+Command} = models.\+Integer\+Field(\textquotesingle{}frame \hyperlink{class_ground_segment_1_1models_1_1_command_1_1_command_1_1_command}{Command}\textquotesingle{}, help\+\_\+text=\textquotesingle{}frame \hyperlink{class_ground_segment_1_1models_1_1_command_1_1_command_1_1_command}{Command}\textquotesingle{})
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a74dd54f47355823ab4f111408966af69}{frame\+Length} = models.\+Integer\+Field(\textquotesingle{}Dimension del frame\textquotesingle{}, help\+\_\+text=\textquotesingle{}Dimension del frame\textquotesingle{})
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a6f4c1351eae5c62c97a06f6fc251ac0e}{data\+Rate} = models.\+Integer\+Field(\textquotesingle{}Tasa de transferencia\textquotesingle{}, help\+\_\+text=\textquotesingle{}Tasa de transferencia\textquotesingle{})
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a396f8f6467f927c4cb3e1f24d40b4254}{modulation\+Name} = models.\+Char\+Field(\textquotesingle{}Nombre de la modulacion\textquotesingle{}, max\+\_\+length=24, help\+\_\+text=\textquotesingle{}Nombre de la modulacion\textquotesingle{} )
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a2c3915b3ca05d908b523d1bdfc7f73dc}{rssi} = models.\+Float\+Field(help\+\_\+text=\textquotesingle{}R\+S\+S\+I\textquotesingle{})
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a417795733873860a43017936b8bb1f6b}{frequency} = models.\+Float\+Field(help\+\_\+text=\textquotesingle{}Frecuencia\textquotesingle{})
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a01fcc6363ca203c66f9006a7e26cf298}{packet\+Length} = models.\+Integer\+Field(\textquotesingle{}Dimension del paquete\textquotesingle{}, help\+\_\+text=\textquotesingle{}Dimension del paquete\textquotesingle{})
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_af6fd44276a5cc222f51dfc643e38911a}{satellite} = models.\+Foreign\+Key(\hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite}{Satellite}, on\+\_\+delete=C\+A\+S\+C\+A\+D\+E, related\+\_\+name=\char`\"{}downloadlink\+Frames\char`\"{})
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a7a8a35f6a299797aed8e0c8f43298a6e}{ax25\+Destination} = models.\+Char\+Field(\textquotesingle{}ax25 destination value\textquotesingle{}, max\+\_\+length=16, help\+\_\+text=\textquotesingle{}ax25 destination value\textquotesingle{}, null=True)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a64c7086161b3913498853090e1d6f721}{ax25\+Source} = models.\+Char\+Field(\textquotesingle{}ax25 Source value\textquotesingle{}, max\+\_\+length=16, help\+\_\+text=\textquotesingle{}ax25 Source value\textquotesingle{}, null=True)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a126f980276460ccacc0d328eab3d1367}{ax25\+Protocol} = models.\+Char\+Field(\textquotesingle{}ax25 Protocol value\textquotesingle{}, max\+\_\+length=16, help\+\_\+text=\textquotesingle{}ax25 Protocol value\textquotesingle{}, null=True)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_afaf2562c951a4ba02ccf8184270caa42}{ax25\+Control} = models.\+Char\+Field(\textquotesingle{}ax25 Control value\textquotesingle{}, max\+\_\+length=16, help\+\_\+text=\textquotesingle{}ax25 Control value\textquotesingle{}, null=True)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a7575e379aedab38dd11ab34e83ec9f41}{packet\+Number} = models.\+Integer\+Field(default=0)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a562b48a3bb48d65dfacef680dc3622b6}{frame\+Type\+Id} = models.\+Integer\+Field(default=0)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 16 of file Downlink\+Frame.\+py.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a2ee34c8bf18c852a937c8a57f92acf52}{}\index{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}}
+\subsubsection[{\+\_\+\+\_\+str\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Downlink\+Frame.\+Downlink\+Frame.\+\_\+\+\_\+str\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a2ee34c8bf18c852a937c8a57f92acf52}
+
+
+Definition at line 38 of file Downlink\+Frame.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_afaf2562c951a4ba02ccf8184270caa42}{}\index{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}!ax25\+Control@{ax25\+Control}}
+\index{ax25\+Control@{ax25\+Control}!Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}}
+\subsubsection[{ax25\+Control}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Downlink\+Frame.\+Downlink\+Frame.\+ax25\+Control = models.\+Char\+Field(\textquotesingle{}ax25 Control value\textquotesingle{}, max\+\_\+length=16, help\+\_\+text=\textquotesingle{}ax25 Control value\textquotesingle{}, null=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_afaf2562c951a4ba02ccf8184270caa42}
+
+
+Definition at line 32 of file Downlink\+Frame.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a7a8a35f6a299797aed8e0c8f43298a6e}{}\index{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}!ax25\+Destination@{ax25\+Destination}}
+\index{ax25\+Destination@{ax25\+Destination}!Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}}
+\subsubsection[{ax25\+Destination}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Downlink\+Frame.\+Downlink\+Frame.\+ax25\+Destination = models.\+Char\+Field(\textquotesingle{}ax25 destination value\textquotesingle{}, max\+\_\+length=16, help\+\_\+text=\textquotesingle{}ax25 destination value\textquotesingle{}, null=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a7a8a35f6a299797aed8e0c8f43298a6e}
+
+
+Definition at line 29 of file Downlink\+Frame.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a126f980276460ccacc0d328eab3d1367}{}\index{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}!ax25\+Protocol@{ax25\+Protocol}}
+\index{ax25\+Protocol@{ax25\+Protocol}!Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}}
+\subsubsection[{ax25\+Protocol}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Downlink\+Frame.\+Downlink\+Frame.\+ax25\+Protocol = models.\+Char\+Field(\textquotesingle{}ax25 Protocol value\textquotesingle{}, max\+\_\+length=16, help\+\_\+text=\textquotesingle{}ax25 Protocol value\textquotesingle{}, null=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a126f980276460ccacc0d328eab3d1367}
+
+
+Definition at line 31 of file Downlink\+Frame.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a64c7086161b3913498853090e1d6f721}{}\index{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}!ax25\+Source@{ax25\+Source}}
+\index{ax25\+Source@{ax25\+Source}!Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}}
+\subsubsection[{ax25\+Source}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Downlink\+Frame.\+Downlink\+Frame.\+ax25\+Source = models.\+Char\+Field(\textquotesingle{}ax25 Source value\textquotesingle{}, max\+\_\+length=16, help\+\_\+text=\textquotesingle{}ax25 Source value\textquotesingle{}, null=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a64c7086161b3913498853090e1d6f721}
+
+
+Definition at line 30 of file Downlink\+Frame.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a6f4c1351eae5c62c97a06f6fc251ac0e}{}\index{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}!data\+Rate@{data\+Rate}}
+\index{data\+Rate@{data\+Rate}!Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}}
+\subsubsection[{data\+Rate}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Downlink\+Frame.\+Downlink\+Frame.\+data\+Rate = models.\+Integer\+Field(\textquotesingle{}Tasa de transferencia\textquotesingle{}, help\+\_\+text=\textquotesingle{}Tasa de transferencia\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a6f4c1351eae5c62c97a06f6fc251ac0e}
+
+
+Definition at line 22 of file Downlink\+Frame.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a74e777653258421b97095109554e348c}{}\index{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}!frame\+Command@{frame\+Command}}
+\index{frame\+Command@{frame\+Command}!Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}}
+\subsubsection[{frame\+Command}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Downlink\+Frame.\+Downlink\+Frame.\+frame\+Command = models.\+Integer\+Field(\textquotesingle{}frame {\bf Command}\textquotesingle{}, help\+\_\+text=\textquotesingle{}frame {\bf Command}\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a74e777653258421b97095109554e348c}
+
+
+Definition at line 20 of file Downlink\+Frame.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a74dd54f47355823ab4f111408966af69}{}\index{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}!frame\+Length@{frame\+Length}}
+\index{frame\+Length@{frame\+Length}!Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}}
+\subsubsection[{frame\+Length}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Downlink\+Frame.\+Downlink\+Frame.\+frame\+Length = models.\+Integer\+Field(\textquotesingle{}Dimension del frame\textquotesingle{}, help\+\_\+text=\textquotesingle{}Dimension del frame\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a74dd54f47355823ab4f111408966af69}
+
+
+Definition at line 21 of file Downlink\+Frame.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a562b48a3bb48d65dfacef680dc3622b6}{}\index{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}!frame\+Type\+Id@{frame\+Type\+Id}}
+\index{frame\+Type\+Id@{frame\+Type\+Id}!Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}}
+\subsubsection[{frame\+Type\+Id}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Downlink\+Frame.\+Downlink\+Frame.\+frame\+Type\+Id = models.\+Integer\+Field(default=0)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a562b48a3bb48d65dfacef680dc3622b6}
+
+
+Definition at line 34 of file Downlink\+Frame.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a417795733873860a43017936b8bb1f6b}{}\index{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}!frequency@{frequency}}
+\index{frequency@{frequency}!Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}}
+\subsubsection[{frequency}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Downlink\+Frame.\+Downlink\+Frame.\+frequency = models.\+Float\+Field(help\+\_\+text=\textquotesingle{}Frecuencia\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a417795733873860a43017936b8bb1f6b}
+
+
+Definition at line 25 of file Downlink\+Frame.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a396f8f6467f927c4cb3e1f24d40b4254}{}\index{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}!modulation\+Name@{modulation\+Name}}
+\index{modulation\+Name@{modulation\+Name}!Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}}
+\subsubsection[{modulation\+Name}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Downlink\+Frame.\+Downlink\+Frame.\+modulation\+Name = models.\+Char\+Field(\textquotesingle{}Nombre de la modulacion\textquotesingle{}, max\+\_\+length=24, help\+\_\+text=\textquotesingle{}Nombre de la modulacion\textquotesingle{} )\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a396f8f6467f927c4cb3e1f24d40b4254}
+
+
+Definition at line 23 of file Downlink\+Frame.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a01fcc6363ca203c66f9006a7e26cf298}{}\index{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}!packet\+Length@{packet\+Length}}
+\index{packet\+Length@{packet\+Length}!Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}}
+\subsubsection[{packet\+Length}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Downlink\+Frame.\+Downlink\+Frame.\+packet\+Length = models.\+Integer\+Field(\textquotesingle{}Dimension del paquete\textquotesingle{}, help\+\_\+text=\textquotesingle{}Dimension del paquete\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a01fcc6363ca203c66f9006a7e26cf298}
+
+
+Definition at line 26 of file Downlink\+Frame.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a7575e379aedab38dd11ab34e83ec9f41}{}\index{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}!packet\+Number@{packet\+Number}}
+\index{packet\+Number@{packet\+Number}!Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}}
+\subsubsection[{packet\+Number}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Downlink\+Frame.\+Downlink\+Frame.\+packet\+Number = models.\+Integer\+Field(default=0)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a7575e379aedab38dd11ab34e83ec9f41}
+
+
+Definition at line 33 of file Downlink\+Frame.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a2c3915b3ca05d908b523d1bdfc7f73dc}{}\index{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}!rssi@{rssi}}
+\index{rssi@{rssi}!Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}}
+\subsubsection[{rssi}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Downlink\+Frame.\+Downlink\+Frame.\+rssi = models.\+Float\+Field(help\+\_\+text=\textquotesingle{}R\+S\+S\+I\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_a2c3915b3ca05d908b523d1bdfc7f73dc}
+
+
+Definition at line 24 of file Downlink\+Frame.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_af6fd44276a5cc222f51dfc643e38911a}{}\index{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}!satellite@{satellite}}
+\index{satellite@{satellite}!Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame@{Ground\+Segment\+::models\+::\+Downlink\+Frame\+::\+Downlink\+Frame}}
+\subsubsection[{satellite}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Downlink\+Frame.\+Downlink\+Frame.\+satellite = models.\+Foreign\+Key({\bf Satellite}, on\+\_\+delete=C\+A\+S\+C\+A\+D\+E, related\+\_\+name=\char`\"{}downloadlink\+Frames\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame_af6fd44276a5cc222f51dfc643e38911a}
+
+
+Definition at line 27 of file Downlink\+Frame.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ubuntumate/git/\+Ground\+Segment/\+Ground\+Segment/\+Ground\+Segment/models/\hyperlink{_downlink_frame_8py}{Downlink\+Frame.\+py}\end{DoxyCompactItemize}

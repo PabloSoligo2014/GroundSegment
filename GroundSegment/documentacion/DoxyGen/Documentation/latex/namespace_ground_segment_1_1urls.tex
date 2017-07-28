@@ -3,6 +3,8 @@
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
+tuple \hyperlink{namespace_ground_segment_1_1urls_a3203e9c93853da32af24ed41c0c786e4}{router} = Simple\+Router()
+\item 
 list \hyperlink{namespace_ground_segment_1_1urls_a457e62f34e0ac5ed0455686f6e0f68c6}{urlpatterns}
 \end{DoxyCompactItemize}
 
@@ -11,21 +13,28 @@ list \hyperlink{namespace_ground_segment_1_1urls_a457e62f34e0ac5ed0455686f6e0f68
 \begin{DoxyVerb}GroundSegment URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/1.9/topics/http/urls/
+   https://docs.djangoproject.com/en/1.9/topics/http/urls/
 Examples:
 Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
+   1. Add an import:  from my_app import views
+   2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
 Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
+   1. Add an import:  from other_app.views import Home
+   2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
 Including another URLconf
-    1. Import the include() function: from django.conf.urls import url, include
-    2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
+   1. Import the include() function: from django.conf.urls import url, include
+   2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 \end{DoxyVerb}
  
 
 \subsection{Variable Documentation}
+\hypertarget{namespace_ground_segment_1_1urls_a3203e9c93853da32af24ed41c0c786e4}{}\index{Ground\+Segment\+::urls@{Ground\+Segment\+::urls}!router@{router}}
+\index{router@{router}!Ground\+Segment\+::urls@{Ground\+Segment\+::urls}}
+\subsubsection[{router}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+urls.\+router = Simple\+Router()}\label{namespace_ground_segment_1_1urls_a3203e9c93853da32af24ed41c0c786e4}
+
+
+Definition at line 49 of file urls.\+py.
+
 \hypertarget{namespace_ground_segment_1_1urls_a457e62f34e0ac5ed0455686f6e0f68c6}{}\index{Ground\+Segment\+::urls@{Ground\+Segment\+::urls}!urlpatterns@{urlpatterns}}
 \index{urlpatterns@{urlpatterns}!Ground\+Segment\+::urls@{Ground\+Segment\+::urls}}
 \subsubsection[{urlpatterns}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+urls.\+urlpatterns}\label{namespace_ground_segment_1_1urls_a457e62f34e0ac5ed0455686f6e0f68c6}
@@ -33,12 +42,26 @@ Including another URLconf
 \begin{DoxyCode}
 1 = [
 2     url(\textcolor{stringliteral}{r'^admin/'}, admin.site.urls),
-3     url(\textcolor{stringliteral}{r'^about/$'}, AboutView.as\_view(template\_name=\textcolor{stringliteral}{"about.html"})),
-4     url(\textcolor{stringliteral}{r'^satellites/$'}, SatelliteListView.as\_view(template\_name=\textcolor{stringliteral}{"satelliteListView.html"})),
-5     url(\textcolor{stringliteral}{r'^propagationTest/$'}, PropagationTestView.as\_view(template\_name=\textcolor{stringliteral}{"propagationTest.html"})),
-6 ]
+3     \textcolor{comment}{#url(r'^login/$', auth\_views.login, \{'template\_name': 'login.html'\}, name='login'),}
+4     url(\textcolor{stringliteral}{r'^login/$'}, login, \{\textcolor{stringliteral}{'template\_name'}: \textcolor{stringliteral}{'login.html'}\}, name=\textcolor{stringliteral}{'login'}),
+5     url(\textcolor{stringliteral}{r'^logout$'}, logout, \{\textcolor{stringliteral}{'template\_name'}: \textcolor{stringliteral}{'login.html'}, \}, name=\textcolor{stringliteral}{"logout"}),
+6     url(\textcolor{stringliteral}{r'^home/$'}, GroundSegment.views.views.home, name=\textcolor{stringliteral}{'home'}),
+7     url(\textcolor{stringliteral}{r'^home/TlmyVarType/$'}, TlmyVarTypeView.as\_view(), name=\textcolor{stringliteral}{'TlmyVarType'}),
+8     url(\textcolor{stringliteral}{r'^about/$'}, AboutView.as\_view(template\_name=\textcolor{stringliteral}{"about.html"})),
+9     url(\textcolor{stringliteral}{r'^home/satellites/$'}, SatelliteListView.as\_view(),name=\textcolor{stringliteral}{"satelliteListView"}),
+10     url(\textcolor{stringliteral}{r'^home/satellites/sat\_form/$'}, GroundSegment.views.views.post\_Sat, name=\textcolor{stringliteral}{"post\_Sat"}),
+11     url(\textcolor{stringliteral}{r'^propagationTest/$'}, PropagationTestView.as\_view(template\_name=\textcolor{stringliteral}{"propagationTest.html"})),
+12     url(\textcolor{stringliteral}{r'^'}, include(router.urls)),
+13     \textcolor{comment}{#url(r'^simplePlot/(?P<tvts>[\(\backslash\)w-]+)', SimplePlotView.as\_view(template\_name="simplePlot.html"),
+       name='SimplePlotView'), }
+14     url(\textcolor{stringliteral}{r'^simplePlot/(?P<tvts>[\(\backslash\)w-]+)/(?P<minutes>(\(\backslash\)d+))/$'}, SimplePlotView.as\_view(template\_name=\textcolor{stringliteral}{"
+      simplePlot.html"}), name=\textcolor{stringliteral}{'SimplePlotView'}), 
+15     \textcolor{comment}{#(r'^v1/(?P<variable\_a>(\(\backslash\)d+))/(?P<variable\_b>(\(\backslash\)d+))/$', r'custom1.views.v1')}
+16     
+17     url(\textcolor{stringliteral}{r'^pasadas/$'}, PassView.as\_view(), name=\textcolor{stringliteral}{'PassView'}),
+18 ]
 \end{DoxyCode}
 
 
-Definition at line 32 of file urls.\+py.
+Definition at line 52 of file urls.\+py.
 

@@ -1,10 +1,49 @@
 \hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor}{}\section{Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor Namespace Reference}
 \label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor}\index{Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_af0147d96af788791368b9d5746f8699b}{cls} ()
+\item 
+def \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ab7f13d4bc6ea5a22f667153a21147f64}{is\+\_\+set} (x, n)
+\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
+int \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a88e5624ffdbb481998f56fc73359de9a}{Pos\+Frame\+Command} = 0
+\item 
+int \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a64ebb9875c3f0f30fd7cd3b962d812f3}{Len\+Frame\+Command} = 1
+\item 
+\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a8d0363eccf14b5a5864f22854a033bc6}{Pos\+Frame\+Len} = \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a88e5624ffdbb481998f56fc73359de9a}{Pos\+Frame\+Command}+\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a64ebb9875c3f0f30fd7cd3b962d812f3}{Len\+Frame\+Command}
+\item 
+int \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a4258f8620fd2045719a2170f64913b1f}{Len\+Frame\+Len} = 4
+\item 
+\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a76d473c0c6d81f0ebbf3de7c2e66e65c}{Pos\+Data\+Rate} = \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a8d0363eccf14b5a5864f22854a033bc6}{Pos\+Frame\+Len}+\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a4258f8620fd2045719a2170f64913b1f}{Len\+Frame\+Len}
+\item 
+int \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ad594ffcbc7ad47494749f33e26f93c2b}{Len\+Data\+Rate} = 4
+\item 
+\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a842d2ed3cb03a36110727a626772cd3c}{Pos\+Moduluation\+Name\+Len} = \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a76d473c0c6d81f0ebbf3de7c2e66e65c}{Pos\+Data\+Rate}+\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ad594ffcbc7ad47494749f33e26f93c2b}{Len\+Data\+Rate}
+\item 
+int \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a251db0b074d036dc2764b58c8b186a94}{Len\+Moduluation\+Name\+Len} = 1
+\item 
+\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ac1137c905bca1594a8a5691668001c00}{Pos\+Modulation\+Name} = \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a842d2ed3cb03a36110727a626772cd3c}{Pos\+Moduluation\+Name\+Len}+\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a251db0b074d036dc2764b58c8b186a94}{Len\+Moduluation\+Name\+Len}
+\item 
+int \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ada4bf8a260b4fea1839785e2928f71b2}{Len\+Modulation\+Name} = 0
+\item 
+\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ab27c15b24c6222fb45f6825e563bfeae}{Pos\+R\+S\+S\+I} = \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ac1137c905bca1594a8a5691668001c00}{Pos\+Modulation\+Name}+\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ada4bf8a260b4fea1839785e2928f71b2}{Len\+Modulation\+Name}
+\item 
+int \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a879b2c02ed1a38b0c9a0da5f30bdebd2}{Len\+R\+S\+S\+I} = 8
+\item 
+\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aff115557ac981e9e7b5d05fc450de80b}{Pos\+Frequency} = \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ab27c15b24c6222fb45f6825e563bfeae}{Pos\+R\+S\+S\+I}+\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a879b2c02ed1a38b0c9a0da5f30bdebd2}{Len\+R\+S\+S\+I}
+\item 
+int \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_abac774909f35b54d636c7b68839964a4}{Len\+Frequency} = 8
+\item 
+\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_acba5b0985ab65f322a69d59144555d63}{Pos\+Pkt\+Len} = \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aff115557ac981e9e7b5d05fc450de80b}{Pos\+Frequency}+\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_abac774909f35b54d636c7b68839964a4}{Len\+Frequency}
+\item 
+int \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aaa7975541edbc48dcb803ca7acca8e20}{Len\+Pkt\+Len} = 2
+\item 
 tuple \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_af01cc83846e14e401a5a2fbaec2fe940}{proj\+\_\+path} = os.\+path.\+dirname(os.\+path.\+dirname(os.\+path.\+abspath(\+\_\+\+\_\+file\+\_\+\+\_\+)))
-\begin{DoxyCompactList}\small\item\em Servicio, aplicacion encargada de decodificar, trasnformar y persistir la telemetria del satelite y de codificar y transmitir los telecomandos. \end{DoxyCompactList}\item 
+\item 
 string \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_acef2a3d30bda6af9c56309eea6b12246}{source} = \char`\"{}S\+I\+M\+U\+L\+A\+T\+I\+O\+N\char`\"{}
 \item 
 string \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a5cf95a9cff868554c46d7a901df74673}{satellite} = \char`\"{}F\+S2017\char`\"{}
@@ -19,6 +58,10 @@ string \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_af826240cd
 \item 
 int \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_afb50f24734d74f88dacebcac995fd9f4}{tolerance} = 10
 \item 
+tuple \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a9a28f85a45c8480187e9bc9812c9eff5}{sat} = Satellite.\+objects.\+get(\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a4b093dcc82bbec72c8869f3715934d92}{code}=\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a5cf95a9cff868554c46d7a901df74673}{satellite})
+\item 
+tuple \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a4539a77a980ef2d5c22b5ed69ea58b9c}{cmdmgr} = \hyperlink{class_ground_segment_1_1_managers_1_1_command_manager_1_1_command_manager}{Command\+Manager}(\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a9a28f85a45c8480187e9bc9812c9eff5}{sat})
+\item 
 tuple \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ad1afaadb14f89dfd6adce55457a89fa4}{uhf\+Server\+Ip} = load\+Or\+Create\+Param(\char`\"{}U\+H\+F\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+I\+P\char`\"{}, \char`\"{}Ground\+Station\char`\"{}, \char`\"{}127.\+0.\+0.\+1\char`\"{}, \char`\"{}I\+P del servidor T\+C\+P de la antena U\+H\+F\char`\"{})
 \item 
 tuple \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_abc4f5193ae5293a175c24785f648c36f}{uhf\+Server\+Port} = load\+Or\+Create\+Param(\char`\"{}U\+H\+F\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+P\+O\+R\+T\char`\"{}, \char`\"{}Ground\+Station\char`\"{}, \char`\"{}3210\char`\"{}, \char`\"{}Puerto del servidor T\+C\+P de la antena U\+H\+F\char`\"{})
@@ -27,13 +70,77 @@ tuple \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ad6b870e079
 \item 
 tuple \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a053a883aeff5a224089cd5c791e2bc4c}{D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+S\+L\+E\+E\+P} = load\+Or\+Create\+Param(\char`\"{}U\+H\+F\+\_\+\+D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+S\+L\+E\+E\+P\char`\"{}, \char`\"{}Ground\+Station\char`\"{}, \char`\"{}10\char`\"{}, \char`\"{}Tiempo en que se duerme la aplicacion ante una desconexion \hyperlink{bootstrap_8min_8js_a9252b696bd8018d152e6640fcbe6e3b8}{a} la espera de volver \hyperlink{bootstrap_8min_8js_a9252b696bd8018d152e6640fcbe6e3b8}{a} intentar\char`\"{})
 \item 
-tuple \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a5b740cec8cab496e71b6896c16dfba9d}{s} = socket.\+socket(socket.\+A\+F\+\_\+\+I\+N\+E\+T, socket.\+S\+O\+C\+K\+\_\+\+S\+T\+R\+E\+A\+M)
+int \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a6cdf230e4055a51015bd349429c112f7}{unconnection\+Limit} = 0
 \item 
-tuple \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a9d8c45d2e203eaa7eb7be5ece0116d39}{telvars} = Tlmy\+Var\+Type.\+objects.\+filter(satellite\+\_\+\+\_\+code=\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a5cf95a9cff868554c46d7a901df74673}{satellite})
+int \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a1eff3ca925b902581b463553a187bba9}{i} = 0
+\item 
+tuple \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a5b740cec8cab496e71b6896c16dfba9d}{s} = socket.\+socket(socket.\+A\+F\+\_\+\+I\+N\+E\+T, socket.\+S\+O\+C\+K\+\_\+\+S\+T\+R\+E\+A\+M)
 \item 
 tuple \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a1ed237493e0f74a1a922ee4b54ef0657}{chunk} = s.\+recv(int(\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ad6b870e079ada467cc4ac0b8f1f73039}{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}))
 \item 
 tuple \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aa2dfd09891072d77d04b841a8bed1462}{data} = \hyperlink{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data}{U\+H\+F\+Raw\+Data}()
+\item 
+tuple \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a58134e0397913f644139bdd4478e338f}{startproctime} = timezone.\+now()
+\item 
+tuple \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_acf404d27b5f133da140197499acc28e0}{framecommand} = unpack(\char`\"{}$<$B\char`\"{},chunk\mbox{[}Pos\+Frame\+Command\+:\+Pos\+Frame\+Command+\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a64ebb9875c3f0f30fd7cd3b962d812f3}{Len\+Frame\+Command}\mbox{]})
+\item 
+tuple \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a6fd23321acd4d3b684cf5982e2ef65e1}{frame\+Length} = unpack(\char`\"{}$<$I\char`\"{},chunk\mbox{[}Pos\+Frame\+Len\+:\+Pos\+Frame\+Len+\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a4258f8620fd2045719a2170f64913b1f}{Len\+Frame\+Len}\mbox{]})
+\item 
+tuple \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a617a858e77fc14ff5243134c29be790b}{datarate} = unpack(\char`\"{}$<$I\char`\"{},chunk\mbox{[}Pos\+Data\+Rate\+:\+Pos\+Data\+Rate+\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ad594ffcbc7ad47494749f33e26f93c2b}{Len\+Data\+Rate}\mbox{]})
+\item 
+tuple \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ab58241d3bba0b73ecff4c2d4dfa1263e}{modulationnamelen} = (unpack(\char`\"{}$<$B\char`\"{},chunk\mbox{[}Pos\+Moduluation\+Name\+Len\+:\+Pos\+Moduluation\+Name\+Len+\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a251db0b074d036dc2764b58c8b186a94}{Len\+Moduluation\+Name\+Len}\mbox{]}))
+\item 
+list \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a139941b75aab04bfd72966e3c3b88198}{modulationname} = \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a1ed237493e0f74a1a922ee4b54ef0657}{chunk}\mbox{[}Pos\+Modulation\+Name\+:\+Pos\+Modulation\+Name+\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ab58241d3bba0b73ecff4c2d4dfa1263e}{modulationnamelen}\mbox{]}
+\item 
+tuple \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_abcafa9e1e3e4760b2456be9871d9ff07}{rssi} = unpack(\char`\"{}$<$d\char`\"{}, chunk\mbox{[}Pos\+R\+S\+S\+I\+:\+Pos\+R\+S\+S\+I+\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a879b2c02ed1a38b0c9a0da5f30bdebd2}{Len\+R\+S\+S\+I}\mbox{]})
+\item 
+tuple \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ac9f1fd4fc03735dd9b81e06ee6573218}{freq} = unpack(\char`\"{}$<$d\char`\"{}, chunk\mbox{[}Pos\+Frequency\+:\+Pos\+Frequency+\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_abac774909f35b54d636c7b68839964a4}{Len\+Frequency}\mbox{]})
+\item 
+tuple \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aa4bf4ee35125c7aaeb50dfe9bd888320}{pkt\+Len} = unpack(\char`\"{}$<$H\char`\"{}, chunk\mbox{[}Pos\+Pkt\+Len\+:\+Pos\+Pkt\+Len+\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aaa7975541edbc48dcb803ca7acca8e20}{Len\+Pkt\+Len}\mbox{]})
+\item 
+list \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a06b32773af37ab235d62d22898dbb777}{Pos\+Utc\+Time} = \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_acba5b0985ab65f322a69d59144555d63}{Pos\+Pkt\+Len}+\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aa4bf4ee35125c7aaeb50dfe9bd888320}{pkt\+Len}\mbox{[}0\mbox{]}
+\item 
+int \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_abeeaa5fa0a6253d92758e2269eaebb18}{Len\+Utc\+Time} = 4
+\item 
+tuple \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ad810c911ba6a417e2078e5c9e3d06e70}{Pos\+Payload} = \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_acba5b0985ab65f322a69d59144555d63}{Pos\+Pkt\+Len}+int(\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aaa7975541edbc48dcb803ca7acca8e20}{Len\+Pkt\+Len})
+\item 
+list \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aa53bb04cb809e8c4f3d8c7e289a0dda9}{ax25} = \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a1ed237493e0f74a1a922ee4b54ef0657}{chunk}\mbox{[}Pos\+Payload\+:\+Pos\+Payload+\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aa4bf4ee35125c7aaeb50dfe9bd888320}{pkt\+Len}\mbox{[}0\mbox{]}\mbox{]}
+\item 
+list \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ad286354f2554a3e3f558866493900c47}{destination} = \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aa53bb04cb809e8c4f3d8c7e289a0dda9}{ax25}\mbox{[}0\+:7\mbox{]}
+\item 
+list \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ad98365061da835e75b63669cb41debf9}{asource} = \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aa53bb04cb809e8c4f3d8c7e289a0dda9}{ax25}\mbox{[}7\+:7+7\mbox{]}
+\item 
+list \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a716864d98c3b40bcc1b52b6f3c0f67ef}{control} = \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aa53bb04cb809e8c4f3d8c7e289a0dda9}{ax25}\mbox{[}7+7\+:7+7+1\mbox{]}
+\item 
+list \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a17d264f6dce0704d10c660e63fb9d6e6}{protocol} = \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aa53bb04cb809e8c4f3d8c7e289a0dda9}{ax25}\mbox{[}7+7+1\+:7+7+1+1\mbox{]}
+\item 
+int \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aeebc7e9fadc6ab403d26956b6135ef62}{vardataoffset} = 7
+\item 
+list \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_afad1fe5f56562d9cdfea8af4d7377065}{payload} = \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aa53bb04cb809e8c4f3d8c7e289a0dda9}{ax25}\mbox{[} vardataoffset\+: \mbox{]}
+\item 
+tuple \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a89663fb42c0b2e4e664217680921e07b}{pn} = unpack(\char`\"{}$<$H\char`\"{}, payload\mbox{[}1\+:3\mbox{]})
+\item 
+list \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a128712f61580e83610264ccc8c908888}{frame\+Type\+Id} = \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_afad1fe5f56562d9cdfea8af4d7377065}{payload}\mbox{[}0\mbox{]}
+\item 
+tuple \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a2703f38cf5bdc1ca5f19eeca336145ae}{dl} = \hyperlink{class_ground_segment_1_1models_1_1_downlink_frame_1_1_downlink_frame}{Downlink\+Frame}()
+\item 
+tuple \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a9d8c45d2e203eaa7eb7be5ece0116d39}{telvars} = Tlmy\+Var\+Type.\+objects.\+filter(satellite\+\_\+\+\_\+code=\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a5cf95a9cff868554c46d7a901df74673}{satellite})
+\item 
+int \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a0edb15456685b1cc3f3d2820c0c48f70}{bit\+Len\+\_\+div} = tt.\+bits\+Len//8
+\item 
+tuple \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ac2be67bdf9c4739fcb093941b2bc851a}{raw} = unpack(\char`\"{}$<$B\char`\"{}, payload\mbox{[}tt.\+position\+:tt.\+position+\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a0edb15456685b1cc3f3d2820c0c48f70}{bit\+Len\+\_\+div}\mbox{]})
+\item 
+tuple \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a36635165909c763c93ffdab98dd13ec3}{tv} = tt.\+set\+Value(\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ac2be67bdf9c4739fcb093941b2bc851a}{raw}, True)
+\item 
+tuple \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a1d93029bff9d6ab97db745a744688bbd}{pending\+Commands} = cmdmgr.\+get\+Pending\+Commands()
+\begin{DoxyCompactList}\small\item\em f.\+close() \end{DoxyCompactList}\item 
+string \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aa59c73aaa44ae3a6862aa0c8678ae47b}{header} = \hyperlink{bootstrap_8min_8js_a398bb8542498d1b14178b02b99df309b}{b}\textquotesingle{}\textbackslash{}x56\textquotesingle{}
+\item 
+int \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a4d7892459a440d68eb1b1eaf214ccc74}{ilen} = 0
+\item 
+tuple \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a081154c70ebc097a494acb04f62e01ca}{prepack} = \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ad98365061da835e75b63669cb41debf9}{asource}+\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ad286354f2554a3e3f558866493900c47}{destination}+\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a716864d98c3b40bcc1b52b6f3c0f67ef}{control}+\hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a17d264f6dce0704d10c660e63fb9d6e6}{protocol}+unhexlify(com.\+command\+Type.\+command\+Code)
+\item 
+tuple \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aac8bc88676dcbb49bca61e151fccf89a}{prepackpluslen} = \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aa59c73aaa44ae3a6862aa0c8678ae47b}{header}+pack(\textquotesingle{}$<$I\textquotesingle{}, \hyperlink{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a4d7892459a440d68eb1b1eaf214ccc74}{ilen})
 \end{DoxyCompactItemize}
 
 
@@ -47,9 +154,46 @@ antena. El servidor envia paquetes tcp/ip tan pronto como los tiene disponible. 
 telecomandos, eso aun no esta implementado.
 
 TESTING: Puede ser testeado perfectamente usando un servidor TCP/IP de test del tipo packetsender 
-->https://packetsender.com/
+    ->https://packetsender.com/
 \end{DoxyVerb}
  
+
+\subsection{Function Documentation}
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_af0147d96af788791368b9d5746f8699b}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!cls@{cls}}
+\index{cls@{cls}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{cls}]{\setlength{\rightskip}{0pt plus 5cm}def Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+cls (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_af0147d96af788791368b9d5746f8699b}
+
+
+Definition at line 51 of file Tlmy\+Cmd\+Processor.\+py.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_af0147d96af788791368b9d5746f8699b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ab7f13d4bc6ea5a22f667153a21147f64}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!is\+\_\+set@{is\+\_\+set}}
+\index{is\+\_\+set@{is\+\_\+set}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{is\+\_\+set}]{\setlength{\rightskip}{0pt plus 5cm}def Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+is\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{}]{x, }
+\item[{}]{n}
+\end{DoxyParamCaption}
+)}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ab7f13d4bc6ea5a22f667153a21147f64}
+
+
+Definition at line 54 of file Tlmy\+Cmd\+Processor.\+py.
+
+
 
 \subsection{Variable Documentation}
 \hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_abc9fef542a08059c815604cf428eb8ea}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!application@{application}}
@@ -57,121 +201,464 @@ TESTING: Puede ser testeado perfectamente usando un servidor TCP/IP de test del 
 \subsubsection[{application}]{\setlength{\rightskip}{0pt plus 5cm}tuple Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+application = get\+\_\+wsgi\+\_\+application()}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_abc9fef542a08059c815604cf428eb8ea}
 
 
-Definition at line 74 of file Tlmy\+Cmd\+Processor.\+py.
+Definition at line 134 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ad98365061da835e75b63669cb41debf9}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!asource@{asource}}
+\index{asource@{asource}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{asource}]{\setlength{\rightskip}{0pt plus 5cm}list Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+asource = {\bf ax25}\mbox{[}7\+:7+7\mbox{]}}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ad98365061da835e75b63669cb41debf9}
+
+
+Definition at line 310 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aa53bb04cb809e8c4f3d8c7e289a0dda9}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!ax25@{ax25}}
+\index{ax25@{ax25}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{ax25}]{\setlength{\rightskip}{0pt plus 5cm}list Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+ax25 = {\bf chunk}\mbox{[}Pos\+Payload\+:\+Pos\+Payload+{\bf pkt\+Len}\mbox{[}0\mbox{]}\mbox{]}}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aa53bb04cb809e8c4f3d8c7e289a0dda9}
+
+
+Definition at line 306 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a0edb15456685b1cc3f3d2820c0c48f70}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!bit\+Len\+\_\+div@{bit\+Len\+\_\+div}}
+\index{bit\+Len\+\_\+div@{bit\+Len\+\_\+div}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{bit\+Len\+\_\+div}]{\setlength{\rightskip}{0pt plus 5cm}int Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+bit\+Len\+\_\+div = tt.\+bits\+Len//8}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a0edb15456685b1cc3f3d2820c0c48f70}
+
+
+Definition at line 360 of file Tlmy\+Cmd\+Processor.\+py.
 
 \hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ad6b870e079ada467cc4ac0b8f1f73039}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E@{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}}
 \index{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E@{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
 \subsubsection[{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}tuple Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E = load\+Or\+Create\+Param(\char`\"{}U\+H\+F\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E\char`\"{}, \char`\"{}Ground\+Station\char`\"{}, \char`\"{}1024\char`\"{}, \char`\"{}Tamanio del buffer del cliente T\+C\+P\char`\"{})}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ad6b870e079ada467cc4ac0b8f1f73039}
 
 
-Definition at line 108 of file Tlmy\+Cmd\+Processor.\+py.
+Definition at line 203 of file Tlmy\+Cmd\+Processor.\+py.
 
 \hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a1ed237493e0f74a1a922ee4b54ef0657}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!chunk@{chunk}}
 \index{chunk@{chunk}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
 \subsubsection[{chunk}]{\setlength{\rightskip}{0pt plus 5cm}tuple Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+chunk = s.\+recv(int({\bf B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}))}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a1ed237493e0f74a1a922ee4b54ef0657}
 
 
-Definition at line 154 of file Tlmy\+Cmd\+Processor.\+py.
+Definition at line 253 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a4539a77a980ef2d5c22b5ed69ea58b9c}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!cmdmgr@{cmdmgr}}
+\index{cmdmgr@{cmdmgr}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{cmdmgr}]{\setlength{\rightskip}{0pt plus 5cm}tuple Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+cmdmgr = {\bf Command\+Manager}({\bf sat})}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a4539a77a980ef2d5c22b5ed69ea58b9c}
+
+
+Definition at line 178 of file Tlmy\+Cmd\+Processor.\+py.
 
 \hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a4b093dcc82bbec72c8869f3715934d92}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!code@{code}}
 \index{code@{code}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
 \subsubsection[{code}]{\setlength{\rightskip}{0pt plus 5cm}string Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+code = \textquotesingle{}Tlmy\+Cmd\+Processor\textquotesingle{}}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a4b093dcc82bbec72c8869f3715934d92}
 
 
-Definition at line 95 of file Tlmy\+Cmd\+Processor.\+py.
+Definition at line 163 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a716864d98c3b40bcc1b52b6f3c0f67ef}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!control@{control}}
+\index{control@{control}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{control}]{\setlength{\rightskip}{0pt plus 5cm}list Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+control = {\bf ax25}\mbox{[}7+7\+:7+7+1\mbox{]}}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a716864d98c3b40bcc1b52b6f3c0f67ef}
+
+
+Definition at line 311 of file Tlmy\+Cmd\+Processor.\+py.
 
 \hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aa2dfd09891072d77d04b841a8bed1462}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!data@{data}}
 \index{data@{data}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
 \subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}tuple Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+data = {\bf U\+H\+F\+Raw\+Data}()}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aa2dfd09891072d77d04b841a8bed1462}
 
 
-Definition at line 173 of file Tlmy\+Cmd\+Processor.\+py.
+Definition at line 283 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a617a858e77fc14ff5243134c29be790b}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!datarate@{datarate}}
+\index{datarate@{datarate}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{datarate}]{\setlength{\rightskip}{0pt plus 5cm}tuple Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+datarate = unpack(\char`\"{}$<$I\char`\"{},chunk\mbox{[}Pos\+Data\+Rate\+:\+Pos\+Data\+Rate+{\bf Len\+Data\+Rate}\mbox{]})}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a617a858e77fc14ff5243134c29be790b}
+
+
+Definition at line 293 of file Tlmy\+Cmd\+Processor.\+py.
 
 \hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_af826240cd995d7339c5f281ee8941333}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!description@{description}}
 \index{description@{description}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
 \subsubsection[{description}]{\setlength{\rightskip}{0pt plus 5cm}string Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+description = \textquotesingle{}{\bf Watchdog} del procesador de telemetria y telecomandos\textquotesingle{}}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_af826240cd995d7339c5f281ee8941333}
 
 
-Definition at line 96 of file Tlmy\+Cmd\+Processor.\+py.
+Definition at line 164 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ad286354f2554a3e3f558866493900c47}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!destination@{destination}}
+\index{destination@{destination}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{destination}]{\setlength{\rightskip}{0pt plus 5cm}list Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+destination = {\bf ax25}\mbox{[}0\+:7\mbox{]}}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ad286354f2554a3e3f558866493900c47}
+
+
+Definition at line 309 of file Tlmy\+Cmd\+Processor.\+py.
 
 \hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a053a883aeff5a224089cd5c791e2bc4c}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+S\+L\+E\+E\+P@{D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+S\+L\+E\+E\+P}}
 \index{D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+S\+L\+E\+E\+P@{D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+S\+L\+E\+E\+P}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
 \subsubsection[{D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+S\+L\+E\+E\+P}]{\setlength{\rightskip}{0pt plus 5cm}tuple Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+S\+L\+E\+E\+P = load\+Or\+Create\+Param(\char`\"{}U\+H\+F\+\_\+\+D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+S\+L\+E\+E\+P\char`\"{}, \char`\"{}Ground\+Station\char`\"{}, \char`\"{}10\char`\"{}, \char`\"{}Tiempo en que se duerme la aplicacion ante una desconexion {\bf a} la espera de volver {\bf a} intentar\char`\"{})}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a053a883aeff5a224089cd5c791e2bc4c}
 
 
-Definition at line 109 of file Tlmy\+Cmd\+Processor.\+py.
+Definition at line 204 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a2703f38cf5bdc1ca5f19eeca336145ae}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!dl@{dl}}
+\index{dl@{dl}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{dl}]{\setlength{\rightskip}{0pt plus 5cm}tuple Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+dl = {\bf Downlink\+Frame}()}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a2703f38cf5bdc1ca5f19eeca336145ae}
+
+
+Definition at line 327 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_acf404d27b5f133da140197499acc28e0}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!framecommand@{framecommand}}
+\index{framecommand@{framecommand}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{framecommand}]{\setlength{\rightskip}{0pt plus 5cm}tuple Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+framecommand = unpack(\char`\"{}$<$B\char`\"{},chunk\mbox{[}Pos\+Frame\+Command\+:\+Pos\+Frame\+Command+{\bf Len\+Frame\+Command}\mbox{]})}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_acf404d27b5f133da140197499acc28e0}
+
+
+Definition at line 291 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a6fd23321acd4d3b684cf5982e2ef65e1}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!frame\+Length@{frame\+Length}}
+\index{frame\+Length@{frame\+Length}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{frame\+Length}]{\setlength{\rightskip}{0pt plus 5cm}tuple Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+frame\+Length = unpack(\char`\"{}$<$I\char`\"{},chunk\mbox{[}Pos\+Frame\+Len\+:\+Pos\+Frame\+Len+{\bf Len\+Frame\+Len}\mbox{]})}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a6fd23321acd4d3b684cf5982e2ef65e1}
+
+
+Definition at line 292 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a128712f61580e83610264ccc8c908888}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!frame\+Type\+Id@{frame\+Type\+Id}}
+\index{frame\+Type\+Id@{frame\+Type\+Id}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{frame\+Type\+Id}]{\setlength{\rightskip}{0pt plus 5cm}list Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+frame\+Type\+Id = {\bf payload}\mbox{[}0\mbox{]}}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a128712f61580e83610264ccc8c908888}
+
+
+Definition at line 323 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ac9f1fd4fc03735dd9b81e06ee6573218}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!freq@{freq}}
+\index{freq@{freq}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{freq}]{\setlength{\rightskip}{0pt plus 5cm}tuple Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+freq = unpack(\char`\"{}$<$d\char`\"{}, chunk\mbox{[}Pos\+Frequency\+:\+Pos\+Frequency+{\bf Len\+Frequency}\mbox{]})}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ac9f1fd4fc03735dd9b81e06ee6573218}
+
+
+Definition at line 299 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aa59c73aaa44ae3a6862aa0c8678ae47b}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!header@{header}}
+\index{header@{header}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{header}]{\setlength{\rightskip}{0pt plus 5cm}string Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+header = {\bf b}\textquotesingle{}\textbackslash{}x56\textquotesingle{}}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aa59c73aaa44ae3a6862aa0c8678ae47b}
+
+
+Definition at line 399 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a1eff3ca925b902581b463553a187bba9}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!i@{i}}
+\index{i@{i}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{i}]{\setlength{\rightskip}{0pt plus 5cm}int Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+i = 0}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a1eff3ca925b902581b463553a187bba9}
+
+
+Definition at line 209 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a4d7892459a440d68eb1b1eaf214ccc74}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!ilen@{ilen}}
+\index{ilen@{ilen}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{ilen}]{\setlength{\rightskip}{0pt plus 5cm}int Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+ilen = 0}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a4d7892459a440d68eb1b1eaf214ccc74}
+
+
+Definition at line 401 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ad594ffcbc7ad47494749f33e26f93c2b}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!Len\+Data\+Rate@{Len\+Data\+Rate}}
+\index{Len\+Data\+Rate@{Len\+Data\+Rate}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{Len\+Data\+Rate}]{\setlength{\rightskip}{0pt plus 5cm}int Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+Len\+Data\+Rate = 4}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ad594ffcbc7ad47494749f33e26f93c2b}
+
+
+Definition at line 79 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a64ebb9875c3f0f30fd7cd3b962d812f3}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!Len\+Frame\+Command@{Len\+Frame\+Command}}
+\index{Len\+Frame\+Command@{Len\+Frame\+Command}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{Len\+Frame\+Command}]{\setlength{\rightskip}{0pt plus 5cm}int Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+Len\+Frame\+Command = 1}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a64ebb9875c3f0f30fd7cd3b962d812f3}
+
+
+Definition at line 73 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a4258f8620fd2045719a2170f64913b1f}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!Len\+Frame\+Len@{Len\+Frame\+Len}}
+\index{Len\+Frame\+Len@{Len\+Frame\+Len}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{Len\+Frame\+Len}]{\setlength{\rightskip}{0pt plus 5cm}int Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+Len\+Frame\+Len = 4}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a4258f8620fd2045719a2170f64913b1f}
+
+
+Definition at line 76 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_abac774909f35b54d636c7b68839964a4}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!Len\+Frequency@{Len\+Frequency}}
+\index{Len\+Frequency@{Len\+Frequency}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{Len\+Frequency}]{\setlength{\rightskip}{0pt plus 5cm}int Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+Len\+Frequency = 8}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_abac774909f35b54d636c7b68839964a4}
+
+
+Definition at line 91 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ada4bf8a260b4fea1839785e2928f71b2}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!Len\+Modulation\+Name@{Len\+Modulation\+Name}}
+\index{Len\+Modulation\+Name@{Len\+Modulation\+Name}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{Len\+Modulation\+Name}]{\setlength{\rightskip}{0pt plus 5cm}int Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+Len\+Modulation\+Name = 0}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ada4bf8a260b4fea1839785e2928f71b2}
+
+
+Definition at line 85 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a251db0b074d036dc2764b58c8b186a94}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!Len\+Moduluation\+Name\+Len@{Len\+Moduluation\+Name\+Len}}
+\index{Len\+Moduluation\+Name\+Len@{Len\+Moduluation\+Name\+Len}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{Len\+Moduluation\+Name\+Len}]{\setlength{\rightskip}{0pt plus 5cm}int Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+Len\+Moduluation\+Name\+Len = 1}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a251db0b074d036dc2764b58c8b186a94}
+
+
+Definition at line 82 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aaa7975541edbc48dcb803ca7acca8e20}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!Len\+Pkt\+Len@{Len\+Pkt\+Len}}
+\index{Len\+Pkt\+Len@{Len\+Pkt\+Len}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{Len\+Pkt\+Len}]{\setlength{\rightskip}{0pt plus 5cm}int Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+Len\+Pkt\+Len = 2}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aaa7975541edbc48dcb803ca7acca8e20}
+
+
+Definition at line 94 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a879b2c02ed1a38b0c9a0da5f30bdebd2}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!Len\+R\+S\+S\+I@{Len\+R\+S\+S\+I}}
+\index{Len\+R\+S\+S\+I@{Len\+R\+S\+S\+I}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{Len\+R\+S\+S\+I}]{\setlength{\rightskip}{0pt plus 5cm}int Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+Len\+R\+S\+S\+I = 8}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a879b2c02ed1a38b0c9a0da5f30bdebd2}
+
+
+Definition at line 88 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_abeeaa5fa0a6253d92758e2269eaebb18}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!Len\+Utc\+Time@{Len\+Utc\+Time}}
+\index{Len\+Utc\+Time@{Len\+Utc\+Time}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{Len\+Utc\+Time}]{\setlength{\rightskip}{0pt plus 5cm}int Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+Len\+Utc\+Time = 4}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_abeeaa5fa0a6253d92758e2269eaebb18}
+
+
+Definition at line 303 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a139941b75aab04bfd72966e3c3b88198}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!modulationname@{modulationname}}
+\index{modulationname@{modulationname}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{modulationname}]{\setlength{\rightskip}{0pt plus 5cm}list Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+modulationname = {\bf chunk}\mbox{[}Pos\+Modulation\+Name\+:\+Pos\+Modulation\+Name+{\bf modulationnamelen}\mbox{]}}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a139941b75aab04bfd72966e3c3b88198}
+
+
+Definition at line 295 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ab58241d3bba0b73ecff4c2d4dfa1263e}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!modulationnamelen@{modulationnamelen}}
+\index{modulationnamelen@{modulationnamelen}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{modulationnamelen}]{\setlength{\rightskip}{0pt plus 5cm}tuple Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+modulationnamelen = (unpack(\char`\"{}$<$B\char`\"{},chunk\mbox{[}Pos\+Moduluation\+Name\+Len\+:\+Pos\+Moduluation\+Name\+Len+{\bf Len\+Moduluation\+Name\+Len}\mbox{]}))}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ab58241d3bba0b73ecff4c2d4dfa1263e}
+
+
+Definition at line 294 of file Tlmy\+Cmd\+Processor.\+py.
 
 \hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a8f2365862c9bbb4fe399b2d3f801b4d5}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!module@{module}}
 \index{module@{module}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
 \subsubsection[{module}]{\setlength{\rightskip}{0pt plus 5cm}string Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+module = \char`\"{}Tlmy\+Cmd\+Processor\char`\"{}}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a8f2365862c9bbb4fe399b2d3f801b4d5}
 
 
-Definition at line 57 of file Tlmy\+Cmd\+Processor.\+py.
+Definition at line 117 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_afad1fe5f56562d9cdfea8af4d7377065}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!payload@{payload}}
+\index{payload@{payload}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{payload}]{\setlength{\rightskip}{0pt plus 5cm}list Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+payload = {\bf ax25}\mbox{[} vardataoffset\+: \mbox{]}}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_afad1fe5f56562d9cdfea8af4d7377065}
+
+
+Definition at line 317 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a1d93029bff9d6ab97db745a744688bbd}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!pending\+Commands@{pending\+Commands}}
+\index{pending\+Commands@{pending\+Commands}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{pending\+Commands}]{\setlength{\rightskip}{0pt plus 5cm}tuple Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+pending\+Commands = cmdmgr.\+get\+Pending\+Commands()}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a1d93029bff9d6ab97db745a744688bbd}
+
+
+f.\+close() 
+
+
+
+Definition at line 395 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aa4bf4ee35125c7aaeb50dfe9bd888320}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!pkt\+Len@{pkt\+Len}}
+\index{pkt\+Len@{pkt\+Len}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{pkt\+Len}]{\setlength{\rightskip}{0pt plus 5cm}tuple Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+pkt\+Len = unpack(\char`\"{}$<$H\char`\"{}, chunk\mbox{[}Pos\+Pkt\+Len\+:\+Pos\+Pkt\+Len+{\bf Len\+Pkt\+Len}\mbox{]})}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aa4bf4ee35125c7aaeb50dfe9bd888320}
+
+
+Definition at line 301 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a89663fb42c0b2e4e664217680921e07b}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!pn@{pn}}
+\index{pn@{pn}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{pn}]{\setlength{\rightskip}{0pt plus 5cm}tuple Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+pn = unpack(\char`\"{}$<$H\char`\"{}, payload\mbox{[}1\+:3\mbox{]})}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a89663fb42c0b2e4e664217680921e07b}
+
+
+Definition at line 319 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a76d473c0c6d81f0ebbf3de7c2e66e65c}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!Pos\+Data\+Rate@{Pos\+Data\+Rate}}
+\index{Pos\+Data\+Rate@{Pos\+Data\+Rate}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{Pos\+Data\+Rate}]{\setlength{\rightskip}{0pt plus 5cm}Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+Pos\+Data\+Rate = {\bf Pos\+Frame\+Len}+{\bf Len\+Frame\+Len}}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a76d473c0c6d81f0ebbf3de7c2e66e65c}
+
+
+Definition at line 78 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a88e5624ffdbb481998f56fc73359de9a}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!Pos\+Frame\+Command@{Pos\+Frame\+Command}}
+\index{Pos\+Frame\+Command@{Pos\+Frame\+Command}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{Pos\+Frame\+Command}]{\setlength{\rightskip}{0pt plus 5cm}int Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+Pos\+Frame\+Command = 0}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a88e5624ffdbb481998f56fc73359de9a}
+
+
+Definition at line 72 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a8d0363eccf14b5a5864f22854a033bc6}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!Pos\+Frame\+Len@{Pos\+Frame\+Len}}
+\index{Pos\+Frame\+Len@{Pos\+Frame\+Len}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{Pos\+Frame\+Len}]{\setlength{\rightskip}{0pt plus 5cm}Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+Pos\+Frame\+Len = {\bf Pos\+Frame\+Command}+{\bf Len\+Frame\+Command}}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a8d0363eccf14b5a5864f22854a033bc6}
+
+
+Definition at line 75 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aff115557ac981e9e7b5d05fc450de80b}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!Pos\+Frequency@{Pos\+Frequency}}
+\index{Pos\+Frequency@{Pos\+Frequency}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{Pos\+Frequency}]{\setlength{\rightskip}{0pt plus 5cm}Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+Pos\+Frequency = {\bf Pos\+R\+S\+S\+I}+{\bf Len\+R\+S\+S\+I}}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aff115557ac981e9e7b5d05fc450de80b}
+
+
+Definition at line 90 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ac1137c905bca1594a8a5691668001c00}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!Pos\+Modulation\+Name@{Pos\+Modulation\+Name}}
+\index{Pos\+Modulation\+Name@{Pos\+Modulation\+Name}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{Pos\+Modulation\+Name}]{\setlength{\rightskip}{0pt plus 5cm}Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+Pos\+Modulation\+Name = {\bf Pos\+Moduluation\+Name\+Len}+{\bf Len\+Moduluation\+Name\+Len}}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ac1137c905bca1594a8a5691668001c00}
+
+
+Definition at line 84 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a842d2ed3cb03a36110727a626772cd3c}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!Pos\+Moduluation\+Name\+Len@{Pos\+Moduluation\+Name\+Len}}
+\index{Pos\+Moduluation\+Name\+Len@{Pos\+Moduluation\+Name\+Len}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{Pos\+Moduluation\+Name\+Len}]{\setlength{\rightskip}{0pt plus 5cm}Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+Pos\+Moduluation\+Name\+Len = {\bf Pos\+Data\+Rate}+{\bf Len\+Data\+Rate}}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a842d2ed3cb03a36110727a626772cd3c}
+
+
+Definition at line 81 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ad810c911ba6a417e2078e5c9e3d06e70}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!Pos\+Payload@{Pos\+Payload}}
+\index{Pos\+Payload@{Pos\+Payload}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{Pos\+Payload}]{\setlength{\rightskip}{0pt plus 5cm}tuple Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+Pos\+Payload = {\bf Pos\+Pkt\+Len}+int({\bf Len\+Pkt\+Len})}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ad810c911ba6a417e2078e5c9e3d06e70}
+
+
+Definition at line 305 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_acba5b0985ab65f322a69d59144555d63}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!Pos\+Pkt\+Len@{Pos\+Pkt\+Len}}
+\index{Pos\+Pkt\+Len@{Pos\+Pkt\+Len}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{Pos\+Pkt\+Len}]{\setlength{\rightskip}{0pt plus 5cm}Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+Pos\+Pkt\+Len = {\bf Pos\+Frequency}+{\bf Len\+Frequency}}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_acba5b0985ab65f322a69d59144555d63}
+
+
+Definition at line 93 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ab27c15b24c6222fb45f6825e563bfeae}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!Pos\+R\+S\+S\+I@{Pos\+R\+S\+S\+I}}
+\index{Pos\+R\+S\+S\+I@{Pos\+R\+S\+S\+I}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{Pos\+R\+S\+S\+I}]{\setlength{\rightskip}{0pt plus 5cm}Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+Pos\+R\+S\+S\+I = {\bf Pos\+Modulation\+Name}+{\bf Len\+Modulation\+Name}}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ab27c15b24c6222fb45f6825e563bfeae}
+
+
+Definition at line 87 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a06b32773af37ab235d62d22898dbb777}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!Pos\+Utc\+Time@{Pos\+Utc\+Time}}
+\index{Pos\+Utc\+Time@{Pos\+Utc\+Time}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{Pos\+Utc\+Time}]{\setlength{\rightskip}{0pt plus 5cm}list Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+Pos\+Utc\+Time = {\bf Pos\+Pkt\+Len}+{\bf pkt\+Len}\mbox{[}0\mbox{]}}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a06b32773af37ab235d62d22898dbb777}
+
+
+Definition at line 302 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a081154c70ebc097a494acb04f62e01ca}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!prepack@{prepack}}
+\index{prepack@{prepack}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{prepack}]{\setlength{\rightskip}{0pt plus 5cm}tuple Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+prepack = {\bf asource}+{\bf destination}+{\bf control}+{\bf protocol}+unhexlify(com.\+command\+Type.\+command\+Code)}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a081154c70ebc097a494acb04f62e01ca}
+
+
+Definition at line 406 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aac8bc88676dcbb49bca61e151fccf89a}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!prepackpluslen@{prepackpluslen}}
+\index{prepackpluslen@{prepackpluslen}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{prepackpluslen}]{\setlength{\rightskip}{0pt plus 5cm}tuple Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+prepackpluslen = {\bf header}+pack(\textquotesingle{}$<$I\textquotesingle{}, {\bf ilen})}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aac8bc88676dcbb49bca61e151fccf89a}
+
+
+Definition at line 410 of file Tlmy\+Cmd\+Processor.\+py.
 
 \hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_af01cc83846e14e401a5a2fbaec2fe940}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!proj\+\_\+path@{proj\+\_\+path}}
 \index{proj\+\_\+path@{proj\+\_\+path}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
 \subsubsection[{proj\+\_\+path}]{\setlength{\rightskip}{0pt plus 5cm}tuple Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+proj\+\_\+path = os.\+path.\+dirname(os.\+path.\+dirname(os.\+path.\+abspath(\+\_\+\+\_\+file\+\_\+\+\_\+)))}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_af01cc83846e14e401a5a2fbaec2fe940}
 
 
-Servicio, aplicacion encargada de decodificar, trasnformar y persistir la telemetria del satelite y de codificar y transmitir los telecomandos. 
+Definition at line 114 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a17d264f6dce0704d10c660e63fb9d6e6}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!protocol@{protocol}}
+\index{protocol@{protocol}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{protocol}]{\setlength{\rightskip}{0pt plus 5cm}list Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+protocol = {\bf ax25}\mbox{[}7+7+1\+:7+7+1+1\mbox{]}}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a17d264f6dce0704d10c660e63fb9d6e6}
 
 
-\begin{DoxyParams}{Parameters}
-{\em source} & Indica si la ejecucion es para servir a una simulacion o datos reales. Los paquetes persistidos quedan con esta cadena como marca para uso futuro y especialmente para poder distinguir datos simulados de datos reales. \\
-\hline
-{\em satellite} & Codigo de satelite con el que se esta comunicando. El satelite tiene que estar dado de alta en el catalogo. La trama de telemetria sera decodificada en funcion de la configuracion de variables de telemetria del satelite indicado como parametro Obtiene el path del proyecto segun carpeta de ejecucion \\
-\hline
-\end{DoxyParams}
+Definition at line 312 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ac2be67bdf9c4739fcb093941b2bc851a}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!raw@{raw}}
+\index{raw@{raw}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{raw}]{\setlength{\rightskip}{0pt plus 5cm}tuple Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+raw = unpack(\char`\"{}$<$B\char`\"{}, payload\mbox{[}tt.\+position\+:tt.\+position+{\bf bit\+Len\+\_\+div}\mbox{]})}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ac2be67bdf9c4739fcb093941b2bc851a}
 
 
-Definition at line 54 of file Tlmy\+Cmd\+Processor.\+py.
+Definition at line 362 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_abcafa9e1e3e4760b2456be9871d9ff07}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!rssi@{rssi}}
+\index{rssi@{rssi}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{rssi}]{\setlength{\rightskip}{0pt plus 5cm}tuple Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+rssi = unpack(\char`\"{}$<$d\char`\"{}, chunk\mbox{[}Pos\+R\+S\+S\+I\+:\+Pos\+R\+S\+S\+I+{\bf Len\+R\+S\+S\+I}\mbox{]})}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_abcafa9e1e3e4760b2456be9871d9ff07}
+
+
+Definition at line 297 of file Tlmy\+Cmd\+Processor.\+py.
 
 \hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a5b740cec8cab496e71b6896c16dfba9d}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!s@{s}}
 \index{s@{s}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
 \subsubsection[{s}]{\setlength{\rightskip}{0pt plus 5cm}tuple Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+s = socket.\+socket(socket.\+A\+F\+\_\+\+I\+N\+E\+T, socket.\+S\+O\+C\+K\+\_\+\+S\+T\+R\+E\+A\+M)}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a5b740cec8cab496e71b6896c16dfba9d}
 
 
-Definition at line 129 of file Tlmy\+Cmd\+Processor.\+py.
+Definition at line 217 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a9a28f85a45c8480187e9bc9812c9eff5}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!sat@{sat}}
+\index{sat@{sat}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{sat}]{\setlength{\rightskip}{0pt plus 5cm}tuple Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+sat = Satellite.\+objects.\+get({\bf code}={\bf satellite})}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a9a28f85a45c8480187e9bc9812c9eff5}
+
+
+Definition at line 177 of file Tlmy\+Cmd\+Processor.\+py.
 
 \hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a5cf95a9cff868554c46d7a901df74673}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!satellite@{satellite}}
 \index{satellite@{satellite}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
 \subsubsection[{satellite}]{\setlength{\rightskip}{0pt plus 5cm}list Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+satellite = \char`\"{}F\+S2017\char`\"{}}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a5cf95a9cff868554c46d7a901df74673}
 
 
-Definition at line 56 of file Tlmy\+Cmd\+Processor.\+py.
+Definition at line 116 of file Tlmy\+Cmd\+Processor.\+py.
 
 \hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_acef2a3d30bda6af9c56309eea6b12246}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!source@{source}}
 \index{source@{source}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
 \subsubsection[{source}]{\setlength{\rightskip}{0pt plus 5cm}list Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+source = \char`\"{}S\+I\+M\+U\+L\+A\+T\+I\+O\+N\char`\"{}}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_acef2a3d30bda6af9c56309eea6b12246}
 
 
-Definition at line 55 of file Tlmy\+Cmd\+Processor.\+py.
+Definition at line 115 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a58134e0397913f644139bdd4478e338f}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!startproctime@{startproctime}}
+\index{startproctime@{startproctime}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{startproctime}]{\setlength{\rightskip}{0pt plus 5cm}tuple Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+startproctime = timezone.\+now()}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a58134e0397913f644139bdd4478e338f}
+
+
+Definition at line 289 of file Tlmy\+Cmd\+Processor.\+py.
 
 \hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a9d8c45d2e203eaa7eb7be5ece0116d39}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!telvars@{telvars}}
 \index{telvars@{telvars}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
 \subsubsection[{telvars}]{\setlength{\rightskip}{0pt plus 5cm}tuple Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+telvars = Tlmy\+Var\+Type.\+objects.\+filter(satellite\+\_\+\+\_\+code={\bf satellite})}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a9d8c45d2e203eaa7eb7be5ece0116d39}
 
 
-Definition at line 136 of file Tlmy\+Cmd\+Processor.\+py.
+Definition at line 352 of file Tlmy\+Cmd\+Processor.\+py.
 
 \hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_afb50f24734d74f88dacebcac995fd9f4}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!tolerance@{tolerance}}
 \index{tolerance@{tolerance}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
 \subsubsection[{tolerance}]{\setlength{\rightskip}{0pt plus 5cm}int Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+tolerance = 10}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_afb50f24734d74f88dacebcac995fd9f4}
 
 
-Definition at line 98 of file Tlmy\+Cmd\+Processor.\+py.
+Definition at line 166 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a36635165909c763c93ffdab98dd13ec3}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!tv@{tv}}
+\index{tv@{tv}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{tv}]{\setlength{\rightskip}{0pt plus 5cm}tuple Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+tv = tt.\+set\+Value({\bf raw}, True)}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a36635165909c763c93ffdab98dd13ec3}
+
+
+Definition at line 370 of file Tlmy\+Cmd\+Processor.\+py.
 
 \hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ad1afaadb14f89dfd6adce55457a89fa4}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!uhf\+Server\+Ip@{uhf\+Server\+Ip}}
 \index{uhf\+Server\+Ip@{uhf\+Server\+Ip}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
 \subsubsection[{uhf\+Server\+Ip}]{\setlength{\rightskip}{0pt plus 5cm}tuple Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+uhf\+Server\+Ip = load\+Or\+Create\+Param(\char`\"{}U\+H\+F\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+I\+P\char`\"{}, \char`\"{}Ground\+Station\char`\"{}, \char`\"{}127.\+0.\+0.\+1\char`\"{}, \char`\"{}I\+P del servidor T\+C\+P de la antena U\+H\+F\char`\"{})}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_ad1afaadb14f89dfd6adce55457a89fa4}
 
 
-Definition at line 106 of file Tlmy\+Cmd\+Processor.\+py.
+Definition at line 199 of file Tlmy\+Cmd\+Processor.\+py.
 
 \hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_abc4f5193ae5293a175c24785f648c36f}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!uhf\+Server\+Port@{uhf\+Server\+Port}}
 \index{uhf\+Server\+Port@{uhf\+Server\+Port}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
 \subsubsection[{uhf\+Server\+Port}]{\setlength{\rightskip}{0pt plus 5cm}tuple Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+uhf\+Server\+Port = load\+Or\+Create\+Param(\char`\"{}U\+H\+F\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+P\+O\+R\+T\char`\"{}, \char`\"{}Ground\+Station\char`\"{}, \char`\"{}3210\char`\"{}, \char`\"{}Puerto del servidor T\+C\+P de la antena U\+H\+F\char`\"{})}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_abc4f5193ae5293a175c24785f648c36f}
 
 
-Definition at line 107 of file Tlmy\+Cmd\+Processor.\+py.
+Definition at line 200 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a6cdf230e4055a51015bd349429c112f7}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!unconnection\+Limit@{unconnection\+Limit}}
+\index{unconnection\+Limit@{unconnection\+Limit}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{unconnection\+Limit}]{\setlength{\rightskip}{0pt plus 5cm}int Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+unconnection\+Limit = 0}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_a6cdf230e4055a51015bd349429c112f7}
+
+
+Definition at line 208 of file Tlmy\+Cmd\+Processor.\+py.
+
+\hypertarget{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aeebc7e9fadc6ab403d26956b6135ef62}{}\index{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}!vardataoffset@{vardataoffset}}
+\index{vardataoffset@{vardataoffset}!Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor@{Tlmy\+Cmd\+Processor\+::\+Tlmy\+Cmd\+Processor}}
+\subsubsection[{vardataoffset}]{\setlength{\rightskip}{0pt plus 5cm}int Tlmy\+Cmd\+Processor.\+Tlmy\+Cmd\+Processor.\+vardataoffset = 7}\label{namespace_tlmy_cmd_processor_1_1_tlmy_cmd_processor_aeebc7e9fadc6ab403d26956b6135ef62}
+
+
+Definition at line 316 of file Tlmy\+Cmd\+Processor.\+py.
 

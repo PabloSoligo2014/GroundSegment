@@ -1,0 +1,86 @@
+\hypertarget{class_ground_segment_1_1migrations_1_10035__downlinkframe_1_1_migration}{}\section{Ground\+Segment.\+migrations.0035\+\_\+downlinkframe.Migration Class Reference}
+\label{class_ground_segment_1_1migrations_1_10035__downlinkframe_1_1_migration}\index{Ground\+Segment.\+migrations.\+0035\+\_\+downlinkframe.\+Migration@{Ground\+Segment.\+migrations.\+0035\+\_\+downlinkframe.\+Migration}}
+
+
+Inheritance diagram for Ground\+Segment.\+migrations.0035\+\_\+downlinkframe.Migration\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_ground_segment_1_1migrations_1_10035__downlinkframe_1_1_migration__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ground\+Segment.\+migrations.0035\+\_\+downlinkframe.Migration\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_ground_segment_1_1migrations_1_10035__downlinkframe_1_1_migration__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+list \hyperlink{class_ground_segment_1_1migrations_1_10035__downlinkframe_1_1_migration_ada3fdfe2fe65531d9462a0cd4c5066d5}{dependencies}
+\item 
+list \hyperlink{class_ground_segment_1_1migrations_1_10035__downlinkframe_1_1_migration_ace17035a4f8c8a057c08fa1dd2a182d7}{operations}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 8 of file 0035\+\_\+downlinkframe.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_ground_segment_1_1migrations_1_10035__downlinkframe_1_1_migration_ada3fdfe2fe65531d9462a0cd4c5066d5}{}\index{Ground\+Segment\+::migrations\+::0035\+\_\+downlinkframe\+::\+Migration@{Ground\+Segment\+::migrations\+::0035\+\_\+downlinkframe\+::\+Migration}!dependencies@{dependencies}}
+\index{dependencies@{dependencies}!Ground\+Segment\+::migrations\+::0035\+\_\+downlinkframe\+::\+Migration@{Ground\+Segment\+::migrations\+::0035\+\_\+downlinkframe\+::\+Migration}}
+\subsubsection[{dependencies}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+migrations.\+0035\+\_\+downlinkframe.\+Migration.\+dependencies\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1migrations_1_10035__downlinkframe_1_1_migration_ada3fdfe2fe65531d9462a0cd4c5066d5}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 = [
+2         (\textcolor{stringliteral}{'GroundSegment'}, \textcolor{stringliteral}{'0034\_auto\_20170130\_1320'}),
+3     ]
+\end{DoxyCode}
+
+
+Definition at line 10 of file 0035\+\_\+downlinkframe.\+py.
+
+\hypertarget{class_ground_segment_1_1migrations_1_10035__downlinkframe_1_1_migration_ace17035a4f8c8a057c08fa1dd2a182d7}{}\index{Ground\+Segment\+::migrations\+::0035\+\_\+downlinkframe\+::\+Migration@{Ground\+Segment\+::migrations\+::0035\+\_\+downlinkframe\+::\+Migration}!operations@{operations}}
+\index{operations@{operations}!Ground\+Segment\+::migrations\+::0035\+\_\+downlinkframe\+::\+Migration@{Ground\+Segment\+::migrations\+::0035\+\_\+downlinkframe\+::\+Migration}}
+\subsubsection[{operations}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+migrations.\+0035\+\_\+downlinkframe.\+Migration.\+operations\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1migrations_1_10035__downlinkframe_1_1_migration_ace17035a4f8c8a057c08fa1dd2a182d7}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 = [
+2         migrations.CreateModel(
+3             name=\textcolor{stringliteral}{'DownlinkFrame'},
+4             fields=[
+5                 (\textcolor{stringliteral}{'id'}, models.AutoField(auto\_created=\textcolor{keyword}{True}, primary\_key=\textcolor{keyword}{True}, serialize=\textcolor{keyword}{False}, verbose\_name=\textcolor{stringliteral}{
+      'ID'})),
+6                 (\textcolor{stringliteral}{'frameCommand'}, models.IntegerField(help\_text=\textcolor{stringliteral}{'frame Command'}, verbose\_name=\textcolor{stringliteral}{'frame Command
+      '})),
+7                 (\textcolor{stringliteral}{'frameLength'}, models.IntegerField(help\_text=\textcolor{stringliteral}{'Dimension del frame'}, verbose\_name=\textcolor{stringliteral}{'
+      Dimension del frame'})),
+8                 (\textcolor{stringliteral}{'dataRate'}, models.IntegerField(help\_text=\textcolor{stringliteral}{'Tasa de transferencia'}, verbose\_name=\textcolor{stringliteral}{'Tasa de
+       transferencia'})),
+9                 (\textcolor{stringliteral}{'modulationName'}, models.CharField(help\_text=\textcolor{stringliteral}{'Nombre de la modulacion'}, max\_length=24, 
+      verbose\_name=\textcolor{stringliteral}{'Nombre de la modulacion'})),
+10                 (\textcolor{stringliteral}{'rssi'}, models.FloatField(help\_text=\textcolor{stringliteral}{'RSSI'})),
+11                 (\textcolor{stringliteral}{'frequency'}, models.FloatField(help\_text=\textcolor{stringliteral}{'Frecuencia'})),
+12                 (\textcolor{stringliteral}{'packetLength'}, models.IntegerField(help\_text=\textcolor{stringliteral}{'Dimension del paquete'}, verbose\_name=\textcolor{stringliteral}{'
+      Dimension del paquete'})),
+13             ],
+14         ),
+15     ]
+\end{DoxyCode}
+
+
+Definition at line 14 of file 0035\+\_\+downlinkframe.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ubuntumate/git/\+Ground\+Segment/\+Ground\+Segment/\+Ground\+Segment/migrations/\hyperlink{0035__downlinkframe_8py}{0035\+\_\+downlinkframe.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,85 @@
+\hypertarget{class_ground_segment_1_1migrations_1_10046__auto__20170207__1208_1_1_migration}{}\section{Ground\+Segment.\+migrations.0046\+\_\+auto\+\_\+20170207\+\_\+1208.Migration Class Reference}
+\label{class_ground_segment_1_1migrations_1_10046__auto__20170207__1208_1_1_migration}\index{Ground\+Segment.\+migrations.\+0046\+\_\+auto\+\_\+20170207\+\_\+1208.\+Migration@{Ground\+Segment.\+migrations.\+0046\+\_\+auto\+\_\+20170207\+\_\+1208.\+Migration}}
+
+
+Inheritance diagram for Ground\+Segment.\+migrations.0046\+\_\+auto\+\_\+20170207\+\_\+1208.Migration\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_ground_segment_1_1migrations_1_10046__auto__20170207__1208_1_1_migration__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ground\+Segment.\+migrations.0046\+\_\+auto\+\_\+20170207\+\_\+1208.Migration\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_ground_segment_1_1migrations_1_10046__auto__20170207__1208_1_1_migration__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+list \hyperlink{class_ground_segment_1_1migrations_1_10046__auto__20170207__1208_1_1_migration_ad580c4718bd025538990fb85fa83f64d}{dependencies}
+\item 
+list \hyperlink{class_ground_segment_1_1migrations_1_10046__auto__20170207__1208_1_1_migration_a1c1c543acc9079dd174b66bd24c6f165}{operations}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 9 of file 0046\+\_\+auto\+\_\+20170207\+\_\+1208.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_ground_segment_1_1migrations_1_10046__auto__20170207__1208_1_1_migration_ad580c4718bd025538990fb85fa83f64d}{}\index{Ground\+Segment\+::migrations\+::0046\+\_\+auto\+\_\+20170207\+\_\+1208\+::\+Migration@{Ground\+Segment\+::migrations\+::0046\+\_\+auto\+\_\+20170207\+\_\+1208\+::\+Migration}!dependencies@{dependencies}}
+\index{dependencies@{dependencies}!Ground\+Segment\+::migrations\+::0046\+\_\+auto\+\_\+20170207\+\_\+1208\+::\+Migration@{Ground\+Segment\+::migrations\+::0046\+\_\+auto\+\_\+20170207\+\_\+1208\+::\+Migration}}
+\subsubsection[{dependencies}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+migrations.\+0046\+\_\+auto\+\_\+20170207\+\_\+1208.\+Migration.\+dependencies\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1migrations_1_10046__auto__20170207__1208_1_1_migration_ad580c4718bd025538990fb85fa83f64d}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 = [
+2         (\textcolor{stringliteral}{'GroundSegment'}, \textcolor{stringliteral}{'0045\_auto\_20170206\_1323'}),
+3     ]
+\end{DoxyCode}
+
+
+Definition at line 11 of file 0046\+\_\+auto\+\_\+20170207\+\_\+1208.\+py.
+
+\hypertarget{class_ground_segment_1_1migrations_1_10046__auto__20170207__1208_1_1_migration_a1c1c543acc9079dd174b66bd24c6f165}{}\index{Ground\+Segment\+::migrations\+::0046\+\_\+auto\+\_\+20170207\+\_\+1208\+::\+Migration@{Ground\+Segment\+::migrations\+::0046\+\_\+auto\+\_\+20170207\+\_\+1208\+::\+Migration}!operations@{operations}}
+\index{operations@{operations}!Ground\+Segment\+::migrations\+::0046\+\_\+auto\+\_\+20170207\+\_\+1208\+::\+Migration@{Ground\+Segment\+::migrations\+::0046\+\_\+auto\+\_\+20170207\+\_\+1208\+::\+Migration}}
+\subsubsection[{operations}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+migrations.\+0046\+\_\+auto\+\_\+20170207\+\_\+1208.\+Migration.\+operations\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1migrations_1_10046__auto__20170207__1208_1_1_migration_a1c1c543acc9079dd174b66bd24c6f165}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 = [
+2         migrations.AddField(
+3             model\_name=\textcolor{stringliteral}{'commandtypeparameter'},
+4             name=\textcolor{stringliteral}{'code'},
+5             field=models.CharField(default=\textcolor{stringliteral}{'NoDet'}, help\_text=\textcolor{stringliteral}{'Codigo del parametro'}, max\_length=24, 
+      verbose\_name=\textcolor{stringliteral}{'Codigo del parametro'}),
+6         ),
+7         migrations.AddField(
+8             model\_name=\textcolor{stringliteral}{'commandtypeparameter'},
+9             name=\textcolor{stringliteral}{'description'},
+10             field=models.CharField(default=\textcolor{stringliteral}{'NoDet'}, help\_text=\textcolor{stringliteral}{'Decripcion del satelite'}, max\_length=100, 
+      verbose\_name=\textcolor{stringliteral}{'Decripcion del parametro'}),
+11         ),
+12         migrations.AddField(
+13             model\_name=\textcolor{stringliteral}{'tmlyvar'},
+14             name=\textcolor{stringliteral}{'tmlyVarType'},
+15             field=models.ForeignKey(null=\textcolor{keyword}{True}, on\_delete=django.db.models.deletion.CASCADE, related\_name=\textcolor{stringliteral}{'
+      tmlyVars'}, to=\textcolor{stringliteral}{'GroundSegment.TlmyVarType'}),
+16         ),
+17     ]
+\end{DoxyCode}
+
+
+Definition at line 15 of file 0046\+\_\+auto\+\_\+20170207\+\_\+1208.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ubuntumate/git/\+Ground\+Segment/\+Ground\+Segment/\+Ground\+Segment/migrations/\hyperlink{0046__auto__20170207__1208_8py}{0046\+\_\+auto\+\_\+20170207\+\_\+1208.\+py}\end{DoxyCompactItemize}

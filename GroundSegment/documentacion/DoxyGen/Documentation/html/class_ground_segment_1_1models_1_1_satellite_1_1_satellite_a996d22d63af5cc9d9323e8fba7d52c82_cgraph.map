@@ -1,0 +1,4 @@
+<map id="GroundSegment.models.Satellite.Satellite.getPendingCommands" name="GroundSegment.models.Satellite.Satellite.getPendingCommands">
+<area shape="rect" id="node2" href="$class_ground_segment_1_1_managers_1_1_command_manager_1_1_command_manager.html#a2c517875a09510c5d0d77117c673e2e0" title="GroundSegment.Managers.Command\lManager.CommandManager._\l_setExpiredCommands" alt="" coords="271,5,512,61"/>
+<area shape="rect" id="node3" href="$class_ground_segment_1_1models_1_1_satellite_1_1_satellite.html#ab1e6097a665e229a183ae7502e890725" title="GroundSegment.models.Satellite.\lSatellite.__setExpiredCommands" alt="" coords="283,85,500,126"/>
+</map>

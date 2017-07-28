@@ -21,27 +21,44 @@ Collaboration diagram for Ground\+Segment.\+models.\+Pasada.\+Pasada\+:\nopagebr
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+def \hyperlink{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_a5ebf93a5abcf180da3364d16e10b815c}{get\+Duration} (self)
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_a2f5fbff968ce6c18102c2625e56f1bb4}{get\+Duration\+Str} (self)
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_a248f194ba062a30f8def562434bc4f96}{save} (self, args, kwargs)
+\item 
 def \hyperlink{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_a5c21dff9dda2ed2fa07752dfb0c1938b}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_abeb6ca27acba910e5302a04ff09f70fd}{duration}
 \end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-tuple \hyperlink{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_a1784ce0d3443756f0a2d846e82f5c79b}{name} = models.\+Char\+Field(max\+\_\+length=128, unique=True)
-\item 
 tuple \hyperlink{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_aff2cf52f9825341a81fb40b46ad003ea}{satellite} = models.\+Foreign\+Key(\hyperlink{class_ground_segment_1_1models_1_1_satellite_1_1_satellite}{Satellite}, related\+\_\+name=\textquotesingle{}pasadas\textquotesingle{})
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_ab930e8f3c872ed571982b5f4b81ddca2}{tle} = models.\+Foreign\+Key(\hyperlink{class_ground_segment_1_1models_1_1_tle_1_1_tle}{Tle}, related\+\_\+name=\textquotesingle{}pasadas\textquotesingle{}, null=True)
 \item 
 tuple \hyperlink{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_a11b3cdc3860dfd371e447d34fe002767}{sitio} = models.\+Foreign\+Key(\hyperlink{class_ground_segment_1_1models_1_1_sitio_1_1_sitio}{Sitio},related\+\_\+name=\textquotesingle{}pasadas\textquotesingle{})
 \item 
-tuple \hyperlink{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_abceb32f3eb016d4e6d2bee806204242b}{start\+Time} = models.\+Date\+Time\+Field(auto\+\_\+now\+\_\+add=True)
+tuple \hyperlink{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_abceb32f3eb016d4e6d2bee806204242b}{start\+Time} = models.\+Date\+Time\+Field()
 \item 
-tuple \hyperlink{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_aa26eb2642841aeccd68e417cd3eb4dba}{stop\+Time} = models.\+Date\+Time\+Field(auto\+\_\+now\+\_\+add=True)
+tuple \hyperlink{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_aa26eb2642841aeccd68e417cd3eb4dba}{stop\+Time} = models.\+Date\+Time\+Field()
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_a154b43edff06093efdad607f99414b49}{duration} = models.\+Float\+Field(\textquotesingle{}Duracion\textquotesingle{}, help\+\_\+text=\textquotesingle{}\mbox{[}minutos\mbox{]}\textquotesingle{}, default=0.\+0)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_af4b9bd78031aee8d8a615e00e6e45e3e}{pass\+Generation} = models.\+Foreign\+Key(\hyperlink{class_ground_segment_1_1models_1_1_pass_generation_1_1_pass_generation}{Pass\+Generation}, on\+\_\+delete=C\+A\+S\+C\+A\+D\+E, related\+\_\+name=\char`\"{}passes\char`\"{})
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
+\begin{DoxyVerb}TODO: Mucha informacion redundante, hablar con Ceci para sacarla sino el diseno queda mal
+\end{DoxyVerb}
+ 
 
-
-Definition at line 11 of file Pasada.\+py.
+Definition at line 15 of file Pasada.\+py.
 
 
 
@@ -55,45 +72,114 @@ Definition at line 11 of file Pasada.\+py.
 )}\label{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_a5c21dff9dda2ed2fa07752dfb0c1938b}
 
 
-Definition at line 18 of file Pasada.\+py.
+Definition at line 48 of file Pasada.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_a5ebf93a5abcf180da3364d16e10b815c}{}\index{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada@{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada}!get\+Duration@{get\+Duration}}
+\index{get\+Duration@{get\+Duration}!Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada@{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada}}
+\subsubsection[{get\+Duration}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Pasada.\+Pasada.\+get\+Duration (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_a5ebf93a5abcf180da3364d16e10b815c}
+
+
+Definition at line 30 of file Pasada.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_a2f5fbff968ce6c18102c2625e56f1bb4}{}\index{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada@{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada}!get\+Duration\+Str@{get\+Duration\+Str}}
+\index{get\+Duration\+Str@{get\+Duration\+Str}!Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada@{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada}}
+\subsubsection[{get\+Duration\+Str}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Pasada.\+Pasada.\+get\+Duration\+Str (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_a2f5fbff968ce6c18102c2625e56f1bb4}
+\begin{DoxyVerb}pasar la duracion de la pasada a un string que indique min:sec
+\end{DoxyVerb}
+ 
+
+Definition at line 33 of file Pasada.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_a248f194ba062a30f8def562434bc4f96}{}\index{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada@{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada}!save@{save}}
+\index{save@{save}!Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada@{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Pasada.\+Pasada.\+save (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{args, }
+\item[{}]{kwargs}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_a248f194ba062a30f8def562434bc4f96}
+
+
+Definition at line 44 of file Pasada.\+py.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_a248f194ba062a30f8def562434bc4f96_icgraph}
+\end{center}
+\end{figure}
+
 
 
 
 \subsection{Member Data Documentation}
-\hypertarget{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_a1784ce0d3443756f0a2d846e82f5c79b}{}\index{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada@{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada}!name@{name}}
-\index{name@{name}!Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada@{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada}}
-\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Pasada.\+Pasada.\+name = models.\+Char\+Field(max\+\_\+length=128, unique=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_a1784ce0d3443756f0a2d846e82f5c79b}
+\hypertarget{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_a154b43edff06093efdad607f99414b49}{}\index{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada@{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada}!duration@{duration}}
+\index{duration@{duration}!Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada@{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada}}
+\subsubsection[{duration}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Pasada.\+Pasada.\+duration = models.\+Float\+Field(\textquotesingle{}Duracion\textquotesingle{}, help\+\_\+text=\textquotesingle{}\mbox{[}minutos\mbox{]}\textquotesingle{}, default=0.\+0)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_a154b43edff06093efdad607f99414b49}
 
 
-Definition at line 12 of file Pasada.\+py.
+Definition at line 25 of file Pasada.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_abeb6ca27acba910e5302a04ff09f70fd}{}\index{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada@{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada}!duration@{duration}}
+\index{duration@{duration}!Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada@{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada}}
+\subsubsection[{duration}]{\setlength{\rightskip}{0pt plus 5cm}Ground\+Segment.\+models.\+Pasada.\+Pasada.\+duration}\label{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_abeb6ca27acba910e5302a04ff09f70fd}
+
+
+Definition at line 45 of file Pasada.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_af4b9bd78031aee8d8a615e00e6e45e3e}{}\index{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada@{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada}!pass\+Generation@{pass\+Generation}}
+\index{pass\+Generation@{pass\+Generation}!Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada@{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada}}
+\subsubsection[{pass\+Generation}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Pasada.\+Pasada.\+pass\+Generation = models.\+Foreign\+Key({\bf Pass\+Generation}, on\+\_\+delete=C\+A\+S\+C\+A\+D\+E, related\+\_\+name=\char`\"{}passes\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_af4b9bd78031aee8d8a615e00e6e45e3e}
+
+
+Definition at line 26 of file Pasada.\+py.
 
 \hypertarget{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_aff2cf52f9825341a81fb40b46ad003ea}{}\index{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada@{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada}!satellite@{satellite}}
 \index{satellite@{satellite}!Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada@{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada}}
 \subsubsection[{satellite}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Pasada.\+Pasada.\+satellite = models.\+Foreign\+Key({\bf Satellite}, related\+\_\+name=\textquotesingle{}pasadas\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_aff2cf52f9825341a81fb40b46ad003ea}
 
 
-Definition at line 13 of file Pasada.\+py.
+Definition at line 20 of file Pasada.\+py.
 
 \hypertarget{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_a11b3cdc3860dfd371e447d34fe002767}{}\index{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada@{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada}!sitio@{sitio}}
 \index{sitio@{sitio}!Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada@{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada}}
 \subsubsection[{sitio}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Pasada.\+Pasada.\+sitio = models.\+Foreign\+Key({\bf Sitio},related\+\_\+name=\textquotesingle{}pasadas\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_a11b3cdc3860dfd371e447d34fe002767}
 
 
-Definition at line 14 of file Pasada.\+py.
+Definition at line 22 of file Pasada.\+py.
 
 \hypertarget{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_abceb32f3eb016d4e6d2bee806204242b}{}\index{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada@{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada}!start\+Time@{start\+Time}}
 \index{start\+Time@{start\+Time}!Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada@{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada}}
-\subsubsection[{start\+Time}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Pasada.\+Pasada.\+start\+Time = models.\+Date\+Time\+Field(auto\+\_\+now\+\_\+add=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_abceb32f3eb016d4e6d2bee806204242b}
+\subsubsection[{start\+Time}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Pasada.\+Pasada.\+start\+Time = models.\+Date\+Time\+Field()\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_abceb32f3eb016d4e6d2bee806204242b}
 
 
-Definition at line 15 of file Pasada.\+py.
+Definition at line 23 of file Pasada.\+py.
 
 \hypertarget{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_aa26eb2642841aeccd68e417cd3eb4dba}{}\index{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada@{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada}!stop\+Time@{stop\+Time}}
 \index{stop\+Time@{stop\+Time}!Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada@{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada}}
-\subsubsection[{stop\+Time}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Pasada.\+Pasada.\+stop\+Time = models.\+Date\+Time\+Field(auto\+\_\+now\+\_\+add=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_aa26eb2642841aeccd68e417cd3eb4dba}
+\subsubsection[{stop\+Time}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Pasada.\+Pasada.\+stop\+Time = models.\+Date\+Time\+Field()\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_aa26eb2642841aeccd68e417cd3eb4dba}
 
 
-Definition at line 16 of file Pasada.\+py.
+Definition at line 24 of file Pasada.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_ab930e8f3c872ed571982b5f4b81ddca2}{}\index{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada@{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada}!tle@{tle}}
+\index{tle@{tle}!Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada@{Ground\+Segment\+::models\+::\+Pasada\+::\+Pasada}}
+\subsubsection[{tle}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Pasada.\+Pasada.\+tle = models.\+Foreign\+Key({\bf Tle}, related\+\_\+name=\textquotesingle{}pasadas\textquotesingle{}, null=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_pasada_1_1_pasada_ab930e8f3c872ed571982b5f4b81ddca2}
+
+
+Definition at line 21 of file Pasada.\+py.
 
 
 

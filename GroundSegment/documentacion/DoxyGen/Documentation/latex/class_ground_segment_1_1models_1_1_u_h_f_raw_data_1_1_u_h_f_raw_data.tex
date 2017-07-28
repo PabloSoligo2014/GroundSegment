@@ -18,6 +18,20 @@ Collaboration diagram for Ground\+Segment.\+models.\+U\+H\+F\+Raw\+Data.\+U\+H\+
 \includegraphics[width=246pt]{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data__coll__graph}
 \end{center}
 \end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data_a7aa5473e76f0b6f3784b74d58a1a3882}{get\+Data\+Len} (self)
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data_a80c5fc99c33923e60a09ed948c70f1eb}{get\+Blob} (self)
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data_a0ffa42aeb51aede4dba8bf88afa8e6b8}{save} (self, args, kwargs)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data_aff0c88499e748d48a0cd7faaf99a0a83}{data\+Len}
+\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -26,6 +40,12 @@ tuple \hyperlink{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw
 tuple \hyperlink{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data_a617ee1b3a10bfb1dbdad7f5e58ecd111}{data} = models.\+Binary\+Field()
 \item 
 tuple \hyperlink{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data_af793b6af185be9c8f4895d2600959b3e}{source} = models.\+Char\+Field(\textquotesingle{}Origen del dato, tipicamente cubesat/simulacion\textquotesingle{}, max\+\_\+length=24, help\+\_\+text=\textquotesingle{}Origen del dato, tipicamente cubesat/simulacion\textquotesingle{}, default=\textquotesingle{}simulation\textquotesingle{})
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data_a61b9ad50a4b98a17adcf65d05fe213c5}{data\+Len} = models.\+Integer\+Field(\char`\"{}Dimension del campo \hyperlink{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data_a617ee1b3a10bfb1dbdad7f5e58ecd111}{data}, autoguardado\char`\"{}, default=0)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data_adbe87941b9b4c940ea568a956948eba7}{processed} = models.\+Boolean\+Field(\char`\"{}Indica si el paquete raw fue procesado\char`\"{}, default=False)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data_a7245dcecd5a04a8f20c3f968a356be44}{processed\+Time} = models.\+Float\+Field(\char`\"{}Tiempo en milisegundos que domoro en ser procesada\char`\"{}, default=0.\+0)
 \end{DoxyCompactItemize}
 
 
@@ -33,6 +53,77 @@ tuple \hyperlink{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw
 
 
 Definition at line 23 of file U\+H\+F\+Raw\+Data.\+py.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data_a80c5fc99c33923e60a09ed948c70f1eb}{}\index{Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data@{Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data}!get\+Blob@{get\+Blob}}
+\index{get\+Blob@{get\+Blob}!Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data@{Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data}}
+\subsubsection[{get\+Blob}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+U\+H\+F\+Raw\+Data.\+U\+H\+F\+Raw\+Data.\+get\+Blob (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data_a80c5fc99c33923e60a09ed948c70f1eb}
+
+
+Definition at line 34 of file U\+H\+F\+Raw\+Data.\+py.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data_a80c5fc99c33923e60a09ed948c70f1eb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data_a7aa5473e76f0b6f3784b74d58a1a3882}{}\index{Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data@{Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data}!get\+Data\+Len@{get\+Data\+Len}}
+\index{get\+Data\+Len@{get\+Data\+Len}!Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data@{Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data}}
+\subsubsection[{get\+Data\+Len}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+U\+H\+F\+Raw\+Data.\+U\+H\+F\+Raw\+Data.\+get\+Data\+Len (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data_a7aa5473e76f0b6f3784b74d58a1a3882}
+
+
+Definition at line 31 of file U\+H\+F\+Raw\+Data.\+py.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data_a7aa5473e76f0b6f3784b74d58a1a3882_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data_a0ffa42aeb51aede4dba8bf88afa8e6b8}{}\index{Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data@{Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data}!save@{save}}
+\index{save@{save}!Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data@{Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+U\+H\+F\+Raw\+Data.\+U\+H\+F\+Raw\+Data.\+save (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{args, }
+\item[{}]{kwargs}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data_a0ffa42aeb51aede4dba8bf88afa8e6b8}
+
+
+Definition at line 42 of file U\+H\+F\+Raw\+Data.\+py.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data_a0ffa42aeb51aede4dba8bf88afa8e6b8_icgraph}
+\end{center}
+\end{figure}
+
 
 
 
@@ -50,6 +141,34 @@ Definition at line 24 of file U\+H\+F\+Raw\+Data.\+py.
 
 
 Definition at line 25 of file U\+H\+F\+Raw\+Data.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data_a61b9ad50a4b98a17adcf65d05fe213c5}{}\index{Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data@{Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data}!data\+Len@{data\+Len}}
+\index{data\+Len@{data\+Len}!Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data@{Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data}}
+\subsubsection[{data\+Len}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+U\+H\+F\+Raw\+Data.\+U\+H\+F\+Raw\+Data.\+data\+Len = models.\+Integer\+Field(\char`\"{}Dimension del campo {\bf data}, autoguardado\char`\"{}, default=0)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data_a61b9ad50a4b98a17adcf65d05fe213c5}
+
+
+Definition at line 27 of file U\+H\+F\+Raw\+Data.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data_aff0c88499e748d48a0cd7faaf99a0a83}{}\index{Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data@{Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data}!data\+Len@{data\+Len}}
+\index{data\+Len@{data\+Len}!Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data@{Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data}}
+\subsubsection[{data\+Len}]{\setlength{\rightskip}{0pt plus 5cm}Ground\+Segment.\+models.\+U\+H\+F\+Raw\+Data.\+U\+H\+F\+Raw\+Data.\+data\+Len}\label{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data_aff0c88499e748d48a0cd7faaf99a0a83}
+
+
+Definition at line 43 of file U\+H\+F\+Raw\+Data.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data_adbe87941b9b4c940ea568a956948eba7}{}\index{Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data@{Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data}!processed@{processed}}
+\index{processed@{processed}!Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data@{Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data}}
+\subsubsection[{processed}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+U\+H\+F\+Raw\+Data.\+U\+H\+F\+Raw\+Data.\+processed = models.\+Boolean\+Field(\char`\"{}Indica si el paquete raw fue procesado\char`\"{}, default=False)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data_adbe87941b9b4c940ea568a956948eba7}
+
+
+Definition at line 28 of file U\+H\+F\+Raw\+Data.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data_a7245dcecd5a04a8f20c3f968a356be44}{}\index{Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data@{Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data}!processed\+Time@{processed\+Time}}
+\index{processed\+Time@{processed\+Time}!Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data@{Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data}}
+\subsubsection[{processed\+Time}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+U\+H\+F\+Raw\+Data.\+U\+H\+F\+Raw\+Data.\+processed\+Time = models.\+Float\+Field(\char`\"{}Tiempo en milisegundos que domoro en ser procesada\char`\"{}, default=0.\+0)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data_a7245dcecd5a04a8f20c3f968a356be44}
+
+
+Definition at line 29 of file U\+H\+F\+Raw\+Data.\+py.
 
 \hypertarget{class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data_af793b6af185be9c8f4895d2600959b3e}{}\index{Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data@{Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data}!source@{source}}
 \index{source@{source}!Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data@{Ground\+Segment\+::models\+::\+U\+H\+F\+Raw\+Data\+::\+U\+H\+F\+Raw\+Data}}

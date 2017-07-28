@@ -23,7 +23,7 @@ Collaboration diagram for Ground\+Segment.\+admin.\+Command\+Type\+Admin\+:\nopa
 \item 
 string \hyperlink{class_ground_segment_1_1admin_1_1_command_type_admin_a33d28f3ea0909e227e12b323b479cd4b}{empty\+\_\+value\+\_\+display} = \textquotesingle{}\textquotesingle{}
 \item 
-tuple \hyperlink{class_ground_segment_1_1admin_1_1_command_type_admin_a1ee0f5d0adfcd6a4daab57e600d1e6e0}{fields} = (\textquotesingle{}code\textquotesingle{}, \textquotesingle{}description\textquotesingle{}, \textquotesingle{}active\textquotesingle{}, \textquotesingle{}transactional\textquotesingle{}, \textquotesingle{}satellite\textquotesingle{}, \textquotesingle{}satellite\+States\textquotesingle{}, \textquotesingle{}timeout\textquotesingle{}, \textquotesingle{}notes\textquotesingle{})
+tuple \hyperlink{class_ground_segment_1_1admin_1_1_command_type_admin_a1ee0f5d0adfcd6a4daab57e600d1e6e0}{fields} = (\textquotesingle{}code\textquotesingle{}, \textquotesingle{}description\textquotesingle{}, \textquotesingle{}active\textquotesingle{}, \textquotesingle{}transactional\textquotesingle{}, \textquotesingle{}satellite\textquotesingle{}, \textquotesingle{}satellite\+States\textquotesingle{}, \textquotesingle{}max\+Retry\textquotesingle{}, \textquotesingle{}command\+Code\textquotesingle{}, \textquotesingle{}timeout\textquotesingle{}, \textquotesingle{}notes\textquotesingle{})
 \item 
 tuple \hyperlink{class_ground_segment_1_1admin_1_1_command_type_admin_a5afd80db575f5f9696c042e09a22966d}{list\+\_\+display} = (\textquotesingle{}code\textquotesingle{}, \textquotesingle{}description\textquotesingle{}, \textquotesingle{}transactional\textquotesingle{}, \textquotesingle{}satellite\textquotesingle{}, \textquotesingle{}timeout\textquotesingle{}, \textquotesingle{}notes\textquotesingle{})
 \item 
@@ -34,7 +34,7 @@ list \hyperlink{class_ground_segment_1_1admin_1_1_command_type_admin_a3a3f190f65
 \subsection{Detailed Description}
 
 
-Definition at line 45 of file admin.\+py.
+Definition at line 60 of file admin.\+py.
 
 
 
@@ -44,28 +44,28 @@ Definition at line 45 of file admin.\+py.
 \subsubsection[{empty\+\_\+value\+\_\+display}]{\setlength{\rightskip}{0pt plus 5cm}string Ground\+Segment.\+admin.\+Command\+Type\+Admin.\+empty\+\_\+value\+\_\+display = \textquotesingle{}\textquotesingle{}\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1admin_1_1_command_type_admin_a33d28f3ea0909e227e12b323b479cd4b}
 
 
-Definition at line 46 of file admin.\+py.
+Definition at line 61 of file admin.\+py.
 
 \hypertarget{class_ground_segment_1_1admin_1_1_command_type_admin_a1ee0f5d0adfcd6a4daab57e600d1e6e0}{}\index{Ground\+Segment\+::admin\+::\+Command\+Type\+Admin@{Ground\+Segment\+::admin\+::\+Command\+Type\+Admin}!fields@{fields}}
 \index{fields@{fields}!Ground\+Segment\+::admin\+::\+Command\+Type\+Admin@{Ground\+Segment\+::admin\+::\+Command\+Type\+Admin}}
-\subsubsection[{fields}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+admin.\+Command\+Type\+Admin.\+fields = (\textquotesingle{}code\textquotesingle{}, \textquotesingle{}description\textquotesingle{}, \textquotesingle{}active\textquotesingle{}, \textquotesingle{}transactional\textquotesingle{}, \textquotesingle{}satellite\textquotesingle{}, \textquotesingle{}satellite\+States\textquotesingle{}, \textquotesingle{}timeout\textquotesingle{}, \textquotesingle{}notes\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1admin_1_1_command_type_admin_a1ee0f5d0adfcd6a4daab57e600d1e6e0}
+\subsubsection[{fields}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+admin.\+Command\+Type\+Admin.\+fields = (\textquotesingle{}code\textquotesingle{}, \textquotesingle{}description\textquotesingle{}, \textquotesingle{}active\textquotesingle{}, \textquotesingle{}transactional\textquotesingle{}, \textquotesingle{}satellite\textquotesingle{}, \textquotesingle{}satellite\+States\textquotesingle{}, \textquotesingle{}max\+Retry\textquotesingle{}, \textquotesingle{}command\+Code\textquotesingle{}, \textquotesingle{}timeout\textquotesingle{}, \textquotesingle{}notes\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1admin_1_1_command_type_admin_a1ee0f5d0adfcd6a4daab57e600d1e6e0}
 
 
-Definition at line 47 of file admin.\+py.
+Definition at line 62 of file admin.\+py.
 
 \hypertarget{class_ground_segment_1_1admin_1_1_command_type_admin_a5afd80db575f5f9696c042e09a22966d}{}\index{Ground\+Segment\+::admin\+::\+Command\+Type\+Admin@{Ground\+Segment\+::admin\+::\+Command\+Type\+Admin}!list\+\_\+display@{list\+\_\+display}}
 \index{list\+\_\+display@{list\+\_\+display}!Ground\+Segment\+::admin\+::\+Command\+Type\+Admin@{Ground\+Segment\+::admin\+::\+Command\+Type\+Admin}}
 \subsubsection[{list\+\_\+display}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+admin.\+Command\+Type\+Admin.\+list\+\_\+display = (\textquotesingle{}code\textquotesingle{}, \textquotesingle{}description\textquotesingle{}, \textquotesingle{}transactional\textquotesingle{}, \textquotesingle{}satellite\textquotesingle{}, \textquotesingle{}timeout\textquotesingle{}, \textquotesingle{}notes\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1admin_1_1_command_type_admin_a5afd80db575f5f9696c042e09a22966d}
 
 
-Definition at line 48 of file admin.\+py.
+Definition at line 63 of file admin.\+py.
 
 \hypertarget{class_ground_segment_1_1admin_1_1_command_type_admin_a3a3f190f65a4c32395397c193a0b86e5}{}\index{Ground\+Segment\+::admin\+::\+Command\+Type\+Admin@{Ground\+Segment\+::admin\+::\+Command\+Type\+Admin}!search\+\_\+fields@{search\+\_\+fields}}
 \index{search\+\_\+fields@{search\+\_\+fields}!Ground\+Segment\+::admin\+::\+Command\+Type\+Admin@{Ground\+Segment\+::admin\+::\+Command\+Type\+Admin}}
 \subsubsection[{search\+\_\+fields}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+admin.\+Command\+Type\+Admin.\+search\+\_\+fields = \mbox{[}\textquotesingle{}code\textquotesingle{}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1admin_1_1_command_type_admin_a3a3f190f65a4c32395397c193a0b86e5}
 
 
-Definition at line 50 of file admin.\+py.
+Definition at line 65 of file admin.\+py.
 
 
 

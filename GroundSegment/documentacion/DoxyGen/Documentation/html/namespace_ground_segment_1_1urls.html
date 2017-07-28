@@ -94,6 +94,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a3203e9c93853da32af24ed41c0c786e4"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ground_segment_1_1urls.html#a3203e9c93853da32af24ed41c0c786e4">router</a> = SimpleRouter()</td></tr>
+<tr class="separator:a3203e9c93853da32af24ed41c0c786e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a457e62f34e0ac5ed0455686f6e0f68c6"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_ground_segment_1_1urls.html#a457e62f34e0ac5ed0455686f6e0f68c6">urlpatterns</a></td></tr>
 <tr class="separator:a457e62f34e0ac5ed0455686f6e0f68c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -101,18 +103,32 @@ Variables</h2></td></tr>
 <div class="textblock"><pre class="fragment">GroundSegment URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/1.9/topics/http/urls/
+   https://docs.djangoproject.com/en/1.9/topics/http/urls/
 Examples:
 Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
+   1. Add an import:  from my_app import views
+   2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
 Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
+   1. Add an import:  from other_app.views import Home
+   2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
 Including another URLconf
-    1. Import the include() function: from django.conf.urls import url, include
-    2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
+   1. Import the include() function: from django.conf.urls import url, include
+   2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 </pre> </div><h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="a3203e9c93853da32af24ed41c0c786e4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple GroundSegment.urls.router = SimpleRouter()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="urls_8py_source.html#l00049">49</a> of file <a class="el" href="urls_8py_source.html">urls.py</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a457e62f34e0ac5ed0455686f6e0f68c6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -124,12 +140,24 @@ Including another URLconf
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespace_ground_segment_1_1urls.html">    1</a></span>&#160;= [</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;    url(<span class="stringliteral">r&#39;^admin/&#39;</span>, admin.site.urls),</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    url(<span class="stringliteral">r&#39;^about/$&#39;</span>, AboutView.as_view(template_name=<span class="stringliteral">&quot;about.html&quot;</span>)),</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    url(<span class="stringliteral">r&#39;^satellites/$&#39;</span>, SatelliteListView.as_view(template_name=<span class="stringliteral">&quot;satelliteListView.html&quot;</span>)),</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    url(<span class="stringliteral">r&#39;^propagationTest/$&#39;</span>, PropagationTestView.as_view(template_name=<span class="stringliteral">&quot;propagationTest.html&quot;</span>)),</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;]</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    <span class="comment">#url(r&#39;^login/$&#39;, auth_views.login, {&#39;template_name&#39;: &#39;login.html&#39;}, name=&#39;login&#39;),</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    url(<span class="stringliteral">r&#39;^login/$&#39;</span>, login, {<span class="stringliteral">&#39;template_name&#39;</span>: <span class="stringliteral">&#39;login.html&#39;</span>}, name=<span class="stringliteral">&#39;login&#39;</span>),</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    url(<span class="stringliteral">r&#39;^logout$&#39;</span>, logout, {<span class="stringliteral">&#39;template_name&#39;</span>: <span class="stringliteral">&#39;login.html&#39;</span>, }, name=<span class="stringliteral">&quot;logout&quot;</span>),</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    url(<span class="stringliteral">r&#39;^home/$&#39;</span>, GroundSegment.views.views.home, name=<span class="stringliteral">&#39;home&#39;</span>),</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    url(<span class="stringliteral">r&#39;^home/TlmyVarType/$&#39;</span>, TlmyVarTypeView.as_view(), name=<span class="stringliteral">&#39;TlmyVarType&#39;</span>),</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    url(<span class="stringliteral">r&#39;^about/$&#39;</span>, AboutView.as_view(template_name=<span class="stringliteral">&quot;about.html&quot;</span>)),</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    url(<span class="stringliteral">r&#39;^home/satellites/$&#39;</span>, SatelliteListView.as_view(),name=<span class="stringliteral">&quot;satelliteListView&quot;</span>),</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    url(<span class="stringliteral">r&#39;^home/satellites/sat_form/$&#39;</span>, GroundSegment.views.views.post_Sat, name=<span class="stringliteral">&quot;post_Sat&quot;</span>),</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    url(<span class="stringliteral">r&#39;^propagationTest/$&#39;</span>, PropagationTestView.as_view(template_name=<span class="stringliteral">&quot;propagationTest.html&quot;</span>)),</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    url(<span class="stringliteral">r&#39;^&#39;</span>, include(router.urls)),</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="comment">#url(r&#39;^simplePlot/(?P&lt;tvts&gt;[\w-]+)&#39;, SimplePlotView.as_view(template_name=&quot;simplePlot.html&quot;), name=&#39;SimplePlotView&#39;), </span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    url(<span class="stringliteral">r&#39;^simplePlot/(?P&lt;tvts&gt;[\w-]+)/(?P&lt;minutes&gt;(\d+))/$&#39;</span>, SimplePlotView.as_view(template_name=<span class="stringliteral">&quot;simplePlot.html&quot;</span>), name=<span class="stringliteral">&#39;SimplePlotView&#39;</span>), </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment">#(r&#39;^v1/(?P&lt;variable_a&gt;(\d+))/(?P&lt;variable_b&gt;(\d+))/$&#39;, r&#39;custom1.views.v1&#39;)</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    url(<span class="stringliteral">r&#39;^pasadas/$&#39;</span>, PassView.as_view(), name=<span class="stringliteral">&#39;PassView&#39;</span>),</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;]</div>
 </div><!-- fragment -->
-<p>Definition at line <a class="el" href="urls_8py_source.html#l00032">32</a> of file <a class="el" href="urls_8py_source.html">urls.py</a>.</p>
+<p>Definition at line <a class="el" href="urls_8py_source.html#l00052">52</a> of file <a class="el" href="urls_8py_source.html">urls.py</a>.</p>
 
 </div>
 </div>

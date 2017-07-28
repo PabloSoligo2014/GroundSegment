@@ -23,31 +23,73 @@ Collaboration diagram for Ground\+Segment.\+admin.\+Tmly\+Var\+Type\+Admin\+:\no
 \item 
 list \hyperlink{class_ground_segment_1_1admin_1_1_tmly_var_type_admin_aa4fbcc6eced9e293ccee1adc138c4728}{search\+\_\+fields} = \mbox{[}\textquotesingle{}code\textquotesingle{}\mbox{]}
 \item 
-tuple \hyperlink{class_ground_segment_1_1admin_1_1_tmly_var_type_admin_aa75f4221ac105012fa994d5022cafd6c}{list\+\_\+display} = (\textquotesingle{}code\textquotesingle{}, \textquotesingle{}description\textquotesingle{}, \textquotesingle{}satellite\textquotesingle{}, \textquotesingle{}last\+Cal\+F\+Value\textquotesingle{}, \textquotesingle{}last\+Update\textquotesingle{}, \textquotesingle{}var\+Type\textquotesingle{})
+tuple \hyperlink{class_ground_segment_1_1admin_1_1_tmly_var_type_admin_aa75f4221ac105012fa994d5022cafd6c}{list\+\_\+display} = (\textquotesingle{}code\textquotesingle{}, \textquotesingle{}description\textquotesingle{}, \textquotesingle{}satellite\textquotesingle{}, \textquotesingle{}last\+Cal\+S\+Value\textquotesingle{}, \textquotesingle{}unit\+Of\+Measurement\textquotesingle{}, \textquotesingle{}last\+Update\textquotesingle{},)
+\item 
+tuple \hyperlink{class_ground_segment_1_1admin_1_1_tmly_var_type_admin_aef2423842950903780b669c9d0118978}{fields} = (\textquotesingle{}code\textquotesingle{}, \textquotesingle{}description\textquotesingle{}, \textquotesingle{}satellite\textquotesingle{}, \textquotesingle{}limit\+Max\+Value\textquotesingle{}, \textquotesingle{}limit\+Min\+Value\textquotesingle{}, \textquotesingle{}max\+Value\textquotesingle{}, \textquotesingle{}min\+Value\textquotesingle{}, \textquotesingle{}var\+Type\textquotesingle{}, \textquotesingle{}alarm\+Type\textquotesingle{}, \textquotesingle{}calibration\+Method\textquotesingle{}, \textquotesingle{}frame\+Type\textquotesingle{}, \textquotesingle{}position\textquotesingle{}, \textquotesingle{}bits\+Len\textquotesingle{}, \textquotesingle{}unit\+Of\+Measurement\textquotesingle{})
+\item 
+tuple \hyperlink{class_ground_segment_1_1admin_1_1_tmly_var_type_admin_ae6c46f02641f1897cceac59963725ab4}{list\+\_\+filter} = (\textquotesingle{}satellite\textquotesingle{}, )
+\item 
+list \hyperlink{class_ground_segment_1_1admin_1_1_tmly_var_type_admin_a055edc4b536c6a55123bdf1f81b0120b}{inlines}
+\item 
+list \hyperlink{class_ground_segment_1_1admin_1_1_tmly_var_type_admin_a50f7af923ce7249b9dbffd30b1498a3f}{actions} = \mbox{[}\hyperlink{namespace_ground_segment_1_1admin_a682b5d47d4b4131c8fb49180a2c702c4}{show\+History\+Last50}, \hyperlink{namespace_ground_segment_1_1admin_acedf79afa40e10477e21ec210f122733}{show\+History\+Last\+Time}\mbox{]}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 
 
-Definition at line 120 of file admin.\+py.
+Definition at line 173 of file admin.\+py.
 
 
 
 \subsection{Member Data Documentation}
+\hypertarget{class_ground_segment_1_1admin_1_1_tmly_var_type_admin_a50f7af923ce7249b9dbffd30b1498a3f}{}\index{Ground\+Segment\+::admin\+::\+Tmly\+Var\+Type\+Admin@{Ground\+Segment\+::admin\+::\+Tmly\+Var\+Type\+Admin}!actions@{actions}}
+\index{actions@{actions}!Ground\+Segment\+::admin\+::\+Tmly\+Var\+Type\+Admin@{Ground\+Segment\+::admin\+::\+Tmly\+Var\+Type\+Admin}}
+\subsubsection[{actions}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+admin.\+Tmly\+Var\+Type\+Admin.\+actions = \mbox{[}{\bf show\+History\+Last50}, {\bf show\+History\+Last\+Time}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1admin_1_1_tmly_var_type_admin_a50f7af923ce7249b9dbffd30b1498a3f}
+
+
+Definition at line 183 of file admin.\+py.
+
+\hypertarget{class_ground_segment_1_1admin_1_1_tmly_var_type_admin_aef2423842950903780b669c9d0118978}{}\index{Ground\+Segment\+::admin\+::\+Tmly\+Var\+Type\+Admin@{Ground\+Segment\+::admin\+::\+Tmly\+Var\+Type\+Admin}!fields@{fields}}
+\index{fields@{fields}!Ground\+Segment\+::admin\+::\+Tmly\+Var\+Type\+Admin@{Ground\+Segment\+::admin\+::\+Tmly\+Var\+Type\+Admin}}
+\subsubsection[{fields}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+admin.\+Tmly\+Var\+Type\+Admin.\+fields = (\textquotesingle{}code\textquotesingle{}, \textquotesingle{}description\textquotesingle{}, \textquotesingle{}satellite\textquotesingle{}, \textquotesingle{}limit\+Max\+Value\textquotesingle{}, \textquotesingle{}limit\+Min\+Value\textquotesingle{}, \textquotesingle{}max\+Value\textquotesingle{}, \textquotesingle{}min\+Value\textquotesingle{}, \textquotesingle{}var\+Type\textquotesingle{}, \textquotesingle{}alarm\+Type\textquotesingle{}, \textquotesingle{}calibration\+Method\textquotesingle{}, \textquotesingle{}frame\+Type\textquotesingle{}, \textquotesingle{}position\textquotesingle{}, \textquotesingle{}bits\+Len\textquotesingle{}, \textquotesingle{}unit\+Of\+Measurement\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1admin_1_1_tmly_var_type_admin_aef2423842950903780b669c9d0118978}
+
+
+Definition at line 177 of file admin.\+py.
+
+\hypertarget{class_ground_segment_1_1admin_1_1_tmly_var_type_admin_a055edc4b536c6a55123bdf1f81b0120b}{}\index{Ground\+Segment\+::admin\+::\+Tmly\+Var\+Type\+Admin@{Ground\+Segment\+::admin\+::\+Tmly\+Var\+Type\+Admin}!inlines@{inlines}}
+\index{inlines@{inlines}!Ground\+Segment\+::admin\+::\+Tmly\+Var\+Type\+Admin@{Ground\+Segment\+::admin\+::\+Tmly\+Var\+Type\+Admin}}
+\subsubsection[{inlines}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+admin.\+Tmly\+Var\+Type\+Admin.\+inlines\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1admin_1_1_tmly_var_type_admin_a055edc4b536c6a55123bdf1f81b0120b}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 = [
+2         CoefficientInline,
+3     ]
+\end{DoxyCode}
+
+
+Definition at line 179 of file admin.\+py.
+
 \hypertarget{class_ground_segment_1_1admin_1_1_tmly_var_type_admin_aa75f4221ac105012fa994d5022cafd6c}{}\index{Ground\+Segment\+::admin\+::\+Tmly\+Var\+Type\+Admin@{Ground\+Segment\+::admin\+::\+Tmly\+Var\+Type\+Admin}!list\+\_\+display@{list\+\_\+display}}
 \index{list\+\_\+display@{list\+\_\+display}!Ground\+Segment\+::admin\+::\+Tmly\+Var\+Type\+Admin@{Ground\+Segment\+::admin\+::\+Tmly\+Var\+Type\+Admin}}
-\subsubsection[{list\+\_\+display}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+admin.\+Tmly\+Var\+Type\+Admin.\+list\+\_\+display = (\textquotesingle{}code\textquotesingle{}, \textquotesingle{}description\textquotesingle{}, \textquotesingle{}satellite\textquotesingle{}, \textquotesingle{}last\+Cal\+F\+Value\textquotesingle{}, \textquotesingle{}last\+Update\textquotesingle{}, \textquotesingle{}var\+Type\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1admin_1_1_tmly_var_type_admin_aa75f4221ac105012fa994d5022cafd6c}
+\subsubsection[{list\+\_\+display}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+admin.\+Tmly\+Var\+Type\+Admin.\+list\+\_\+display = (\textquotesingle{}code\textquotesingle{}, \textquotesingle{}description\textquotesingle{}, \textquotesingle{}satellite\textquotesingle{}, \textquotesingle{}last\+Cal\+S\+Value\textquotesingle{}, \textquotesingle{}unit\+Of\+Measurement\textquotesingle{}, \textquotesingle{}last\+Update\textquotesingle{},)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1admin_1_1_tmly_var_type_admin_aa75f4221ac105012fa994d5022cafd6c}
 
 
-Definition at line 123 of file admin.\+py.
+Definition at line 176 of file admin.\+py.
+
+\hypertarget{class_ground_segment_1_1admin_1_1_tmly_var_type_admin_ae6c46f02641f1897cceac59963725ab4}{}\index{Ground\+Segment\+::admin\+::\+Tmly\+Var\+Type\+Admin@{Ground\+Segment\+::admin\+::\+Tmly\+Var\+Type\+Admin}!list\+\_\+filter@{list\+\_\+filter}}
+\index{list\+\_\+filter@{list\+\_\+filter}!Ground\+Segment\+::admin\+::\+Tmly\+Var\+Type\+Admin@{Ground\+Segment\+::admin\+::\+Tmly\+Var\+Type\+Admin}}
+\subsubsection[{list\+\_\+filter}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+admin.\+Tmly\+Var\+Type\+Admin.\+list\+\_\+filter = (\textquotesingle{}satellite\textquotesingle{}, )\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1admin_1_1_tmly_var_type_admin_ae6c46f02641f1897cceac59963725ab4}
+
+
+Definition at line 178 of file admin.\+py.
 
 \hypertarget{class_ground_segment_1_1admin_1_1_tmly_var_type_admin_aa4fbcc6eced9e293ccee1adc138c4728}{}\index{Ground\+Segment\+::admin\+::\+Tmly\+Var\+Type\+Admin@{Ground\+Segment\+::admin\+::\+Tmly\+Var\+Type\+Admin}!search\+\_\+fields@{search\+\_\+fields}}
 \index{search\+\_\+fields@{search\+\_\+fields}!Ground\+Segment\+::admin\+::\+Tmly\+Var\+Type\+Admin@{Ground\+Segment\+::admin\+::\+Tmly\+Var\+Type\+Admin}}
 \subsubsection[{search\+\_\+fields}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+admin.\+Tmly\+Var\+Type\+Admin.\+search\+\_\+fields = \mbox{[}\textquotesingle{}code\textquotesingle{}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1admin_1_1_tmly_var_type_admin_aa4fbcc6eced9e293ccee1adc138c4728}
 
 
-Definition at line 122 of file admin.\+py.
+Definition at line 175 of file admin.\+py.
 
 
 

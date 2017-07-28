@@ -1,0 +1,8 @@
+<map id="GroundSegment.models.Command.Command.Command.setFailed" name="GroundSegment.models.Command.Command.Command.setFailed">
+<area shape="rect" id="node2" href="$class_ground_segment_1_1models_1_1_pasada_1_1_pasada.html#a248f194ba062a30f8def562434bc4f96" title="GroundSegment.models.Pasada.\lPasada.save" alt="" coords="294,5,509,47"/>
+<area shape="rect" id="node3" href="$class_ground_segment_1_1models_1_1_propagation_detail_1_1_propagation_detail.html#af4f51f559651a468eee06b81b2fafd98" title="GroundSegment.models.Propagation\lDetail.PropagationDetail.save" alt="" coords="284,71,519,112"/>
+<area shape="rect" id="node4" href="$class_ground_segment_1_1models_1_1_tle_1_1_tle.html#af9530755ce563a47367a4636878d63bb" title="GroundSegment.models.Tle.\lTle.save" alt="" coords="307,136,495,177"/>
+<area shape="rect" id="node7" href="$class_ground_segment_1_1models_1_1_u_h_f_raw_data_1_1_u_h_f_raw_data.html#a0ffa42aeb51aede4dba8bf88afa8e6b8" title="GroundSegment.models.UHFRaw\lData.UHFRawData.save" alt="" coords="291,201,512,243"/>
+<area shape="rect" id="node5" href="$class_ground_segment_1_1models_1_1_tle_1_1_tle.html#aaa9c5ef171cfeab993957d279ded8364" title="GroundSegment.models.Tle.\lTle.getLine1" alt="" coords="567,104,755,145"/>
+<area shape="rect" id="node6" href="$class_ground_segment_1_1models_1_1_tle_1_1_tle.html#a904163c4f0018e52ddbd06a520787c6b" title="GroundSegment.models.Tle.\lTle.getLine2" alt="" coords="567,169,755,211"/>
+</map>

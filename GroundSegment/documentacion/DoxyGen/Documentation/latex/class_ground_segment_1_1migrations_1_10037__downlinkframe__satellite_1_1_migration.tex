@@ -1,0 +1,74 @@
+\hypertarget{class_ground_segment_1_1migrations_1_10037__downlinkframe__satellite_1_1_migration}{}\section{Ground\+Segment.\+migrations.0037\+\_\+downlinkframe\+\_\+satellite.Migration Class Reference}
+\label{class_ground_segment_1_1migrations_1_10037__downlinkframe__satellite_1_1_migration}\index{Ground\+Segment.\+migrations.\+0037\+\_\+downlinkframe\+\_\+satellite.\+Migration@{Ground\+Segment.\+migrations.\+0037\+\_\+downlinkframe\+\_\+satellite.\+Migration}}
+
+
+Inheritance diagram for Ground\+Segment.\+migrations.0037\+\_\+downlinkframe\+\_\+satellite.Migration\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{class_ground_segment_1_1migrations_1_10037__downlinkframe__satellite_1_1_migration__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ground\+Segment.\+migrations.0037\+\_\+downlinkframe\+\_\+satellite.Migration\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{class_ground_segment_1_1migrations_1_10037__downlinkframe__satellite_1_1_migration__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+list \hyperlink{class_ground_segment_1_1migrations_1_10037__downlinkframe__satellite_1_1_migration_a98a5cecd83665cbe3312a0b9ec9a001e}{dependencies}
+\item 
+list \hyperlink{class_ground_segment_1_1migrations_1_10037__downlinkframe__satellite_1_1_migration_a5d0cc4a7feefa1ecf4c44e655d2f58af}{operations}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 9 of file 0037\+\_\+downlinkframe\+\_\+satellite.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_ground_segment_1_1migrations_1_10037__downlinkframe__satellite_1_1_migration_a98a5cecd83665cbe3312a0b9ec9a001e}{}\index{Ground\+Segment\+::migrations\+::0037\+\_\+downlinkframe\+\_\+satellite\+::\+Migration@{Ground\+Segment\+::migrations\+::0037\+\_\+downlinkframe\+\_\+satellite\+::\+Migration}!dependencies@{dependencies}}
+\index{dependencies@{dependencies}!Ground\+Segment\+::migrations\+::0037\+\_\+downlinkframe\+\_\+satellite\+::\+Migration@{Ground\+Segment\+::migrations\+::0037\+\_\+downlinkframe\+\_\+satellite\+::\+Migration}}
+\subsubsection[{dependencies}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+migrations.\+0037\+\_\+downlinkframe\+\_\+satellite.\+Migration.\+dependencies\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1migrations_1_10037__downlinkframe__satellite_1_1_migration_a98a5cecd83665cbe3312a0b9ec9a001e}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 = [
+2         (\textcolor{stringliteral}{'GroundSegment'}, \textcolor{stringliteral}{'0036\_uhfrawdata\_datalen'}),
+3     ]
+\end{DoxyCode}
+
+
+Definition at line 11 of file 0037\+\_\+downlinkframe\+\_\+satellite.\+py.
+
+\hypertarget{class_ground_segment_1_1migrations_1_10037__downlinkframe__satellite_1_1_migration_a5d0cc4a7feefa1ecf4c44e655d2f58af}{}\index{Ground\+Segment\+::migrations\+::0037\+\_\+downlinkframe\+\_\+satellite\+::\+Migration@{Ground\+Segment\+::migrations\+::0037\+\_\+downlinkframe\+\_\+satellite\+::\+Migration}!operations@{operations}}
+\index{operations@{operations}!Ground\+Segment\+::migrations\+::0037\+\_\+downlinkframe\+\_\+satellite\+::\+Migration@{Ground\+Segment\+::migrations\+::0037\+\_\+downlinkframe\+\_\+satellite\+::\+Migration}}
+\subsubsection[{operations}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+migrations.\+0037\+\_\+downlinkframe\+\_\+satellite.\+Migration.\+operations\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1migrations_1_10037__downlinkframe__satellite_1_1_migration_a5d0cc4a7feefa1ecf4c44e655d2f58af}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 = [
+2         migrations.AddField(
+3             model\_name=\textcolor{stringliteral}{'downlinkframe'},
+4             name=\textcolor{stringliteral}{'satellite'},
+5             field=models.ForeignKey(default=1, on\_delete=django.db.models.deletion.CASCADE, related\_name=\textcolor{stringliteral}{'
+      downloadlinkFrames'}, to=\textcolor{stringliteral}{'GroundSegment.Satellite'}),
+6             preserve\_default=\textcolor{keyword}{False},
+7         ),
+8     ]
+\end{DoxyCode}
+
+
+Definition at line 15 of file 0037\+\_\+downlinkframe\+\_\+satellite.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ubuntumate/git/\+Ground\+Segment/\+Ground\+Segment/\+Ground\+Segment/migrations/\hyperlink{0037__downlinkframe__satellite_8py}{0037\+\_\+downlinkframe\+\_\+satellite.\+py}\end{DoxyCompactItemize}

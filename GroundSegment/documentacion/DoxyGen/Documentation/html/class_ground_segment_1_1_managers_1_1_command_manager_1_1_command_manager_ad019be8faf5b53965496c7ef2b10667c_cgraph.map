@@ -1,0 +1,4 @@
+<map id="GroundSegment.Managers.CommandManager.CommandManager.expirateAll" name="GroundSegment.Managers.CommandManager.CommandManager.expirateAll">
+<area shape="rect" id="node2" href="$class_ground_segment_1_1_managers_1_1_command_manager_1_1_command_manager.html#a17a09b602e86f74c74cfd1ebe3dfe832" title="GroundSegment.Managers.Command\lManager.CommandManager.getPending\lCommands" alt="" coords="304,5,559,61"/>
+<area shape="rect" id="node3" href="$class_ground_segment_1_1_managers_1_1_command_manager_1_1_command_manager.html#a2c517875a09510c5d0d77117c673e2e0" title="GroundSegment.Managers.Command\lManager.CommandManager._\l_setExpiredCommands" alt="" coords="607,5,848,61"/>
+</map>

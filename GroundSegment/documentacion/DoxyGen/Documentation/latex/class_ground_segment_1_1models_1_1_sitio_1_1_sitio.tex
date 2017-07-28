@@ -22,24 +22,34 @@ Collaboration diagram for Ground\+Segment.\+models.\+Sitio.\+Sitio\+:\nopagebrea
 \begin{DoxyCompactItemize}
 \item 
 def \hyperlink{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_a76b0e7facd2de38df048e845ebd100ae}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_a7064b2318b27416ccbe44acfb96a5c32}{get\+Pass} (self, satcode, idate)
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_ac23a61be5e990c70e7ffe19ac108d1ca}{get\+As\+Ephem\+Observer} (self)
+\item 
+def \hyperlink{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_adcc0813ee9504959117d74eb68ff8a80}{get\+Passes} (self, satellite, afrom, ato)
 \end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 tuple \hyperlink{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_ad9bfe4bfea9a9a600a9cf0a17dfe2abf}{name} = models.\+Char\+Field(\char`\"{}Nombre del \hyperlink{class_ground_segment_1_1models_1_1_sitio_1_1_sitio}{Sitio}\char`\"{}, max\+\_\+length=24, unique=True)
 \item 
-tuple \hyperlink{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_a981bccda8fdc7772f7ce19d23e3c6bd7}{lat} = models.\+Float\+Field(\textquotesingle{}Latitud\textquotesingle{}, help\+\_\+text=\textquotesingle{}\mbox{[}Dato en Grados Decimales\mbox{]}\textquotesingle{}, unique=True)
+tuple \hyperlink{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_a981bccda8fdc7772f7ce19d23e3c6bd7}{lat} = models.\+Float\+Field(\textquotesingle{}Latitud\textquotesingle{}, help\+\_\+text=\textquotesingle{}\mbox{[}Dato en Grados Decimales\mbox{]}\textquotesingle{}, validators=\mbox{[}validate\+\_\+lat\mbox{]})
 \item 
-tuple \hyperlink{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_a58939f0d8d5fff5d4807f745c6ba3335}{lon} = models.\+Float\+Field(\textquotesingle{}Longitud\textquotesingle{}, help\+\_\+text=\textquotesingle{}\mbox{[}Grados Decimales\mbox{]}\textquotesingle{}, unique=True)
+tuple \hyperlink{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_a58939f0d8d5fff5d4807f745c6ba3335}{lon} = models.\+Float\+Field(\textquotesingle{}Longitud\textquotesingle{}, help\+\_\+text=\textquotesingle{}\mbox{[}Grados Decimales\mbox{]}\textquotesingle{})
 \item 
-tuple \hyperlink{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_a0345de18d6f8cc930f291c639a915366}{h} = models.\+Float\+Field(\textquotesingle{}altura\textquotesingle{}, help\+\_\+text=\textquotesingle{}\mbox{[}metros\mbox{]}\textquotesingle{}, unique=True)
+tuple \hyperlink{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_a0345de18d6f8cc930f291c639a915366}{h} = models.\+Float\+Field(\textquotesingle{}Altura\textquotesingle{}, help\+\_\+text=\textquotesingle{}\mbox{[}metros\mbox{]}\textquotesingle{})
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_ae26c1d2a62cbe1a3dcae871012c0d5bd}{mask\+Elev} = models.\+Float\+Field(\textquotesingle{}Mascara de Elevacion\textquotesingle{}, help\+\_\+text=\textquotesingle{}\mbox{[}grados\mbox{]}\textquotesingle{}, default=0.\+0)
+\item 
+tuple \hyperlink{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_a2322dc336db534f7eec708e7e17b732f}{state} = models.\+Foreign\+Key(\hyperlink{class_ground_segment_1_1models_1_1_state_1_1_state}{State},related\+\_\+name=\textquotesingle{}sitios\textquotesingle{}, null=True)
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 
 
-Definition at line 10 of file Sitio.\+py.
+Definition at line 18 of file Sitio.\+py.
 
 
 
@@ -53,38 +63,105 @@ Definition at line 10 of file Sitio.\+py.
 )}\label{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_a76b0e7facd2de38df048e845ebd100ae}
 
 
-Definition at line 16 of file Sitio.\+py.
+Definition at line 27 of file Sitio.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_ac23a61be5e990c70e7ffe19ac108d1ca}{}\index{Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio@{Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio}!get\+As\+Ephem\+Observer@{get\+As\+Ephem\+Observer}}
+\index{get\+As\+Ephem\+Observer@{get\+As\+Ephem\+Observer}!Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio@{Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio}}
+\subsubsection[{get\+As\+Ephem\+Observer}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Sitio.\+Sitio.\+get\+As\+Ephem\+Observer (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_ac23a61be5e990c70e7ffe19ac108d1ca}
+
+
+Definition at line 80 of file Sitio.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_a7064b2318b27416ccbe44acfb96a5c32}{}\index{Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio@{Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio}!get\+Pass@{get\+Pass}}
+\index{get\+Pass@{get\+Pass}!Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio@{Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio}}
+\subsubsection[{get\+Pass}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Sitio.\+Sitio.\+get\+Pass (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{satcode, }
+\item[{}]{idate}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_a7064b2318b27416ccbe44acfb96a5c32}
+
+
+Definition at line 30 of file Sitio.\+py.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_a7064b2318b27416ccbe44acfb96a5c32_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_adcc0813ee9504959117d74eb68ff8a80}{}\index{Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio@{Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio}!get\+Passes@{get\+Passes}}
+\index{get\+Passes@{get\+Passes}!Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio@{Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio}}
+\subsubsection[{get\+Passes}]{\setlength{\rightskip}{0pt plus 5cm}def Ground\+Segment.\+models.\+Sitio.\+Sitio.\+get\+Passes (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{satellite, }
+\item[{}]{afrom, }
+\item[{}]{ato}
+\end{DoxyParamCaption}
+)}\label{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_adcc0813ee9504959117d74eb68ff8a80}
+\begin{DoxyVerb}Obtiene la tabla de pasadas completa para un rango, las tablas se generar en bloques
+de un dia si ya fue creada y con el ultimo TLE disponible
+retorna el resultado pero no recalcula si ya fue calculado antes
+\end{DoxyVerb}
+ 
+
+Definition at line 90 of file Sitio.\+py.
 
 
 
 \subsection{Member Data Documentation}
 \hypertarget{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_a0345de18d6f8cc930f291c639a915366}{}\index{Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio@{Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio}!h@{h}}
 \index{h@{h}!Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio@{Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio}}
-\subsubsection[{h}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Sitio.\+Sitio.\+h = models.\+Float\+Field(\textquotesingle{}altura\textquotesingle{}, help\+\_\+text=\textquotesingle{}\mbox{[}metros\mbox{]}\textquotesingle{}, unique=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_a0345de18d6f8cc930f291c639a915366}
+\subsubsection[{h}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Sitio.\+Sitio.\+h = models.\+Float\+Field(\textquotesingle{}Altura\textquotesingle{}, help\+\_\+text=\textquotesingle{}\mbox{[}metros\mbox{]}\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_a0345de18d6f8cc930f291c639a915366}
 
 
-Definition at line 14 of file Sitio.\+py.
+Definition at line 22 of file Sitio.\+py.
 
 \hypertarget{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_a981bccda8fdc7772f7ce19d23e3c6bd7}{}\index{Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio@{Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio}!lat@{lat}}
 \index{lat@{lat}!Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio@{Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio}}
-\subsubsection[{lat}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Sitio.\+Sitio.\+lat = models.\+Float\+Field(\textquotesingle{}Latitud\textquotesingle{}, help\+\_\+text=\textquotesingle{}\mbox{[}Dato en Grados Decimales\mbox{]}\textquotesingle{}, unique=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_a981bccda8fdc7772f7ce19d23e3c6bd7}
+\subsubsection[{lat}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Sitio.\+Sitio.\+lat = models.\+Float\+Field(\textquotesingle{}Latitud\textquotesingle{}, help\+\_\+text=\textquotesingle{}\mbox{[}Dato en Grados Decimales\mbox{]}\textquotesingle{}, validators=\mbox{[}validate\+\_\+lat\mbox{]})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_a981bccda8fdc7772f7ce19d23e3c6bd7}
 
 
-Definition at line 12 of file Sitio.\+py.
+Definition at line 20 of file Sitio.\+py.
 
 \hypertarget{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_a58939f0d8d5fff5d4807f745c6ba3335}{}\index{Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio@{Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio}!lon@{lon}}
 \index{lon@{lon}!Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio@{Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio}}
-\subsubsection[{lon}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Sitio.\+Sitio.\+lon = models.\+Float\+Field(\textquotesingle{}Longitud\textquotesingle{}, help\+\_\+text=\textquotesingle{}\mbox{[}Grados Decimales\mbox{]}\textquotesingle{}, unique=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_a58939f0d8d5fff5d4807f745c6ba3335}
+\subsubsection[{lon}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Sitio.\+Sitio.\+lon = models.\+Float\+Field(\textquotesingle{}Longitud\textquotesingle{}, help\+\_\+text=\textquotesingle{}\mbox{[}Grados Decimales\mbox{]}\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_a58939f0d8d5fff5d4807f745c6ba3335}
 
 
-Definition at line 13 of file Sitio.\+py.
+Definition at line 21 of file Sitio.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_ae26c1d2a62cbe1a3dcae871012c0d5bd}{}\index{Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio@{Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio}!mask\+Elev@{mask\+Elev}}
+\index{mask\+Elev@{mask\+Elev}!Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio@{Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio}}
+\subsubsection[{mask\+Elev}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Sitio.\+Sitio.\+mask\+Elev = models.\+Float\+Field(\textquotesingle{}Mascara de Elevacion\textquotesingle{}, help\+\_\+text=\textquotesingle{}\mbox{[}grados\mbox{]}\textquotesingle{}, default=0.\+0)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_ae26c1d2a62cbe1a3dcae871012c0d5bd}
+
+
+Definition at line 23 of file Sitio.\+py.
 
 \hypertarget{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_ad9bfe4bfea9a9a600a9cf0a17dfe2abf}{}\index{Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio@{Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio}!name@{name}}
 \index{name@{name}!Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio@{Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio}}
 \subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Sitio.\+Sitio.\+name = models.\+Char\+Field(\char`\"{}Nombre del {\bf Sitio}\char`\"{}, max\+\_\+length=24, unique=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_ad9bfe4bfea9a9a600a9cf0a17dfe2abf}
 
 
-Definition at line 11 of file Sitio.\+py.
+Definition at line 19 of file Sitio.\+py.
+
+\hypertarget{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_a2322dc336db534f7eec708e7e17b732f}{}\index{Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio@{Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio}!state@{state}}
+\index{state@{state}!Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio@{Ground\+Segment\+::models\+::\+Sitio\+::\+Sitio}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}tuple Ground\+Segment.\+models.\+Sitio.\+Sitio.\+state = models.\+Foreign\+Key({\bf State},related\+\_\+name=\textquotesingle{}sitios\textquotesingle{}, null=True)\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1models_1_1_sitio_1_1_sitio_a2322dc336db534f7eec708e7e17b732f}
+
+
+Definition at line 25 of file Sitio.\+py.
 
 
 

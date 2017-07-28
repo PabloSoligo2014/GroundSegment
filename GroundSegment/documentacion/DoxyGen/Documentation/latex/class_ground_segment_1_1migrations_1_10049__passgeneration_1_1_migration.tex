@@ -1,0 +1,82 @@
+\hypertarget{class_ground_segment_1_1migrations_1_10049__passgeneration_1_1_migration}{}\section{Ground\+Segment.\+migrations.0049\+\_\+passgeneration.Migration Class Reference}
+\label{class_ground_segment_1_1migrations_1_10049__passgeneration_1_1_migration}\index{Ground\+Segment.\+migrations.\+0049\+\_\+passgeneration.\+Migration@{Ground\+Segment.\+migrations.\+0049\+\_\+passgeneration.\+Migration}}
+
+
+Inheritance diagram for Ground\+Segment.\+migrations.0049\+\_\+passgeneration.Migration\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_ground_segment_1_1migrations_1_10049__passgeneration_1_1_migration__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ground\+Segment.\+migrations.0049\+\_\+passgeneration.Migration\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_ground_segment_1_1migrations_1_10049__passgeneration_1_1_migration__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+list \hyperlink{class_ground_segment_1_1migrations_1_10049__passgeneration_1_1_migration_a6c3cd25763739883f8508906ccaa84df}{dependencies}
+\item 
+list \hyperlink{class_ground_segment_1_1migrations_1_10049__passgeneration_1_1_migration_a6c8adae701c04c70c5738eca3462cce1}{operations}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 9 of file 0049\+\_\+passgeneration.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_ground_segment_1_1migrations_1_10049__passgeneration_1_1_migration_a6c3cd25763739883f8508906ccaa84df}{}\index{Ground\+Segment\+::migrations\+::0049\+\_\+passgeneration\+::\+Migration@{Ground\+Segment\+::migrations\+::0049\+\_\+passgeneration\+::\+Migration}!dependencies@{dependencies}}
+\index{dependencies@{dependencies}!Ground\+Segment\+::migrations\+::0049\+\_\+passgeneration\+::\+Migration@{Ground\+Segment\+::migrations\+::0049\+\_\+passgeneration\+::\+Migration}}
+\subsubsection[{dependencies}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+migrations.\+0049\+\_\+passgeneration.\+Migration.\+dependencies\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1migrations_1_10049__passgeneration_1_1_migration_a6c3cd25763739883f8508906ccaa84df}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 = [
+2         (\textcolor{stringliteral}{'GroundSegment'}, \textcolor{stringliteral}{'0048\_tle\_epoch'}),
+3     ]
+\end{DoxyCode}
+
+
+Definition at line 11 of file 0049\+\_\+passgeneration.\+py.
+
+\hypertarget{class_ground_segment_1_1migrations_1_10049__passgeneration_1_1_migration_a6c8adae701c04c70c5738eca3462cce1}{}\index{Ground\+Segment\+::migrations\+::0049\+\_\+passgeneration\+::\+Migration@{Ground\+Segment\+::migrations\+::0049\+\_\+passgeneration\+::\+Migration}!operations@{operations}}
+\index{operations@{operations}!Ground\+Segment\+::migrations\+::0049\+\_\+passgeneration\+::\+Migration@{Ground\+Segment\+::migrations\+::0049\+\_\+passgeneration\+::\+Migration}}
+\subsubsection[{operations}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+migrations.\+0049\+\_\+passgeneration.\+Migration.\+operations\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1migrations_1_10049__passgeneration_1_1_migration_a6c8adae701c04c70c5738eca3462cce1}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 = [
+2         migrations.CreateModel(
+3             name=\textcolor{stringliteral}{'PassGeneration'},
+4             fields=[
+5                 (\textcolor{stringliteral}{'id'}, models.AutoField(auto\_created=\textcolor{keyword}{True}, primary\_key=\textcolor{keyword}{True}, serialize=\textcolor{keyword}{False}, verbose\_name=\textcolor{stringliteral}{
+      'ID'})),
+6                 (\textcolor{stringliteral}{'created'}, models.DateTimeField(auto\_now\_add=\textcolor{keyword}{True})),
+7                 (\textcolor{stringliteral}{'day'}, models.DateField(verbose\_name=\textcolor{stringliteral}{'Fecha que se toma en consideracion'})),
+8                 (\textcolor{stringliteral}{'satellite'}, models.ForeignKey(on\_delete=django.db.models.deletion.CASCADE, related\_name=\textcolor{stringliteral}{'
+      passGenerations'}, to=\textcolor{stringliteral}{'GroundSegment.Satellite'})),
+9                 (\textcolor{stringliteral}{'sitio'}, models.ForeignKey(on\_delete=django.db.models.deletion.CASCADE, related\_name=\textcolor{stringliteral}{'
+      passGenerations'}, to=\textcolor{stringliteral}{'GroundSegment.Sitio'})),
+10                 (\textcolor{stringliteral}{'tle'}, models.ForeignKey(on\_delete=django.db.models.deletion.CASCADE, related\_name=\textcolor{stringliteral}{'
+      passGenerations'}, to=\textcolor{stringliteral}{'GroundSegment.Tle'})),
+11             ],
+12         ),
+13     ]
+\end{DoxyCode}
+
+
+Definition at line 15 of file 0049\+\_\+passgeneration.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ubuntumate/git/\+Ground\+Segment/\+Ground\+Segment/\+Ground\+Segment/migrations/\hyperlink{0049__passgeneration_8py}{0049\+\_\+passgeneration.\+py}\end{DoxyCompactItemize}

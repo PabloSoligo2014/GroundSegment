@@ -1,0 +1,79 @@
+\hypertarget{class_ground_segment_1_1migrations_1_10025__coefficient_1_1_migration}{}\section{Ground\+Segment.\+migrations.0025\+\_\+coefficient.Migration Class Reference}
+\label{class_ground_segment_1_1migrations_1_10025__coefficient_1_1_migration}\index{Ground\+Segment.\+migrations.\+0025\+\_\+coefficient.\+Migration@{Ground\+Segment.\+migrations.\+0025\+\_\+coefficient.\+Migration}}
+
+
+Inheritance diagram for Ground\+Segment.\+migrations.0025\+\_\+coefficient.Migration\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_ground_segment_1_1migrations_1_10025__coefficient_1_1_migration__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ground\+Segment.\+migrations.0025\+\_\+coefficient.Migration\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_ground_segment_1_1migrations_1_10025__coefficient_1_1_migration__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+list \hyperlink{class_ground_segment_1_1migrations_1_10025__coefficient_1_1_migration_a0fe2e11a6a8ed0749a1a3fa79ce7d214}{dependencies}
+\item 
+list \hyperlink{class_ground_segment_1_1migrations_1_10025__coefficient_1_1_migration_adc3ba9fae9d0b0167764a03d71bffe40}{operations}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 9 of file 0025\+\_\+coefficient.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_ground_segment_1_1migrations_1_10025__coefficient_1_1_migration_a0fe2e11a6a8ed0749a1a3fa79ce7d214}{}\index{Ground\+Segment\+::migrations\+::0025\+\_\+coefficient\+::\+Migration@{Ground\+Segment\+::migrations\+::0025\+\_\+coefficient\+::\+Migration}!dependencies@{dependencies}}
+\index{dependencies@{dependencies}!Ground\+Segment\+::migrations\+::0025\+\_\+coefficient\+::\+Migration@{Ground\+Segment\+::migrations\+::0025\+\_\+coefficient\+::\+Migration}}
+\subsubsection[{dependencies}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+migrations.\+0025\+\_\+coefficient.\+Migration.\+dependencies\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1migrations_1_10025__coefficient_1_1_migration_a0fe2e11a6a8ed0749a1a3fa79ce7d214}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 = [
+2         (\textcolor{stringliteral}{'GroundSegment'}, \textcolor{stringliteral}{'0024\_auto\_20161204\_1335'}),
+3     ]
+\end{DoxyCode}
+
+
+Definition at line 11 of file 0025\+\_\+coefficient.\+py.
+
+\hypertarget{class_ground_segment_1_1migrations_1_10025__coefficient_1_1_migration_adc3ba9fae9d0b0167764a03d71bffe40}{}\index{Ground\+Segment\+::migrations\+::0025\+\_\+coefficient\+::\+Migration@{Ground\+Segment\+::migrations\+::0025\+\_\+coefficient\+::\+Migration}!operations@{operations}}
+\index{operations@{operations}!Ground\+Segment\+::migrations\+::0025\+\_\+coefficient\+::\+Migration@{Ground\+Segment\+::migrations\+::0025\+\_\+coefficient\+::\+Migration}}
+\subsubsection[{operations}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+migrations.\+0025\+\_\+coefficient.\+Migration.\+operations\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1migrations_1_10025__coefficient_1_1_migration_adc3ba9fae9d0b0167764a03d71bffe40}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 = [
+2         migrations.CreateModel(
+3             name=\textcolor{stringliteral}{'Coefficient'},
+4             fields=[
+5                 (\textcolor{stringliteral}{'id'}, models.AutoField(auto\_created=\textcolor{keyword}{True}, primary\_key=\textcolor{keyword}{True}, serialize=\textcolor{keyword}{False}, verbose\_name=\textcolor{stringliteral}{
+      'ID'})),
+6                 (\textcolor{stringliteral}{'code'}, models.CharField(help\_text=\textcolor{stringliteral}{'Codigo del coeficiente'}, max\_length=24, verbose\_name=\textcolor{stringliteral}{'
+      Codigo del coeficiente'})),
+7                 (\textcolor{stringliteral}{'value'}, models.FloatField(default=0.0)),
+8                 (\textcolor{stringliteral}{'tlmyVarType'}, models.ForeignKey(on\_delete=django.db.models.deletion.CASCADE, related\_name
+      =\textcolor{stringliteral}{'coefficients'}, to=\textcolor{stringliteral}{'GroundSegment.TlmyVarType'})),
+9             ],
+10         ),
+11     ]
+\end{DoxyCode}
+
+
+Definition at line 15 of file 0025\+\_\+coefficient.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ubuntumate/git/\+Ground\+Segment/\+Ground\+Segment/\+Ground\+Segment/migrations/\hyperlink{0025__coefficient_8py}{0025\+\_\+coefficient.\+py}\end{DoxyCompactItemize}

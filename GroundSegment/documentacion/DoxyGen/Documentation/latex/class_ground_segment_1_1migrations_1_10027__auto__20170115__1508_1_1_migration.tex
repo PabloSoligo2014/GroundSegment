@@ -1,0 +1,88 @@
+\hypertarget{class_ground_segment_1_1migrations_1_10027__auto__20170115__1508_1_1_migration}{}\section{Ground\+Segment.\+migrations.0027\+\_\+auto\+\_\+20170115\+\_\+1508.Migration Class Reference}
+\label{class_ground_segment_1_1migrations_1_10027__auto__20170115__1508_1_1_migration}\index{Ground\+Segment.\+migrations.\+0027\+\_\+auto\+\_\+20170115\+\_\+1508.\+Migration@{Ground\+Segment.\+migrations.\+0027\+\_\+auto\+\_\+20170115\+\_\+1508.\+Migration}}
+
+
+Inheritance diagram for Ground\+Segment.\+migrations.0027\+\_\+auto\+\_\+20170115\+\_\+1508.Migration\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_ground_segment_1_1migrations_1_10027__auto__20170115__1508_1_1_migration__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ground\+Segment.\+migrations.0027\+\_\+auto\+\_\+20170115\+\_\+1508.Migration\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_ground_segment_1_1migrations_1_10027__auto__20170115__1508_1_1_migration__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+list \hyperlink{class_ground_segment_1_1migrations_1_10027__auto__20170115__1508_1_1_migration_a09e7dc8cb53200497987630b5304a636}{dependencies}
+\item 
+list \hyperlink{class_ground_segment_1_1migrations_1_10027__auto__20170115__1508_1_1_migration_ac353078e3c9d509dc20dc02024379438}{operations}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 8 of file 0027\+\_\+auto\+\_\+20170115\+\_\+1508.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_ground_segment_1_1migrations_1_10027__auto__20170115__1508_1_1_migration_a09e7dc8cb53200497987630b5304a636}{}\index{Ground\+Segment\+::migrations\+::0027\+\_\+auto\+\_\+20170115\+\_\+1508\+::\+Migration@{Ground\+Segment\+::migrations\+::0027\+\_\+auto\+\_\+20170115\+\_\+1508\+::\+Migration}!dependencies@{dependencies}}
+\index{dependencies@{dependencies}!Ground\+Segment\+::migrations\+::0027\+\_\+auto\+\_\+20170115\+\_\+1508\+::\+Migration@{Ground\+Segment\+::migrations\+::0027\+\_\+auto\+\_\+20170115\+\_\+1508\+::\+Migration}}
+\subsubsection[{dependencies}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+migrations.\+0027\+\_\+auto\+\_\+20170115\+\_\+1508.\+Migration.\+dependencies\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1migrations_1_10027__auto__20170115__1508_1_1_migration_a09e7dc8cb53200497987630b5304a636}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 = [
+2         (\textcolor{stringliteral}{'GroundSegment'}, \textcolor{stringliteral}{'0026\_delete\_site'}),
+3     ]
+\end{DoxyCode}
+
+
+Definition at line 10 of file 0027\+\_\+auto\+\_\+20170115\+\_\+1508.\+py.
+
+\hypertarget{class_ground_segment_1_1migrations_1_10027__auto__20170115__1508_1_1_migration_ac353078e3c9d509dc20dc02024379438}{}\index{Ground\+Segment\+::migrations\+::0027\+\_\+auto\+\_\+20170115\+\_\+1508\+::\+Migration@{Ground\+Segment\+::migrations\+::0027\+\_\+auto\+\_\+20170115\+\_\+1508\+::\+Migration}!operations@{operations}}
+\index{operations@{operations}!Ground\+Segment\+::migrations\+::0027\+\_\+auto\+\_\+20170115\+\_\+1508\+::\+Migration@{Ground\+Segment\+::migrations\+::0027\+\_\+auto\+\_\+20170115\+\_\+1508\+::\+Migration}}
+\subsubsection[{operations}]{\setlength{\rightskip}{0pt plus 5cm}list Ground\+Segment.\+migrations.\+0027\+\_\+auto\+\_\+20170115\+\_\+1508.\+Migration.\+operations\hspace{0.3cm}{\ttfamily [static]}}\label{class_ground_segment_1_1migrations_1_10027__auto__20170115__1508_1_1_migration_ac353078e3c9d509dc20dc02024379438}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 = [
+2         migrations.AddField(
+3             model\_name=\textcolor{stringliteral}{'sitio'},
+4             name=\textcolor{stringliteral}{'maskElev'},
+5             field=models.FloatField(default=0.0, help\_text=\textcolor{stringliteral}{'[grados]'}, verbose\_name=\textcolor{stringliteral}{'Mascara de Elevacion'})
+      ,
+6         ),
+7         migrations.AlterField(
+8             model\_name=\textcolor{stringliteral}{'sitio'},
+9             name=\textcolor{stringliteral}{'h'},
+10             field=models.FloatField(help\_text=\textcolor{stringliteral}{'[metros]'}, verbose\_name=\textcolor{stringliteral}{'Altura'}),
+11         ),
+12         migrations.AlterField(
+13             model\_name=\textcolor{stringliteral}{'sitio'},
+14             name=\textcolor{stringliteral}{'lat'},
+15             field=models.FloatField(help\_text=\textcolor{stringliteral}{'[Dato en Grados Decimales]'}, verbose\_name=\textcolor{stringliteral}{'Latitud'}),
+16         ),
+17         migrations.AlterField(
+18             model\_name=\textcolor{stringliteral}{'sitio'},
+19             name=\textcolor{stringliteral}{'lon'},
+20             field=models.FloatField(help\_text=\textcolor{stringliteral}{'[Grados Decimales]'}, verbose\_name=\textcolor{stringliteral}{'Longitud'}),
+21         ),
+22     ]
+\end{DoxyCode}
+
+
+Definition at line 14 of file 0027\+\_\+auto\+\_\+20170115\+\_\+1508.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ubuntumate/git/\+Ground\+Segment/\+Ground\+Segment/\+Ground\+Segment/migrations/\hyperlink{0027__auto__20170115__1508_8py}{0027\+\_\+auto\+\_\+20170115\+\_\+1508.\+py}\end{DoxyCompactItemize}
