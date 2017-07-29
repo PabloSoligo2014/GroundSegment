@@ -26,7 +26,7 @@ from GroundSegment.models.Notification.MessageTemplate import MessageTemplate
 from GroundSegment.models.Notification.Notification import Notification
 from GroundSegment.models.Notification.NotificationType import NotificationType
 from GroundSegment.models.TlmyVarType import TlmyVarType
-from GroundSegment.models.TmlyVar import TmlyVar
+from GroundSegment.models.TlmyVar import TlmyVar
 
 from GroundSegment.models.Calibration import Calibration
 from GroundSegment.models.SubSystem import SubSystem
@@ -198,7 +198,7 @@ admin.site.register(TlmyVarType ,TmlyVarTypeAdmin)
 
 class TmlyVarAdmin(admin.ModelAdmin):
     pass
-admin.site.register(TmlyVar ,TmlyVarAdmin)
+admin.site.register(TlmyVar ,TmlyVarAdmin)
 
 
 class CalibrationAdmin(admin.ModelAdmin):

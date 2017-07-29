@@ -12,7 +12,7 @@ from GroundSegment.models.Notification.MessageTemplate import MessageTemplate
 from GroundSegment.models.Notification.NotificationType import NotificationType
 from GroundSegment.models.Notification.AlarmTypeNotificationType import AlarmTypeNotificationType
 from GroundSegment.models.TlmyVarType import TlmyVarType
-from GroundSegment.models.TmlyVar import TmlyVar
+from GroundSegment.models.TlmyVar import TlmyVar
 from GroundSegment.models.UHFRawData import UHFRawData
 from GroundSegment.models.SubSystem import SubSystem
 from GroundSegment.models.Calibration import Calibration

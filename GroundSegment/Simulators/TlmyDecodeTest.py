@@ -43,7 +43,7 @@ application = get_wsgi_application()
 from GroundSegment.models.Calibration import Calibration
 from GroundSegment.models.Satellite import Satellite
 from GroundSegment.models.TlmyVarType import TlmyVarType
-from GroundSegment.models.TmlyVar import TmlyVar
+from GroundSegment.models.TmlyVar import TlmyVar
 from GroundSegment.models.UHFRawData import UHFRawData
 import struct
 from Simulators.ax25 import printpacket

@@ -194,7 +194,9 @@ class TlmyVarType(models.Model):
 	  self.lastRawValue = raw
 	  if self.calibrationMethod: 
 	      if not self.calibrationLogic:
-                    klass = globals()[self.calibrationMethod.aClass]
+                    klass = 
+                      globals()
+                      [self.calibrationMethod.aClass]
                     instance = klass()
                     methodToCall = 
 		      getattr(instance, 
@@ -336,7 +338,9 @@ if sat.tmlyVarType.get(code="obcT1").getValue()<10 and
 
 %------------------------------------------------
 
-\section{Discussion}		
+\section{Discussion}	
+
+Probando adicionales	
 
 %\subsection{Subsection One}
 

@@ -70,12 +70,12 @@ application = get_wsgi_application()
 from GroundSegment.models.Calibration import Calibration
 from GroundSegment.models.Satellite import Satellite
 from GroundSegment.models.TlmyVarType import TlmyVarType
-from GroundSegment.models.TmlyVar import TmlyVar
+from GroundSegment.models.TmlyVar import TlmyVar
 
 
 def SaveTlmy(dirtyObjects, n):
     t0 = time.time()
-    TmlyVar.objects.bulk_create(dirtyObjects)
+    TlmyVar.objects.bulk_create(dirtyObjects)
     t1 = time.time()
     print("Salvado, objectos: ", len(dirtyObjects), " tiempo: ",(t1-t0)*1000, " ms")        
 
@@ -179,7 +179,7 @@ if __name__ == '__main__':
         
           
         tend = time.time()
-        #TmlyVar.objects.bulk_create(dirtyObjects)
+        #TlmyVar.objects.bulk_create(dirtyObjects)
         #tendwsave = time.time()
         print("Actualizacion de variables, tiempo ", (tend-tstart)*1000, " ms")
         #print("Simulacion actualizacion de variables con persistancia demora ", (tendwsave-tstart)*1000, " millisegundos")

@@ -17,6 +17,7 @@ from django.db.models.deletion import CASCADE
 
 from GroundSegment.models.FrameType import FrameType
 from GroundSegment.models.UnitOfMeasurement import UnitOfMeasurement
+
     
 
 
@@ -78,8 +79,6 @@ class TlmyVarType(models.Model):
     
     unitOfMeasurement   = models.ForeignKey(UnitOfMeasurement, related_name="tlmyVarTypes", null=True)
     
-    
-    
     def __str__(self):
         return self.code + ", sat: " + self.satellite.code
     
@@ -95,7 +94,7 @@ class TlmyVarType(models.Model):
         
     
     def setValue(self, raw, saveifchange=False):
-        from GroundSegment.models.TmlyVar import TmlyVar
+        
 
         #Optimizacion importante, solo salvo si el valor cambio con el anterior
         #cosa que normalmente no pasa!!
@@ -155,12 +154,8 @@ class TlmyVarType(models.Model):
         
         #Historico siempre, aunque el valor sea el mismo.
         value = self.getValue()
-        tvar = TmlyVar()
-        tvar.code = self.code
-        tvar.tmlyVarType = self
-        tvar.setValue(value)
         
         
 
-        return tvar
+        return value
         

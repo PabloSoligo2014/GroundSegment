@@ -32,6 +32,7 @@ from django.core.exceptions import ObjectDoesNotExist
 
 
 
+
 #ubuntumate@VBUbuntumate:~/Downloads/CheckoutBox/Software$ java -jar start.jar
 #C:\Users\pabli\Documents\Programas\CheckoutBox\Software java -jar start.jar
 #python Main.py CUBESAT o SIMULATION
@@ -154,7 +155,7 @@ if __name__ == '__main__':
         from GroundSegment.Managers.CommandManager import CommandManager
         from GroundSegment.Utils.BColor import bcolors
         from GroundSegment.models.FrameType import FrameType
-        
+        from GroundSegment.models.TlmyVar import TlmyVar
         """
         Si el watchdog no fue creado aun en ejecuciones anteriores lo creo ahora
         """
@@ -355,7 +356,6 @@ if __name__ == '__main__':
                                         
                                         #TODO
                                         #code draft
-                                        
                                         if tt.bitsLen >= 8:
                                             bitLen_div =tt.bitsLen // 8
                                             if bitLen_div == 1:
@@ -367,8 +367,18 @@ if __name__ == '__main__':
                                                  
                                         
                                         
-                                        tv = tt.setValue(raw, True)
-                                        tv.save()
+                                        tvar = TlmyVar()
+                                        tvar.code = tt.code
+                                        tvar.tmlyVarType = tt
+                                        tvar.setValue(raw, True)
+                                        tvar.save()
+        
+                                        
+                                        #tv = tt.setValue(raw, True)
+                                        #tv.save()
+                                        
+                                        
+                                        
                                     
                                     Console.log("Data processed("+str(timezone.datetime.utcnow() )+")")
                                     

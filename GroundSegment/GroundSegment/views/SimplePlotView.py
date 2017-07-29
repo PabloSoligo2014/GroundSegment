@@ -20,14 +20,14 @@ class GetChartData(TemplateView):
 class SimplePlotView(TemplateView):
     #http://127.0.0.1:8000/simplePlot/100001-100002-100003-100010
     template_name = 'simplePlot.html'
-    #queryset = TmlyVar.objects.filter(code='obcT1').order_by('-created')[:50] 
+    #queryset = TlmyVar.objects.filter(code='obcT1').order_by('-created')[:50] 
     #context_object_name = "objects"
     
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
         from graphos.sources.simple import SimpleDataSource
         from graphos.renderers.gchart import LineChart
-        from GroundSegment.models.TmlyVar import TmlyVar
+        from GroundSegment.models.TmlyVar import TlmyVar
         tvtVector = []
 
         tvts = self.kwargs['tvts']
@@ -47,9 +47,9 @@ class SimplePlotView(TemplateView):
         now = timezone.now()
         for tvt in tvtVector:
             if minutes==-1:
-                valuesVector.append(TmlyVar.objects.filter(tmlyVarType=tvt).order_by('created')[:50]) 
+                valuesVector.append(TlmyVar.objects.filter(tmlyVarType=tvt).order_by('created')[:50]) 
             else:
-                vars = TmlyVar.objects.filter(Q(tmlyVarType=tvt) & Q(created__gte=now-timedelta(minutes=minutes) ) ).order_by('created') 
+                vars = TlmyVar.objects.filter(Q(tmlyVarType=tvt) & Q(created__gte=now-timedelta(minutes=minutes) ) ).order_by('created') 
                 valuesVector.append(vars)
             
         
