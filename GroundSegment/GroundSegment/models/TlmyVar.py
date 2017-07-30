@@ -47,7 +47,9 @@ class TlmyVar(models.Model):
                     klass = globals()[self.tmlyVarType.calibrationMethod.aClass]
                     instance = klass()
                     methodToCall = getattr(instance, self.tmlyVarType.calibrationMethod.aMethod)
-                    self.tmlyVarType.calibrationLogic = methodToCall   
+                    self.tmlyVarType.calibrationLogic = methodToCall
+                else:
+                    pass #Calibracion ya cargada   
                 
                 if self.tmlyVarType.varType==self.tmlyVarType.INTEGER:
                     self.tmlyVarType.lastCalIValue = self.tmlyVarType.calibrationLogic(self.tmlyVarType,  raw )

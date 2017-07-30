@@ -5,8 +5,7 @@ Created on 25 de nov. de 2016
 '''
 from Calibration.BaseCalibration import BaseCalibration
 
-
-
+from GroundSegment.Utils.ConversionDicts import antSTempDict, TrxUVVdopplerDict, TrxUVVrssiDict
 
 class GCalibration(BaseCalibration):
     
@@ -42,6 +41,27 @@ class GCalibration(BaseCalibration):
     def antSACalib(self, obj,  raw):
         return 0.001
     
+    
+    def antStempTableCalib(self, obj,  raw):
+        
+        if raw in antSTempDict.keys():
+            return antSTempDict[raw]
+        else:
+            return -1
+    
+    def RXDopplerTableCalib(self, obj,  raw):
+        
+        if raw in TrxUVVdopplerDict.keys():
+            return TrxUVVdopplerDict[raw]
+        else:
+            return -1
+        
+    def RSSITableCalib(self, obj,  raw):
+        
+        if raw in TrxUVVrssiDict.keys():
+            return TrxUVVrssiDict[raw]
+        else:
+            return -1
     
     def resetCauseCalibration(self, obj,  raw):
         if raw==0:

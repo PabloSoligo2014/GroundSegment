@@ -153,13 +153,13 @@ La figura \ref{fig:Arq01} muestra un esquema de alto nivel de la arquitectura.
 \section{Telemetría}
 \label{sec:telemetria}
 
-Para el caso del FS2017 la telemetría se recibe en tramas AX.25 por TCP/IP puerto 3210 según especificación del fabricante. La trama tiene un fragmento de \textit{Payload} telemetría. La definición de la telemetría esta definida persistida en la entidad \textit{TlmyVerType} donde se establece el tipo, valor, rangos, limites, posición dentro de la trama y la función que la transforma en una variable de ingeniería. La figura \ref{fig:MetodoCalibracion} muestra la selección de una función cuadrática como forma de calibración para una variable de telemetría.
+Para el caso del FS2017 la telemetría se recibe en tramas AX.25 por TCP/IP puerto 3210 según especificación del fabricante. La trama tiene un fragmento de \textit{Payload} telemetría. La definición de la telemetría esta persistida en la entidad \textit{TlmyVerType} donde se establece el tipo, valor, rangos, límites, posición dentro de la trama y la función que la transforma en una variable de ingeniería. La figura \ref{fig:MetodoCalibracion} muestra la selección de una función aplicada a una variable de telemetría.
 
 \begin{figure}[]
   \caption{Selección de método de calibración}
   \label{fig:MetodoCalibracion}
   \centering
-  \includegraphics[width=0.5\textwidth]{Imagenes/CalibrationMethod.png}
+  \includegraphics[width=0.5\textwidth]{Imagenes/TTCCalibracionDiscreta.png}
 \end{figure}
 
 Mediante técnicas de reflexión carga en tiempo de ejecución la función seleccionada de calibración y se le aplica al valor raw proveniente de la trama AX.25. La función de calibración puede ser cualquier secuencia de comandos programable en python sin ningún tipo de limitación mas allá del tiempo de procesamiento. Todas las bibliotecas y estructuras de datos están disponibles incluyendo el acceso al la base de datos completa mediante ORM. Toda función de calibración debe estar desarrollada como método de una clase heredada de \textit{BaseCalibration}. En la clase base se implementan los atributos y métodos comunes a cualquier calibración y ofrece la posibilidad{ mediante reflexión{ de realizar una exploración de clases del tipo \textit{BaseCalibration} y ofrecer al usuario todos los métodos disponibles de dentro de las clases hijas encontradas. La figura \ref{fig:GCalibration} muestra la clase \textit{GCalibration} donde se implementan algunos métodos de calibración.
@@ -182,7 +182,18 @@ Mediante técnicas de reflexión carga en tiempo de ejecución la función selec
     \end{minipage}
 \end{figure}
 
-El siguiente código muestra parte de la implementación del método \textit{setValue} de la clase \textit{TlmyVarType}. Cuando se recibe un nuevo valor de telemetría de algún tipo de variable el valor se actualiza en el repositorio central por medio de este método. El método primero chequea que el valor haya sufrido cambios para evitar escrituras innecesarias. Si el valor cambió, revisa que exista un método de calibración configurado y mediante reflexión lo carga en \textit{self.calibrationLogic}. Seguidamente aplica la calibración a la variable raw. La carga del método de calibración a una tipo de variable se realiza una única vez lo que permite ganar eficiencia pero obliga a reiniciar los el modulo de telemetría y telecomandos ante un cambios en los métodos.
+El siguiente código muestra parte de la implementación del método \textit{setValue} de la clase \textit{TlmyVarType}. Cuando se recibe un nuevo valor de telemetría de algún tipo de variable el valor se actualiza en el repositorio central por medio de este método. El método primero chequea que el valor haya sufrido cambios para evitar escrituras innecesarias. Si el valor cambió, revisa que exista un método de calibración configurado y mediante reflexión lo carga en \textit{self.calibrationLogic}. Seguidamente aplica la calibración a la variable raw. La carga del método de calibración a una atributo del tipo de variable de telemetría se realiza una única vez durante la ejecución. Esto permite ganar eficiencia pero obliga a reiniciar los el modulo de telemetría y telecomandos ante un cambios en los métodos. La figura \ref{fig:TiempoDecodificacion} muestra los tiempos de procesamiento para un bloque de 25 paquetes donde se decodifican 18 variables.
+
+\begin{figure}[]
+  \caption{Tiempo de decodificación}
+  \label{fig:TiempoDecodificacion}
+  \centering
+  \includegraphics[width=0.5\textwidth]{Imagenes/tiempoDecodificacion.png}
+\end{figure}
+
+La primera decodificación demora mas que las siguientes dado que tiene que realizar la carga de las funciones de transformacion, luego el tiempo se estabiliza alrededor de los 50 milisegundos para el conjunto de las 18 variables. 
+
+
 
 \begin{minted}[fontsize=\scriptsize]{python}
 class TlmyVarType(models.Model):
@@ -238,7 +249,7 @@ class TlmyVarType(models.Model):
 
 
 
-
+PONER QUE INCLUYE LA REVISION DE QUE LA VARIABLE ESTE EN RANGO
 
 % \begin{figure}[]
 %   \caption{Tipo de telemetría}

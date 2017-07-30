@@ -173,7 +173,7 @@ showHistoryLastTime.short_description = "Mostrar historial de las variables sele
 class TmlyVarTypeAdmin(admin.ModelAdmin):
     #fields = ()
     search_fields = ['code']
-    list_display = ('code', 'description', 'satellite', 'lastCalSValue', 'unitOfMeasurement', 'lastUpdate',)
+    list_display = ('code', 'description', 'satellite', 'lastCalSValue', 'unitOfMeasurement', 'lastUpdate', 'bitsLen', 'position')
     fields = ('code', 'description', 'satellite', 'limitMaxValue', 'limitMinValue', 'maxValue', 'minValue', 'varType', 'alarmType', 'calibrationMethod', 'frameType', 'position', 'bitsLen', 'unitOfMeasurement')
     list_filter = ('satellite', )
     inlines = [

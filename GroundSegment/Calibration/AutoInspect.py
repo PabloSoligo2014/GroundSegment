@@ -3,7 +3,7 @@ Created on 28 de nov. de 2016
 
 @author: pabli
 '''
-from apport.hookutils import files_in_package
+#from apport.hookutils import files_in_package
 import Calibration
 """
 Ahora por reflexion genero en la base todos los metodos
@@ -52,7 +52,7 @@ def AutoInspect():
         print(md)
     
     for f in files:
-        if f!="__init__":
+        if f!="__init__" and f!="AutoInspect":
             md = "Calibration."+f
             clsmembers = inspect.getmembers(sys.modules[md], inspect.isclass)
             for clname, cldata in clsmembers:
@@ -68,5 +68,6 @@ def AutoInspect():
                         calmethod.save()
                         print("Valor guardado")
   
-                    
+if __name__ == '__main__':
+    AutoInspect()                    
     
