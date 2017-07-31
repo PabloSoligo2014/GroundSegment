@@ -41,10 +41,11 @@ from django.core.exceptions import ObjectDoesNotExist
 Ejemplo de ejecucion 
 >python TlmyCmdProcessor.py "SIMULATION" "FS2017" 
 
-Deprecated: Ya no es necesario indicar el path, lo toma del directorio de ejecucion del fuente "C:\\Users\\pabli\\git\\GroundSegment\\GroundSegment"
+Deprecated: Ya no es necesario indicar el path, lo toma del directorio de ejecucion del fuente 
+"C:\\Users\\pabli\\git\\GroundSegment\\GroundSegment"
 >python3.4 TlmyCmdProcessor.py "SIMULATION" "FS2017" 
 
-Deprecated: Ya no es necesario indicar el path, lo toma del directorio de ejecucion del fuente "/home/ubuntumate/git/GroundSegment/GroundSegment" 
+Deprecated: Ya no es necesario indicar el path, lo toma del directorio de ejecucion del fuente "/home/ubuntumate/git/GroundSegment/GroundSegment/TlmyCmdProcessor" 
 """
 
 

@@ -1,0 +1,30 @@
+\ifglsentryexists{raw}{}%
+{%
+\gls@defglossaryentry{raw}%
+{%
+name={raw},%
+sort={raw},%
+type={main},%
+first={raw},%
+firstplural={raws},%
+text={raw},%
+plural={raws},%
+description={Valor crudo, se le debe aplicar una función que lo transforme en una variable de ingeniería},%
+descriptionplural={Valor crudo, se le debe aplicar una función que lo transforme en una variable de ingeniería},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
