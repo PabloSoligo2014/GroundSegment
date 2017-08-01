@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.3.28)  31 JUL 2017 16:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.3.28)  1 AUG 2017 15:33
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
-**CostEffectiveGroundSegment.tex
-(./CostEffectiveGroundSegment.tex
+**NextGenerationGroundSegment.tex
+(./NextGenerationGroundSegment.tex
 LaTeX2e <2015/01/01>
 Babel <3.9l> and hyphenation patterns for 79 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -632,11 +632,11 @@ Package: ifplatform 2010/10/22 v0.4 Testing for the operating system
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/catchfile.sty
 Package: catchfile 2011/03/01 v1.6 Catch the contents of a file (HO)
 )
-runsystem(uname -s > "CostEffectiveGroundSegment.w18")...executed.
+runsystem(uname -s > "NextGenerationGroundSegment.w18")...executed.
 
 
-(./CostEffectiveGroundSegment.w18)
-runsystem(rm -- "CostEffectiveGroundSegment.w18")...executed.
+(./NextGenerationGroundSegment.w18)
+runsystem(rm -- "NextGenerationGroundSegment.w18")...executed.
 
 )
 (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
@@ -690,15 +690,15 @@ File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 \@float@every@listing=\toks24
 \c@listing=\count151
 )
-runsystem(mkdir -p "_minted-CostEffectiveGroundSegment")...executed.
+runsystem(mkdir -p "_minted-NextGenerationGroundSegment")...executed.
 
-runsystem(which "pygmentize" && touch "CostEffectiveGroundSegment.aex")...execu
-ted.
+runsystem(which "pygmentize" && touch "NextGenerationGroundSegment.aex")...exec
+uted.
 
-runsystem(rm "CostEffectiveGroundSegment.aex")...executed.
+runsystem(rm "NextGenerationGroundSegment.aex")...executed.
 
 
-(./_minted-CostEffectiveGroundSegment/default.pygstyle)
+(./_minted-NextGenerationGroundSegment/default.pygstyle)
 (/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries.sty
 Package: glossaries 2015/07/17 v4.17 (NLCT)
 
@@ -930,8 +930,8 @@ Package: supertabular 2004/02/20 v4.1e the supertabular environment
 Package: glossary-tree 2015/07/17 v4.17 (NLCT)
 \glstreeindent=\skip83
 ))
-(./CostEffectiveGroundSegment.aux)
-\openout1 = `CostEffectiveGroundSegment.aux'.
+(./NextGenerationGroundSegment.aux)
+\openout1 = `NextGenerationGroundSegment.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 97.
 LaTeX Font Info:    ... okay on input line 97.
@@ -1025,9 +1025,9 @@ LaTeX Info: Redefining \ref on input line 97.
 LaTeX Info: Redefining \pageref on input line 97.
 LaTeX Info: Redefining \nameref on input line 97.
 
-(./CostEffectiveGroundSegment.out) (./CostEffectiveGroundSegment.out)
+(./NextGenerationGroundSegment.out) (./NextGenerationGroundSegment.out)
 \@outlinefile=\write6
-\openout6 = `CostEffectiveGroundSegment.out'.
+\openout6 = `NextGenerationGroundSegment.out'.
 
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
@@ -1075,7 +1075,7 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
-(./CostEffectiveGroundSegment.glsdefs)
+(./NextGenerationGroundSegment.glsdefs)
 LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <24.88> not available
 (Font)              Font shape `T1/pplx/b/n' tried instead on input line 101.
 LaTeX Font Info:    Try loading font information for OT1+pplx on input line 101
@@ -1159,61 +1159,44 @@ Package pdftex.def Info: Imagenes/Arq01.png used on input line 147.
  [2 <./Imagenes/Arq01.png>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 163.
+               Default added (so using `tbp') on input line 164.
 
 <Imagenes/TTCCalibracionDiscreta.png, id=71, 415.5525pt x 222.07968pt>
 File: Imagenes/TTCCalibracionDiscreta.png Graphic file (type png)
 
 <use Imagenes/TTCCalibracionDiscreta.png>
 Package pdftex.def Info: Imagenes/TTCCalibracionDiscreta.png used on input line
- 167.
+ 168.
 (pdftex.def)             Requested size: 215.0023pt x 114.90263pt.
 
-Overfull \hbox (10.0pt too wide) in paragraph at lines 167--168
+Overfull \hbox (10.0pt too wide) in paragraph at lines 168--169
  [][] 
  []
 
-<Imagenes/TelemetryVarType.png, id=75, 205.76875pt x 758.835pt>
+[3 <./Imagenes/TTCCalibracionDiscreta.png>]
+<Imagenes/TelemetryVarType.png, id=81, 205.76875pt x 758.835pt>
 File: Imagenes/TelemetryVarType.png Graphic file (type png)
 
 <use Imagenes/TelemetryVarType.png>
-Package pdftex.def Info: Imagenes/TelemetryVarType.png used on input line 184.
+Package pdftex.def Info: Imagenes/TelemetryVarType.png used on input line 187.
 (pdftex.def)             Requested size: 42.9998pt x 158.5727pt.
 
-<Imagenes/CommandType.png, id=76, 241.90375pt x 376.40625pt>
+<Imagenes/CommandType.png, id=82, 241.90375pt x 376.40625pt>
 File: Imagenes/CommandType.png Graphic file (type png)
 
 <use Imagenes/CommandType.png>
-Package pdftex.def Info: Imagenes/CommandType.png used on input line 190.
+Package pdftex.def Info: Imagenes/CommandType.png used on input line 193.
 (pdftex.def)             Requested size: 42.9998pt x 66.9059pt.
 
-Underfull \hbox (badness 5105) in paragraph at lines 191--191
+Underfull \hbox (badness 5105) in paragraph at lines 194--194
 [][]|\T1/pplx/m/it/9 (+20) Clase Com-
  []
 
-[3 <./Imagenes/TTCCalibracionDiscreta.png> <./Imagenes/TelemetryVarType.png> <.
-/Imagenes/CommandType.png>]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 199.
-
-<Imagenes/tiempoDecodificacion.png, id=90, 498.36188pt x 272.51813pt>
-File: Imagenes/tiempoDecodificacion.png Graphic file (type png)
-
-<use Imagenes/tiempoDecodificacion.png>
-Package pdftex.def Info: Imagenes/tiempoDecodificacion.png used on input line 2
-03.
-(pdftex.def)             Requested size: 215.0023pt x 117.56723pt.
-
-Overfull \hbox (10.0pt too wide) in paragraph at lines 203--204
- [][] 
- []
-
-\openout3 = `CostEffectiveGroundSegment.pyg'.
+\openout3 = `NextGenerationGroundSegment.pyg'.
 
 
-(./_minted-CostEffectiveGroundSegment/ABC0120D515032BC6D9ADFC2A161545F9A7C07B08
-C2752FB218BBE225C79AC3F.pygtex
+(./_minted-NextGenerationGroundSegment/ABC0120D515032BC6D9ADFC2A161545F6D83F3D7
+A69C8BBC33CCE243E39D822A.pygtex
 Package microtype Info: Loading generic settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1221,65 +1204,82 @@ Package microtype Info: Loading generic settings for font family
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <5> not available
 (Font)              Font shape `T1/cmtt/m/n' tried instead on input line 2.
 )
+Underfull \hbox (badness 2600) in paragraph at lines 272--274
+[]\T1/pplx/m/n/10 (+20) Cuando se recibe un nuevo valor de
+ []
+
+[4 <./Imagenes/TelemetryVarType.png> <./Imagenes/CommandType.png>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 287.
+               Default added (so using `tbp') on input line 275.
 
-<Imagenes/GenericCalibration.png, id=91, 212.795pt x 486.81876pt>
+<Imagenes/tiempoDecodificacion.png, id=96, 498.36188pt x 272.51813pt>
+File: Imagenes/tiempoDecodificacion.png Graphic file (type png)
+
+<use Imagenes/tiempoDecodificacion.png>
+Package pdftex.def Info: Imagenes/tiempoDecodificacion.png used on input line 2
+79.
+(pdftex.def)             Requested size: 215.0023pt x 117.56723pt.
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 279--280
+ [][] 
+ []
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 295.
+
+<Imagenes/GenericCalibration.png, id=97, 212.795pt x 486.81876pt>
 File: Imagenes/GenericCalibration.png Graphic file (type png)
 
 <use Imagenes/GenericCalibration.png>
-Package pdftex.def Info: Imagenes/GenericCalibration.png used on input line 291
+Package pdftex.def Info: Imagenes/GenericCalibration.png used on input line 299
 .
 (pdftex.def)             Requested size: 85.9996pt x 196.74454pt.
-\openout3 = `CostEffectiveGroundSegment.pyg'.
+\openout3 = `NextGenerationGroundSegment.pyg'.
 
 
-(./_minted-CostEffectiveGroundSegment/69D83B6ADA82BB11A348655560DC540A9A7C07B08
-C2752FB218BBE225C79AC3F.pygtex
+(./_minted-NextGenerationGroundSegment/69D83B6ADA82BB11A348655560DC540A6D83F3D7
+A69C8BBC33CCE243E39D822A.pygtex
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <7> not available
 (Font)              Font shape `T1/cmtt/m/n' tried instead on input line 3.
- [4 <./Imagenes/tiempoDecodificacion.png>])
-\openout3 = `CostEffectiveGroundSegment.pyg'.
+)
+\openout3 = `NextGenerationGroundSegment.pyg'.
 
 
-(./_minted-CostEffectiveGroundSegment/D54CDAC87591E599F76F1CC95AE74B499A7C07B08
-C2752FB218BBE225C79AC3F.pygtex)
-
-LaTeX Warning: Reference `bugs' on page 5 undefined on input line 369.
-
-[5 <./Imagenes/GenericCalibration.png>]
+(./_minted-NextGenerationGroundSegment/D54CDAC87591E599F76F1CC95AE74B496D83F3D7
+A69C8BBC33CCE243E39D822A.pygtex [5 <./Imagenes/tiempoDecodificacion.png> <./Ima
+genes/GenericCalibration.png>]) [6]
 \@gls@deffile=\write7
-\openout7 = `CostEffectiveGroundSegment.glsdefs'.
+\openout7 = `NextGenerationGroundSegment.glsdefs'.
 
-runsystem(rm "CostEffectiveGroundSegment.pyg")...executed.
+runsystem(rm "NextGenerationGroundSegment.pyg")...executed.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 482.
- [6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 482.
- (./CostEffectiveGroundSegment.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 482.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 482.
-Package rerunfilecheck Info: File `CostEffectiveGroundSegment.out' has not chan
-ged.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 491.
+ [7
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 491.
+ (./NextGenerationGroundSegment.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 491.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 491.
+Package rerunfilecheck Info: File `NextGenerationGroundSegment.out' has not cha
+nged.
 (rerunfilecheck)             Checksum: 6CC4E1989676764CEC3A885AAC3FC51C;608.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 482.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 491.
  ) 
 Here is how much of TeX's memory you used:
- 17655 strings out of 493085
- 276925 string characters out of 6136917
- 504464 words of memory out of 5000000
- 20414 multiletter control sequences out of 15000+600000
- 74305 words of font info for 319 fonts, out of 8000000 for 9000
+ 17666 strings out of 493085
+ 277053 string characters out of 6136917
+ 504481 words of memory out of 5000000
+ 20413 multiletter control sequences out of 15000+600000
+ 74935 words of font info for 328 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,13n,75p,1984b,624s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 46i,14n,75p,1985b,624s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texliv
 e/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
@@ -1290,10 +1290,10 @@ texmf/fonts/type1/public/cm-super/sftt0800.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/
 uplri8a.pfb>
-Output written on CostEffectiveGroundSegment.pdf (6 pages, 286019 bytes).
+Output written on NextGenerationGroundSegment.pdf (7 pages, 287845 bytes).
 PDF statistics:
- 158 PDF objects out of 1000 (max. 8388607)
- 131 compressed objects within 2 object streams
+ 163 PDF objects out of 1000 (max. 8388607)
+ 135 compressed objects within 2 object streams
  31 named destinations out of 1000 (max. 500000)
  59511 words of extra memory for PDF output out of 61914 (max. 10000000)
 

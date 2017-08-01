@@ -105,7 +105,7 @@ Este trabajo presenta los resultados de las experiencias obtenidas en el desarro
 
 \section{Introducción}
 
-En la industria cuando se trata de comandar un equipo remoto existen varios enfoques dependiendo de las necesidades. Desde sencillas implementaciones \textit{Maestro-Esclavo} sin ningún tipo lógica asociada, pasando por sistemas algo mas complejos donde se aplican restricciones o basados en maquinas de estado. En el área espacial, una practica común es el uso de secuencias de comandos sobre estructuras de control. Empresas y agencias espaciales en todo el mundo han desarrollados sus propios lenguajes e intérpretes para cumplir con este objetivo: 
+En la industria cuando se trata de comandar un equipo remoto existen varios enfoques dependiendo de las necesidades. Desde sencillas implementaciones \textit{Maestro-Esclavo} sin ningún tipo lógica asociada, pasando por sistemas algo mas complejos donde se aplican restricciones o sistemas basados en maquinas de estado. En el área espacial, una práctica común es el uso de secuencias de comandos sobre estructuras de control. Empresas y agencias espaciales en todo el mundo han desarrollados sus propios lenguajes e intérpretes para cumplir con este objetivo: 
 
 \begin{description}
  \item [STOL:] Satellite Test and Operation Language. Desarrollado por la Nasa y ampliamente utilizado en varias misiones. 
@@ -113,8 +113,8 @@ En la industria cuando se trata de comandar un equipo remoto existen varios enfo
  \item [Otros:] desarrollados o utilizados por diferentes compañias  SOL(GMV), CCL(Harris), PIL(Astrium), SCL(ICS). 
 \end{description}
 
-
-c
+En el caso del segmento terreno del FS2017 se optó por usar un lenguaje de propósito general en lugar de crear un lenguaje especifico
+o utilizar los existentes en CONAE (Comisión Nacional de Actividades Espaciales). Este enfoque presenta múltiples ventajas,
 
 \begin{description}
  \item [Portabilidad: ] escogiendo correctamente la herramienta se puede lograr una buena portabilidad entre distintas plataformas.
@@ -158,7 +158,8 @@ Django es el framework web para python más popular, además de ofrecer herramie
 \section{Telemetría}
 \label{sec:telemetria}
 
-Para el caso del FS2017 la telemetría se recibe en tramas AX.25 por TCP/IP \footnote{Alternativamente se puede obtener por puerto serie} puerto 3210 según especificación del fabricante. La trama tiene un fragmento de \textit{Payload} donde viene codificada la telemetría. La definición de la telemetría esta persistida en la entidad \textit{TlmyVarType} donde se establece el tipo, valor, rangos, límites, posición dentro de la trama y la función que la transforma en una variable de ingeniería. La figura \ref{fig:MetodoCalibracion} muestra como al configurar una variable de telemetría se selecciona la función a aplicar para convertirla en variable de ingeniería.
+Para el caso del FS2017 la telemetría se recibe en tramas AX.25 por TCP/IP \footnote{Alternativamente se puede obtener por puerto serie} puerto 3210 según especificación del fabricante. La trama tiene un fragmento de \textit{Payload} donde viene codificada la telemetría. La definición de la telemetría esta persistida en la entidad \textit{TlmyVarType} donde se establece el tipo, valor, rangos, límites, posición dentro de la trama y la función que la transforma en una variable de ingeniería. En el área satélite y en algunos sistemas de control y automatización es común recibir la telemetría en valores crudos o \textit{raw}. A estos valores crudos se les debe aplicar una función que los transforme en unidades de ingeniería. En algunas áreas, incluida la satelital,  esta transformación también es utilizada para calibrar sensores o equipos que puedan sufrir desgaste o variaciones por las condiciones de uso. Estos ajustes pueden ir desde un simple ajuste por función lineal hasta una discretización de valores por tablas de \textit{look-up}. El sistema debe ser lo suficientemente flexible como para permitir aplicar cualquier función de transformación a toda variable de telemetría y permitir ajustarla a medida que el desgaste de los sensores lo requiera.
+La figura \ref{fig:MetodoCalibracion} muestra como al configurar una variable de telemetría se selecciona la función a aplicar para convertirla en variable de ingeniería.
 
 \begin{figure}[]
   \caption{Selección de método de calibración}
@@ -167,15 +168,15 @@ Para el caso del FS2017 la telemetría se recibe en tramas AX.25 por TCP/IP \foo
   \includegraphics[width=0.5\textwidth]{Imagenes/TTCCalibracionDiscreta.png}
 \end{figure}
 
-Mediante técnicas de reflexión se carga en tiempo de ejecución la función seleccionada de calibración y se le aplica al valor \textit{raw} \footnote{Valor crudo de telemetría, su lectura directa no representa la variable de ingeniería} extraído de la trama de telemetría proveniente del paquete AX.25. La función de calibración puede ser cualquier secuencia de comandos programable en python sin ningún tipo de restricción mas allá del tiempo de procesamiento. Todas las bibliotecas y estructuras de datos están disponibles incluyendo funciones matemáticas e incluso el acceso al la base de datos completa mediante ORM. Esto ultimo permite :
+Mediante técnicas de reflexión se carga en tiempo de ejecución la función seleccionada de calibración y se le aplica al valor \textit{raw} extraído de la trama de telemetría proveniente del paquete AX.25. La función de calibración puede ser cualquier secuencia de comandos programable en python sin ningún tipo de restricción mas allá del tiempo de procesamiento. Todas las bibliotecas y estructuras de datos están disponibles incluyendo funciones matemáticas e incluso el acceso al la base de datos completa mediante ORM.
+Al tener acceso a la base de datos se pueden obtener coeficientes actualizados de calibración permitiendo: 
 
 \begin{description}
  \item [Reutilizar funciones: ] es posible crear una única función para ajustes típicos (lineal, cuadrático) y reutilizarla con distintos coeficientes según la variable de telemetría requiera.
  \item [Calibración fina: ] creada una función modificando los coeficientes se puede realizar un ajuste fino, por ejemplo por desgaste de un sensor, sin necesidad de recodificar la misma.
 \end{description}
 
-Para que un método sea considerado de calibración o ajuste debe estar desarrollado como método de una clase heredada de \textit{BaseCalibration}. El software realiza una exploración de todos los métodos públicos de clases derivadas de \textit{BaseCalibration} y los disponibiliza para su aplicación a las distintas variables de telemetría \ref{fig:MetodoCalibracion}. La figura \ref{fig:GCalibration} muestra la clase \textit{GCalibration} donde se implementan algunos métodos de calibración.
-
+Para que un método sea considerado de calibración o ajuste debe estar desarrollado como método de una clase heredada de \textit{BaseCalibration}. El software realiza una exploración de todos los métodos públicos de clases derivadas de \textit{BaseCalibration} y los disponibiliza para su aplicación a las distintas variables de telemetría \ref{fig:MetodoCalibracion}. La figura \ref{fig:GCalibration} muestra la clase \textit{GCalibration}, heredada de \textit{BaseCalibration}, donde se implementan algunos métodos de calibración incluido el seleccionado en la figura \ref{fig:MetodoCalibracion}.
 
 \begin{figure}[!htb]
     \centering
@@ -193,18 +194,7 @@ Para que un método sea considerado de calibración o ajuste debe estar desarrol
     \end{minipage}
 \end{figure}
 
-El siguiente código muestra parte de la implementación del método \textit{setValue} de la clase \textit{TlmyVar}. Cuando se recibe un nuevo valor de telemetría se persiste mediante una instancia de \textit{TlmyVar}. Toda recepción de nueva telemetría se persiste, haya cambiado o no su valor. También se deja el ultimo valor en la variable \textit{TlmyVarType}, esta desnormalización tiene como objetivo ganar eficiencia al consultar los valores de tiempo real, en lugar de consultar a la tabla de histórica de valores recibidos, se consulta a la tabla de tipos que tiene un tamaño acotado. Si el valor raw para una variable determinada no cambio desde la ultima actualización entonces se guarda el registro de la recepción pero no se aplican las calibraciones. Esto ultimo hace ganar eficiencia ya que no se vuelve a transformar cuando se sabe que el resultado sera el mismo, se debe tener en cuenta, sin embargo, que ante un cambio en las funciones de calibración se debe forzar mediante software a una nueva evaluación aunque el raw no haya cambiado\footnote{No implementado aún}.
-Si se produce un cambio en el raw se carga dinámicamente la función de ajuste \textit{self.tmlyVarType.calibrationLogic} solo si no fue cargada anteriormente. La carga del método de calibración a una atributo del tipo de variable de telemetría se realiza una única vez durante la ejecución. Esto permite ganar eficiencia pero obliga a reiniciar los el modulo de telemetría y telecomandos ante un cambios en los métodos. La figura \ref{fig:TiempoDecodificacion} muestra los tiempos de procesamiento para un bloque de 25 paquetes donde se decodifican 18 variables.
-
-\begin{figure}[]
-  \caption{Tiempo de decodificación}
-  \label{fig:TiempoDecodificacion}
-  \centering
-  \includegraphics[width=0.5\textwidth]{Imagenes/tiempoDecodificacion.png}
-\end{figure}
-
-La primera decodificación demora mas que las siguientes dado que tiene que realizar la carga de las funciones de transformación, luego el tiempo se estabiliza alrededor de los 50 milisegundos para el conjunto de las 18 variables. El tiempo de procesamiento incluye además la verificación de que los valores de las variables de ingeniería estén dentro del rango de seguridad.
-
+El siguiente código muestra parte de la implementación del método \textit{setValue} de la clase \textit{TlmyVar}. 
 
 
 \begin{minted}[fontsize=\tiny]{python}
@@ -273,6 +263,22 @@ class TlmyVar(models.Model):
     return self.tmlyVarType.getValue()
 
 \end{minted}
+
+
+
+
+Cuando se recibe un nuevo valor de telemetría se persiste mediante una instancia de \textit{TlmyVar}. Toda recepción de nueva telemetría se persiste, haya cambiado o no su valor. También se deja el ultimo valor en la variable \textit{TlmyVarType}, esta desnormalización tiene como objetivo ganar eficiencia al consultar los valores de tiempo real, en lugar de consultar a la tabla de histórica de valores recibidos, se consulta a la tabla de tipos que tiene un tamaño acotado. Si el valor raw para una variable determinada no cambio desde la ultima actualización entonces se guarda el registro de la recepción pero no se aplican las calibraciones. Esto ultimo hace ganar eficiencia ya que no se vuelve a transformar cuando se sabe que el resultado sera el mismo, se debe tener en cuenta, sin embargo, que ante un cambio en las funciones de calibración se debe forzar mediante software a una nueva evaluación aunque el raw no haya cambiado\footnote{No implementado aún}.
+Si se produce un cambio en el raw se carga dinámicamente la función de ajuste \textit{self.tmlyVarType.calibrationLogic} solo si no fue cargada anteriormente. La carga del método de calibración a una atributo del tipo de variable de telemetría se realiza una única vez durante la ejecución. Esto permite ganar eficiencia pero obliga a reiniciar los el modulo de telemetría y telecomandos ante un cambios en los métodos. La figura \ref{fig:TiempoDecodificacion} muestra los tiempos de procesamiento para un bloque de 25 paquetes donde se decodifican 18 variables.
+
+\begin{figure}[]
+  \caption{Tiempo de decodificación}
+  \label{fig:TiempoDecodificacion}
+  \centering
+  \includegraphics[width=0.5\textwidth]{Imagenes/tiempoDecodificacion.png}
+\end{figure}
+
+La primera decodificación demora mas que las siguientes dado que tiene que realizar la carga de las funciones de transformación, luego el tiempo se estabiliza alrededor de los 50 milisegundos para el conjunto de las 18 variables. El tiempo de procesamiento incluye además la verificación de que los valores de las variables de ingeniería estén dentro del rango de seguridad.
+
 
 
 
@@ -360,13 +366,14 @@ Las capacidades de las sentencias \textit{sat.tmlyVarType.get(code="obcT1")} y \
 
 
 \subsection{Interprete y Framework de desarrollo}
+El lenguaje (python) es sencillo aprender, c
 
 \subsection{Desarrollo multiplatafoma}
 La solución fue ejecutada en ubuntu linux 15.10 como en windows 10.0 y windows 7.0. En ambos casos el software se ejecuto sin cambios. En este punto tanto el interprete como el framework mostraron uno de sus atributos mas valorables.
 
 
 \subsection{ORM}
-El ORM de Django se mostró estable, no se registraron problemas o \ref{bugs}. Para la creación y modificación de modelos, su flujo divido en dos etapas \footnote{Disponible en la versiones de Django iguales o superiores a 1.7} \textit{Make Migrations} y \textit{Migrate} permitió el trabajo colaborativo y con múltiples servidores. Las consultas tampoco mostraron errores pero, especialmente para el filtrado de resultados, requieren del aprendizaje de convenciones propias lo que afecta la curva de aprendizaje. No se pueden declarar atributos privados, cuestión que afecta el encapsulamiento, y la capacidad del ORM para trabajar con polimorfismo esta limitada y se requiere añadir paquetes especiales.
+El ORM de Django se mostró estable, no se registraron problemas o \textit{bugs}. Para la creación y modificación de modelos, su flujo divido en dos etapas \footnote{Disponible en la versiones de Django iguales o superiores a 1.7} \textit{Make Migrations} y \textit{Migrate} permitió el trabajo colaborativo y con múltiples servidores. Las consultas tampoco mostraron errores pero, especialmente para el filtrado de resultados, requieren del aprendizaje de convenciones propias lo que afecta la curva de aprendizaje. No se pueden declarar atributos privados, cuestión que afecta el encapsulamiento, y la capacidad del ORM para trabajar con polimorfismo esta limitada y se requiere añadir paquetes especiales.
 
 \subsection{Reflexión}
 

@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{c}{\PYGdefaultZsh{}Clase GCalibration hereda de BaseCalibration}
+\PYGdefault{k}{class} \PYGdefault{n+nc}{GCalibration}\PYGdefault{p}{(}\PYGdefault{n}{BaseCalibration}\PYGdefault{p}{):}
+    \PYGdefault{o}{...}
+
+    \PYGdefault{c}{\PYGdefaultZsh{}Metodo generico de calibración lineal}
+    \PYGdefault{k}{def} \PYGdefault{n+nf}{linealCalibration}\PYGdefault{p}{(}\PYGdefault{n+nb+bp}{self}\PYGdefault{p}{,} \PYGdefault{n}{obj}\PYGdefault{p}{,} \PYGdefault{n}{raw}\PYGdefault{p}{):}
+	\PYGdefault{c}{\PYGdefaultZsh{}Multiplica el valor raw por la ganancia y}
+	\PYGdefault{c}{\PYGdefaultZsh{}offset configurado para ese tipo de}
+	\PYGdefault{c}{\PYGdefaultZsh{}de variable de ingeniería. Los obj tiene}
+	\PYGdefault{c}{\PYGdefaultZsh{}el tipo de variable de ingeniería y}
+	\PYGdefault{c}{\PYGdefaultZsh{}por medio del ORM se accede a los}
+	\PYGdefault{c}{\PYGdefaultZsh{}valores configurados.}
+        \PYGdefault{k}{return} \PYGdefault{n}{raw}\PYGdefault{o}{*}
+	    \PYGdefault{n}{obj}\PYGdefault{o}{.}\PYGdefault{n}{coefficients}\PYGdefault{o}{.}\PYGdefault{n}{get}\PYGdefault{p}{(}\PYGdefault{n}{code}\PYGdefault{o}{=}\PYGdefault{l+s}{\PYGdefaultZdq{}GAIN\PYGdefaultZdq{}}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{value} \PYGdefault{o}{+}
+	    \PYGdefault{n}{obj}\PYGdefault{o}{.}\PYGdefault{n}{coefficients}\PYGdefault{o}{.}\PYGdefault{n}{get}\PYGdefault{p}{(}\PYGdefault{n}{code}\PYGdefault{o}{=}\PYGdefault{l+s}{\PYGdefaultZdq{}OFFSET\PYGdefaultZdq{}}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{value}
+\end{Verbatim}

@@ -1,0 +1,65 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{k}{class} \PYGdefault{n+nc}{TlmyVar}\PYGdefault{p}{(}\PYGdefault{n}{models}\PYGdefault{o}{.}\PYGdefault{n}{Model}\PYGdefault{p}{):}
+  \PYGdefault{o}{...}
+  \PYGdefault{k}{if} \PYGdefault{n}{raw}\PYGdefault{o}{!=}\PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{lastRawValue}\PYGdefault{p}{:}
+    \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{lastRawValue} \PYGdefault{o}{=} \PYGdefault{n}{raw}
+    \PYGdefault{k}{if} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{calibrationMethod}\PYGdefault{p}{:}
+      \PYGdefault{k}{if} \PYGdefault{o+ow}{not} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{calibrationLogic}\PYGdefault{p}{:}
+	  \PYGdefault{n}{klass} \PYGdefault{o}{=}
+	    \PYGdefault{n+nb}{globals}\PYGdefault{p}{()[}\PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{calibrationMethod}\PYGdefault{o}{.}\PYGdefault{n}{aClass}\PYGdefault{p}{]}
+	  \PYGdefault{n}{instance} \PYGdefault{o}{=} \PYGdefault{n}{klass}\PYGdefault{p}{()}
+	  \PYGdefault{n}{methodToCall} \PYGdefault{o}{=}
+	    \PYGdefault{n+nb}{getattr}\PYGdefault{p}{(}\PYGdefault{n}{instance}\PYGdefault{p}{,}
+		    \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{calibrationMethod}\PYGdefault{o}{.}\PYGdefault{n}{aMethod}\PYGdefault{p}{)}
+	    \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{calibrationLogic} \PYGdefault{o}{=}
+	      \PYGdefault{n}{methodToCall}
+      \PYGdefault{k}{else}\PYGdefault{p}{:}
+	  \PYGdefault{k}{pass} \PYGdefault{c}{\PYGdefaultZsh{}Calibracion ya cargada}
+
+      \PYGdefault{k}{if} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{varType}\PYGdefault{o}{==}\PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{INTEGER}\PYGdefault{p}{:}
+	  \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{lastCalIValue} \PYGdefault{o}{=}
+	    \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{calibrationLogic}\PYGdefault{p}{(}\PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{p}{,}  \PYGdefault{n}{raw} \PYGdefault{p}{)}
+
+      \PYGdefault{k}{elif} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{varType}\PYGdefault{o}{==}\PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{FLOAT}\PYGdefault{p}{:}
+	  \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{lastCalFValue} \PYGdefault{o}{=}
+	    \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{calibrationLogic}\PYGdefault{p}{(}\PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{p}{,}  \PYGdefault{n}{raw} \PYGdefault{p}{)}
+      \PYGdefault{k}{else}\PYGdefault{p}{:}
+	  \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{lastCalSValue} \PYGdefault{o}{=}
+	    \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{calibrationLogic}\PYGdefault{p}{(}\PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{p}{,}  \PYGdefault{n}{raw} \PYGdefault{p}{)}
+    \PYGdefault{k}{else}\PYGdefault{p}{:}
+	\PYGdefault{k}{if} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{varType}\PYGdefault{o}{==}\PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{INTEGER}\PYGdefault{p}{:}
+	    \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{lastCalIValue} \PYGdefault{o}{=} \PYGdefault{n}{raw}
+	\PYGdefault{k}{elif} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{varType}\PYGdefault{o}{==}\PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{FLOAT}\PYGdefault{p}{:}
+	    \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{lastCalFValue} \PYGdefault{o}{=} \PYGdefault{n}{raw}
+	\PYGdefault{k}{else}\PYGdefault{p}{:}
+	    \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{lastCalSValue} \PYGdefault{o}{=} \PYGdefault{n}{raw}
+
+    \PYGdefault{l+s+sd}{\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}}
+\PYGdefault{l+s+sd}{    Si el tipo no es cadena llevo el dato a cadena}
+\PYGdefault{l+s+sd}{    \PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}}
+    \PYGdefault{n}{value} \PYGdefault{o}{=} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{getValue}\PYGdefault{p}{()}
+
+    \PYGdefault{k}{if} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{varType}\PYGdefault{o}{!=}\PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{STRING}\PYGdefault{p}{:}
+	\PYGdefault{k}{if} \PYGdefault{p}{(}\PYGdefault{n}{value}\PYGdefault{o}{\PYGdefaultZgt{}=}\PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{limitMaxValue} \PYGdefault{o+ow}{and}
+	    \PYGdefault{n}{value}\PYGdefault{o}{\PYGdefaultZlt{}=}\PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{limitMinValue}\PYGdefault{p}{):}
+	    \PYGdefault{k}{raise} \PYGdefault{n+ne}{Exception}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZdq{}Invalid value in var \PYGdefaultZdq{}}\PYGdefault{o}{+}
+	                     \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{code}\PYGdefault{p}{)}
+
+    \PYGdefault{k}{if} \PYGdefault{n}{saveifchange}\PYGdefault{p}{:}
+	\PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{lastUpdate} \PYGdefault{o}{=} \PYGdefault{n}{datetime}\PYGdefault{o}{.}\PYGdefault{n}{now}\PYGdefault{p}{(}\PYGdefault{n}{utc}\PYGdefault{p}{)}
+	\PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{save}\PYGdefault{p}{()}
+
+
+    \PYGdefault{k}{if} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{varType}\PYGdefault{o}{==}\PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{INTEGER}\PYGdefault{p}{:}
+	\PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{calIValue} \PYGdefault{o}{=} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{lastCalIValue}
+	\PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{calSValue} \PYGdefault{o}{=} \PYGdefault{n+nb}{str}\PYGdefault{p}{(}\PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{calIValue}\PYGdefault{p}{)}
+    \PYGdefault{k}{elif} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{varType}\PYGdefault{o}{==}\PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{FLOAT}\PYGdefault{p}{:}
+	\PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{calFValue} \PYGdefault{o}{=} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{lastCalFValue}
+	\PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{calSValue} \PYGdefault{o}{=} \PYGdefault{n+nb}{str}\PYGdefault{p}{(}\PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{calFValue}\PYGdefault{p}{)}
+    \PYGdefault{k}{else}\PYGdefault{p}{:}
+	\PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{calSValue} \PYGdefault{o}{=} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{lastCalSValue}
+
+
+
+    \PYGdefault{k}{return} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{tmlyVarType}\PYGdefault{o}{.}\PYGdefault{n}{getValue}\PYGdefault{p}{()}
+\end{Verbatim}
