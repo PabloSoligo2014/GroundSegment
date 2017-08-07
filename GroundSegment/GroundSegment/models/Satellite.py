@@ -265,6 +265,8 @@ class Satellite(models.Model):
         else:
             
             return prps[0].positionX, prps[0].positionY, prps[0].positionZ
+        
+    # ALARMAS
     
     def newAlarm(self, alarmType):
         from GroundSegment.models.Alarm import Alarm
@@ -274,6 +276,8 @@ class Satellite(models.Model):
         result.satellite = self
         result.save()
         return result
+    
+    # COMANDOS
     
     def getCommandType(self):
         '''Retorna los tipos de comandos disponibles para este satelite'''

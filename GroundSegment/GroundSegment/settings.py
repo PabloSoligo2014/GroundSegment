@@ -95,8 +95,8 @@ DATABASES = {
                 'NAME': 'DBGroundSegment',
                 'USER': 'postgres',
                 'PASSWORD': 'postgres',
-                #'HOST': '10.77.171.181',
-                'HOST': '127.0.0.1',
+                'HOST': '10.77.171.181',
+               # 'HOST': '127.0.0.1',
                 'PORT': '5432',
                 'CONN_MAX_AGE': 600,
          }

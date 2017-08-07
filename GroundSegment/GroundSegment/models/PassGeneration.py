@@ -56,6 +56,7 @@ class PassGeneration(models.Model):
                 
             try:
                 rise_time, rise_azimuth, maximum_altitude_time, maximum_altitude, set_time, set_azimuth = observer.next_pass(sat)
+
                 #print(s.code, rise_time, rise_azimuth, maximum_altitude_time, maximum_altitude, set_time, set_azimuth)
                 #node1, node2, afrom, ato, open, constellation):
                 
@@ -66,11 +67,19 @@ class PassGeneration(models.Model):
                 else:
                     rt = rise_time.datetime()
                     st = set_time.datetime()
+                
+
                     
                 #Deberia pasar los rise time/set time a utc
                 
                 rt = rt.replace(tzinfo=pytz.UTC)
                 st = st.replace(tzinfo=pytz.UTC)
+                
+                mipivotedate=rt
+                while mipivotedate < st:
+                    sat.compute(mipivotedate)
+                    print('%s %s' % (sat.sublong, sat.sublat))
+                    mipivotedate=mipivotedate+timedelta(minutes=1)
                 
                 """
                 Creo la pasada, mucha informacion redundante que debe ser quitada
@@ -86,6 +95,20 @@ class PassGeneration(models.Model):
                 p.passGeneration = result
                 p.startTime = rt
                 p.stopTime   = st
+                
+#                ll = satellite.getLatLong(rt, st)
+                """
+                Con las latitudes, dibujar...
+                """
+                
+                """
+                Se asigna la imagen generada a un campo imagen de
+                la pasada
+                
+                p.img = "nuevaimagen.png" lo hace Soligo
+                """
+                
+                
                 p.save()
               
                         
