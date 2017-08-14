@@ -27,7 +27,7 @@ class SimplePlotView(TemplateView):
         # Call the base implementation first to get a context
         from graphos.sources.simple import SimpleDataSource
         from graphos.renderers.gchart import LineChart
-        from GroundSegment.models.TmlyVar import TlmyVar
+        from GroundSegment.models.TlmyVar import TlmyVar
         tvtVector = []
 
         tvts = self.kwargs['tvts']
