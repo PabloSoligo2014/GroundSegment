@@ -12,6 +12,22 @@ class GCalibration(BaseCalibration):
 
     def linealCalibration(self, obj, raw):
         return raw*obj.coefficients.get(code="GAIN").value + obj.coefficients.get(code="OFFSET").value
+    
+    def resetCauseCalibration(self, obj,  raw):
+        if raw==0:
+            return "Power On Reset"
+        elif raw==1:
+            return "External Reset"
+        elif raw==2:
+            return "Brown Out Reset"
+        elif raw==3:
+            return "WDT reset"
+        elif raw==4:
+            return "JTAG reset"
+        elif raw==5:
+            return "Other reason"
+        else:
+            return "Calibration ERROR!!"
 
 
     def duplicateAndSum(self, obj, raw):
@@ -63,21 +79,7 @@ class GCalibration(BaseCalibration):
         else:
             return -1
     
-    def resetCauseCalibration(self, obj,  raw):
-        if raw==0:
-            return "Power On Reset"
-        elif raw==1:
-            return "External Reset"
-        elif raw==2:
-            return "Brown Out Reset"
-        elif raw==3:
-            return "WDT reset"
-        elif raw==4:
-            return "JTAG reset"
-        elif raw==5:
-            return "Other reason"
-        else:
-            return "Calibration ERROR!!"
+
        
             
     

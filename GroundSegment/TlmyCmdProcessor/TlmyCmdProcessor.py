@@ -370,9 +370,9 @@ if __name__ == '__main__':
                                                  
                                         
                                         
-                                        tvar = TlmyVar()
-                                        tvar.code = tt.code
-                                        tvar.tmlyVarType = tt
+                                        tvar                = TlmyVar()
+                                        tvar.code           = tt.code
+                                        tvar.tlmyVarType    = tt
                                         tvar.setValue(raw, True)
                                         tvar.save()
         

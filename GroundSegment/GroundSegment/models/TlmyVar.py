@@ -23,15 +23,15 @@ class TlmyVar(models.Model):
     #created     = models.DateTimeField()
     #Quito la relacion para que no me obligue a guardar el padre
     #para despues guardar al hijo
-    tlmyVarType = models.ForeignKey(TlmyVarType, related_name="tmlyVars")
+    tlmyVarType = models.ForeignKey(TlmyVarType, related_name="tlmyVars")
     
     
     def getValue(self):
         #Retorna el valor en funcion del tipo
         
-        if self.tmlyVarType.varType==self.tmlyVarType.INTEGER:
+        if self.tlmyVarType.varType==self.tlmyVarType.INTEGER:
             return self.calIValue
-        elif self.tmlyVarType.varType==self.tmlyVarType.FLOAT:
+        elif self.tlmyVarType.varType==self.tlmyVarType.FLOAT:
             return self.calFValue
         else:
             return self.calSValue
@@ -40,77 +40,77 @@ class TlmyVar(models.Model):
         #Optimizacion importante, solo salvo si el valor cambio con el anterior
         #cosa que normalmente no pasa!!
         #Si el raw anterior es igual al actual me libero de todo.
-        if raw!=self.tmlyVarType.lastRawValue:
-            self.tmlyVarType.lastRawValue = raw
-            if self.tmlyVarType.calibrationMethod: 
-                if not self.tmlyVarType.calibrationLogic:
-                    klass = globals()[self.tmlyVarType.calibrationMethod.aClass]
+        if raw!=self.tlmyVarType.lastRawValue:
+            self.tlmyVarType.lastRawValue = raw
+            if self.tlmyVarType.calibrationMethod: 
+                if not self.tlmyVarType.calibrationLogic:
+                    klass = globals()[self.tlmyVarType.calibrationMethod.aClass]
                     instance = klass()
-                    methodToCall = getattr(instance, self.tmlyVarType.calibrationMethod.aMethod)
-                    self.tmlyVarType.calibrationLogic = methodToCall
+                    methodToCall = getattr(instance, self.tlmyVarType.calibrationMethod.aMethod)
+                    self.tlmyVarType.calibrationLogic = methodToCall
                 else:
                     pass #Calibracion ya cargada   
                 
-                if self.tmlyVarType.varType==self.tmlyVarType.INTEGER:
-                    self.tmlyVarType.lastCalIValue = self.tmlyVarType.calibrationLogic(self.tmlyVarType,  raw )
+                if self.tlmyVarType.varType==self.tlmyVarType.INTEGER:
+                    self.tlmyVarType.lastCalIValue = self.tlmyVarType.calibrationLogic(self.tlmyVarType,  raw )
            
-                elif self.tmlyVarType.varType==self.tmlyVarType.FLOAT:
-                    self.tmlyVarType.lastCalFValue = self.tmlyVarType.calibrationLogic(self.tmlyVarType,  raw )
+                elif self.tlmyVarType.varType==self.tlmyVarType.FLOAT:
+                    self.tlmyVarType.lastCalFValue = self.tlmyVarType.calibrationLogic(self.tlmyVarType,  raw )
                 else:
-                    self.tmlyVarType.lastCalSValue = self.tmlyVarType.calibrationLogic(self.tmlyVarType,  raw )
+                    self.tlmyVarType.lastCalSValue = self.tlmyVarType.calibrationLogic(self.tlmyVarType,  raw )
             else:
-                if self.tmlyVarType.varType==self.tmlyVarType.INTEGER:
-                    self.tmlyVarType.lastCalIValue = raw
-                elif self.tmlyVarType.varType==self.tmlyVarType.FLOAT:
-                    self.tmlyVarType.lastCalFValue = raw
+                if self.tlmyVarType.varType==self.tlmyVarType.INTEGER:
+                    self.tlmyVarType.lastCalIValue = raw
+                elif self.tlmyVarType.varType==self.tlmyVarType.FLOAT:
+                    self.tlmyVarType.lastCalFValue = raw
                 else:
-                    self.tmlyVarType.lastCalSValue = raw 
+                    self.tlmyVarType.lastCalSValue = raw 
                 
             """
             Si el tipo no es cadena llevo el dato a cadena
             """
             
-            value = self.tmlyVarType.getValue()
+            value = self.tlmyVarType.getValue()
             
-            if self.tmlyVarType.varType!=self.tmlyVarType.STRING:
-                if (value>=self.tmlyVarType.limitMaxValue and value<=self.tmlyVarType.limitMinValue):
-                    raise Exception("Invalid value in var "+self.tmlyVarType.code)  
+            if self.tlmyVarType.varType!=self.tlmyVarType.STRING:
+                if (value>=self.tlmyVarType.limitMaxValue and value<=self.tlmyVarType.limitMinValue):
+                    raise Exception("Invalid value in var "+self.tlmyVarType.code)  
                 
             if saveifchange:
-                self.tmlyVarType.lastUpdate = datetime.now(utc)
-                self.tmlyVarType.save()
+                self.tlmyVarType.lastUpdate = datetime.now(utc)
+                self.tlmyVarType.save()
         
             """    
             if (value>self.maxValue or value<self.minValue):
                 #Verificar si requiere alarma y crearla
                 if self.alarmType != None:
-                    sat = self.tmlyVarType.satellite
+                    sat = self.tlmyVarType.satellite
                     alarm = Alarm.new(sat, self, datetime.utcnow() + timedelta(seconds=-1))
                     alarm.save()
             """    
             
-        if self.tmlyVarType.varType==self.tmlyVarType.INTEGER:
-            self.calIValue = self.tmlyVarType.lastCalIValue
+        if self.tlmyVarType.varType==self.tlmyVarType.INTEGER:
+            self.calIValue = self.tlmyVarType.lastCalIValue
             self.calSValue = str(self.calIValue)
-        elif self.tmlyVarType.varType==self.tmlyVarType.FLOAT:
-            self.calFValue = self.tmlyVarType.lastCalFValue
+        elif self.tlmyVarType.varType==self.tlmyVarType.FLOAT:
+            self.calFValue = self.tlmyVarType.lastCalFValue
             self.calSValue = str(self.calFValue)
         else:
-            self.calSValue = self.tmlyVarType.lastCalSValue
+            self.calSValue = self.tlmyVarType.lastCalSValue
             
         
  
         
         
         #Historico siempre, aunque el valor sea el mismo.
-        #value = self.tmlyVarType.getValue()
+        #value = self.tlmyVarType.getValue()
         
         """
         Haya cambiado o no genero el registro
         de que se recibio telemetria
         """
 
-        return self.tmlyVarType.getValue()
+        return self.tlmyVarType.getValue()
 
         
     def oldSetValue(self, raw):
@@ -118,9 +118,9 @@ class TlmyVar(models.Model):
         #Primero transformo en un valor calibrado para su posterior analisis de limites
         
         self.calSValue = "-"
-        if self.tmlyVarType.varType==self.tmlyVarType.INTEGER:
+        if self.tlmyVarType.varType==self.tlmyVarType.INTEGER:
             self.calIValue = raw
-        elif self.tmlyVarType.varType==self.tmlyVarType.FLOAT:
+        elif self.tlmyVarType.varType==self.tlmyVarType.FLOAT:
             self.calFValue = raw
         else:
             self.calSValue = str(raw)
@@ -130,11 +130,11 @@ class TlmyVar(models.Model):
         value = self.getValue()
         
         
-        if (value>self.tmlyVarType.maxValue or value<self.tmlyVarType.minValue):
+        if (value>self.tlmyVarType.maxValue or value<self.tlmyVarType.minValue):
             #Verificar si requiere alarma y crearla
-            if self.tmlyVarType.alarmType != None:
-                sat = self.tmlyVarType.satellite
-                alarm = Alarm.new(sat, self.tmlyVarType, datetime.utcnow() + timedelta(seconds=-1))
+            if self.tlmyVarType.alarmType != None:
+                sat = self.tlmyVarType.satellite
+                alarm = Alarm.new(sat, self.tlmyVarType, datetime.utcnow() + timedelta(seconds=-1))
                 alarm.save()
         """ 
             
