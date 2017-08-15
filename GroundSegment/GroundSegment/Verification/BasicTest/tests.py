@@ -5,6 +5,8 @@ Created on Aug 14, 2017
 '''
 import unittest
 from GroundSegment.models.SatelliteState import SatelliteState
+from GroundSegment.models.Country import Country
+from GroundSegment.models.Satellite import Satellite
 
 
 class Test(unittest.TestCase):
@@ -38,8 +40,55 @@ class Test(unittest.TestCase):
         
         
         
-    def test02Satellite(self):
-        pass
+        
+    def test02Country(self):
+        country_1 = Country()
+        country_1.code = "001"
+        country_1.name = "Argentina"
+        country_1.description = "Republica Argentina"
+        country_1.save()
+        
+
+        country_2 = Country()
+        country_2.code = "002"
+        country_2.name = "Japon"
+        country_2.description = "Japon"
+        country_2.save()
+
+
+        country_3 = Country()
+        country_3.code = "003"
+        country_3.name = "China"
+        country_3.description = "Muralla China"
+        country_3.save()
+
+
+        self.assertEqual(Country.objects.count(), 3, "La cantidad de paises es incorrecta")
+        
+        self.assertEqual(Country.objects.filter(name="China").count(), 1, "No se encontro el pais!")
+        
+        self.assertEqual(Country.objects.first().name, "Argentina", "No se encontro el pais!")
+
+    def test03Satellite(self):
+        
+        try:
+            st = SatelliteState.objects.first()
+            sat = Satellite.new("FS2017", "Satelite de formacion 2017", 98745, st)
+            sat.save()
+        except:
+            pass
+        
+    def test04SatellitePendingCommands(self):
+        
+        sat = Satellite.objects.get(code="FS2017")
+
+        cmd = sat.getPendingCommands()
+
+        self.assertEqual(cmd.count(), 1, "Cantidad de comandos pendientes distinto a 1.")
+
+        
+        
+
         
 
 
