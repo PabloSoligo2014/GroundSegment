@@ -38,6 +38,8 @@ from django.core.exceptions import ObjectDoesNotExist
 #python Main.py CUBESAT o SIMULATION
 
 """
+
+cd /home/ubuntumate/git/GroundSegment/GroundSegment/TlmyCmdProcessor/
 Ejemplo de ejecucion 
 >python TlmyCmdProcessor.py "SIMULATION" "FS2017" 
 
@@ -412,7 +414,7 @@ if __name__ == '__main__':
                             ilen = 0
                             for com in pendingCommands:
                                 
-                                Console.log("Se hardcodea ejecucion comando "+str(com.pk))
+                                #Console.log("Se hardcodea ejecucion comando "+str(com.pk))
                                 
                                 prepack = asource+destination+control+protocol+unhexlify(com.commandType.commandCode)
                                 #El byte de inicio \x56 + 4 bytes del entero que indica el tamanio + el tamanio del paquete
