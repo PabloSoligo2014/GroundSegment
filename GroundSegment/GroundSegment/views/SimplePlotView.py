@@ -47,9 +47,9 @@ class SimplePlotView(TemplateView):
         now = timezone.now()
         for tvt in tvtVector:
             if minutes==-1:
-                valuesVector.append(TlmyVar.objects.filter(tmlyVarType=tvt).order_by('created')[:50]) 
+                valuesVector.append(TlmyVar.objects.filter(tlmyVarType=tvt).order_by('created')[:50]) 
             else:
-                vars = TlmyVar.objects.filter(Q(tmlyVarType=tvt) & Q(created__gte=now-timedelta(minutes=minutes) ) ).order_by('created') 
+                vars = TlmyVar.objects.filter(Q(tlmyVarType=tvt) & Q(created__gte=now-timedelta(minutes=minutes) ) ).order_by('created') 
                 valuesVector.append(vars)
             
         
@@ -59,7 +59,7 @@ class SimplePlotView(TemplateView):
         for values in valuesVector:
             data = []
             data.append(['Fecha', tvtVector[i].code])
-            if values.count()==0:
+            if vars!=None and len(values)==0:
                 data.append([0,0])
             else:
                 for v in values:
