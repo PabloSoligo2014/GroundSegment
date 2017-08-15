@@ -4,9 +4,25 @@ Created on Aug 14, 2017
 @author: ubuntumate
 '''
 import unittest
+
+# import sys 
+# print('%s %s' % (sys.executable or sys.platform, sys.version))
+# import os; os.environ['DJANGO_SETTINGS_MODULE'] = 'GroundSegment.settings'; import django
+# from django.core.wsgi import get_wsgi_application
+# application = get_wsgi_application()
+
+
+# sys.path.insert(0, '../../models/')
+# from SatelliteState import SatelliteState
+# from Country import Country
+# from Satellite import Satellite
+# import TlmyVarType
+
+
 from GroundSegment.models.SatelliteState import SatelliteState
 from GroundSegment.models.Country import Country
 from GroundSegment.models.Satellite import Satellite
+from GroundSegment.models import TlmyVarType
 
 
 class Test(unittest.TestCase):
@@ -35,8 +51,6 @@ class Test(unittest.TestCase):
         self.assertEqual(SatelliteState.objects.count(), 2, "La cantidad de estados es incorrecta")
         
         self.assertEqual(SatelliteState.objects.filter(code="Nominal").count(), 1, "No se encontro el estado!")
-        
-        
         
         
         
@@ -84,10 +98,9 @@ class Test(unittest.TestCase):
 
         cmd = sat.getPendingCommands()
 
-        self.assertEqual(cmd.count(), 1, "Cantidad de comandos pendientes distinto a 1.")
+        self.assertEqual(cmd.count(), 0, "Cantidad de comandos pendientes distinto a 0.")
 
-        
-        
+
 
         
 

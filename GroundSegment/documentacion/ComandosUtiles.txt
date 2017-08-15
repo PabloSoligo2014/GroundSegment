@@ -63,6 +63,9 @@ sudo pip install django-coverage
 sudo python3.4 -m pip install django-coverage
 coverage run --source='.' manage.py test GroundSegment
 
+*
+coverage run --source='GroundSegment.Verification.BasicTest.TelemetryTest' manage.py test GroundSegment.Verification.BasicTest.TelemetryTest
+coverage html -d documentacion/coverage_html
 
 sudo pip3 install coverage
 
