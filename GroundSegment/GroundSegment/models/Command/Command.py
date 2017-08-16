@@ -10,6 +10,7 @@ from GroundSegment.models.Satellite import Satellite
 from django.utils.timezone import datetime, now, timedelta
 import pytz
 from datetime import timezone
+
 #from GroundSegment.models.Satellite import Satellite
 #from GroundSegment.models.SatelliteState import SatelliteState
 
@@ -93,7 +94,29 @@ class Command(models.Model):
     def getState(self):
         return self.COMMAND_STATE[self.state]
     
+    def getTypeCommand(self):
+       
+        if self.commandType.parameters.count()==0:
+            print("lista Vacia")
+            return 0
+                    
+        listParameterCommand = self.commandType.parameters.all().values_list('code', flat=True)
     
+        return listParameterCommand
+
+    def addParameters(self,*args):
+    
+        from GroundSegment.models.Command.CommandParameter import CommandParameter
+        
+        if (len(args))==(len(self.getTypeCommand())):
+                for value in args:
+                    p = CommandParameter()
+                    p.value = value
+                    
+                    p.command = self
+                    p.save()
+                                
+        
     
     def __str__(self):
         return "Cmd: "+str(self.pk)+" tipo: "+self.commandType.code

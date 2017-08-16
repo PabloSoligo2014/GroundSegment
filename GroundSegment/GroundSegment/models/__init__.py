@@ -34,3 +34,5 @@ from GroundSegment.models.Command.PassScript import PassScript
 from GroundSegment.models.Command.CommandType import CommandType
 from GroundSegment.models.Command.CommandTypeParameter import CommandTypeParameter
 from GroundSegment.models.Command.Command import Command
+from GroundSegment.models.Command.CommandParameter import CommandParameter
+

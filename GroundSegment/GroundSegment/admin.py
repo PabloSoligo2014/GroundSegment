@@ -57,14 +57,21 @@ class ParameterAdmin(admin.ModelAdmin):
 
 admin.site.register(Parameter, ParameterAdmin)
 
+class CommandTypeParametersInline(admin.TabularInline):
+    model = CommandTypeParameter
+
 class CommandTypeAdmin(admin.ModelAdmin):
     empty_value_display = ''
     fields = ('code', 'description', 'active', 'transactional', 'satellite', 'satelliteStates', 'maxRetry', 'commandCode', 'timeout', 'notes')
     list_display = ('code', 'description', 'transactional', 'satellite', 'timeout', 'notes')
     #list_filter = (NameFilter,)
     search_fields = ['code']
+    inlines = [
+        CommandTypeParametersInline,
+    ]
 
 admin.site.register(CommandType, CommandTypeAdmin)
+
 
 
 
