@@ -278,9 +278,9 @@ if __name__ == '__main__':
                                     """
                                     Me guardo el crudo tal cual llego antes de procesarlo, la tabla donde se guarda es UHFRawData
                                     """
-                                    os.system('cls||clear')
-                                    Console.log("--------------------Data Received-------------------")
-                                    Console.log("Data length:"+str(len(chunk)))
+                                    #os.system('cls||clear')
+                                    #Console.log("--------------------Data Received-------------------")
+                                    
                                     
                                     #print("\nData Received("+str(timezone.datetime.utcnow() )+"), Tamano: ", , "\nData->", chunk)
                                     
@@ -321,7 +321,6 @@ if __name__ == '__main__':
                                     payload = ax25[ vardataoffset: ]
                                     
                                     pn = unpack("<H",  payload[1:3])
-                                    Console.log("Packet number: "+str(pn))
                                     
                                     
                                     frameTypeId = payload[0]
@@ -349,14 +348,15 @@ if __name__ == '__main__':
                                     #frameTypeId = unpack("<B",payload[0])
                                     
                                     try:
-                                        Console.log("Se recibio telemetria de :"+FrameType.objects.get(pk=frameTypeId).description)
+                                        #Console.log("Packet number: "+str(pn))
+                                    
+                                        Console.log("Se recibio telemetria:"+str(pn)+"-"+FrameType.objects.get(pk=frameTypeId).description+"-bytes: "+str(len(data.data)))
                                     except ObjectDoesNotExist:
                                         print("Tipo de telemetria no encontrado")
                                     
                                     telvars = TlmyVarType.objects.filter(satellite__code=satellite).filter(frameType__aid=frameTypeId)
                                     
                                     for tt in telvars:
-                                        
                                         #TODO
                                         #code draft
                                         if tt.bitsLen >= 8:
@@ -383,17 +383,11 @@ if __name__ == '__main__':
                                         
                                         
                                     
-                                    Console.log("Data processed("+str(timezone.datetime.utcnow() )+")")
+                                    #Console.log("Data processed("+str(timezone.datetime.utcnow() )+")")
                                     
                                     data.processed = True
                                     data.processedTime = (timezone.now()-startproctime).total_seconds() 
                                     data.save()
-                                    
-                                              
-                                              
-                                    
-                                                                        
-                                      
                                 ##f.close()
                             except socket.timeout:
                                 #Error de timeout de sockets, si el satelite esta en linea 
