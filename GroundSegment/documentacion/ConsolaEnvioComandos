@@ -16,10 +16,13 @@ from GroundSegment.models.Satellite import Satellite
 from datetime import datetime, timedelta
 #proj_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 #print(proj_path)
+from GroundSegment.models.TlmyVar import TlmyVar
+from django.db.models import Q
 os.system('cls' if os.name=='nt' else 'clear')
 
 
-from GroundSegment.models.Satellite import SatelliteTlmyCmdProcessor.py" "TTC" "FS2017"
+
+#"TlmyCmdProcessor.py" "TTC" "FS2017"
 fs2017 = Satellite.objects.get(code="FS2017")
 fs2017.getCommandType()
 ct = fs2017.getCommandType().get(code="telemetryOBC")
@@ -27,8 +30,13 @@ ct = fs2017.getCommandType().get(code="telemetryOBC")
 cmd = fs2017.newCommand(ct, datetime.utcnow()+timedelta(minutes=5))
 fs2017.sendCommand(cmd)
 
-from GroundSegment.models.TlmyVar import TlmyVar
-from django.db.models import Q
+
+fs2017.tmlyVarType.all()
+fs2017.tmlyVarType.get(code="obcT2").getValue()
+#25.7384
+fs2017.tmlyVarType.get(code="obcT2").unitOfMeasurement.description
+
+fs2017.sendRTCommand("getTelemetryOBC", 5, 1, 2, 3)
 
 tmps = TlmyVar.objects.filter(tlmyVarType__code="obcT1").filter(tlmyVarType__satellite=fs2017).order_by('-created')[:5].values_list('calFValue', flat=True)
 med = np.average(tmps)

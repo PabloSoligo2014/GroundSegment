@@ -286,9 +286,13 @@ class Satellite(models.Model):
     def sendCommand(self, cmd):
         cmd.send()
         
-    def sendDCommand(self, cmdcode, td=5, *args):
+    def sendRTCommand(self, cmdcode, td=5, *args):
         ct = self.getCommandType().get(code=cmdcode)
-        self.sendCommand(ct, datetime.utcnow()+timedelta(minutes=td))
+        cmd = self.newCommand(ct, datetime.utcnow()+timedelta(minutes=td))
+        
+        
+        cmd.addParameters(args)
+        self.sendCommand(cmd)
         
         
     def __setExpiredCommands(self):
