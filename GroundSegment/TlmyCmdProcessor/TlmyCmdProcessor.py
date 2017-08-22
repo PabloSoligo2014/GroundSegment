@@ -12,7 +12,7 @@ TESTING: Puede ser testeado perfectamente usando un servidor TCP/IP de test del 
 """
 import socket
 from struct import unpack, pack
-import crcmod
+#import crcmod
 import time
 import datetime
 from django.conf import settings
@@ -417,7 +417,10 @@ if __name__ == '__main__':
                                     
                                     
                                     for p in com.parameters.all():
-                                        prepack += unhexlify(p.value.zfill(2))
+                                       
+                                        #prepack += unhexlify(p.value.zfill(2))
+                                        v = bytes([(int(p.value))])
+                                        prepack += v
                                         #print(p.value)
                                     
                                     #El byte de inicio \x56 + 4 bytes del entero que indica el tamanio + el tamanio del paquete

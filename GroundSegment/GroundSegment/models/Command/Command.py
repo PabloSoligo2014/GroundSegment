@@ -99,7 +99,6 @@ class Command(models.Model):
     def getTypeCommand(self):
        
         if self.commandType.parameters.count()==0:
-            #print("lista Vacia")
             return 0
                     
         listParameterCommand = self.commandType.parameters.all().values_list('code', flat=True)
@@ -107,17 +106,19 @@ class Command(models.Model):
         return listParameterCommand
 
     def addParameters(self,*args):
+        """Los parametros se guardan en el orden que son ingresados
+        """
     
         from GroundSegment.models.Command.CommandParameter import CommandParameter
-  
+        self.save()
         try:
             if (len(args))==(len(self.getTypeCommand())):
-                    self.save()
                     for value in args:
                         p = CommandParameter()
-                        p.value = hex(value)
+                        p.value = str(value)
                         
                         p.command = self
+                        p.save()
             else:
                 print("error")
         except:
