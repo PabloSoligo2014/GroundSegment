@@ -286,6 +286,10 @@ class Satellite(models.Model):
     def sendCommand(self, cmd):
         cmd.send()
         
+    def sendDCommand(self, cmdcode, td=5, *args):
+        ct = self.getCommandType().get(code=cmdcode)
+        self.sendCommand(ct, datetime.utcnow()+timedelta(minutes=td))
+        
         
     def __setExpiredCommands(self):
         #cmds = Command.objects.filter(Q(satellite=self)&Q(expiration__lte=datetime.utcnow().replace(tzinfo=pytz.UTC)    ))

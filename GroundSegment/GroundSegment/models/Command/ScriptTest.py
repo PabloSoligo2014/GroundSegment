@@ -29,11 +29,15 @@ from datetime import datetime, timedelta
 
 if __name__ == '__main__':
     fs2017 = Satellite.objects.get(code="FS2017")
+    
+    """
     ct = fs2017.getCommandType().get(code="startiMTQ")
     cmd = fs2017.newCommand(ct, datetime.utcnow()+timedelta(minutes=5))
     cmd.addParameters(0,0,0)
     fs2017.sendCommand(cmd)
+    """
     
+    fs2017.sendDCommand("startiMTQ", datetime.utcnow()+timedelta(minutes=5), 100, 100, 100)
     
     
     
