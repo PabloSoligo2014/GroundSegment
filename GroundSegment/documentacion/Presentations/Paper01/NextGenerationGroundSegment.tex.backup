@@ -88,7 +88,22 @@
 \begin{abstract}
 \noindent 
 %\blindtext % Dummy abstract text - replace \blindtext with your abstract text
-Este trabajo presenta los resultados de las experiencias obtenidas en el desarrollo de un segmento terreno de próxima generación.  Se desarrolló como parte de la materia proyecto integrador de la Maestría en Desarrollos Informáticos de Aplicación Espacial (MDIAE). Teniendo como objetivo el comando y control del satélite (SCC) y la recepción de telemetría, se aplicaron técnicas y herramientas como camino alternativo al desarrollo sobre lenguajes específicos. Utilizando Python como lenguaje y aprovechado sus capacidades de reflexión, se desarrolló un entorno multimisión capaz de interpretar secuencias de comandos, incluyendo todas las estructuras de control y disponibilizando todas las capacidades del interprete. Utilizando Django como Framework y específicamente su Object Relation Mapping (ORM) se logra generar scripts de comandos con acceso simplificado a los diccionarios de comandos y valores de telemetría mediante un lenguaje estándar, de propósito general, multiplataforma y con una importante base de usuarios. Como segmento de vuelo se a utilizado satélite de formación 2017 (FS2017) que también forma parte del proyecto integrador en conjunto con las Maestría en Tecnología Satelital (MTS) y la Maestría en Instrumentos Satelitales (MIS). 
+Este trabajo presenta los resultados de las experiencias obtenidas en el 
+desarrollo de un segmento terreno de próxima generación.  Se desarrolló como 
+parte de la materia proyecto integrador de la Maestría en Desarrollos 
+Informáticos de Aplicación Espacial (MDIAE). Teniendo como objetivo el comando y 
+control del satélite (SCC) y la recepción de telemetría, se aplicaron técnicas y 
+herramientas como camino alternativo al desarrollo sobre lenguajes específicos. 
+Utilizando Python como lenguaje y aprovechado sus capacidades de reflexión, se 
+desarrolló un entorno multimisión capaz de interpretar secuencias de comandos, 
+incluyendo todas las estructuras de control y disponibilizando todas las 
+capacidades del interprete. Utilizando Django como Framework y específicamente 
+su Object Relation Mapping (ORM) se logra generar scripts de comandos con acceso 
+simplificado a los diccionarios de comandos y valores de telemetría mediante un 
+lenguaje estándar, de propósito general  y multiplataforma. Como segmento de 
+vuelo se ha utilizado satélite de formación 2017 (\textit{FS2017}) que también 
+forma parte del proyecto integrador en conjunto con las Maestría en Tecnología 
+Satelital (MTS) y la Maestría en Instrumentos Satelitales (MIS). 
 \end{abstract}
 }
 
@@ -105,7 +120,14 @@ Este trabajo presenta los resultados de las experiencias obtenidas en el desarro
 
 \section{Introducción}
 
-En la industria cuando se trata de comandar un equipo remoto existen varios enfoques dependiendo de las necesidades. Desde sencillas implementaciones \textit{Maestro-Esclavo} sin ningún tipo lógica asociada, pasando por sistemas algo mas complejos donde se aplican restricciones o sistemas basados en maquinas de estado. En el área espacial, una práctica común es el uso de secuencias de comandos sobre estructuras de control. Empresas y agencias espaciales en todo el mundo han desarrollados sus propios lenguajes e intérpretes para cumplir con este objetivo: 
+En la industria cuando se trata de comandar un equipo remoto existen varios 
+enfoques dependiendo de las necesidades. Desde sencillas implementaciones 
+\textit{Maestro-Esclavo} sin ningún tipo lógica de control asociada, pasando 
+por sistemas algo mas complejos donde se aplican restricciones o sistemas 
+basados en maquinas de estado. En el área espacial, una práctica común es el uso 
+de secuencias de comandos sobre estructuras de control. Empresas y agencias 
+espaciales en todo el mundo han desarrollados sus propios lenguajes e 
+intérpretes para cumplir con este objetivo: 
 
 \begin{description}
  \item [STOL:] Satellite Test and Operation Language. Desarrollado por la Nasa y ampliamente utilizado en varias misiones. 
@@ -113,7 +135,8 @@ En la industria cuando se trata de comandar un equipo remoto existen varios enfo
  \item [Otros:] desarrollados o utilizados por diferentes compañias  SOL(GMV), CCL(Harris), PIL(Astrium), SCL(ICS). 
 \end{description}
 
-En el caso del segmento terreno del FS2017 se optó por usar un lenguaje de propósito general en lugar de crear un lenguaje especifico
+En el caso del segmento terreno del \textit{FS2017} se optó por usar un lenguaje 
+de propósito general en lugar de crear un lenguaje especifico
 o utilizar los existentes en CONAE (Comisión Nacional de Actividades Espaciales). Este enfoque presenta múltiples ventajas,
 
 \begin{description}
@@ -151,14 +174,53 @@ La figura \ref{fig:Arq01} muestra un esquema de alto nivel de la arquitectura.
 
 \section{Python y Django}
 
-Python es un lenguaje portable, abierto, de alto nivel es dinámico y tiene orientación a objetos no estricta. (Permite programación estructurada). Concebido durante los 80 se popularizó en los 90, muestra una performance superior a otros interpretes, producto de su código intermedio (bytecode). Además de la portabilidad, que no mostró ninguna fisura, su punto fuerte es la gran comunidad que brinda soporte y la buena integración con entornos de desarrollo como Eclipse.  El lenguaje tiene buena productividad \cite{prechelt2000empirical}, estructuras complejas de datos ya incorporadas, manejo de excepciones, recolector de basura y capacidad de reflexión, mandatoria para cumplir con el objetivo. Otros beneficios de trabajar con Python, o con otro lenguaje maduro de propósito general, son las capacidades de depuración, los test unitarios y la generación de documentación automatizada. Este enfoque además permite pleno acceso a herramientas de comunicación como Sockets, http, RPC (Remote Procedure Call), Web Services, email y a bibliotecas de manejo de archivos XML entre otros. 
-Django es el framework web para python más popular, además de ofrecer herramientas para el desarrollo web incorpora un robusto ORM que se ha usado intensivamente en todos los módulos del segmento terreno, incluyendo los que no tienen interfaces web. Django propone un desarrollo basado en modelos, con una orientación a objetos estricta, pudiendo aprovechar las capacidades de abstracción, herencia, polimorfismo y las ventajas de un mejor modelo de reusabilidad. El acceso al motor de base de datos es transparente al desarrollador de la aplicación como al operador que realiza los scripts de comandos, toda la responsabilidad sobre la recuperación y persistencia de datos recae sobre el ORM.  
+Python es un lenguaje portable, abierto, de alto nivel. Es dinámico y tiene 
+orientación a objetos no estricta (Permite programación estructurada). 
+Concebido durante los 80 se popularizó en los 90, muestra una performance 
+superior a otros interpretes, producto de su código intermedio (bytecode). 
+Además de la portabilidad, que no mostró ninguna fisura, su punto fuerte es la 
+gran comunidad que brinda soporte y la buena integración con entornos de 
+desarrollo como Eclipse.  El lenguaje tiene buena productividad 
+\cite{prechelt2000empirical}, estructuras complejas de datos ya incorporadas, 
+manejo de excepciones, recolector de basura y capacidad de reflexión, mandatoria 
+para cumplir con el objetivo. Otros beneficios de trabajar con Python, o con 
+otro lenguaje maduro de propósito general, son las capacidades de depuración, 
+los test unitarios y la generación de documentación automatizada. Este enfoque 
+además permite pleno acceso a herramientas de comunicación como Sockets, http, 
+RPC (Remote Procedure Call), Web Services, email y a bibliotecas de manejo de 
+archivos XML entre otros. 
+Django es el framework web para python más popular, además de ofrecer 
+herramientas para el desarrollo web incorpora un robusto ORM que se ha usado 
+intensivamente en todos los módulos del segmento terreno, incluyendo los que no 
+tienen interfaces web. Django propone un desarrollo basado en modelos, con una 
+orientación a objetos estricta, pudiendo aprovechar las capacidades de 
+abstracción, herencia, polimorfismo y las ventajas de un mejor modelo de 
+reusabilidad. El acceso al motor de base de datos es transparente al 
+desarrollador de la aplicación como al operador, ingeniero o equipo encargado 
+de desarrollar los scripts de comandos, toda la responsabilidad sobre la 
+recuperación y persistencia de datos recae sobre el ORM.  
 
 
 \section{Telemetría}
 \label{sec:telemetria}
 
-Para el caso del FS2017 la telemetría se recibe en tramas AX.25 por TCP/IP \footnote{Alternativamente se puede obtener por puerto serie} puerto 3210 según especificación del fabricante. La trama tiene un fragmento de \textit{Payload} donde viene codificada la telemetría. La definición de la telemetría esta persistida en la entidad \textit{TlmyVarType} donde se establece el tipo, valor, rangos, límites, posición dentro de la trama y la función que la transforma en una variable de ingeniería. En el área satélite y en algunos sistemas de control y automatización es común recibir la telemetría en valores crudos o \textit{raw}. A estos valores crudos se les debe aplicar una función que los transforme en unidades de ingeniería. En algunas áreas, incluida la satelital,  esta transformación también es utilizada para calibrar sensores o equipos que puedan sufrir desgaste o variaciones por las condiciones de uso. Estos ajustes pueden ir desde un simple ajuste por función lineal hasta una discretización de valores por tablas de \textit{look-up}. El sistema debe ser lo suficientemente flexible como para permitir aplicar cualquier función de transformación a toda variable de telemetría y permitir ajustarla a medida que el desgaste de los sensores lo requiera.
+Para el caso del \textit{FS2017} la telemetría se recibe en tramas AX.25 por 
+TCP/IP \footnote{Alternativamente se puede obtener por puerto serie} puerto 3210 
+según especificación del fabricante. La trama tiene un fragmento de 
+\textit{Payload} donde viene codificada la telemetría. La definición de la 
+telemetría esta persistida en la entidad \textit{TlmyVarType} donde se establece 
+el tipo, valor, rangos, límites, posición dentro de la trama y la función que 
+la transforma en una variable de ingeniería. En el área satélite y en algunos 
+sistemas de control y automatización es común recibir la telemetría en valores 
+crudos o \textit{raw}. A estos valores crudos se les debe aplicar una función 
+que los transforme en unidades de ingeniería. En algunas áreas, incluida la 
+satelital,  esta transformación también es utilizada para calibrar sensores o 
+equipos que puedan sufrir desgaste o variaciones por las condiciones de uso. 
+Estos ajustes pueden ir desde un simple ajuste por función lineal hasta una 
+discretización de valores por tablas de \textit{look-up}. El sistema debe ser lo 
+suficientemente flexible como para permitir aplicar cualquier función de 
+transformación a toda variable de telemetría y permitir ajustarla a medida que 
+el desgaste de los sensores lo requiera.
 La figura \ref{fig:MetodoCalibracion} muestra como al configurar una variable de telemetría se selecciona la función a aplicar para convertirla en variable de ingeniería.
 
 \begin{figure}[]
@@ -175,6 +237,8 @@ Al tener acceso a la base de datos se pueden obtener coeficientes actualizados d
  \item [Reutilizar funciones: ] es posible crear una única función para ajustes típicos (lineal, cuadrático) y reutilizarla con distintos coeficientes según la variable de telemetría requiera.
  \item [Calibración fina: ] creada una función modificando los coeficientes se puede realizar un ajuste fino, por ejemplo por desgaste de un sensor, sin necesidad de recodificar la misma.
 \end{description}
+
+Como ejemplo el segmento de vuelo \textit{FS2017} requiere que a muchos de sus valores crudos se les aplique una ganancia +/- un desplazamiento u \textit{offset}. En todos los casos se realiza mediante una única función llamada \textit{linealCalibration} aunque cada tipo de variable de telemetría posea sus propios valores para ambos coeficientes.
 
 Para que un método sea considerado de calibración o ajuste debe estar desarrollado como método de una clase heredada de \textit{BaseCalibration}. El software realiza una exploración de todos los métodos públicos de clases derivadas de \textit{BaseCalibration} y los disponibiliza para su aplicación a las distintas variables de telemetría \ref{fig:MetodoCalibracion}. La figura \ref{fig:GCalibration} muestra la clase \textit{GCalibration}, heredada de \textit{BaseCalibration}, donde se implementan algunos métodos de calibración incluido el seleccionado en la figura \ref{fig:MetodoCalibracion}.
 
@@ -324,7 +388,11 @@ class GCalibration(BaseCalibration):
 \label{sec:telecomandos}
 
 En el caso del \textit{FS2017} los telecomandos deben ser enviados al segmento de vuelo por el mismo canal en donde se recibe la telemetría, TCP/IP puerto 3210. Los comandos deben ser codificados en una trama AX.25. 
-Para permitir el la creación de scripts de comandos, de la misma forma que con la telemetría \ref{sec:telemetria} se utilizaran las capacidades de reflexión para analizar en tiempo de ejecución los scripts a ejecutar. Los scripts de comandos pueden ejecutarse por acción explicita de un operador o porque fueron aplicados a una pasada. 
+Para permitir el la creación de scripts de comandos, de la misma forma que con 
+la telemetría \ref{sec:telemetria} se utilizaran las capacidades de reflexión 
+para analizar, en tiempo de ejecución los scripts a ejecutar. Los scripts de 
+comandos pueden ejecutarse por acción explicita de un operador o porque fueron 
+aplicados a una pasada. 
 El operador tiene pleno acceso al ORM de donde puede obtener el diccionario de comandos y los valores de telemetría si necesitar aplicar condicionales que dependieran del estado del segmento de vuelo. Se le ha añadido al segmento terreno capacidades de operación por consola como recomienda \cite{galal2001satellite}. El siguiente código muestra como se envía un comando de encendido de \textit{heater} si la temperatura de la OBC esta por debajo de un valor determinado.
 
 \begin{minted}[fontsize=\scriptsize]{python}
@@ -366,14 +434,41 @@ Las capacidades de las sentencias \textit{sat.tmlyVarType.get(code="obcT1")} y \
 
 
 \subsection{Interprete y Framework de desarrollo}
-El lenguaje (python) es sencillo aprender, c
+El lenguaje (python) es sencillo aprender, pero por sobre todo, esta disponible 
+una extensa comunidad con ayudas ante los problemas o desafíos que puedan 
+aparecer. Para las posibles limitaciones es fácil 
+encontrar soluciones alternativas (\textit{workarounds}). Las experiencias 
+realizadas con lenguajes de propósito especifico se requirieron de la 
+asistencia constante de un experto. Trabajando sobre python esto no fue 
+necesario y la mayoría de los problemas pueden ser resueltos mediante 
+información disponible en la comunidad o con herramientas de depuración 
+avanzadas no disponibles en sus contrapartes especialmente.
+
+
+% con 
+% lenguajes propietarios requieren de asistencia constante de un experto durante 
+% el periodo de aprendizaje debido a documentación escasa o herramientas de 
+% desarrollo y depuración de inferior calidad a las de sus contrapartes de 
+% proposito general. 
 
 \subsection{Desarrollo multiplatafoma}
-La solución fue ejecutada en ubuntu linux 15.10 como en windows 10.0 y windows 7.0. En ambos casos el software se ejecuto sin cambios. En este punto tanto el interprete como el framework mostraron uno de sus atributos mas valorables.
+La solución fue ejecutada en ubuntu linux 15.10 como en windows 10.0 y windows 
+7.0. En ambos casos el software se ejecuto sin cambios. En este punto tanto el 
+interprete como el framework mostraron uno de sus atributos mas destacables.
 
 
 \subsection{ORM}
-El ORM de Django se mostró estable, no se registraron problemas o \textit{bugs}. Para la creación y modificación de modelos, su flujo divido en dos etapas \footnote{Disponible en la versiones de Django iguales o superiores a 1.7} \textit{Make Migrations} y \textit{Migrate} permitió el trabajo colaborativo y con múltiples servidores. Las consultas tampoco mostraron errores pero, especialmente para el filtrado de resultados, requieren del aprendizaje de convenciones propias lo que afecta la curva de aprendizaje. No se pueden declarar atributos privados, cuestión que afecta el encapsulamiento, y la capacidad del ORM para trabajar con polimorfismo esta limitada y se requiere añadir paquetes especiales.
+El ORM de Django se mostró estable, se registraron pocos problemas o 
+\textit{bugs} y cuando ocurrieron se encontro información disponible que lo 
+documentaba. Para la creación y modificación de modelos, su flujo divido en 
+dos etapas \footnote{Disponible en la versiones de Django iguales o superiores 
+a 1.7} \textit{Make Migrations} y \textit{Migrate} permitió el trabajo 
+colaborativo y con múltiples servidores. El acceso a datos requiere de la 
+práctica de convenciones propias que, aunque muy bien documentadas, afectan la 
+curva de aprendizaje. 
+Por otro lado el modelo no acepta atributos privados, cuestión 
+que afecta el encapsulamiento. La capacidad del ORM para trabajar con 
+polimorfismo esta limitada y se requiere añadir paquetes especiales.
 
 \subsection{Reflexión}
 
@@ -415,6 +510,12 @@ dearth of tools and compilers and lack of trained, experienced programmers''. La
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
 %----------------------------------------------------------------------------------------
+
+%http://www.esa-esaw2017.eu/sites/default/files/GMV-ESAW-2017-Presentation_v3x.pdf
+%https://info.aiaa.org/tac/SMG/SOSTC/Workshop%20Documents/2010/Palsson_GMV_Operations_Automation_Python[1].pdf
+%http://csse.usc.edu/GSAW/gsaw2010/s6/garcia.pdf
+%https://info.aiaa.org/tac/SMG/SOSTC/Workshop%20Documents/2010/Palsson_GMV_Opera
+%tions_Automation_Python[1].pdf
 
 \newglossaryentry{raw}
 {
@@ -482,6 +583,8 @@ dearth of tools and compilers and lack of trained, experienced programmers''. La
 %   author={Galal, Ken and Hogan, Roger P},
 %   year={2001}
 % }
+
+
 
 \end{thebibliography}
 
