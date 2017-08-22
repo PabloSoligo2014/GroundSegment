@@ -11,6 +11,7 @@ from django.utils.timezone import datetime, now, timedelta
 import pytz
 from datetime import timezone
 from _ast import Try
+from binascii import hexlify
 
 #from GroundSegment.models.Satellite import Satellite
 #from GroundSegment.models.SatelliteState import SatelliteState
@@ -111,12 +112,12 @@ class Command(models.Model):
   
         try:
             if (len(args))==(len(self.getTypeCommand())):
+                    self.save()
                     for value in args:
                         p = CommandParameter()
-                        p.value = value
+                        p.value = hex(value)
                         
                         p.command = self
-                        p.save()
             else:
                 print("error")
         except:

@@ -29,8 +29,9 @@ from datetime import datetime, timedelta
 
 if __name__ == '__main__':
     fs2017 = Satellite.objects.get(code="FS2017")
-    ct = fs2017.getCommandType().get(code="telemetryEPS")
+    ct = fs2017.getCommandType().get(code="beaconOBC")
     cmd = fs2017.newCommand(ct, datetime.utcnow()+timedelta(minutes=5))
+    cmd.addParameters(5)
     
     print("Hola")
     

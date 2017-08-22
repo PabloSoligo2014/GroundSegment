@@ -410,20 +410,32 @@ if __name__ == '__main__':
                                 
                                 #Console.log("Se hardcodea ejecucion comando "+str(com.pk))
                                 
-                                prepack = asource+destination+control+protocol+unhexlify(com.commandType.commandCode)
-                                #El byte de inicio \x56 + 4 bytes del entero que indica el tamanio + el tamanio del paquete
-                                ilen = 1+4+len(prepack)
-                                #Mucha atencion con <I, big endian / little endian
-                                prepackpluslen = header+pack('<I', ilen)+prepack
-                                s.send(prepackpluslen)
+                                try:
                                 
-                                
-                                
-                                Console.log("Comando "+str(com.commandType.commandCode)+" enviado")
-                                
-                                
-                                com.setExecuted()
-                                #TODO: Encodear y mandar al satelite por el mismo socket aca!
+                                    prepack = asource+destination+control+protocol+unhexlify(com.commandType.commandCode)
+                                    
+                                    
+                                    
+                                    for p in com.parameters.all():
+                                        prepack += unhexlify(p.value.zfill(2))
+                                        #print(p.value)
+                                    
+                                    #El byte de inicio \x56 + 4 bytes del entero que indica el tamanio + el tamanio del paquete
+                                    ilen = 1+4+len(prepack)
+                                    #Mucha atencion con <I, big endian / little endian
+                                    prepackpluslen = header+pack('<I', ilen)+prepack
+                                    s.send(prepackpluslen)
+                                    
+                                    
+                                    
+                                    Console.log("Comando "+str(com.commandType.commandCode)+" enviado")
+                                    
+                                    
+                                    com.setExecuted()
+                                    #TODO: Encodear y mandar al satelite por el mismo socket aca!
+                                except:
+                                    com.setFailed()
+                                    
                             
                             
                     finally:

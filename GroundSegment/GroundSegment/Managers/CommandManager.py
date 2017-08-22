@@ -99,9 +99,12 @@ class CommandManager(models.Manager):
         """
         self.__setExpiredCommands()
         
+        ids = []
+        cmds = Command.objects.filter(Q(satellite=self.satellite)&Q(state=0))
+        for cmd in cmds:
+            if cmd.parameters.count()==cmd.commandType.parameters.count():
+                ids.append(cmd.pk) 
         
-        cmds = Command.objects.filter(Q(satellite=self.satellite)&Q(state=0)).order_by('executeAt')
         
-        
-        return cmds
+        return Command.objects.filter(pk__in=ids).order_by('executeAt')
         
