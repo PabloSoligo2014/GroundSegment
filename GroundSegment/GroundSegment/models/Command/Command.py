@@ -122,8 +122,9 @@ class Command(models.Model):
             else:
                 print("error")
         except:
-               print("Este comando no tiene parametros")                    
-        
+            #Bug! Cambiar por un raise exception
+            #print("Este comando no tiene parametros")                    
+            raise Exception("The command hasn't parameters")
     
     def __str__(self):
         return "Cmd: "+str(self.pk)+" tipo: "+self.commandType.code

@@ -37,7 +37,10 @@ if __name__ == '__main__':
     fs2017.sendCommand(cmd)
     """
     
-    fs2017.sendDCommand("startiMTQ", datetime.utcnow()+timedelta(minutes=5), 100, 100, 100)
+    #fs2017.sendDCommand("startiMTQ", datetime.utcnow()+timedelta(minutes=5), 100, 100, 100)
+    
+    fs2017 = Satellite.objects.get(code="FS2017")
+    fs2017.sendRTCommand("beaconOBC", 5, 30)
     
     
     

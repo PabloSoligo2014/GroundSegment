@@ -290,8 +290,8 @@ class Satellite(models.Model):
         ct = self.getCommandType().get(code=cmdcode)
         cmd = self.newCommand(ct, datetime.utcnow()+timedelta(minutes=td))
         
-        
-        cmd.addParameters(args)
+        if len(args)>0:
+            cmd.addParameters(*args)
         self.sendCommand(cmd)
         
         

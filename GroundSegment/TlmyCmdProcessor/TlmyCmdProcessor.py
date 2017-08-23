@@ -15,6 +15,7 @@ from struct import unpack, pack
 #import crcmod
 import time
 import datetime
+
 from django.conf import settings
 import os
 import sys
@@ -350,7 +351,7 @@ if __name__ == '__main__':
                                     try:
                                         #Console.log("Packet number: "+str(pn))
                                     
-                                        Console.log("Se recibio telemetria:"+str(pn)+"-"+FrameType.objects.get(pk=frameTypeId).description+"-bytes: "+str(len(data.data)))
+                                        Console.log(str(datetime.datetime.utcnow()) +"-TLM Recv:"+str(pn)+"-"+FrameType.objects.get(pk=frameTypeId).description+"-bytes: "+str(len(data.data)))
                                     except ObjectDoesNotExist:
                                         print("Tipo de telemetria no encontrado")
                                     
