@@ -23,6 +23,7 @@ os.system('cls' if os.name=='nt' else 'clear')
 
 
 #"TlmyCmdProcessor.py" "TTC" "FS2017"
+Satellite.objects.all()
 fs2017 = Satellite.objects.get(code="FS2017")
 fs2017.getCommandType()
 ct = fs2017.getCommandType().get(code="telemetryOBC")
@@ -45,4 +46,27 @@ if med>27:
 	md = fs2017.newCommand(ct, datetime.utcnow()+timedelta(minutes=5))
 	fs2017.sendCommand(cmd)
 	
+	
+
+
+DEMO TELEMETRIA
+
+os.system('cls' if os.name=='nt' else 'clear')
+Satellite.objects.all()
+fs2017 = Satellite.objects.get(code="FS2017")
+fs2017.getCommandType()
+fs2017.sendRTCommand("telemetryTrxUV", 5)
+fs2017.sendRTCommand("telemetryEPS", 5)
+
+
+fs2017.sendRTCommand("beaconOBC", 5, 30)
+
+fs2017.tmlyVarType.all()
+
+fs2017.tmlyVarType.get(code="obcT1").getValue()
+
+tmps = TlmyVar.objects.filter(tlmyVarType__code="obcT1").filter(tlmyVarType__satellite=fs2017).order_by('-created')[:5].values_list('calFValue', flat=True)
+med = np.average(tmps)
+if med>27:
+	fs2017.sendRTCommand("beaconOBC", 5, 30)
 	
