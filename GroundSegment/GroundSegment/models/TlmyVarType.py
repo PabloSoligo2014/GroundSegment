@@ -61,7 +61,7 @@ class TlmyVarType(models.Model):
     lastRawValue   =  models.IntegerField(default=0)
     lastCalIValue  =  models.IntegerField(default=0)
     lastCalFValue  =  models.FloatField(default=0.0)
-    lastCalSValue  =  models.CharField('Valor como string de la variable de telemetria', default=None, max_length=24, help_text='Valor como string de la variable de telemetria', blank=True, null=True)
+    lastCalSValue  =  models.CharField('Valor como string de la variable de telemetria', default="No defined", max_length=24, help_text='Valor como string de la variable de telemetria', null=True)
     lastUpdate     =  models.DateTimeField(auto_now_add=True) #
          
     

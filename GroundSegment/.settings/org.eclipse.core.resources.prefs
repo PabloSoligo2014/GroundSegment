@@ -1,11 +1,15 @@
 eclipse.preferences.version=1
 encoding//GroundSegment/migrations/0001_initial.py=utf-8
+encoding//GroundSegment/migrations/0008_tlmyvartype_varsubtype.py=utf-8
 encoding//GroundSegment/migrations/0011_auto_20161127_2019.py=utf-8
 encoding//GroundSegment/migrations/0012_remove_tmlyvar_tmlyvartype.py=utf-8
 encoding//GroundSegment/migrations/0013_tmlyvar_code.py=utf-8
+encoding//GroundSegment/migrations/0025_coefficient.py=utf-8
 encoding//GroundSegment/migrations/0030_auto_20170125_1955.py=utf-8
 encoding//GroundSegment/migrations/0034_auto_20170130_1320.py=utf-8
 encoding//GroundSegment/migrations/0043_uhfrawdata_processed.py=utf-8
 encoding//GroundSegment/migrations/0044_auto_20170206_1250.py=utf-8
 encoding//GroundSegment/migrations/0059_command_binarycmb.py=utf-8
 encoding//GroundSegment/migrations/0060_auto_20170401_1620.py=utf-8
+encoding//GroundSegment/migrations/0065_commandtypeparameter_commandtype.py=utf-8
+encoding//GroundSegment/migrations/0069_tlmyvar_tlmyvartype.py=utf-8
